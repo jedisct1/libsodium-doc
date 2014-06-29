@@ -1,4 +1,4 @@
-## Introduction
+# The Sodium crypto library (libsodium)
 
 [NaCl](http://nacl.cr.yp.to/) (pronounced "salt") is an easy-to-use
 high-speed software library for network communication, encryption,
@@ -18,7 +18,13 @@ across-the-board than most implementations of the NIST standards.
 
 Sodium supports a variety of compilers and operating systems, including Windows (with MingW or Visual Studio, x86 and x64), iOS and Android.
 
-### Mailing list
+## Downloading libsodium
+
+- [Github repository](https://github.com/jedisct1/libsodium)
+- [Tarballs and pre-compiled binaries](http://download.libsodium.org/libsodium/releases/)
+- [Documentation](https://www.gitbook.io/content/book/jedisct1/libsodium/)
+
+## Mailing list
 
 A mailing-list is available to discuss libsodium.
 
@@ -29,4 +35,4 @@ In order to join, just send a random mail to `sodium-subscribe` {at}
 
 [ISC license](http://en.wikipedia.org/wiki/ISC_license).
 
-See the `COPYING` file for details.
+See the `LICENSE` file for details.

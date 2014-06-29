@@ -9,7 +9,7 @@
    * [Authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
    * [Authentication](secret-key_cryptography/secret-key_authentication.md)
    * [AEAD](secret-key_cryptography/aead.md)
-* [Public-key cryptography](public-key_cryptography/README)
+* [Public-key cryptography](public-key_cryptography/README.md)
    * [Authenticated encryption](public-key_cryptography/authenticated_encryption.md)
    * [Public-key signatures](public-key_cryptography/public-key_signatures.md)
 * [Hashing](hashing/README)
