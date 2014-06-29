@@ -22,7 +22,7 @@ Sodium supports a variety of compilers and operating systems, including Windows 
 
 - [Github repository](https://github.com/jedisct1/libsodium)
 - [Tarballs and pre-compiled binaries](http://download.libsodium.org/libsodium/releases/)
-- [Documentation](https://www.gitbook.io/content/book/jedisct1/libsodium/)
+- [Documentation](http://jedisct1.gitbooks.io/libsodium/)
 
 ## Mailing list
 
