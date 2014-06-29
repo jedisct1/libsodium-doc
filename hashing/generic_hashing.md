@@ -87,6 +87,29 @@ The recommended key size is `crypto_generichash_KEYBYTES` bytes.
 
 However, the key size can by any value between `crypto_generichash_KEYBYTES_MIN` (included) and `crypto_generichash_KEYBYTES_MAX` (included).
 
+```c
+int crypto_generichash_init(crypto_generichash_state *state,
+                            const unsigned char *key,
+                            const size_t keylen, const size_t outlen);
+
+int crypto_generichash_update(crypto_generichash_state *state,
+                              const unsigned char *in,
+                              unsigned long long inlen);
+
+int crypto_generichash_final(crypto_generichash_state *state,
+                             unsigned char *out, const size_t outlen);
+```
+
+The message doesn't have to be provided as a single chunk. The `generichash` operation also supports a streaming API.
+
+The `crypto_generichash_init()` function initializes a state `state` with a key `key` (that can be `NULL`) of length `keylen` bytes, in order to eventually produce `outlen` bytes of output.
+
+Each chunk of the complete message can then be sequentially processed by calling `crypto_generichash_update()`, providing the previously initialized state `state`, a pointer to the chunk `in` and the length of the chunk in bytes, `inlen`.
+
+The `crypto_generichash_final()` function completes the operation and puts the final fingerprint into `out` as `outlen` bytes.
+
+This alternative API is especially useful to process very large files and data streams.
+
 ## Constants
 
 - `crypto_generichash_BYTES`
@@ -103,3 +126,5 @@ Blake2b
 ## Notes
 
 Unlike functions such as MD5, SHA1 and SHA256, this function is safe against hash length extension attacks.
+
+Blake2b's salt and personalisation parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.
