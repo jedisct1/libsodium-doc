@@ -4,6 +4,7 @@
 * Common LISP [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
+* Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * Idris: [Idris-Sodium](https://github.com/edwinb/sodium-idris)
 * Java: [Kalium](https://github.com/abstractj/kalium)
