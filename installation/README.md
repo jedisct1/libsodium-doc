@@ -31,3 +31,22 @@ Pre-built libraries for Visual studio 2010, 2012 and 2013, both for
 x86 and x64, are available for download at
 https://download.libsodium.org/libsodium/releases/ , courtesy of
 Samuel Neves (@sneves).
+
+## Cross-compiling
+
+Cross-compilation is fully supported. This is an example of
+cross-compiling to ARM using the GNU tools for ARM embedded processors:
+
+```bash
+$ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
+$ export LDFLAGS='--specs=nosys.specs'
+$ export CFLAGS='-Os'
+$ ./configure --host=arm-none-eabi --prefix=/install/path
+$ make install
+```
+
+```make check``` can also build the test apps, but these have to be
+run on the native platform.
+
+Note: `--specs=nosys.specs` is only required for the ARM compilation
+toolchain.
