@@ -23,7 +23,7 @@ location.
 
 Integrity of source tarballs can currently be checked using PGP or
 verified DNS queries (`dig +dnssec +short txt <file>.download.libsodium.org`
-returns the SHA256 of any file available for download).
+returns the SHA-256 of any file available for download).
 
 ## Pre-built binaries
 

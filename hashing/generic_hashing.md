@@ -77,7 +77,7 @@ The minimum recommended output size is `crypto_generichash_BYTES`. This size mak
 
 But for specific use cases, the size can be any value between `crypto_generichash_BYTES_MIN` (included) and `crypto_generichash_BYTES_MAX` (included).
 
-`key` can be `NULL` and `keylen` can be `0`. In this case, a message will always have the same fingerprint, similar to the `MD5` or `SHA1` functions for which `crypto_generichash()` is a faster and more secure alternative.
+`key` can be `NULL` and `keylen` can be `0`. In this case, a message will always have the same fingerprint, similar to the `MD5` or `SHA-1` functions for which `crypto_generichash()` is a faster and more secure alternative.
 
 But a key can also be specified. A message will always have the same fingerprint for a given key, but different keys used to hash the same message are very likely to produce distinct fingerprints.
 
@@ -125,6 +125,6 @@ Blake2b
 
 ## Notes
 
-Unlike functions such as MD5, SHA1 and SHA256, this function is safe against hash length extension attacks.
+Unlike functions such as MD5, SHA-1 and SHA-256, this function is safe against hash length extension attacks.
 
 Blake2b's salt and personalisation parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.
