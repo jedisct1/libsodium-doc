@@ -16,6 +16,6 @@
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](key_derivation/README.md)
-* [Advanced](advanced/README)
+* [Advanced](advanced/README.md)
    * [SHA-2 hash functions family](advanced/sha-2_hash_function.md)
 

@@ -1,6 +1,6 @@
 # Public-key signatures
 
-## Example
+## Example (combined mode)
 
 ```c
 #define MESSAGE (const unsigned char *) "test"
@@ -20,6 +20,24 @@ unsigned char unsealed_message[MESSAGE_LEN];
 unsigned long long unsealed_message_len;
 if (crypto_sign_open(unsealed_message, &unsealed_message_len,
                      sealed_message, sealed_message_len, pk) != 0) {
+    /* Incorrect signature! */
+}
+```
+
+### Example (detached mode)
+
+```c
+#define MESSAGE (const unsigned char *) "test"
+#define MESSAGE_LEN 4
+
+unsigned char pk[crypto_sign_PUBLICKEYBYTES];
+unsigned char sk[crypto_sign_SECRETKEYBYTES];
+crypto_sign_keypair(pk, sk);
+
+unsigned char sig[crypto_sign_BYTES];
+crypto_sign_detached(sig, NULL, MESSAGE, MESSAGE_LEN, sk);
+
+if (crypto_sign_verify_detached(sig, MESSAGE, MESSAGE_LEN, pk) != 0) {
     /* Incorrect signature! */
 }
 ```
