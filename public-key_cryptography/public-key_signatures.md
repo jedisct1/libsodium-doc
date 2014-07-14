@@ -50,7 +50,7 @@ In this system, a signer generates a key pair:
 
 Verifiers need to already know and ultimately trust a public key before messages sealed using it can be verified.
 
-*Warning:* this is different from authenticated encryption. Appending a seal does not change the content of the message itself.
+*Warning:* this is different from authenticated encryption. Appending a seal does not change the representation of the message itself.
 
 ## Key pair generation
 
@@ -67,7 +67,7 @@ int crypto_sign_seed_keypair(unsigned char *pk, unsigned char *sk,
 
 Using `crypto_sign_seed_keypair()`, the key pair can also be deterministically derived from a single key `seed` (`crypto_sign_SEEDBYTES` bytes).
 
-## Signatures
+## Combined mode
 
 ```c
 int crypto_sign(unsigned char *sm, unsigned long long *smlen,
@@ -77,7 +77,7 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen,
 
 The `crypto_sign()` function appends a seal to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
 
-The sealed message is put into `sm` and can be up to `crypto_sign_BYTES + mlen` bytes long.
+The sealed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
 
 The actual length of the sealed message is stored into `smlen`.
 
@@ -92,6 +92,33 @@ The `crypto_sign_open()` function checks that the sealed message `sm` whose leng
 If the seal is doesn't appear to be valid, the function returns `-1`.
 
 On success, it puts the message with the seal removed into `m`, stores its length into `mlen` and returns `0`.
+
+## Detached mode
+
+In detached mode, the signature is stored without attaching a copy of the original message to it.
+
+```c
+int crypto_sign_detached(unsigned char *sig, unsigned long long *siglen,
+                         const unsigned char *m, unsigned long long mlen,
+                         const unsigned char *sk);
+```
+
+The `crypto_sign_detached()` function signs the message `m` whose length is `mlen` bytes, using the secret key `sk`, and puts the signature into `sig`, which can be up to `crypto_sign_BYTES` bytes long.
+
+The actual length of the signature is put into `siglen` if `siglen` is not `NULL`.
+
+It is safe to ignore `siglen` and always consider a signature as `crypto_sign_BYTES` bytes long: shorter signatures will be transparently padded with zeros if necessary.
+
+```c
+int crypto_sign_verify_detached(const unsigned char *sig,
+                                const unsigned char *m,
+                                unsigned long long mlen,
+                                const unsigned char *pk);
+```
+
+The `crypto_sign_verify_detached()` function verifies that `sig` is a valid signature for the message `m` whose length is `mlen` bytes, using the signer's public key `pk`.
+
+It returns `-1` if the signature fails verification, or `0` on success.
 
 ## Constants
 
