@@ -18,4 +18,5 @@
 * [Password hashing](key_derivation/README.md)
 * [Advanced](advanced/README.md)
    * [SHA-2 hash functions family](advanced/sha-2_hash_function.md)
+   * [HMAC-SHA-2](advanced/hmac-sha2.md)
 
