@@ -36,6 +36,7 @@ The `sodium_mlock()` function locks at least `len` bytes of memory starting at `
 In addition, it is recommended to totally disable swap partitions on machines processing senstive data, or, as a second choice, to use encrypted swap partitions.
 
 For similar reasons, on Unix systems, one should also disable core dumps when running crypto code outside a development environment. This can be achieved using a shell built-in such as `ulimit` or programatically using `setrlimit(RLIMIT_CORE, &(struct rlimit) {0, 0})`.
+On operating systems where this feature is implemented, kernel crash dumps should also be disabled.
 
 `sodium_mlock()` wraps `mlock()` and `VirtualLock()`. **Note:** Many systems place limits on the amount of memory that may be locked by a process. Care should be taken to raise those limits (e.g. Unix ulimits) where neccessary. `sodium_lock()` will return `-1` when any limit is reached.
 
