@@ -4,7 +4,7 @@ The SHA-256 and SHA-512 functions are provided for interoperability with other a
 
 These functions are not keyed and are thus deterministic. In addition, they are vulnerable to length extension attacks.
 
-A message can be hashed in a single pass, but a streaming API is also available to process a message a sequence of multiple chunks.
+A message can be hashed in a single pass, but a streaming API is also available to process a message as a sequence of multiple chunks.
 
 If you are looking for a generic hash function and not specifically SHA-2, using `crypto_generichash()` (Blake2b) might be a better choice.
 
