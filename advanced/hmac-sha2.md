@@ -168,4 +168,4 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 
 ## Notes
 
-The high-level `crypto_auth_*()` set of functions is actually implemented as HMAC-SHA512/256.
+The high-level `crypto_auth_*()` set of functions is actually implemented as HMAC-SHA-512/256.
