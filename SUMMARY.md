@@ -19,5 +19,5 @@
 * [Advanced](advanced/README.md)
    * [SHA-2 hash functions family](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
-   * [Poly1305](advanced/poly1305.md)
+   * [One-time authentication](advanced/poly1305.md)
 

@@ -1,6 +1,6 @@
 # HMAC-SHA-2
 
-Keyed message authentication using HMAC-SHA256, HMAC-SHA512 and HMAC-SHA512/256 (truncated HMAC-SHA512) are provided.
+Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512/256 (truncated HMAC-SHA-512) are provided.
 
 If required, a streaming API is  available to process a message as a sequence of multiple chunks.
 
@@ -68,7 +68,9 @@ It returns `-1` if the verification fails, and `0` on success.
 
 A multi-part (streaming) API can be used instead of `crypto_auth_hmacsha256()`:
 
-This alternative API supports a key of arbitrary length `keylen`. Please note that a key longer than the block size will actually be reduced to `hash(key)`.
+This alternative API supports a key of arbitrary length `keylen`.
+
+However, please note that in the HMAC construction, a key larger than the block size gets reduced to `h(key)`.
 
 ```c
 int crypto_auth_hmacsha256_init(crypto_auth_hmacsha256_state *state,
@@ -166,6 +168,17 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 - `crypto_auth_hmacsha512256_BYTES`
 - `crypto_auth_hmacsha512256_KEYBYTES`
 
+## Data types
+
+- `crypto_auth_hmacsha256_state`
+- `crypto_auth_hmacsha512_state`
+- `crypto_auth_hmacsha512256_state`
+
 ## Notes
 
-The high-level `crypto_auth_*()` set of functions is actually implemented as HMAC-SHA-512/256.
+- The high-level `crypto_auth_*()` set of functions is actually implemented using HMAC-SHA-512/256.
+
+- Arbitrary key lengths are supported using the multi-part interface.
+
+- `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
+

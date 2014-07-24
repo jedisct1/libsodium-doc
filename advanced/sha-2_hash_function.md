@@ -80,3 +80,15 @@ int crypto_hash_sha512_update(crypto_hash_sha512_state *state,
 int crypto_hash_sha512_final(crypto_hash_sha512_state *state,
                              unsigned char *out);
 ```
+
+## Constants
+
+- `crypto_hash_sha256_BYTES`
+- `crypto_hash_sha512_BYTES`
+- `crypto_hash_sha512256_BYTES`
+
+## Data types
+
+- `crypto_hash_sha256_state`
+- `crypto_hash_sha512_state`
+- `crypto_hash_sha512256_state`

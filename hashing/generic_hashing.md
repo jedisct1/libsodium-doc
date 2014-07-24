@@ -119,6 +119,10 @@ This alternative API is especially useful to process very large files and data s
 - `crypto_generichash_KEYBYTES_MIN`
 - `crypto_generichash_KEYBYTES_MAX`
 
+## Data types
+
+- `crypto_generichash_state`
+
 ## Algorithm details
 
 Blake2b

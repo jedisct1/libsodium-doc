@@ -61,3 +61,4 @@ It returns `-1` if the verification fails, and `0` if it passes.
 ## Algorithm details
 
 - HMAC-SHA512256
+
