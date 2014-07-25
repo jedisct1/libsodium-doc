@@ -20,4 +20,5 @@
    * [SHA-2 hash functions family](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
    * [One-time authentication](advanced/poly1305.md)
+   * [Diffie-Hellman](advanced/scalar_multiplication.md)
 
