@@ -1,4 +1,4 @@
-# The SHA-2 hash function family
+# The SHA-2 hash functions family
 
 The SHA-256 and SHA-512 functions are provided for interoperability with other applications.
 
