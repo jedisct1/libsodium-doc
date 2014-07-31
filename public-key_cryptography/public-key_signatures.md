@@ -75,7 +75,7 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen,
                 const unsigned char *sk);
 ```
 
-The `crypto_sign()` function appends a seal to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
+The `crypto_sign()` function prepends a seal to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
 
 The sealed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
 
