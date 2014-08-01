@@ -1,5 +1,6 @@
 # Summary
 
+* [Introduction](README.md)
 * [Installation](installation/README.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
@@ -21,4 +22,5 @@
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
    * [One-time authentication](advanced/poly1305.md)
    * [Diffie-Hellman](advanced/scalar_multiplication.md)
+   * [Stream ciphers](advanced/stream_ciphers.md)
 

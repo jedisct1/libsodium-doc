@@ -6,7 +6,7 @@
 int sodium_memcmp(const void * const b1_, const void * const b2_, size_t len);
 ```
 
-When a comparison involes secret data (e.g. key, authentication tag), is it critical to use a constant-time comparison function in order to mitigate side-channel attacks.
+When a comparison involves secret data (e.g. key, authentication tag), is it critical to use a constant-time comparison function in order to mitigate side-channel attacks.
 
 The `sodium_memcmp()` function can be used for this purpose.
 
