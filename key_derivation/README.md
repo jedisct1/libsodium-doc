@@ -119,6 +119,7 @@ It returns `0` if the verification succeeds, and `-1` on error.
 
 - `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
 - `crypto_pwhash_scryptsalsa208sha256_STRBYTES`
+- `crypto_pwhash_scryptsalsa208sha256_STRPREFIX`
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE`
 - `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE`
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
