@@ -1,6 +1,7 @@
 # Bindings for other languages
 
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
+* C++: [tears](https://github.com/truenull/tears)
 * Common LISP [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
