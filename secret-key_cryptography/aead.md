@@ -65,7 +65,7 @@ At most `mlen + crypto_aead_chacha20poly1305_ABYTES` bytes are put into `c`, and
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
-The public nonce `npub` should never ever be reused with the same key. The easiest way to generate it is to use `randombytes_buf()`.
+The public nonce `npub` should never ever be reused with the same key. The recommended way to generate it is to use `randombytes_buf()` for the first message, and increment it for each subsequent message using the same key.
 
 ```c
 int crypto_aead_chacha20poly1305_decrypt(unsigned char *m,
@@ -103,6 +103,8 @@ At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 - Authentication: Poly1305 MAC
 
 ## Notes
+
+The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
 The API conforms to the proposed API for the CAESAR competition.
 
