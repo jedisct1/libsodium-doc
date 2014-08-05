@@ -24,4 +24,5 @@
    * [Diffie-Hellman](advanced/scalar_multiplication.md)
    * [Stream ciphers](advanced/stream_ciphers.md)
        * [AES-128-CTR](advanced/aes-128-ctr.md)
+       * [AES-256-eStreamCTR](advanced/aes-256-estreamctr.md)
 
