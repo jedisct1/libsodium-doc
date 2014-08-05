@@ -23,4 +23,5 @@
    * [One-time authentication](advanced/poly1305.md)
    * [Diffie-Hellman](advanced/scalar_multiplication.md)
    * [Stream ciphers](advanced/stream_ciphers.md)
+       * [AES-128-CTR](advanced/aes-128-ctr.md)
 
