@@ -108,4 +108,4 @@ The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being re
 
 The API conforms to the proposed API for the CAESAR competition.
 
-The construction conforms to the [ChaCha20 and Poly1305 for IETF protocols](http://tools.ietf.org/html/draft-nir-cfrg-chacha20-poly1305-04) draft and Sodium's implementation is fully interoperable with other current implementations.
+The construction conforms to the [ChaCha20 and Poly1305 for IETF protocols](http://tools.ietf.org/html/draft-irtf-cfrg-chacha20-poly1305-00) draft and Sodium's implementation is fully interoperable with other current implementations.
