@@ -47,3 +47,30 @@ The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being re
 
 Alternatively, XSalsa20, a variant of Salsa20 with a longer nonce, can be used.
 
+The functions described above perform 20 rounds of Salsa20.
+
+Faster, reduced-rounds versions are also available:
+
+* Salsa20 reduced to 12 rounds:
+
+```c
+int crypto_stream_salsa2012(unsigned char *c, unsigned long long clen,
+                            const unsigned char *n, const unsigned char *k);
+
+int crypto_stream_salsa2012_xor(unsigned char *c, const unsigned char *m,
+                                unsigned long long mlen, const unsigned char *n,
+                                const unsigned char *k);
+```
+
+* Salsa20 reduced to 8 rounds:
+
+```c
+int crypto_stream_salsa208(unsigned char *c, unsigned long long clen,
+                           const unsigned char *n, const unsigned char *k);
+
+int crypto_stream_salsa208_xor(unsigned char *c, const unsigned char *m,
+                               unsigned long long mlen, const unsigned char *n,
+                               const unsigned char *k);
+```
+
+Although the best known attack against Salsa20-8 is not practical, the full-round version provides a highest security margin while still being fast enough for most purposes.
