@@ -86,3 +86,72 @@ It will zero `len` bytes starting at `addr` before actually flagging the pages a
 
 On systems where it is supported, `sodium_mlock()` also wraps `madvise()` and advises the kernel not to include the locked memory in coredumps. `sodium_unlock()` also undoes this additional protection.
 
+## Guarded heap allocations
+
+Heartbleed was a serious vulnerability in OpenSSL. The ability to read past the end of a buffer is a serious bug, but what made it even worse is the fact that secret data could be disclosed by doing so.
+
+In order to mitigate the impact of similar bugs, Sodium provides heap allocation functions for storing sensitive data.
+
+These are not general-purpose allocation functions. In particular, they are slower than `malloc()` and friends, and require 3 or 4 extra pages of virtual memory.
+
+```c
+void *sodium_malloc(size_t size);
+```
+
+The `sodium_malloc()` function returns a pointer from which exactly `size` contiguous bytes of memory can be accessed.
+
+The allocated region is placed at the end of a page boundary, immediately followed by a guard page. As a result, accessing memory past the end of the region will immediately terminate the application.
+
+A canary is also placed right before the returned pointer. Modification of this canary are detected when trying to free the allocated region with `sodium_free()`, and also cause the application to immediately terminate.
+
+An additional guard page is placed before this canary: in a Heartbleed-like scenario, the guard page is likely to be hit before the actual data, and will cause the application to terminate instead of leaking sensitive data.
+
+The allocated region is filled with `0xd0` bytes in order to help catch bugs due to initialized data.
+
+In addition, `sodium_mlock()` is called on the region to help avoiding it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated that way will also not be part of core dumps.
+
+The returned address will not be aligned if the allocation size is not a multiple of the required alignment. For this reason, `sodium_malloc()` should not be used to store structures mixing different data types.
+
+```c
+void *sodium_allocarray(size_t count, size_t size);
+```
+
+The `sodium_allocarray()` function returns a pointer from which `count` objects that are `size` bytes of memory each can be accessed.
+
+It provides the same guarantees as `sodium_malloc()` but also protects against arithmetic overflows when `count * size` exceeds `SIZE_MAX`.
+
+```c
+void sodium_free(void *ptr);
+```
+
+The `sodium_free()` function unlocks and deallocates memory allocated using `sodium_malloc()` or `sodium_allocarray()`.
+
+Prior to this, the canary is checked in order to detect possible buffer underflows and terminate the process if required.
+
+`sodium_free()` also fills the memory region with zeros before the deallocation.
+
+The function can be called even if the region was previously protected using `sodium_mprotect_noaccess()` or `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
+
+`ptr` can be `NULL`, in which case no operations is performed.
+
+```c
+int sodium_mprotect_noaccess(void *ptr);
+```
+
+The `sodium_mprotect_noaccess()` function makes a region allocated using `sodium_malloc()` or `sodium_allocarray()` inaccessible. It cannot be read nor written, but the data are preserved.
+
+This can be used to make confidential data inacessible except when actually needed for a specific operation.
+
+```c
+int sodium_mprotect_readonly(void *ptr);
+```
+
+The `sodium_mprotect_readonly()` function marks a region allocated using `sodium_malloc()` or `sodium_allocarray()` as read-only.
+
+Attempting to modify the data will cause the process to terminate.
+
+```c
+int sodium_mprotect_readwrite(void *ptr);
+```
+
+The `sodium_mprotect_readwrite()` function marks a region allocated using `sodium_malloc()` or `sodium_allocarray()` as readable and writable, after having been protected using `sodium_mprotect_readonly()` or `sodium_mprotect_noaccess()`.
