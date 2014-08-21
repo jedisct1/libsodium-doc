@@ -94,6 +94,8 @@ In order to mitigate the impact of similar bugs, Sodium provides heap allocation
 
 These are not general-purpose allocation functions. In particular, they are slower than `malloc()` and friends, and require 3 or 4 extra pages of virtual memory.
 
+`sodium_init()` has to be called before using any of the guarded heap allocation functions.
+
 ```c
 void *sodium_malloc(size_t size);
 ```
