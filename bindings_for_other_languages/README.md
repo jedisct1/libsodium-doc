@@ -2,7 +2,8 @@
 
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)
-* Common LISP [cl-sodium](https://github.com/orthecreedence/cl-sodium)
+* Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
+* Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
