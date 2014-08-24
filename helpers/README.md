@@ -134,7 +134,7 @@ Prior to this, the canary is checked in order to detect possible buffer underflo
 
 The function can be called even if the region was previously protected using `sodium_mprotect_noaccess()` or `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
 
-`ptr` can be `NULL`, in which case no operations is performed.
+`ptr` can be `NULL`, in which case no operation is performed.
 
 ```c
 int sodium_mprotect_noaccess(void *ptr);
