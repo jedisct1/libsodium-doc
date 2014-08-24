@@ -81,3 +81,12 @@ The test suite has to always pass on the following environments:
 - Debian/ppc
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
+
+### Cross-implementation testing
+
+(in progress)
+
+[crypto test vectors](https://github.com/jedisct1/crypto-test-vectors) aims at generating large collections of test vectors for cryptographic primitives, produced by multiple implementations.
+
+[libsodium validation](https://github.com/jedisct1/libsodium-validation) verifies that the output of libsodium's implementations are matching these test vectors. Each release has to pass all these tests on the platforms listed above.
+
