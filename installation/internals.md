@@ -54,3 +54,30 @@ C header files cannot be used in other programming languages.
 
 For this reason, none of the documented functions are macros hiding the actual symbols.
 
+## Testing
+
+### Static analysis
+
+Continous static analysis of the Sodium source code is provided by Coverity.
+
+On Windows, static analysis is done using Visual Studio and Viva64 PVS-Studio.
+
+The Clang static analyzer is also used on OSX and Linux.
+
+Releases are never shipped until all these tools report zero defects.
+
+### Dynamic analysis
+
+The test suite has to always pass on the following environments:
+
+- OpenBSD/amd64 using `gcc -fstack-protector-strong -fstack-shuffle`
+- ArchLinux/i386 and /amd64 using `clang -fsanitize=undefined` and Valgrind
+- OSX
+- Windows 8.1 using Visual Studio 2010
+- msys2 using mingw32 and mingw64
+- ArchLinux/armv6
+- TomatoUSB/mips
+- Debian/sparc
+- Debian/ppc
+- Fedora/ppc64 - Courtesy of the GCC compile farm project
+- AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
