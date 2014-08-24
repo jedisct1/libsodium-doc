@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Installation](installation/README.md)
+* [Internals](installation/internals.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
 * [Helpers](helpers/README.md)
