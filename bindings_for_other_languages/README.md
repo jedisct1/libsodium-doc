@@ -26,6 +26,7 @@
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 * Python: [PyNaCl](https://github.com/dstufft/pynacl)
 * Python: [PySodium](https://github.com/stef/pysodium)
+* Python: [LibNaCl](https://github.com/saltstack/libnacl)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
