@@ -132,3 +132,5 @@ Cleartext passwords should not stay in memory longer than needed.
 It is highly recommended to use `sodium_mlock()` to lock memory regions storing cleartext passwords, and to call `sodium_munlock()` right after `crypto_pwhash_scryptsalsa208sha256_str()` and `crypto_pwhash_scryptsalsa208sha256_str_verify()` return.
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it doesn't have to be done before calling this function.
+
+A high-level `crypto_pwhash_*()` API is intentionally not defined until the [Password Hashing Competition](http://competitions.cr.yp.to/phc.html) is over.
