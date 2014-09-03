@@ -133,4 +133,4 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it doesn't have to be done before calling this function.
 
-A high-level `crypto_pwhash_*()` API is intentionally not defined until the [Password Hashing Competition](http://competitions.cr.yp.to/phc.html) is over.
+A high-level `crypto_pwhash_*()` API is intentionally not defined until the [Password Hashing Competition](http://password-hashing.net) is over.
