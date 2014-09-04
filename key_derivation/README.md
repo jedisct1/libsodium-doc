@@ -72,7 +72,7 @@ The computed key is stored into `out`.
 
 `opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key.
 
-`memlimit` is the maximum amount of RAM that the function will use, in bytes. It is recommended to allow the function to use at least 16 megabytes.
+`memlimit` is the maximum amount of RAM that the function will use, in bytes. It is highly recommended to allow the function to use at least 16 megabytes.
 
 For interactive sessions, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` provide a safe base line for these two parameters. However, using higher values may improve security.
 
