@@ -8,7 +8,7 @@ extended API to improve usability even further.
 Its goal is to provide all of the core operations needed to build higher-level cryptographic tools.
 
 Sodium supports a variety of compilers and operating systems,
-including Windows (with MingW or Visual Studio, x86 and x64), iOS and Android.
+including Windows (with MinGW or Visual Studio, x86 and x64), iOS and Android.
 
 The design choices emphasize security, and "magic constants" have clear rationales.
 
