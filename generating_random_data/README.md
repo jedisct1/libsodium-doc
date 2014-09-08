@@ -31,7 +31,7 @@ The `randombytes_buf()` function fills `size` bytes starting at `buf` with an un
 int randombytes_close(void);
 ```
 
-This deallocates the global resources used by the pseudo-random number generator. More specifically, when the `/dev/urandom` device is used, is closes the descriptor.
+This deallocates the global resources used by the pseudo-random number generator. More specifically, when the `/dev/urandom` device is used, it closes the descriptor.
 Explicitly calling this function is almost never required.
 
 ```c
