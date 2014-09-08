@@ -24,7 +24,7 @@ int sodium_hex2bin(unsigned char * const bin, const size_t bin_maxlen,
 
 The `sodium_hex2bin()` function parses a hexadecimal string `hex` and converts it to a byte sequence.
 
-`hex` do not have to be nul terminated, as the number of characters to parse is supplied via the `hex_len` parameter.
+`hex` does not have to be nul terminated, as the number of characters to parse is supplied via the `hex_len` parameter.
 
 `ignore` is a string of characters to skip. For example, the string `": "` allows columns and spaces to be present at any locations in the hexadecimal string. These characters will just be ignored. As a result, `"69:FC"`, `"69 FC"`, `"69 : FC"` and `"69FC"` will be valid inputs, and will produce the same output.
 
@@ -35,7 +35,7 @@ The `sodium_hex2bin()` function parses a hexadecimal string `hex` and converts i
 The parser stops when a non-hexadecimal, non-ignored character is found or when `bin_maxlen` bytes have been written.
 
 The function returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string.
-It returns `0` on success, and sets `hex_end`, if it is not `NULL`, to a pointer to the character following the last parsed character.
+It returns `0` on success and sets `hex_end`, if it is not `NULL`, to a pointer to the character following the last parsed character.
 
 ## Constant-time comparison
 
@@ -47,9 +47,9 @@ When a comparison involves secret data (e.g. key, authentication tag), is it cri
 
 The `sodium_memcmp()` function can be used for this purpose.
 
-It returns `0` is `len` bytes pointed by `b1_` are matching `len` bytes pointed by `b2_`.
+The function returns `0` if the `len` bytes pointed to by `b1_` match the `len` bytes pointed to by `b2_`. Otherwise, it returns `-1`.
 
-It returns `-1` if they differ. **Note:** `sodium_memcmp()` is not a lexicographic comparator and
+**Note:** `sodium_memcmp()` is not a lexicographic comparator and
 is not a generic replacement for `memcmp()`.
 
 ## Zeroing memory
@@ -58,7 +58,7 @@ is not a generic replacement for `memcmp()`.
 void sodium_memzero(void * const pnt, const size_t len);
 ```
 
-After usage, sensitive data should be overwritten. But `memset()` and hand-written code can be silently stripped out by an optimizing compiler or by the linker.
+After use, sensitive data should be overwritten, but `memset()` and hand-written code can be silently stripped out by an optimizing compiler or by the linker.
 
 The `sodium_memzero()` function tries to effectively zero `len` bytes starting at `pnt`, even if optimizations are being applied to the code.
 
@@ -68,9 +68,9 @@ The `sodium_memzero()` function tries to effectively zero `len` bytes starting a
 int sodium_mlock(void * const addr, const size_t len);
 ```
 
-The `sodium_mlock()` function locks at least `len` bytes of memory starting at `addr`. This can help to avoid sensitive data to be swapped to disk.
+The `sodium_mlock()` function locks at least `len` bytes of memory starting at `addr`. This can help avoid swapping sensitive data to disk.
 
-In addition, it is recommended to totally disable swap partitions on machines processing senstive data, or, as a second choice, to use encrypted swap partitions.
+In addition, it is recommended to totally disable swap partitions on machines processing senstive data, or, as a second choice, use encrypted swap partitions.
 
 For similar reasons, on Unix systems, one should also disable core dumps when running crypto code outside a development environment. This can be achieved using a shell built-in such as `ulimit` or programatically using `setrlimit(RLIMIT_CORE, &(struct rlimit) {0, 0})`.
 On operating systems where this feature is implemented, kernel crash dumps should also be disabled.
@@ -92,7 +92,7 @@ Heartbleed was a serious vulnerability in OpenSSL. The ability to read past the 
 
 In order to mitigate the impact of similar bugs, Sodium provides heap allocation functions for storing sensitive data.
 
-These are not general-purpose allocation functions. In particular, they are slower than `malloc()` and friends, and require 3 or 4 extra pages of virtual memory.
+These are not general-purpose allocation functions. In particular, they are slower than `malloc()` and friends, and they require 3 or 4 extra pages of virtual memory.
 
 `sodium_init()` has to be called before using any of the guarded heap allocation functions.
 
@@ -106,11 +106,11 @@ The allocated region is placed at the end of a page boundary, immediately follow
 
 A canary is also placed right before the returned pointer. Modification of this canary are detected when trying to free the allocated region with `sodium_free()`, and also cause the application to immediately terminate.
 
-An additional guard page is placed before this canary: in a Heartbleed-like scenario, the guard page is likely to be hit before the actual data, and will cause the application to terminate instead of leaking sensitive data.
+An additional guard page is placed before this canary. In a Heartbleed-like scenario, this guard page is likely to be read before the actual data, and this access will cause the application to terminate instead of leaking sensitive data.
 
 The allocated region is filled with `0xd0` bytes in order to help catch bugs due to initialized data.
 
-In addition, `sodium_mlock()` is called on the region to help avoiding it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated that way will also not be part of core dumps.
+In addition, `sodium_mlock()` is called on the region to help avoid it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
 
 The returned address will not be aligned if the allocation size is not a multiple of the required alignment. For this reason, `sodium_malloc()` should not be used to store structures mixing different data types.
 
@@ -132,7 +132,7 @@ Prior to this, the canary is checked in order to detect possible buffer underflo
 
 `sodium_free()` also fills the memory region with zeros before the deallocation.
 
-The function can be called even if the region was previously protected using `sodium_mprotect_noaccess()` or `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
+This function can be called even if the region was previously protected using `sodium_mprotect_noaccess()` or `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
 
 `ptr` can be `NULL`, in which case no operation is performed.
 
@@ -140,9 +140,9 @@ The function can be called even if the region was previously protected using `so
 int sodium_mprotect_noaccess(void *ptr);
 ```
 
-The `sodium_mprotect_noaccess()` function makes a region allocated using `sodium_malloc()` or `sodium_allocarray()` inaccessible. It cannot be read nor written, but the data are preserved.
+The `sodium_mprotect_noaccess()` function makes a region allocated using `sodium_malloc()` or `sodium_allocarray()` inaccessible. It cannot be read or written, but the data are preserved.
 
-This can be used to make confidential data inacessible except when actually needed for a specific operation.
+This function can be used to make confidential data inacessible except when actually needed for a specific operation.
 
 ```c
 int sodium_mprotect_readonly(void *ptr);
