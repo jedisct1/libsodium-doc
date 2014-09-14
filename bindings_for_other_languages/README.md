@@ -2,7 +2,9 @@
 
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)
-* Common LISP [cl-sodium](https://github.com/orthecreedence/cl-sodium)
+* Clojure: [caesium](https://github.com/lvh/caesium)
+* Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
+* Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
@@ -25,6 +27,7 @@
 * Pharo/Squeak: [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
 * Python: [PyNaCl](https://github.com/dstufft/pynacl)
 * Python: [PySodium](https://github.com/stef/pysodium)
+* Python: [LibNaCl](https://github.com/saltstack/libnacl)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)

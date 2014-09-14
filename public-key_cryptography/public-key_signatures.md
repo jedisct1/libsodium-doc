@@ -120,6 +120,25 @@ The `crypto_sign_verify_detached()` function verifies that `sig` is a valid sign
 
 It returns `-1` if the signature fails verification, or `0` on success.
 
+## Extracting the seed and the public key from the secret key
+
+The secret key actually includes the seed (either a random seed or the one given to `crypto_sign_seed_keypair()`) as well as the public key.
+
+While the public key can always be derived from the seed, the precomputation saves a significant amount of CPU cycles when signing.
+
+If required, Sodium provides two functions to extract the seed and the public key from the secret key:
+
+```c
+int crypto_sign_ed25519_sk_to_seed(unsigned char *seed,
+                                   const unsigned char *sk);
+
+int crypto_sign_ed25519_sk_to_pk(unsigned char *pk, const unsigned char *sk);
+```
+
+The `crypto_sign_ed25519_sk_to_seed()` function extracts the seed from the secret key `sk` and copies it into `seed` (`crypto_sign_SEEDBYTES` bytes).
+
+The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the secret key `sk` and copies it into `pk` (`crypto_sign_PUBLICKEYBYTES` bytes).
+
 ## Constants
 
 - `crypto_sign_PUBLICKEYBYTES`
