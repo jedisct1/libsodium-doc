@@ -39,7 +39,7 @@ This operation:
 - Encrypts a message with a key and a nonce to keep it confidential
 - Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential (non-encrypted) data, haven't been tampered with.
 
-A typical use case for additional data is to store protocol-specific metadata about the message, such as its length, and its encoding.
+A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
 ## Usage
 
@@ -87,7 +87,7 @@ The `crypto_aead_chacha20poly1305_decrypt()` function verifies that the cipherte
 
 The function returns `-1` is the verification fails.
 
-If the verification succeeds, the function returns `-0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
+If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
 
 At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 
@@ -108,6 +108,6 @@ The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being re
 
 The API conforms to the proposed API for the CAESAR competition.
 
-The construction conforms to the [ChaCha20 and Poly1305 for IETF protocols](http://tools.ietf.org/html/draft-irtf-cfrg-chacha20-poly1305-00) draft and Sodium's implementation is fully interoperable with other current implementations.
+The construction conforms to the [ChaCha20 and Poly1305 for IETF protocols](http://tools.ietf.org/html/draft-irtf-cfrg-chacha20-poly1305-00) draft, and Sodium's implementation is fully interoperable with other current implementations.
 
-A high-level `crypto_ahead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
+A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.

@@ -25,12 +25,10 @@ Integrity of source tarballs can currently be checked using PGP or
 verified DNS queries (`dig +dnssec +short txt <file>.download.libsodium.org`
 returns the SHA-256 of any file available for download).
 
-## Pre-built binaries
+## Pre-built libraries
 
-Pre-built libraries for Visual studio 2010, 2012 and 2013, both for
-x86 and x64, are available for download at
-https://download.libsodium.org/libsodium/releases/ , courtesy of
-Samuel Neves (@sneves).
+[Pre-built x86 and x64 libraries for Visual Studio 2010, 2012 and 2013](https://download.libsodium.org/libsodium/releases/) are available,
+courtesy of Samuel Neves ([@sevenps](https://twitter.com/sevenps)).
 
 ## Cross-compiling
 
