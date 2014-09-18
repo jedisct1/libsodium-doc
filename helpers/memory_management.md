@@ -1,4 +1,4 @@
-# Memory management
+# Securing memory allocations
 
 ## Zeroing memory
 
