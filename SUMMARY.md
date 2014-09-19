@@ -5,6 +5,7 @@
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
 * [Helpers](helpers/README.md)
+* [Secure memory](helpers/memory_management.md)
 * [Generating random data](generating_random_data/README.md)
 * [Secret-key cryptography](secret-key_cryptography/README.md)
    * [Authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
