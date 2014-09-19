@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [Installation](installation/README.md)
-* [Internals](installation/internals.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
 * [Helpers](helpers/README.md)
@@ -30,4 +29,4 @@
        * [AES-128-CTR](advanced/aes-128-ctr.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
-
+* [Internals](internals/README.md)
