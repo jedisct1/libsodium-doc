@@ -17,7 +17,7 @@
 * [Hashing](hashing/README.md)
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
-* [Password hashing](key_derivation/README.md)
+* [Password hashing](password_hashing/README.md)
 * [Advanced](advanced/README.md)
    * [SHA-2](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
