@@ -31,3 +31,5 @@
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
+* [Roadmap](internals/roadmap.md)
+
