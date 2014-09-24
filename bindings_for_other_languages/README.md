@@ -15,7 +15,7 @@
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Julia: [jlnacl](https://github.com/thatch45/jlnacl)
-* LUA: [lua-sodium](https://github.com/morfoh/lua-sodium)
+* Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
 * NodeJS: [node-sodium](https://github.com/paixaop/node-sodium)
 * OCaml: [ocaml-sodium](https://github.com/dsheets/ocaml-sodium)
