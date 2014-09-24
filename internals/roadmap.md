@@ -62,3 +62,4 @@ New features will be gladly implemented provided that they are not redundant and
 - Complete the sodium-validation project
 - Optimized implementations for ARM w/NEON
 - Optimized implementations for x86_64
+- First-class support for Javascript
