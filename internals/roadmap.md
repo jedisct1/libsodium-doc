@@ -58,6 +58,7 @@ New features will be gladly implemented provided that they are not redundant and
 - Improve consistency and clarity of function prototypes
 - Improve documentation
 - Consider `getrandom(2)`
+- Consider [Gitian](https://gitian.org/)
 - Complete the sodium-validation project
 - Optimized implementations for ARM w/NEON
 - Optimized implementations for x86_64
