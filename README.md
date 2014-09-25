@@ -18,6 +18,8 @@ certain constants are not described by the standards.
 And despite the emphasis on higher security, primitives are faster
 across-the-board than most implementations of the NIST standards.
 
+[Version 1.0.0](https://github.com/jedisct1/libsodium/releases) was released on September 24, 2014.
+
 ## Downloading libsodium
 
 - [Github repository](https://github.com/jedisct1/libsodium)
