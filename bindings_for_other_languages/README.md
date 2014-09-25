@@ -23,7 +23,7 @@
 * Objective-C: [SodiumObjc](https://github.com/Tabbedout/SodiumObjc)
 * PHP: [PHP-Sodium](https://github.com/alethia7/php-sodium)
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
-* Perl: [Crypto-Sodium](https://github.com/mgregoro/Crypt-Sodium)
+* Perl: [Crypt-Sodium](https://github.com/mgregoro/Crypt-Sodium)
 * Pharo/Squeak: [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
 * Python: [PyNaCl](https://github.com/dstufft/pynacl)
 * Python: [PySodium](https://github.com/stef/pysodium)
