@@ -92,7 +92,7 @@ The `crypto_box_easy()` function encrypts a message `m` whose length is `mlen` b
 
 This function writes the authentication tag, whose length is `crypto_box_MACBYTES` bytes, in `c`, immediately followed by the encrypted message, whose length is the same as the plaintext: `mlen`.
 
-`c` and `m` can overlap, making in-place encryption possible. However do not forget that `crypto_box_MACBYTES` extra bytes are required to prepend the tag.
+`c` and `m` cannot overlap. Do not forget that `crypto_box_MACBYTES` extra bytes are required to prepend the tag.
 
 ```c
 int crypto_box_open_easy(unsigned char *m, const unsigned char *c,
@@ -112,7 +112,7 @@ The nonce `n` and thas to match the nonce used to encrypt and authenticate the m
 The function returns `-1` if the verification fails, and `0` on success.
 On success, the decrypted message is stored into `m`.
 
-`m` and `c` can overlap, making in-place decryption possible.
+`m` and `c` cannot overlap.
 
 ## Detached mode
 
