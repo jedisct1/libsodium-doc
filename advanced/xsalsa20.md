@@ -29,6 +29,8 @@ The `crypto_stream_xor()` function encrypts a message `m` of length `mlen` using
 
 The ciphertext is put into `c`. The ciphertext is the message combined with the output of the stream cipher using the XOR operation, and doesn't include any authentication tag.
 
+`m` and `c` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
+
 ## Constants
 
 - `crypto_stream_KEYBYTES`

@@ -25,6 +25,8 @@ The `crypto_stream_chacha20_xor()` function encrypts a message `m` of length `ml
 
 The ciphertext is put into `c`. The ciphertext is the message combined with the output of the stream cipher using the XOR operation, and doesn't include any authentication tag.
 
+`m` and `c` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
+
 ```c
 int crypto_stream_chacha20_xor_ic(unsigned char *c, const unsigned char *m,
                                   unsigned long long mlen,
@@ -35,6 +37,8 @@ int crypto_stream_chacha20_xor_ic(unsigned char *c, const unsigned char *m,
 The `crypto_stream_chacha20_xor_ic()` function is similar to `crypto_stream_chacha20_xor()` but adds the ability to set the initial value of the block counter to a non-zero value, `ic`.
 
 This permits direct access to any block without having to compute the previous ones.
+
+`m` and `c` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
 
 ## Constants
 

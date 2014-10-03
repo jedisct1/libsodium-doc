@@ -21,9 +21,11 @@ int crypto_stream_aes128ctr_xor(unsigned char *out, const unsigned char *in,
 
 The `crypto_stream_aes128ctr_xor()` function encrypts a message `in` whose length is `inlen` bytes using a secret key `k` (`crypto_stream_aes128ctr_KEYBYTES` bytes) and a nonce `n` (`crypto_stream_aes128ctr_NONCEBYTES` bytes).
 
-The output is stored into `out`, which can overlap with `in` for in-place encryption.
+The output is stored into `out`.
 
 In this mode, the same operation can be used both for encryption and decryption.
+
+`in` and `out` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
 
 ## Constants
 
