@@ -55,6 +55,7 @@ New features will be gladly implemented provided that they are not redundant and
 
 ## 1.0.x roadmap
 
+- Constant-time bin2hex() and hex2bin()
 - Improve consistency and clarity of function prototypes
 - Improve documentation
 - Consider `getrandom(2)`
