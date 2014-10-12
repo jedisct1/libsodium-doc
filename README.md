@@ -33,7 +33,12 @@ A mailing-list is available to discuss libsodium.
 In order to join, just send a random mail to `sodium-subscribe` {at}
 `pureftpd`{dot}`org`.
 
-### License
+## Offline documentation
+
+This documentation can be downloaded as ePUB (for iPad, iPhone, Mac),
+MOBI (for Kindle) and PDF here: http://jedisct1.gitbooks.io/libsodium/
+
+## License
 
 [ISC license](http://en.wikipedia.org/wiki/ISC_license).
 
