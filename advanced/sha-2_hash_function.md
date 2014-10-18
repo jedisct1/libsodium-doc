@@ -14,7 +14,7 @@ If you are looking for a generic hash function and not specifically SHA-2, using
 #define MESSAGE ((const unsigned char *) "test")
 #define MESSAGE_LEN 4
 
-unsigned char out[crypto_hash_sha256_bytes];
+unsigned char out[crypto_hash_sha256_BYTES];
 
 crypto_hash_sha256(out, MESSAGE, MESSAGE_LEN);
 ```
@@ -30,10 +30,10 @@ crypto_hash_sha256(out, MESSAGE, MESSAGE_LEN);
     ((const unsigned char *) "is longer than expected")
 #define MESSAGE_PART2_LEN 23
 
-unsigned char out[crypto_hash_sha256_bytes];
+unsigned char out[crypto_hash_sha256_BYTES];
 crypto_hash_sha256_state state;
 
-crypto_hash_sha256_init(state);
+crypto_hash_sha256_init(&state);
 crypto_hash_sha256_update(state, MESSAGE_PART1, MESSAGE_PART1_LEN);
 crypto_hash_sha256_update(state, MESSAGE_PART2, MESSAGE_PART2_LEN);
 crypto_hash_sha256_final(state, out);
