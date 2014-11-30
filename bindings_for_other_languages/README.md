@@ -8,6 +8,7 @@
 * Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
+* Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
