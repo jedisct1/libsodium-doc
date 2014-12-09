@@ -34,9 +34,9 @@ unsigned char out[crypto_hash_sha256_BYTES];
 crypto_hash_sha256_state state;
 
 crypto_hash_sha256_init(&state);
-crypto_hash_sha256_update(state, MESSAGE_PART1, MESSAGE_PART1_LEN);
-crypto_hash_sha256_update(state, MESSAGE_PART2, MESSAGE_PART2_LEN);
-crypto_hash_sha256_final(state, out);
+crypto_hash_sha256_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
+crypto_hash_sha256_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+crypto_hash_sha256_final(&state, out);
 ```
 
 ## Usage
