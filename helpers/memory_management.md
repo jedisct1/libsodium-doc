@@ -80,7 +80,7 @@ Prior to this, the canary is checked in order to detect possible buffer underflo
 
 `sodium_free()` also fills the memory region with zeros before the deallocation.
 
-This function can be called even if the region was previously protected using `sodium_mprotect_noaccess()` or `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
+This function can be called even if the region was previously protected using `sodium_mprotect_readonly()`; the protection will automatically be changed as needed.
 
 `ptr` can be `NULL`, in which case no operation is performed.
 
