@@ -31,6 +31,7 @@
 * Python: [PySodium](https://github.com/stef/pysodium)
 * Python: [LibNaCl](https://github.com/saltstack/libnacl)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
+* Racket: [Natrium](https://github.com/KirisurfProject/natrium-crypt)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
 * Rust: [Sodium Oxide](https://github.com/dnaq/sodiumoxide)
