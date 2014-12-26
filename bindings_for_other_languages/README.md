@@ -19,6 +19,7 @@
 * Julia: [jlnacl](https://github.com/thatch45/jlnacl)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
+* Nim: [Sodium.nim](https://github.com/judofyr/sodium.nim)
 * NodeJS: [node-sodium](https://github.com/paixaop/node-sodium)
 * OCaml: [ocaml-sodium](https://github.com/dsheets/ocaml-sodium)
 * Objective-C: [NAChloride](https://github.com/gabriel/NAChloride)
