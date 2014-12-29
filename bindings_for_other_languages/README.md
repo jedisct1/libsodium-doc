@@ -35,3 +35,5 @@
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
 * Rust: [Sodium Oxide](https://github.com/dnaq/sodiumoxide)
+* Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
+
