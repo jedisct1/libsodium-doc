@@ -18,6 +18,7 @@
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Julia: [jlnacl](https://github.com/thatch45/jlnacl)
+* Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
 * Nim: [Sodium.nim](https://github.com/judofyr/sodium.nim)
