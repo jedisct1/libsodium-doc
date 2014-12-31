@@ -24,7 +24,7 @@ crypto_box_easy(ciphertext, MESSAGE, MESSAGE_LEN, nonce,
 unsigned char decrypted[MESSAGE_LEN];
 if (crypto_box_open_easy(decrypted, ciphertext, CIPHERTEXT_LEN, nonce,
                          alice_publickey, bob_secretkey) != 0) {
-    /* message from Bob received by Alice has been forged! */
+    /* message for Bob pretending to be from Alice has been forged! */
 }
 ```
 
