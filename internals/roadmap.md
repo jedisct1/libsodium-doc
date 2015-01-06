@@ -63,6 +63,6 @@ New features will be gladly implemented provided that they are not redundant and
 - Complete the sodium-validation project
 - Optimized implementations for ARM w/NEON
 - Optimized implementations for x86_64
-- Batch interface for crypto_box_easy()
+- Precomputed interface for crypto_box_easy() [DONE]
 - First-class support for Javascript [IN PROGRESS]
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter
