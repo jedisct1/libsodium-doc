@@ -12,11 +12,7 @@ including Windows (with MinGW or Visual Studio, x86 and x64), iOS and Android.
 
 The design choices emphasize security, and "magic constants" have clear rationales.
 
-The same cannot be said of NIST curves, where the specific origins of
-certain constants are not described by the standards.
-
-And despite the emphasis on higher security, primitives are faster
-across-the-board than most implementations of the NIST standards.
+And despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
 
 [Version 1.0.1](https://github.com/jedisct1/libsodium/releases) was released on November 21, 2014.
 
