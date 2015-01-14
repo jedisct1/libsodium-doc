@@ -153,6 +153,40 @@ The plaintext is put into `m` after verifying that `mac` is a valid authenticati
 
 The function returns `-1` if the verification fails, or `0` on success.
 
+## Precalculation interface
+
+Applications that send several messages to the same receiver or receive several messages from the same sender can gain speed by calculating the shared key only once, and reusing it in subsequent operations.
+
+```c
+int crypto_box_beforenm(unsigned char *k, const unsigned char *pk,
+                        const unsigned char *sk);
+```
+
+The `crypto_box_beforenm()` function computes a shared secret key given a public key `pk` and a secret key `sk`, and puts it into `k` (`crypto_box_BEFORENM` bytes).
+
+```c
+int crypto_box_easy_afternm(unsigned char *c, const unsigned char *m,
+                            unsigned long long mlen, const unsigned char *n,
+                            const unsigned char *k);
+
+int crypto_box_open_easy_afternm(unsigned char *m, const unsigned char *c,
+                                 unsigned long long clen, const unsigned char *n,
+                                 const unsigned char *k);
+
+int crypto_box_detached_afternm(unsigned char *c, unsigned char *mac,
+                                const unsigned char *m, unsigned long long mlen,
+                                const unsigned char *n, const unsigned char *k);
+
+int crypto_box_open_detached_afternm(unsigned char *m, const unsigned char *c,
+                                     const unsigned char *mac,
+                                     unsigned long long clen, const unsigned char *n,
+                                     const unsigned char *k);
+```
+
+The `_afternm` variants of the previously described functions accept a precalculated shared secret key `k` instead of a key pair.
+
+Like any secret key, a precalculated shared key should be wiped from memory (for example using `sodium_memzero()`) as soon as it is not needed any more.
+
 ## Constants
 
 - `crypto_box_PUBLICKEYBYTES`
@@ -160,6 +194,7 @@ The function returns `-1` if the verification fails, or `0` on success.
 - `crypto_box_MACBYTES`
 - `crypto_box_NONCEBYTES`
 - `crypto_box_SEEDBYTES`
+- `crypto_box_BEFORENMBYTES`
 
 ## Algorithm details
 
