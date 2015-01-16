@@ -30,7 +30,7 @@
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 * Perl: [Crypt-Sodium](https://github.com/mgregoro/Crypt-Sodium)
 * Pharo/Squeak: [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
-* Python: [PyNaCl](https://github.com/dstufft/pynacl)
+* Python: [PyNaCl](https://github.com/pyca/pynacl)
 * Python: [PySodium](https://github.com/stef/pysodium)
 * Python: [LibNaCl](https://github.com/saltstack/libnacl)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
