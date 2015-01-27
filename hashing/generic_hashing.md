@@ -110,6 +110,15 @@ The `crypto_generichash_final()` function completes the operation and puts the f
 
 This alternative API is especially useful to process very large files and data streams.
 
+## State structure alignment
+
+The `crypto_generichash_state` structure is packed and its length is either 357 or 361 bytes. For this reason, when using `sodium_malloc()` to allocate a `crypto_generichash_state` structure, padding must be added in order to ensure proper alignment:
+
+```c
+state = sodium_malloc((sizeof(crypto_generichash_state)
+                           + (size_t) 63U) & ~(size_t) 63U);
+```
+
 ## Constants
 
 - `crypto_generichash_BYTES`

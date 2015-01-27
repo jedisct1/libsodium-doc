@@ -41,6 +41,8 @@ This operation:
 
 A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
+The chosen construction uses encrypt-then-MAC and decryption will never be performed, even partially, before verification.
+
 ## Usage
 
 ```c

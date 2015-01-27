@@ -60,7 +60,11 @@ The allocated region is filled with `0xd0` bytes in order to help catch bugs due
 
 In addition, `sodium_mlock()` is called on the region to help avoid it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
 
-The returned address will not be aligned if the allocation size is not a multiple of the required alignment. For this reason, `sodium_malloc()` should not be used to store structures mixing different data types.
+The returned address will not be aligned if the allocation size is not a multiple of the required alignment.
+
+For this reason, `sodium_malloc()` should not be used with packed structure or variable-length structures, unless the size given to `sodium_malloc()` is rounded up in order to ensure proper alignment.
+
+All the structures used by libsodium can safely be allocated using `sodium_malloc()`, the only one requiring extra care being `crypto_generichash_state`, whose size needs to be rounded up to a multiple of 64 bytes.
 
 ```c
 void *sodium_allocarray(size_t count, size_t size);
