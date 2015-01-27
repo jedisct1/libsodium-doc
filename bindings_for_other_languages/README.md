@@ -37,6 +37,7 @@
 * Racket: [Natrium](https://github.com/KirisurfProject/natrium-crypt)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
+* Rust: [libsodium-sys](https://github.com/zonyitoo/libsodium-sys)
 * Rust: [Sodium Oxide](https://github.com/dnaq/sodiumoxide)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
 
