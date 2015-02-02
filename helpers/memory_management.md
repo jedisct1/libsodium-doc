@@ -36,9 +36,7 @@ On systems where it is supported, `sodium_mlock()` also wraps `madvise()` and ad
 
 ## Guarded heap allocations
 
-Heartbleed was a serious vulnerability in OpenSSL. The ability to read past the end of a buffer is a serious bug, but what made it even worse is the fact that secret data could be disclosed by doing so.
-
-In order to mitigate the impact of similar bugs, Sodium provides heap allocation functions for storing sensitive data.
+Sodium provides heap allocation functions for storing sensitive data.
 
 These are not general-purpose allocation functions. In particular, they are slower than `malloc()` and friends, and they require 3 or 4 extra pages of virtual memory.
 
@@ -54,7 +52,7 @@ The allocated region is placed at the end of a page boundary, immediately follow
 
 A canary is also placed right before the returned pointer. Modification of this canary are detected when trying to free the allocated region with `sodium_free()`, and also cause the application to immediately terminate.
 
-An additional guard page is placed before this canary. In a Heartbleed-like scenario, this guard page is likely to be read before the actual data, and this access will cause the application to terminate instead of leaking sensitive data.
+An additional guard page is placed before this canary to make it less likely for sensitive data to be accessible when reading past the end of an unrelated region.
 
 The allocated region is filled with `0xd0` bytes in order to help catch bugs due to initialized data.
 
