@@ -129,10 +129,29 @@ It returns `0` if the verification succeeds, and `-1` on error.
 
 ## Notes
 
+Do not use constants (including `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_*`) in order to verify a password. Save the parameters along with the hash instead, and use these saved parameters for the verification.
+
+Alternatively, use `crypto_pwhash_scryptsalsa208sha256_str()` and `crypto_pwhash_scryptsalsa208sha256_str_verify()`, that automatically take care of including and extracting the parameters.
+
+By doing so, passwords can be rehashed using different parameters if required later on.
+
 Cleartext passwords should not stay in memory longer than needed.
 
 It is highly recommended to use `sodium_mlock()` to lock memory regions storing cleartext passwords, and to call `sodium_munlock()` right after `crypto_pwhash_scryptsalsa208sha256_str()` and `crypto_pwhash_scryptsalsa208sha256_str_verify()` return.
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it doesn't have to be done before calling this function.
+
+By design, a password whose length is 65 bytes or more is reduced to `SHA-256(password)`.
+This can have security implications if the password is present in another password database using raw, unsalted SHA-256. Or when upgrading passwords previously hashed with unsalted SHA-256 to scrypt.
+
+If this is a concern, passwords should be pre-hashed before being hashed using scrypt:
+```c
+char prehashed_password[56];
+crypto_generichash((unsigned char *) prehashed_password, 56,
+    password, strlen(password), NULL, 0);
+crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
+...
+crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
+```
 
 A high-level `crypto_pwhash_*()` API is intentionally not defined until the [Password Hashing Competition](http://password-hashing.net) is over.
