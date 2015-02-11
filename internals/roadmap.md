@@ -55,7 +55,7 @@ New features will be gladly implemented provided that they are not redundant and
 
 ## 1.0.x roadmap
 
-- Constant-time bin2hex() [DONE] and hex2bin()
+- Constant-time bin2hex() [DONE] and hex2bin() [DONE]
 - Improve consistency and clarity of function prototypes
 - Improve documentation
 - Consider `getrandom(2)`
@@ -64,5 +64,8 @@ New features will be gladly implemented provided that they are not redundant and
 - Optimized implementations for ARM w/NEON
 - Optimized implementations for x86_64
 - Precomputed interface for crypto_box_easy() [DONE]
-- First-class support for Javascript [IN PROGRESS]
+- First-class support for Javascript [DONE]
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter
+[DONE, in ietf branch, not merged yet]
+- IETF-compatible chacha20poly1305 implementation
+[DONE, in ietf branch, not merged yet]
