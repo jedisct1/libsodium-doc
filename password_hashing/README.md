@@ -127,7 +127,7 @@ It returns `0` if the verification succeeds, and `-1` on error.
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
 - `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE`
 
-## Guidelines for choosing the scrypt parameters
+## Guidelines for choosing scrypt parameters
 
 Start by determining how much memory can be used the scrypt function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
