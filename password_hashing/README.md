@@ -74,7 +74,7 @@ The computed key is stored into `out`.
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes. It is highly recommended to allow the function to use at least 16 megabytes.
 
-For interactive sessions, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` provide a safe base line for these two parameters. However, using higher values may improve security.
+For interactive, online operations, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` provide a safe base line for these two parameters. However, using higher values may improve security.
 
 For highly sensitive data, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE` can be used as an alternative. But with these parameters, deriving a key takes more than 10 seconds on a 2.8 Ghz Core i7 CPU and requires up to 1 gigabyte of dedicated RAM.
 
@@ -127,6 +127,26 @@ It returns `0` if the verification succeeds, and `-1` on error.
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
 - `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE`
 
+## Guidelines for choosing the scrypt parameters
+
+Start by determining how much memory can be used the scrypt function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
+
+`memlimit` should be a power of 2. Do not use anything less than 16 Mb, even for interactive use.
+
+Then, a reasonable starting point for `opslimit` is `memlimit / 32`.
+
+Measure how long the scrypt function needs in order to hash a password. If this it is way too long for your application, reduce `memlimit` and adjust `opslimit` using the above formula.
+
+If the function is so fast that you can afford it to be more computationally intensive without any usability issues, increase `opslimit`.
+
+For online use (e.g. login in on a website), a 1 second computation is likely to be the acceptable maximum.
+
+For interactive use (e.g. a desktop application), a 5 second pause after having entered a password is acceptable if the password doesn't need to be entered more than once per session.
+
+For non-interactive use and infrequent use (e.g. restoring an encrypted backup), an even slower computation can be an option.
+
+But the best defense against brute-force password cracking remains using strong passwords. Libraries such as [passwdqc](http://www.openwall.com/passwdqc/) can help enforce this.
+
 ## Notes
 
 Do not use constants (including `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_*`) in order to verify a password. Save the parameters along with the hash instead, and use these saved parameters for the verification.
@@ -148,7 +168,7 @@ If this is a concern, passwords should be pre-hashed before being hashed using s
 ```c
 char prehashed_password[56];
 crypto_generichash((unsigned char *) prehashed_password, 56,
-    password, strlen(password), NULL, 0);
+    (const unsigned char *) password, strlen(password), NULL, 0);
 crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
 ...
 crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
