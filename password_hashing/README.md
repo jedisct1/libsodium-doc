@@ -117,16 +117,6 @@ This function verifies that the password `str` is a valid password verification 
 
 It returns `0` if the verification succeeds, and `-1` on error.
 
-## Constants
-
-- `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
-- `crypto_pwhash_scryptsalsa208sha256_STRBYTES`
-- `crypto_pwhash_scryptsalsa208sha256_STRPREFIX`
-- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE`
-- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE`
-- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
-- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE`
-
 ## Guidelines for choosing scrypt parameters
 
 Start by determining how much memory can be used the scrypt function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
@@ -146,6 +136,16 @@ For interactive use (e.g. a desktop application), a 5 second pause after having 
 For non-interactive use and infrequent use (e.g. restoring an encrypted backup), an even slower computation can be an option.
 
 But the best defense against brute-force password cracking remains using strong passwords. Libraries such as [passwdqc](http://www.openwall.com/passwdqc/) can help enforce this.
+
+## Constants
+
+- `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
+- `crypto_pwhash_scryptsalsa208sha256_STRBYTES`
+- `crypto_pwhash_scryptsalsa208sha256_STRPREFIX`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE`
 
 ## Notes
 
