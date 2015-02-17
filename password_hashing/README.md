@@ -137,6 +137,19 @@ For non-interactive use and infrequent use (e.g. restoring an encrypted backup),
 
 But the best defense against brute-force password cracking remains using strong passwords. Libraries such as [passwdqc](http://www.openwall.com/passwdqc/) can help enforce this.
 
+## Low-level scrypt API
+
+The traditional, low-level scrypt API is also available:
+
+```c
+int crypto_pwhash_scryptsalsa208sha256_ll(const uint8_t * passwd, size_t passwdlen,
+                                          const uint8_t * salt, size_t saltlen,
+                                          uint64_t N, uint32_t r, uint32_t p,
+                                          uint8_t * buf, size_t buflen);
+```
+
+Please note that `r` is specified in kilobytes, and not in bytes as in the Sodium API.
+
 ## Constants
 
 - `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
