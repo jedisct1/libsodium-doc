@@ -23,6 +23,7 @@
 * Julia: [jlnacl](https://github.com/thatch45/jlnacl)
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
+* MRuby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
 * Nim: [Sodium.nim](https://github.com/judofyr/sodium.nim)
 * OCaml: [ocaml-sodium](https://github.com/dsheets/ocaml-sodium)
