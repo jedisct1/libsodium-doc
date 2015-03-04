@@ -4,7 +4,10 @@ On Unix-based systems and on Windows, Sodium uses the facilities provided by the
 
 Other operating systems do not support `/dev/urandom` or it might not be suitable for cryptographic applications. These systems might provide a different way to gather random numbers.
 
-Furthermore, on embedded operating systems, even if the system may no have such a facility, a hardware-based random number generator might be available.
+And, on embedded operating systems, even if the system may no have such a facility, a hardware-based random number generator might be available.
+
+In addition, reproducible results instead of unpredictable ones may be
+required in a testing environment.
 
 For all these scenarios, Sodium provides a way to replace the default implementations generating random numbers.
 
