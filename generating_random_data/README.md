@@ -41,3 +41,7 @@ void randombytes_stir(void);
 The `randombytes_stir()` function reseeds the pseudo-random number generator, if it supports this operation. Calling this function is not required with the default generator, even after a `fork()` call, unless the descriptor for `/dev/urandom` was closed using `randombytes_close()`.
 
 If a non-default implementation is being used (see `randombytes_set_implementation()`), `randombytes_stir()` must be called by the child after a `fork()` call.
+
+## Note
+
+If this is used in an application inside a VM, and the VM is snapshotted and restored, then the above functions may produce the same output.
