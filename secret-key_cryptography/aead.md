@@ -110,6 +110,8 @@ The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being re
 
 The API conforms to the proposed API for the CAESAR competition.
 
-The construction conforms to the [https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04](ChaCha20 and Poly1305 based Cipher Suites for TLS) draft, and Sodium's implementation is fully interoperable with other current implementations.
+The construction conforms to the [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04) draft, and Sodium's implementation is fully interoperable with other current implementations.
+
+The [ChaCha20 and Poly1305 for IETF protocols](https://datatracker.ietf.org/doc/draft-irtf-cfrg-chacha20-poly1305/) draft published later slightly changes the construction. The `ietf` branch of Sodium implements this modified construction, but it will not be merged to the main branch until the document is finalized.
 
 A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
