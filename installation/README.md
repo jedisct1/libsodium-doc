@@ -29,6 +29,15 @@ returns the SHA-256 of any file available for download).
 
 [Pre-built x86 and x64 libraries for Visual Studio 2010, 2012 and 2013](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MingW32 and MingW64.
 
+### Note
+
+The pre-built libraries for Visual Studio include static (`.LIB`) and
+dynamic (`.DLL`) versions.
+
+Projects willing to statically link Sodium must define a macro named
+`SODIUM_STATIC`. This will prevent symbol definitions from being
+referenced with `__dllexport`.
+
 ## Cross-compiling
 
 Cross-compilation is fully supported. This is an example of
