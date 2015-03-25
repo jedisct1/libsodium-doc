@@ -20,7 +20,6 @@
 * JavaScript (compiled to pure JavaScript): [libsodium.js](https://github.com/jedisct1/libsodium.js)
 * JavaScript: [node-sodium](https://github.com/paixaop/node-sodium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
-* Julia: [jlnacl](https://github.com/thatch45/jlnacl)
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
 * MRuby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
