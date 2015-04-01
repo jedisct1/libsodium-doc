@@ -19,7 +19,6 @@
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
 * [Advanced](advanced/README.md)
-   * [ROT13](advanced/rot13.md)
    * [SHA-2](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
    * [One-time authentication](advanced/poly1305.md)
@@ -31,6 +30,7 @@
        * [AES-128-CTR](advanced/aes-128-ctr.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
+   * [ROT13](advanced/rot13.md)
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
 
