@@ -17,6 +17,7 @@
 * Java: [Kalium-JNI](https://github.com/joshjdevl/kalium-jni)
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Java: [sodium-jni](https://github.com/JackWink/sodium-jni)
+* Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 * JavaScript (compiled to pure JavaScript): [libsodium.js](https://github.com/jedisct1/libsodium.js)
 * JavaScript: [node-sodium](https://github.com/paixaop/node-sodium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
