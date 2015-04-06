@@ -149,3 +149,9 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 ## Algorithm details
 
 - Signature: Ed25519
+
+## Notes
+
+`crypto_sign_verify()` and `crypto_sign_verify_detached()` are only
+designed to verify signatures computed using `crypto_sign()` and
+`crypto_sign_detached()`.

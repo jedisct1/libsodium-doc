@@ -176,9 +176,11 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 
 ## Notes
 
-- The high-level `crypto_auth_*()` set of functions is actually implemented using HMAC-SHA-512/256.
-
 - Arbitrary key lengths are supported using the multi-part interface.
 
 - `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
 
+- Only use these functions for interoperability with 3rd party
+services. For everything else, you should probably use
+`crypto_auth_detached()`/`crypto_auth_verify_detached()` or
+`crypto_generichash_*()` instead.
