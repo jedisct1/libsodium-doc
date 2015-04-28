@@ -70,3 +70,4 @@ New features will be gladly implemented provided that they are not redundant and
 [DONE, in ietf branch, not merged yet]
 - IETF-compatible chacha20poly1305 implementation
 [DONE, in ietf branch, not merged yet]
+- Ed448-Goldilocks
