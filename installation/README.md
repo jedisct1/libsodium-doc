@@ -27,7 +27,7 @@ returns the SHA-256 of any file available for download).
 
 ## Pre-built libraries
 
-[Pre-built x86 and x64 libraries for Visual Studio 2010, 2012 and 2013](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MingW32 and MingW64.
+[Pre-built x86 and x64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MingW32 and MingW64.
 
 ### Note
 
