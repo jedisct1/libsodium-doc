@@ -12,8 +12,7 @@ The `sodium_memcmp()` function can be used for this purpose.
 
 The function returns `0` if the `len` bytes pointed to by `b1_` match the `len` bytes pointed to by `b2_`. Otherwise, it returns `-1`.
 
-**Note:** `sodium_memcmp()` is not a lexicographic comparator and
-is not a generic replacement for `memcmp()`.
+**Note:** `sodium_memcmp()` is not a lexicographic comparator and is not a generic replacement for `memcmp()`.
 
 ## Hexadecimal encoding/decoding
 
@@ -28,7 +27,7 @@ The string is stored into `hex` and includes a nul byte (`\0`) terminator.
 
 `hex_maxlen` is the maximum number of bytes that the function is allowed to write starting at `hex`. It should be at least `bin_len * 2 + 1`.
 
-The function returns `hex` on success, or `NULL` on overflow.
+The function returns `hex` on success, or `NULL` on overflow. It evaluates in constant time for a given size.
 
 ```c
 int sodium_hex2bin(unsigned char * const bin, const size_t bin_maxlen,
@@ -51,3 +50,5 @@ The parser stops when a non-hexadecimal, non-ignored character is found or when 
 
 The function returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string.
 It returns `0` on success and sets `hex_end`, if it is not `NULL`, to a pointer to the character following the last parsed character.
+
+It evaluates in constant time for a given length and format.
