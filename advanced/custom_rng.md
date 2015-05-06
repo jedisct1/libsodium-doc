@@ -57,3 +57,6 @@ If you are using Windows or a modern Unix-based system, you should stick to the 
 Internally, all the functions requiring random numbers use the `randombytes_*` interface.
 
 Replacing the default implementations will affect explicit calls to `randombytes_*` functions as well as functions generating keys and nonces.
+
+Since version 1.0.3, custom RNGs don't need to provide `randombytes_stir()` nor `randombytes_close()` if they are not required. These can be `NULL` pointers instead. `randombytes_uniform()` doesn't have to be defined either: a default implementation will be used if a `NULL` pointer is given.
+
