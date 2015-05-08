@@ -119,6 +119,8 @@ state = sodium_malloc((sizeof(crypto_generichash_state)
                            + (size_t) 63U) & ~(size_t) 63U);
 ```
 
+Programming languages that cannot use `sizeof` on types defined in C headers can dynamically retrieve the size of the state structure with the `crypto_generichash_statebytes()` function.
+
 ## Constants
 
 - `crypto_generichash_BYTES`
