@@ -67,7 +67,10 @@ This function doesn't require passing the public key of the sender, as the ciphe
 
 Sealed boxes leverage the `crypto_box` construction (Curve25519, XSalsa20-Poly1305).
 
-The format of a sealed box is `ephemeral_pk || box(m, recipient_pk, ephemeral_sk, nonce=blake2b(ephemeral_pk || recipient_pk)`.
+The format of a sealed box is
+```
+ephemeral_pk || box(m, recipient_pk, ephemeral_sk, nonce=blake2b(ephemeral_pk || recipient_pk))
+```
 
 ## Availability
 
