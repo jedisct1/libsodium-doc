@@ -31,7 +31,7 @@ Sealed boxes are designed to anonymously send messages to a recipient given its 
 
 Only the recipient can decrypt these messages, using its private key. While the recipient can verify the integrity of the message, it cannot verify the identity of the sender.
 
-Every message is encrypted using an ephemeral key pair, whose secret part is destroyed right after the encryption process.
+A message is encrypted using an ephemeral key pair, whose secret part is destroyed right after the encryption process.
 
 Without knowing the secret key used for a given message, the sender cannot decrypt its own message later.
 And without additional data, a message cannot be correlated with the identity of its sender.
