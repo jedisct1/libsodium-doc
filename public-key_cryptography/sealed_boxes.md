@@ -33,7 +33,7 @@ Only the recipient can decrypt these messages, using its private key. While the 
 
 Every message is encrypted using an ephemeral key pair, whose secret part is destroyed right after the encryption process.
 
-Without knowing the secret key used for a given message, the sender cannot decrypt its own message later on.
+Without knowing the secret key used for a given message, the sender cannot decrypt its own message later.
 And without additional data, a message cannot be correlated with the identity of its sender.
 
 ## Usage
@@ -65,7 +65,7 @@ This function doesn't require passing the public key of the sender, as the ciphe
 
 ## Algorithm details
 
-Sealed boxes leverage the `crypto_box` construction ( Curve25519, XSalsa20-Poly1305).
+Sealed boxes leverage the `crypto_box` construction (Curve25519, XSalsa20-Poly1305).
 
 The format of a sealed box is `ephemeral_pk || box(m, recipient_pk, ephemeral_sk, nonce=blake2b(ephemeral_pk || recipient_pk)`.
 
