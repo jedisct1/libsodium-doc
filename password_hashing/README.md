@@ -101,7 +101,7 @@ The `crypto_pwhash_scryptsalsa208sha256_str()` function puts an ASCII encoded st
 
 `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` are safe baseline values to use for `opslimit` and `memlimit`.
 
-The output string is zero-terminated, includes only ASCII characters and can be conveniently stored into SQL databases and other data stores. No additional information has to be stored in order to verify the password.
+The output string is zero-terminated, includes only ASCII characters and can be safely stored into SQL databases and other data stores. No additional information has to be stored in order to verify the password.
 
 The function returns `0` on success and `-1` if it didn't complete successfully.
 
