@@ -19,7 +19,7 @@ And despite the emphasis on high security, primitives are faster across-the-boar
 ## Downloading libsodium
 
 - [Github repository](https://github.com/jedisct1/libsodium)
-- [Tarballs and pre-compiled binaries](http://download.libsodium.org/libsodium/releases/)
+- [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
 - [Documentation](http://doc.libsodium.org)
 
 ## Mailing list
