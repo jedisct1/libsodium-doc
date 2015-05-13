@@ -10,16 +10,16 @@ unsigned char pk[crypto_sign_PUBLICKEYBYTES];
 unsigned char sk[crypto_sign_SECRETKEYBYTES];
 crypto_sign_keypair(pk, sk);
 
-unsigned char sealed_message[crypto_sign_BYTES + MESSAGE_LEN];
-unsigned long long sealed_message_len;
+unsigned char signed_message[crypto_sign_BYTES + MESSAGE_LEN];
+unsigned long long signed_message_len;
 
-crypto_sign(sealed_message, &sealed_message_len,
+crypto_sign(signed_message, &signed_message_len,
             MESSAGE, MESSAGE_LEN, sk);
 
-unsigned char unsealed_message[MESSAGE_LEN];
-unsigned long long unsealed_message_len;
-if (crypto_sign_open(unsealed_message, &unsealed_message_len,
-                     sealed_message, sealed_message_len, pk) != 0) {
+unsigned char unsigned_message[MESSAGE_LEN];
+unsigned long long unsigned_message_len;
+if (crypto_sign_open(unsigned_message, &unsigned_message_len,
+                     signed_message, signed_message_len, pk) != 0) {
     /* Incorrect signature! */
 }
 ```
@@ -48,7 +48,7 @@ In this system, a signer generates a key pair:
 - a secret key, that will be used to append a seal to any number of messages
 - a public key, that anybody can use to verify that the seal appended to a message was actually issued by the creator of the public key.
 
-Verifiers need to already know and ultimately trust a public key before messages sealed using it can be verified.
+Verifiers need to already know and ultimately trust a public key before messages signed using it can be verified.
 
 *Warning:* this is different from authenticated encryption. Appending a seal does not change the representation of the message itself.
 
@@ -77,9 +77,9 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen,
 
 The `crypto_sign()` function prepends a seal to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
 
-The sealed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
+The signed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
 
-The actual length of the sealed message is stored into `smlen`.
+The actual length of the signed message is stored into `smlen`.
 
 ```c
 int crypto_sign_open(unsigned char *m, unsigned long long *mlen,
@@ -87,7 +87,7 @@ int crypto_sign_open(unsigned char *m, unsigned long long *mlen,
                      const unsigned char *pk);
 ```
 
-The `crypto_sign_open()` function checks that the sealed message `sm` whose length is `smlen` bytes has a valid seal for the public key `pk`.
+The `crypto_sign_open()` function checks that the signed message `sm` whose length is `smlen` bytes has a valid seal for the public key `pk`.
 
 If the seal is doesn't appear to be valid, the function returns `-1`.
 
