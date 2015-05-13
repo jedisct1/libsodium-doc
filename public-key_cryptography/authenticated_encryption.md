@@ -76,7 +76,7 @@ crypto_scalarmult_base(pk, sk);
 
 ## Combined mode
 
-In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want
+In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
 
 ```c
 int crypto_box_easy(unsigned char *c, const unsigned char *m,
