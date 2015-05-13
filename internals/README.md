@@ -28,7 +28,7 @@ After `sodium_init()` has been called, everything in libsodium is guaranteed to 
 
 ## Heap allocations
 
-Cryptographic operations in Sodium never allocate memory on the heap (`malloc`, `calloc`, etc) with the obvious exception of `crypto_pwhash`.
+Cryptographic operations in Sodium never allocate memory on the heap (`malloc`, `calloc`, etc) with the obvious exceptions of `crypto_pwhash` and `sodium_malloc`.
 
 ## Extra padding
 
