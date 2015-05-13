@@ -45,12 +45,12 @@ if (crypto_sign_verify_detached(sig, MESSAGE, MESSAGE_LEN, pk) != 0) {
 ## Purpose
 
 In this system, a signer generates a key pair:
-- a secret key, that will be used to append a seal to any number of messages
-- a public key, that anybody can use to verify that the seal appended to a message was actually issued by the creator of the public key.
+- a secret key, that will be used to append a signature to any number of messages
+- a public key, that anybody can use to verify that the signature appended to a message was actually issued by the creator of the public key.
 
 Verifiers need to already know and ultimately trust a public key before messages signed using it can be verified.
 
-*Warning:* this is different from authenticated encryption. Appending a seal does not change the representation of the message itself.
+*Warning:* this is different from authenticated encryption. Appending a signature does not change the representation of the message itself.
 
 ## Key pair generation
 
@@ -75,7 +75,7 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen,
                 const unsigned char *sk);
 ```
 
-The `crypto_sign()` function prepends a seal to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
+The `crypto_sign()` function prepends a signature to a message `m` whose length is `mlen` bytes, using the secret key `sk`.
 
 The signed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
 
@@ -87,11 +87,11 @@ int crypto_sign_open(unsigned char *m, unsigned long long *mlen,
                      const unsigned char *pk);
 ```
 
-The `crypto_sign_open()` function checks that the signed message `sm` whose length is `smlen` bytes has a valid seal for the public key `pk`.
+The `crypto_sign_open()` function checks that the signed message `sm` whose length is `smlen` bytes has a valid signature for the public key `pk`.
 
-If the seal is doesn't appear to be valid, the function returns `-1`.
+If the signature is doesn't appear to be valid, the function returns `-1`.
 
-On success, it puts the message with the seal removed into `m`, stores its length into `mlen` and returns `0`.
+On success, it puts the message with the signature removed into `m`, stores its length into `mlen` and returns `0`.
 
 ## Detached mode
 
