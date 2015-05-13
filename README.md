@@ -32,10 +32,10 @@ In order to join, just send a random mail to `sodium-subscribe` {at}
 ## Offline documentation
 
 This documentation can be downloaded as ePUB (for iPad, iPhone, Mac),
-MOBI (for Kindle) and PDF here: http://jedisct1.gitbooks.io/libsodium/
+MOBI (for Kindle) and PDF here: https://www.gitbook.com/book/jedisct1/libsodium/details
 
 ## License
 
-[ISC license](http://en.wikipedia.org/wiki/ISC_license).
+[ISC license](https://en.wikipedia.org/wiki/ISC_license).
 
 See the `LICENSE` file for details.
