@@ -66,8 +66,6 @@ New features will be gladly implemented provided that they are not redundant and
 - Precomputed interface for crypto_box_easy() [DONE]
 - First-class support for Javascript [DONE]
 - SIMD implementations of ChaCha20
-- chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter
-[DONE, in ietf branch, not merged yet]
-- IETF-compatible chacha20poly1305 implementation
-[DONE, in ietf branch, not merged yet]
+- chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter [DONE]
+- IETF-compatible chacha20poly1305 implementation [DONE]
 - Ed448-Goldilocks
