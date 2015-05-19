@@ -61,7 +61,7 @@ This function doesn't require passing the public key of the sender, as the ciphe
 
 ## Constants
 
-- `crypto_box_SEEDBYTES`
+- `crypto_box_SEALBYTES`
 
 ## Algorithm details
 
