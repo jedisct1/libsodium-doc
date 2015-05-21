@@ -162,7 +162,7 @@ int crypto_box_beforenm(unsigned char *k, const unsigned char *pk,
                         const unsigned char *sk);
 ```
 
-The `crypto_box_beforenm()` function computes a shared secret key given a public key `pk` and a secret key `sk`, and puts it into `k` (`crypto_box_BEFORENM` bytes).
+The `crypto_box_beforenm()` function computes a shared secret key given a public key `pk` and a secret key `sk`, and puts it into `k` (`crypto_box_BEFORENMBYTES` bytes).
 
 ```c
 int crypto_box_easy_afternm(unsigned char *c, const unsigned char *m,
