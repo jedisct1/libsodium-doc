@@ -40,7 +40,7 @@ It might be used instead of the default implementations in order to avoid system
 
 It might also be used if a non-blocking random device is not available or not safe, but blocking would only be acceptable at initialization time.
 
-It can be enable with:
+It can be enabled with:
 
 ```
 randombytes_set_implementation(&randombytes_salsa20_implementation);
