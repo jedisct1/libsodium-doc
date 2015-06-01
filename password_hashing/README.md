@@ -76,7 +76,7 @@ The computed key is stored into `out`.
 
 For interactive, online operations, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` provide a safe base line for these two parameters. However, using higher values may improve security.
 
-For highly sensitive data, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE` can be used as an alternative. But with these parameters, deriving a key takes more than 10 seconds on a 2.8 Ghz Core i7 CPU and requires up to 1 gigabyte of dedicated RAM.
+For highly sensitive data, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE` can be used as an alternative. But with these parameters, deriving a key takes about 2 seconds on a 2.8 Ghz Core i7 CPU and requires up to 1 gigabyte of dedicated RAM.
 
 The `salt` should be unpredictable. `randombytes_buf()` is the easiest way to fill the `crypto_pwhash_scryptsalsa208sha256_SALTBYTES` bytes of the salt.
 
