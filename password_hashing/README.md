@@ -162,6 +162,8 @@ Please note that `r` is specified in kilobytes, and not in bytes as in the Sodiu
 
 ## Notes
 
+Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_scryptsalsa208sha256_*` will still work without doing so, but possibly way slower.
+
 Do not use constants (including `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_*`) in order to verify a password. Save the parameters along with the hash instead, and use these saved parameters for the verification.
 
 Alternatively, use `crypto_pwhash_scryptsalsa208sha256_str()` and `crypto_pwhash_scryptsalsa208sha256_str_verify()`, that automatically take care of including and extracting the parameters.
