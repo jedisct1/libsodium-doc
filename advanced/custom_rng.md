@@ -49,6 +49,7 @@ randombytes_set_implementation(&randombytes_salsa20_implementation);
 Before calling `sodium_init()`.
 
 However, it is not thread-safe, and was designed to be just a boilerplate for writing implementations for embedded operating systems.
+`randombytes_stir()` also has to be called to rekey the generator after fork()ing.
 
 If you are using Windows or a modern Unix-based system, you should stick to the default implementations.
 
