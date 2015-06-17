@@ -12,6 +12,7 @@
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Salt](https://github.com/freza/salt)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
+* Go: [Go-Nacl](https://github.com/GoKillers/go-nacl)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * Idris: [Idris-Sodium](https://github.com/edwinb/sodium-idris)
