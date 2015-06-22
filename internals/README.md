@@ -58,7 +58,7 @@ For this reason, none of the documented functions are macros hiding the actual s
 
 ### Static analysis
 
-Continous static analysis of the Sodium source code is provided by Coverity.
+Continous static analysis of the Sodium source code is provided by Coverity and Facebook's Infer.
 
 On Windows, static analysis is done using Visual Studio and Viva64 PVS-Studio.
 
