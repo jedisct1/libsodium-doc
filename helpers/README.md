@@ -52,3 +52,17 @@ The function returns `-1` if more than `bin_maxlen` bytes would be required to s
 It returns `0` on success and sets `hex_end`, if it is not `NULL`, to a pointer to the character following the last parsed character.
 
 It evaluates in constant time for a given length and format.
+
+## Incrementing large numbers
+
+```c
+void sodium_increment(unsigned char *n, const size_t nlen);
+```
+
+The `sodium_increment()` function takes a pointer to an arbitrary-long unsigned number, and increments it.
+
+It runs in constant-time for a given length, and considers the number to be encoded in little-endian format.
+
+`sodium_increment()` can be used to increment nonces.
+
+This function was introduced in libsodium 1.0.4.
