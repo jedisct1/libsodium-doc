@@ -20,7 +20,7 @@ This function can be used to compute a shared secret given a user's secret key a
 
 `n` and `p` are `crypto_scalarmult_SCALARBYTES` bytes long, and the output size is `crypto_scalarmult_BYTES` bytes.
 
-Instead of directly using the output of the multiplication `q` as a shared secret, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
+Instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
 
 ```c
 unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
