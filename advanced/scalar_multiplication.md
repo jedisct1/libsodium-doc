@@ -23,43 +23,43 @@ This function can be used to compute a shared secret given a user's secret key a
 Instead of directly using the output of the multiplication `q` as a shared secret, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
 
 ```c
-    unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
-    unsigned char client_secretkey[crypto_box_SECRETKEYBYTES];
-    unsigned char server_publickey[crypto_box_PUBLICKEYBYTES];
-    unsigned char server_secretkey[crypto_box_SECRETKEYBYTES];
-    unsigned char scalarmult_res_by_client[crypto_scalarmult_BYTES];
-    unsigned char scalarmult_res_by_server[crypto_scalarmult_BYTES];
-    unsigned char sharedkey_by_client[crypto_generichash_BYTES];
-    unsigned char sharedkey_by_server[crypto_generichash_BYTES];
-    crypto_generichash_state h;
+unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
+unsigned char client_secretkey[crypto_box_SECRETKEYBYTES];
+unsigned char server_publickey[crypto_box_PUBLICKEYBYTES];
+unsigned char server_secretkey[crypto_box_SECRETKEYBYTES];
+unsigned char scalarmult_res_by_client[crypto_scalarmult_BYTES];
+unsigned char scalarmult_res_by_server[crypto_scalarmult_BYTES];
+unsigned char sharedkey_by_client[crypto_generichash_BYTES];
+unsigned char sharedkey_by_server[crypto_generichash_BYTES];
+crypto_generichash_state h;
 
-    /* Create client's secret and public keys */
-    randombytes(client_secretkey, sizeof client_secretkey);
-    crypto_scalarmult_base(client_publickey, client_secretkey);
+/* Create client's secret and public keys */
+randombytes(client_secretkey, sizeof client_secretkey);
+crypto_scalarmult_base(client_publickey, client_secretkey);
 
-    /* Create server's secret and public keys */
-    randombytes(server_secretkey, sizeof server_secretkey);
-    crypto_scalarmult_base(server_publickey, server_secretkey);
+/* Create server's secret and public keys */
+randombytes(server_secretkey, sizeof server_secretkey);
+crypto_scalarmult_base(server_publickey, server_secretkey);
 
-    /* The client derives a shared key from her secret key and the server's public key */
-    /* shared key = h(q || client_publickey || server_publickey) */
-    crypto_scalarmult(scalarmult_res_by_client, client_secretkey, server_publickey);
-    crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
-    crypto_generichash_update(&h, scalarmult_res_by_client, sizeof scalarmult_res_by_client);
-    crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
-    crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
-    crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
+/* The client derives a shared key from her secret key and the server's public key */
+/* shared key = h(q || client_publickey || server_publickey) */
+crypto_scalarmult(scalarmult_res_by_client, client_secretkey, server_publickey);
+crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
+crypto_generichash_update(&h, scalarmult_res_by_client, sizeof scalarmult_res_by_client);
+crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
+crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
+crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
 
-    /* The server derives a shared key from her secret key and the client's public key */
-    /* shared key = h(q || server_publickey || client_publickey) */
-    crypto_scalarmult(scalarmult_res_by_server, server_secretkey, client_publickey);
-    crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
-    crypto_generichash_update(&h, scalarmult_res_by_server, sizeof scalarmult_res_by_server);
-    crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
-    crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
-    crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
+/* The server derives a shared key from her secret key and the client's public key */
+/* shared key = h(q || server_publickey || client_publickey) */
+crypto_scalarmult(scalarmult_res_by_server, server_secretkey, client_publickey);
+crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
+crypto_generichash_update(&h, scalarmult_res_by_server, sizeof scalarmult_res_by_server);
+crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
+crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
+crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
-    /* sharedkey_by_client and sharedkey_by_server are identical */
+/* sharedkey_by_client and sharedkey_by_server are identical */
 ```
 
 ## Constants
