@@ -51,7 +51,7 @@ crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
 crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
 
 /* The server derives a shared key from its secret key and the client's public key */
-/* shared key = h(q || server_publickey || client_publickey) */
+/* shared key = h(q || client_publickey || server_publickey) */
 crypto_scalarmult(scalarmult_res_by_server, server_secretkey, client_publickey);
 crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
 crypto_generichash_update(&h, scalarmult_res_by_server, sizeof scalarmult_res_by_server);
