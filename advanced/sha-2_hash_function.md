@@ -34,8 +34,10 @@ unsigned char out[crypto_hash_sha256_BYTES];
 crypto_hash_sha256_state state;
 
 crypto_hash_sha256_init(&state);
+
 crypto_hash_sha256_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
 crypto_hash_sha256_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+
 crypto_hash_sha256_final(&state, out);
 ```
 
@@ -80,6 +82,12 @@ int crypto_hash_sha512_update(crypto_hash_sha512_state *state,
 int crypto_hash_sha512_final(crypto_hash_sha512_state *state,
                              unsigned char *out);
 ```
+
+## Notes
+
+The state must be initialized with `crypto_hash_sha*_init()` before updating or finalizing it.
+
+After `crypto_hash_sha*_final()`, the state should not be used any more, unless it is reinitializated using `crypto_hash_sha*_init()`.
 
 ## Constants
 

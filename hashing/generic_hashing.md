@@ -108,6 +108,8 @@ Each chunk of the complete message can then be sequentially processed by calling
 
 The `crypto_generichash_final()` function completes the operation and puts the final fingerprint into `out` as `outlen` bytes.
 
+After `crypto_generichash_final()` returns, the state should not be used any more, unless it is reinitializated using `crypto_generichash_init()`.
+
 This alternative API is especially useful to process very large files and data streams.
 
 ## State structure alignment

@@ -176,6 +176,8 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 
 ## Notes
 
+- The state must be initialized with `crypto_hash_hmacsha*_init()` before updating or finalizing it. After `crypto_hash_hmacsha*_final()` returns, the state should not be used any more, unless it is reinitializated using `crypto_hash_hmacsha*_init()`.
+
 - Arbitrary key lengths are supported using the multi-part interface.
 
 - `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
