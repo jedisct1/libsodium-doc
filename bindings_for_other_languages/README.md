@@ -15,6 +15,7 @@
 * Go: [Go-Nacl](https://github.com/GoKillers/go-nacl)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
+* HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * Idris: [Idris-Sodium](https://github.com/edwinb/sodium-idris)
 * Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 * Java: [Kalium-JNI](https://github.com/joshjdevl/kalium-jni)
