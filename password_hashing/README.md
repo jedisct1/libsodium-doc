@@ -189,4 +189,4 @@ crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
 crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
 ```
 
-A high-level `crypto_pwhash_*()` API is intentionally not defined yet, but will eventually use the [Argon2i](https://www.cryptolux.org/index.php/Argon) function in its [final version](https://groups.google.com/forum/#!topic/crypto-competitions/3QNdmwBS98o).
+A high-level `crypto_pwhash_*()` API is intentionally not defined yet, but will eventually use the Blake2b-based [Argon2i](https://www.cryptolux.org/index.php/Argon) function in its [final version](https://groups.google.com/forum/#!topic/crypto-competitions/3QNdmwBS98o).
