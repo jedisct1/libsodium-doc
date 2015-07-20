@@ -69,3 +69,5 @@ New features will be gladly implemented provided that they are not redundant and
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter [DONE]
 - IETF-compatible chacha20poly1305 implementation [DONE]
 - Ed448-Goldilocks
+- SSE-optimized BLAKE2b implementation
+- Argon2i as crypto_pwhash
