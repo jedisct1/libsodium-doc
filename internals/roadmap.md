@@ -9,7 +9,7 @@ New features will be gladly implemented provided that they are not redundant and
 - AEAD construction (ChaCha20Poly1305)
 - API to set initial counter value in ChaCha20/Salsa20
 - Big-endian compatibility
-- Blake2
+- BLAKE2
 - ChaCha20
 - Constant-time comparison
 - Cross-compilation support

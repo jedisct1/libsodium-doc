@@ -138,10 +138,10 @@ Programming languages that cannot use `sizeof` on types defined in C headers can
 
 ## Algorithm details
 
-Blake2b
+BLAKE2b
 
 ## Notes
 
 Unlike functions such as MD5, SHA-1 and SHA-256, this function is safe against hash length extension attacks.
 
-Blake2b's salt and personalisation parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.
+BLAKE2b's salt and personalisation parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.

@@ -6,7 +6,7 @@ These functions are not keyed and are thus deterministic. In addition, they are 
 
 A message can be hashed in a single pass, but a streaming API is also available to process a message as a sequence of multiple chunks.
 
-If you are looking for a generic hash function and not specifically SHA-2, using `crypto_generichash()` (Blake2b) might be a better choice.
+If you are looking for a generic hash function and not specifically SHA-2, using `crypto_generichash()` (BLAKE2b) might be a better choice.
 
 ## Single-part SHA-256 example
 
