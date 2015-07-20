@@ -189,4 +189,4 @@ crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
 crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
 ```
 
-A high-level `crypto_pwhash_*()` API is intentionally not defined until the [Password Hashing Competition](http://password-hashing.net) is over.
+A high-level `crypto_pwhash_*()` API is intentionally not defined yet, but will eventually use the [Argon2](https://groups.google.com/forum/#!topic/crypto-competitions/3QNdmwBS98o) function in its final version.
