@@ -4,6 +4,7 @@
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)
 * Clojure: [caesium](https://github.com/lvh/caesium)
+* Clojure: [naclj](https://github.com/franks42/naclj)
 * Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
 * Dylan: [Dylium](https://github.com/LoicMaury/Dylium)
