@@ -74,6 +74,6 @@ ephemeral_pk || box(m, recipient_pk, ephemeral_sk, nonce=blake2b(ephemeral_pk ||
 
 ## Availability
 
-`crypto_seal` was introduced in Sodium 1.0.3.
+`crypto_box_seal` was introduced in Sodium 1.0.3.
 
 
