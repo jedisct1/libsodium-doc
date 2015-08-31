@@ -49,5 +49,6 @@
 * Ruby: [Sodium](https://github.com/stouset/sodium)
 * Rust: [Sodium Oxide](https://github.com/dnaq/sodiumoxide)
 * Rust: [libsodium-sys](https://github.com/zonyitoo/libsodium-sys)
+* Swift: [NaOH](https://github.com/drewcrawford/NaOH)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
 
