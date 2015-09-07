@@ -87,7 +87,7 @@ int crypto_hash_sha512_final(crypto_hash_sha512_state *state,
 
 The state must be initialized with `crypto_hash_sha*_init()` before updating or finalizing it.
 
-After `crypto_hash_sha*_final()`, the state should not be used any more, unless it is reinitializated using `crypto_hash_sha*_init()`.
+After `crypto_hash_sha*_final()`, the state should not be used any more, unless it is reinitialized using `crypto_hash_sha*_init()`.
 
 ## Constants
 
