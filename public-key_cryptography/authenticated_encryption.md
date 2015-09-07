@@ -105,7 +105,7 @@ The `crypto_box_open_easy()` function verifies and decrypts a ciphertext produce
 `c` is a pointer to an authentication tag + encrypted message combination, as produced by `crypto_box_easy()`.
 `clen` is the length of this authentication tag + encrypted message combination. Put differently, `clen` is the number of bytes written by `crypto_box_easy()`, which is `crypto_box_MACBYTES` + the length of the message.
 
-The nonce `n` and thas to match the nonce used to encrypt and authenticate the message.
+The nonce `n` has to match the nonce used to encrypt and authenticate the message.
 
 `pk` is the public key of the sender that encrypted the message. `sk` is the secret key of the recipient that is willing to verify and decrypt it.
 
