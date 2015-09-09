@@ -49,7 +49,7 @@ The `crypto_secretbox_easy()` function encrypts a message `m` whose length is `m
 
 This function writes the authentication tag, whose length is `crypto_secretbox_MACBYTES` bytes, in `c`, immediately followed by the encrypted message, whose length is the same as the plaintext: `mlen`.
 
-`c` and `m` can overlap, making in-place encryption possible. However do not forget that `crypto_secretbox_MACBYTES` extra bytes are required to prepend the tag.
+`c` and `m`  can point to the same address, making in-place encryption possible. If they don't, the regions should not overlap. Do not forget that `crypto_secretbox_MACBYTES` extra bytes are required to prepend the tag.
 
 ```c
 int crypto_secretbox_open_easy(unsigned char *m, const unsigned char *c,
@@ -67,7 +67,7 @@ The nonce `n` and the key `k` have to match the used to encrypt and authenticate
 The function returns `-1` if the verification fails, and `0` on success.
 On success, the decrypted message is stored into `m`.
 
-`m` and `c` can overlap, making in-place decryption possible.
+`m` and `c` can point to the same address, making in-place decryption possible. If they don't, the regions should not overlap.
 
 ## Detached mode
 
