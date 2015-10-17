@@ -3,32 +3,39 @@
 ## Example
 
 ```c
+#include <sodium.h>
+
 #define MESSAGE (const unsigned char *) "test"
 #define MESSAGE_LEN 4
 #define ADDITIONAL_DATA (const unsigned char *) "123456"
 #define ADDITIONAL_DATA_LEN 6
 
-unsigned char nonce[crypto_aead_chacha20poly1305_NPUBBYTES];
-unsigned char key[crypto_aead_chacha20poly1305_KEYBYTES];
-unsigned char ciphertext[MESSAGE_LEN + crypto_aead_chacha20poly1305_ABYTES];
+unsigned char nonce[crypto_aead_aes256gcm_NPUBBYTES];
+unsigned char key[crypto_aead_aes256gcm_KEYBYTES];
+unsigned char ciphertext[MESSAGE_LEN + crypto_aead_aes256gcm_ABYTES];
 unsigned long long ciphertext_len;
+
+sodium_init();
+if (crypto_aead_aes256gcm_is_available() == 0) {
+    abort(); /* Not available on this CPU */
+}
 
 randombytes_buf(key, sizeof key);
 randombytes_buf(nonce, sizeof nonce);
 
-crypto_aead_chacha20poly1305_encrypt(ciphertext, &ciphertext_len,
-                                     MESSAGE, MESSAGE_LEN,
-                                     ADDITIONAL_DATA, ADDITIONAL_DATA_LEN,
-                                     NULL, nonce, key);
+crypto_aead_aes256gcm_encrypt(ciphertext, &ciphertext_len,
+                              MESSAGE, MESSAGE_LEN,
+                              ADDITIONAL_DATA, ADDITIONAL_DATA_LEN,
+                              NULL, nonce, key);
 
 unsigned char decrypted[MESSAGE_LEN];
 unsigned long long decrypted_len;
-if (crypto_aead_chacha20poly1305_decrypt(decrypted, &decrypted_len,
-                                         NULL,
-                                         ciphertext, ciphertext_len,
-                                         ADDITIONAL_DATA,
-                                         ADDITIONAL_DATA_LEN,
-                                         nonce, key) != 0) {
+if (crypto_aead_aes256gcm_decrypt(decrypted, &decrypted_len,
+                                  NULL,
+                                  ciphertext, ciphertext_len,
+                                  ADDITIONAL_DATA,
+                                  ADDITIONAL_DATA_LEN,
+                                  nonce, key) != 0) {
     /* message forged! */
 }
 ```
@@ -46,42 +53,42 @@ The chosen construction uses encrypt-then-MAC and decryption will never be perfo
 ## Usage
 
 ```c
-int crypto_aead_chacha20poly1305_encrypt(unsigned char *c,
-                                         unsigned long long *clen,
-                                         const unsigned char *m,
-                                         unsigned long long mlen,
-                                         const unsigned char *ad,
-                                         unsigned long long adlen,
-                                         const unsigned char *nsec,
-                                         const unsigned char *npub,
-                                         const unsigned char *k);
+int crypto_aead_aes256gcm_encrypt(unsigned char *c,
+                                  unsigned long long *clen,
+                                  const unsigned char *m,
+                                  unsigned long long mlen,
+                                  const unsigned char *ad,
+                                  unsigned long long adlen,
+                                  const unsigned char *nsec,
+                                  const unsigned char *npub,
+                                  const unsigned char *k);
 ```
 
-The `crypto_aead_chacha20poly1305_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_chacha20poly1305_NPUBBYTES` bytes).
+The `crypto_aead_aes256gcm_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
 `ad` can also be a `NULL` pointer if no additional data are required.
 
-At most `mlen + crypto_aead_chacha20poly1305_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` if `clen` is not a `NULL` pointer.
+At most `mlen + crypto_aead_aes256gcm_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` if `clen` is not a `NULL` pointer.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
 The public nonce `npub` should never ever be reused with the same key. The recommended way to generate it is to use `randombytes_buf()` for the first message, and increment it for each subsequent message using the same key.
 
 ```c
-int crypto_aead_chacha20poly1305_decrypt(unsigned char *m,
-                                         unsigned long long *mlen,
-                                         unsigned char *nsec,
-                                         const unsigned char *c,
-                                         unsigned long long clen,
-                                         const unsigned char *ad,
-                                         unsigned long long adlen,
-                                         const unsigned char *npub,
-                                         const unsigned char *k);
+int crypto_aead_aes256gcm_decrypt(unsigned char *m,
+                                  unsigned long long *mlen,
+                                  unsigned char *nsec,
+                                  const unsigned char *c,
+                                  unsigned long long clen,
+                                  const unsigned char *ad,
+                                  unsigned long long adlen,
+                                  const unsigned char *npub,
+                                  const unsigned char *k);
 ```
 
-The `crypto_aead_chacha20poly1305_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_chacha20poly1305_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+The `crypto_aead_aes256gcm_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
 
 `ad` can be a `NULL` pointer if no additional data are required.
 
@@ -91,28 +98,14 @@ The function returns `-1` is the verification fails.
 
 If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
 
-At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
+At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
 
 ## Constants
 
-- `crypto_aead_chacha20poly1305_KEYBYTES`
-- `crypto_aead_chacha20poly1305_NPUBBYTES`
-- `crypto_aead_chacha20poly1305_ABYTES`
-
-## Algorithm details
-
-- Encryption: ChaCha20 stream cipher
-- Authentication: Poly1305 MAC
+- `crypto_aead_aes256gcm_KEYBYTES`
+- `crypto_aead_aes256gcm_NPUBBYTES`
+- `crypto_aead_aes256gcm_ABYTES`
 
 ## Notes
 
-The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
-
-The API conforms to the proposed API for the CAESAR competition.
-
-The construction conforms to the [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04) draft, and Sodium's implementation is fully interoperable with other current implementations.
-
-The [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539) RFC published later slightly changes the construction.
-That construction is also available in Sodium as `crypto_aead_chacha20poly1305_ietf_encrypt()` and `crypto_aead_chacha20poly1305_ietf_decrypt()`. It features a longer nonce, which is `crypto_stream_chacha20_IETF_NONCEBYTES` bytes long.
-
-A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
+The nonce is 192 bits long.
