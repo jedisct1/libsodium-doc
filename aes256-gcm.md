@@ -106,6 +106,10 @@ At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
 - `crypto_aead_aes256gcm_NPUBBYTES`
 - `crypto_aead_aes256gcm_ABYTES`
 
+## Data types
+
+- `crypto_aead_aes256gcm_state`
+
 ## Notes
 
 The nonce is 192 bits long and doesn't have to be confidential, but it should be used with just one message for a particular pair of public and secret keys. Avoid nonce reuse is essential for this construction.
