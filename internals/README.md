@@ -74,7 +74,7 @@ The test suite has to always pass on the following environments:
 - ArchLinux/i386 and /amd64 using clang `-fsanitize=undefined` and Valgrind
 - OSX using gcc 5.1 and `-fsanitize=undefined`
 - OSX using Xcode 6.4
-- Windows 10 using Visual Studio 2010, 2012, 2013
+- Windows 10 using Visual Studio 2010, 2012, 2013, 2015
 - msys2 using mingw32 and mingw64
 - ArchLinux/armv6
 - TomatoUSB/mips
