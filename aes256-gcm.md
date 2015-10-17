@@ -48,9 +48,29 @@ This operation:
 
 A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
-The chosen construction uses encrypt-then-MAC and decryption will never be performed, even partially, before verification.
+It can also be used as a MAC, with an empty message.
+
+Decryption will never be performed, even partially, before verification.
+
+When supported by the CPU, AES-GCM is the fastest AEAD cipher available in this library.
+
+## Limitations
+
+The current implementation of this construction is hardware-accelerated and requires the Intel SSSE3 extensions, and the `aesni` and `pclmul` instructions.
+
+Intel Westmere processors (introduced in 2010) and newer meet the requirements.
+
+There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
 
 ## Usage
+
+```c
+int crypto_aes_aes256gcm_is_available(void);
+```
+
+Returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
+
+The library must have been initialized with `sodium_init()` prior to calling this function. 
 
 ```c
 int crypto_aead_aes256gcm_encrypt(unsigned char *c,
