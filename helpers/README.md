@@ -63,6 +63,21 @@ The `sodium_increment()` function takes a pointer to an arbitrary-long unsigned 
 
 It runs in constant-time for a given length, and considers the number to be encoded in little-endian format.
 
-`sodium_increment()` can be used to increment nonces.
+`sodium_increment()` can be used to increment nonces in constant time.
 
 This function was introduced in libsodium 1.0.4.
+
+## Comparing large numbers
+
+```c
+int sodium_compare(const unsigned char *b1_, const unsigned char *b2, size_t len);
+```
+The `sodium_compare()` function returns `-1` if `b1_`, as a number encoded in little-endian format, is lower than `b2_`.
+
+It returns `1` if, using the same encoding, `b1_` is greater than `b2_`.
+
+Finally, it returns `0` if `b1_` and `b2_` are identical.
+
+This function can be used to compare nonces and counters in constant time.
+
+In order to check only for equality, `sodium_memcmp()` is preferred, as it is faster.
