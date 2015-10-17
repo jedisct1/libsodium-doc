@@ -31,6 +31,7 @@
        * [AES-128-CTR](advanced/aes-128-ctr.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
+   * AES256-GCM
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
 
