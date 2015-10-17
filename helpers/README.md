@@ -81,3 +81,5 @@ Finally, it returns `0` if `b1_` and `b2_` are identical.
 This function can be used to compare nonces and counters in constant time.
 
 In order to check only for equality, `sodium_memcmp()` is preferred, as it is faster.
+
+`sodium_compare()` was introduced in libsodium 1.0.4.
