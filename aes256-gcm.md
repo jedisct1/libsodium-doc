@@ -122,7 +122,7 @@ At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
 
 ## Precalculation interface
 
-Applications that encrypt several messages using the same key can gain speed by expanding the AES key only once, via the precalculation interface.
+Applications that encrypt several messages using the same key can gain a little speed by expanding the AES key only once, via the precalculation interface.
 
 ```
 int crypto_aead_aes256gcm_beforenm(crypto_aead_aes256gcm_state *ctx_,
