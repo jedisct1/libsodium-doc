@@ -1,4 +1,4 @@
-# Authenticated Encryption with Additional Data using AES256-GCM
+# Authenticated Encryption with Additional Data using AES-GCM
 
 ## Example
 
