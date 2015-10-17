@@ -113,6 +113,6 @@ The API conforms to the proposed API for the CAESAR competition.
 The construction conforms to the [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04) draft, and Sodium's implementation is fully interoperable with other current implementations.
 
 The [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539) RFC published later slightly changes the construction.
-That construction is also available in the current development code of Sodium as `crypto_aead_chacha20poly1305_ietf_encrypt()` and `crypto_aead_chacha20poly1305_ietf_decrypt()`. It features a longer nonce, which is `crypto_stream_chacha20_IETF_NONCEBYTES` bytes long.
+That construction is also available in Sodium as `crypto_aead_chacha20poly1305_ietf_encrypt()` and `crypto_aead_chacha20poly1305_ietf_decrypt()`. It features a longer nonce, which is `crypto_stream_chacha20_IETF_NONCEBYTES` bytes long.
 
 A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
