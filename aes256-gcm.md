@@ -120,6 +120,10 @@ If the verification succeeds, the function returns `0`, puts the decrypted messa
 
 At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
 
+## Precalculation interface
+
+Applications that encrypt several messages using the same key can 
+
 ## Constants
 
 - `crypto_aead_aes256gcm_KEYBYTES`
