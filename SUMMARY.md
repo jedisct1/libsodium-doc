@@ -20,6 +20,7 @@
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
 * [Advanced](advanced/README.md)
+   * AES256-GCM
    * [SHA-2](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
    * [One-time authentication](advanced/poly1305.md)
@@ -31,7 +32,6 @@
        * [AES-128-CTR](advanced/aes-128-ctr.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
-   * AES256-GCM
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
 
