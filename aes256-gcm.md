@@ -56,7 +56,7 @@ When supported by the CPU, AES-GCM is the fastest AEAD cipher available in this 
 
 ## Limitations
 
-The current implementation of this construction is hardware-accelerated and requires the Intel SSSE3 extensions, and the `aesni` and `pclmul` instructions.
+The current implementation of this construction is hardware-accelerated and requires the Intel SSSE3 extensions, as well as the `aesni` and `pclmul` instructions.
 
 Intel Westmere processors (introduced in 2010) and newer meet the requirements.
 
