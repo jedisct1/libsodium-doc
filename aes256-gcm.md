@@ -171,7 +171,7 @@ The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt
 
 ## Notes
 
-The nonce is 192 bits long and doesn't have to be confidential, but it should be used with just one message for a particular pair of public and secret keys. Avoid nonce reuse is essential for this construction.
+The nonce is 192 bits long and doesn't have to be confidential, but it should be used with just one message for a particular pair of public and secret keys. Avoiding nonce reuse is essential for this construction.
 
 One easy way to generate a nonce is to use `randombytes_buf()`; considering the size of nonces the risk of any random collisions is negligible. For some applications, if you wish to use nonces to detect missing messages or to ignore replayed messages, it is also acceptable to use a simple incrementing counter as a nonce.
 
