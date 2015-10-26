@@ -73,11 +73,11 @@ The test suite has to always pass on the following environments:
 - OpenBSD/amd64 using `gcc -fstack-protector-strong -fstack-shuffle`
 - ArchLinux/i386 and /amd64 using clang `-fsanitize=undefined` and Valgrind
 - OSX using gcc 5.1 and `-fsanitize=undefined`
-- OSX using Xcode 6.4
+- OSX using Xcode 7
+- OSX using CompCert
 - Windows 10 using Visual Studio 2010, 2012, 2013, 2015
 - msys2 using mingw32 and mingw64
 - ArchLinux/armv6
-- TomatoUSB/mips
 - Debian/sparc
 - Debian/ppc
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
