@@ -34,11 +34,11 @@ unsigned char sharedkey_by_server[crypto_generichash_BYTES];
 crypto_generichash_state h;
 
 /* Create client's secret and public keys */
-randombytes(client_secretkey, sizeof client_secretkey);
+randombytes_buf(client_secretkey, sizeof client_secretkey);
 crypto_scalarmult_base(client_publickey, client_secretkey);
 
 /* Create server's secret and public keys */
-randombytes(server_secretkey, sizeof server_secretkey);
+randombytes_buf(server_secretkey, sizeof server_secretkey);
 crypto_scalarmult_base(server_publickey, server_secretkey);
 
 /* The client derives a shared key from its secret key and the server's public key */
