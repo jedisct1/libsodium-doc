@@ -30,7 +30,8 @@ crypto_aead_aes256gcm_encrypt(ciphertext, &ciphertext_len,
 
 unsigned char decrypted[MESSAGE_LEN];
 unsigned long long decrypted_len;
-if (crypto_aead_aes256gcm_decrypt(decrypted, &decrypted_len,
+if (ciphertext_len < crypto_aead_aes256gcm_ABYTES ||
+    crypto_aead_aes256gcm_decrypt(decrypted, &decrypted_len,
                                   NULL,
                                   ciphertext, ciphertext_len,
                                   ADDITIONAL_DATA,
@@ -110,7 +111,8 @@ int crypto_aead_aes256gcm_decrypt(unsigned char *m,
                                   const unsigned char *k);
 ```
 
-The `crypto_aead_aes256gcm_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+The `crypto_aead_aes256gcm_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+`clen` is the ciphertext length in bytes with the authenticator, so it has to be at least `aead_aes256gcm_ABYTES`.
 
 `ad` can be a `NULL` pointer if no additional data are required.
 
