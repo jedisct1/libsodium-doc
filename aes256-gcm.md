@@ -94,6 +94,8 @@ At most `mlen + crypto_aead_aes256gcm_ABYTES` bytes are put into `c`, and the ac
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
+The function always returns `0`.
+
 The public nonce `npub` should never ever be reused with the same key. The recommended way to generate it is to use `randombytes_buf()` for the first message, and increment it for each subsequent message using the same key.
 
 ```c
