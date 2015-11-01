@@ -14,7 +14,7 @@ The design choices emphasize security, and "magic constants" have clear rational
 
 And despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
 
-[Version 1.0.5](https://github.com/jedisct1/libsodium/releases) was released on Oct 25, 2015.
+[Version 1.0.6](https://github.com/jedisct1/libsodium/releases) was released on Nov 1, 2015.
 
 ## Downloading libsodium
 
