@@ -183,6 +183,5 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 - `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
 
 - Only use these functions for interoperability with 3rd party
-services. For everything else, you should probably use
-`crypto_auth_detached()`/`crypto_auth_verify_detached()` or
-`crypto_generichash_*()` instead.
+services. For everything else, you should probably use `crypto_auth()`/
+`crypto_auth_verify()` or `crypto_generichash_*()` instead.
