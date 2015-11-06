@@ -62,7 +62,7 @@ New features will be gladly implemented provided that they are not redundant and
 - Consider [Gitian](https://gitian.org/)
 - Complete the sodium-validation project
 - Optimized implementations for ARM w/NEON
-- Optimized implementations for x86_64
+- AVX optimized Curve25119 [DONE]
 - Precomputed interface for crypto_box_easy() [DONE]
 - First-class support for Javascript [DONE]
 - SIMD implementations of ChaCha20
