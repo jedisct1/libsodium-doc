@@ -57,6 +57,12 @@ run on the native platform.
 Note: `--specs=nosys.specs` is only required for the ARM compilation
 toolchain.
 
+## Stable branch
+
+We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
+
+However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages are being prepared.
+
 ## Integrity checking
 
 The following PGP public key (2B6F76DA) can be used to verify the
