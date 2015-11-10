@@ -70,7 +70,7 @@ Distribution files can be verified with [Minisign](https://jedisct1.github.io/mi
 RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3
 ```
 
-Or with PGP and the following RSA key:
+Or with GPG and the following RSA key:
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
