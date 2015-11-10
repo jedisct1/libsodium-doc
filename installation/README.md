@@ -61,7 +61,7 @@ toolchain.
 
 We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
 
-However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages are being prepared.
+However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
 
 ## Integrity checking
 
