@@ -65,9 +65,12 @@ However, if cloning a git repository happens to be more convenient, the [stable]
 
 ## Integrity checking
 
-The following PGP public key (2B6F76DA) can be used to verify the
-signature of the distributed files.
+Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
+```
+RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3
+```
 
+Or with PGP and the following RSA key:
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
