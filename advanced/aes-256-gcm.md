@@ -66,7 +66,7 @@ There are no plans to support non hardware-accelerated implementations of AES-GC
 ## Usage
 
 ```c
-int crypto_aes_aes256gcm_is_available(void);
+int crypto_aead_aes256gcm_is_available(void);
 ```
 
 Returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
