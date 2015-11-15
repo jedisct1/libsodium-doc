@@ -18,13 +18,6 @@ $ make && make check
 # make install
 ```
 
-Pre-compiled Win32 packages are available for download at the same
-location.
-
-Integrity of source tarballs can currently be checked using PGP or
-verified DNS queries (`dig +dnssec +short txt <file>.download.libsodium.org`
-returns the SHA-256 of any file available for download).
-
 ## Pre-built libraries
 
 [Pre-built x86 and x64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MingW32 and MingW64.
