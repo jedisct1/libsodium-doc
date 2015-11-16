@@ -175,10 +175,7 @@ The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt
 
 ## Notes
 
-The nonce is 192 bits long and doesn't have to be confidential, but it should be used with just one message for a particular pair of public and secret keys. Avoiding nonce reuse is essential for this construction.
-
-One easy way to generate a nonce is to use `randombytes_buf()`; considering the size of nonces the risk of any random collisions is negligible. For some applications, if you wish to use nonces to detect missing messages or to ignore replayed messages, it is also acceptable to use a simple incrementing counter as a nonce.
-
-When doing so you must ensure that the same value can never be re-used (for example you may have multiple threads or even hosts generating messages using the same key pairs).
+The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 Support for AES256-GCM was introduced in Libsodium 1.0.4.
