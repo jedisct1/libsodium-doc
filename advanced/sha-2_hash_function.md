@@ -95,10 +95,9 @@ SHA512-256 is also available via the higher-level interface `crypto_hash()`.
 
 - `crypto_hash_sha256_BYTES`
 - `crypto_hash_sha512_BYTES`
-- `crypto_hash_sha512256_BYTES`
 
 ## Data types
 
 - `crypto_hash_sha256_state`
 - `crypto_hash_sha512_state`
-- `crypto_hash_sha512256_state`
+
