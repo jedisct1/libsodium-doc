@@ -142,7 +142,7 @@ BLAKE2b
 
 ## Notes
 
-The `crypto_generichash_*` function set is implemented using BLAKE2b, a simple, standardized ([RFC 7693](https://www.rfc-editor.org/authors/rfc7693.txt)) secure hash function that is as strong as SHA-3 but faster than SHA-1 and MD5.
+The `crypto_generichash_*` function set is implemented using BLAKE2b, a simple, standardized ([RFC 7693](https://www.rfc-editor.org/rfc/rfc7693.txt)) secure hash function that is as strong as SHA-3 but faster than SHA-1 and MD5.
 
 Unlike MD5, SHA-1 and SHA-256, this function is safe against hash length extension attacks.
 
