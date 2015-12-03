@@ -44,6 +44,7 @@
 * Python: [LibNaCl](https://github.com/saltstack/libnacl)
 * Python: [PyNaCl](https://github.com/pyca/pynacl)
 * Python: [PySodium](https://github.com/stef/pysodium)
+* Q/KDB: [Qsalt](https://github.com/geocar/qsalt)
 * R: [Sodium](https://github.com/jeroenooms/sodium)
 * Racket: [Natrium](https://github.com/KirisurfProject/natrium-crypt)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
