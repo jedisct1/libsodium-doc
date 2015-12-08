@@ -37,6 +37,7 @@ unsigned char sk[crypto_sign_SECRETKEYBYTES];
 crypto_sign_keypair(pk, sk);
 
 unsigned char sig[crypto_sign_BYTES];
+
 crypto_sign_detached(sig, NULL, MESSAGE, MESSAGE_LEN, sk);
 
 if (crypto_sign_verify_detached(sig, MESSAGE, MESSAGE_LEN, pk) != 0) {
