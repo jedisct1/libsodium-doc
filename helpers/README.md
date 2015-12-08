@@ -104,5 +104,4 @@ int sodium_is_zero(const unsigned char *n, const size_t nlen);
 This function returns `1` is the `nlen` bytes vector pointed by `n` contains only zeros.
 It returns `0` if non-zero bits are found.
 
-
-
+It evaluates in constant time for a given length.
