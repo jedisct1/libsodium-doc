@@ -92,4 +92,4 @@ Given `b1_` and `b2_`, two `len` bytes numbers encoded in little-endian format, 
 
 The comparison is done in constant time for a given length.
 
-This function can be used with nonces, in order to mitigate replay attacks.
+This function can be used with nonces, in order to prevent replay attacks.
