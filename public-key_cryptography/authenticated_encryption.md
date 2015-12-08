@@ -18,8 +18,10 @@ crypto_box_keypair(bob_publickey, bob_secretkey);
 unsigned char nonce[crypto_box_NONCEBYTES];
 unsigned char ciphertext[CIPHERTEXT_LEN];
 randombytes_buf(nonce, sizeof nonce);
-crypto_box_easy(ciphertext, MESSAGE, MESSAGE_LEN, nonce,
-                bob_publickey, alice_secretkey);
+if (crypto_box_easy(ciphertext, MESSAGE, MESSAGE_LEN, nonce,
+                    bob_publickey, alice_secretkey) != 0) {
+    /* error */
+}
 
 unsigned char decrypted[MESSAGE_LEN];
 if (crypto_box_open_easy(decrypted, ciphertext, CIPHERTEXT_LEN, nonce,
