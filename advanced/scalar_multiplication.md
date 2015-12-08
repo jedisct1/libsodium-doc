@@ -43,7 +43,9 @@ crypto_scalarmult_base(server_publickey, server_secretkey);
 
 /* The client derives a shared key from its secret key and the server's public key */
 /* shared key = h(q || client_publickey || server_publickey) */
-crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey);
+if (crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey) != 0) {
+    /* Error */
+}
 crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
 crypto_generichash_update(&h, scalarmult_q_by_client, sizeof scalarmult_q_by_client);
 crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
