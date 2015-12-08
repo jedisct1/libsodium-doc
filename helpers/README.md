@@ -98,7 +98,7 @@ It was introduced in libsodium 1.0.6.
 
 ## Testing for all zeros
 
-```
+```c
 int sodium_is_zero(const unsigned char *n, const size_t nlen);
 ```
 
