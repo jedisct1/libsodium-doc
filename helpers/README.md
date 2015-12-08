@@ -91,3 +91,5 @@ Given `b1_` and `b2_`, two `len` bytes numbers encoded in little-endian format, 
 - `1` if `b1_` is greater than `b2_` 
 
 The comparison is done in constant time for a given length.
+
+This function was introduced in libsodium 1.0.6.
