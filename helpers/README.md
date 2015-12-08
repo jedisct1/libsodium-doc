@@ -67,6 +67,18 @@ It runs in constant-time for a given length, and considers the number to be enco
 
 This function was introduced in libsodium 1.0.4.
 
+## Large numbers addition
+
+```c
+void sodium_add(unsigned char *a, const unsigned char *b, const size_t len);
+```
+
+The `sodium_add()` function takes two pointers to unsigned numbers encoded in little-endian format, `a` and `b`, both of size `len` bytes.
+
+It computes `a` + `b` in constant time, and overwrites `a` with the result.
+
+This function was introduced in libsodium 1.0.7.
+
 ## Comparing large numbers
 
 ```c
