@@ -94,3 +94,15 @@ The comparison is done in constant time for a given length.
 
 This function can be used with nonces, in order to prevent replay attacks.
 It was introduced in libsodium 1.0.6.
+
+## Testing for all zeros
+
+```
+int sodium_is_zero(const unsigned char *n, const size_t nlen);
+```
+
+This function returns `1` is the `nlen` bytes vector pointed by `n` contains only zeros.
+It returns `0` if non-zero bits are found.
+
+
+
