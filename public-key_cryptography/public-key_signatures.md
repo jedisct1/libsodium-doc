@@ -14,7 +14,7 @@ unsigned char signed_message[crypto_sign_BYTES + MESSAGE_LEN];
 unsigned long long signed_message_len;
 
 crypto_sign(signed_message, &signed_message_len,
-                MESSAGE, MESSAGE_LEN, sk);
+            MESSAGE, MESSAGE_LEN, sk);
 
 unsigned char unsigned_message[MESSAGE_LEN];
 unsigned long long unsigned_message_len;
