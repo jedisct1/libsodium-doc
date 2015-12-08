@@ -67,3 +67,11 @@ It runs in constant-time for a given length, and considers the number to be enco
 
 This function was introduced in libsodium 1.0.4.
 
+## Comparing large numbers
+
+```c
+int sodium_compare(const void * const b1_, const void * const b2_, size_t len);
+```
+
+Given two numbers encoded as little-endian
+This function returns `-1` is `b1_` is less than `_b2`
