@@ -1,6 +1,6 @@
 # Helpers
 
-## Constant-time comparison
+## Constant-time test for equality
 
 ```c
 int sodium_memcmp(const void * const b1_, const void * const b2_, size_t len);
