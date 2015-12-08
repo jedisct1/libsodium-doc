@@ -73,7 +73,7 @@ This function was introduced in libsodium 1.0.4.
 void sodium_add(unsigned char *a, const unsigned char *b, const size_t len);
 ```
 
-The `sodium_add()` function takes two pointers to unsigned numbers encoded in little-endian format, `a` and `b`, both of size `len` bytes.
+The `sodium_add()` function accepts two pointers to unsigned numbers encoded in little-endian format, `a` and `b`, both of size `len` bytes.
 
 It computes `a` + `b` in constant time, and overwrites `a` with the result.
 
