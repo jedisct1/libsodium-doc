@@ -67,7 +67,7 @@ It runs in constant-time for a given length, and considers the number to be enco
 
 This function was introduced in libsodium 1.0.4.
 
-## Large numbers addition
+## Addition of large numbers
 
 ```c
 void sodium_add(unsigned char *a, const unsigned char *b, const size_t len);
