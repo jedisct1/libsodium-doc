@@ -105,3 +105,5 @@ This function returns `1` is the `nlen` bytes vector pointed by `n` contains onl
 It returns `0` if non-zero bits are found.
 
 Its execution time is constant for a given length.
+
+This function was introduced in libsodium 1.0.7.
