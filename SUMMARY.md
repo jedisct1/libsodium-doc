@@ -29,7 +29,6 @@
        * [ChaCha20](advanced/chacha20.md)
        * [Salsa20](advanced/salsa20.md)
        * [XSalsa20](advanced/xsalsa20.md)
-       * [AES-128-CTR](advanced/aes-128-ctr.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
    * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
