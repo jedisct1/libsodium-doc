@@ -60,16 +60,19 @@ New features will be gladly implemented provided that they are not redundant and
 - Improve documentation
 - Consider `getrandom(2)` [DONE]
 - Consider [Gitian](https://gitian.org/)
-- Complete the sodium-validation project
+- Complete the sodium-validation project [IN PROGRESS]
 - Optimized implementations for ARM w/NEON
 - AVX optimized Curve25119 [DONE]
 - Precomputed interface for crypto_box_easy() [DONE]
 - First-class support for Javascript [DONE]
-- SIMD implementations of ChaCha20
+- SIMD implementations of ChaCha20 [DONE]
 - SIMD implementations of Poly1305 [DONE]
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter [DONE]
 - IETF-compatible chacha20poly1305 implementation [DONE]
 - Ed448-Goldilocks
 - SSE-optimized BLAKE2b implementation [DONE]
 - AES-GCM [DONE]
-- Argon2i as crypto_pwhash
+- Argon2i as crypto_pwhash [IN PROGRESS]
+- Multithreaded crypto_pwhash
+- High-level key exchange API
+- Generic subkey derivation API
