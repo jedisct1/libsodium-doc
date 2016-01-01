@@ -12,6 +12,7 @@
 * Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
+* Erlang: [Erlang-Libsodium](https://github.com/potatosalad/erlang-libsodium)
 * Erlang: [Salt](https://github.com/freza/salt)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
