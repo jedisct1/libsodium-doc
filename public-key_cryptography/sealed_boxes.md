@@ -65,7 +65,7 @@ This function doesn't require passing the public key of the sender, as the ciphe
 
 ## Algorithm details
 
-Sealed boxes leverage the `crypto_box` construction (Curve25519, XSalsa20-Poly1305).
+Sealed boxes leverage the `crypto_box` construction (X25519, XSalsa20-Poly1305).
 
 The format of a sealed box is
 ```
