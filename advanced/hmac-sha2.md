@@ -1,6 +1,6 @@
 # HMAC-SHA-2
 
-Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512/256 (truncated HMAC-SHA-512) are provided.
+Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512-256 (truncated HMAC-SHA-512) are provided.
 
 If required, a streaming API is  available to process a message as a sequence of multiple chunks.
 
@@ -124,9 +124,9 @@ int crypto_auth_hmacsha512_final(crypto_auth_hmacsha512_state *state,
                                  unsigned char *out);
 ```
 
-### HMAC-SHA-512/256
+### HMAC-SHA-512-256
 
-HMAC-SHA-512/256 is implemented as HMAC-SHA-512 with the output truncated to 256 bits. This is slightly faster than HMAC-SHA-256.
+HMAC-SHA-512-256 is implemented as HMAC-SHA-512 with the output truncated to 256 bits. This is slightly faster than HMAC-SHA-256.
 
 ```c
 int crypto_auth_hmacsha512256(unsigned char *out,

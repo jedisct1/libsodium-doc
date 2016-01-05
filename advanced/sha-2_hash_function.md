@@ -89,7 +89,7 @@ The state must be initialized with `crypto_hash_sha*_init()` before updating or 
 
 After `crypto_hash_sha*_final()`, the state should not be used any more, unless it is reinitialized using `crypto_hash_sha*_init()`.
 
-SHA512-256 is also available via the higher-level interface `crypto_hash()`.
+SHA-512-256 is also available via the higher-level interface `crypto_hash()`.
 
 ## Constants
 
