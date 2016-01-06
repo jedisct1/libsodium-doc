@@ -200,7 +200,7 @@ Like any secret key, a precalculated shared key should be wiped from memory (for
 
 ## Algorithm details
 
-- Key exchange: Curve25519
+- Key exchange: X25519
 - Encryption: XSalsa20 stream cipher
 - Authentication: Poly1305 MAC
 

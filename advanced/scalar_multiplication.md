@@ -1,6 +1,6 @@
 # Diffie-Hellman function
 
-Sodium provides Curve25519, a state-of-the-art Diffie-Hellman function suitable for a wide variety of applications.
+Sodium provides X25519, a state-of-the-art Diffie-Hellman function suitable for a wide variety of applications.
 
 ## Usage
 
@@ -73,4 +73,4 @@ crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
 ## Algorithm details
 
-- Curve25519
+- X25519 (ECDH over Curve25519)
