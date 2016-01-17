@@ -153,6 +153,6 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 
 ## Notes
 
-`crypto_sign_verify()` and `crypto_sign_verify_detached()` are only
-designed to verify signatures computed using `crypto_sign()` and
-`crypto_sign_detached()`.
+`crypto_sign_verify()` and `crypto_sign_verify_detached()` are only designed to verify signatures computed using `crypto_sign()` and `crypto_sign_detached()`.
+
+The original NaCl `crypto_sign_open()` implementation overwrote 64 bytes after the message. The libsodium implementation doesn't write past the end of the message.

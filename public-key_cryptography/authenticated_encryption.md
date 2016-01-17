@@ -206,5 +206,8 @@ Like any secret key, a precalculated shared key should be wiped from memory (for
 
 ## Notes
 
-These functions are specific to libsodium.
-The original NaCl `crypto_box` API is also fully supported. However, the `_easy` and `_detached` APIs improve usability, and do not add any overhead.
+The original NaCl `crypto_box` API is also supported, albeit not recommended.
+
+`crypto_box()` takes a pointer to 32 bytes before the message, and stores the ciphertext 16 bytes after the destination pointer, the first 16 bytes being overwritten with zeros. `crypto_box_open()` takes a pointer to 16 bytes before the ciphertext and stores the message 32 bytes after the destination pointer, overwriting the first 32 bytes with zeros.
+
+The `_easy` and `_detached` APIs are faster and improve usability by not requiring padding, copying or tricky pointer arithmetic.
