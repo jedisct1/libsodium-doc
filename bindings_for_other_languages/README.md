@@ -8,7 +8,6 @@
 * Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
 * Delphi/FreePascal: [Delphi/FreePascal](https://github.com/alexpmorris/libsodium-delphi)
-* Dylan: [Dylium](https://github.com/LoicMaury/Dylium)
 * Dylan: [libsodium-dylan](https://github.com/dylan-foundry/libsodium-dylan)
 * Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
