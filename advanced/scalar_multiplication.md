@@ -73,4 +73,4 @@ crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
 ## Algorithm details
 
-- X25519 (ECDH over Curve25519)
+- X25519 (ECDH over Curve25519) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
