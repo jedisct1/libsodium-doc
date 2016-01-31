@@ -6,6 +6,8 @@ Libsodium implements two variants of the ChaCha20-Poly1305 construction:
 
 Both are interoperable with other crypto libaries, share the same security properties and are accessible via a similar API.
 
+The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, while the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version.
+
 ## Example
 
 ```c
