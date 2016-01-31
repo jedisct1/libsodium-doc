@@ -116,11 +116,6 @@ At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 - Encryption: ChaCha20 stream cipher
 - Authentication: Poly1305 MAC
 
-## See also
-
-- [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04)
-- [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539)
-
 ## Notes
 
 In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
@@ -129,3 +124,8 @@ To prevent nonce reuse in a client-server protocol, either use different keys fo
 The API conforms to the proposed API for the CAESAR competition.
 
 A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
+
+## See also
+
+- [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04)
+- [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539)
