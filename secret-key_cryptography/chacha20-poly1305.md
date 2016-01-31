@@ -1,4 +1,4 @@
-# Authenticated Encryption with Additional Data
+# Authenticated Encryption with Additional Data using ChaCha20-Poly1305
 
 ## Example
 
