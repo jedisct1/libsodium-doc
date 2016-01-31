@@ -117,7 +117,7 @@ At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 
 ## Notes
 
-The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
+In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 The API conforms to the proposed API for the CAESAR competition.
