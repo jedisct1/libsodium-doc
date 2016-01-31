@@ -109,6 +109,7 @@ At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 - `crypto_aead_chacha20poly1305_KEYBYTES`
 - `crypto_aead_chacha20poly1305_NPUBBYTES`
 - `crypto_aead_chacha20poly1305_ABYTES`
+- `crypto_aead_chacha20poly1305_IETF_NPUBBYTES`
 
 ## Algorithm details
 
