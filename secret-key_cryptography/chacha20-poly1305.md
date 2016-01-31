@@ -68,7 +68,21 @@ int crypto_aead_chacha20poly1305_encrypt(unsigned char *c,
                                          const unsigned char *k);
 ```
 
-The `crypto_aead_chacha20poly1305_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_chacha20poly1305_NPUBBYTES` bytes).
+```c
+int crypto_aead_chacha20poly1305_ietf_encrypt(unsigned char *c,
+                                              unsigned long long *clen,
+                                              const unsigned char *m,
+                                              unsigned long long mlen,
+                                              const unsigned char *ad,
+                                              unsigned long long adlen,
+                                              const unsigned char *nsec,
+                                              const unsigned char *npub,
+                                              const unsigned char *k);
+```
+
+The `crypto_aead_chacha20poly1305_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes), a public nonce `npub` (`crypto_aead_chacha20poly1305_NPUBBYTES` bytes) and the original construction.
+
+The `crypto_aead_chacha20poly1305_ietf_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes), a public nonce `npub` (`crypto_aead_chacha20poly1305_IETF_NPUBBYTES` bytes), and the IETF variant.
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
@@ -92,7 +106,21 @@ int crypto_aead_chacha20poly1305_decrypt(unsigned char *m,
                                          const unsigned char *k);
 ```
 
+```c
+int crypto_aead_chacha20poly1305_ietf_decrypt(unsigned char *m,
+                                              unsigned long long *mlen,
+                                              unsigned char *nsec,
+                                              const unsigned char *c,
+                                              unsigned long long clen,
+                                              const unsigned char *ad,
+                                              unsigned long long adlen,
+                                              const unsigned char *npub,
+                                              const unsigned char *k);
+```
+
 The `crypto_aead_chacha20poly1305_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_chacha20poly1305_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+
+The `crypto_aead_chacha20poly1305_ietf_decrypt()` function implements the IETF variant instead of the original construction.
 
 `ad` can be a `NULL` pointer if no additional data are required.
 
