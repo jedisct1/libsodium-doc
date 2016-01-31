@@ -10,7 +10,7 @@
 * [Secret-key cryptography](secret-key_cryptography/README.md)
    * [Authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
    * [Authentication](secret-key_cryptography/secret-key_authentication.md)
-   * [AEAD](secret-key_cryptography/aead.md)
+   * [AEAD constructions](secret-key_cryptography/aead.md)
        * [AES256-GCM](secret-key_cryptography/aes-256-gcm.md)
        * [ChaCha20-Poly1305](secret-key_cryptography/chacha20-poly1305.md)
 * [Public-key cryptography](public-key_cryptography/README.md)
