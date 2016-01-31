@@ -30,5 +30,6 @@ ChaCha20 is considerably faster than AES in software-only implementations, makin
 
 Poly1305 is a high-speed message authentication code.
 
-The combination of the ChaCha20 stream cipher with the Poly1305 authenticator was proposed in January 2014 as a faster alternative to the well-studied Salsa20-Poly1305 construction. ChaCha20-Poly1305 was implemented in major operating systems, web browsers and crypto libraries. It eventually became an official IETF standard in May 2015.
+The combination of the ChaCha20 stream cipher with the Poly1305 authenticator was proposed in January 2014 as a faster alternative to the well-studied Salsa20-Poly1305 construction. ChaCha20-Poly1305 was implemented in major operating systems, web browsers and crypto libraries shortly after. It eventually became an official IETF standard in May 2015.
 
+The ChaCha20-Poly1305 implementation in Libsodium is portable across all supported architectures, and is fast enough for most applications.
