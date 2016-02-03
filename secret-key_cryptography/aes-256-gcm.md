@@ -133,7 +133,7 @@ int crypto_aead_aes256gcm_beforenm(crypto_aead_aes256gcm_state *ctx_,
                                    const unsigned char *k);
 ```
 
-The `crypto_aead_aes256gcm_beforenm()` function initializes a context `ctx` by expanding the key `k`.
+The `crypto_aead_aes256gcm_beforenm()` function initializes a context `ctx` by expanding the key `k` and always returns `0`.
 
 A 16 bytes alignment is required for the address of `ctx`. The size of this value can be obtained using `sizeof(crypto_aead_aes256gcm_state)`, or `crypto_aead_aes256gcm_statebytes()`.
 
