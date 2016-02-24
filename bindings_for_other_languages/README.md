@@ -7,6 +7,7 @@
 * Clojure: [naclj](https://github.com/franks42/naclj)
 * Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
+* D: [Sodium](https://github.com/carblue/sodium)
 * Delphi/FreePascal: [Delphi/FreePascal](https://github.com/alexpmorris/libsodium-delphi)
 * Dylan: [libsodium-dylan](https://github.com/dylan-foundry/libsodium-dylan)
 * Elixir: [Savory](https://github.com/electricFeel/savory)
