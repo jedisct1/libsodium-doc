@@ -50,6 +50,21 @@ run on the native platform.
 Note: `--specs=nosys.specs` is only required for the ARM compilation
 toolchain.
 
+## Compiling with CompCert
+
+Releases can be compiled using the CompCert compiler. However, when using CompCert, the Autoconf scripts might mistakenly detect byte ordering as big endian even on little endian systems.
+
+You may want to manually define a `LITTLE_ENDIAN` macro in order work around this.
+
+A typical command-line to compile Sodium on a little endian system with CompCert is:
+
+```bash
+env CC=ccomp CPPFLAGS=-DLITTLE_ENDIAN \
+    CFLAGS="-O2 -fstruct-passing" ./configure \
+    --disable-shared --enable-static && \
+make check && make install
+```
+
 ## Stable branch
 
 We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
