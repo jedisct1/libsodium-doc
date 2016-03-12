@@ -92,7 +92,7 @@ The `crypto_sign_open()` function checks that the signed message `sm` whose leng
 
 If the signature is doesn't appear to be valid, the function returns `-1`.
 
-On success, it puts the message with the signature removed into `m`, stores its length into `mlen` and returns `0`.
+On success, it puts the message with the signature removed into `m`, stores its length into `mlen` if `mlen` is not a `NULL` pointer, and returns `0`.
 
 ## Detached mode
 
