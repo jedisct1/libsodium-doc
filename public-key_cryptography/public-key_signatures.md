@@ -80,7 +80,7 @@ The `crypto_sign()` function prepends a signature to a message `m` whose length 
 
 The signed message, which includes the signature + a plain copy of the message, is put into `sm`, and can be up to `crypto_sign_BYTES + mlen` bytes long.
 
-The actual length of the signed message is stored into `smlen`.
+Unless `smlen` is `NULL`, the actual length of the signed message is stored into `smlen`.
 
 ```c
 int crypto_sign_open(unsigned char *m, unsigned long long *mlen,
