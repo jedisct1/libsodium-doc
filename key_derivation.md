@@ -103,3 +103,5 @@ crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
                                      n + crypto_core_hchacha20_INPUTBYTES,
                                      k2);
 ```
+
+A higher-level API will be provided in a future version of the library in order to abstract this.
