@@ -54,3 +54,4 @@ Some companies using Libsodium, possibly in non-opensource products. Send a [pul
 
 - [Digital Ocean](https://www.digitalocean.com/)
 - [OVH](https://www.ovh.com)
+- [Paragon Initiative Enterprises](https://paragonie.com)
