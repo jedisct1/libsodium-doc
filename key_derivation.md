@@ -80,6 +80,9 @@ Optionally, a 16-bytes (`crypto_core_hchacha20_CONSTBYTES`) constant `c` can be 
 The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce:
 
 ```c
+#define MESSAGE (const unsigned char *) "message"
+#define MESSAGE_LEN 7
+
 unsigned char c[crypto_aead_chacha20poly1305_ABYTES + MESSAGE_LEN];
 unsigned char k[crypto_core_hchacha20_KEYBYTES];
 unsigned char k2[crypto_core_hchacha20_OUTPUTBYTES];
@@ -87,7 +90,7 @@ unsigned char n[crypto_core_hchacha20_INPUTBYTES +
                 crypto_aead_chacha20poly1305_NPUBBYTES];
 
 randombytes_buf(k, sizeof k);
-randombytes_buf(n, sizeof n);
+randombytes_buf(n, sizeof n); /* 192-bits nonce */
 
 crypto_core_hchacha20(k2, n, k, NULL);
 
