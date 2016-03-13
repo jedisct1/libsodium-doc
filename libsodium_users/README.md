@@ -1,5 +1,5 @@
 # Applications using libsodium
-Some applications using Libsodium. Send a pull request to add yours to that list.
+Some applications using Libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php and MongoDB based single server messaging platform.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
@@ -34,7 +34,7 @@ Some applications using Libsodium. Send a pull request to add yours to that list
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
 
 # Libraries using libsodium
-Some libraries and frameworks using Libsodium. Send a pull request to add yours to that list.
+Some libraries and frameworks using Libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
@@ -50,7 +50,7 @@ Some libraries and frameworks using Libsodium. Send a pull request to add yours 
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
 
 # Companies using libsodium
-Some companies using Libsodium, possibly in non-opensource products. Send a pull request to add yours to that list.
+Some companies using Libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Digital Ocean](https://www.digitalocean.com/)
 - [OVH](https://www.ovh.com)
