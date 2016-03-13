@@ -58,7 +58,7 @@ Using a counter instead of random nonces is prevents this. However, keeping a st
 
 As an alternative, the nonce can be extended: a key and a part of a long nonce are used as inputs to a pseudorandom function to compute a new key. This subkey and the remaining bits of the long nonce can then be used as parameters for the cipher.
 
-For example, this allows using a 192-bit nonce with a cipher requiring a 64-bit nonce:
+For example, this allows using a 192-bits nonce with a cipher requiring a 64-bits nonce:
 ```
 k = <key>
 n = <192-bit nonce>
@@ -73,9 +73,11 @@ int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
                           const unsigned char *k, const unsigned char *c);
 ```
 
-This function accepts a 256-bits (`crypto_core_hchacha20_KEYBYTES`) secret key `k` as well as a 128-bits (`crypto_core_hchacha20_INPUTBYTES`) input `in`, and outputs a 256-bits (`crypto_core_hchacha20_OUTPUTBYTES`) value indistinguishable from random data without knowing `k`.
+This function accepts a 32 bytes (`crypto_core_hchacha20_KEYBYTES`) secret key `k` as well as a 16 bytes (`crypto_core_hchacha20_INPUTBYTES`) input `in`, and outputs a 32 bytes (`crypto_core_hchacha20_OUTPUTBYTES`) value indistinguishable from random data without knowing `k`.
 
-The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bit nonce:
+Optionally, a 16-bytes (`crypto_core_hchacha20_CONSTBYTES`) constant `c` can be specified to personalize the function to an application. `c` can be left to `NULL` in order to use the default constant.
+
+The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce:
 
 ```c
 unsigned char c[crypto_aead_chacha20poly1305_ABYTES + MESSAGE_LEN];
@@ -90,7 +92,7 @@ randombytes_buf(n, sizeof n);
 crypto_core_hchacha20(k2, n, k, NULL);
 
 assert(crypto_aead_chacha20poly1305_KEYBYTES <= sizeof k2);
-assert(crypto_aead_chacha20poly1305_NPUBBYTES <=
+assert(crypto_aead_chacha20poly1305_NPUBBYTES ==
        (sizeof n) - crypto_core_hchacha20_INPUTBYTES);
 
 crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
