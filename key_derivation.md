@@ -66,7 +66,7 @@ k' = PRF(k, n[0..127])
 c = E(k', n[128..191], m)
 ```
 
-Libsodium provides `crypto_core_hchacha20()` that can be used as a PRF for that purpose:
+Since version 1.0.9, Sodium provides `crypto_core_hchacha20()`, which can be used as a PRF for that purpose:
 
 ```c
 int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
@@ -78,5 +78,23 @@ This function accepts a 256-bits (`crypto_core_hchacha20_KEYBYTES`) secret key `
 The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bit nonce:
 
 ```c
+unsigned char c[crypto_aead_chacha20poly1305_ABYTES + MESSAGE_LEN];
+unsigned char k[crypto_core_hchacha20_KEYBYTES];
+unsigned char k2[crypto_core_hchacha20_OUTPUTBYTES];
+unsigned char n[crypto_core_hchacha20_INPUTBYTES +
+                crypto_aead_chacha20poly1305_NPUBBYTES];
 
+randombytes_buf(k, sizeof k);
+randombytes_buf(n, sizeof n);
+
+crypto_core_hchacha20(k2, n, k, NULL);
+
+assert(crypto_aead_chacha20poly1305_KEYBYTES <= sizeof k2);
+assert(crypto_aead_chacha20poly1305_NPUBBYTES <=
+       sizeof n - crypto_core_hchacha20_INPUTBYTES);
+
+crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
+                                     NULL, 0, NULL,
+                                     n + crypto_core_hchacha20_INPUTBYTES,
+                                     k2);
 ```
