@@ -21,6 +21,7 @@
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
+* [Diffie-Hellman](advanced/scalar_multiplication.md)
 * Key derivation
 * [Advanced](advanced/README.md)
    * [SHA-2](advanced/sha-2_hash_function.md)
