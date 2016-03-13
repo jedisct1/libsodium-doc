@@ -35,4 +35,5 @@
    * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
+* Projects using libsodium
 
