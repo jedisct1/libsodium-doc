@@ -66,7 +66,7 @@ k' = PRF(k, n[0..127])
 c = E(k', n[128..191], m)
 ```
 
-Since version 1.0.9, Sodium provides `crypto_core_hchacha20()`, which can be used as a PRF for that purpose:
+Since version 1.0.9, Sodium provides the `crypto_core_hchacha20()` function, which can be used as a PRF for that purpose:
 
 ```c
 int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
@@ -104,4 +104,4 @@ crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
                                      k2);
 ```
 
-A higher-level API will be provided in a future version of the library in order to abstract this.
+A higher-level API will be provided in a future revision of the library in order to abstract this.
