@@ -23,6 +23,7 @@ designed to protect your Internet traffic.
 - [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a commandline utility which can be used to encrypt files.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
+- [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to setup, as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
@@ -41,6 +42,7 @@ Some libraries and frameworks using Libsodium. Send a pull request to add yours 
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
 - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET
 - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
+- [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption & decryption with libsodium and protobuf for .NET
 
 # Companies using libsodium
 Some companies using Libsodium, possibly in non-opensource products. Send a pull request to add yours to that list.
