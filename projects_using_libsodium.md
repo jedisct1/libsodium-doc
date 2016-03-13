@@ -29,6 +29,8 @@ designed to protect your Internet traffic.
 - [Tinfoil Chat NaCl](https://github.com/maqp/tfc-nacl): TFC-NaCl is a high assurance encryption plugin for the Pidgin IM client.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
 - [Petmail](https://github.com/warner/petmail): A secure communication and file-sharing system.
+- [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
+- [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no restrictions.
 
 # Libraries using libsodium
 Some libraries and frameworks using Libsodium. Send a pull request to add yours to that list.
