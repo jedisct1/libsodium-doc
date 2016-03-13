@@ -17,29 +17,29 @@ Given the master key and a key identifier, a subkey can be deterministically com
 In order to do so, the Blake2 hash function is an efficient alternative to the HKDF contruction:
 
 ```c
-    const unsigned char appid[crypto_generichash_blake2b_PERSONALBYTES] = {
-        'A', ' ', 'S', 'i', 'm', 'p', 'l', 'e', ' ', 'E', 'x', 'a', 'm', 'p', 'l', 'e'
-    };
-    unsigned char keyid[crypto_generichash_blake2b_SALTBYTES] = {0};
-    unsigned char masterkey[64];
-    unsigned char subkey1[16];
-    unsigned char subkey2[32];
+const unsigned char appid[crypto_generichash_blake2b_PERSONALBYTES] = {
+    'A', ' ', 'S', 'i', 'm', 'p', 'l', 'e', ' ', 'E', 'x', 'a', 'm', 'p', 'l', 'e'
+};
+unsigned char keyid[crypto_generichash_blake2b_SALTBYTES] = {0};
+unsigned char masterkey[64];
+unsigned char subkey1[16];
+unsigned char subkey2[32];
 
-    /* Generate a master key */
-    randombytes_buf(masterkey, sizeof masterkey);
+/* Generate a master key */
+randombytes_buf(masterkey, sizeof masterkey);
 
-    /* Derive a first subkey (id=0) */
-    crypto_generichash_blake2b_salt_personal(subkey1, sizeof subkey1,
-                                             NULL, 0,
-                                             masterkey, sizeof masterkey,
-                                             keyid, appid);
+/* Derive a first subkey (id=0) */
+crypto_generichash_blake2b_salt_personal(subkey1, sizeof subkey1,
+                                         NULL, 0,
+                                         masterkey, sizeof masterkey,
+                                         keyid, appid);
 
-    /* Derive a second subkey (id=1) */
-    sodium_increment(keyid, sizeof keyid);
-    crypto_generichash_blake2b_salt_personal(subkey2, sizeof subkey2,
-                                             NULL, 0,
-                                             masterkey, sizeof masterkey,
-                                             keyid, appid);
+/* Derive a second subkey (id=1) */
+sodium_increment(keyid, sizeof keyid);
+crypto_generichash_blake2b_salt_personal(subkey2, sizeof subkey2,
+                                         NULL, 0,
+                                         masterkey, sizeof masterkey,
+                                         keyid, appid);
 ```
 
 The `crypto_generichash_blake2b_salt_personal()` function can be used to derive a subkey of any size from a key of any size, as long as these key sizes are in the 128 to 512 bits interval.
@@ -56,7 +56,7 @@ Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`), ciphers such 
 
 Using a counter instead of random nonces is prevents this. However, keeping a state is not always an option, especially with offline protocols.
 
-As an alternative, the nonce can be extended: a key and a part of a long nonce are used as inputs to a pseudorandom function to compute a new key. This subkey and the remaining bits of the long nonce can then be used as parameters for the cipher. The resulting construction shares the same security properties as the original cipher.
+As an alternative, the nonce can be extended: a key and a part of a long nonce are used as inputs to a pseudorandom function to compute a new key. This subkey and the remaining bits of the long nonce can then be used as parameters for the cipher.
 
 For example, this allows using a 192-bit nonce with a cipher requiring a 64-bit nonce:
 ```
@@ -66,3 +66,17 @@ k' = PRF(k, n[0..127])
 c = E(k', n[128..191], m)
 ```
 
+Libsodium provides `crypto_core_hchacha20()` that can be used as a PRF for that purpose:
+
+```c
+int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
+                          const unsigned char *k, const unsigned char *c);
+```
+
+This function accepts a 256-bits (`crypto_core_hchacha20_KEYBYTES`) secret key `k` as well as a 128-bits (`crypto_core_hchacha20_INPUTBYTES`) input `in`, and outputs a 256-bits (`crypto_core_hchacha20_OUTPUTBYTES`) value indistinguishable from random data without knowing `k`.
+
+The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bit nonce:
+
+```c
+
+```
