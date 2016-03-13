@@ -19,8 +19,11 @@ designed to protect your Internet traffic.
 - [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
 - [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
+- [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
+- [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a commandline utility which can be used to encrypt files.
 
 # Libraries using libsodium
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
+- [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
