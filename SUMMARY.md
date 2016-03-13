@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Projects using libsodium](libsodium_users/README.md)
 * [Installation](installation/README.md)
+* [Projects using libsodium](libsodium_users/README.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
 * [Helpers](helpers/README.md)
