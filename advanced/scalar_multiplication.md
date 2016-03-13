@@ -16,11 +16,13 @@ Given a user's secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `cryp
 int crypto_scalarmult(unsigned char *q, const unsigned char *n,
                       const unsigned char *p);
 ```
-This function can be used to compute a shared secret given a user's secret key and another user's public key.
+This function can be used to compute a shared secret `q` given a user's secret key and another user's public key.
 
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
-Instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
+`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size (≈2^252), and the key distribution is not uniform. 
+For this reason, instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
+This can be achieved with the following code snippet:
 
 ```c
 unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
