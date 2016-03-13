@@ -24,6 +24,8 @@ designed to protect your Internet traffic.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
 - [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
+- [Open Reputation](https://openreputation.net/): An open source decentralized platform that maps identity and reputation onto the Internet-of-things.
+- [Tbak](https://github.com/tux3/tbak): Encrypted, compressed, distributed backups.
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to setup, as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
