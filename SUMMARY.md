@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* Projects using libsodium
 * [Installation](installation/README.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
@@ -35,5 +36,4 @@
    * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
-* Projects using libsodium
 
