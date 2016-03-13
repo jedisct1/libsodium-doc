@@ -41,9 +41,10 @@ In order to do so, the Blake2 hash function is an efficient alternative to the H
                                              masterkey, sizeof masterkey,
                                              keyid, appid);
 ```
-In this example, two subkeys are derived from a single key. These subkeys have different sizes (128 and 256 bits), and are derived from a master key of yet another size (512 bits).
 
 The `crypto_generichash_blake2b_salt_personal()` function can be used to derive a subkey of any size from a key of any size, as long as these key sizes are in the 128 to 512 bits interval.
+
+In this example, two subkeys are derived from a single key. These subkeys have different sizes (128 and 256 bits), and are derived from a master key of yet another size (512 bits).
 
 The personalization parameter (`appid`) is a 16-bytes value that doesn't have to be secret. It can be used so that the same `(masterkey, keyid)` tuple will produce different output in different applications. It is not required, however: a `NULL` pointer can be passed instead in order to use the default constant.
 
