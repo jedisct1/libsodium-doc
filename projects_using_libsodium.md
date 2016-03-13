@@ -23,4 +23,4 @@ designed to protect your Internet traffic.
 # Libraries using libsodium
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
-- [MEGA SDK](https://github.com/meganz/sdk): SDK from MEGA, a secure cloud storage provider that protects your data, thanks to end-to-end encryption
+- [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
