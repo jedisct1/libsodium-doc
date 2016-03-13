@@ -46,6 +46,9 @@ Some libraries and frameworks using Libsodium. Send a pull request to add yours 
 - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET
 - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
 - [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption & decryption with libsodium and protobuf for .NET
+- [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
+- [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way streaming encryption for Javascript.
+- [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
 
 # Companies using libsodium
 Some companies using Libsodium, possibly in non-opensource products. Send a pull request to add yours to that list.
