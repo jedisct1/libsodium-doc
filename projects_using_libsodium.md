@@ -28,7 +28,7 @@ designed to protect your Internet traffic.
 - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to setup, as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
 - [Tinfoil Chat NaCl](https://github.com/maqp/tfc-nacl): TFC-NaCl is a high assurance encryption plugin for the Pidgin IM client.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
-
+- [Petmail](https://github.com/warner/petmail): A secure communication and file-sharing system.
 
 # Libraries using libsodium
 Some libraries and frameworks using Libsodium. Send a pull request to add yours to that list.
