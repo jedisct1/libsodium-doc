@@ -13,7 +13,14 @@ security-hardened implementation of Network Time Protocol Version 4.
 - [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable application that encrypts files and directories using a symmetric-key algorithm.
 - [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
 designed to protect your Internet traffic.
-- [qTox](https://github.com/LarsSch/qTox): An OSX client for the Tox instant messenging system.
+- [Tox](https://tox.chat/): A new kind of instant messenging.
+- [SODA](https://github.com/vong-xiv/SODA): The SODA project aims to investigate the relationship between server components and server performance.
+- [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
+- [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
+- [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
+- [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
 
 # Libraries using libsodium
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
+- [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
+- [MEGA SDK](https://github.com/meganz/sdk): SDK from MEGA, a secure cloud storage provider that protects your data, thanks to end-to-end encryption
