@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Projects using libsodium](projects_using_libsodium.md)
+* [Projects using libsodium](libsodium_users/README.md)
 * [Installation](installation/README.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
@@ -23,7 +23,7 @@
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
 * [Key exchange](advanced/scalar_multiplication.md)
-* [Key derivation](key_derivation.md)
+* [Key derivation](key_derivation/README.md)
 * [Advanced](advanced/README.md)
    * [SHA-2](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
