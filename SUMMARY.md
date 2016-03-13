@@ -22,7 +22,7 @@
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
 * [Key exchange](advanced/scalar_multiplication.md)
-* Key derivation
+* [Key derivation](key_derivation.md)
 * [Advanced](advanced/README.md)
    * [SHA-2](advanced/sha-2_hash_function.md)
    * [HMAC-SHA-2](advanced/hmac-sha2.md)
