@@ -115,7 +115,7 @@ This alternative API is especially useful to process very large files and data s
 ## State structure size
 
 The `crypto_generichash_state` structure length is either 357 or 361 bytes. 64-bytes alignment is recommended for performance, but not required.
-The `crypto_generichash_statebytes()` returns the rounded up structure size, and should be prefered to `sizeof()`.
+For dynamically allocated states, `crypto_generichash_statebytes()` returns the rounded up structure size, and should be prefered to `sizeof()`.
 
 ```c
 state = sodium_malloc(crypto_generichash_statebytes());
