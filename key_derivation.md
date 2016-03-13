@@ -91,7 +91,7 @@ crypto_core_hchacha20(k2, n, k, NULL);
 
 assert(crypto_aead_chacha20poly1305_KEYBYTES <= sizeof k2);
 assert(crypto_aead_chacha20poly1305_NPUBBYTES <=
-       sizeof n - crypto_core_hchacha20_INPUTBYTES);
+       (sizeof n) - crypto_core_hchacha20_INPUTBYTES);
 
 crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
                                      NULL, 0, NULL,
