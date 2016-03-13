@@ -13,3 +13,7 @@ security-hardened implementation of Network Time Protocol Version 4.
 - [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable application that encrypts files and directories using a symmetric-key algorithm.
 - [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
 designed to protect your Internet traffic.
+- [qTox](https://github.com/LarsSch/qTox): An OSX client for the Tox instant messenging system.
+
+# Libraries using libsodium
+- [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
