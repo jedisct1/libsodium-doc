@@ -49,6 +49,8 @@ Some libraries and frameworks using Libsodium. Send a pull request to add yours 
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way streaming encryption for Javascript.
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
+- [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
+- [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell module.
 
 # Companies using libsodium
 Some companies using Libsodium, possibly in non-opensource products. Send a pull request to add yours to that list.
