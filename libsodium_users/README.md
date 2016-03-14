@@ -4,6 +4,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php and MongoDB based single server messaging platform.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
+- [Discord](https://discordapp.com): All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
