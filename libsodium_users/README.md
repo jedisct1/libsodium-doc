@@ -7,6 +7,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
+- [lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
 - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
 - [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
 - [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
@@ -25,6 +26,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [SaltStack](http://saltstack.com/): SaltStack software orchestrates the build and ongoing management of any modern infrastructure. 
 - [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
 - [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy, designed to protect your Internet traffic.
+- [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
 - [Tbak](https://github.com/tux3/tbak): Encrypted, compressed, distributed backups.
 - [Telehash](http://telehash.org/): An embeddable private network stack for mobile, web, and devices.
@@ -41,6 +43,8 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
+- [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
+- [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate libsodium-net compatible KeyPair`s.
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
 - [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell module.
 - [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way streaming encryption for Javascript.
@@ -53,5 +57,6 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 Some companies using Libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Digital Ocean](https://www.digitalocean.com/)
+- [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
