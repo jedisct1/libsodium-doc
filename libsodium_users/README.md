@@ -5,6 +5,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
+- [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
 - [lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
