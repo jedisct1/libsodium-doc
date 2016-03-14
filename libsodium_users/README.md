@@ -9,6 +9,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
+- [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
 - [lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
 - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
 - [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
