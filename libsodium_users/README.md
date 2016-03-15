@@ -14,6 +14,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
 - [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
 - [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
+- [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN (ADSL/SDSL/xDSL/Network aggregator)
 - [Molch](https://github.com/FSMaxB/molch): An implementation of the Axolotl ratchet.
 - [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation of Network Time Protocol Version 4.
 - [Open Reputation](https://openreputation.net/): An open source decentralized platform that maps identity and reputation onto the Internet-of-things.
