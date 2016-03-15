@@ -80,3 +80,4 @@ New features will be gladly implemented provided that they are not redundant and
 - Generic subkey derivation API
 - HS1-SIV or other nonce-misuse resistant scheme
 - Consider SHAKE256
+- BLAKE2 AVX2 implementations
