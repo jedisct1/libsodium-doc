@@ -188,6 +188,3 @@ crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
 ...
 crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
 ```
-
-A high-level `crypto_pwhash_*()` API will be introduced in libsodium
-1.0.9, and use the Argon2i v1.3 function.
