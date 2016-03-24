@@ -54,12 +54,12 @@ toolchain.
 
 Releases can be compiled using the CompCert compiler. However, when using CompCert, the Autoconf scripts might mistakenly detect byte ordering as big endian even on little endian systems.
 
-You may want to manually define a `LITTLE_ENDIAN` macro in order work around this.
+You may want to manually predefine `ac_cv_c_bigendian=no` in order work around this.
 
 A typical command-line to compile Sodium on a little endian system with CompCert is:
 
 ```bash
-env CC=ccomp CPPFLAGS=-DLITTLE_ENDIAN \
+env CC=ccomp ac_cv_c_bigendian=no \
     CFLAGS="-O2 -fstruct-passing" ./configure \
     --disable-shared --enable-static && \
 make check && make install
