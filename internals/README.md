@@ -70,9 +70,9 @@ Releases are never shipped until all these tools report zero defects.
 
 The test suite has to always pass on the following environments:
 
-- OpenBSD/amd64 using `gcc -fstack-protector-strong -fstack-shuffle`
-- ArchLinux/i386 and /amd64 using clang `-fsanitize=undefined` and Valgrind
-- Ubuntu/amd64 using gcc 5 and `-fsanitize=undefined`
+- OpenBSD/x86_64 using `gcc -fstack-protector-strong -fstack-shuffle`
+- Ubuntu/x86_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using clang, `-fsanitize=address,undefined` and Valgrind
 - OSX using Xcode 7
 - OSX using CompCert
 - Windows 10 using Visual Studio 2010, 2012, 2013, 2015
