@@ -18,6 +18,7 @@
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
+* Go: [Natrium](https://github.com/ProjectNiwl/natrium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * Idris: [Idris-Sodium](https://github.com/edwinb/sodium-idris)
