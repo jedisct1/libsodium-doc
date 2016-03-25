@@ -38,7 +38,6 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Tox](https://tox.chat/): A new kind of instant messenging.
 - [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
-- [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
 
 # Libraries using libsodium
 Some libraries and frameworks using Libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
