@@ -31,6 +31,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
 - [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy, designed to protect your Internet traffic.
 - [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
+- [Splonebox](https://splone.com/splonebox/): An open source network assessment tool with focus on modularity.
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
 - [Tbak](https://github.com/tux3/tbak): Encrypted, compressed, distributed backups.
 - [Telehash](http://telehash.org/): An embeddable private network stack for mobile, web, and devices.
