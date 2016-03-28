@@ -52,7 +52,7 @@ The salt (`keyid`) doesn't have to be secret either. This is a 16-bytes identifi
 
 ## Nonce extension
 
-Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`), ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With random nonces, nonce reuse is likely to happen after 2^32 or 2^48 messages encrypted with the same key.
+Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`), ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With 96 bits random nonces, NIST sets a limit of 2^32 encryptions before the probability of duplicate nonces becomes too high.
 
 Using a counter instead of random nonces prevents this. However, keeping a state is not always an option, especially with offline protocols.
 
