@@ -43,7 +43,7 @@ if (crypto_pwhash_str_verify
 
 Secret keys used to encrypt or sign confidential data have to be chosen from a very large keyspace. However, passwords are usually short, human-generated strings, making dictionary attacks practical.
 
-The `pwhash` operation derives a secret key of any size from a password and a salt.
+The `pwhash` operation derives a secret key of any size from a password and a salt, using the Argon2i function.
 
 - The generated key has the size defined by the application, no matter what the password length is.
 - The same password hashed with same parameters will always produce the same key.
@@ -74,6 +74,8 @@ The computed key is stored into `out`.
 `opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key.
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes.
+
+`options` is reserved for future use and should be set to `NULL`.
 
 For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters. This requires 32 Mb of dedicated RAM. Higher values may improve security (see below).
 
@@ -120,9 +122,9 @@ This function verifies that the password `str` is a valid password verification 
 
 It returns `0` if the verification succeeds, and `-1` on error.
 
-## Guidelines for choosing scrypt parameters
+## Guidelines for choosing Argon2i parameters
 
-Start by determining how much memory can be used the scrypt function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
+Start by determining how much memory can be used the function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
 Set `memlimit` to the amount of memory you want to reserved for password hashing.
 
