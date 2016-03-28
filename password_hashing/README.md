@@ -129,7 +129,7 @@ It returns `0` if the verification succeeds, and `-1` on error.
 
 ## Guidelines for choosing the parameters
 
-Start by determining how much memory can be used the function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
+Start by determining how much memory the function can use. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
 Set `memlimit` to the amount of memory you want to reserved for password hashing.
 
