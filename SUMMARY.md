@@ -22,7 +22,7 @@
    * [Generic hashing](hashing/generic_hashing.md)
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
-   * scrypt
+   * [scrypt](password_hashing/scrypt.md)
 * [Key exchange](advanced/scalar_multiplication.md)
 * [Key derivation](key_derivation/README.md)
 * [Advanced](advanced/README.md)
