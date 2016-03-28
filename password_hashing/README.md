@@ -127,7 +127,7 @@ This function verifies that the password `str` is a valid password verification 
 
 It returns `0` if the verification succeeds, and `-1` on error.
 
-## Guidelines for choosing Argon2i parameters
+## Guidelines for choosing the parameters
 
 Start by determining how much memory can be used the function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
