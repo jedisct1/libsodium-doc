@@ -168,3 +168,6 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it doesn't have to be done before calling this function.
 
+## Algorithm details
+
+- [Revision 1.3 of Argon2i](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon2-specs.pdf)
