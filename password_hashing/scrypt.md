@@ -106,7 +106,7 @@ It returns `0` if the verification succeeds, and `-1` on error.
 
 ## Guidelines for choosing scrypt parameters
 
-Start by determining how much memory can be used the scrypt function. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
+Start by determining how much memory the scrypt function can use. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
 `memlimit` should be a power of 2. Do not use anything less than 16 Mb, even for interactive use.
 
