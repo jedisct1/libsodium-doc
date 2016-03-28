@@ -131,7 +131,7 @@ It returns `0` if the verification succeeds, and `-1` on error.
 
 Start by determining how much memory the function can use. What will be the highest number of threads/processes evaluating the function simultaneously (ideally, no more than 1 per CPU core)? How much physical memory is guaranteed to be available?
 
-Set `memlimit` to the amount of memory you want to reserved for password hashing.
+Set `memlimit` to the amount of memory you want to reserve for password hashing.
 
 Then, set `opslimit` to `3` and measure the time it takes to hash a password.
 
