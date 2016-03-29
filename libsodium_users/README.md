@@ -66,3 +66,5 @@ Some companies using Libsodium, possibly in non-opensource products. Send a [pul
 - [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
+- [Yandex](https://www.yandex.com)
+
