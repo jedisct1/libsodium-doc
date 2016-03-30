@@ -15,7 +15,7 @@
        * [AES256-GCM](secret-key_cryptography/aes-256-gcm.md)
        * [ChaCha20-Poly1305](secret-key_cryptography/chacha20-poly1305.md)
            * [Original ChaCha20-Poly1305 construction](secret-key_cryptography/original_chacha20-poly1305_construction.md)
-           * IETF ChaCha20-Poly1305 construction
+           * [IETF ChaCha20-Poly1305 construction](secret-key_cryptography/ietf_chacha20-poly1305_construction.md)
 * [Public-key cryptography](public-key_cryptography/README.md)
    * [Authenticated encryption](public-key_cryptography/authenticated_encryption.md)
    * [Public-key signatures](public-key_cryptography/public-key_signatures.md)
