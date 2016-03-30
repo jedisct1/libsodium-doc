@@ -16,7 +16,7 @@ Common use cases:
 - Password storage, or rather: storing what it takes to verify a password without having to store the actual password.
 - Deriving a secret key from a password, for example for disk encryption.
 
-Sodium's high-level `crypto_pwhash_*` API leverage the Argon2 function.
+Sodium's high-level `crypto_pwhash_*` API leverages the Argon2 function.
 
 The more specific `crypto_pwhash_scryptsalsa208sha256_*` API uses the more conservative and widely deployed Scrypt function.
 
