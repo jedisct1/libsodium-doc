@@ -136,6 +136,39 @@ At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 
 ## Detached mode
 
+Some applications may need to store the authentication tag and the encrypted message at different locations.
+
+For this specific use case, "detached" variants of the functions above are available.
+
+```c
+int crypto_aead_chacha20poly1305_encrypt_detached(unsigned char *c,
+                                                  unsigned char *mac,
+                                                  unsigned long long *maclen_p,
+                                                  const unsigned char *m,
+                                                  unsigned long long mlen,
+                                                  const unsigned char *ad,
+                                                  unsigned long long adlen,
+                                                  const unsigned char *nsec,
+                                                  const unsigned char *npub,
+                                                  const unsigned char *k);
+```
+
+```c
+int crypto_aead_chacha20poly1305_ietf_encrypt_detached(unsigned char *c,
+                                                       unsigned char *mac,
+                                                       unsigned long long *maclen_p,
+                                                       const unsigned char *m,
+                                                       unsigned long long mlen,
+                                                       const unsigned char *ad,
+                                                       unsigned long long adlen,
+                                                       const unsigned char *nsec,
+                                                       const unsigned char *npub,
+                                                       const unsigned char *k);
+                                                       ```
+
+The `crypto_aead_chacha20poly1305_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
+
+It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_ABYTES` bytes.
 
 
 ## Constants
