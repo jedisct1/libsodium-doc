@@ -56,6 +56,8 @@ The constants are the same, except for the nonce size.
 
 ## Combined mode
 
+In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
+
 ```c
 int crypto_aead_chacha20poly1305_encrypt(unsigned char *c,
                                          unsigned long long *clen,
