@@ -26,6 +26,6 @@ Argon2 is optimized for the x86 architecture and exploits the cache and memory o
 
 Argon2 has two variants: Argon2d and Argon2i. Argon2i uses data-independent memory access, which is preferred for password hashing and password-based key derivation. Argon2i also makes multiple passes over the memory to protect from tradeoff attacks.
 
-This is the variant implemented in Libsodium since version 1.0.9.
+This is the variant implemented in Sodium since version 1.0.9.
 
 ## Scrypt
