@@ -28,7 +28,7 @@ Argon2 has two variants: Argon2d and Argon2i. Argon2i uses data-independent memo
 
 This is the variant implemented in Sodium since version 1.0.9.
 
-Argon2 should be preferred over Scrypt for new projects.
+Argon2 should be preferred over Scrypt for new projects, if requiring libsodium >= 1.0.9 is not a concern.
 
 ## Scrypt
 
