@@ -19,18 +19,18 @@ randombytes_buf(key, sizeof key);
 randombytes_buf(nonce, sizeof nonce);
 
 crypto_aead_chacha20poly1305_ietf_encrypt(ciphertext, &ciphertext_len,
-                                     MESSAGE, MESSAGE_LEN,
-                                     ADDITIONAL_DATA, ADDITIONAL_DATA_LEN,
-                                     NULL, nonce, key);
+                                          MESSAGE, MESSAGE_LEN,
+                                          ADDITIONAL_DATA, ADDITIONAL_DATA_LEN,
+                                          NULL, nonce, key);
 
 unsigned char decrypted[MESSAGE_LEN];
 unsigned long long decrypted_len;
 if (crypto_aead_chacha20poly1305_ietf_decrypt(decrypted, &decrypted_len,
-                                         NULL,
-                                         ciphertext, ciphertext_len,
-                                         ADDITIONAL_DATA,
-                                         ADDITIONAL_DATA_LEN,
-                                         nonce, key) != 0) {
+                                              NULL,
+                                              ciphertext, ciphertext_len,
+                                              ADDITIONAL_DATA,
+                                              ADDITIONAL_DATA_LEN,
+                                              nonce, key) != 0) {
     /* message forged! */
 }
 ```
@@ -41,14 +41,14 @@ In combined mode, the authentication tag and the encrypted message are stored to
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_encrypt(unsigned char *c,
-                                         unsigned long long *clen,
-                                         const unsigned char *m,
-                                         unsigned long long mlen,
-                                         const unsigned char *ad,
-                                         unsigned long long adlen,
-                                         const unsigned char *nsec,
-                                         const unsigned char *npub,
-                                         const unsigned char *k);
+                                              unsigned long long *clen,
+                                              const unsigned char *m,
+                                              unsigned long long mlen,
+                                              const unsigned char *ad,
+                                              unsigned long long adlen,
+                                              const unsigned char *nsec,
+                                              const unsigned char *npub,
+                                              const unsigned char *k);
 ```
 
 The `crypto_aead_chacha20poly1305_ietf_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_ietf_KEYBYTES` bytes) and public nonce `npub` (`crypto_aead_chacha20poly1305_ietf_NPUBBYTES` bytes).
@@ -65,14 +65,14 @@ The public nonce `npub` should never ever be reused with the same key. The recom
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_decrypt(unsigned char *m,
-                                         unsigned long long *mlen,
-                                         unsigned char *nsec,
-                                         const unsigned char *c,
-                                         unsigned long long clen,
-                                         const unsigned char *ad,
-                                         unsigned long long adlen,
-                                         const unsigned char *npub,
-                                         const unsigned char *k);
+                                              unsigned long long *mlen,
+                                              unsigned char *nsec,
+                                              const unsigned char *c,
+                                              unsigned long long clen,
+                                              const unsigned char *ad,
+                                              unsigned long long adlen,
+                                              const unsigned char *npub,
+                                              const unsigned char *k);
 ```
 
 The `crypto_aead_chacha20poly1305_ietf_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_chacha20poly1305_ietf_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
@@ -95,15 +95,15 @@ For this specific use case, "detached" variants of the functions above are avail
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_encrypt_detached(unsigned char *c,
-                                                  unsigned char *mac,
-                                                  unsigned long long *maclen_p,
-                                                  const unsigned char *m,
-                                                  unsigned long long mlen,
-                                                  const unsigned char *ad,
-                                                  unsigned long long adlen,
-                                                  const unsigned char *nsec,
-                                                  const unsigned char *npub,
-                                                  const unsigned char *k);
+                                                       unsigned char *mac,
+                                                       unsigned long long *maclen_p,
+                                                       const unsigned char *m,
+                                                       unsigned long long mlen,
+                                                       const unsigned char *ad,
+                                                       unsigned long long adlen,
+                                                       const unsigned char *nsec,
+                                                       const unsigned char *npub,
+                                                       const unsigned char *k);
 ```
 
 The `crypto_aead_chacha20poly1305_ietf_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
@@ -114,14 +114,14 @@ It also computes a tag that authenticates the ciphertext as well as optional, ad
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_decrypt_detached(unsigned char *m,
-                                                  unsigned char *nsec,
-                                                  const unsigned char *c,
-                                                  unsigned long long clen,
-                                                  const unsigned char *mac,
-                                                  const unsigned char *ad,
-                                                  unsigned long long adlen,
-                                                  const unsigned char *npub,
-                                                  const unsigned char *k);
+                                                       unsigned char *nsec,
+                                                       const unsigned char *c,
+                                                       unsigned long long clen,
+                                                       const unsigned char *mac,
+                                                       const unsigned char *ad,
+                                                       unsigned long long adlen,
+                                                       const unsigned char *npub,
+                                                       const unsigned char *k);
 ```
 
 The `crypto_aead_chacha20poly1305_ietf_decrypt_detached()` function verifies that the authentication tag `mac` is valid for the ciphertext `c` of length `clen` bytes, the key `k` , the nonce `npub` and optional, additional data `ad` of length `adlen` bytes.
