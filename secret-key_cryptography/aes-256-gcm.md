@@ -181,9 +181,7 @@ The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag `m
 
 The function returns `-1` is the verification fails.
 
-If the verification succeeds, the function returns `0`, puts the decrypted message into `m`, whose length is equal to the length of the ciphertext.
-
-The decrypted message is put into `m`.
+If the verification succeeds, the function returns `0`, and puts the decrypted message into `m`, whose length is equal to the length of the ciphertext.
 
 ## Precalculation interface
 
