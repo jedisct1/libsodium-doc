@@ -14,6 +14,7 @@
    * [AEAD constructions](secret-key_cryptography/aead.md)
        * [AES256-GCM](secret-key_cryptography/aes-256-gcm.md)
        * [ChaCha20-Poly1305](secret-key_cryptography/chacha20-poly1305.md)
+           * Original ChaCha20-Poly1305 construction
 * [Public-key cryptography](public-key_cryptography/README.md)
    * [Authenticated encryption](public-key_cryptography/authenticated_encryption.md)
    * [Public-key signatures](public-key_cryptography/public-key_signatures.md)
