@@ -189,10 +189,6 @@ If the verification succeeds, the function returns `0`, and puts the decrypted m
 - `crypto_aead_aes256gcm_NPUBBYTES`
 - `crypto_aead_aes256gcm_ABYTES`
 
-## Data types
-
-- `crypto_aead_aes256gcm_state`
-
 ## Notes
 
 The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
