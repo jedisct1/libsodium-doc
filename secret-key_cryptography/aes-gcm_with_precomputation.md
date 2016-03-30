@@ -68,3 +68,13 @@ int crypto_aead_aes256gcm_decrypt_detached_afternm(unsigned char *m,
 ```
 
 The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gcm_decrypt_detached_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt_detached()` and `crypto_aead_aes256gcm_decrypt_detached()`, but accept a previously initialized context `ctx` instead of a key.
+
+## Constants
+
+- `crypto_aead_aes256gcm_KEYBYTES`
+- `crypto_aead_aes256gcm_NPUBBYTES`
+- `crypto_aead_aes256gcm_ABYTES`
+
+## Data types
+
+- `crypto_aead_aes256gcm_state`
