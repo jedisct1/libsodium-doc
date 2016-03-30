@@ -184,7 +184,7 @@ The function returns `-1` is the verification fails.
 
 If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
 
-The decrypted message will be put into `m`.
+The decrypted message is put into `m`.
 
 ## Precalculation interface
 
