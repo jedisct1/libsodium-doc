@@ -1,6 +1,6 @@
 # Authenticated Encryption with Additional Data using AES-GCM
 
-## Example
+## Example (combined mode)
 
 ```c
 #include <sodium.h>
@@ -63,9 +63,7 @@ Intel Westmere processors (introduced in 2010) and newer meet the requirements.
 
 There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
 
-## Combined mode
-
-In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
+Before using the functions below, hardware support for AES can be checked with:
 
 ```c
 int crypto_aead_aes256gcm_is_available(void);
@@ -74,6 +72,10 @@ int crypto_aead_aes256gcm_is_available(void);
 Returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
 
 The library must have been initialized with `sodium_init()` prior to calling this function. 
+
+## Combined mode
+
+In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
 
 ```c
 int crypto_aead_aes256gcm_encrypt(unsigned char *c,
