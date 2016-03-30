@@ -153,7 +153,7 @@ The encrypted message in put into `c`. A tag authenticating both the confidentia
 
 `ad` can also be a `NULL` pointer if no additional data are required.
 
-At most `crypto_aead_aes256gcm_ABYTES` bytes are put into `mac`, and the actual number of bytes is stored into `maclen_p` if `maclen_p` is not a `NULL` pointer.
+`crypto_aead_aes256gcm_ABYTES` bytes are put into `mac`, and the actual number of bytes required for verification is stored into `maclen_p`, unless `maclen_p` is `NULL` pointer.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -173,6 +173,7 @@ int crypto_aead_aes256gcm_decrypt_detached(unsigned char *m,
 ```
 
 The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag `mac` is valid for the the ciphertext `c` using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+
 `clen` is the ciphertext length in bytes.
 
 `ad` can be a `NULL` pointer if no additional data are required.
