@@ -170,6 +170,39 @@ The `crypto_aead_chacha20poly1305_encrypt_detached()` function encrypts a messag
 
 It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_ABYTES` bytes.
 
+`nsec` is not used by this particular construction and should always be `NULL`.
+
+```c
+int crypto_aead_chacha20poly1305_decrypt_detached(unsigned char *m,
+                                                  unsigned char *nsec,
+                                                  const unsigned char *c,
+                                                  unsigned long long clen,
+                                                  const unsigned char *mac,
+                                                  const unsigned char *ad,
+                                                  unsigned long long adlen,
+                                                  const unsigned char *npub,
+                                                  const unsigned char *k);
+```
+
+```c
+int crypto_aead_chacha20poly1305_ietf_decrypt_detached(unsigned char *m,
+                                                       unsigned char *nsec,
+                                                       const unsigned char *c,
+                                                       unsigned long long clen,
+                                                       const unsigned char *mac,
+                                                       const unsigned char *ad,
+                                                       unsigned long long adlen,
+                                                       const unsigned char *npub,
+                                                       const unsigned char *k);
+```
+
+The `crypto_aead_chacha20poly1305_decrypt_detached()` function verifies that the authentication tag `mac` is valid for the ciphertext `c` of length `clen` bytes, the key `k` and the nonce `npub`.
+
+If the tag is not valid, the function returns `-1` and doesn't do any further processing.
+
+If the tag is valid, the ciphertext is decrypted and the plaintext is put into `m`. The length is equal to the length of the ciphertext.
+
+`nsec` is not used by this particular construction and should always be `NULL`.
 
 ## Constants
 
@@ -187,7 +220,8 @@ It also computes a tag that authenticates the ciphertext as well as optional, ad
 
 In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
-To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+To prevent nonce reuse in a client-server pro
+tocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 The API conforms to the proposed API for the CAESAR competition.
 
