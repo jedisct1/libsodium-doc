@@ -6,6 +6,8 @@ Argon2 summarizes the state of the art in the design of memory-hard functions.
 
 It aims at the highest memory filling rate and effective use of multiple computing units, while still providing defense against tradeoff attacks.
 
+It prevents ASICs implementations from having a significant advantage over software implementations.
+
 ## Example 1: key derivation
 
 ```c
