@@ -272,4 +272,4 @@ It is recommended to split message larger than 2 Gb into smaller chunks.
 
 Support for AES256-GCM was introduced in Libsodium 1.0.4.
 
-Support for the detached mode was introduced in Libsodium 1.0.9.
+The detached API was introduced in Libsodium 1.0.9.
