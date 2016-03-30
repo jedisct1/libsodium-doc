@@ -222,6 +222,33 @@ int crypto_aead_aes256gcm_decrypt_afternm(unsigned char *m,
 
 The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt()` and `crypto_aead_aes256gcm_decrypt()`, but accept a previously initialized context `ctx` instead of a key.
 
+```c
+int crypto_aead_aes256gcm_encrypt_detached_afternm(unsigned char *c,
+                                                   unsigned char *mac,
+                                                   unsigned long long *maclen_p,
+                                                   const unsigned char *m,
+                                                   unsigned long long mlen,
+                                                   const unsigned char *ad,
+                                                   unsigned long long adlen,
+                                                   const unsigned char *nsec,
+                                                   const unsigned char *npub,
+                                                   const crypto_aead_aes256gcm_state *ctx_);
+```
+
+```c
+int crypto_aead_aes256gcm_decrypt_detached_afternm(unsigned char *m,
+                                                   unsigned char *nsec,
+                                                   const unsigned char *c,
+                                                   unsigned long long clen,
+                                                   const unsigned char *mac,
+                                                   const unsigned char *ad,
+                                                   unsigned long long adlen,
+                                                   const unsigned char *npub,
+                                                   const crypto_aead_aes256gcm_state *ctx_)
+```
+
+The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gcm_decrypt_detached_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt_detached()` and `crypto_aead_aes256gcm_decrypt_detached()`, but accept a previously initialized context `ctx` instead of a key.
+
 ## Constants
 
 - `crypto_aead_aes256gcm_KEYBYTES`
