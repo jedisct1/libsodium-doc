@@ -69,7 +69,7 @@ Before using the functions below, hardware support for AES can be checked with:
 int crypto_aead_aes256gcm_is_available(void);
 ```
 
-Returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
+The function returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
 
 The library must have been initialized with `sodium_init()` prior to calling this function. 
 
@@ -101,7 +101,7 @@ At most `mlen + crypto_aead_aes256gcm_ABYTES` bytes are put into `c`, and the ac
 
 The function always returns `0`.
 
-The public nonce `npub` should never ever be reused with the same key. The recommended way to generate it is to use `randombytes_buf()` for the first message, and increment it for each subsequent message using the same key.
+The public nonce `npub` should never ever be reused with the same key. The recommended way to generate it is to use `randombytes_buf()` for the first message, and then to increment it for each subsequent message using the same key.
 
 ```c
 int crypto_aead_aes256gcm_decrypt(unsigned char *m,
