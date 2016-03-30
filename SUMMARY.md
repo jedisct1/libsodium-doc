@@ -26,6 +26,7 @@
    * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
    * [The scrypt function](password_hashing/scrypt.md)
+   * The argon2i function
 * [Key exchange](advanced/scalar_multiplication.md)
 * [Key derivation](key_derivation/README.md)
 * [Advanced](advanced/README.md)
