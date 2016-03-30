@@ -33,7 +33,7 @@ The nonce doesn't have to be confidential, but it should never ever be reused wi
 
 ## Combined mode
 
-In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want, as
+In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
 
 ```c
 int crypto_secretbox_easy(unsigned char *c, const unsigned char *m,
