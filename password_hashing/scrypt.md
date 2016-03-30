@@ -1,6 +1,6 @@
 # The Scrypt memory-hard function
 
-As a conservative alternative to Argon2, Sodium provides an implementation of the scrypt password hashing function.
+As a conservative alternative to Argon2, Sodium provides an implementation of the Scrypt password hashing function.
 
 ## Example 1: key derivation
 
