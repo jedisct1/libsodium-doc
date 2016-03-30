@@ -196,6 +196,8 @@ The `crypto_aead_aes256gcm_beforenm()` function initializes a context `ctx` by e
 
 A 16 bytes alignment is required for the address of `ctx`. The size of this value can be obtained using `sizeof(crypto_aead_aes256gcm_state)`, or `crypto_aead_aes256gcm_statebytes()`.
 
+### Combined mode
+
 ```c
 int crypto_aead_aes256gcm_encrypt_afternm(unsigned char *c,
                                           unsigned long long *clen_p,
@@ -221,6 +223,8 @@ int crypto_aead_aes256gcm_decrypt_afternm(unsigned char *m,
 ```
 
 The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt()` and `crypto_aead_aes256gcm_decrypt()`, but accept a previously initialized context `ctx` instead of a key.
+
+### Detached mode
 
 ```c
 int crypto_aead_aes256gcm_encrypt_detached_afternm(unsigned char *c,
