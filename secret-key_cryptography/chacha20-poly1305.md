@@ -1,6 +1,6 @@
 # Authenticated Encryption with Additional Data using ChaCha20-Poly1305
 
-## Example
+## Example (combined mode)
 
 ```c
 #define MESSAGE (const unsigned char *) "test"
