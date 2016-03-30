@@ -54,7 +54,7 @@ Both are interoperable with other crypto libaries, share the same security prope
 The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, while the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version.
 The constants are the same, except for the nonce size.
 
-## Usage
+## Combined mode
 
 ```c
 int crypto_aead_chacha20poly1305_encrypt(unsigned char *c,
