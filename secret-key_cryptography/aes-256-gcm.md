@@ -105,7 +105,6 @@ The public nonce `npub` should never ever be reused with the same key. The recom
 
 ```c
 int crypto_aead_aes256gcm_decrypt(unsigned char *m,
-                                  unsigned long long *mlen,
                                   unsigned char *nsec,
                                   const unsigned char *c,
                                   unsigned long long clen,
