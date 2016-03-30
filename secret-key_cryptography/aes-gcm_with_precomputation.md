@@ -78,3 +78,14 @@ The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gc
 ## Data types
 
 - `crypto_aead_aes256gcm_state`
+
+## Notes
+
+The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+
+It is recommended to split message larger than 2 Gb into smaller chunks.
+
+Support for AES256-GCM was introduced in Libsodium 1.0.4.
+
+The detached API was introduced in Libsodium 1.0.9.
