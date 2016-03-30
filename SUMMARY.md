@@ -13,6 +13,7 @@
    * [Authentication](secret-key_cryptography/secret-key_authentication.md)
    * [AEAD constructions](secret-key_cryptography/aead.md)
        * [AES256-GCM](secret-key_cryptography/aes-256-gcm.md)
+           * AES-GCM with precomputation
        * [ChaCha20-Poly1305](secret-key_cryptography/chacha20-poly1305.md)
            * [Original ChaCha20-Poly1305 construction](secret-key_cryptography/original_chacha20-poly1305_construction.md)
            * [IETF ChaCha20-Poly1305 construction](secret-key_cryptography/ietf_chacha20-poly1305_construction.md)
