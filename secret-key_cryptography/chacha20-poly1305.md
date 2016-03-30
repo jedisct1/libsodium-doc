@@ -134,6 +134,10 @@ If the verification succeeds, the function returns `0`, puts the decrypted messa
 
 At most `clen - crypto_aead_chacha20poly1305_ABYTES` bytes will be put into `m`.
 
+## Detached mode
+
+
+
 ## Constants
 
 - `crypto_aead_chacha20poly1305_KEYBYTES`
