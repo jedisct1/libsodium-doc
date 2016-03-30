@@ -1,10 +1,10 @@
 # Password hashing
 
-## Purpose
+Secret keys used to encrypt or sign confidential data have to be chosen from a very large keyspace.
 
-Secret keys used to encrypt or sign confidential data have to be chosen from a very large keyspace. However, passwords are usually short, human-generated strings, making dictionary attacks practical.
+However, passwords are usually short, human-generated strings, making dictionary attacks practical.
 
-The `pwhash` operation derives a secret key of any size from a password and a salt, using the Argon2i function.
+Password hashing functions derive a secret key of any size from a password and a salt.
 
 - The generated key has the size defined by the application, no matter what the password length is.
 - The same password hashed with same parameters will always produce the same key.
@@ -14,3 +14,6 @@ The `pwhash` operation derives a secret key of any size from a password and a sa
 Common use cases:
 - Protecting an on-disk secret key with a password,
 - Password storage, or rather: storing what it takes to verify a password without having to store the actual password.
+- Deriving a secret key from a password, for example for disk encryption.
+
+
