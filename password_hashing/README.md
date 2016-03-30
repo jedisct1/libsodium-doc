@@ -16,4 +16,4 @@ Common use cases:
 - Password storage, or rather: storing what it takes to verify a password without having to store the actual password.
 - Deriving a secret key from a password, for example for disk encryption.
 
-
+Sodium offers the state of the 
