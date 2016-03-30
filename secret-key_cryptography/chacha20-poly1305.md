@@ -20,18 +20,3 @@ Both are interoperable with other crypto libaries, share the same security prope
 
 The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, while the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version.
 The constants are the same, except for the nonce size.
-
-## Notes
-
-In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
-
-To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
-
-The API conforms to the proposed API for the CAESAR competition.
-
-A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
-
-## See also
-
-- [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04)
-- [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539)
