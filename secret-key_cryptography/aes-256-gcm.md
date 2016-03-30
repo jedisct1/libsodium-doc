@@ -87,7 +87,7 @@ int crypto_aead_aes256gcm_encrypt(unsigned char *c,
                                   const unsigned char *k);
 ```
 
-The `crypto_aead_aes256gcm_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
+The function `crypto_aead_aes256gcm_encrypt()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
@@ -113,7 +113,7 @@ int crypto_aead_aes256gcm_decrypt(unsigned char *m,
                                   const unsigned char *k);
 ```
 
-The `crypto_aead_aes256gcm_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+The function `crypto_aead_aes256gcm_decrypt()` verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
 `clen` is the ciphertext length in bytes with the authenticator, so it has to be at least `aead_aes256gcm_ABYTES`.
 
 `ad` can be a `NULL` pointer if no additional data are required.
@@ -126,7 +126,62 @@ If the verification succeeds, the function returns `0`, puts the decrypted messa
 
 At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
 
+## Detached mode
 
+Some applications may need to store the authentication tag and the encrypted message at different locations.
+
+For this specific use case, "detached" variants of the functions above are available.
+
+```c
+int crypto_aead_aes256gcm_encrypt_detached(unsigned char *c,
+                                           unsigned char *mac,
+                                           unsigned long long *maclen_p,
+                                           const unsigned char *m,
+                                           unsigned long long mlen,
+                                           const unsigned char *ad,
+                                           unsigned long long adlen,
+                                           const unsigned char *nsec,
+                                           const unsigned char *npub,
+                                           const unsigned char *k);
+```
+
+`crypto_aead_aes256gcm_encrypt_detached()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
+
+The encrypted message in put into `c`. A tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad` is put into `mac`.
+
+`ad` can also be a `NULL` pointer if no additional data are required.
+
+At most `crypto_aead_aes256gcm_ABYTES` bytes are put into `mac`, and the actual number of bytes is stored into `maclen_p` if `maclen_p` is not a `NULL` pointer.
+
+`nsec` is not used by this particular construction and should always be `NULL`.
+
+The function always returns `0`.
+
+```c
+int crypto_aead_aes256gcm_decrypt_detached(unsigned char *m,
+                                           unsigned long long *mlen_p,
+                                           unsigned char *nsec,
+                                           const unsigned char *c,
+                                           unsigned long long clen,
+                                           const unsigned char *mac,
+                                           const unsigned char *ad,
+                                           unsigned long long adlen,
+                                           const unsigned char *npub,
+                                           const unsigned char *k);
+```
+
+The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag `mac` is valid for the the ciphertext `c` using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+`clen` is the ciphertext length in bytes.
+
+`ad` can be a `NULL` pointer if no additional data are required.
+
+`nsec` is not used by this particular construction and should always be `NULL`.
+
+The function returns `-1` is the verification fails.
+
+If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
+
+The decrypted message will be put into `m`.
 
 ## Precalculation interface
 
