@@ -63,7 +63,9 @@ Intel Westmere processors (introduced in 2010) and newer meet the requirements.
 
 There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
 
-## Usage
+## Combined mode
+
+In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
 
 ```c
 int crypto_aead_aes256gcm_is_available(void);
@@ -123,6 +125,8 @@ The function returns `-1` is the verification fails.
 If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
 
 At most `clen - crypto_aead_aes256gcm_ABYTES` bytes will be put into `m`.
+
+
 
 ## Precalculation interface
 
