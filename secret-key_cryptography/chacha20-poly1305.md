@@ -70,27 +70,13 @@ int crypto_aead_chacha20poly1305_encrypt(unsigned char *c,
                                          const unsigned char *k);
 ```
 
-```c
-int crypto_aead_chacha20poly1305_ietf_encrypt(unsigned char *c,
-                                              unsigned long long *clen,
-                                              const unsigned char *m,
-                                              unsigned long long mlen,
-                                              const unsigned char *ad,
-                                              unsigned long long adlen,
-                                              const unsigned char *nsec,
-                                              const unsigned char *npub,
-                                              const unsigned char *k);
-```
-
-The `crypto_aead_chacha20poly1305_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes), a public nonce `npub` (`crypto_aead_chacha20poly1305_NPUBBYTES` bytes) and the original construction.
-
-The `crypto_aead_chacha20poly1305_ietf_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes), a public nonce `npub` (`crypto_aead_chacha20poly1305_IETF_NPUBBYTES` bytes), and the IETF variant.
+The `crypto_aead_chacha20poly1305_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_KEYBYTES` bytes) and public nonce `npub` (`crypto_aead_chacha20poly1305_NPUBBYTES` bytes).
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
-`ad` can also be a `NULL` pointer if no additional data are required.
+`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data are required.
 
-At most `mlen + crypto_aead_chacha20poly1305_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` if `clen` is not a `NULL` pointer.
+At most `mlen + crypto_aead_chacha20poly1305_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` unless `clen` is a `NULL` pointer.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -108,23 +94,9 @@ int crypto_aead_chacha20poly1305_decrypt(unsigned char *m,
                                          const unsigned char *k);
 ```
 
-```c
-int crypto_aead_chacha20poly1305_ietf_decrypt(unsigned char *m,
-                                              unsigned long long *mlen,
-                                              unsigned char *nsec,
-                                              const unsigned char *c,
-                                              unsigned long long clen,
-                                              const unsigned char *ad,
-                                              unsigned long long adlen,
-                                              const unsigned char *npub,
-                                              const unsigned char *k);
-```
-
 The `crypto_aead_chacha20poly1305_decrypt()` function verifies that the ciphertext `c` (as produced by `crypto_aead_chacha20poly1305_encrypt()`) includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
 
-The `crypto_aead_chacha20poly1305_ietf_decrypt()` function implements the IETF variant instead of the original construction.
-
-`ad` can be a `NULL` pointer if no additional data are required.
+`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data are required.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -153,19 +125,6 @@ int crypto_aead_chacha20poly1305_encrypt_detached(unsigned char *c,
                                                   const unsigned char *k);
 ```
 
-```c
-int crypto_aead_chacha20poly1305_ietf_encrypt_detached(unsigned char *c,
-                                                       unsigned char *mac,
-                                                       unsigned long long *maclen_p,
-                                                       const unsigned char *m,
-                                                       unsigned long long mlen,
-                                                       const unsigned char *ad,
-                                                       unsigned long long adlen,
-                                                       const unsigned char *nsec,
-                                                       const unsigned char *npub,
-                                                       const unsigned char *k);
-                                                       ```
-
 The `crypto_aead_chacha20poly1305_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
 
 It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_ABYTES` bytes.
@@ -184,19 +143,7 @@ int crypto_aead_chacha20poly1305_decrypt_detached(unsigned char *m,
                                                   const unsigned char *k);
 ```
 
-```c
-int crypto_aead_chacha20poly1305_ietf_decrypt_detached(unsigned char *m,
-                                                       unsigned char *nsec,
-                                                       const unsigned char *c,
-                                                       unsigned long long clen,
-                                                       const unsigned char *mac,
-                                                       const unsigned char *ad,
-                                                       unsigned long long adlen,
-                                                       const unsigned char *npub,
-                                                       const unsigned char *k);
-```
-
-The `crypto_aead_chacha20poly1305_decrypt_detached()` function verifies that the authentication tag `mac` is valid for the ciphertext `c` of length `clen` bytes, the key `k` and the nonce `npub`.
+The `crypto_aead_chacha20poly1305_decrypt_detached()` function verifies that the authentication tag `mac` is valid for the ciphertext `c` of length `clen` bytes, the key `k` , the nonce `npub` and optional, additional data `ad` of length `adlen` bytes.
 
 If the tag is not valid, the function returns `-1` and doesn't do any further processing.
 
@@ -209,7 +156,6 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 - `crypto_aead_chacha20poly1305_KEYBYTES`
 - `crypto_aead_chacha20poly1305_NPUBBYTES`
 - `crypto_aead_chacha20poly1305_ABYTES`
-- `crypto_aead_chacha20poly1305_IETF_NPUBBYTES`
 
 ## Algorithm details
 
