@@ -55,8 +55,7 @@ int crypto_pwhash(unsigned char * const out,
                                        unsigned long long passwdlen,
                                        const unsigned char * const salt,
                                        unsigned long long opslimit,
-                                       size_t memlimit,
-                                       const crypto_pwhash_options *options);
+                                       size_t memlimit, int alg);
 ```
 
 The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes.
@@ -67,7 +66,7 @@ The computed key is stored into `out`.
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes.
 
-`options` is reserved for future use and should be set to `NULL`.
+`alg` is an identifier for the algorithm to use and should be currently set to `crypto_pwhash_ALG_DEFAULT`.
 
 For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters. This requires 32 Mb of dedicated RAM. Higher values may improve security (see below).
 
@@ -136,6 +135,7 @@ But the best defense against brute-force password cracking remains using strong 
 
 ## Constants
 
+- `crypto_pwhash_ALG_DEFAULT`
 - `crypto_pwhash_SALTBYTES`
 - `crypto_pwhash_STRBYTES`
 - `crypto_pwhash_STRPREFIX`
