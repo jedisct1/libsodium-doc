@@ -21,8 +21,8 @@ randombytes_buf(salt, sizeof salt);
 
 if (crypto_pwhash
     (key, sizeof key, PASSWORD, strlen(PASSWORD), salt,
-     crypto_pwhash_OPSLIMIT_INTERACTIVE,
-     crypto_pwhash_MEMLIMIT_INTERACTIVE, NULL) != 0) {
+     crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE,
+     crypto_pwhash_ALG_DEFAULT) != 0) {
     /* out of memory */
 }
 ```
@@ -36,8 +36,7 @@ char hashed_password[crypto_pwhash_STRBYTES];
 
 if (crypto_pwhash_str
     (hashed_password, PASSWORD, strlen(PASSWORD),
-     crypto_pwhash_OPSLIMIT_SENSITIVE,
-     crypto_pwhash_MEMLIMIT_SENSITIVE) != 0) {
+     crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE) != 0) {
     /* out of memory */
 }
 
