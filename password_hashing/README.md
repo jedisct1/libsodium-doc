@@ -7,8 +7,8 @@ However, passwords are usually short, human-generated strings, making dictionary
 Password hashing functions derive a secret key of any size from a password and a salt.
 
 - The generated key has the size defined by the application, no matter what the password length is.
-- The same password hashed with same parameters will always produce the same key.
-- The same password hashed with different salts will produce different keys.
+- The same password hashed with same parameters will always produce the same output.
+- The same password hashed with different salts will produce different outputs.
 - The function deriving a key from a password and a salt is CPU intensive and intentionally requires a fair amount of memory. Therefore, it mitigates brute-force attacks by requiring a significant effort to verify each password.
 
 Common use cases:
