@@ -73,6 +73,7 @@ The test suite has to always pass on the following environments:
 - OpenBSD/x86_64 using `gcc -fstack-protector-strong -fstack-shuffle`
 - Ubuntu/x86_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind
 - Ubuntu/x86_64 using clang, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using tcc
 - OSX using Xcode 7
 - OSX using CompCert
 - Windows 10 using Visual Studio 2010, 2012, 2013, 2015
