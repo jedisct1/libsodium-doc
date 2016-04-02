@@ -21,7 +21,7 @@ The more specific `crypto_pwhash_scryptsalsa208sha256_*` API uses the more conse
 
 ## Argon2
 
-Argon2 is optimized for the x86 architecture and exploits the cache and memory organization of the recent Intel and AMD processors. Its implementation remains portable and fast on other architectures.
+Argon2 is optimized for the x86 architecture and exploits the cache and memory organization of the recent Intel and AMD processors. But its implementation remains portable and fast on other architectures.
 
 Argon2 has two variants: Argon2d and Argon2i. Argon2i uses data-independent memory access, which is preferred for password hashing and password-based key derivation. Argon2i also makes multiple passes over the memory to protect from tradeoff attacks.
 
