@@ -12,7 +12,6 @@ Password hashing functions derive a secret key of any size from a password and a
 - The function deriving a key from a password and a salt is CPU intensive and intentionally requires a fair amount of memory. Therefore, it mitigates brute-force attacks by requiring a significant effort to verify each password.
 
 Common use cases:
-- Protecting an on-disk secret key with a password,
 - Password storage, or rather: storing what it takes to verify a password without having to store the actual password.
 - Deriving a secret key from a password, for example for disk encryption.
 
