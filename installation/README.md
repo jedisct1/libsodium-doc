@@ -18,6 +18,11 @@ $ make && make check
 # make install
 ```
 
+Note: some old gcc versions for x86_64 targets, as found on Debian 7, used to incorrectly define the `_mm256_broadcastsi128_si256` symbol. If the library cannot be compiled due to this missing symbol, configure with:
+```bash
+env CPPFLAGS="-D_mm256_broadcastsi128_si256=_mm_broadcastsi128_si256" ./configure
+```
+
 ## Pre-built libraries
 
 [Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MinGW32 and MinGW64.
