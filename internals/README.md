@@ -56,6 +56,16 @@ For this reason, none of the documented functions are macros hiding the actual s
 
 ## Testing
 
+### Unit testing
+
+The test suite covers all the functions, symbols and macros of a library built with `--enable-minimal`.
+
+In addition to fixed test vectors, all functions include non-deterministic tests, using variable-length, random data.
+
+Non-scalar parameters are stored into a region allocated with `sodium_malloc()` whenever possible. This immediately detects out-of-bounds accesses, including reads. The base address is also not guaranteed to be aligned, which to helps detect mishandling of unaligned data.
+
+The Makefile for the test suite also includes a `check-valgrind` target, that checks that the whole suite passes with the Valgrind's memcheck, helgrind, drd and sgcheck modules.
+
 ### Static analysis
 
 Continous static analysis of the Sodium source code is provided by Coverity and Facebook's Infer.
