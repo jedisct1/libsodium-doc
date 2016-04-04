@@ -156,5 +156,4 @@ A high-level `crypto_aead_*()` API is intentionally not defined until the [CAESA
 
 ## See also
 
-- [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04)
-- [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539)
+- [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539) - Specification of the IETF variant
