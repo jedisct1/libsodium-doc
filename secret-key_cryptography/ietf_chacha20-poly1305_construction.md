@@ -10,9 +10,9 @@ The IETF variant of the ChaCha20-Poly1305 construction can safely encrypt a prat
 #define ADDITIONAL_DATA (const unsigned char *) "123456"
 #define ADDITIONAL_DATA_LEN 6
 
-unsigned char nonce[crypto_aead_chacha20poly1305_ietf_NPUBBYTES];
-unsigned char key[crypto_aead_chacha20poly1305_ietf_KEYBYTES];
-unsigned char ciphertext[MESSAGE_LEN + crypto_aead_chacha20poly1305_ietf_ABYTES];
+unsigned char nonce[crypto_aead_chacha20poly1305_IETF_NPUBBYTES];
+unsigned char key[crypto_aead_chacha20poly1305_IETF_KEYBYTES];
+unsigned char ciphertext[MESSAGE_LEN + crypto_aead_chacha20poly1305_IETF_ABYTES];
 unsigned long long ciphertext_len;
 
 randombytes_buf(key, sizeof key);
@@ -51,13 +51,13 @@ int crypto_aead_chacha20poly1305_ietf_encrypt(unsigned char *c,
                                               const unsigned char *k);
 ```
 
-The `crypto_aead_chacha20poly1305_ietf_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_ietf_KEYBYTES` bytes) and public nonce `npub` (`crypto_aead_chacha20poly1305_ietf_NPUBBYTES` bytes).
+The `crypto_aead_chacha20poly1305_ietf_encrypt()` function encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_chacha20poly1305_IETF_KEYBYTES` bytes) and public nonce `npub` (`crypto_aead_chacha20poly1305_IETF_NPUBBYTES` bytes).
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
 `ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data are required.
 
-At most `mlen + crypto_aead_chacha20poly1305_ietf_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` unless `clen` is a `NULL` pointer.
+At most `mlen + crypto_aead_chacha20poly1305_IETF_ABYTES` bytes are put into `c`, and the actual number of bytes is stored into `clen` unless `clen` is a `NULL` pointer.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -85,7 +85,7 @@ The function returns `-1` is the verification fails.
 
 If the verification succeeds, the function returns `0`, puts the decrypted message into `m` and stores its actual number of bytes into `mlen` if `mlen` is not a `NULL` pointer.
 
-At most `clen - crypto_aead_chacha20poly1305_ietf_ABYTES` bytes will be put into `m`.
+At most `clen - crypto_aead_chacha20poly1305_IETF_ABYTES` bytes will be put into `m`.
 
 ## Detached mode
 
@@ -108,7 +108,7 @@ int crypto_aead_chacha20poly1305_ietf_encrypt_detached(unsigned char *c,
 
 The `crypto_aead_chacha20poly1305_ietf_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
 
-It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_ietf_ABYTES` bytes.
+It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_IETF_ABYTES` bytes.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -134,9 +134,13 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 ## Constants
 
-- `crypto_aead_chacha20poly1305_ietf_KEYBYTES`
-- `crypto_aead_chacha20poly1305_ietf_NPUBBYTES`
-- `crypto_aead_chacha20poly1305_ietf_ABYTES`
+- `crypto_aead_chacha20poly1305_IETF_ABYTES`
+
+Since Sodium 1.0.9:
+- `crypto_aead_chacha20poly1305_IETF_KEYBYTES`
+- `crypto_aead_chacha20poly1305_IETF_NPUBBYTES`
+
+On earlier versions, use `crypto_aead_chacha20poly1305_KEYBYTES` and `crypto_aead_chacha20poly1305_NPUBBYTES` - The nonce size is the only constant that differs between the original variant and the IETF variant.
 
 ## Algorithm details
 
