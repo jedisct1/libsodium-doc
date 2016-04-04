@@ -58,7 +58,7 @@ int crypto_pwhash(unsigned char * const out,
                                        size_t memlimit, int alg);
 ```
 
-The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes.
+The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `outlen` should be at least `16` (128 bits).
 
 The computed key is stored into `out`.
 
@@ -147,6 +147,10 @@ But the best defense against brute-force password cracking remains using strong 
 - `crypto_pwhash_MEMLIMIT_SENSITIVE`
 
 ## Notes
+
+`opslimit`, the number of passes, has to be at least `3`. `crypto_pwhash()` and `crypto_pwhash_str()` will fail with a `-1` return code for lower values.
+
+There is no "insecure" value for `memlimit`, though the more memory the better.
 
 Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_*` will still work without doing so, but possibly way slower.
 
