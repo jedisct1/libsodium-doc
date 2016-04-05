@@ -81,4 +81,4 @@ New features will be gladly implemented provided that they are not redundant and
 - HS1-SIV or other nonce-misuse resistant scheme
 - Consider SHAKE256
 - BLAKE2 AVX2 implementations [DONE]
-- Keyed crypto_pwhash
+- Keyed (hash-then-encrypt) crypto_pwhash
