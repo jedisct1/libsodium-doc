@@ -68,10 +68,6 @@ It returns `-1` if the verification fails, and `0` on success.
 
 A multi-part (streaming) API can be used instead of `crypto_auth_hmacsha256()`:
 
-This alternative API supports a key of arbitrary length `keylen`.
-
-However, please note that in the HMAC construction, a key larger than the block size gets reduced to `h(key)`.
-
 ```c
 int crypto_auth_hmacsha256_init(crypto_auth_hmacsha256_state *state,
                                 const unsigned char *key,
@@ -88,6 +84,10 @@ int crypto_auth_hmacsha256_update(crypto_auth_hmacsha256_state *state,
 int crypto_auth_hmacsha256_final(crypto_auth_hmacsha256_state *state,
                                  unsigned char *out);
 ```
+
+This alternative API supports a key of arbitrary length `keylen`.
+
+However, please note that in the HMAC construction, a key larger than the block size gets reduced to `h(key)`.
 
 ### HMAC-SHA-512
 
