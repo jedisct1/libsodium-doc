@@ -72,8 +72,8 @@ New features will be gladly implemented provided that they are not redundant and
 - Ed448-Goldilocks
 - SSE-optimized BLAKE2b implementation [DONE]
 - AES-GCM [DONE]
-- AES-GCM detached mode [Done]
-- ChaCha20-Poly1305 detached mode
+- AES-GCM detached mode [DONE]
+- ChaCha20-Poly1305 detached mode [DONE]
 - Argon2i as crypto_pwhash [DONE]
 - Multithreaded crypto_pwhash
 - High-level key exchange API
@@ -81,3 +81,4 @@ New features will be gladly implemented provided that they are not redundant and
 - HS1-SIV or other nonce-misuse resistant scheme
 - Consider SHAKE256
 - BLAKE2 AVX2 implementations [DONE]
+- Keyed crypto_pwhash
