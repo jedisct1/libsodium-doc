@@ -34,10 +34,9 @@ In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or `./d
 
 [Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MinGW32 and MinGW64.
 
-### Note
+They include header files, as well as static (`.LIB`) and shared (`.DLL`) libraries for all the supported compiler versions.
 
-The pre-built libraries for Visual Studio include static (`.LIB`) and
-dynamic (`.DLL`) versions.
+### Note for Visual Studio
 
 Projects willing to statically link Sodium must define a macro named
 `SODIUM_STATIC`. This will prevent symbol definitions from being
