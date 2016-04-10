@@ -1,5 +1,7 @@
 # Installation
 
+## Compilation on Unix-like systems
+
 Sodium is a shared library with a machine-independent set of
 headers, so that it can easily be used by 3rd party projects.
 
@@ -17,6 +19,16 @@ $ ./configure
 $ make && make check
 # make install
 ```
+
+## Compilation on Windows
+
+Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available (see below).
+
+However, if you want to compile it yourself, start by cloning the [stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from the Git repository.
+
+Visual Studio solutions can be then found in the `builds/msvc` directory.
+
+In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or `./dist-build/msys2-win64.sh` for Win32 or x64 targets.
 
 ## Pre-built libraries
 
