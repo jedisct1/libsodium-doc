@@ -39,6 +39,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Telehash](http://telehash.org/): An embeddable private network stack for mobile, web, and devices.
 - [Tinfoil Chat NaCl](https://github.com/maqp/tfc-nacl): TFC-NaCl is a high assurance encryption plugin for the Pidgin IM client.
 - [Tox](https://tox.chat/): A new kind of instant messenging.
+- [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator for the famous game Clash of Clans
 - [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
