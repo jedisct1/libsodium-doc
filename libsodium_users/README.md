@@ -51,6 +51,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
+- [LibSQRL](https://sqrlid.com/libsqrl/): SQRL Authentication Library
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
