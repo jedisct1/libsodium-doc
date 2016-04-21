@@ -94,6 +94,7 @@ The test suite has to always pass on the following environments:
 - Ubuntu/aarch64 - Courtesy of the GCC compile farm project
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
+- Debian/mips64 - Courtesy of the GCC compile farm project
 
 ### Cross-implementation testing
 
