@@ -17,6 +17,7 @@ For example, specific hash functions and their related macros are defined in the
 To guarantee forward compatibilility, specific implementations are intentionally not directly accessible. The library is responsible for chosing the best working implementation at runtime.
 
 For compatibility with NaCl, sizes of messages and ciphertexts are given as `unsigned long long` values.
+Other values representing the size of an object in memory use the standard `size_t` type.
 
 ## Thread safety
 
