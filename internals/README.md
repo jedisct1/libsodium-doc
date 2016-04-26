@@ -23,7 +23,7 @@ Other values representing the size of an object in memory use the standard `size
 
 Initializing the random number generator is the only operation which is not thread-safe.
 
-`sodium_init()` should be called once before any operation. It picks the best implementations for the current platform, initializes the random number generator and generates the canary for guarded heap allocations.
+`sodium_init()` should be called once, before other functions. It picks the best implementations for the current platform, initializes the random number generator and generates the canary for guarded heap allocations.
 
 After `sodium_init()` has been called, everything in libsodium is guaranteed to always be thread-safe.
 
@@ -39,7 +39,7 @@ However, this proved to be error-prone.
 
 For this reason, functions whose input requires extra padding are discouraged in Sodium.
 
-When API compatibility is needed, alternative functions that do not require padding are also made available.
+When not API compatibility is needed, alternative functions that do not require padding are available.
 
 ## Branches
 
