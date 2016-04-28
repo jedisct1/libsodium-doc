@@ -168,5 +168,5 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 ## Algorithm details
 
-- [Argon2i v1.3](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon)
+- [Argon2i v1.3](https://github.com/P-H-C/phc-winner-argon2/)
 
