@@ -8,6 +8,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
+- [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
 - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
 - [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted, multi-purpose document store.
