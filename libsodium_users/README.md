@@ -41,6 +41,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Tinfoil Chat NaCl](https://github.com/maqp/tfc-nacl): TFC-NaCl is a high assurance encryption plugin for the Pidgin IM client.
 - [Tox](https://tox.chat/): A new kind of instant messenging.
 - [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator for the famous game Clash of Clans
+- [VOLTTRON](http://gridoptics.pnnl.gov/VOLTTRON/): VOLTTRON is an innovative distributed control and sensing software platform. Its source code has been released, making it possible for researchers and others to use this tool to build applications for more efficiently managing energy use among appliances and devices, including heating, ventilation and air conditioning (HVAC) systems, lighting, electric vehicles and others.
 - [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
