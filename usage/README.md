@@ -28,7 +28,7 @@ The function can be called more than once, but it should not be executed by mult
 
 After this function returns, all of the other functions provided by Sodium will be thread-safe.
 
-`sodium_init()` doesn't perform any memory allocations. However, on Unix systems, it opens `/dev/urandom` and keeps the descriptor open, so that the device remains accessible after a `chroot()` call.
+`sodium_init()` doesn't perform any memory allocations. However, on Unix systems, it may open `/dev/urandom` and keep the descriptor open, so that the device remains accessible after a `chroot()` call.
 Multiple calls to `sodium_init()` do not cause additional descriptors to be opened.
 
 `sodium_init()` returns `0` on success, `-1` on failure, and `1` is the library had already been initialized.
