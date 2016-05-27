@@ -8,6 +8,8 @@ A message can be hashed in a single pass, but a streaming API is also available 
 
 If you are looking for a generic hash function and not specifically SHA-2, using `crypto_generichash()` (BLAKE2b) might be a better choice.
 
+These functions are also not suitable for hashing passwords. For this purpose, use the `crypto_pwhash` API documented in the Password Hashing section.
+
 ## Single-part SHA-256 example
 
 ```c
