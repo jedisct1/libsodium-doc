@@ -30,6 +30,7 @@
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Java: [sodium-jni](https://github.com/JackWink/sodium-jni)
 * JavaScript (compiled to pure JavaScript): [libsodium.js](https://github.com/jedisct1/libsodium.js)
+* JavaScript (compiled to pure JavaScript): [js-nacl](https://github.com/tonyg/js-nacl)
 * JavaScript (libsodium.js wrapper): [Natrium](https://github.com/wilhelmmatilainen/natrium)
 * JavaScript (libsodium.js wrapper for browsers): [Natrium Browser](https://github.com/wilhelmmatilainen/natrium-browser)
 * JavaScript (NodeJS): [node-sodium](https://github.com/paixaop/node-sodium)
