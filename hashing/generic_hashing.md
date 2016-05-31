@@ -145,3 +145,5 @@ The `crypto_generichash_*` function set is implemented using BLAKE2b, a simple, 
 Unlike MD5, SHA-1 and SHA-256, this function is safe against hash length extension attacks.
 
 BLAKE2b's salt and personalisation parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.
+
+BLAKE2b is not suitable for hashing passwords. For this purpose, use the `crypto_pwhash` API documented in the Password Hashing section.
