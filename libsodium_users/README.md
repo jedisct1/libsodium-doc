@@ -19,6 +19,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
 - [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN (ADSL/SDSL/xDSL/Network aggregator)
 - [Molch](https://github.com/FSMaxB/molch): An implementation of the Axolotl ratchet.
+- [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and discoverable chat application on top of nanomsg library.
 - [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation of Network Time Protocol Version 4.
 - [Open Reputation](https://openreputation.net/): An open source decentralized platform that maps identity and reputation onto the Internet-of-things.
 - [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no restrictions.
