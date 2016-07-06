@@ -26,6 +26,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a commandline utility which can be used to encrypt files.
 - [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
 - [Petmail](https://github.com/warner/petmail): A secure communication and file-sharing system.
+- [PipeSocks](https://github.com/yvbbrjdr/pipesocks): A pipe-like SOCKS5 tunnel system.
 - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to setup, as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
 - [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable application that encrypts files and directories using a symmetric-key algorithm.
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
