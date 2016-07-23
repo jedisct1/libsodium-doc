@@ -58,7 +58,8 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [Libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
-- [LibSQRL](https://sqrlid.com/libsqrl/): SQRL Authentication Library
+- [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
+- [libyojimbo](https://github.com/networkprotocol/libyojimbo): A library for creating secure client/server network protocols over UDP.
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
