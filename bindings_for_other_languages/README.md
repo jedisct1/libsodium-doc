@@ -28,6 +28,7 @@
 * Java (Android): [Libstodium](https://github.com/ArteMisc/libstodium)
 * Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 * Java (Android): [Libsodium-JNI](https://github.com/joshjdevl/libsodium-jni)
+* Java: [jsodium](https://github.com/naphaso/jsodium)
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Java: [sodium-jni](https://github.com/JackWink/sodium-jni)
 * JavaScript (compiled to pure JavaScript): [libsodium.js](https://github.com/jedisct1/libsodium.js)
