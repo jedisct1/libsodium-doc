@@ -24,7 +24,7 @@ LDFLAGS=$(pkg-config --libs libsodium)
 For static linking, Visual Studio users should define `SODIUM_STATIC=1` and `SODIUM_EXPORT=`. This is not required on other platforms.
 
 `sodium_init()` initializes the library and should be called before any other function provided by Sodium.
-The function can be called more than once, but it should not be executed by multiple threads simultaneously. Add appropriate locks around the function call if this scenario can happen in your application.
+The function can be called more than once, and can be called simultaneously from multiple threads since version 1.0.11.
 
 After this function returns, all of the other functions provided by Sodium will be thread-safe.
 
