@@ -8,6 +8,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
+- [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that travels with the app.
 - [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
 - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
@@ -54,6 +55,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 
 - [Asio Sodium Socket](https://github.com/mikezackles/asio_sodium_socket): A header-only C++14 library implementing custom transport encryption using libsodium and Asio's stackless coroutines.
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
+- [Cordova Minisodium](https://npmdaily.com/pkg/cordova-plugin-minisodium): A minimal sodium plugin for Cordova - for iOS and Android.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
