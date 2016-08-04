@@ -61,6 +61,7 @@
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
+* Rust: [rust_sodium](https://github.com/maidsafe/rust_sodium)
 * Rust: [Sodium Oxide](https://github.com/dnaq/sodiumoxide)
 * Rust: [libsodium-sys](https://github.com/zonyitoo/libsodium-sys)
 * Swift: [NaOH](https://github.com/drewcrawford/NaOH)
