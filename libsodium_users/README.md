@@ -14,6 +14,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
 - [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted, multi-purpose document store.
 - [Lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
+- [Libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support Scrypt and Argon2 for password hashing.
 - [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2 KDF, data encrypted with ChaCha20Poly1305, and Yubikey support.
 - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
 - [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
