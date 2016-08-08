@@ -16,7 +16,7 @@
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
 * Erlang: [Erlang-Libsodium](https://github.com/potatosalad/erlang-libsodium)
-* Erlang: [Salt](https://github.com/freza/salt)
+* Erlang: [Salt](https://github.com/yjh0502/salt)
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
