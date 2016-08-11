@@ -83,3 +83,4 @@ New features will be gladly implemented provided that they are not redundant and
 - Consider SHAKE256
 - BLAKE2 AVX2 implementations [DONE]
 - Keyed (hash-then-encrypt) crypto_pwhash
+- Consider BLAKE2X after the design is finalized
