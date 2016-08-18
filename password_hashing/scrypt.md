@@ -175,3 +175,7 @@ crypto_pwhash_scryptsalsa208sha256_str(out, prehashed_password, 56, ...);
 ...
 crypto_pwhash_scryptsalsa208sha256_str_verify(str, prehashed_password, 56);
 ```
+
+## Algorithm details
+
+- [The scrypt Password-Based Key Derivation Function](https://www.rfc-editor.org/rfc/rfc7914.txt)
