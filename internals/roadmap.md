@@ -85,3 +85,4 @@ New features will be gladly implemented provided that they are not redundant and
 - Keyed (hash-then-encrypt) crypto_pwhash
 - Consider BLAKE2X after the design is finalized
 - Consider Argon2id
+- Consider a Noise implementation
