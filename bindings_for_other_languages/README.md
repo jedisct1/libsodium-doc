@@ -22,6 +22,7 @@
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
 * Go: [Natrium](https://github.com/ProjectNiwl/natrium)
 * Go: [Sodium](https://github.com/jamesruan/sodium)
+* Guile: [Guile-NaCl](https://github.com/cryptotronix/guile-nacl)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * Idris: [Idris-Sodium](https://github.com/jfdm/idris-sodium)
