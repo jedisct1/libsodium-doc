@@ -43,7 +43,6 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
 - [Tbak](https://github.com/tux3/tbak): Encrypted, compressed, distributed backups.
 - [Telehash](http://telehash.org/): An embeddable private network stack for mobile, web, and devices.
-- [Thrussh](https://pijul.org/thrussh/): A portable SSH client and server library.
 - [Tinfoil Chat NaCl](https://github.com/maqp/tfc-nacl): TFC-NaCl is a high assurance encryption plugin for the Pidgin IM client.
 - [Tox](https://tox.chat/): A new kind of instant messenging.
 - [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator for the famous game Clash of Clans
