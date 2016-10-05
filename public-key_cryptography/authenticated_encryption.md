@@ -50,6 +50,8 @@ When doing so you must ensure that the same value can never be re-used (for exam
 
 This system provides mutual authentication. However, a typical use case is to secure communications between a server, whose public key is known in advance, and clients connecting anonymously.
 
+The messages are encrypted using a shared key: a sender can decrypt its own messages, which is generally not an issue for online protocols. If this is not acceptable, check out the Sealed Boxes section.
+
 ## Key pair generation
 
 ```c
