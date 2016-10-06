@@ -26,6 +26,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation of Network Time Protocol Version 4.
 - [Open Reputation](https://openreputation.net/): An open source decentralized platform that maps identity and reputation onto the Internet-of-things.
 - [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no restrictions.
+- [Pave](https://pave.software/): The Password Manager. Easy password sharing for teams. No cloud.
 - [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a commandline utility which can be used to encrypt files.
 - [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
 - [Petmail](https://github.com/warner/petmail): A secure communication and file-sharing system.
