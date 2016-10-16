@@ -59,6 +59,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [Asio Sodium Socket](https://github.com/mikezackles/asio_sodium_socket): A header-only C++14 library implementing custom transport encryption using libsodium and Asio's stackless coroutines.
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
 - [Cordova Minisodium](https://npmdaily.com/pkg/cordova-plugin-minisodium): A minimal sodium plugin for Cordova - for iOS and Android.
+- [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content using Ed25519.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
