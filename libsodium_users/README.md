@@ -62,6 +62,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content using Ed25519.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
+- [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
 - [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [Libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
@@ -89,3 +90,5 @@ Some companies using Libsodium, possibly in non-opensource products. Send a [pul
 - [Paragon Initiative Enterprises](https://paragonie.com)
 - [Supercell](http://supercell.com)
 - [Yandex](https://www.yandex.com)
+- [pi-lar](http://www.pi-lar.net)
+
