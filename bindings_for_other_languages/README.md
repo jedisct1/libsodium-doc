@@ -38,6 +38,7 @@
 * JavaScript (libsodium.js wrapper): [Natrium](https://github.com/wilhelmmatilainen/natrium)
 * JavaScript (libsodium.js wrapper for browsers): [Natrium Browser](https://github.com/wilhelmmatilainen/natrium-browser)
 * JavaScript (NodeJS): [node-sodium](https://github.com/paixaop/node-sodium)
+* JavaScript (NodeJS): [sodium-native](https://github.com/mafintosh/sodium-native)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
