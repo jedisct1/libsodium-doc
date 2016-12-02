@@ -21,11 +21,11 @@ Other values representing the size of an object in memory use the standard `size
 
 ## Thread safety
 
-Initializing the random number generator is the only operation which is not thread-safe.
+Initializing the random number generator is the only operation that requires an internal lock.
 
-`sodium_init()` should be called once, before other functions. It picks the best implementations for the current platform, initializes the random number generator and generates the canary for guarded heap allocations.
+`sodium_init()` should be called before any other functions. It picks the best implementations for the current platform, initializes the random number generator and generates the canary for guarded heap allocations.
 
-After `sodium_init()` has been called, everything in libsodium is guaranteed to always be thread-safe.
+On POSIX systems, everything in libsodium is guaranteed to always be thread-safe.
 
 ## Heap allocations
 
