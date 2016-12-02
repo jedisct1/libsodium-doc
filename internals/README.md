@@ -85,7 +85,7 @@ The test suite has to always pass on the following environments:
 - Ubuntu/x86_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind
 - Ubuntu/x86_64 using clang, `-fsanitize=address,undefined` and Valgrind
 - Ubuntu/x86_64 using tcc
-- OSX using Xcode 7
+- OSX using Xcode 8
 - OSX using CompCert
 - Windows 10 using Visual Studio 2010, 2012, 2013, 2015
 - msys2 using mingw32 and mingw64
