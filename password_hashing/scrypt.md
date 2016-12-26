@@ -55,11 +55,13 @@ int crypto_pwhash_scryptsalsa208sha256(unsigned char * const out,
 
 The `crypto_pwhash_scryptsalsa208sha256()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_scryptsalsa208sha256_SALTBYTES` bytes.
 
-The computed key is stored into `out`.
+The computed key is stored into `out`. `out` (and hence `outlen`) should be at least `crypto_pwhash_scryptsalsa208sha256_BYTES_MIN` and at most `crypto_pwhash_scryptsalsa208sha256_BYTES_MAX`.
 
-`opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key.
+`passwd` (and hence `passwdlen`) should be at least `crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN` and at most `crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX`.
 
-`memlimit` is the maximum amount of RAM that the function will use, in bytes. It is highly recommended to allow the function to use at least 16 megabytes.
+`opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key. This number must be between `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN` and `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MAX`
+
+`memlimit` is the maximum amount of RAM that the function will use, in bytes. It is highly recommended to allow the function to use at least 16 megabytes. This number must be between `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MIN` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX`
 
 For interactive, online operations, `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE` provide a safe base line for these two parameters. However, using higher values may improve security.
 
@@ -139,9 +141,17 @@ Please note that `r` is specified in kilobytes, and not in bytes as in the Sodiu
 
 ## Constants
 
+- `crypto_pwhash_scryptsalsa208sha256_BYTES_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_BYTES_MAX`
+- `crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX`
 - `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
 - `crypto_pwhash_scryptsalsa208sha256_STRBYTES`
 - `crypto_pwhash_scryptsalsa208sha256_STRPREFIX`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MAX`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX`
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE`
 - `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE`
 - `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE`
