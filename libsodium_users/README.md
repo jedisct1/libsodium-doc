@@ -7,6 +7,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Discord](https://discordapp.com): All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
+- [FeCl](https://github.com/jhwgh1968/FeCl): A secure message-passing server based on libsodium.
 - [Flocksy](https://github.com/alex-dot/syncbox): An anonymous file synchronisation tool.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
 - [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that travels with the app.
