@@ -1,6 +1,7 @@
 # Bindings for other languages
 
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
+* .NET: [nsec](https://github.com/ektrah/nsec)
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)
