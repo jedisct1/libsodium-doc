@@ -194,7 +194,8 @@ If the verification succeeds, the function returns `0`, and puts the decrypted m
 The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
-It is recommended to split message larger than 2 Gb into smaller chunks.
+It is recommended to split message larger than 2 Gb into smaller chunks, and to avoid encrypting more than 2^34.5 128-bit input blocks (full or partial) with the same key.
+If frequent rekeying is not an option, use (X)ChaCha20-Poly1305 instead.
 
 Support for AES256-GCM was introduced in Libsodium 1.0.4.
 
