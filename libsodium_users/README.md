@@ -84,6 +84,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 # Companies using libsodium
 Some companies using Libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
+- [Bearch Inc.](http://www.getbearch.com/)
 - [Digital Ocean](https://www.digitalocean.com/)
 - [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
 - [Informatica](https://www.informatica.com/)
