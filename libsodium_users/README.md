@@ -90,7 +90,8 @@ Some companies using Libsodium, possibly in non-opensource products. Send a [pul
 - [Keybase](https://keybase.io/)
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
+- [Pi-lar](http://www.pi-lar.net)
+- [Riseup](https://riseup.net)
 - [Supercell](http://supercell.com)
+- [Wire](https://wire.com)
 - [Yandex](https://www.yandex.com)
-- [pi-lar](http://www.pi-lar.net)
-
