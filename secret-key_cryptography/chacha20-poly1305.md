@@ -14,7 +14,7 @@ The chosen construction uses encrypt-then-MAC and decryption will never be perfo
 
 Libsodium implements two versions of the ChaCha20-Poly1305 construction:
 - The original construction can safely encrypt up to 2^64 messages with the same key, without any practical limit to the size of a message (up to 2^70 bytes).
-- The IETF variant is slightly slower. It can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(1^32)-64 bytes (approximatively 256 GB).
+- The IETF variant is slightly slower. It can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(2^32)-64 bytes (approximatively 256 GB).
 
 Both are interoperable with other crypto libaries, share the same security properties and are accessible via a similar API.
 
