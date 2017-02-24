@@ -64,7 +64,7 @@ For this reason, `sodium_malloc()` should not be used with packed or variable-le
 
 All the structures used by libsodium can safely be allocated using `sodium_malloc()`.
 
-Allocating `0` bytes is a valid operation, and returns a pointer that can be successfully passed to `sodium_free()`.
+Allocating `0` bytes is a valid operation. It returns a pointer that can be successfully passed to `sodium_free()`.
 
 ```c
 void *sodium_allocarray(size_t count, size_t size);
