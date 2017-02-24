@@ -62,7 +62,7 @@ The returned address will not be aligned if the allocation size is not a multipl
 
 For this reason, `sodium_malloc()` should not be used with packed or variable-length structures, unless the size given to `sodium_malloc()` is rounded up in order to ensure proper alignment.
 
-All the structures used by libsodium can safely be allocated using `sodium_malloc()`, the only one requiring extra care being `crypto_generichash_state`, whose size needs to be rounded up to a multiple of 64 bytes.
+All the structures used by libsodium can safely be allocated using `sodium_malloc()`.
 
 Allocating `0` bytes is a valid operation, and returns a pointer that can be successfully passed to `sodium_free()`.
 
