@@ -60,7 +60,7 @@ New features will be gladly implemented provided that they are not redundant and
 - Improve documentation
 - Consider `getrandom(2)` [DONE]
 - Consider [Gitian](https://gitian.org/)
-- Complete the sodium-validation project [IN PROGRESS]
+- Complete the sodium-validation project
 - Optimized implementations for ARM w/NEON
 - AVX optimized Curve25119 [DONE]
 - Precomputed interface for crypto_box_easy() [DONE]
@@ -77,12 +77,17 @@ New features will be gladly implemented provided that they are not redundant and
 - ChaCha20-Poly1305 detached mode [DONE]
 - Argon2i as crypto_pwhash [DONE]
 - Multithreaded crypto_pwhash
-- High-level key exchange API
+- High-level key exchange API [DESIGNED]
 - Generic subkey derivation API
-- HS1-SIV or other nonce-misuse resistant scheme
+- Nonce-misuse resistant scheme
 - Consider SHAKE256
 - BLAKE2 AVX2 implementations [DONE]
 - Keyed (hash-then-encrypt) crypto_pwhash
-- Consider BLAKE2X after the design is finalized
+- Consider BLAKE2X
 - Consider Argon2id
 - Consider a Noise implementation
+- AVX2 salsa20 implementation [DONE]
+- AVX2 chacha20 implementation [DONE]
+- AVX2 poly1305 implementation
+- key generation API [DONE]
+- nonce/subkey generation API
