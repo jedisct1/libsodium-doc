@@ -14,7 +14,71 @@ Multiple secret subkeys can be derived from a single master key.
 
 Given the master key and a key identifier, a subkey can be deterministically computed. However, given a subkey, an attacker cannot compute the master key nor any other subkeys.
 
-In order to do so, the Blake2 hash function is an efficient alternative to the HKDF contruction:
+### Key derivation with libsodium >= 1.0.12
+
+Recent versions of the library have a dedicated API for key derivation.
+
+The `crypto_kdf` API can derive up to 2^64 keys from a single master key and context, and individual subkeys can have an arbitrary length between 128 (16 bytes) and 512 bits (64 bytes).
+
+Example:
+```c
+#define CONTEXT "Examples"
+
+uint8_t master_key[hydro_kdf_KEYBYTES];
+uint8_t subkey1[32];
+uint8_t subkey2[32];
+uint8_t subkey3[64];
+
+sodium_kdf_keygen(master_key);
+
+sodium_kdf_derive_from_key(subkey1, sizeof subkey1, 1, CONTEXT, master_key);
+sodium_kdf_derive_from_key(subkey2, sizeof subkey2, 2, CONTEXT, master_key);
+sodium_kdf_derive_from_key(subkey3, sizeof subkey3, 3, CONTEXT, master_key);
+```
+
+Usage:
+```c
+void crypto_kdf_keygen(uint8_t key[crypto_kdf_KEYBYTES]);
+```
+
+The `crypto_kdf_keygen()` function creates a master key.
+
+
+```c
+int crypto_kdf_derive_from_key(unsigned char *subkey, size_t subkey_len,
+                               uint64_t subkey_id,
+                               const char ctx[crypto_kdf_CONTEXTBYTES],
+                               const unsigned char key[crypto_kdf_KEYBYTES]);
+```
+
+The `hydro_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `subkey` of length `subkey_len` bytes using the master key `key` and the context `ctx`.
+
+`subkey_id` can be any value up to `(2^64)-1`.
+
+`subkey_len` has to be between `crypto_kdf_BYTES_MIN` (inclusive) and `crypto_kdf_BYTES_MAX` (inclusive).
+
+Similar to a type, the context `ctx` is a 8 characters string describing what the key is going to be used for.
+
+Its purpose is to mitigate accidental bugs by separating domains.
+The same function used with the same key but in two distinct contexts is likely to generate two different outputs.
+
+Contexts don't have to be secret and can have a low entropy.
+
+Examples of contexts include `UserName`, `__auth__`, `pictures` and `userdata`.
+
+If more convenient, it is also fine to use a single global context for a whole application.
+This will still prevent the same keys from being mistakenly used by another application.
+
+Constants:
+- `crypto_kdf_PRIMITIVE`
+- `crypto_kdf_BYTES_MIN`
+- `crypto_kdf_BYTES_MAX`
+- `crypto_kdf_CONTEXTBYTES`
+- `crypto_kdf_KEYBYTES`
+
+### Key derivation with libsodium < 1.0.12
+
+On older versions of the library, the BLAKE2 function can be used directly:
 
 ```c
 const unsigned char appid[crypto_generichash_blake2b_PERSONALBYTES] = {
@@ -52,7 +116,7 @@ The salt (`keyid`) doesn't have to be secret either. This is a 16-bytes identifi
 
 ## Nonce extension
 
-Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`), ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With 96 bits random nonces, 2^32 encryptions is the limit before the probability of duplicate nonces becomes too high.
+Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`) and XChaCha20, ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With 96 bits random nonces, 2^32 encryptions is the limit before the probability of duplicate nonces becomes too high.
 
 Using a counter instead of random nonces prevents this. However, keeping a state is not always an option, especially with offline protocols.
 
@@ -77,7 +141,7 @@ This function accepts a 32 bytes (`crypto_core_hchacha20_KEYBYTES`) secret key `
 
 Optionally, a 16-bytes (`crypto_core_hchacha20_CONSTBYTES`) constant `c` can be specified to personalize the function to an application. `c` can be left to `NULL` in order to use the default constant.
 
-The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce:
+The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce (XChaCha20) on Libsodium < 1.0.12 (versions >= 1.0.12 already include this construction).
 
 ```c
 #define MESSAGE (const unsigned char *) "message"
@@ -103,5 +167,3 @@ crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
                                      n + crypto_core_hchacha20_INPUTBYTES,
                                      k2);
 ```
-
-A higher-level API will be provided in a future revision of the library in order to abstract this.

@@ -12,11 +12,15 @@ The chosen construction uses encrypt-then-MAC and decryption will never be perfo
 
 ## Variants
 
-Libsodium implements two versions of the ChaCha20-Poly1305 construction:
+Libsodium implements three versions of the ChaCha20-Poly1305 construction:
 - The original construction can safely encrypt up to 2^64 messages with the same key, without any practical limit to the size of a message (up to 2^70 bytes).
-- The IETF variant is slightly slower. It can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(2^32)-64 bytes (approximatively 256 GB).
+- The IETF variant. It can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(2^32)-64 bytes (approximatively 256 GB).
+- The XChaCha20 variant, introduced in Libsodium 1.0.12. It can safely encrypt a practically unlimited number of messages of any sizes, and random nonces are safe to use.
 
-Both are interoperable with other crypto libaries, share the same security properties and are accessible via a similar API.
+The first two variants are fully interoperable with other crypto libaries. The XChaCha20 variant is currently only implemented in Libsodium, but is the recommended option if interoperability is not a concern.
 
-The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, while the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version.
+They all share the same security properties when used properly, and are accessible via a similar API.
+
+The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version, and the `crypto_aead_xchacha20poly1305_*()` functions implement the XChaCha20 variant.
+
 The constants are the same, except for the nonce size.

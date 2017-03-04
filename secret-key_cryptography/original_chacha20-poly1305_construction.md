@@ -147,8 +147,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
-To prevent nonce reuse in a client-server pro
-tocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 The API conforms to the proposed API for the CAESAR competition.
 

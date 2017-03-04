@@ -139,6 +139,14 @@ Please note that `r` is specified in kilobytes, and not in bytes as in the Sodiu
 
 ## Constants
 
+- `crypto_pwhash_scryptsalsa208sha256_BYTES_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_BYTES_MAX`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MAX`
+- `crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN`
+- `crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX`
 - `crypto_pwhash_scryptsalsa208sha256_SALTBYTES`
 - `crypto_pwhash_scryptsalsa208sha256_STRBYTES`
 - `crypto_pwhash_scryptsalsa208sha256_STRPREFIX`
