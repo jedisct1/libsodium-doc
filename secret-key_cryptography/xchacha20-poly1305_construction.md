@@ -4,6 +4,8 @@ The XChaCha20-Poly1305 construction can safely encrypt up to 2^80 messages with 
 
 As an alternative to counters, its large nonce size (192-bit) allows random nonces to be safely used.
 
+For this reason, and if interoperability with other libraries is not a concern, this is the recommended AEAD construction.
+
 ## Example (combined mode)
 
 ```c
@@ -149,7 +151,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 XChaCha20-Poly1305 was introduced in Libsodium 1.0.12.
 
-Unlike other variants directly using the ChaCha20 cipher, generating a random nonce for each message is acceptable with this XChaCha20-based construction.
+Unlike other variants directly using the ChaCha20 cipher, generating a random nonce for each message is acceptable with this XChaCha20-based construction, provided that the output of the PRNG is indistinguishable from random data.
 
 The API conforms to the proposed API for the CAESAR competition.
 
