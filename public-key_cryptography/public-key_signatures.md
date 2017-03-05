@@ -43,6 +43,41 @@ if (crypto_sign_verify_detached(sig, MESSAGE, MESSAGE_LEN, pk) != 0) {
 }
 ```
 
+### Example (multi-part message)
+
+```c
+#define MESSAGE_PART1 \
+    ((const unsigned char *) "Arbitrary data to hash")
+#define MESSAGE_PART1_LEN 22
+
+#define MESSAGE_PART2 \
+    ((const unsigned char *) "is longer than expected")
+#define MESSAGE_PART2_LEN 23
+
+unsigned char pk[crypto_sign_PUBLICKEYBYTES];
+unsigned char sk[crypto_sign_SECRETKEYBYTES];
+crypto_sign_keypair(pk, sk);
+
+crypto_sign_state state;
+unsigned char sig[crypto_sign_BYTES];
+
+/* signature creation */
+
+crypto_sign_init(&state)
+crypto_sign_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
+crypto_sign_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+crypto_sign_final_create(&state, sig, NULL, sk);
+
+/* signature verification */
+
+crypto_sign_init(&state)
+crypto_sign_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
+crypto_sign_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+if (crypto_sign_final_verify(&state, sig, pk) != 0) {
+    /* message forged! */
+}
+```
+
 ## Purpose
 
 In this system, a signer generates a key pair:
@@ -121,6 +156,48 @@ The `crypto_sign_verify_detached()` function verifies that `sig` is a valid sign
 
 It returns `-1` if the signature fails verification, or `0` on success.
 
+## Multi-part messages
+
+If the message doesn't fit in memory, it can be provided as a sequence of arbitrarily-sized chunks.
+
+This will use the Ed25519ph signature system, that pre-hashes the message. In other words, what gets signed is not the message itself, but its image through a hash function.
+
+If the message _can_ fit in memory and can be supplied as a single chunk, the single-part API should be preferred.
+
+```c
+int crypto_sign_init(crypto_sign_state *state);
+```
+
+The `crypto_sign_init()` function initializes the state `state`. This function must be called before the first `crypto_sign_update()` call.
+
+```c
+int crypto_sign_update(crypto_sign_state *state,
+                       const unsigned char *m, unsigned long long mlen);
+```
+
+Add a new chunk `m` of length `mlen` bytes to the message that will eventually be signed.
+
+After all parts have been supplied, one of the following functions can be called:
+
+```c
+int crypto_sign_final_create(crypto_sign_state *state, unsigned char *sig,
+                             unsigned long long *siglen_p,
+                             const unsigned char *sk);
+```
+
+The `crypto_sign_final_create()` function computes a signature for the previously supplied message, using the secret key `sk` and puts it into `sig`.
+
+If `siglen_p` is not `NULL`, the length of the signature is stored at this address.
+
+It is safe to ignore `siglen` and always consider a signature as `crypto_sign_BYTES` bytes long: shorter signatures will be transparently padded with zeros if necessary.
+
+```c
+int crypto_sign_final_verify(crypto_sign_state *state, unsigned char *sig,
+                             const unsigned char *pk);
+```
+
+The `crypto_sign_final_verify()` function verifies that `sig` is a valid signature for the message whose content has been previously supplied using `crypto_update()`, using the public key `pk`.
+
 ## Extracting the seed and the public key from the secret key
 
 The secret key actually includes the seed (either a random seed or the one given to `crypto_sign_seed_keypair()`) as well as the public key.
@@ -140,6 +217,10 @@ The `crypto_sign_ed25519_sk_to_seed()` function extracts the seed from the secre
 
 The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the secret key `sk` and copies it into `pk` (`crypto_sign_PUBLICKEYBYTES` bytes).
 
+## Data structures
+
+- `crypto_sign_state`, whose size can be retrieved using `crypto_sign_statebytes()`
+
 ## Constants
 
 - `crypto_sign_PUBLICKEYBYTES`
@@ -149,10 +230,13 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 
 ## Algorithm details
 
-- Signature: Ed25519
+- Single-part signature: Ed25519
+- Multi-part signature: Ed25519ph
 
 ## Notes
 
 `crypto_sign_verify()` and `crypto_sign_verify_detached()` are only designed to verify signatures computed using `crypto_sign()` and `crypto_sign_detached()`.
 
 The original NaCl `crypto_sign_open()` implementation overwrote 64 bytes after the message. The libsodium implementation doesn't write past the end of the message.
+
+Ed25519ph (used by the multi-part API) was implemented in Libsodium 1.0.12.
