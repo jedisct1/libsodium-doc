@@ -115,6 +115,8 @@ The function returns `-1` if the verification fails, or `0` on success.
 
 ## Notes
 
+Internally, `crypto_secretbox` call `crypto_stream_xor()` to encrypt the message. As a result, a secret key used with the former should not be reused with the later. But as a general rule, a key should not be reused for different purposes.
+
 The original NaCl `crypto_secretbox` API is also supported, albeit not recommended.
 
 `crypto_secretbox()` takes a pointer to 32 bytes before the message, and stores the ciphertext 16 bytes after the destination pointer, the first 16 bytes being overwritten with zeros. `crypto_secretbox_open()` takes a pointer to 16 bytes before the ciphertext and stores the message 32 bytes after the destination pointer, overwriting the first 32 bytes with zeros.
