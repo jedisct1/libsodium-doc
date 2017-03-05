@@ -49,4 +49,6 @@ This permits direct access to any block without having to compute the previous o
 
 ## Notes
 
-The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce every time a new stream is required.
+Unlike plain ChaCha20, the nonce is 192 bits long, so that generating a random nonce for every message is safe. If the output of the PRNG is indistinguishable from random data, the probability for a collision to happen is negligible.
+
+XChaCha20 was implemented in Libsodium 1.0.12.
