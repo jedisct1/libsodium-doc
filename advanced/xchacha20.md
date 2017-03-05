@@ -42,6 +42,14 @@ This permits direct access to any block without having to compute the previous o
 
 `m` and `c` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
 
+```c
+void crypto_stream_xchacha20_keygen(unsigned char k[crypto_stream_xchacha20_KEYBYTES]);
+```
+
+This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_stream_xchacha20_KEYBYTES`

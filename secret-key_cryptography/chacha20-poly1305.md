@@ -21,6 +21,6 @@ The first two variants are fully interoperable with other crypto libaries. The X
 
 They all share the same security properties when used properly, and are accessible via a similar API.
 
-The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version, and the `crypto_aead_xchacha20poly1305_*()` functions implement the XChaCha20 variant.
+The `crypto_aead_chacha20poly1305_*()` set of functions implements the original construction, the `crypto_aead_chacha20poly1305_ietf_*()` functions implement the IETF version, and the `crypto_aead_xchacha20poly1305_ietf_*()` functions implement the XChaCha20 variant.
 
 The constants are the same, except for the nonce size.

@@ -1,6 +1,6 @@
 # Stream ciphers
 
-Sodium includes implementations of XSalsa20/20 and ChaCha20/20 stream ciphers.
+Sodium includes implementations of the Salsa20, XSalsa20, ChaCha20 and XChaCha20 stream ciphers.
 
 These functions are stream ciphers. They do not provide authenticated encryption.
 

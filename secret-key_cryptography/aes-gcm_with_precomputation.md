@@ -1,6 +1,5 @@
 # AES256-GCM with precomputation
 
-
 Applications that encrypt several messages using the same key can gain a little speed by expanding the AES key only once, via the precalculation interface.
 
 ```

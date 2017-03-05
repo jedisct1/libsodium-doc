@@ -183,6 +183,14 @@ The function returns `-1` is the verification fails.
 
 If the verification succeeds, the function returns `0`, and puts the decrypted message into `m`, whose length is equal to the length of the ciphertext.
 
+```c
+void crypto_aead_aes256gcm_keygen(unsigned char k[crypto_aead_aes256gcm_KEYBYTES]);
+```
+
+This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_aead_aes256gcm_KEYBYTES`
