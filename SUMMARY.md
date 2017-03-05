@@ -36,6 +36,7 @@
    * [One-time authentication](advanced/poly1305.md)
    * [Stream ciphers](advanced/stream_ciphers.md)
        * [ChaCha20](advanced/chacha20.md)
+       * [XChaCha20](advanced/xchacha20.md)       
        * [Salsa20](advanced/salsa20.md)
        * [XSalsa20](advanced/xsalsa20.md)
    * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
