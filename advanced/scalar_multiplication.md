@@ -8,7 +8,7 @@ Sodium provides X25519, a state-of-the-art Diffie-Hellman function suitable for 
 int crypto_scalarmult_base(unsigned char *q, const unsigned char *n);
 ```
 
-Given a user's secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `crypto_scalarmult_base()` function computes the user's public key and puts it into `q` (`crypto_scalarmult_BYTES` bytes).
+Given a user's secret key `n` \(`crypto_scalarmult_SCALARBYTES` bytes\), the `crypto_scalarmult_base()` function computes the user's public key and puts it into `q` \(`crypto_scalarmult_BYTES` bytes\).
 
 `crypto_scalarmult_BYTES` and `crypto_scalarmult_SCALARBYTES` are provided for consistency, but it is safe to assume that `crypto_scalarmult_BYTES == crypto_scalarmult_SCALARBYTES`.
 
@@ -16,12 +16,15 @@ Given a user's secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `cryp
 int crypto_scalarmult(unsigned char *q, const unsigned char *n,
                       const unsigned char *p);
 ```
+
 This function can be used to compute a shared secret `q` given a user's secret key and another user's public key.
 
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
-`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size (≈2^252), and the key distribution is not uniform. 
+`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), and the key distribution is not uniform.   
 For this reason, instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
+
+  
 This can be achieved with the following code snippet:
 
 ```c
@@ -70,9 +73,12 @@ crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
 ## Constants
 
-- `crypto_scalarmult_BYTES`
-- `crypto_scalarmult_SCALARBYTES`
+* `crypto_scalarmult_BYTES`
+* `crypto_scalarmult_SCALARBYTES`
 
 ## Algorithm details
 
-- X25519 (ECDH over Curve25519) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
+* X25519 \(ECDH over Curve25519\) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
+
+
+
