@@ -79,10 +79,10 @@ Releases are never shipped until all these tools report zero defects.
 
 ### Dynamic analysis
 
-Continuous Integration for is provided by  
-[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master\) for
+Continuous Integration is provided by
+[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master) for
 Linux/x86_64, and by
-[AppVeyor]\(https://ci.appveyor.com/project/jedisct1/libsodium) for the  
+[AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium) for the
 Visual Studio builds.
 
 In addition, the test suite has to always pass on the following  
