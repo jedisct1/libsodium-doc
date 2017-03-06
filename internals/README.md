@@ -129,7 +129,7 @@ Bindings are essential to the Libsodium ecosystem. It is expected that:
 
 For these reasons, ABI stability is critical:
 
-* Symbols must not be removed from non-minimal builds without changing the major version of the library. Symbols may not be replaced with macros either.
+* Symbols must not be removed from non-minimal builds without changing the major version of the library. Symbols must not be replaced with macros either.
 * However, symbols that will eventually be removed can be tagged with GCC's `deprecated` attribute. They can also be removed from minimal builds.
 * A data structure must considered opaque from an application perspective, and a structure size cannot change if that size was previously exposed as a constant. Structures whose size are subject to changes must only expose their size through a function.
 
