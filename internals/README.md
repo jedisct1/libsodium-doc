@@ -91,7 +91,7 @@ every release, as well as before merging a new change to the `stable`
 branch.
 
 - asmjs/V8 (node + in-browser), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
-  asmjs/Chakra
+  asmjs/Chakra-Core
 - NativeClient/portable, NativeClient/x86_64
 - OpenBSD/x86_64 using `gcc -fstack-protector-strong -fstack-shuffle`
 - Ubuntu/x86_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind (memcheck, helgrind, drd and sgcheck)

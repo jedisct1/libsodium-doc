@@ -65,8 +65,6 @@ New features will be gladly implemented provided that they are not redundant and
 - AVX optimized Curve25119 [DONE]
 - Precomputed interface for crypto_box_easy() [DONE]
 - First-class support for Javascript [DONE]
-- SIMD implementations of ChaCha20 [DONE]
-- SIMD implementations of Poly1305 [DONE]
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter [DONE]
 - IETF-compatible chacha20poly1305 implementation [DONE]
 - Ed448-Goldilocks
@@ -77,17 +75,19 @@ New features will be gladly implemented provided that they are not redundant and
 - ChaCha20-Poly1305 detached mode [DONE]
 - Argon2i as crypto_pwhash [DONE]
 - Multithreaded crypto_pwhash
-- High-level key exchange API [DESIGNED]
-- Generic subkey derivation API
+- Generic subkey derivation API [DONE]
 - Nonce-misuse resistant scheme
 - Consider SHAKE256
 - BLAKE2 AVX2 implementations [DONE]
 - Keyed (hash-then-encrypt) crypto_pwhash
 - Consider BLAKE2X
 - Consider Argon2id
-- Consider a Noise implementation
-- AVX2 salsa20 implementation [DONE]
-- AVX2 chacha20 implementation [DONE]
-- AVX2 poly1305 implementation
+- Port libhydrogen's key exchange API
+- SSSE3 ChaCha20 implementation [DONE]
+- SSSE3 Salsa20 implementation [DONE]
+- SSSE3 Poly1305 implementation [DONE]
+- AVX2 Salsa20 implementation [DONE]
+- AVX2 ChaCha20 implementation [DONE]
+- AVX2 Poly1305 implementation
 - key generation API [DONE]
-- nonce/subkey generation API
+- Nonce/subkey generation API
