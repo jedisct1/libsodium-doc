@@ -79,7 +79,16 @@ Releases are never shipped until all these tools report zero defects.
 
 ### Dynamic analysis
 
-The test suite has to always pass on the following environments:
+Continuous Integration for is provided by
+[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master) for
+Linux/x86_64, and by
+[AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium) for the
+Visual Studio builds.
+
+In addition, the test suite has to always pass on the following
+environments. Libsodium is manually validated on all of these before
+every release, as well as before merging a new change to the `stable`
+branch.
 
 - asmjs/V8 (node + in-browser), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
   asmjs/Chakra
