@@ -102,6 +102,14 @@ The plaintext is put into `m` after verifying that `mac` is a valid authenticati
 
 The function returns `-1` if the verification fails, or `0` on success.
 
+```c
+void crypto_secretbox_keygen(unsigned char k[crypto_secretbox_KEYBYTES]);
+```
+
+This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_secretbox_KEYBYTES`
@@ -114,6 +122,8 @@ The function returns `-1` if the verification fails, or `0` on success.
 - Authentication: Poly1305 MAC
 
 ## Notes
+
+Internally, `crypto_secretbox` call `crypto_stream_xor()` to encrypt the message. As a result, a secret key used with the former should not be reused with the later. But as a general rule, a key should not be reused for different purposes.
 
 The original NaCl `crypto_secretbox` API is also supported, albeit not recommended.
 

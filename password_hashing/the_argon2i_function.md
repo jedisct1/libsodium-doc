@@ -136,6 +136,14 @@ But the best defense against brute-force password cracking remains using strong 
 ## Constants
 
 - `crypto_pwhash_ALG_DEFAULT`
+- `crypto_pwhash_BYTES_MIN`
+- `crypto_pwhash_BYTES_MAX`
+- `crypto_pwhash_MEMLIMIT_MIN`
+- `crypto_pwhash_MEMLIMIT_MAX`
+- `crypto_pwhash_OPSLIMIT_MIN`
+- `crypto_pwhash_OPSLIMIT_MAX`
+- `crypto_pwhash_PASSWD_MIN`
+- `crypto_pwhash_PASSWD_MAX`
 - `crypto_pwhash_SALTBYTES`
 - `crypto_pwhash_STRBYTES`
 - `crypto_pwhash_STRPREFIX`

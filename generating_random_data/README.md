@@ -29,6 +29,25 @@ void randombytes_buf(void * const buf, const size_t size);
 The `randombytes_buf()` function fills `size` bytes starting at `buf` with an unpredictable sequence of bytes.
 
 ```c
+void randombytes_buf_deterministic(void * const buf, const size_t size,
+                                   const unsigned char seed[randombytes_SEEDBYTES]);
+```
+
+The `randombytes_buf_deterministic` function stores `size` bytes into `buf` indistinguishable from random bytes without knowing `seed`.
+
+For a given `seed`, this function will always output the same sequence. `size` can be up to 2^70 (256 GB).
+
+`seed` is `randombytes_SEEDBYTES` bytes long.
+
+This function is mainly useful for writing tests, and was introduced in Libsodium 1.0.12. Under the hood, it uses the ChaCha20 stream cipher.
+
+```c
+void randombytes_keygen(unsigned char seed[randombytes_SEEDBYTES]);
+```
+
+The `randombytes_keygen()` function initializes a seed `seed` with random data.
+
+```c
 int randombytes_close(void);
 ```
 

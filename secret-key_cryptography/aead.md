@@ -18,8 +18,6 @@ Intel Westmere processors (introduced in 2010) and newer meet the requirements.
 
 There are no plans to support non hardware-accelerated implementations of AES-GCM.
 
-If portability is not a concern, AES256-GCM is the fastest option.
-
 ### ChaCha20-Poly1305
 
 While AES is very fast on dedicated hardware, its performance on platforms that lack such hardware is considerably lower. Another problem is that many software AES implementations are vulnerable to cache-collision timing attacks.
@@ -28,6 +26,14 @@ ChaCha20 is considerably faster than AES in software-only implementations, makin
 
 Poly1305 is a high-speed message authentication code.
 
-The combination of the ChaCha20 stream cipher with the Poly1305 authenticator was proposed in January 2014 as a faster alternative to the well-studied Salsa20-Poly1305 construction. ChaCha20-Poly1305 was implemented in major operating systems, web browsers and crypto libraries shortly after. It eventually became an official IETF standard in May 2015.
+The combination of the ChaCha20 stream cipher with the Poly1305 authenticator was proposed in January 2014 as an alternative to the Salsa20-Poly1305 construction. ChaCha20-Poly1305 was implemented in major operating systems, web browsers and crypto libraries shortly after. It eventually became an official IETF standard in May 2015.
 
 The ChaCha20-Poly1305 implementation in Libsodium is portable across all supported architectures, and is the recommended choice for most applications.
+
+### XChaCha20-Poly1305
+
+XChaCha20-Poly1305 applies the construction described in Daniel Bernstein's [Extending the Salsa20 nonce](https://cr.yp.to/snuffle/xsalsa-20081128.pdf) paper to the ChaCha20 cipher in order to extend the nonce size to 192-bit.
+
+This extended nonce size allows random nonces to be safely used, and also facilitates the construction of misuse-resistant schemes.
+
+The only limitation of XChaCha20-Poly1305 is that it is not widely implemented in other libraries yet.
