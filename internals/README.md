@@ -133,7 +133,5 @@ For these reasons, ABI stability is critical:
 * However, symbols that will eventually be removed can be tagged with GCC's `deprecated` attribute. They can also be removed from minimal builds.
 * A data structure must considered opaque from an application perspective, and a structure size cannot change if that size was previously exposed as a constant. Structures whose size are subject to changes must only expose their size through a function.
 
-Any major change to the library should be tested with popular bindings, especially those building their own copy of the library.
-
-
+Any major change to the library should be tested for compatibility with popular bindings, especially those recompiling a copy of the library.
 
