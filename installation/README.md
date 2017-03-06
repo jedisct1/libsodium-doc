@@ -2,17 +2,13 @@
 
 ## Compilation on Unix-like systems
 
-Sodium is a shared library with a machine-independent set of
-headers, so that it can easily be used by 3rd party projects.
+Sodium is a shared library with a machine-independent set of headers, so that it can easily be used by 3rd party projects.
 
 The library is built using autotools, making it easy to package.
 
-Installation is trivial, and both compilation and testing can take
-advantage of multiple CPU cores.
+Installation is trivial, and both compilation and testing can take advantage of multiple CPU cores.
 
-Download a
-[tarball of libsodium](https://download.libsodium.org/libsodium/releases/),
-then follow the ritual:
+Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), then follow the ritual:
 
 ```bash
 $ ./configure
@@ -22,7 +18,7 @@ $ make && make check
 
 ## Compilation on Windows
 
-Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available (see below).
+Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available \(see below\).
 
 However, if you want to compile it yourself, start by cloning the [stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from the Git repository.
 
@@ -32,20 +28,17 @@ In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or `./d
 
 ## Pre-built libraries
 
-[Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MinGW32 and MinGW64.
+[Pre-built x86 and x86\_64 libraries for Visual Studio 2010, 2012, 2013 and 2015](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MinGW32 and MinGW64.
 
-They include header files, as well as static (`.LIB`) and shared (`.DLL`) libraries for all the supported compiler versions.
+They include header files, as well as static \(`.LIB`\) and shared \(`.DLL`\) libraries for all the supported compiler versions.
 
 ### Note for Visual Studio
 
-Projects willing to statically link Sodium must define a macro named
-`SODIUM_STATIC`. This will prevent symbol definitions from being
-referenced with `__dllexport`.
+Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__dllexport`.
 
 ## Cross-compiling
 
-Cross-compilation is fully supported. This is an example of
-cross-compiling to ARM using the GNU tools for ARM embedded processors:
+Cross-compilation is fully supported. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
 
 ```bash
 $ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
@@ -55,24 +48,18 @@ $ ./configure --host=arm-none-eabi --prefix=/install/path
 $ make install
 ```
 
-```make check``` can also build the test apps, but these have to be
-run on the native platform.
+`make check` can also build the test apps, but these have to be run on the native platform.
 
-Note: `--specs=nosys.specs` is only required for the ARM compilation
-toolchain.
+Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
 
 ## Compiling with CompCert
 
-Releases can be compiled using the CompCert compiler. However, when using CompCert, the Autoconf scripts might mistakenly detect byte ordering as big endian even on little endian systems.
-
-You may want to manually predefine `ac_cv_c_bigendian=no` in order work around this.
+Releases can be compiled using the CompCert compiler.
 
 A typical command-line to compile Sodium on a little endian system with CompCert is:
 
 ```bash
-env CC=ccomp ac_cv_c_bigendian=no \
-    CFLAGS="-O2 -fstruct-passing" ./configure \
-    --disable-shared --enable-static && \
+env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \
 make check && make install
 ```
 
@@ -80,8 +67,8 @@ make check && make install
 
 We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
 
-However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
-Code in the `stable` branch also includes generated files, and does not require the autotools (libtool, autoconf, automake) to be present.
+However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable\) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
+Code in the `stable` branch also includes generated files, and does not require the autotools \(libtool, autoconf, automake) to be present.
 
 To check out the stable branch, use:
 
@@ -92,11 +79,13 @@ git clone https://github.com/jedisct1/libsodium --branch stable
 ## Integrity checking
 
 Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
+
 ```
 RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3
 ```
 
 Or with GnuPG and the following RSA key:
+
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
@@ -227,3 +216,6 @@ sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc=
 =Hkmu
 -----END PGP PUBLIC KEY BLOCK-----
 ```
+
+
+
