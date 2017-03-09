@@ -65,6 +65,7 @@
 * R: [Sodium](https://github.com/jeroenooms/sodium)
 * Racket: [Natrium](https://github.com/KirisurfProject/natrium-crypt)
 * Racket: part of [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
+* RealBasic and Xojo: [RB-libsodium](https://github.com/charonn0/RB-libsodium)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
 * Rust: [rust_sodium](https://github.com/maidsafe/rust_sodium)
