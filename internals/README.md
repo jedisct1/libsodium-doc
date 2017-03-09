@@ -106,6 +106,7 @@ branch.
 * Debian/x86
 * Debian/sparc
 * Debian/ppc
+* Raspbian/armv7l
 * Ubuntu/aarch64 - Courtesy of the GCC compile farm project
 * Fedora/ppc64 - Courtesy of the GCC compile farm project
 * AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
