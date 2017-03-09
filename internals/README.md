@@ -99,7 +99,7 @@ branch.
 * Ubuntu/x86\_64 using tcc
 * macOS using Xcode 8
 * macOS using CompCert
-* Windows 10 using Visual Studio 2010, 2012, 2013, 2015
+* Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
 * msys2 using mingw32 and mingw64
 * ArchLinux/x86\_64
 * ArchLinux/armv6
