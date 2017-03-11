@@ -79,10 +79,10 @@ Releases are never shipped until all these tools report zero defects.
 
 ### Dynamic analysis
 
-Continuous Integration for is provided by  
-[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master\) for
+Continuous Integration is provided by
+[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master) for
 Linux/x86_64, and by
-[AppVeyor]\(https://ci.appveyor.com/project/jedisct1/libsodium) for the  
+[AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium) for the
 Visual Studio builds.
 
 In addition, the test suite has to always pass on the following  
@@ -99,13 +99,14 @@ branch.
 * Ubuntu/x86\_64 using tcc
 * macOS using Xcode 8
 * macOS using CompCert
-* Windows 10 using Visual Studio 2010, 2012, 2013, 2015
+* Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
 * msys2 using mingw32 and mingw64
 * ArchLinux/x86\_64
 * ArchLinux/armv6
 * Debian/x86
 * Debian/sparc
 * Debian/ppc
+* Raspbian/Cortex-A53
 * Ubuntu/aarch64 - Courtesy of the GCC compile farm project
 * Fedora/ppc64 - Courtesy of the GCC compile farm project
 * AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
