@@ -9,7 +9,34 @@ A typical use case for additional data is to store protocol-specific metadata ab
 
 ## Supported constructions
 
-Libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305, as well as a variant of the later with an extended nonce: XChaCha20-Poly1305.
+Libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305 \(original version and IETF version\), as well as a variant of the later with an extended nonce: XChaCha20-Poly1305.
+
+### Availability and interoperability
+
+| Construction | Key size | Nonce size | Block size | MAC size | Availability |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| AES256-GCM | 256 bits | 96 bits | 128 bits | 128 bits | libsodium &gt;= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
+| ChaCha20-Poly1305 | 256 bits | 64 bits | 512 bits | 128 bits | libsodium &gt;= 0.6.0. Also implemented in {Libre,Open,Boring}SSL. |
+| ChaCha20-Poly1305-IETF | 256 bits | 96 bits | 512 bits | 128 bits | libsodium &gt;= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries. |
+| XChaCha20-Poly1305-IETF | 256 bits | 192 bits | 512 bits | 128 bits | libsodium &gt;= 1.0.12. |
+
+## Limitations
+
+| Construction | Max bytes for a single \(key,nonce\) | Max bytes for a single key |
+| :--- | :--- | :--- |
+| AES256-GCM | 64 GB \(theoretical\), ~ 350 MB \(recommended\) | ~ 350 MB \(recommended\) |
+| ChaCha20-Poly1305 | No practical limits \(2^70 bytes\) | No practical limits |
+| ChaCha20-Poly1305-IETF | 256 GB | No practical limits |
+| XChaCha20-Poly1305-IETF | No practical limits \(2^70 bytes\) | No practical limits |
+
+### Nonces
+
+| Construction | Safe options to choose a nonce |
+| :--- | :--- |
+| AES256-GCM | Counter |
+| ChaCha20-Poly1305 | Counter |
+| ChaCha20-Poly1305-IETF | Counter |
+| XChaCha20-Poly1305-IETF | Counter, random, Hk\(m\), Hk\(random \|\| m\) |
 
 ### AES256-GCM
 
@@ -29,7 +56,7 @@ Poly1305 is a high-speed message authentication code.
 
 The combination of the ChaCha20 stream cipher with the Poly1305 authenticator was proposed in January 2014 as an alternative to the Salsa20-Poly1305 construction. ChaCha20-Poly1305 was implemented in major operating systems, web browsers and crypto libraries shortly after. It eventually became an official IETF standard in May 2015.
 
-The ChaCha20-Poly1305 implementation in Libsodium is portable across all supported architectures, and is the recommended choice for most applications.
+The ChaCha20-Poly1305 implementation in Libsodium is portable across all supported architectures.
 
 ### XChaCha20-Poly1305
 
@@ -37,5 +64,7 @@ XChaCha20-Poly1305 applies the construction described in Daniel Bernstein's [Ext
 
 This extended nonce size allows random nonces to be safely used, and also facilitates the construction of misuse-resistant schemes.
 
-The only limitation of XChaCha20-Poly1305 is that it is not widely implemented in other libraries yet.
+The XChaCha20-Poly1305 implementation in Libsodium is portable across all supported architectures.
+
+The main limitation of XChaCha20-Poly1305 is that it is not widely implemented in other libraries yet. This construction also requires at least Libsodium 1.0.12.
 
