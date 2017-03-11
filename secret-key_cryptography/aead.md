@@ -70,7 +70,7 @@ The main limitation of XChaCha20-Poly1305 is that it is not widely implemented i
 
 ## References
 
-* [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) \(Atul Luykx and Kenneth G. Paterson\).
+* [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) \(Atul Luykx, Kenneth G. Paterson\).
 
 
 
