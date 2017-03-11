@@ -22,7 +22,7 @@ This function can be used to compute a shared secret `q` given a user's secret k
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
 `q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), and the key distribution is not uniform.   
-For this reason, instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q || pk1 || pk2)`, with `pk1` and `pk2` being the public keys.
+For this reason, instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2` being the public keys.
 
   
 This can be achieved with the following code snippet:
@@ -47,7 +47,7 @@ randombytes_buf(server_secretkey, sizeof server_secretkey);
 crypto_scalarmult_base(server_publickey, server_secretkey);
 
 /* The client derives a shared key from its secret key and the server's public key */
-/* shared key = h(q || client_publickey || server_publickey) */
+/* shared key = h(q ‖ client_publickey ‖ server_publickey) */
 if (crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey) != 0) {
     /* Error */
 }
@@ -58,7 +58,7 @@ crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
 crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
 
 /* The server derives a shared key from its secret key and the client's public key */
-/* shared key = h(q || client_publickey || server_publickey) */
+/* shared key = h(q ‖ client_publickey ‖ server_publickey) */
 if (crypto_scalarmult(scalarmult_q_by_server, server_secretkey, client_publickey) != 0) {
     /* Error */
 }

@@ -36,7 +36,7 @@ Libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305 \
 | AES256-GCM | Counter, permutation |
 | ChaCha20-Poly1305 | Counter, permutation |
 | ChaCha20-Poly1305-IETF | Counter, permutation |
-| XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random \|\| m\) |
+| XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random ‖ m\) |
 
 ### AES256-GCM
 
