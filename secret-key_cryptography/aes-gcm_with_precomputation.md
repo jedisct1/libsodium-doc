@@ -85,6 +85,8 @@ To prevent nonce reuse in a client-server protocol, either use different keys fo
 
 When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 MB encrypted with the same key.
 
+If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
+
 Support for AES256-GCM was introduced in Libsodium 1.0.4.
 
 The detached API was introduced in Libsodium 1.0.9.
