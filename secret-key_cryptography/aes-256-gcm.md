@@ -1,6 +1,6 @@
 # Authenticated Encryption with Additional Data using AES-GCM
 
-## Example (combined mode)
+## Example \(combined mode\)
 
 ```c
 #include <sodium.h>
@@ -44,8 +44,9 @@ if (ciphertext_len < crypto_aead_aes256gcm_ABYTES ||
 ## Purpose
 
 This operation:
-- Encrypts a message with a key and a nonce to keep it confidential
-- Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential (non-encrypted) data, haven't been tampered with.
+
+* Encrypts a message with a key and a nonce to keep it confidential
+* Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential \(non-encrypted\) data, haven't been tampered with.
 
 A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
@@ -59,7 +60,7 @@ When supported by the CPU, AES-GCM is the fastest AEAD cipher available in this 
 
 The current implementation of this construction is hardware-accelerated and requires the Intel SSSE3 extensions, as well as the `aesni` and `pclmul` instructions.
 
-Intel Westmere processors (introduced in 2010) and newer meet the requirements.
+Intel Westmere processors \(introduced in 2010\) and newer meet the requirements.
 
 There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
 
@@ -71,7 +72,7 @@ int crypto_aead_aes256gcm_is_available(void);
 
 The function returns `1` if the current CPU supports the AES256-GCM implementation, and `0` if it doesn't.
 
-The library must have been initialized with `sodium_init()` prior to calling this function. 
+The library must have been initialized with `sodium_init()` prior to calling this function.
 
 ## Combined mode
 
@@ -89,7 +90,7 @@ int crypto_aead_aes256gcm_encrypt(unsigned char *c,
                                   const unsigned char *k);
 ```
 
-The function `crypto_aead_aes256gcm_encrypt()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
+The function `crypto_aead_aes256gcm_encrypt()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` \(`crypto_aead_aes256gcm_KEYBYTES` bytes\) and a public nonce `npub` \(`crypto_aead_aes256gcm_NPUBBYTES` bytes\).
 
 The encrypted message, as well as a tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
@@ -115,7 +116,7 @@ int crypto_aead_aes256gcm_decrypt(unsigned char *m,
                                   const unsigned char *k);
 ```
 
-The function `crypto_aead_aes256gcm_decrypt()` verifies that the ciphertext `c` (as produced by `crypto_aead_aes256gcm_encrypt()`), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+The function `crypto_aead_aes256gcm_decrypt()` verifies that the ciphertext `c` \(as produced by `crypto_aead_aes256gcm_encrypt()`\), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` \(`adlen` bytes\).  
 `clen` is the ciphertext length in bytes with the authenticator, so it has to be at least `aead_aes256gcm_ABYTES`.
 
 `ad` can be a `NULL` pointer if no additional data are required.
@@ -147,7 +148,7 @@ int crypto_aead_aes256gcm_encrypt_detached(unsigned char *c,
                                            const unsigned char *k);
 ```
 
-`crypto_aead_aes256gcm_encrypt_detached()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
+`crypto_aead_aes256gcm_encrypt_detached()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` \(`crypto_aead_aes256gcm_KEYBYTES` bytes\) and a public nonce `npub` \(`crypto_aead_aes256gcm_NPUBBYTES` bytes\).
 
 The encrypted message in put into `c`. A tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad` is put into `mac`.
 
@@ -171,7 +172,7 @@ int crypto_aead_aes256gcm_decrypt_detached(unsigned char *m,
                                            const unsigned char *k);
 ```
 
-The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag `mac` is valid for the the ciphertext `c` using a secret key `k`, a public nonce `npub`, and additional data `ad` (`adlen` bytes).
+The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag `mac` is valid for the the ciphertext `c` using a secret key `k`, a public nonce `npub`, and additional data `ad` \(`adlen` bytes\).
 
 `clen` is the ciphertext length in bytes.
 
@@ -193,18 +194,19 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 ## Constants
 
-- `crypto_aead_aes256gcm_KEYBYTES`
-- `crypto_aead_aes256gcm_NPUBBYTES`
-- `crypto_aead_aes256gcm_ABYTES`
+* `crypto_aead_aes256gcm_KEYBYTES`
+* `crypto_aead_aes256gcm_NPUBBYTES`
+* `crypto_aead_aes256gcm_ABYTES`
 
 ## Notes
 
-The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
+The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.  
 To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
-It is recommended to split message larger than 2 Gb into smaller chunks, and to avoid encrypting more than 2^34.5 128-bit input blocks (full or partial) with the same key.
-If frequent rekeying is not an option, use (X)ChaCha20-Poly1305 instead.
+When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 MB encrypted with the same key.  
+If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
 
 Support for AES256-GCM was introduced in Libsodium 1.0.4.
 
 The detached API was introduced in Libsodium 1.0.9.
+
