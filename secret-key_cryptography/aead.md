@@ -68,3 +68,9 @@ The XChaCha20-Poly1305 implementation in Libsodium is portable across all suppor
 
 The main limitation of XChaCha20-Poly1305 is that it is not widely implemented in other libraries yet. This construction also requires at least Libsodium 1.0.12.
 
+## References
+
+* [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) \(Atul Luykx and Kenneth G. Paterson\).
+
+
+
