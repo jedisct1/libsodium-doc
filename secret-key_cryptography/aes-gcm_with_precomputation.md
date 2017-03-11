@@ -94,7 +94,5 @@ The detached API was introduced in Libsodium 1.0.9.
 
 * [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) \(Atul Luykx and Kenneth G. Paterson\).
 
-* 
-* 
 
 
