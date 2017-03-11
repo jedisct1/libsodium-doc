@@ -141,7 +141,7 @@ This function accepts a 32 bytes (`crypto_core_hchacha20_KEYBYTES`) secret key `
 
 Optionally, a 16-bytes (`crypto_core_hchacha20_CONSTBYTES`) constant `c` can be specified to personalize the function to an application. `c` can be left to `NULL` in order to use the default constant.
 
-The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce (XChaCha20) on Libsodium < 1.0.12 (versions >= 1.0.12 already include this construction).
+The following code snippet case thus be used to construct a ChaCha20-Poly1305 variant with a 192-bits nonce (XChaCha20) on libsodium < 1.0.12 (versions >= 1.0.12 already include this construction).
 
 ```c
 #define MESSAGE (const unsigned char *) "message"

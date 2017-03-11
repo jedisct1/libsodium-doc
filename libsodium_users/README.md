@@ -1,5 +1,5 @@
 # Applications using libsodium
-Some applications using Libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
+Some applications using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php and MongoDB based single server messaging platform.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
@@ -15,9 +15,9 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
 - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
 - [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted, multi-purpose document store.
-- [Lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
-- [Libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support Scrypt and Argon2 for password hashing.
-- [Libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp): a C++ Windows Runtime Component for UWP applications.
+- [Lageant](https://github.com/bitbeans/lageant): libsodium Authentication Agent.
+- [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support Scrypt and Argon2 for password hashing.
+- [libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp): a C++ Windows Runtime Component for UWP applications.
 - [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2 KDF, data encrypted with ChaCha20Poly1305, and Yubikey support.
 - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
 - [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of existing apps where the security of your data is put above all else.
@@ -57,7 +57,7 @@ Some applications using Libsodium. Send a [pull request](https://github.com/jedi
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
 
 # Libraries using libsodium
-Some libraries and frameworks using Libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
+Some libraries and frameworks using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Asio Sodium Socket](https://github.com/mikezackles/asio_sodium_socket): A header-only C++14 library implementing custom transport encryption using libsodium and Asio's stackless coroutines.
 - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
@@ -66,8 +66,8 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
-- [Libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
-- [Libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
+- [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
+- [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
 - [libyojimbo](https://github.com/networkprotocol/libyojimbo): A library for creating secure client/server network protocols over UDP.
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
@@ -84,7 +84,7 @@ Some libraries and frameworks using Libsodium. Send a [pull request](https://git
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
 
 # Companies using libsodium
-Some companies using Libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
+Some companies using libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Bearch Inc.](http://www.getbearch.com/)
 - [Digital Ocean](https://www.digitalocean.com/)

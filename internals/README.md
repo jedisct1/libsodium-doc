@@ -86,7 +86,7 @@ Linux/x86_64, and by
 Visual Studio builds.
 
 In addition, the test suite has to always pass on the following  
-environments. Libsodium is manually validated on all of these before  
+environments. libsodium is manually validated on all of these before  
 every release, as well as before merging a new change to the `stable`  
 branch.
 
@@ -122,11 +122,11 @@ branch.
 
 ## Bindings for other languages
 
-Bindings are essential to the Libsodium ecosystem. It is expected that:
+Bindings are essential to the libsodium ecosystem. It is expected that:
 
-* New versions of Libsodium will be installed along with bindings written before these Libsodium versions were available.
+* New versions of libsodium will be installed along with bindings written before these libsodium versions were available.
 
-* Recent versions of these bindings will be installed along with older versions of Libsodium \(e.g. stock package from a Linux distribution\).
+* Recent versions of these bindings will be installed along with older versions of libsodium \(e.g. stock package from a Linux distribution\).
 
 For these reasons, ABI stability is critical:
 

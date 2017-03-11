@@ -188,7 +188,7 @@ If the verification succeeds, the function returns `0`, and puts the decrypted m
 void crypto_aead_aes256gcm_keygen(unsigned char k[crypto_aead_aes256gcm_KEYBYTES]);
 ```
 
-This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
 It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
 
@@ -206,9 +206,9 @@ To prevent nonce reuse in a client-server protocol, either use different keys fo
 When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 MB encrypted with the same key.  
 If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
 
-Support for AES256-GCM was introduced in Libsodium 1.0.4.
+Support for AES256-GCM was introduced in libsodium 1.0.4.
 
-The detached API was introduced in Libsodium 1.0.9.
+The detached API was introduced in libsodium 1.0.9.
 
 
 

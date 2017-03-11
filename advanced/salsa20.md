@@ -44,7 +44,7 @@ This permits direct access to any block without having to compute the previous o
 void crypto_stream_salsa20_keygen(unsigned char k[crypto_stream_salsa20_KEYBYTES]);
 ```
 
-This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
 It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
 

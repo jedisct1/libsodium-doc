@@ -136,7 +136,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 void crypto_aead_chacha20poly1305_ietf_keygen(unsigned char k[crypto_aead_chacha20poly1305_ietf_KEYBYTES]);
 ```
 
-This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
 It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
 

@@ -6,7 +6,7 @@ XChaCha20 doesn't require any lookup tables and avoids the possibility of timing
 
 Internally, XChaCha20 works like a block cipher used in counter mode. It uses the HChaCha20 hash function to derive a subkey and a subnonce from the original key and extended nonce, and a dedicated 64-bit block counter to avoid incrementing the nonce after each block.
 
-XChaCha20 is generally recommended over plain ChaCha20 due to its extended nonce size, and its comparable performance. However, XChaCha20 is currently not widely implemented outside the Libsodium library, due to the absence of formal specification.
+XChaCha20 is generally recommended over plain ChaCha20 due to its extended nonce size, and its comparable performance. However, XChaCha20 is currently not widely implemented outside the libsodium library, due to the absence of formal specification.
 
 ## Usage
 
@@ -46,7 +46,7 @@ This permits direct access to any block without having to compute the previous o
 void crypto_stream_xchacha20_keygen(unsigned char k[crypto_stream_xchacha20_KEYBYTES]);
 ```
 
-This helper function introduced in Libsodium 1.0.12 creates a random key `k`.
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
 It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
 
@@ -59,4 +59,4 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 Unlike plain ChaCha20, the nonce is 192 bits long, so that generating a random nonce for every message is safe. If the output of the PRNG is indistinguishable from random data, the probability for a collision to happen is negligible.
 
-XChaCha20 was implemented in Libsodium 1.0.12.
+XChaCha20 was implemented in libsodium 1.0.12.

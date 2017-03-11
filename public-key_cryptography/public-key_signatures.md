@@ -239,4 +239,4 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 
 The original NaCl `crypto_sign_open()` implementation overwrote 64 bytes after the message. The libsodium implementation doesn't write past the end of the message.
 
-Ed25519ph (used by the multi-part API) was implemented in Libsodium 1.0.12.
+Ed25519ph (used by the multi-part API) was implemented in libsodium 1.0.12.
