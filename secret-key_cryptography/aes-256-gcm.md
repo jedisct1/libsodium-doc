@@ -210,3 +210,9 @@ Support for AES256-GCM was introduced in Libsodium 1.0.4.
 
 The detached API was introduced in Libsodium 1.0.9.
 
+## References
+
+* [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) \(Atul Luykx and Kenneth G. Paterson\).
+
+
+
