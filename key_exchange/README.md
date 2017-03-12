@@ -112,4 +112,6 @@ The shared secret key `rx` should be used by the server to receive data from the
 
 For earlier versions of the library that didn't implement this API, or to build different constructions, the X25519 function is accessible directly using the `crypto_scalarmult_*()` API.
 
+Having different keys for each direction allows counters to be safely used as nonces without having to wait for an acknowledgement after every message.
+
 If only one session key is required, either `rx` or `tx` can be set to `NULL`.
