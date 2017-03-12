@@ -91,6 +91,4 @@ New features will be gladly implemented provided that they are not redundant and
 * AVX2 Poly1305 implementation
 * key generation API \[DONE\]
 * Nonce/subkey generation API
-
-
-
+* Webassembly support \[STARTED\]
