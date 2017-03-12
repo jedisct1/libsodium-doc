@@ -51,7 +51,7 @@ crypto_scalarmult_base(server_publickey, server_secretkey);
 if (crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey) != 0) {
     /* Error */
 }
-crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
+crypto_generichash_init(&h, NULL, 0U, sizeof sharedkey_by_client);
 crypto_generichash_update(&h, scalarmult_q_by_client, sizeof scalarmult_q_by_client);
 crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
 crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
@@ -62,7 +62,7 @@ crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
 if (crypto_scalarmult(scalarmult_q_by_server, server_secretkey, client_publickey) != 0) {
     /* Error */
 }
-crypto_generichash_init(&h, NULL, 0U, crypto_generichash_BYTES);
+crypto_generichash_init(&h, NULL, 0U, sizeof sharedkey_by_server);
 crypto_generichash_update(&h, scalarmult_q_by_server, sizeof scalarmult_q_by_server);
 crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
 crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
@@ -70,6 +70,30 @@ crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
 /* sharedkey_by_client and sharedkey_by_server are identical */
 ```
+
+If the intent is to create 256-bit keys (or less) for encryption, the final hash can also be set to output 512 bits: the first half can be used as a key to encrypt in one direction (for example from the server to the client), and the other half can be used in the other direction.
+
+When using counters as nonces, having distinct keys allows the client and the server to safely send multiple messages without having to wait from an acknowledgment after each message.
+
+```c
+typedef struct kx_session_keypair {
+    unsigned char rx[32];
+    unsigned char tx[32];
+} kx_session_keypair;
+
+kx_session_keypair kp;
+
+if (crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey) != 0) {
+    /* Error */
+}
+crypto_generichash_init(&h, NULL, 0U, sizeof session_keypair_by_client);
+crypto_generichash_update(&h, scalarmult_q_by_client, sizeof scalarmult_q_by_client);
+crypto_generichash_update(&h, client_publickey, sizeof client_publickey);
+crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
+crypto_generichash_final(&h, session_keypair_by_client, sizeof session_keypair_by_client);
+```
+
+`kp->tx` is a key that the server can use in order to encrypt data sent to the client, and `kp->rx` is a key that can be used in the opposite direction.
 
 ## Constants
 
