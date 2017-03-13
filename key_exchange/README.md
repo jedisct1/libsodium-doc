@@ -106,7 +106,7 @@ The shared secret key `rx` should be used by the server to receive data from the
 ## Algorithm details
 
 * Diffie-Hellman function: X25519
-* Hash function: BLAKE2B
+* Entropy extractor and key derivation function: BLAKE2B
 
 ## Notes
 
