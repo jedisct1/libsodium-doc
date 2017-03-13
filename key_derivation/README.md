@@ -80,7 +80,7 @@ Constants:
 
 Algorithm details:
 
-`BLAKE2B-subkeylen(key=key, message={}, salt=subkey_id || {0}, personalization=ctx || {0})`
+`BLAKE2B-subkeylen(key=key, message={}, salt=subkey_id || {0}, personal=ctx || {0})`
 
 ### Key derivation with libsodium &lt; 1.0.12
 
