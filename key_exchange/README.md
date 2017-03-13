@@ -105,7 +105,6 @@ The shared secret key `rx` should be used by the server to receive data from the
 
 ## Algorithm details
 
-* Diffie-Hellman function: X25519
 * `rx || tx = BLAKE2B-512(X25519(p.n))`
 
 ## Notes
