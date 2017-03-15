@@ -30,11 +30,11 @@ uint8_t subkey1[32];
 uint8_t subkey2[32];
 uint8_t subkey3[64];
 
-sodium_kdf_keygen(master_key);
+crypto_kdf_keygen(master_key);
 
-sodium_kdf_derive_from_key(subkey1, sizeof subkey1, 1, CONTEXT, master_key);
-sodium_kdf_derive_from_key(subkey2, sizeof subkey2, 2, CONTEXT, master_key);
-sodium_kdf_derive_from_key(subkey3, sizeof subkey3, 3, CONTEXT, master_key);
+crypto_kdf_derive_from_key(subkey1, sizeof subkey1, 1, CONTEXT, master_key);
+crypto_kdf_derive_from_key(subkey2, sizeof subkey2, 2, CONTEXT, master_key);
+crypto_kdf_derive_from_key(subkey3, sizeof subkey3, 3, CONTEXT, master_key);
 ```
 
 Usage:
@@ -52,7 +52,7 @@ int crypto_kdf_derive_from_key(unsigned char *subkey, size_t subkey_len,
                                const unsigned char key[crypto_kdf_KEYBYTES]);
 ```
 
-The `hydro_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `subkey` of length `subkey_len` bytes using the master key `key` and the context `ctx`.
+The `crypto_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `subkey` of length `subkey_len` bytes using the master key `key` and the context `ctx`.
 
 `subkey_id` can be any value up to `(2^64)-1`.
 
