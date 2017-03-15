@@ -58,13 +58,13 @@ int crypto_pwhash(unsigned char * const out,
                   size_t memlimit, int alg);
 ```
 
-The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `outlen` should be at least `16` (128 bits).
+The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `passwdlen` should be at least `crypto_pwhash_PASSWD_MIN` and `crypto_pwhash_PASSWD_MAX`. `outlen` should be at least `crypto_pwhash_BYTES_MIN` = `16` (128 bits) and at most `crypto_pwhash_BYTES_MAX`.
 
 The computed key is stored into `out`.
 
-`opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key.
+`opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key. This number must be between `crypto_pwhash_OPSLIMIT_MIN` and `crypto_pwhash_OPSLIMIT_MAX`
 
-`memlimit` is the maximum amount of RAM that the function will use, in bytes.
+`memlimit` is the maximum amount of RAM that the function will use, in bytes. This number must be between `crypto_pwhash_MEMLIMIT_MIN` and `crypto_pwhash_MEMLIMIT_MAX`
 
 `alg` is an identifier for the algorithm to use and should be currently set to `crypto_pwhash_ALG_DEFAULT`.
 
@@ -138,15 +138,15 @@ But the best defense against brute-force password cracking remains using strong 
 - `crypto_pwhash_ALG_DEFAULT`
 - `crypto_pwhash_BYTES_MIN`
 - `crypto_pwhash_BYTES_MAX`
-- `crypto_pwhash_MEMLIMIT_MIN`
-- `crypto_pwhash_MEMLIMIT_MAX`
-- `crypto_pwhash_OPSLIMIT_MIN`
-- `crypto_pwhash_OPSLIMIT_MAX`
 - `crypto_pwhash_PASSWD_MIN`
 - `crypto_pwhash_PASSWD_MAX`
 - `crypto_pwhash_SALTBYTES`
 - `crypto_pwhash_STRBYTES`
 - `crypto_pwhash_STRPREFIX`
+- `crypto_pwhash_OPSLIMIT_MIN`
+- `crypto_pwhash_OPSLIMIT_MAX`
+- `crypto_pwhash_MEMLIMIT_MIN`
+- `crypto_pwhash_MEMLIMIT_MAX`
 - `crypto_pwhash_OPSLIMIT_INTERACTIVE`
 - `crypto_pwhash_MEMLIMIT_INTERACTIVE`
 - `crypto_pwhash_OPSLIMIT_MODERATE`
@@ -177,4 +177,3 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 ## Algorithm details
 
 - [Argon2i v1.3](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon2-specs.pdf)
-
