@@ -40,6 +40,14 @@ This permits direct access to any block without having to compute the previous o
 
 `m` and `c` can point to the same address (in-place encryption/decryption). If they don't, the regions should not overlap.
 
+```c
+void crypto_stream_salsa20_keygen(unsigned char k[crypto_stream_salsa20_KEYBYTES]);
+```
+
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_stream_salsa20_KEYBYTES`
@@ -64,6 +72,8 @@ int crypto_stream_salsa2012(unsigned char *c, unsigned long long clen,
 int crypto_stream_salsa2012_xor(unsigned char *c, const unsigned char *m,
                                 unsigned long long mlen, const unsigned char *n,
                                 const unsigned char *k);
+
+void crypto_stream_salsa2012_keygen(unsigned char k[crypto_stream_salsa2012_KEYBYTES]);
 ```
 
 * Salsa20 reduced to 8 rounds:
@@ -75,6 +85,8 @@ int crypto_stream_salsa208(unsigned char *c, unsigned long long clen,
 int crypto_stream_salsa208_xor(unsigned char *c, const unsigned char *m,
                                unsigned long long mlen, const unsigned char *n,
                                const unsigned char *k);
+
+void crypto_stream_salsa208_keygen(unsigned char k[crypto_stream_salsa208_KEYBYTES]);
 ```
 
 Although the best known attack against Salsa20-8 is not practical, the full-round version provides a highest security margin while still being fast enough for most purposes.

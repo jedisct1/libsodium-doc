@@ -132,6 +132,14 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
+```c
+void crypto_aead_chacha20poly1305_keygen(unsigned char k[crypto_aead_chacha20poly1305_KEYBYTES]);
+```
+
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_aead_chacha20poly1305_KEYBYTES`
@@ -147,8 +155,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
-To prevent nonce reuse in a client-server pro
-tocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 The API conforms to the proposed API for the CAESAR competition.
 

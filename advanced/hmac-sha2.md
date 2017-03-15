@@ -89,6 +89,14 @@ This alternative API supports a key of arbitrary length `keylen`.
 
 However, please note that in the HMAC construction, a key larger than the block size gets reduced to `h(key)`.
 
+```c
+void crypto_auth_hmacsha256_keygen(unsigned char k[crypto_auth_hmacsha256_KEYBYTES]);
+```
+
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ### HMAC-SHA-512
 
 Similarily to the `crypto_auth_hmacsha256_*()` set of functions, the `crypto_auth_hmacsha512_*()` set of functions implements HMAC-SHA512:
@@ -122,6 +130,10 @@ int crypto_auth_hmacsha512_update(crypto_auth_hmacsha512_state *state,
 ```c
 int crypto_auth_hmacsha512_final(crypto_auth_hmacsha512_state *state,
                                  unsigned char *out);
+```
+
+```c
+void crypto_auth_hmacsha512_keygen(unsigned char k[crypto_auth_hmacsha512_KEYBYTES]);
 ```
 
 ### HMAC-SHA-512-256
@@ -159,6 +171,10 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
                                     unsigned char *out);
 ```
 
+```c
+void crypto_auth_hmacsha512256_keygen(unsigned char k[crypto_auth_hmacsha512256_KEYBYTES]);
+```
+
 ## Constants
 
 - `crypto_auth_hmacsha256_BYTES`
@@ -182,6 +198,4 @@ int crypto_auth_hmacsha512256_final(crypto_auth_hmacsha512256_state *state,
 
 - `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
 
-- Only use these functions for interoperability with 3rd party
-services. For everything else, you should probably use `crypto_auth()`/
-`crypto_auth_verify()` or `crypto_generichash_*()` instead.
+- Only use these functions for interoperability with 3rd party services. For everything else, you should probably use `crypto_auth()`/`crypto_auth_verify()` or `crypto_generichash_*()` instead.

@@ -1,6 +1,6 @@
 # The IETF ChaCha20-Poly1305 construction
 
-The IETF variant of the ChaCha20-Poly1305 construction can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(1^32)-64 bytes (approximatively 256 GB).
+The IETF variant of the ChaCha20-Poly1305 construction can safely encrypt a pratically unlimited number of messages (2^96), but individual messages cannot exceed 64*(2^32)-64 bytes (approximatively 256 GB).
 
 ## Example (combined mode)
 
@@ -132,6 +132,14 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
+```c
+void crypto_aead_chacha20poly1305_ietf_keygen(unsigned char k[crypto_aead_chacha20poly1305_ietf_KEYBYTES]);
+```
+
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_aead_chacha20poly1305_IETF_ABYTES`
@@ -151,8 +159,7 @@ On earlier versions, use `crypto_aead_chacha20poly1305_KEYBYTES` and `crypto_aea
 
 In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
-To prevent nonce reuse in a client-server pro
-tocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 The API conforms to the proposed API for the CAESAR competition.
 

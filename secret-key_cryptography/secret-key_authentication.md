@@ -53,6 +53,14 @@ The `crypto_auth_verify()` function verifies that the tag stored at `h` is a val
 
 It returns `-1` if the verification fails, and `0` if it passes.
 
+```c
+void crypto_auth_keygen(unsigned char k[crypto_auth_KEYBYTES]);
+```
+
+This helper function introduced in libsodium 1.0.12 creates a random key `k`.
+
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+
 ## Constants
 
 - `crypto_auth_BYTES`

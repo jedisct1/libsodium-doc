@@ -50,11 +50,11 @@ The `sodium_malloc()` function returns a pointer from which exactly `size` conti
 
 The allocated region is placed at the end of a page boundary, immediately followed by a guard page. As a result, accessing memory past the end of the region will immediately terminate the application.
 
-A canary is also placed right before the returned pointer. Modification of this canary are detected when trying to free the allocated region with `sodium_free()`, and also cause the application to immediately terminate.
+A canary is also placed right before the returned pointer. Modifications of this canary are detected when trying to free the allocated region with `sodium_free()`, and also cause the application to immediately terminate.
 
 An additional guard page is placed before this canary to make it less likely for sensitive data to be accessible when reading past the end of an unrelated region.
 
-The allocated region is filled with `0xd0` bytes in order to help catch bugs due to initialized data.
+The allocated region is filled with `0xdb` bytes in order to help catch bugs due to initialized data.
 
 In addition, `sodium_mlock()` is called on the region to help avoid it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
 
@@ -62,9 +62,9 @@ The returned address will not be aligned if the allocation size is not a multipl
 
 For this reason, `sodium_malloc()` should not be used with packed or variable-length structures, unless the size given to `sodium_malloc()` is rounded up in order to ensure proper alignment.
 
-All the structures used by libsodium can safely be allocated using `sodium_malloc()`, the only one requiring extra care being `crypto_generichash_state`, whose size needs to be rounded up to a multiple of 64 bytes.
+All the structures used by libsodium can safely be allocated using `sodium_malloc()`.
 
-Allocating `0` bytes is a valid operation, and returns a pointer that can be successfully passed to `sodium_free()`.
+Allocating `0` bytes is a valid operation. It returns a pointer that can be successfully passed to `sodium_free()`.
 
 ```c
 void *sodium_allocarray(size_t count, size_t size);

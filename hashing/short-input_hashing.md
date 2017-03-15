@@ -58,4 +58,5 @@ SipHash-2-4
 ## Notes
 
 - The key has to remain secret. This function will not provide any mitigations against DoS attacks if the key is known from attackers.
-- When building hash tables, it is recommended to use a prime number for the table size. This ensures that all bits from the output of the hash function are being used. Mapping the range of the hash function to `[0..N]` can be done efficiently [without modulo reduction](http://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/).
+- When building hash tables, it is recommended to use a prime number for the table size. This ensures that all bits from the output of the hash function are being used. Mapping the range of the hash function to `[0..N)` can be done efficiently [without modulo reduction](http://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/).
+- libsodium >= 1.0.12 also implements a variant of SipHash with the same key size but a 128-bit output, accessible as `crypto_shorthash_siphashx24()`.
