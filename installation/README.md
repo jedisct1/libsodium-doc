@@ -16,6 +16,8 @@ $ make && make check
 # make install
 ```
 
+On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the "Usage" section for ways to address this.
+
 ## Compilation on Windows
 
 Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available \(see below\).
