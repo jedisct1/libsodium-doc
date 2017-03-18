@@ -25,7 +25,7 @@ For static linking, Visual Studio users should define `SODIUM_STATIC=1` and `SOD
 
 Projects using CMake can include the [Findsodium.cmake](https://github.com/jedisct1/libsodium/blob/master/contrib/Findsodium.cmake) file in order to detect and link the library.
 
-`sodium_init()` initializes the library and should be called before any other function provided by Sodium.
+`sodium_init()` initializes the library and should be called before any other function provided by Sodium.  
 The function can be called more than once, and can be called simultaneously from multiple threads since version 1.0.11.
 
 After this function returns, all of the other functions provided by Sodium will be thread-safe.
@@ -46,7 +46,7 @@ This can be confirmed with the following command:
 cat /proc/sys/kernel/random/entropy_avail
 ```
 
-If the command returns `0` or a very low number (< `64`), and you are not running an obsolete kernel, this is very likely to be the case.
+If the command returns `0` or a very low number \(&lt; `64`\), and you are not running an obsolete kernel, this is very likely to be the case.
 
 In a virtualized environment, make sure that the `virtio-rng` interface is available. If this is a cloud service and the hypervisor settings are out of your reach, consider switching to a difference service.
 
@@ -75,17 +75,20 @@ Applications can warn users about the Linux RNG not being seeded before calling 
 #endif
 // ...
 #if defined(__linux__) && defined(RNDGETENTCNT)
-    int fd;
-    int c;
+int fd;
+int c;
 
-    if ((fd = open("/dev/random", O_RDONLY)) != -1) {
-        if (ioctl(fd, RNDGETENTCNT, &c) == 0 && c < 160) {
-            fputs("This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
-                  "Installing the rng-utils/rng-tools or haveged packages may help.\n"
-                  "On virtualized Linux environments, also consider using virtio-rng.\n"
-                  "The service will not start until enough entropy has been collected.\n", stderr);
-        }
-        (void) close(fd);
+if ((fd = open("/dev/random", O_RDONLY)) != -1) {
+    if (ioctl(fd, RNDGETENTCNT, &c) == 0 && c < 160) {
+        fputs("This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
+              "Installing the rng-utils/rng-tools or haveged packages may help.\n"
+              "On virtualized Linux environments, also consider using virtio-rng.\n"
+              "The service will not start until enough entropy has been collected.\n", stderr);
     }
+    (void) close(fd);
+}
 #endif
 ```
+
+
+
