@@ -13,7 +13,7 @@ Download a [tarball of libsodium](https://download.libsodium.org/libsodium/relea
 ```bash
 $ ./configure
 $ make && make check
-# make install
+$ sudo make install
 ```
 
 On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the "Usage" section for ways to address this.
@@ -47,7 +47,7 @@ $ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
 $ export LDFLAGS='--specs=nosys.specs'
 $ export CFLAGS='-Os'
 $ ./configure --host=arm-none-eabi --prefix=/install/path
-$ make install
+$ sudo make install
 ```
 
 `make check` can also build the test apps, but these have to be run on the native platform.
@@ -61,8 +61,8 @@ Releases can be compiled using the CompCert compiler.
 A typical command-line to compile Sodium on a little endian system with CompCert is:
 
 ```bash
-env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \
-make check && make install
+$ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \
+make check && sudo make install
 ```
 
 ## Stable branch
@@ -75,7 +75,7 @@ Code in the `stable` branch also includes generated files, and does not require 
 To check out the stable branch, use:
 
 ```bash
-git clone https://github.com/jedisct1/libsodium --branch stable
+$ git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
 ## Integrity checking
