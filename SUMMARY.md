@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Installation](installation/README.md)
 * [Projects using libsodium](libsodium_users/README.md)
-* [Commercial support](commercial-support.md)
+* [Commercial support](commercial_support/README.md)
 * [Bindings for other languages](bindings_for_other_languages/README.md)
 * [Usage](usage/README.md)
 * [Helpers](helpers/README.md)
