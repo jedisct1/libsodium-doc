@@ -95,6 +95,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
 - [Pi-lar](http://www.pi-lar.net)
+- [Q-Leap Networks](http://www.q-leap.com/)
 - [Riseup](https://riseup.net)
 - [Supercell](http://supercell.com)
 - [Wire](https://wire.com)
