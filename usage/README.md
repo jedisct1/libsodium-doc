@@ -46,7 +46,7 @@ This can be confirmed with the following command:
 cat /proc/sys/kernel/random/entropy_avail
 ```
 
-If the command returns `0` or a very low number \(&lt; `64`\), and you are not running an obsolete kernel, this is very likely to be the case.
+If the command returns `0` or a very low number \(&lt; `160`\), and you are not running an obsolete kernel, this is very likely to be the case.
 
 In a virtualized environment, make sure that the `virtio-rng` interface is available. If this is a cloud service and the hypervisor settings are out of your reach, consider switching to a difference service.
 
