@@ -36,6 +36,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [PipeSocks](https://github.com/pipesocks/pipesocks): A pipe-like SOCKS5 tunnel system.
 - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to setup, as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
 - [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable application that encrypts files and directories using a symmetric-key algorithm.
+- [RavenDB](https://ravendb.net/): A linq enabled document database for .NET.
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
 - [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
 - [SODA](https://github.com/vong-xiv/SODA): The SODA project aims to investigate the relationship between server components and server performance.
