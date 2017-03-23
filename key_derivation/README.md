@@ -25,7 +25,7 @@ Example:
 ```c
 #define CONTEXT "Examples"
 
-uint8_t master_key[hydro_kdf_KEYBYTES];
+uint8_t master_key[crypto_kdf_KEYBYTES];
 uint8_t subkey1[32];
 uint8_t subkey2[32];
 uint8_t subkey3[64];
