@@ -81,7 +81,7 @@ New features will be gladly implemented provided that they are not redundant and
 * BLAKE2 AVX2 implementations \[DONE\]
 * Keyed \(hash-then-encrypt\) crypto\_pwhash
 * Consider BLAKE2X
-* Consider Argon2id
+* Argon2id
 * Port libhydrogen's key exchange API
 * SSSE3 ChaCha20 implementation \[DONE\]
 * SSSE3 Salsa20 implementation \[DONE\]
