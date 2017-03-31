@@ -196,6 +196,6 @@ void crypto_auth_hmacsha512256_keygen(unsigned char k[crypto_auth_hmacsha512256_
 
 - Arbitrary key lengths are supported using the multi-part interface.
 
-- `crypto_auth_hmacsha256_*()` can be used to create AWS HmacSHA256 request signatures.
+- `crypto_auth_hmacsha256_*()` can be used to create AWS HMAC-SHA256 request signatures.
 
 - Only use these functions for interoperability with 3rd party services. For everything else, you should probably use `crypto_auth()`/`crypto_auth_verify()` or `crypto_generichash_*()` instead.
