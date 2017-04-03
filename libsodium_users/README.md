@@ -74,6 +74,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
 - [MatrixSSL](http://www.matrixssl.org/): Lightweight embedded SSL/TLS implementation that can use libsodium as a crypto provider.
+- [Minimal-TLS](https://github.com/cmalekpour/minimal-tls): A minimal implementation of TLS 1.3 in Rust.
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
 - [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate libsodium-net compatible KeyPair`s.
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
