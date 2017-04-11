@@ -6,4 +6,4 @@ To make things clearer, let's take Alice & Bob (as usual), that are two lovers. 
 
 <a name="footnote1"><sup>1</sup></a> i.e. that the message has not been altered, accidentally or not, during transfer. Remember when we talked about ensuring trust ? That's the first part. 
 
-<a name="footnote1"><sup>2</sup></a> i.e. that the message really comes from Alice. That's the second part of "trust".
+<a name="footnote2"><sup>2</sup></a> i.e. that the message really comes from Alice. That's the second part of "trust".
