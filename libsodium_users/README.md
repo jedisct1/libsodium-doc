@@ -67,6 +67,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
+- [libotrv4](https://github.com/twstrike/libotrv4): An OTR version 4 implementation.
 - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
