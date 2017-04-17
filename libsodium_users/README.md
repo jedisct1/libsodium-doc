@@ -79,6 +79,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
 - [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate libsodium-net compatible KeyPair`s.
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
+- [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper around libsodium.
 - [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell module.
 - [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way streaming encryption for Javascript.
 - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET
