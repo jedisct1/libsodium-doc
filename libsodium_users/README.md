@@ -68,6 +68,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
+- [libotrv4](https://github.com/twstrike/libotrv4): An OTR version 4 implementation.
 - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
@@ -79,6 +80,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
 - [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate libsodium-net compatible KeyPair`s.
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
+- [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper around libsodium.
 - [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell module.
 - [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way streaming encryption for Javascript.
 - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET
