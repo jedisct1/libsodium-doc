@@ -75,6 +75,8 @@ The `crypto_kx_client_session_keys()` function computes a pair of shared keys \(
 
 It returns `0` on success, or `-1` if the server's public key is not acceptable.
 
+These keys can be used by any functions requiring secret keys up to `crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secrebox_*()` and `crypto_aead_*()`.
+
 The shared secret key `rx` should be used by the client to receive data from the server, whereas `tx` should be used for data flowing in the opposite direction.
 
 `rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` can be set to `NULL`.
