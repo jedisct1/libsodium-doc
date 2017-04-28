@@ -83,7 +83,7 @@ The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gc
 The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.  
 To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
-When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 MB encrypted with the same key.  
+When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 GB encrypted with the same key.
 If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
 
 Support for AES256-GCM was introduced in libsodium 1.0.4.

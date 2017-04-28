@@ -24,7 +24,7 @@ libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305 \
 
 | Construction | Max bytes for a single \(key,nonce\) | Max bytes for a single key |
 | :--- | :--- | :--- |
-| AES256-GCM | 64 GB \(theoretical\), ~ 350 MB \(recommended\) | ~ 350 MB \(recommended\) |
+| AES256-GCM | 64 GB \(theoretical\), ~ 350 GB \(recommended\) | ~ 350 GB \(recommended\) |
 | ChaCha20-Poly1305 | No practical limits \(2^70 bytes\) | Up to 2^64 messages, no practical total size limits |
 | ChaCha20-Poly1305-IETF | 256 GB | No practical limits |
 | XChaCha20-Poly1305-IETF | No practical limits \(2^70 bytes\) | No practical limits |
