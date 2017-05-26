@@ -57,6 +57,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
+- [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student's entrance and exit in school.
 
 # Libraries using libsodium
 Some libraries and frameworks using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
@@ -104,3 +105,4 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Supercell](http://supercell.com)
 - [Wire](https://wire.com)
 - [Yandex](https://www.yandex.com)
+- [Arpa Information Technology Solutions](https://arpa.ph/)
