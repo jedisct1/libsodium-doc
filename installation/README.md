@@ -219,5 +219,8 @@ sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
+# Reporting vulnerabilities
 
+We encourage users and researchers to use PGP-encrypted emails to transmit confidential details regarding possible vulnerabilities in the Sodium library.
 
+Details should be sent to: j [at] pureftpd [dot] org using the PGP key above.
