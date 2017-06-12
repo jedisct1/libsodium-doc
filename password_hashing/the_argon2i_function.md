@@ -162,9 +162,9 @@ There is no "insecure" value for `memlimit`, though the more memory the better.
 
 Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_*` will still work without doing so, but possibly way slower.
 
-Do not use constants (including `crypto_pwhash_OPSLIMIT_*` and `crypto_pwhash_MEMLIMIT_*`) in order to verify a password. Save the parameters along with the hash instead, and use these saved parameters for the verification.
+Do not use constants (including `crypto_pwhash_OPSLIMIT_*` and `crypto_pwhash_MEMLIMIT_*`) in order to verify a password or produce a deterministic output. Save the parameters along with the hash instead.
 
-Alternatively, use `crypto_pwhash_str()` and `crypto_pwhash_str_verify()`, that automatically take care of including and extracting the parameters.
+For password verification, the recommended interface is `crypto_pwhash_str()` and `crypto_pwhash_str_verify()`. The string produced by `crypto_pwhash_str()` already includes an algorithm identifier, as well as all the parameters that have been used to hash the password. Subsequently, `crypto_pwhash_str_verify()` automatically decodes these parameters.
 
 By doing so, passwords can be rehashed using different parameters if required later on.
 
