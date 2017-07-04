@@ -1,8 +1,12 @@
-# X25519
+# Diffie-Hellman function
 
-Sodium provides the X25519 function, that can be used as a low-level building block to build key exchange mechanisms.
+Sodium provide an API to perform scalar multiplication of elliptic curve points.
 
-On current libsodium versions, you generally want to use the `crypto_kx` API instead.
+This can be used as a building block to construct key exchange mechanisms, or more
+generally to compute a public key from a secret key.
+
+On current libsodium versions, you generally want to use the `crypto_kx` API for
+key exchange instead.
 
 ## Usage
 
