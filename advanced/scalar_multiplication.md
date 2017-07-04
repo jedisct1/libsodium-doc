@@ -1,6 +1,8 @@
-# Diffie-Hellman function
+# X25519
 
-Sodium provides X25519, a state-of-the-art Diffie-Hellman function suitable for a wide variety of applications.
+Sodium provides the X25519 function, that can be used as a low-level building block to build key exchange mechanisms.
+
+On current libsodium versions, you generally want to use the `crypto_kx` API instead.
 
 ## Usage
 
@@ -21,9 +23,11 @@ This function can be used to compute a shared secret `q` given a user's secret k
 
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
-`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), and the key distribution is not uniform.   
-For this reason, instead of directly using the output of the multiplication `q` as a shared key, it is recommended to use `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2` being the public keys.
+`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), which is smaller than the key space.
 
+For this reason, and to mitigate subtle attacks due to the fact many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
+
+A better way to compute a shared key is `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2` being the public keys.
   
 This can be achieved with the following code snippet:
 
