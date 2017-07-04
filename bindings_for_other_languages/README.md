@@ -15,6 +15,7 @@
 * D: [Sodium](https://github.com/carblue/sodium)
 * Delphi/FreePascal: [Delphi/FreePascal](https://github.com/alexpmorris/libsodium-delphi)
 * Dylan: [libsodium-dylan](https://github.com/dylan-foundry/libsodium-dylan)
+* Elixir: [Salty](https://github.com/ArteMisc/libsalty)
 * Elixir: [Savory](https://github.com/electricFeel/savory)
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Erlang: [Erlang-NaCl](https://github.com/tonyg/erlang-nacl)
