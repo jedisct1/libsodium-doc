@@ -1,3 +1,8 @@
+# Programming languages using libsodium
+
+* PHP >= 7.2
+* HHVM >= 3.20
+
 # Bindings for other languages
 
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
