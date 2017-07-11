@@ -1,6 +1,7 @@
 # Applications using libsodium
 Some applications using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
+- [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote desktop implementation (client and server) for Windows systems.
 - [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php and MongoDB based single server messaging platform.
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
