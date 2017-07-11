@@ -34,5 +34,3 @@ Argon2 is recommended over Scrypt if requiring libsodium >= 1.0.9 is not a conce
 Scrypt was also designed to make it costly to perform large-scale custom hardware attacks by requiring large amounts of memory.
 
 Even though its memory hardness can be significantly reduced at the cost of extra computations, this function remains an excellent choice today, provided that its parameters are properly chosen.
-
-Scrypt is available in libsodium since version 0.5.0, which makes it a better choice than Argon2 if compatibility with older libsodium versions is a concern.

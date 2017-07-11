@@ -2,6 +2,8 @@
 
 As a conservative alternative to Argon2, Sodium provides an implementation of the Scrypt password hashing function.
 
+Unless you have specific reasons to use scrypt, you should instead consider the default function, Argon2.
+
 ## Example 1: key derivation
 
 ```c
