@@ -1,4 +1,4 @@
-# Programming languages using libsodium
+# Programming languages whose standard library includes support for libsodium
 
 * PHP >= 7.2
 * HHVM >= 3.20
