@@ -29,7 +29,6 @@
 * Fortran: [Fortium](https://github.com/jshahbazi/fortium)
 * Go: [GoSodium](https://github.com/jasonmccampbell/GoSodium)
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
-* Go: [Natrium](https://github.com/ProjectNiwl/natrium)
 * Go: [Sodium](https://github.com/jamesruan/sodium)
 * Guile: [Guile-NaCl](https://github.com/cryptotronix/guile-nacl)
 * Haskell: [haskell-libsodium](https://github.com/dmp1ce/haskell-libsodium)
