@@ -54,7 +54,7 @@ A canary is also placed right before the returned pointer. Modifications of this
 
 An additional guard page is placed before this canary to make it less likely for sensitive data to be accessible when reading past the end of an unrelated region.
 
-The allocated region is filled with `0xdb` bytes in order to help catch bugs due to initialized data.
+The allocated region is filled with `0xdb` bytes in order to help catch bugs due to uninitialized data.
 
 In addition, `sodium_mlock()` is called on the region to help avoid it being swapped to disk. On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
 
