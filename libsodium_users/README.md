@@ -60,6 +60,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
 - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student's entrance and exit in school.
+- [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw WiFi radio.
 
 # Libraries using libsodium
 Some libraries and frameworks using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
