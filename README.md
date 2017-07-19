@@ -35,4 +35,3 @@ This documentation can be downloaded as ePUB \(for iPad, iPhone, Mac\), MOBI \(f
 [ISC license](https://en.wikipedia.org/wiki/ISC_license).
 
 See the `LICENSE` file for details.
-
