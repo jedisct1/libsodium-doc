@@ -70,6 +70,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [Cordova Minisodium](https://npmdaily.com/pkg/cordova-plugin-minisodium): A minimal sodium plugin for Cordova - for iOS and Android.
 - [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content using Ed25519.
 - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
+- [Innovault](https://innovault.io): A toolkit to store sensitive data from web forms in an encrypted database.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
 - [libotrv4](https://github.com/twstrike/libotrv4): An OTR version 4 implementation.
@@ -100,7 +101,6 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
 - [Facebook](https://facebook.com)
 - [Informatica](https://www.informatica.com/)
-- [Innovault](https://innovault.io)
 - [Keybase](https://keybase.io/)
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
