@@ -48,7 +48,7 @@ randombytes_set_implementation(&randombytes_salsa20_implementation);
 
 Before calling `sodium_init()`.
 
-However, it is not thread-safe, and was designed to be just a boilerplate for writing implementations for embedded operating systems.
+It does fast key erasure. However, it is not thread-safe (locks must be added if this is a requirement), and was designed to be just a boilerplate for writing implementations for embedded operating systems.
 `randombytes_stir()` also has to be called to rekey the generator after fork()ing.
 
 If you are using Windows or a modern Unix-based system, you should stick to the default implementations.
@@ -59,5 +59,4 @@ Internally, all the functions requiring random numbers use the `randombytes_*` i
 
 Replacing the default implementations will affect explicit calls to `randombytes_*` functions as well as functions generating keys and nonces.
 
-Since version 1.0.3, custom RNGs don't need to provide `randombytes_stir()` nor `randombytes_close()` if they are not required. These can be `NULL` pointers instead. `randombytes_uniform()` doesn't have to be defined either: a default implementation will be used if a `NULL` pointer is given.
-
+Since version 1.0.3, custom RNGs don't need to provide `randombytes_stir()` nor `randombytes_close()` if they are not required (for example if the data comes from a system call). These can be `NULL` pointers instead. `randombytes_uniform()` doesn't have to be defined either: a default implementation will be used if a `NULL` pointer is given.
