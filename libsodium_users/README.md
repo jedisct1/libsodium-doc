@@ -100,6 +100,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Digital Ocean](https://www.digitalocean.com/)
 - [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
 - [Facebook](https://facebook.com)
+- [Infoblox](https://www.infoblox.com)
 - [Informatica](https://www.informatica.com/)
 - [Keybase](https://keybase.io/)
 - [OVH](https://www.ovh.com)
