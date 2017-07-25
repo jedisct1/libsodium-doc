@@ -179,3 +179,26 @@ Libsodium supports the Argon2id variant since version 1.0.13.
 ## Algorithm details
 
 - [Argon2 v1.3](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon2-specs.pdf)
+
+## Constants
+
+- `crypto_pwhash_ALG_ARGON2I13`
+- `crypto_pwhash_ALG_ARGON2ID13`
+- `crypto_pwhash_ALG_DEFAULT`
+- `crypto_pwhash_BYTES_MIN`
+- `crypto_pwhash_BYTES_MAX
+- `crypto_pwhash_PASSWD_MIN`
+- `crypto_pwhash_PASSWD_MAX`
+- `crypto_pwhash_SALTBYTES`
+- `crypto_pwhash_STRBYTES`
+- `crypto_pwhash_STRPREFIX`
+- `crypto_pwhash_OPSLIMIT_MIN`
+- `crypto_pwhash_OPSLIMIT_MAX`
+- `crypto_pwhash_MEMLIMIT_MIN`
+- `crypto_pwhash_MEMLIMIT_MAX`
+- `crypto_pwhash_OPSLIMIT_INTERACTIVE`
+- `crypto_pwhash_MEMLIMIT_INTERACTIVE`
+- `crypto_pwhash_OPSLIMIT_MODERATE`
+- `crypto_pwhash_MEMLIMIT_MODERATE`
+- `crypto_pwhash_OPSLIMIT_SENSITIVE`
+- `crypto_pwhash_MEMLIMIT_SENSITIVE`
