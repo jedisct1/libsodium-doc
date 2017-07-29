@@ -66,7 +66,11 @@ The computed key is stored into `out`.
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes. This number must be between `crypto_pwhash_MEMLIMIT_MIN` and `crypto_pwhash_MEMLIMIT_MAX`
 
-`alg` is an identifier for the algorithm to use and should be currently set to `crypto_pwhash_ALG_DEFAULT`.
+`alg` is an identifier for the algorithm to use, and should be set to one of the following values:
+
+- `crypto_pwhash_ALG_DEFAULT`: the currently recommended algorithm, which can change from one version of libsodium to another.
+- `crypto_pwhash_ALG_ARGON2I13`: version 1.3 of the Argon2i algorithm, available since libsodium 1.0.9.
+- `crypto_pwhash_ALG_ARGON2ID13`: version 1.3 of the Argon2id algorithm, available since libsodium 1.0.13.
 
 For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters. This requires 32 Mb of dedicated RAM. Higher values may improve security (see below).
 
@@ -135,28 +139,31 @@ But the best defense against brute-force password cracking remains using strong 
 
 ## Constants
 
+- `crypto_pwhash_ALG_ARGON2I13`
+- `crypto_pwhash_ALG_ARGON2ID13`
 - `crypto_pwhash_ALG_DEFAULT`
+- `crypto_pwhash_BYTES_MAX
 - `crypto_pwhash_BYTES_MIN`
-- `crypto_pwhash_BYTES_MAX`
-- `crypto_pwhash_PASSWD_MIN`
+- `crypto_pwhash_MEMLIMIT_INTERACTIVE`
+- `crypto_pwhash_MEMLIMIT_MAX`
+- `crypto_pwhash_MEMLIMIT_MIN`
+- `crypto_pwhash_MEMLIMIT_MODERATE`
+- `crypto_pwhash_MEMLIMIT_SENSITIVE`
+- `crypto_pwhash_OPSLIMIT_INTERACTIVE`
+- `crypto_pwhash_OPSLIMIT_MAX`
+- `crypto_pwhash_OPSLIMIT_MIN`
+- `crypto_pwhash_OPSLIMIT_MODERATE`
+- `crypto_pwhash_OPSLIMIT_SENSITIVE`
 - `crypto_pwhash_PASSWD_MAX`
+- `crypto_pwhash_PASSWD_MIN`
 - `crypto_pwhash_SALTBYTES`
 - `crypto_pwhash_STRBYTES`
 - `crypto_pwhash_STRPREFIX`
-- `crypto_pwhash_OPSLIMIT_MIN`
-- `crypto_pwhash_OPSLIMIT_MAX`
-- `crypto_pwhash_MEMLIMIT_MIN`
-- `crypto_pwhash_MEMLIMIT_MAX`
-- `crypto_pwhash_OPSLIMIT_INTERACTIVE`
-- `crypto_pwhash_MEMLIMIT_INTERACTIVE`
-- `crypto_pwhash_OPSLIMIT_MODERATE`
-- `crypto_pwhash_MEMLIMIT_MODERATE`
-- `crypto_pwhash_OPSLIMIT_SENSITIVE`
-- `crypto_pwhash_MEMLIMIT_SENSITIVE`
 
 ## Notes
 
-`opslimit`, the number of passes, has to be at least `3`. `crypto_pwhash()` and `crypto_pwhash_str()` will fail with a `-1` return code for lower values.
+`opslimit`, the number of passes, has to be at least `3` when using Argon2i.
+`crypto_pwhash()` and `crypto_pwhash_str()` will fail with a `-1` return code for lower values.
 
 There is no "insecure" value for `memlimit`, though the more memory the better.
 
@@ -179,26 +186,3 @@ Libsodium supports the Argon2id variant since version 1.0.13.
 ## Algorithm details
 
 - [Argon2 v1.3](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon2-specs.pdf)
-
-## Constants
-
-- `crypto_pwhash_ALG_ARGON2I13`
-- `crypto_pwhash_ALG_ARGON2ID13`
-- `crypto_pwhash_ALG_DEFAULT`
-- `crypto_pwhash_BYTES_MIN`
-- `crypto_pwhash_BYTES_MAX
-- `crypto_pwhash_PASSWD_MIN`
-- `crypto_pwhash_PASSWD_MAX`
-- `crypto_pwhash_SALTBYTES`
-- `crypto_pwhash_STRBYTES`
-- `crypto_pwhash_STRPREFIX`
-- `crypto_pwhash_OPSLIMIT_MIN`
-- `crypto_pwhash_OPSLIMIT_MAX`
-- `crypto_pwhash_MEMLIMIT_MIN`
-- `crypto_pwhash_MEMLIMIT_MAX`
-- `crypto_pwhash_OPSLIMIT_INTERACTIVE`
-- `crypto_pwhash_MEMLIMIT_INTERACTIVE`
-- `crypto_pwhash_OPSLIMIT_MODERATE`
-- `crypto_pwhash_MEMLIMIT_MODERATE`
-- `crypto_pwhash_OPSLIMIT_SENSITIVE`
-- `crypto_pwhash_MEMLIMIT_SENSITIVE`
