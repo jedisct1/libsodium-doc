@@ -6,6 +6,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice + video + file transfers.
 - [Discord](https://discordapp.com): All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
+- [EQEmu](http://www.eqemulator.org): An Open Source project committed to providing custom Everquest servers.
 - [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 - [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 - [FeCl](https://github.com/jhwgh1968/FeCl): A secure message-passing server based on libsodium.
