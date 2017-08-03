@@ -16,6 +16,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
 - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
 - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
+- [Kryptonite](https://github.com/kryptco/kr): The new home for your SSH private key on your iPhone or Android.
 - [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted, multi-purpose document store.
 - [Lageant](https://github.com/bitbeans/lageant): libsodium Authentication Agent.
 - [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support Scrypt and Argon2 for password hashing.
@@ -104,6 +105,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Infoblox](https://www.infoblox.com)
 - [Informatica](https://www.informatica.com/)
 - [Keybase](https://keybase.io/)
+- [Krypt.co](https://krypt.co)
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
 - [Pi-lar](http://www.pi-lar.net)
