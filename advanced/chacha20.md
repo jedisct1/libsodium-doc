@@ -48,3 +48,5 @@ This permits direct access to any block without having to compute the previous o
 ## Notes
 
 The nonce is 64 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce every time a new stream is required.
+
+Up to 274877906880 bytes (~ 256 GB) can be produced from the a (`key`, `nonce`) pair.

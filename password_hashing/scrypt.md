@@ -57,7 +57,7 @@ int crypto_pwhash_scryptsalsa208sha256(unsigned char * const out,
 
 The `crypto_pwhash_scryptsalsa208sha256()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_scryptsalsa208sha256_SALTBYTES` bytes.
 
-The computed key is stored into `out`. `out` (and hence `outlen`) should be at least `crypto_pwhash_scryptsalsa208sha256_BYTES_MIN` and at most `crypto_pwhash_scryptsalsa208sha256_BYTES_MAX`.
+The computed key is stored into `out`. `out` (and hence `outlen`) should be at least `crypto_pwhash_scryptsalsa208sha256_BYTES_MIN` and at most `crypto_pwhash_scryptsalsa208sha256_BYTES_MAX` (~ 127 GB).
 
 `passwd` (and hence `passwdlen`) should be at least `crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN` and at most `crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX`.
 

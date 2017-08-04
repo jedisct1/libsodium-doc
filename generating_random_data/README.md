@@ -41,6 +41,8 @@ For a given `seed`, this function will always output the same sequence. `size` c
 
 This function is mainly useful for writing tests, and was introduced in libsodium 1.0.12. Under the hood, it uses the ChaCha20 stream cipher.
 
+Up to 256 GB can be produced with a single seed.
+
 ```c
 void randombytes_keygen(unsigned char seed[randombytes_SEEDBYTES]);
 ```
