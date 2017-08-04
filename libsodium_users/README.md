@@ -108,6 +108,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Krypt.co](https://krypt.co)
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
+- [Peerio](https://www.peerio.com/)
 - [Pi-lar](http://www.pi-lar.net)
 - [Q-Leap Networks](http://www.q-leap.com/)
 - [Riseup](https://riseup.net)
