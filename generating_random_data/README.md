@@ -4,7 +4,7 @@ The library provides a set of functions to generate unpredictable data, suitable
 
 - On Windows systems, the `RtlGenRandom()` function is used
 - On OpenBSD and Bitrig, the `arc4random()` function is used
-- On recent Linux kernels, the `getrandom` system call is used (since Sodium 1.0.3)
+- On recent Linux kernels, the `getrandom` system call is used
 - On other Unices, the `/dev/urandom` device is used
 - If none of these options can safely be used, custom implementations can easily be hooked.
 
