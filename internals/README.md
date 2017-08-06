@@ -11,12 +11,12 @@ Each operation defines functions and macros in a dedicated `crypto_operation` na
 * For each constant, a function returning the same value. The name is identical to the constant, but all lowercase: `crypto_hash_bytes(void)`
 * A set of functions with the same prefix, or being identical to the prefix: `crypto_hash()`
 
-Low-level APIs are defined in the `crypto_operation_primitivename` namespace.  
+Low-level APIs are defined in the `crypto_operation_primitivename` namespace.
 For example, specific hash functions and their related macros are defined in the `crypto_hash_sha256`, `crypto_hash_sha512` and `crypto_hash_sha512256` namespaces.
 
 To guarantee forward compatibilility, specific implementations are intentionally not directly accessible. The library is responsible for chosing the best working implementation at runtime.
 
-For compatibility with NaCl, sizes of messages and ciphertexts are given as `unsigned long long` values.  
+For compatibility with NaCl, sizes of messages and ciphertexts are given as `unsigned long long` values.
 Other values representing the size of an object in memory use the standard `size_t` type.
 
 ## Thread safety
@@ -55,6 +55,19 @@ C header files cannot be used in other programming languages.
 
 For this reason, none of the documented functions are macros hiding the actual symbols.
 
+## Security first
+
+When a balance is required, extra safety measures have a higher priority than speed.
+
+Examples include:
+- Sensitive data are wiped from memory. This can represent gigabytes of memory to go through for some operations (password hashing), but the cost remains reasonable compared to the cost of the actual computations.
+- Signatures use different code paths for verification in order to mitigate fault attacks, and check for small order nonces.
+- X25519 checks for weak public keys.
+- Heap memory allocations ensure that pages are not swapped and cannot be shared with other processes.
+- The code is optimized for clarity, not for the number of lines of code. With the exception of trivial inlined functions (such as helpers for unaligned memory access), implementations are self-contained.
+- The default compiler flags use a conservative optimisation level, with extra code to check for stack overflows. The `--enable-opt` switch remains available for more aggressive optimisations.
+- A complete, safe and consistent API is favored over compact code. Redundancy of trivial functions is acceptable to improve clarity and prevent potential bugs in applications. For example, every operation gets a dedicated `_keygen()` function.
+
 ## Testing
 
 ### Unit testing
@@ -85,9 +98,9 @@ Linux/x86_64, and by
 [AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium) for the
 Visual Studio builds.
 
-In addition, the test suite has to always pass on the following  
-environments. libsodium is manually validated on all of these before  
-every release, as well as before merging a new change to the `stable`  
+In addition, the test suite has to always pass on the following
+environments. libsodium is manually validated on all of these before
+every release, as well as before merging a new change to the `stable`
 branch.
 
 * asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,

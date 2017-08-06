@@ -80,7 +80,7 @@ For highly sensitive data and non-interactive operations, `crypto_pwhash_OPSLIMI
 
 The `salt` should be unpredictable. `randombytes_buf()` is the easiest way to fill the `crypto_pwhash_SALTBYTES` bytes of the salt.
 
-Keep in mind that in order to produce the same key from the same password, the same salt, and the same values for `opslimit` and `memlimit` have to be used. Therefore, these parameters have to be stored for each user.
+Keep in mind that in order to produce the same key from the same password, the same algorithm, the same salt, and the same values for `opslimit` and `memlimit` have to be used. Therefore, these parameters have to be stored for each user.
 
 The function returns `0` on success, and `-1` if the computation didn't complete, usually because the operating system refused to allocate the amount of requested memory.
 
@@ -142,7 +142,7 @@ But the best defense against brute-force password cracking remains using strong 
 - `crypto_pwhash_ALG_ARGON2I13`
 - `crypto_pwhash_ALG_ARGON2ID13`
 - `crypto_pwhash_ALG_DEFAULT`
-- `crypto_pwhash_BYTES_MAX
+- `crypto_pwhash_BYTES_MAX`
 - `crypto_pwhash_BYTES_MIN`
 - `crypto_pwhash_MEMLIMIT_INTERACTIVE`
 - `crypto_pwhash_MEMLIMIT_MAX`
