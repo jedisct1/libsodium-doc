@@ -1,5 +1,17 @@
 # Authenticated Encryption with Additional Data using AES-GCM
 
+## Warning
+
+WARNING: Despite being the most popular AEAD construction due to its use in TLS, safely using AES-GCM in a different context is tricky.
+
+No more than ~ 350 GB of input data should be encrypted with a given key. This is for ~ 16 KB messages -- Actual figures vary according to message sizes.
+
+In addition, nonces are short and repeated nonces would totally destroy the security of this scheme. Nonces should thus come from atomic counters, which can be difficult to set up in a distributed environment.
+
+Unless you absolutely need AES-GCM, use XChaCha20-Poly1305 (`crypto_aead_xchacha20poly1305_ietf_*()`) instead. It doesn't have any of these limitations.
+
+Or, if you don't need to authenticate additional data, just stick to `crypto_secretbox()`.
+
 ## Example \(combined mode\)
 
 ```c
@@ -116,7 +128,7 @@ int crypto_aead_aes256gcm_decrypt(unsigned char *m,
                                   const unsigned char *k);
 ```
 
-The function `crypto_aead_aes256gcm_decrypt()` verifies that the ciphertext `c` \(as produced by `crypto_aead_aes256gcm_encrypt()`\), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` \(`adlen` bytes\).  
+The function `crypto_aead_aes256gcm_decrypt()` verifies that the ciphertext `c` \(as produced by `crypto_aead_aes256gcm_encrypt()`\), includes a valid tag using a secret key `k`, a public nonce `npub`, and additional data `ad` \(`adlen` bytes\).
 `clen` is the ciphertext length in bytes with the authenticator, so it has to be at least `aead_aes256gcm_ABYTES`.
 
 `ad` can be a `NULL` pointer if no additional data are required.
@@ -200,10 +212,11 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 ## Notes
 
-The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.  
-To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
+The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 
-When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 GB encrypted with the same key.
+To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other. The `crypto_kx_*()` API can be used to do so.
+
+When using AES-GCM, it is also recommended to switch to a new key before reaching ~ 350 GB encrypted with the same key.
 If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
 
 The detached API was introduced in libsodium 1.0.9.
