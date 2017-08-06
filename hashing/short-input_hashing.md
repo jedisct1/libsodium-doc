@@ -15,14 +15,9 @@ crypto_shorthash(hash, SHORT_DATA, SHORT_DATA_LEN, key);
 
 ## Purpose
 
-Many applications and programming language implementations were
-recently found to be vulnerable to denial-of-service attacks when
-a hash function with weak security guarantees, such as Murmurhash 3, was
-used to construct a hash table.
+Many applications and programming language implementations were recently found to be vulnerable to denial-of-service attacks when a hash function with weak security guarantees, such as Murmurhash 3, was used to construct a hash table.
 
-In order to address this, Sodium provides the `crypto_shorthash()` function,
-which outputs short but unpredictable (without knowing the secret key)
-values suitable for picking a list in a hash table for a given key.
+In order to address this, Sodium provides the `crypto_shorthash()` function, which outputs short but unpredictable (without knowing the secret key) values suitable for picking a list in a hash table for a given key.
 
 This function is optimized for short inputs.
 

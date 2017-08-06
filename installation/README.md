@@ -42,7 +42,7 @@ Projects willing to statically link Sodium must define a macro named `SODIUM_STA
 
 Cross-compilation is fully supported. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
 
-```bash
+```sh
 $ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
 $ export LDFLAGS='--specs=nosys.specs'
 $ export CFLAGS='-Os'
@@ -60,7 +60,7 @@ Releases can be compiled using the CompCert compiler.
 
 A typical command-line to compile Sodium on a little endian system with CompCert is:
 
-```bash
+```sh
 $ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \
 make check && sudo make install
 ```
@@ -74,7 +74,7 @@ Code in the `stable` branch also includes generated files, and does not require 
 
 To check out the stable branch, use:
 
-```bash
+```sh
 $ git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 

@@ -6,11 +6,9 @@ It is a portable, cross-compilable, installable, packageable fork of [NaCl](http
 
 Its goal is to provide all of the core operations needed to build higher-level cryptographic tools.
 
-Sodium supports a variety of compilers and operating systems, including Windows \(with MinGW or Visual Studio, x86 and x86\_64\), iOS and Android.
+Sodium isupports a variety of compilers and operating systems, including Windows \(with MinGW or Visual Studio, x86 and x86\_64\), iOS and Android. Javascript and WebAssembly versions are also available and fully supported.
 
-The design choices emphasize security, and "magic constants" have clear rationales.
-
-And despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
+The design choices emphasize security and ease of use. But despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
 
 [Version 1.0.13](https://github.com/jedisct1/libsodium/releases) was released on Jul 14, 2017.
 
@@ -18,7 +16,7 @@ And despite the emphasis on high security, primitives are faster across-the-boar
 
 * [Github repository](https://github.com/jedisct1/libsodium)
 * [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
-* [Documentation](http://doc.libsodium.org)
+* [Documentation](https://doc.libsodium.org)
 
 ## Mailing list
 
