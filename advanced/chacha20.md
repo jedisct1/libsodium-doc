@@ -1,18 +1,17 @@
 # ChaCha20
 
-ChaCha20 is a stream cipher developed by Daniel J. Bernstein that expands a 256-bit key into 2^64 randomly accessible streams, each containing 2^64 randomly accessible 64-byte (512 bits) blocks. It is a variant of Salsa20 with better diffusion.
+ChaCha20 is a stream cipher developed by Daniel J. Bernstein. Its original design expands a 256-bit key into 2^64 randomly accessible streams, each containing 2^64 randomly accessible 64-byte (512 bits) blocks. It is a variant of Salsa20 with better diffusion.
 
 ChaCha20 doesn't require any lookup tables and avoids the possibility of timing attacks.
 
-Internally, ChaCha20 works like a block cipher used in counter mode.
+Internally, ChaCha20 works like a block cipher used in counter mode. It includes an internal block counter to avoid incrementing the nonce after each block.
 
-It includes an internal block counter to avoid incrementing the nonce after each block.
+Two variants of the ChaCha20 cipher are implemented in libsodium:
+- The original ChaCha20 cipher with a 64-bit nonce and a 64-bit counter, allowing a practically unlimited amount of data to be encrypted with the same `(key, nonce)` pair.
+- The IETF variant increases the nonce size to 96 bits, but reduces the counter size down to 32 bits, allowing only up to 256 GB of data to be safely encrypted with a given `(key, nonce)` pair.
 
-Two variants of the ChaCha20 cipher are available:
-- The original ChaCha20 cipher uses a 64-bit nonce and a 64-bit counter, allowing a practically unlimited amount of data to be encrypted with the same `(key, nonce)` pair.
-- The IETF variant increases the nonce size to 96 bits, but reduces the counter size to 32 bits, allowing only up to 256 GB of data to be encrypted with a given `(key, nonce)` pair.
-
-These primitives should only be used to implement protocols that specifically require them. For other applications, it is recommended to use the high-level `crypto_stream` API (XSalsa20) or the ChaCha20-based construction with an extended nonce, XChaCha20 (`crypto_stream_xchacha20`).
+These primitives should only be used to implement protocols that specifically require them.
+For all other applications, it is recommended to use the high-level `crypto_stream` API (XSalsa20) or the ChaCha20-based construction with an extended nonce, XChaCha20 (`crypto_stream_xchacha20`).
 
 ## Usage (original construction)
 
