@@ -42,7 +42,7 @@ The developement of libsodium is entirely made by volunteers. We would like to s
 
 People who designed the primitives and wrote implementations the library is based on can be found in the [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS) file. This project wouldn't exist without them.
 
-Also a huge "thank you" to people and companies who contributed bindings for the favorite programming languages. A list can be found in the [THANKS](https://raw.githubusercontent.com/jedisct1/libsodium/master/THANKS) file.
+Also a huge "thank you" to people and companies who contributed bindings for their favorite programming languages. A list can be found in the [THANKS](https://raw.githubusercontent.com/jedisct1/libsodium/master/THANKS) file.
 
 Another huge "thank you" to package maintainers who have been doing an amazing job at building packages for many distributions and operating systems.
 
