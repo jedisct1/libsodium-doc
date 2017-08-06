@@ -2,7 +2,7 @@
 
 Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512-256 (truncated HMAC-SHA-512) are provided.
 
-If required, a streaming API is  available to process a message as a sequence of multiple chunks.
+If required, a streaming API is available to process a message as a sequence of multiple chunks.
 
 ## Single-part example
 

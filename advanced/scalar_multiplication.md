@@ -2,11 +2,9 @@
 
 Sodium provide an API to perform scalar multiplication of elliptic curve points.
 
-This can be used as a building block to construct key exchange mechanisms, or more
-generally to compute a public key from a secret key.
+This can be used as a building block to construct key exchange mechanisms, or more generally to compute a public key from a secret key.
 
-On current libsodium versions, you generally want to use the `crypto_kx` API for
-key exchange instead.
+On current libsodium versions, you generally want to use the `crypto_kx` API for key exchange instead.
 
 ## Usage
 
@@ -32,7 +30,7 @@ This function can be used to compute a shared secret `q` given a user's secret k
 For this reason, and to mitigate subtle attacks due to the fact many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
 
 A better way to compute a shared key is `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2` being the public keys.
-  
+
 This can be achieved with the following code snippet:
 
 ```c

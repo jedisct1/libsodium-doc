@@ -6,6 +6,8 @@ Salsa20 doesn't require any lookup tables and avoids the possibility of timing a
 
 Internally, Salsa20 works like a block cipher used in counter mode. It uses a dedicated 64-bit block counter to avoid incrementing the nonce after each block.
 
+The extended-nonce construction XSalsa20 is generally recommended over raw Salsa20, as it makes it easier to safely generate nonces.
+
 ## Usage
 
 ```c
