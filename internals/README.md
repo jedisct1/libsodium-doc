@@ -65,8 +65,10 @@ Examples include:
 - X25519 checks for weak public keys.
 - Heap memory allocations ensure that pages are not swapped and cannot be shared with other processes.
 - The code is optimized for clarity, not for the number of lines of code. With the exception of trivial inlined functions (such as helpers for unaligned memory access), implementations are self-contained.
-- The default compiler flags use a conservative optimisation level, with extra code to check for stack overflows. The `--enable-opt` switch remains available for more aggressive optimisations.
+- The default compiler flags use a conservative optimisation level, with extra code to check for stack overflows, and with some potentially dangerous optimisations disabled. The `--enable-opt` switch remains available for more aggressive optimisations.
 - A complete, safe and consistent API is favored over compact code. Redundancy of trivial functions is acceptable to improve clarity and prevent potential bugs in applications. For example, every operation gets a dedicated `_keygen()` function.
+- The default PRG doesn't implement something complicated and potentially insecure in userland to save CPU cycles. It is fast enough for most applications while being guaranteed to be thread-safe and fork-safe in all cases. If thread safety is not required, a faster, yet intentionally very simple and provably secure userland implementation is provided.
+- The code includes many internal consistency checks, and will defensively `abort()` if something unusual is ever detected. This requires a few extra checks, but we believe that they are useful to spot internal or application-specific bugs that tests didn't catch.
 
 ## Testing
 
