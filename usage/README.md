@@ -62,7 +62,7 @@ And check the value of `/proc/sys/kernel/random/entropy_avail` again. If the val
 apt-get install haveged
 ```
 
-The entropy resulting from `haveged` should not be trusted in virtualized environments.
+Haveged should only be used as a very last resort. It hasn't received any updates for 10+ years, and shouldn't be trusted as a single entropy source, especially on virtualized environments.
 
 Applications can warn users about the Linux RNG not being seeded before calling `sodium_init()` using code similar to the following:
 
