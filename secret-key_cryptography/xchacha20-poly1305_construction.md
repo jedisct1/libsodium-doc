@@ -1,6 +1,6 @@
 # The XChaCha20-Poly1305 construction
 
-The XChaCha20-Poly1305 construction can safely encrypt up to 2^80 messages with the same key, without any practical limit to the size of a message (up to 2^70 bytes).
+The XChaCha20-Poly1305 construction can safely encrypt a practically unlimited number of messages with the same key, without any practical limit to the size of a message (up to ~ 2^64 bytes).
 
 As an alternative to counters, its large nonce size (192-bit) allows random nonces to be safely used.
 
