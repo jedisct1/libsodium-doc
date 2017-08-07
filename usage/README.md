@@ -64,6 +64,8 @@ apt-get install haveged
 
 Haveged should only be used as a very last resort. It hasn't received any updates for 10+ years, and shouldn't be trusted as a single entropy source, especially on virtualized environments.
 
+[Jent](http://www.chronox.de/jent/doc/CPU-Jitter-NPTRNG.html) is a better alternative, but most Linux distributions don't offer it as an installable package yet.
+
 Applications can warn users about the Linux RNG not being seeded before calling `sodium_init()` using code similar to the following:
 
 ```c
@@ -81,7 +83,7 @@ int c;
 if ((fd = open("/dev/random", O_RDONLY)) != -1) {
     if (ioctl(fd, RNDGETENTCNT, &c) == 0 && c < 160) {
         fputs("This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
-              "Installing the rng-utils/rng-tools or haveged packages may help.\n"
+              "Installing the rng-utils/rng-tools, jent or haveged packages may help.\n"
               "On virtualized Linux environments, also consider using virtio-rng.\n"
               "The service will not start until enough entropy has been collected.\n", stderr);
     }
