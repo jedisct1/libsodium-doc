@@ -80,4 +80,5 @@
 * Rust: [libsodium-sys](https://github.com/zonyitoo/libsodium-sys)
 * Swift: [NaOH](https://github.com/drewcrawford/NaOH)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
+* Swift: [Tafelsalz](https://github.com/blochberger/Tafelsalz)
 
