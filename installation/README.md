@@ -78,6 +78,10 @@ To check out the stable branch, use:
 $ git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
+## Getting started
+
+See the [usage section](../usage/README.md) to get started!
+
 ## Integrity checking
 
 Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
