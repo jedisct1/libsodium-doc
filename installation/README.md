@@ -69,8 +69,8 @@ make check && sudo make install
 
 We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
 
-However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable\) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
-Code in the `stable` branch also includes generated files, and does not require the autotools \(libtool, autoconf, automake) to be present.
+However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable%29 branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
+Code in the `stable` branch also includes generated files, and does not require the autotools %28libtool, autoconf, automake) to be present.
 
 To check out the stable branch, use:
 
@@ -227,4 +227,5 @@ sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc=
 
 We encourage users and researchers to use PGP-encrypted emails to transmit confidential details regarding possible vulnerabilities in the Sodium library.
 
-Details should be sent to: j [at] pureftpd [dot] org using the PGP key above.
+Details should be sent to: j \[at\] pureftpd \[dot\] org using the PGP key above.
+
