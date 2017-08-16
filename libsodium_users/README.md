@@ -110,6 +110,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Paragon Initiative Enterprises](https://paragonie.com)
 - [Peerio](https://www.peerio.com/)
 - [Pi-lar](http://www.pi-lar.net)
+- [Private Internet Access](https://www.privateinternetaccess.com)
 - [Q-Leap Networks](http://www.q-leap.com/)
 - [Riseup](https://riseup.net)
 - [Supercell](http://supercell.com)
