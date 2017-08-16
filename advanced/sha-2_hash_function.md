@@ -48,12 +48,14 @@ crypto_hash_sha256_final(&state, out);
 ### SHA-256
 
 Single-part:
+
 ```c
 int crypto_hash_sha256(unsigned char *out, const unsigned char *in,
                        unsigned long long inlen);
 ```
 
 Multi-part:
+
 ```c
 int crypto_hash_sha256_init(crypto_hash_sha256_state *state);
 
@@ -68,12 +70,14 @@ int crypto_hash_sha256_final(crypto_hash_sha256_state *state,
 ### SHA-512
 
 Single-part:
+
 ```c
 int crypto_hash_sha512(unsigned char *out, const unsigned char *in,
                        unsigned long long inlen);
 ```
 
 Multi-part:
+
 ```c
 int crypto_hash_sha512_init(crypto_hash_sha512_state *state);
 
@@ -102,4 +106,3 @@ SHA-512-256 is also available via the higher-level interface `crypto_hash()`.
 
 - `crypto_hash_sha256_state`
 - `crypto_hash_sha512_state`
-

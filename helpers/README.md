@@ -86,9 +86,10 @@ int sodium_compare(const void * const b1_, const void * const b2_, size_t len);
 ```
 
 Given `b1_` and `b2_`, two `len` bytes numbers encoded in little-endian format, this function returns:
+
 - `-1` if `b1_` is less than `b2_`
 - `0` if `b1_` equals `b2_`
-- `1` if `b1_` is greater than `b2_` 
+- `1` if `b1_` is greater than `b2_`
 
 The comparison is done in constant time for a given length.
 

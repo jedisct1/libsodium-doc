@@ -2,7 +2,7 @@
 
 Applications that encrypt several messages using the same key can gain a little speed by expanding the AES key only once, via the precalculation interface.
 
-```
+```c
 int crypto_aead_aes256gcm_beforenm(crypto_aead_aes256gcm_state *ctx_,
                                    const unsigned char *k);
 ```
@@ -11,7 +11,7 @@ The `crypto_aead_aes256gcm_beforenm()` function initializes a context `ctx` by e
 
 A 16 bytes alignment is required for the address of `ctx`. The size of this value can be obtained using `sizeof(crypto_aead_aes256gcm_state)`, or `crypto_aead_aes256gcm_statebytes()`.
 
-### Combined mode with precalculation
+## Combined mode with precalculation
 
 ```c
 int crypto_aead_aes256gcm_encrypt_afternm(unsigned char *c,
@@ -39,7 +39,7 @@ int crypto_aead_aes256gcm_decrypt_afternm(unsigned char *m,
 
 The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt()` and `crypto_aead_aes256gcm_decrypt()`, but accept a previously initialized context `ctx` instead of a key.
 
-### Detached mode with precalculation
+## Detached mode with precalculation
 
 ```c
 int crypto_aead_aes256gcm_encrypt_detached_afternm(unsigned char *c,
@@ -70,17 +70,17 @@ The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gc
 
 ## Constants
 
-* `crypto_aead_aes256gcm_KEYBYTES`
-* `crypto_aead_aes256gcm_NPUBBYTES`
-* `crypto_aead_aes256gcm_ABYTES`
+- `crypto_aead_aes256gcm_KEYBYTES`
+- `crypto_aead_aes256gcm_NPUBBYTES`
+- `crypto_aead_aes256gcm_ABYTES`
 
 ## Data types
 
-* `crypto_aead_aes256gcm_state`
+- `crypto_aead_aes256gcm_state`
 
 ## Notes
 
-The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.  
+The nonce is 96 bits long. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce for each message.
 To prevent nonce reuse in a client-server protocol, either use different keys for each direction, or make sure that a bit is masked in one direction, and set in the other.
 
 When using AES-GCM, it is also recommended to switch to a new key before reaching ~350 GB encrypted with the same key.
@@ -89,6 +89,3 @@ If frequent rekeying is not an option, use \(X\)ChaCha20-Poly1305 instead.
 Support for AES256-GCM was introduced in libsodium 1.0.4.
 
 The detached API was introduced in libsodium 1.0.9.
-
-
-

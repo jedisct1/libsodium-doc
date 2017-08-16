@@ -57,8 +57,8 @@ if (ciphertext_len < crypto_aead_aes256gcm_ABYTES ||
 
 This operation:
 
-* Encrypts a message with a key and a nonce to keep it confidential
-* Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential \(non-encrypted\) data, haven't been tampered with.
+- Encrypts a message with a key and a nonce to keep it confidential
+- Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential \(non-encrypted\) data, haven't been tampered with.
 
 A typical use case for additional data is to store protocol-specific metadata about the message, such as its length and encoding.
 
@@ -206,9 +206,9 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 ## Constants
 
-* `crypto_aead_aes256gcm_KEYBYTES`
-* `crypto_aead_aes256gcm_NPUBBYTES`
-* `crypto_aead_aes256gcm_ABYTES`
+- `crypto_aead_aes256gcm_KEYBYTES`
+- `crypto_aead_aes256gcm_NPUBBYTES`
+- `crypto_aead_aes256gcm_ABYTES`
 
 ## Notes
 

@@ -6,10 +6,10 @@ Sodium follows the NaCl naming conventions.
 
 Each operation defines functions and macros in a dedicated `crypto_operation` namespace. For example, the "hash" operation defines:
 
-* A description of the underlying primitive: `crypto_hash_PRIMITIVE`
-* Constants, such as key and output lengths: `crypto_hash_BYTES`
-* For each constant, a function returning the same value. The name is identical to the constant, but all lowercase: `crypto_hash_bytes(void)`
-* A set of functions with the same prefix, or being identical to the prefix: `crypto_hash()`
+- A description of the underlying primitive: `crypto_hash_PRIMITIVE`
+- Constants, such as key and output lengths: `crypto_hash_BYTES`
+- For each constant, a function returning the same value. The name is identical to the constant, but all lowercase: `crypto_hash_bytes(void)`
+- A set of functions with the same prefix, or being identical to the prefix: `crypto_hash()`
 
 Low-level APIs are defined in the `crypto_operation_primitivename` namespace.
 For example, specific hash functions and their related macros are defined in the `crypto_hash_sha256`, `crypto_hash_sha512` and `crypto_hash_sha512256` namespaces.
@@ -105,27 +105,27 @@ environments. libsodium is manually validated on all of these before
 every release, as well as before merging a new change to the `stable`
 branch.
 
-* asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
+- asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
   asmjs/ChakraCore
-* NativeClient/portable, NativeClient/x86\_64
-* OpenBSD/x86\_64 using `gcc -fstack-protector-strong -fstack-shuffle`
-* Ubuntu/x86\_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
-* Ubuntu/x86\_64 using clang, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
-* Ubuntu/x86\_64 using tcc
-* macOS using Xcode 8
-* macOS using CompCert
-* Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
-* msys2 using mingw32 and mingw64
-* ArchLinux/x86\_64
-* ArchLinux/armv6
-* Debian/x86
-* Debian/sparc
-* Debian/ppc
-* Raspbian/Cortex-A53
-* Ubuntu/aarch64 - Courtesy of the GCC compile farm project
-* Fedora/ppc64 - Courtesy of the GCC compile farm project
-* AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
-* Debian/mips64 - Courtesy of the GCC compile farm project
+- NativeClient/portable, NativeClient/x86\_64
+- OpenBSD/x86\_64 using `gcc -fstack-protector-strong -fstack-shuffle`
+- Ubuntu/x86\_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
+- Ubuntu/x86\_64 using clang, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
+- Ubuntu/x86\_64 using tcc
+- macOS using Xcode 8
+- macOS using CompCert
+- Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
+- msys2 using mingw32 and mingw64
+- ArchLinux/x86\_64
+- ArchLinux/armv6
+- Debian/x86
+- Debian/sparc
+- Debian/ppc
+- Raspbian/Cortex-A53
+- Ubuntu/aarch64 - Courtesy of the GCC compile farm project
+- Fedora/ppc64 - Courtesy of the GCC compile farm project
+- AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
+- Debian/mips64 - Courtesy of the GCC compile farm project
 
 ### Cross-implementation testing
 
@@ -139,15 +139,13 @@ branch.
 
 Bindings are essential to the libsodium ecosystem. It is expected that:
 
-* New versions of libsodium will be installed along with bindings written before these libsodium versions were available.
-
-* Recent versions of these bindings will be installed along with older versions of libsodium \(e.g. stock package from a Linux distribution\).
+- New versions of libsodium will be installed along with bindings written before these libsodium versions were available.
+- Recent versions of these bindings will be installed along with older versions of libsodium \(e.g. stock package from a Linux distribution\).
 
 For these reasons, ABI stability is critical:
 
-* Symbols must not be removed from non-minimal builds without changing the major version of the library. Symbols must not be replaced with macros either.
-* However, symbols that will eventually be removed can be tagged with GCC's `deprecated` attribute. They can also be removed from minimal builds.
-* A data structure must considered opaque from an application perspective, and a structure size cannot change if that size was previously exposed as a constant. Structures whose size are subject to changes must only expose their size through a function.
+- Symbols must not be removed from non-minimal builds without changing the major version of the library. Symbols must not be replaced with macros either.
+- However, symbols that will eventually be removed can be tagged with GCC's `deprecated` attribute. They can also be removed from minimal builds.
+- A data structure must considered opaque from an application perspective, and a structure size cannot change if that size was previously exposed as a constant. Structures whose size are subject to changes must only expose their size through a function.
 
 Any major change to the library should be tested for compatibility with popular bindings, especially those recompiling a copy of the library.
-

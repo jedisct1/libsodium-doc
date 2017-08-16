@@ -65,7 +65,7 @@ The functions described above perform 20 rounds of Salsa20.
 
 Faster, reduced-rounds versions are also available:
 
-* Salsa20 reduced to 12 rounds:
+### Salsa20 reduced  to 12 rounds
 
 ```c
 int crypto_stream_salsa2012(unsigned char *c, unsigned long long clen,
@@ -78,7 +78,7 @@ int crypto_stream_salsa2012_xor(unsigned char *c, const unsigned char *m,
 void crypto_stream_salsa2012_keygen(unsigned char k[crypto_stream_salsa2012_KEYBYTES]);
 ```
 
-* Salsa20 reduced to 8 rounds:
+### Salsa20 reduced to 8 rounds
 
 ```c
 int crypto_stream_salsa208(unsigned char *c, unsigned long long clen,

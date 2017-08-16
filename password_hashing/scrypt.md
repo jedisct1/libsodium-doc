@@ -179,6 +179,7 @@ By design, a password whose length is 65 bytes or more is reduced to `SHA-256(pa
 This can have security implications if the password is present in another password database using raw, unsalted SHA-256. Or when upgrading passwords previously hashed with unsalted SHA-256 to scrypt.
 
 If this is a concern, passwords should be pre-hashed before being hashed using scrypt:
+
 ```c
 char prehashed_password[56];
 crypto_generichash((unsigned char *) prehashed_password, 56,

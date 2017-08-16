@@ -10,10 +10,10 @@ Installation is trivial, and both compilation and testing can take advantage of 
 
 Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), then follow the ritual:
 
-```bash
-$ ./configure
-$ make && make check
-$ sudo make install
+```sh
+./configure
+make && make check
+sudo make install
 ```
 
 On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the "Usage" section for ways to address this.
@@ -43,11 +43,11 @@ Projects willing to statically link Sodium must define a macro named `SODIUM_STA
 Cross-compilation is fully supported. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
 
 ```sh
-$ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
-$ export LDFLAGS='--specs=nosys.specs'
-$ export CFLAGS='-Os'
-$ ./configure --host=arm-none-eabi --prefix=/install/path
-$ sudo make install
+export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
+export LDFLAGS='--specs=nosys.specs'
+export CFLAGS='-Os'
+./configure --host=arm-none-eabi --prefix=/install/path
+sudo make install
 ```
 
 `make check` can also build the test apps, but these have to be run on the native platform.
@@ -75,7 +75,7 @@ Code in the `stable` branch also includes generated files, and does not require 
 To check out the stable branch, use:
 
 ```sh
-$ git clone https://github.com/jedisct1/libsodium --branch stable
+git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
 ## Getting started
@@ -86,13 +86,13 @@ See the [usage section](../usage/README.md) to get started!
 
 Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
 
-```
+``
 RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3
-```
+``
 
 Or with GnuPG and the following RSA key:
 
-```
+``
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
 
@@ -221,11 +221,10 @@ I9cg891jcOBV/qRv89ubSHifw9hTZB0dDjXzBjNwNjBHqkYDaLsf1izeYHEG4gEO
 sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc=
 =Hkmu
 -----END PGP PUBLIC KEY BLOCK-----
-```
+``
 
-# Reporting vulnerabilities
+## Reporting vulnerabilities
 
 We encourage users and researchers to use PGP-encrypted emails to transmit confidential details regarding possible vulnerabilities in the Sodium library.
 
 Details should be sent to: j \[at\] pureftpd \[dot\] org using the PGP key above.
-

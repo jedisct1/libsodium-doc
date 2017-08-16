@@ -107,12 +107,9 @@ crypto_generichash_final(&h, session_keypair_by_client, sizeof session_keypair_b
 
 ## Constants
 
-* `crypto_scalarmult_BYTES`
-* `crypto_scalarmult_SCALARBYTES`
+- `crypto_scalarmult_BYTES`
+- `crypto_scalarmult_SCALARBYTES`
 
 ## Algorithm details
 
-* X25519 \(ECDH over Curve25519\) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
-
-
-
+- X25519 \(ECDH over Curve25519\) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)

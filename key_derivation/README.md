@@ -60,23 +60,23 @@ The `crypto_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `sub
 
 Similar to a type, the context `ctx` is a 8 characters string describing what the key is going to be used for.
 
-Its purpose is to mitigate accidental bugs by separating domains.  
+Its purpose is to mitigate accidental bugs by separating domains.
 The same function used with the same key but in two distinct contexts is likely to generate two different outputs.
 
 Contexts don't have to be secret and can have a low entropy.
 
 Examples of contexts include `UserName`, `__auth__`, `pictures` and `userdata`.
 
-If more convenient, it is also fine to use a single global context for a whole application.  
+If more convenient, it is also fine to use a single global context for a whole application.
 This will still prevent the same keys from being mistakenly used by another application.
 
 Constants:
 
-* `crypto_kdf_PRIMITIVE`
-* `crypto_kdf_BYTES_MIN`
-* `crypto_kdf_BYTES_MAX`
-* `crypto_kdf_CONTEXTBYTES`
-* `crypto_kdf_KEYBYTES`
+- `crypto_kdf_PRIMITIVE`
+- `crypto_kdf_BYTES_MIN`
+- `crypto_kdf_BYTES_MAX`
+- `crypto_kdf_CONTEXTBYTES`
+- `crypto_kdf_KEYBYTES`
 
 Algorithm details:
 
@@ -130,7 +130,7 @@ As an alternative, the nonce can be extended: a key and a part of a long nonce a
 
 For example, this allows using a 192-bits nonce with a cipher requiring a 64-bits nonce:
 
-```
+```text
 k = <key>
 n = <192-bit nonce>
 k' = PRF(k, n[0..127])
@@ -174,6 +174,3 @@ crypto_aead_chacha20poly1305_encrypt(c, NULL, MESSAGE, MESSAGE_LEN,
                                      n + crypto_core_hchacha20_INPUTBYTES,
                                      k2);
 ```
-
-
-

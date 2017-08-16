@@ -26,6 +26,7 @@ The function computing the tag deterministic: the same (message, key) tuple will
 However, even if the message is public, knowing the key is required in order to be able to compute a valid tag. Therefore, the key should remain confidential. The tag, however, can be public.
 
 A typical use case is:
+
 - `A` prepares a message, add an authentication tag, sends it to `B`
 - `A` doesn't store the message
 - Later on, `B` sends the message and the authentication tag to `A`
@@ -69,4 +70,3 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 ## Algorithm details
 
 - HMAC-SHA512256
-

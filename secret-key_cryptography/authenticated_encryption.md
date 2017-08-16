@@ -24,6 +24,7 @@ if (crypto_secretbox_open_easy(decrypted, ciphertext, CIPHERTEXT_LEN, nonce, key
 ## Purpose
 
 This operation:
+
 - Encrypts a message with a key and a nonce to keep it confidential
 - Computes an authentication tag. This tag is used to make sure that the message hasn't been tampered with before decrypting it.
 

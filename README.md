@@ -14,9 +14,9 @@ The design choices emphasize security and ease of use. But despite the emphasis 
 
 ## Downloading libsodium
 
-* [Github repository](https://github.com/jedisct1/libsodium)
-* [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
-* [Documentation](https://doc.libsodium.org)
+- [Github repository](https://github.com/jedisct1/libsodium)
+- [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
+- [Documentation](https://doc.libsodium.org)
 
 ## Mailing list
 
@@ -38,9 +38,9 @@ See the `LICENSE` file for details.
 
 The developement of libsodium is entirely made by volunteers. We would like to specially thank the following companies and organizations for their contribution:
 
-* [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware. Thanks!
-* [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/2017/08/libsodium-audit-results). This is amazing, thanks!
-* [Maximilian Blochberger](https://github.com/blochberger), who generously donated $100. This will help a lot to cover the infrastructure costs. Thanks again, Max!
+- [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware. Thanks!
+- [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/2017/08/libsodium-audit-results). This is amazing, thanks!
+- [Maximilian Blochberger](https://github.com/blochberger), who generously donated $100. This will help a lot to cover the infrastructure costs. Thanks again, Max!
 
 People who designed the primitives and wrote implementations the library is based on can be found in the [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS) file. This project wouldn't exist without them.
 
@@ -49,4 +49,3 @@ Also a huge "thank you" to people and companies who contributed bindings for the
 Another huge "thank you" to package maintainers who have been doing an amazing job at building packages for many distributions and operating systems.
 
 Finally, thanks to **you** for reading this documentation and for the awesome projects you are going to build with this library!
-

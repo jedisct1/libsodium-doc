@@ -1,4 +1,7 @@
-# Applications using libsodium
+# Libsodium users
+
+## Applications using libsodium
+
 Some applications using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote desktop implementation (client and server) for Windows systems.
@@ -43,7 +46,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
 - [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
 - [SODA](https://github.com/vong-xiv/SODA): The SODA project aims to investigate the relationship between server components and server performance.
-- [SaltStack](http://saltstack.com/): SaltStack software orchestrates the build and ongoing management of any modern infrastructure. 
+- [SaltStack](http://saltstack.com/): SaltStack software orchestrates the build and ongoing management of any modern infrastructure.
 - [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
 - [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy, designed to protect your Internet traffic.
 - [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
@@ -64,7 +67,8 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student's entrance and exit in school.
 - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw WiFi radio.
 
-# Libraries using libsodium
+## Libraries using libsodium
+
 Some libraries and frameworks using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Asio Sodium Socket](https://github.com/mikezackles/asio_sodium_socket): A header-only C++14 library implementing custom transport encryption using libsodium and Asio's stackless coroutines.
@@ -95,7 +99,8 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
 
-# Companies using libsodium
+## Companies using libsodium
+
 Some companies using libsodium, possibly in non-opensource products. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
 - [Bearch Inc.](http://www.getbearch.com/)

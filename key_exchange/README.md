@@ -99,11 +99,11 @@ The shared secret key `rx` should be used by the server to receive data from the
 
 ## Constants
 
-* `crypto_kx_PUBLICKEYBYTES`
-* `crypto_kx_SECRETKEYBYTES`
-* `crypto_kx_SEEDBYTES`
-* `crypto_kx_SESSIONKEYBYTES`
-* `crypto_kx_PRIMITIVE`
+- `crypto_kx_PUBLICKEYBYTES`
+- `crypto_kx_SECRETKEYBYTES`
+- `crypto_kx_SEEDBYTES`
+- `crypto_kx_SESSIONKEYBYTES`
+- `crypto_kx_PRIMITIVE`
 
 ## Algorithm details
 

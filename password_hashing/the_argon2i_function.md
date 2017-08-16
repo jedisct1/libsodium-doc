@@ -95,6 +95,7 @@ int crypto_pwhash_str(char out[crypto_pwhash_STRBYTES],
 ```
 
 The `crypto_pwhash_str()` function puts an ASCII encoded string into `out`, which includes:
+
 - the result of a memory-hard, CPU-intensive hash function applied to the password `passwd` of length `passwdlen`
 - the automatically generated salt used for the previous computation
 - the other parameters required to verify the password, including the algorithm identifier, its version, `opslimit` and `memlimit`.

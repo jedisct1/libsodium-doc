@@ -7,6 +7,7 @@ ChaCha20 doesn't require any lookup tables and avoids the possibility of timing 
 Internally, ChaCha20 works like a block cipher used in counter mode. It includes an internal block counter to avoid incrementing the nonce after each block.
 
 Two variants of the ChaCha20 cipher are implemented in libsodium:
+
 - The original ChaCha20 cipher with a 64-bit nonce and a 64-bit counter, allowing a practically unlimited amount of data to be encrypted with the same `(key, nonce)` pair.
 - The IETF variant increases the nonce size to 96 bits, but reduces the counter size down to 32 bits, allowing only up to 256 GB of data to be safely encrypted with a given `(key, nonce)` pair.
 

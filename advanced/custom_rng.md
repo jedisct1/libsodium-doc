@@ -42,7 +42,7 @@ It might also be used if a non-blocking random device is not available or not sa
 
 It can be enabled with:
 
-```
+```c
 randombytes_set_implementation(&randombytes_salsa20_implementation);
 ```
 

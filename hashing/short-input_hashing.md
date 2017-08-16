@@ -24,6 +24,7 @@ This function is optimized for short inputs.
 The output of this function is only 64 bits. Therefore, it should *not* be considered collision-resistant.
 
 Use cases:
+
 - Hash tables
 - Probabilistic data structures such as Bloom filters
 - Integrity checking in interactive protocols

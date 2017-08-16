@@ -81,6 +81,7 @@ if (crypto_sign_final_verify(&state, sig, pk) != 0) {
 ## Purpose
 
 In this system, a signer generates a key pair:
+
 - a secret key, that will be used to append a signature to any number of messages
 - a public key, that anybody can use to verify that the signature appended to a message was actually issued by the creator of the public key.
 
