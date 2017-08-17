@@ -31,7 +31,6 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN (ADSL/SDSL/xDSL/Network aggregator)
 - [Molch](https://github.com/FSMaxB/molch): An implementation of the Axolotl ratchet.
 - [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and discoverable chat application on top of nanomsg library.
-- [Netcode.io](http://netcode.io): A simple protocol for creating secure client/server connections over UDP, designed for games like agar.io that shunt players from a main website or web backend to a number of dedicated server instances, with each dedicated server having some maximum number of players.
 - [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation of Network Time Protocol Version 4.
 - [Open Reputation](https://openreputation.net/): An open source decentralized platform that maps identity and reputation onto the Internet-of-things.
 - [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no restrictions.
@@ -83,13 +82,13 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
-- [libyojimbo](https://github.com/networkprotocol/libyojimbo): A library for creating secure client/server network protocols over UDP.
 - [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud storage provider that protects your data, thanks to end-to-end encryption.
 - [Macaroons](https://github.com/rescrv/libmacaroons): Macaroons are flexible authorization credentials that support decentralized delegation, attenuation, and verification.
 - [MatrixSSL](http://www.matrixssl.org/): Lightweight embedded SSL/TLS implementation that can use libsodium as a crypto provider.
 - [Minimal-TLS](https://github.com/cmalekpour/minimal-tls): A minimal implementation of TLS 1.3 in Rust.
 - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create minisign signatures.
 - [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate libsodium-net compatible KeyPair`s.
+- [Netcode.io](http://netcode.io): A simple protocol for creating secure client/server connections over UDP.
 - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
 - [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper around libsodium.
 - [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell module.
@@ -97,6 +96,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET
 - [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption & decryption with libsodium and protobuf for .NET
 - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
+- [Yojimbo](https://libyojimbo.com): A network library for client/server games with dedicated servers.
 - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
 
 ## Companies using libsodium
