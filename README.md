@@ -40,7 +40,7 @@ The developement of libsodium is entirely made by volunteers. We would like to s
 
 - [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware. Thanks!
 - [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/2017/08/libsodium-audit-results). This is amazing, thanks!
-- [Maximilian Blochberger](https://github.com/blochberger), who generously donated $100. This will help a lot to cover the infrastructure costs. Thanks again, Max!
+- [Maximilian Blochberger](https://github.com/blochberger) and Joshua Small, who both generously donated $100. This will help a lot to cover the infrastructure costs. Thanks again, Max and Joshua!
 
 People who designed the primitives and wrote implementations the library is based on can be found in the [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS) file. This project wouldn't exist without them.
 
