@@ -42,6 +42,10 @@ These figures assume an untruncated (128-bit) authentication tag.
 | ChaCha20-Poly1305-IETF  | Counter, permutation                           |
 | XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random ‖ m\) |
 
+### TL;DR: which one should I use?
+
+`XChaCha20-Poly1305-IETF` is the safest choice.
+
 ### AES256-GCM
 
 The current implementation of this construction is hardware-accelerated and requires the Intel SSSE3 extensions, as well as the `aesni` and `pclmul` instructions.
