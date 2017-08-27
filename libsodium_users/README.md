@@ -65,6 +65,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
 - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student's entrance and exit in school.
 - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw WiFi radio.
+- [Tezos](https://www.tezos.com): a new decentralized blockchain that governs itself by establishing a true digital commonwealth.
 
 ## Libraries using libsodium
 
