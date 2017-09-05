@@ -63,6 +63,7 @@
 - PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 - Perl: [Crypt-Sodium](https://github.com/mgregoro/Crypt-Sodium)
 - Perl: [Crypt::Nacl::Sodium](https://github.com/ajgb/crypt-nacl-sodium)
+- Perl 6: [Natrium](https://github.com/jonathanstowe/Natrium)
 - Pharo/Squeak: [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
 - Pony: [Pony-Sodium](https://github.com/jemc/pony-sodium)
 - Python: [Csodium](https://github.com/ereOn/csodium)
