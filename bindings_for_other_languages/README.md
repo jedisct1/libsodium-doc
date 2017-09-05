@@ -38,6 +38,7 @@
 - HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 - Idris: [Idris-Sodium](https://github.com/jfdm/idris-sodium)
 - Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
+- Java (Java Native Access): [libsodium-jna](https://github.com/muquit/libsodium-jna)
 - Java (Android): [Libstodium](https://github.com/ArteMisc/libstodium)
 - Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 - Java (Android): [libsodium-JNI](https://github.com/joshjdevl/libsodium-jni)
