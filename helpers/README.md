@@ -27,7 +27,7 @@ The string is stored into `hex` and includes a nul byte (`\0`) terminator.
 
 `hex_maxlen` is the maximum number of bytes that the function is allowed to write starting at `hex`. It should be at least `bin_len * 2 + 1`.
 
-The function returns `hex` on success, or `NULL` on overflow. It evaluates in constant time for a given size.
+The function always returns `hex`. It evaluates in constant time for a given size.
 
 ```c
 int sodium_hex2bin(unsigned char * const bin, const size_t bin_maxlen,
