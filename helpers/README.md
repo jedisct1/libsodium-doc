@@ -25,7 +25,7 @@ The `sodium_bin2hex()` function converts `bin_len` bytes stored at `bin` into a 
 
 The string is stored into `hex` and includes a nul byte (`\0`) terminator.
 
-`hex_maxlen` is the maximum number of bytes that the function is allowed to write starting at `hex`. It should be at least `bin_len * 2 + 1`.
+`hex_maxlen` is the maximum number of bytes that the function is allowed to write starting at `hex`. It must be at least `bin_len * 2 + 1` bytes.
 
 The function always returns `hex`. It evaluates in constant time for a given size.
 
