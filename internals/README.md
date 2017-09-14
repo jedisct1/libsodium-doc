@@ -108,11 +108,11 @@ branch.
 - asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
   asmjs/ChakraCore
 - NativeClient/portable, NativeClient/x86\_64
-- OpenBSD/x86\_64 using `gcc -fstack-protector-strong -fstack-shuffle`
+- OpenBSD/x86\_64 using `gcc -fstack-protector-strong -fstack-shuffle` and `clang`
 - Ubuntu/x86\_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86\_64 using clang, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86\_64 using tcc
-- macOS using Xcode 8
+- macOS using Xcode 9
 - macOS using CompCert
 - Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
 - msys2 using mingw32 and mingw64
