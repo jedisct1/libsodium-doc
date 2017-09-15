@@ -56,7 +56,7 @@ New features will be gladly implemented provided that they are not redundant and
 ## 1.0.x roadmap
 
 - Constant-time bin2hex\(\) \[DONE\] and hex2bin\(\) \[DONE\]
-- Constant-time base64 codecs
+- Constant-time base64 codecs \[DONE\]
 - Improve consistency and clarity of function prototypes
 - Improve the documentation
 - Consider `getrandom(2)` \[DONE\]
@@ -75,10 +75,10 @@ New features will be gladly implemented provided that they are not redundant and
 - Use Montgomery reduction for GHASH
 - ChaCha20-Poly1305 detached mode \[DONE\]
 - Argon2i as crypto\_pwhash \[DONE\]
+- Argon2id as crypto\_pwhash
 - Multithreaded crypto\_pwhash
 - Generic subkey derivation API \[DONE\]
 - Nonce-misuse resistant scheme
-- Consider SHAKE256
 - BLAKE2 AVX2 implementations \[DONE\]
 - Keyed \(hash-then-encrypt\) crypto\_pwhash
 - Consider BLAKE2X
@@ -94,6 +94,7 @@ New features will be gladly implemented provided that they are not redundant and
 - key generation API \[DONE\]
 - Nonce/subkey generation API
 - Webassembly support \[DONE\]
-- Stream encryption using the CHAIN construction
+- Stream encryption using the CHAIN construction \[DONE\]
 - Security audit by a 3rd party \[DONE\]
 - Formally-verified implementations \[work in progress\]
+- Padding API \[DONE\]
