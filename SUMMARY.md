@@ -11,6 +11,7 @@
 - [Generating random data](generating_random_data/README.md)
 - [Secret-key cryptography](secret-key_cryptography/README.md)
   - [Authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
+  - [Encrypted stream/file encryption](secret-key_cryptography/secretstream.md)
   - [Authentication](secret-key_cryptography/secret-key_authentication.md)
   - [AEAD constructions](secret-key_cryptography/aead.md)
     - [ChaCha20-Poly1305](secret-key_cryptography/chacha20-poly1305.md)
