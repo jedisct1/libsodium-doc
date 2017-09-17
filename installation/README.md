@@ -8,7 +8,7 @@ The library is built using autotools, making it easy to package.
 
 Installation is trivial, and both compilation and testing can take advantage of multiple CPU cores.
 
-Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), then follow the ritual:
+Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), preferably the latest `stable` version, then follow the ritual:
 
 ```sh
 ./configure
