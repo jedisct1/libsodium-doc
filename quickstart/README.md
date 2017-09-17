@@ -18,6 +18,12 @@ int main(void)
 }
 ```
 
+## Is libsodium cross-platforms?
+
+Yes. A message can be encrypted in Python on a MIPS CPU, decrypted in Javascript using Chrome on Windows, and its signature can then be verified by an iPhone app written in Swift.
+
+Input and output formats used by all the functions provided by the library are guaranteed to work across all supported platforms.
+
 ## How do I generate random numbers that are safe to use for cryptography?
 
 Use the [`randombytes` API](../generating_random_data/README.md).
