@@ -91,6 +91,23 @@ Always use the high-level API if one is available. The low-level API it is based
 
 This is true for all APIs provided by the library.
 
+## Why is `crypto_stream()` barely documented and not even present in some bindings?
+
+The `crypto_stream()` API generates a deterministic sequence of bytes from a seed, and optionally applies the XOR operation between that sequence and some input sequence.
+
+Performing the XOR operation once produces content that resembles random data, and performing the same operation twice restores the initial input sequence.
+
+This can be seen as a form of encryption. However:
+
+- If an adversary replaces the ciphertext with nul bytes, what will be decrypted is the original, complete sequence derived from the seed. This can have catastrophic implications with some (badly designed) protocols.
+- More generally, anyone can modify the ciphertext without this being detected. Since a stream cipher is XOR'd with a message, targeted bits can be flipped. Knowing the secret key is not required.
+
+If a deterministic sequence has to be derived from a seed, for example for unit testing, libsodium provides the `randombytes_buf_deterministic()` function.
+
+For actual encryption, other options such as `crypto_secretbox`, `crypto_aead` and `crypto_secretstream` must generally be used over `crypto_stream`, as they will add and verify an authentication tag to detect data that has been corrupted or tampered with.
+
+`crypto_stream()` is only useful as a building block to design custom constructions. As-is, it is completely insecure.
+
 ## I want to write bindings for my favorite language, where should I start?
 
 Start with the `crypto_generichash` and with the `crypto_secretstream` APIs. These are the trickiest to implement bindings for, and will provide good insights about how to design your bindings.
