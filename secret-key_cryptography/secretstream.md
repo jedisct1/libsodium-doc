@@ -14,7 +14,7 @@ This API can be used to securely send an ordered sequence of messages to a peer.
 
 It transparently generates nonces and automatically handles key rotation.
 
-`crypto_secretstream_*()` was introduced in libsodium 1.0.14.
+The `crypto_secretstream_*()` API was introduced in libsodium 1.0.14.
 
 ## Example (stream encryption)
 
