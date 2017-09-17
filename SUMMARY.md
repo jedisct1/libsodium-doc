@@ -8,6 +8,7 @@
 - [Bindings for other languages](bindings_for_other_languages/README.md)
 - [Usage](usage/README.md)
 - [Helpers](helpers/README.md)
+- [Padding](helpers/padding.md)
 - [Secure memory](helpers/memory_management.md)
 - [Generating random data](generating_random_data/README.md)
 - [Secret-key cryptography](secret-key_cryptography/README.md)
