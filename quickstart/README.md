@@ -66,6 +66,15 @@ To actually encrypt and decrypt data using one of these shared secret keys, use 
 
 Use the [key derivation API](../key_derivation/README.md).
 
+## Do I need to add a signature to encrypted messages to detect if they have been tampered with?
+
+No. Signatures are designed to allow non-secret data to be verified by many parties, using a public key.
+For examples, a signature can be used to verify the authenticity of a firmware update.
+
+When `A` encrypts a message for `B` using a shared secret key using `crypto_box()`, `crypto_secretbox()`, `crypto_seal()`, `crypto_secretstream()` or `crypto_aead()`, an authentication tag is also computed, and should be sent to `B` along with the encrypted payload.
+
+During the decryption process, the secret key is used to check that the authentication tag is valid for the given encrypted message. If that message has been modified, the tag will not be valid, and decryption functions will return an error code. Knowing the secret key is required in order to create a valid tag, therefore only `A` and `B` can create such a tag.
+
 ## Shall I call `crypto_generichash_blake2b` or just `crypto_generichash`?
 
 Always use the high-level API if one is available. The low-level API it is based on is guaranteed not to change before a major revision of the library. And if a high-level API needs to use a different construction, it will expose a different set of functions.
