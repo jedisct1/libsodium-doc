@@ -60,6 +60,12 @@ Use the [key exchange API](../key_exchange/README.md):
 
 The shared keys computed by `A` and `B` will be identical. There are two of them. One can be used to encrypt and decrypt message in one direction (from `A` to `B`) and the other one to encrypt and decrypt messages in the other direction (from `B` to `A`).
 
+To actually encrypt and decrypt data using one of these shared secret keys, use one of `crypto_secretbox_*()`, `crypto_secretstream_*()` or `crypto_aead_*()`.
+
+## How can I derive multiple keys from a single master key? Like what HKDF does?
+
+Use the [key derivation API](../key_derivation/README.md).
+
 ## Shall I call `crypto_generichash_blake2b` or just `crypto_generichash`?
 
 Always use the high-level API if one is available. The low-level API it is based on is guaranteed not to change before a major revision of the library. And if a high-level API needs to use a different construction, it will expose a different set of functions.
