@@ -53,6 +53,34 @@ It returns `0` on success and sets `hex_end`, if it is not `NULL`, to a pointer 
 
 It evaluates in constant time for a given length and format.
 
+## Base64 encoding/decoding
+
+```c
+char *sodium_bin2base64(char * const b64, const size_t b64_maxlen,
+                        const unsigned char * const bin, const size_t bin_len,
+                        const int variant);
+```
+
+The `sodium_bin2base64()` function encodes `bin` as a Base64 string. `variant` must be one of:
+
+- `sodium_base64_VARIANT_ORIGINAL`
+- `sodium_base64_VARIANT_ORIGINAL_NO_PADDING`
+- `sodium_base64_VARIANT_URLSAFE`
+- `sodium_base64_VARIANT_URLSAFE_NO_PADDING`
+
+It returns `NULL` if the nul-terminated, encoded string would exceed `b64_maxlen` bytes.
+
+None of these Base64 variants provides any form of encryption; just like hex encoding, anyone can decode them.
+
+```c
+int sodium_base642bin(unsigned char * const bin, const size_t bin_maxlen,
+                      const char * const b64, const size_t b64_len,
+                      const char * const ignore, size_t * const bin_len,
+                      const char ** const b64_end, const int variant);
+```
+
+The `sodium_base642bin()` function decodes a Base64 string using the given variant, and an optional set of characters to ignore (typically: whitespaces and newlines).
+
 ## Incrementing large numbers
 
 ```c
