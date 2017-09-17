@@ -2,6 +2,7 @@
 
 - [Introduction](README.md)
 - [Installation](installation/README.md)
+- [Quickstart and FAQ](quickstart/README.md)
 - [Projects using libsodium](libsodium_users/README.md)
 - [Commercial support](commercial_support/README.md)
 - [Bindings for other languages](bindings_for_other_languages/README.md)
