@@ -16,7 +16,9 @@ size_t        block_size = 16;
 
 /* round the length of the buffer to a multiple of `block_size` by appending
  * padding data and put the new, total length into `buf_padded_len` */
-sodium_pad(&buf_padded_len, buf, buf_unpadded_len, block_size, sizeof buf);
+if (sodium_pad(&buf_padded_len, buf, buf_unpadded_len, block_size, sizeof buf) != 0) {
+    /* overflow! buf[] is not large enough */
+}
 
 /* compute the original, unpadded length */
 if (sodium_unpad(&buf_unpadded_len, buf, buf_padded_len, block_size) != 0) {
