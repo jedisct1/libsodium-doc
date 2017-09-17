@@ -81,7 +81,7 @@ In that situation, a copy of the nonce, or value representing the difference wit
 
 ## Shared keys and repeated nonces
 
-As already stated, it is important to avoid using the same nonce to encrypt different messages.
+As previously stated, it is important to avoid using the same nonce to encrypt different messages.
 
 If two or more parties share the same secret key, increment the nonce after each message, but use the same initialization vector, different messages may end up being encrypted with the same nonce.
 
