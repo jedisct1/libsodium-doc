@@ -32,7 +32,7 @@ Use the [`randombytes` API](../generating_random_data/README.md).
 
 Use the [`crypto_generichash` API](../hashing/generic_hashing.md).
 
-## How do I encrypt some data?
+## How do I encrypt data?
 
 ### One-shot encryption, where everything fits in memory
 
