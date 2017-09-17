@@ -81,6 +81,10 @@ When `A` encrypts a message for `B` using a shared secret key using `crypto_box(
 
 During the decryption process, the secret key is used to check that the authentication tag is valid for the given encrypted message. If that message has been modified, the tag will not be valid, and decryption functions will return an error code. Knowing the secret key is required in order to create a valid tag, therefore only `A` and `B` can create such a tag.
 
+## How do I hide the length of a message?
+
+Use [padding](../helpers/padding.md).
+
 ## Shall I call `crypto_generichash_blake2b` or just `crypto_generichash`?
 
 Always use the high-level API if one is available. The low-level API it is based on is guaranteed not to change before a major revision of the library. And if a high-level API needs to use a different construction, it will expose a different set of functions.
