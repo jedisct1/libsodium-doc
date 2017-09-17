@@ -119,7 +119,6 @@ The following code snippet derives a 256-bit subkey and a 96-bit subnonce (these
 unsigned char  out[32 + 12];
 unsigned char *subkey   = out;
 unsigned char *subnonce = out + 32;
-
 crypto_generichash(out, sizeof out, nonce, sizeof nonce, key, sizeof key);
 ```
 

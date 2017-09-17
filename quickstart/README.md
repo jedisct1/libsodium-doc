@@ -50,6 +50,16 @@ Use the [`crypto_generichash` API](../hashing/generic_hashing.md).
 - Use that key with the [`crypto_secretstream` API](../secret-key_cryptography/secretstream.md).
 - File metadata should probably be part of the encrypted data, or, if it is not secret, included as additional data.
 
+## How can `A` and `B` securely communicate without a pre-shared secret key?
+
+Use the [key exchange API](../key_exchange/README.md):
+
+- `A` and `B` both call `crypto_kx_keypair()` to create their own key pair. Secret keys have to remain secret, but `A` can send its public key to `B` or even make it available to everyone. The same applies to `B`'s public key.
+- `A` uses `crypto_kx_client_session_keys()` along with `B`'s public key and its key pair to create a set of shared keys to communicate with `B`.
+- `B` uses `crypto_kx_server_session_keys()` along with `A`'s public key and its key pair to create a set of shared keys to communicate with `A`.
+
+The shared keys computed by `A` and `B` will be identical. There are two of them. One can be used to encrypt and decrypt message in one direction (from `A` to `B`) and the other one to encrypt and decrypt messages in the other direction (from `B` to `A`).
+
 ## Shall I call `crypto_generichash_blake2b` or just `crypto_generichash`?
 
 Always use the high-level API if one is available. The low-level API it is based on is guaranteed not to change before a major revision of the library. And if a high-level API needs to use a different construction, it will expose a different set of functions.
