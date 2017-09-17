@@ -69,7 +69,8 @@ make check && sudo make install
 
 We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
 
-However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable%29 branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
+However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
+
 Code in the `stable` branch also includes generated files, and does not require the autotools %28libtool, autoconf, automake) to be present.
 
 To check out the stable branch, use:
@@ -77,6 +78,8 @@ To check out the stable branch, use:
 ```sh
 git clone https://github.com/jedisct1/libsodium --branch stable
 ```
+
+Tarballs of the `stable` code are also available for download, and are recommended if you are compiling libsodium from source.
 
 ## Getting started
 
