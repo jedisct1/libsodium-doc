@@ -8,9 +8,11 @@ However, applications may wish to encrypt a set of messages with the following c
 
 Simply encrypting individual messages with a random nonce doesn't respect these constraints.
 
-For sequences of messages, libsodium 1.0.14 and beyond implement the `crypto_secretstream` API that satisfies the above constraints. This API is recommended to encrypt files or for secure communications over a reliable protocol with ordering guarantees, such as TCP.
+For sequences of messages, libsodium 1.0.14 and beyond implement the [`crypto_secretstream` API](secretstream.md) that satisfies the above constraints. This API is recommended to encrypt files or for secure communications over a reliable protocol with ordering guarantees, such as TCP.
 
 On older versions of the library, and with transport protocols featuring weaker ordering and reliability guarantees, these constraints can be satisfied using AEAD (Authenticated Encryption with Additional Data) constructions.
+
+Recommended API: [`crypto_aead_xchacha20poly1305_ietf_*()`](xchacha20-poly1305_construction.md).
 
 ## Initialization vector
 
