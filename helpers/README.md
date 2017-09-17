@@ -137,3 +137,7 @@ It returns `0` if non-zero bits are found.
 Its execution time is constant for a given length.
 
 This function was introduced in libsodium 1.0.7.
+
+## Notes
+
+The `sodium_base64_VARIANT_*()` macros don't have associated symbols. Bindings are encouraged to define specialized encoding/decoding functions instead.
