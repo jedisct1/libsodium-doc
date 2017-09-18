@@ -252,7 +252,7 @@ Encrypting a unique message using `secretstream` is equivalent to `XChaCha20Poly
 Rekeying:
 
 ```text
-k || n <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = {0})
+k || n <- (k || n) ⊕ ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = {0})
 i <- 0
 ```
 
