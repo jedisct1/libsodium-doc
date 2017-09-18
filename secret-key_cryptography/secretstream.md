@@ -219,3 +219,41 @@ This updates the state, but doesn't add any information about the key change to 
 - `crypto_secretstream_xchacha20poly1305_TAG_PUSH`
 - `crypto_secretstream_xchacha20poly1305_TAG_REKEY`
 - `crypto_secretstream_xchacha20poly1305_TAG_FINAL`
+
+## Algorithm
+
+Initialization (`secretstream_init`): a subkey `k` and a 64-bit nonce `n` are derived from a key `K` and a 192-bit random nonce `N`, using the same algorithm as XChaCha20.
+`i` is a 32-bit counter.
+
+```text
+k <- HChaCha20(K, n[0..16])
+n <- N[16..24]
+i <- 0
+```
+
+`secretstream_init_push()` outputs `N`.
+
+Encryption:
+
+For every message `M` with a tag `T`:
+
+```text
+c, mac <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = T || {0} * 63 || M)
+n <- n ^ mac
+i <- i + 1
+if i = 0:
+  rekey()
+```
+
+`secretstream_push()` outputs `c` with the first block truncated to the tag size: `c[0] || c[64..] || mac`
+
+Encrypting a unique message using `secretstream` is equivalent to `XChaCha20Poly1305-IETF(key = k, nonce = 0 || n, T || {0} * 63 || M)`.
+
+Rekeying:
+
+```text
+k || n <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = {0})
+i <- 0
+```
+
+A `FINAL` tag performs an implicit rekeying.
