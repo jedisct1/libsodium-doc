@@ -71,7 +71,7 @@ We recommend using distribution tarballs over cloning the [libsodium git reposit
 
 However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
 
-Code in the `stable` branch also includes generated files, and does not require the autotools %28libtool, autoconf, automake) to be present.
+Code in the `stable` branch also includes generated files, and does not require the autotools (libtool, autoconf, automake) to be present.
 
 To check out the stable branch, use:
 
