@@ -105,11 +105,11 @@ environments. libsodium is manually validated on all of these before
 every release, as well as before merging a new change to the `stable`
 branch.
 
-- asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
-  asmjs/ChakraCore
+- asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore, asmjs/ChakraCore
+- webassembly/V8, webassembly/Firefox
 - NativeClient/portable, NativeClient/x86\_64
 - OpenBSD/x86\_64 using `gcc -fstack-protector-strong -fstack-shuffle` and `clang`
-- Ubuntu/x86\_64 using gcc 6, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
+- Ubuntu/x86\_64 using gcc 7, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86\_64 using clang, `-fsanitize=address,undefined` and Valgrind \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86\_64 using tcc
 - macOS using Xcode 9
