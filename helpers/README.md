@@ -72,6 +72,16 @@ It returns `NULL` if the nul-terminated, encoded string would exceed `b64_maxlen
 
 None of these Base64 variants provides any form of encryption; just like hex encoding, anyone can decode them.
 
+Computing a correct size for `b64_maxlen` is not straightforward and depends on the chosen variant.
+
+The `sodium_base64_ENCODED_LEN(BIN_LEN, VARIANT)` macro returns the
+minimum number of bytes required to encode `BIN_LEN` bytes using the
+Base64 variant `VARIANT`. The returned length includes a trailing `\0`
+byte.
+
+The `sodium_base64_encoded_len(size_t bin_len, int variant)` function
+is also available for the same purpose.
+
 ```c
 int sodium_base642bin(unsigned char * const bin, const size_t bin_maxlen,
                       const char * const b64, const size_t b64_len,
