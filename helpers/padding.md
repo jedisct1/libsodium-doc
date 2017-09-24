@@ -57,6 +57,6 @@ Padding should be applied prior to encryption, and removed after decryption.
 
 Usage of padding in order to hide the length of a password is not recommended. A client willing to send a password to a server should hash it instead (even with a single iteration of the hash function).
 
-This ensures that the length of the transmitted data is constant, and that the server doesn't effortly get a copy of the password.
+This ensures that the length of the transmitted data is constant, and that the server doesn't effortlessly get a copy of the password.
 
 Applications may eventually leak the unpadded length via side channels, but the `sodium_pad()` and `sodium_unpad()` functions themselves try to minimize side channels for a given `length & <block size mask>` value.
