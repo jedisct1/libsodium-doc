@@ -92,5 +92,6 @@ if ((fd = open("/dev/random", O_RDONLY)) != -1) {
 #endif
 ```
 
+Congrats, you're all set up!
 
-
+A good documentation page to read next might be [Quickstart and FAQ](../quickstart/README.md).
