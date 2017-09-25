@@ -83,7 +83,7 @@ Tarballs of the `stable` code are also available for download, and are recommend
 
 ## Getting started
 
-See the [usage section](../usage/README.md) to get started!
+See the [quickstart](../quickstart/README.md) and [usage](../usage/README.md) sections to get started!
 
 ## Integrity checking
 
