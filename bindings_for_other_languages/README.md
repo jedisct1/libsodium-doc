@@ -36,6 +36,7 @@
 - Haskell: [haskell-libsodium](https://github.com/dmp1ce/haskell-libsodium)
 - Haskell: [Saltine](https://github.com/tel/saltine)
 - HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
+- HaXe (bindings for the Neko VM): [neko-libsodium](https://github.com/laserbat/neko-libsodium)
 - Idris: [Idris-Sodium](https://github.com/jfdm/idris-sodium)
 - Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
 - Java (Java Native Access): [libsodium-jna](https://github.com/muquit/libsodium-jna)
