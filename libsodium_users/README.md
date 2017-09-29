@@ -112,6 +112,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Informatica](https://www.informatica.com/)
 - [Keybase](https://keybase.io/)
 - [Krypt.co](https://krypt.co)
+- [Malwarebytes](https://www.malwarebytes.com/)
 - [OVH](https://www.ovh.com)
 - [Paragon Initiative Enterprises](https://paragonie.com)
 - [Peerio](https://www.peerio.com/)
