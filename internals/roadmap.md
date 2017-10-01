@@ -68,15 +68,15 @@ New features will be gladly implemented provided that they are not redundant and
 - First-class support for Javascript \[DONE\]
 - chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter \[DONE\]
 - IETF-compatible chacha20poly1305 implementation \[DONE\]
-- Ed448-Goldilocks
+- Ed448-Goldilocks \[on hold\]
 - SSE-optimized BLAKE2b implementation \[DONE\]
 - AES-GCM \[DONE\]
 - AES-GCM detached mode \[DONE\]
 - Use Montgomery reduction for GHASH
 - ChaCha20-Poly1305 detached mode \[DONE\]
 - Argon2i as crypto\_pwhash \[DONE\]
-- Argon2id as crypto\_pwhash
-- Multithreaded crypto\_pwhash
+- Argon2id as crypto\_pwhash \[DONE\]
+- Multithreaded crypto\_pwhash \[on hold\]
 - Generic subkey derivation API \[DONE\]
 - Nonce-misuse resistant scheme
 - BLAKE2 AVX2 implementations \[DONE\]
@@ -93,8 +93,10 @@ New features will be gladly implemented provided that they are not redundant and
 - AVX512 implementations \[hardware needed for testing\]
 - key generation API \[DONE\]
 - Nonce/subkey generation API
-- Webassembly support \[DONE\]
-- Stream encryption using the CHAIN construction \[DONE\]
+- Webassembly support \[work in progress\]
+- Stream encryption using a CHAIN-like construction \[DONE\]
 - Security audit by a 3rd party \[DONE\]
 - Formally-verified implementations \[work in progress\]
 - Padding API \[DONE\]
+- XEdDSA
+- VXEdDSA
