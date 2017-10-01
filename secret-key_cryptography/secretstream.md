@@ -228,7 +228,7 @@ Initialization (`secretstream_init`): a subkey `k` and a 64-bit nonce `n` are de
 ```text
 k <- HChaCha20(K, n[0..16])
 n <- N[16..24]
-i <- 0
+i <- 1
 ```
 
 `secretstream_init_push()` outputs `N`.
@@ -240,7 +240,7 @@ For every message `M` with a tag `T`:
 ```text
 c, mac <- ChaCha20Poly1305-IETF-XOR(key = k, nonce = i || n, msg = T || {0} * 63 || M)
 n <- n ^ mac
-i <- i + 1
+i <- (i + 1) & 0xffffffff
 if i = 0:
   rekey()
 ```
@@ -253,7 +253,7 @@ Rekeying:
 
 ```text
 k || n <- ChaCha20-IETF-XOR(key = k, nonce = i || n, msg = k || n)
-i <- 0
+i <- 1
 ```
 
 A `FINAL` tag performs an implicit rekeying.
