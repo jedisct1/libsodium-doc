@@ -10,7 +10,7 @@ Sodium is cross-platforms and cross-languages. It runs on a variety of compilers
 
 The design choices emphasize security and ease of use. But despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
 
-[Version 1.0.14](https://github.com/jedisct1/libsodium/releases) was released on Sep 22, 2017.
+[Version 1.0.15](https://github.com/jedisct1/libsodium/releases) was released on Oct 1st, 2017.
 
 ## Downloading libsodium
 
