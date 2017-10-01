@@ -98,5 +98,6 @@ New features will be gladly implemented provided that they are not redundant and
 - Security audit by a 3rd party \[DONE\]
 - Formally-verified implementations \[work in progress\]
 - Padding API \[DONE\]
+- `secretstream_inject()` for nonce misuse-resistance
 - XEdDSA
 - VXEdDSA
