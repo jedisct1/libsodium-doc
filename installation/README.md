@@ -16,6 +16,8 @@ make && make check
 sudo make install
 ```
 
+Since different files are compiled for different CPU classes, and to prevent unwanted optimizations, avoiding link-time optimization (LTO) is recommended.
+
 On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the "Usage" section for ways to address this.
 
 ## Compilation on Windows
