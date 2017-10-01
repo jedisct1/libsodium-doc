@@ -195,7 +195,7 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it doesn't have to be done before calling this function.
 
-Libsodium supports the Argon2id variant since version 1.0.13.
+Libsodium supports the Argon2id variant since version 1.0.13, and it became the default in algorithm in version 1.0.15.
 
 ## Algorithm details
 
