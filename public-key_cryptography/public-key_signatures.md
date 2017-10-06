@@ -241,5 +241,3 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 The original NaCl `crypto_sign_open()` implementation overwrote 64 bytes after the message. The libsodium implementation doesn't write past the end of the message.
 
 Ed25519ph (used by the multi-part API) was implemented in libsodium 1.0.12.
-
-The Ed25519 algorithm was designed to generate deterministic signatures. This has several advantages, but also makes implementations fragile against hardware attacks. If this is a concern, some of these attacks can be mitigated by compiling libsodium with the `ED25519_NONDETERMINISTIC` macro defined. This will create non-deterministic, but also non-standard signatures.
