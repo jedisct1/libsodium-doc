@@ -7,12 +7,12 @@
 #define MESSAGE_LEN 4
 #define CIPHERTEXT_LEN (crypto_secretbox_MACBYTES + MESSAGE_LEN)
 
-unsigned char nonce[crypto_secretbox_NONCEBYTES];
 unsigned char key[crypto_secretbox_KEYBYTES];
+unsigned char nonce[crypto_secretbox_NONCEBYTES];
 unsigned char ciphertext[CIPHERTEXT_LEN];
 
+crypto_secretbox_keygen(key);
 randombytes_buf(nonce, sizeof nonce);
-randombytes_buf(key, sizeof key);
 crypto_secretbox_easy(ciphertext, MESSAGE, MESSAGE_LEN, nonce, key);
 
 unsigned char decrypted[MESSAGE_LEN];

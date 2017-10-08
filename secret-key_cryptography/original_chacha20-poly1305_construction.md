@@ -15,7 +15,7 @@ unsigned char key[crypto_aead_chacha20poly1305_KEYBYTES];
 unsigned char ciphertext[MESSAGE_LEN + crypto_aead_chacha20poly1305_ABYTES];
 unsigned long long ciphertext_len;
 
-randombytes_buf(key, sizeof key);
+crypto_aead_chacha20poly1305_keygen(key);
 randombytes_buf(nonce, sizeof nonce);
 
 crypto_aead_chacha20poly1305_encrypt(ciphertext, &ciphertext_len,

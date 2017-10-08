@@ -9,7 +9,7 @@
 unsigned char hash[crypto_shorthash_BYTES];
 unsigned char key[crypto_shorthash_KEYBYTES];
 
-randombytes_buf(key, sizeof key);
+crypto_shorthash_keygen(key);
 crypto_shorthash(hash, SHORT_DATA, SHORT_DATA_LEN, key);
 ```
 
@@ -38,7 +38,7 @@ int crypto_shorthash(unsigned char *out, const unsigned char *in,
 
 Compute a fixed-size (`crypto_shorthash_BYTES` bytes) fingerprint for the message `in` whose length is `inlen` bytes, using the key `k`.
 
-The `k` is `crypto_shorthash_KEYBYTES` bytes and can be created using `randombytes_buf()`.
+The `k` is `crypto_shorthash_KEYBYTES` bytes and can be created using `crypto_shorthash_keygen()`.
 
 The same message hashed with the same key will always produce the same output.
 

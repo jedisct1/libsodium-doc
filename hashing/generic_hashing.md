@@ -112,6 +112,13 @@ After `crypto_generichash_final()` returns, the state should not be used any mor
 
 This alternative API is especially useful to process very large files and data streams.
 
+```c
+void crypto_generichash_keygen(unsigned char k[crypto_generichash_KEYBYTES]);
+```
+
+The `crypto_generichash_keygen()` function creates a key `k` of the
+recommended length `crypto_generichash_KEYBYTES`.
+
 ## State structure size
 
 The `crypto_generichash_state` structure length is either 357 or 361 bytes. 64-bytes alignment is recommended for performance, but not required.

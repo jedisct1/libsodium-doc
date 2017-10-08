@@ -19,7 +19,7 @@ unsigned char key[crypto_aead_xchacha20poly1305_ietf_KEYBYTES];
 unsigned char ciphertext[MESSAGE_LEN + crypto_aead_xchacha20poly1305_ietf_ABYTES];
 unsigned long long ciphertext_len;
 
-randombytes_buf(key, sizeof key);
+crypto_aead_xchacha20poly1305_ietf_keygen(key);
 randombytes_buf(nonce, sizeof nonce);
 
 crypto_aead_xchacha20poly1305_ietf_encrypt(ciphertext, &ciphertext_len,

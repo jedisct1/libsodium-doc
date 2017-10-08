@@ -32,7 +32,7 @@ if (crypto_aead_aes256gcm_is_available() == 0) {
     abort(); /* Not available on this CPU */
 }
 
-randombytes_buf(key, sizeof key);
+crypto_aead_aes256gcm_keygen(key);
 randombytes_buf(nonce, sizeof nonce);
 
 crypto_aead_aes256gcm_encrypt(ciphertext, &ciphertext_len,

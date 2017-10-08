@@ -9,7 +9,7 @@
 unsigned char key[crypto_auth_KEYBYTES];
 unsigned char mac[crypto_auth_BYTES];
 
-randombytes_buf(key, sizeof key);
+crypto_auth_keygen(key);
 crypto_auth(mac, MESSAGE, MESSAGE_LEN, key);
 
 if (crypto_auth_verify(mac, MESSAGE, MESSAGE_LEN, key) != 0) {
