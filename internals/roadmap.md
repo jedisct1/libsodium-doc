@@ -81,7 +81,7 @@ New features will be gladly implemented provided that they are not redundant and
 - Nonce-misuse resistant scheme
 - BLAKE2 AVX2 implementations \[DONE\]
 - Keyed \(hash-then-encrypt\) crypto\_pwhash
-- Consider BLAKE2X
+- Consider BLAKE2X \[on hold\]
 - Argon2id \[DONE\]
 - Port libhydrogen's key exchange API
 - SSSE3 ChaCha20 implementation \[DONE\]
@@ -93,7 +93,7 @@ New features will be gladly implemented provided that they are not redundant and
 - AVX512 implementations \[hardware needed for testing\]
 - key generation API \[DONE\]
 - Nonce/subkey generation API
-- Webassembly support \[work in progress\]
+- Webassembly support \[DONE\]
 - Stream encryption using a CHAIN-like construction \[DONE\]
 - Security audit by a 3rd party \[DONE\]
 - Formally-verified implementations \[work in progress\]
@@ -101,3 +101,4 @@ New features will be gladly implemented provided that they are not redundant and
 - `secretstream_inject()` for nonce misuse-resistance
 - XEdDSA
 - VXEdDSA
+- SPAKE2 \[work in progress\]
