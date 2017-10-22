@@ -101,4 +101,4 @@ New features will be gladly implemented provided that they are not redundant and
 - `secretstream_inject()` for nonce misuse-resistance
 - XEdDSA
 - VXEdDSA
-- SPAKE2 \[work in progress\]
+- SPAKE2+ \[work in progress\]
