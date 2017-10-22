@@ -36,7 +36,7 @@ See the `LICENSE` file for details.
 
 ## Thanks!
 
-The developement of libsodium is entirely made by volunteers. We would like to specially thank the following companies and organizations for their contribution:
+The development of libsodium is entirely made by volunteers. We would like to specially thank the following companies and organizations for their contribution:
 
 - [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware. Thanks!
 - [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/2017/08/libsodium-audit-results). This is amazing, thanks!
