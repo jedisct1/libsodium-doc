@@ -8,7 +8,7 @@ Its goal is to provide all of the core operations needed to build higher-level c
 
 Sodium is cross-platforms and cross-languages. It runs on a variety of compilers and operating systems, including Windows \(with MinGW or Visual Studio, x86 and x86\_64\), iOS and Android. Javascript and WebAssembly versions are also available and are fully supported. Bindings for all common programming languages are available and well-supported.
 
-The design choices emphasize security and ease of use. But despite the emphasis on high security, primitives are faster across-the-board than most implementations of the NIST standards.
+The design choices emphasize security and ease of use. But despite the emphasis on high security, primitives are faster across-the-board than most implementations.
 
 [Version 1.0.15](https://github.com/jedisct1/libsodium/releases) was released on Oct 1st, 2017.
 
