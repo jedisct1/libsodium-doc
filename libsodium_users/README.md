@@ -107,6 +107,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a [pul
 - [Bearch Inc.](http://www.getbearch.com/)
 - [Digital Ocean](https://www.digitalocean.com/)
 - [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
+- [Espressif Systems](http://espressif.com/)
 - [Facebook](https://facebook.com)
 - [Infoblox](https://www.infoblox.com)
 - [Informatica](https://www.informatica.com/)
