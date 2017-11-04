@@ -102,3 +102,5 @@ New features will be gladly implemented provided that they are not redundant and
 - XEdDSA
 - VXEdDSA
 - SPAKE2+ \[work in progress\]
+- Support server relief in the password hashing API.
+
