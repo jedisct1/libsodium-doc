@@ -72,11 +72,11 @@ The computed key is stored into `out`.
 - `crypto_pwhash_ALG_ARGON2I13`: version 1.3 of the Argon2i algorithm, available since libsodium 1.0.9.
 - `crypto_pwhash_ALG_ARGON2ID13`: version 1.3 of the Argon2id algorithm, available since libsodium 1.0.13.
 
-For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters. This requires 32 Mb of dedicated RAM. Higher values may improve security (see below).
+For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters. This requires 64 MiB of dedicated RAM. Higher values may improve security (see below).
 
-Alternatively, `crypto_pwhash_OPSLIMIT_MODERATE` and `crypto_pwhash_MEMLIMIT_MODERATE` can be used. This requires 128 Mb of dedicated RAM, and takes about 0.7 seconds on a 2.8 Ghz Core i7 CPU.
+Alternatively, `crypto_pwhash_OPSLIMIT_MODERATE` and `crypto_pwhash_MEMLIMIT_MODERATE` can be used. This requires 256 MiB of dedicated RAM, and takes about 0.7 seconds on a 2.8 Ghz Core i7 CPU.
 
-For highly sensitive data and non-interactive operations, `crypto_pwhash_OPSLIMIT_SENSITIVE` and `crypto_pwhash_MEMLIMIT_SENSITIVE` can be used. With these parameters, deriving a key takes about 3.5 seconds on a 2.8 Ghz Core i7 CPU and requires 512 Mb of dedicated RAM.
+For highly sensitive data and non-interactive operations, `crypto_pwhash_OPSLIMIT_SENSITIVE` and `crypto_pwhash_MEMLIMIT_SENSITIVE` can be used. With these parameters, deriving a key takes about 3.5 seconds on a 2.8 Ghz Core i7 CPU and requires 1024 MiB of dedicated RAM.
 
 The `salt` should be unpredictable. `randombytes_buf()` is the easiest way to fill the `crypto_pwhash_SALTBYTES` bytes of the salt.
 
