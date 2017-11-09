@@ -100,7 +100,7 @@ if (crypto_secretstream_xchacha20poly1305_pull
 assert(tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL);
 ```
 
-Scroll down for a complete example of file encryption/decryption using the secretstream API.
+See down below for a complete example of file encryption/decryption using the secretstream API.
 
 ## Usage
 
@@ -318,7 +318,7 @@ decrypt(const char *target_file, const char *source_file,
     fp_t = fopen(target_file, "wb");
     fread(header, 1, sizeof header, fp_s);
     if (crypto_secretstream_xchacha20poly1305_init_pull(&st, header, key) != 0) {
-        goto ret;
+        goto ret; /* incomplete header */
     }
     do {
         rlen = fread(buf_in, 1, sizeof buf_in, fp_s);
@@ -328,7 +328,7 @@ decrypt(const char *target_file, const char *source_file,
             goto ret; /* corrupted chunk */
         }
         if (tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL && ! eof) {
-            goto ret; /* premature end */
+            goto ret; /* premature end (end of file reached before the end of the stream) */
         }
         fwrite(buf_out, 1, (size_t) out_len, fp_t);
     } while (! eof);
