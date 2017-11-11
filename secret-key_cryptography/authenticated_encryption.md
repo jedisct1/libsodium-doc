@@ -32,6 +32,8 @@ A single key is used both to encrypt/sign and verify/decrypt messages. For this 
 
 The nonce doesn't have to be confidential, but it should never ever be reused with the same key. The easiest way to generate a nonce is to use `randombytes_buf()`.
 
+Messages encrypted are assumed to be independent. If multiple messages are sent using this API and random nonces, there will be no way to detect if a message has been received twice, or if messages have been reordered. If this is a requirement, see the [encrypting a sequence of a set of related messages](encrypted-messages.md) section.
+
 ## Combined mode
 
 In combined mode, the authentication tag and the encrypted message are stored together. This is usually what you want.
