@@ -90,17 +90,20 @@ New features will be gladly implemented provided that they are not redundant and
 - AVX2 Salsa20 implementation \[DONE\]
 - AVX2 ChaCha20 implementation \[DONE\]
 - AVX2 Poly1305 implementation
-- AVX512 implementations \[hardware needed for testing\]
+- AVX512 implementations \[done for Argon2, withold for other operations due to throttling concerns\]
 - key generation API \[DONE\]
 - Nonce/subkey generation API
 - Webassembly support \[DONE\]
 - Stream encryption using a CHAIN-like construction \[DONE\]
 - Security audit by a 3rd party \[DONE\]
-- Formally-verified implementations \[work in progress\]
+- Formally-verified implementations \[on hold\]
 - Padding API \[DONE\]
 - `secretstream_inject()` for nonce misuse-resistance
+- Point addition, substraction \[DONE\]
+- Point validation \[DONE\]
+- Hash-to-point (Elligator) \[DONE\]
+- SPAKE2+ \[work in progress\]
 - XEdDSA
 - VXEdDSA
-- SPAKE2+ \[work in progress\]
-- Support server relief in the password hashing API.
+- Support server relief in the password hashing API
 
