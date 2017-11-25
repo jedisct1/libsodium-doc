@@ -67,6 +67,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student's entrance and exit in school.
 - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw WiFi radio.
 - [Tezos](https://www.tezos.com): a new decentralized blockchain that governs itself by establishing a true digital commonwealth.
+- [Remembear](https://www.remembear.com/): a full-featured, multi-platform password manager, by TunnelBear.
 
 ## Libraries using libsodium
 
