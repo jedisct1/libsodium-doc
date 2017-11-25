@@ -63,7 +63,7 @@ Releases can be compiled using the CompCert compiler.
 A typical command-line to compile Sodium on a little endian system with CompCert is:
 
 ```sh
-$ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure && \
+$ env CC=ccomp CFLAGS="-O2 -fstruct-passing -Usize_t" ./configure && \
 make check && sudo make install
 ```
 
