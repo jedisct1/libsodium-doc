@@ -81,7 +81,7 @@ Some libraries and frameworks using libsodium. Send a [pull request](https://git
 - [Innovault](https://innovault.io): A toolkit to store sensitive data from web forms in an encrypted database.
 - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
 - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium
-- [libotrv4](https://github.com/twstrike/libotrv4): An OTR version 4 implementation.
+- [libotrv4](https://github.com/otrv4/libotrv4): An OTR version 4 implementation.
 - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
 - [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
 - [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
