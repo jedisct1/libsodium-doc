@@ -2,7 +2,7 @@
 
 Most modern cryptographic constructions disclose message lengths. The ciphertext for a given message will always have the same length, or add a constant number of bytes to it.
 
-For most applications, this is not an issue. But in some specific situations, such as interactive remote shells, hiding the length may be desirable. Padding solves can be used for that purpose.
+For most applications, this is not an issue. But in some specific situations, such as interactive remote shells, hiding the length may be desirable. Padding can be used for that purpose.
 
 This API was introduced in libsodium 1.0.14.
 
