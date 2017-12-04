@@ -31,15 +31,15 @@ On POSIX systems, everything in libsodium is guaranteed to always be thread-safe
 
 Cryptographic operations in Sodium never allocate memory on the heap \(`malloc`, `calloc`, etc\) with the obvious exceptions of `crypto_pwhash` and `sodium_malloc`.
 
-## Extra padding
+## Prepended zeros
 
 For some operations, the traditional NaCl API requires extra zero bytes \(`*_ZEROBYTES`, `*_BOXZEROBYTES`\) before messages and ciphertexts.
 
 However, this proved to be error-prone.
 
-For this reason, functions whose input requires extra padding are discouraged in Sodium.
+For this reason, functions whose input requires transformations before they can be used are discouraged in Sodium.
 
-When not API compatibility is needed, alternative functions that do not require padding are available.
+When NaCl API compatibility is a requirement, alternative functions that do not require extra steps are available and recommended.
 
 ## Branches
 
