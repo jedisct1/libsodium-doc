@@ -107,7 +107,7 @@ The shared secret key `rx` should be used by the server to receive data from the
 
 ## Algorithm details
 
-`rx || tx = BLAKE2B-512(X25519(p.n))`
+`rx || tx = BLAKE2B-512(p.n || client_pk || server_pk)`
 
 ## Notes
 
