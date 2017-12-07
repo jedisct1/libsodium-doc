@@ -53,6 +53,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
 - [Snackis](https://github.com/andreas-gone-wild/snackis): A post-modern enigma-device
 - [Sodium native](https://github.com/sodium-friends/sodium-native): Low level NodeJS bindings for libsodium.
+- [SPAKE2-EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator Edition implementation for libsodium.
 - [Splonebox](https://splone.com/splonebox/): An open source network assessment tool with focus on modularity.
 - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
 - [TREES](https://0xacab.org/riseuplabs/trees): A Dovecot email storage encryption plugin.
