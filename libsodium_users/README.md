@@ -66,7 +66,7 @@ Some applications using libsodium. Send a [pull request](https://github.com/jedi
 - [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw WiFi radio.
 - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
-- [Zbox](https://github.com/zboxfs/zbox): zero-knowledge, privacy focused embeddable file system.
+- [Zbox](https://github.com/zboxfs/zbox): zero-details, privacy-focused embeddable file system.
 - [Zcash](https://z.cash/): Zcash is a decentralized and open source cryptocurrency that aims to set a new standard for privacy through the use of groundbreaking cryptography.
 - [libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp): a C++ Windows Runtime Component for UWP applications.
 - [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support Scrypt and Argon2 for password hashing.
