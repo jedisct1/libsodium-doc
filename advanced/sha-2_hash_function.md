@@ -1,14 +1,19 @@
 # The SHA-2 hash functions family
 
-The SHA-256 and SHA-512 functions are provided for interoperability with other applications.
+The SHA-256 and SHA-512 functions are provided for interoperability with other
+applications.
 
-These functions are not keyed and are thus deterministic. In addition, the untruncated versions are vulnerable to length extension attacks.
+These functions are not keyed and are thus deterministic. In addition, the
+untruncated versions are vulnerable to length extension attacks.
 
-A message can be hashed in a single pass, but a streaming API is also available to process a message as a sequence of multiple chunks.
+A message can be hashed in a single pass, but a streaming API is also available
+to process a message as a sequence of multiple chunks.
 
-If you are looking for a generic hash function and not specifically SHA-2, using `crypto_generichash()` (BLAKE2b) might be a better choice.
+If you are looking for a generic hash function and not specifically SHA-2, using
+`crypto_generichash()` (BLAKE2b) might be a better choice.
 
-These functions are also not suitable for hashing passwords. For this purpose, use the `crypto_pwhash` API documented in the Password Hashing section.
+These functions are also not suitable for hashing passwords. For this purpose,
+use the `crypto_pwhash` API documented in the Password Hashing section.
 
 ## Single-part SHA-256 example
 
@@ -91,18 +96,20 @@ int crypto_hash_sha512_final(crypto_hash_sha512_state *state,
 
 ## Notes
 
-The state must be initialized with `crypto_hash_sha*_init()` before updating or finalizing it.
+The state must be initialized with `crypto_hash_sha*_init()` before updating or
+finalizing it.
 
-After `crypto_hash_sha*_final()`, the state should not be used any more, unless it is reinitialized using `crypto_hash_sha*_init()`.
+After `crypto_hash_sha*_final()`, the state should not be used any more, unless
+it is reinitialized using `crypto_hash_sha*_init()`.
 
 SHA-512-256 is also available via the higher-level interface `crypto_hash()`.
 
 ## Constants
 
-- `crypto_hash_sha256_BYTES`
-- `crypto_hash_sha512_BYTES`
+* `crypto_hash_sha256_BYTES`
+* `crypto_hash_sha512_BYTES`
 
 ## Data types
 
-- `crypto_hash_sha256_state`
-- `crypto_hash_sha512_state`
+* `crypto_hash_sha256_state`
+* `crypto_hash_sha512_state`

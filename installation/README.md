@@ -2,13 +2,17 @@
 
 ## Compilation on Unix-like systems
 
-Sodium is a shared library with a machine-independent set of headers, so that it can easily be used by 3rd party projects.
+Sodium is a shared library with a machine-independent set of headers, so that it
+can easily be used by 3rd party projects.
 
 The library is built using autotools, making it easy to package.
 
-Installation is trivial, and both compilation and testing can take advantage of multiple CPU cores.
+Installation is trivial, and both compilation and testing can take advantage of
+multiple CPU cores.
 
-Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), preferably the latest `stable` version, then follow the ritual:
+Download a
+[tarball of libsodium](https://download.libsodium.org/libsodium/releases/),
+preferably the latest `stable` version, then follow the ritual:
 
 ```sh
 ./configure
@@ -16,33 +20,45 @@ make && make check
 sudo make install
 ```
 
-Since different files are compiled for different CPU classes, and to prevent unwanted optimizations, avoiding link-time optimization (LTO) is recommended.
+Since different files are compiled for different CPU classes, and to prevent
+unwanted optimizations, avoiding link-time optimization (LTO) is recommended.
 
-On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the "Usage" section for ways to address this.
+On Linux, if the process hangs at the `make check` step, your system PRG may not
+have been properly seeded. Please refer to the notes in the "Usage" section for
+ways to address this.
 
 ## Compilation on Windows
 
-Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available \(see below\).
+Compilation on Windows is usually not required, as pre-built libraries for MinGW
+and Visual Studio are available \(see below\).
 
-However, if you want to compile it yourself, start by cloning the [stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from the Git repository.
+However, if you want to compile it yourself, start by cloning the
+[stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from
+the Git repository.
 
 Visual Studio solutions can be then found in the `builds/msvc` directory.
 
-In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or `./dist-build/msys2-win64.sh` for Win32 or x64 targets.
+In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or
+`./dist-build/msys2-win64.sh` for Win32 or x64 targets.
 
 ## Pre-built libraries
 
-[Pre-built x86 and x86\_64 libraries for Visual Studio 2010, 2012, 2013, 2015 and 2017](https://download.libsodium.org/libsodium/releases/) are available, as well as pre-built libraries for MinGW32 and MinGW64.
+[Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013, 2015 and 2017](https://download.libsodium.org/libsodium/releases/)
+are available, as well as pre-built libraries for MinGW32 and MinGW64.
 
-They include header files, as well as static \(`.LIB`\) and shared \(`.DLL`\) libraries for all the supported compiler versions.
+They include header files, as well as static \(`.LIB`\) and shared \(`.DLL`\)
+libraries for all the supported compiler versions.
 
 ### Note for Visual Studio
 
-Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__dllexport`.
+Projects willing to statically link Sodium must define a macro named
+`SODIUM_STATIC`. This will prevent symbol definitions from being referenced with
+`__dllexport`.
 
 ## Cross-compiling
 
-Cross-compilation is fully supported. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
+Cross-compilation is fully supported. This is an example of cross-compiling to
+ARM using the GNU tools for ARM embedded processors:
 
 ```sh
 export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
@@ -52,7 +68,8 @@ export CFLAGS='-Os'
 sudo make install
 ```
 
-`make check` can also build the test apps, but these have to be run on the native platform.
+`make check` can also build the test apps, but these have to be run on the
+native platform.
 
 Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
 
@@ -60,7 +77,8 @@ Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
 
 Releases can be compiled using the CompCert compiler.
 
-A typical command-line to compile Sodium on a little endian system with CompCert is:
+A typical command-line to compile Sodium on a little endian system with CompCert
+is:
 
 ```sh
 $ env CC=ccomp CFLAGS="-O2 -fstruct-passing -Usize_t" ./configure && \
@@ -69,11 +87,18 @@ make check && sudo make install
 
 ## Stable branch
 
-We recommend using distribution tarballs over cloning the [libsodium git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies such as libtool and autotools.
+We recommend using distribution tarballs over cloning the
+[libsodium git repository](https://github.com/jedisct1/libsodium), especially
+since tarballs do not require dependencies such as libtool and autotools.
 
-However, if cloning a git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version, as well as critical security fixes while new packages including them are being prepared.
+However, if cloning a git repository happens to be more convenient, the
+[stable](https://github.com/jedisct1/libsodium/tree/stable) branch always
+contains the latest stable release of libsodium, plus minor patches that will be
+part of the next version, as well as critical security fixes while new packages
+including them are being prepared.
 
-Code in the `stable` branch also includes generated files, and does not require the autotools (libtool, autoconf, automake) to be present.
+Code in the `stable` branch also includes generated files, and does not require
+the autotools (libtool, autoconf, automake) to be present.
 
 To check out the stable branch, use:
 
@@ -81,25 +106,24 @@ To check out the stable branch, use:
 git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
-Tarballs of the `stable` code are also available for download, and are recommended if you are compiling libsodium from source.
+Tarballs of the `stable` code are also available for download, and are
+recommended if you are compiling libsodium from source.
 
 ## Getting started
 
-See the [quickstart](../quickstart/README.md) and [usage](../usage/README.md) sections to get started!
+See the [quickstart](../quickstart/README.md) and [usage](../usage/README.md)
+sections to get started!
 
 ## Integrity checking
 
-Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
+Distribution files can be verified with
+[Minisign](https://jedisct1.github.io/minisign/) and the following Ed25519 key:
 
-``
-RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3
-``
+`RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3`
 
 Or with GnuPG and the following RSA key:
 
-``
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v1 (OpenBSD)
+`` -----BEGIN PGP PUBLIC KEY BLOCK----- Version: GnuPG v1 (OpenBSD)
 
 mQINBFTZ0A8BEAD2/BeYhJpEJDADNuOz5EO8E0SIj5VeQdb9WLh6tBe37KrJJy7+
 FBFnsd/ahfsqoLmr/IUE3+ZejNJ6QVozUKUAbds1LnKh8ejX/QegMrtgb+F2Zs83
@@ -223,13 +247,13 @@ W6ddPO4Ax7LycK0WOeNVNAT6a3tFJbQrve3ZoDDSNXAa70VKmpdrsrwnX+/4+rly
 Z7lj7rnMWCe9jllfZ2Mi+nIYXCrvhVh0t7OHVGwpSq28B/e2AFsQZxXcT4Y+6po7
 aJADVdb+LlOAuF6xB3sylE1Im0iADCW9UAWub1oiOr9jv0+mHEYc3kaF0kPU5zKO
 I9cg891jcOBV/qRv89ubSHifw9hTZB0dDjXzBjNwNjBHqkYDaLsf1izeYHEG4gEO
-sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc=
-=Hkmu
------END PGP PUBLIC KEY BLOCK-----
-``
+sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu -----END PGP PUBLIC KEY
+BLOCK----- ``
 
 ## Reporting vulnerabilities
 
-We encourage users and researchers to use PGP-encrypted emails to transmit confidential details regarding possible vulnerabilities in the Sodium library.
+We encourage users and researchers to use PGP-encrypted emails to transmit
+confidential details regarding possible vulnerabilities in the Sodium library.
 
-Details should be sent to: j \[at\] pureftpd \[dot\] org using the PGP key above.
+Details should be sent to: j \[at\] pureftpd \[dot\] org using the PGP key
+above.

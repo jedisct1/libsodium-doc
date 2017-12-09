@@ -27,14 +27,19 @@ if (crypto_box_seal_open(decrypted, ciphertext, CIPHERTEXT_LEN,
 
 ## Purpose
 
-Sealed boxes are designed to anonymously send messages to a recipient given its public key.
+Sealed boxes are designed to anonymously send messages to a recipient given its
+public key.
 
-Only the recipient can decrypt these messages, using its private key. While the recipient can verify the integrity of the message, it cannot verify the identity of the sender.
+Only the recipient can decrypt these messages, using its private key. While the
+recipient can verify the integrity of the message, it cannot verify the identity
+of the sender.
 
-A message is encrypted using an ephemeral key pair, whose secret part is destroyed right after the encryption process.
+A message is encrypted using an ephemeral key pair, whose secret part is
+destroyed right after the encryption process.
 
-Without knowing the secret key used for a given message, the sender cannot decrypt its own message later.
-And without additional data, a message cannot be correlated with the identity of its sender.
+Without knowing the secret key used for a given message, the sender cannot
+decrypt its own message later. And without additional data, a message cannot be
+correlated with the identity of its sender.
 
 ## Usage
 
@@ -43,9 +48,13 @@ int crypto_box_seal(unsigned char *c, const unsigned char *m,
                     unsigned long long mlen, const unsigned char *pk);
 ```
 
-The `crypto_box_seal()` function encrypts a message `m` of length `mlen` for a recipient whose public key is `pk`. It puts the ciphertext whose length is `crypto_box_SEALBYTES + mlen` into `c`.
+The `crypto_box_seal()` function encrypts a message `m` of length `mlen` for a
+recipient whose public key is `pk`. It puts the ciphertext whose length is
+`crypto_box_SEALBYTES + mlen` into `c`.
 
-The function creates a new key pair for each message, and attaches the public key to the ciphertext. The secret key is overwritten and is not accessible after this function returns.
+The function creates a new key pair for each message, and attaches the public
+key to the ciphertext. The secret key is overwritten and is not accessible after
+this function returns.
 
 ```c
 int crypto_box_seal_open(unsigned char *m, const unsigned char *c,
@@ -53,15 +62,19 @@ int crypto_box_seal_open(unsigned char *m, const unsigned char *c,
                          const unsigned char *pk, const unsigned char *sk);
 ```
 
-The `crypto_box_seal_open()` function decrypts the ciphertext `c` whose length is `clen`, using the key pair (`pk`, `sk`), and puts the decrypted message into `m` (`clen - crypto_box_SEALBYTES` bytes).
+The `crypto_box_seal_open()` function decrypts the ciphertext `c` whose length
+is `clen`, using the key pair (`pk`, `sk`), and puts the decrypted message into
+`m` (`clen - crypto_box_SEALBYTES` bytes).
 
-Key pairs are compatible with other `crypto_box_*` operations and can be created using `crypto_box_keypair()` or `crypto_box_seed_keypair()`.
+Key pairs are compatible with other `crypto_box_*` operations and can be created
+using `crypto_box_keypair()` or `crypto_box_seed_keypair()`.
 
-This function doesn't require passing the public key of the sender, as the ciphertext already includes this information.
+This function doesn't require passing the public key of the sender, as the
+ciphertext already includes this information.
 
 ## Constants
 
-- `crypto_box_SEALBYTES`
+* `crypto_box_SEALBYTES`
 
 ## Algorithm details
 
