@@ -82,8 +82,7 @@ speed.
 
 Examples include:
 
-* Sensitive data are wiped from memory. This can represent gigabytes of memory
-  to go through for some operations (password hashing), but the cost remains
+* Sensitive data are wiped from memory when the cost remains
   reasonable compared to the cost of the actual computations.
 * Signatures use different code paths for verification in order to mitigate
   fault attacks, and check for small order nonces.
@@ -164,8 +163,8 @@ before merging a new change to the `stable` branch.
 * Ubuntu/x86_64 using clang, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
 * Ubuntu/x86_64 using tcc
+* Ubuntu/x86_64 using CompCert
 * macOS using Xcode 9
-* macOS using CompCert
 * Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
 * msys2 using mingw32 and mingw64
 * ArchLinux/x86_64
