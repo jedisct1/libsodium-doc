@@ -46,6 +46,7 @@
     * [Salsa20](advanced/salsa20.md)
     * [XSalsa20](advanced/xsalsa20.md)
   * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
+  * [EC point arithmetic](advanced/point-arithmetic.md)
   * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
