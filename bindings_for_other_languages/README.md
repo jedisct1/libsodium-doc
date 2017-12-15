@@ -4,6 +4,7 @@
 
 * PHP >= 7.2
 * HHVM >= 3.20
+* [Zion](https://github.com/zionlang/zion)
 
 ## Bindings programming languages
 
