@@ -64,7 +64,9 @@ void *sodium_malloc(size_t size);
 ```
 
 The `sodium_malloc()` function returns a pointer from which exactly `size`
-contiguous bytes of memory can be accessed.
+contiguous bytes of memory can be accessed. Like normal `malloc`, `NULL`
+may be returned and `errno` set if it is not possible to allocate enough
+memory.
 
 The allocated region is placed at the end of a page boundary, immediately
 followed by a guard page. As a result, accessing memory past the end of the
