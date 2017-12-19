@@ -15,7 +15,7 @@ multiple chunks.
 unsigned char hash[crypto_auth_hmacsha512_BYTES];
 unsigned char key[crypto_auth_hmacsha512_KEYBYTES];
 
-crypto_auth_hmacsha51_keygen(key);
+crypto_auth_hmacsha512_keygen(key);
 crypto_auth_hmacsha512(hash, MESSAGE, MESSAGE_LEN, key);
 ```
 
