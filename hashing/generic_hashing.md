@@ -143,9 +143,9 @@ length `crypto_generichash_KEYBYTES`.
 ## State structure size
 
 The `crypto_generichash_state` structure length is either 357 or 361 bytes.
-64-bytes alignment is recommended for performance, but not required. For
-dynamically allocated states, `crypto_generichash_statebytes()` returns the
-rounded up structure size, and should be prefered to `sizeof()`.
+64-bytes alignment is required. For dynamically allocated states,
+`crypto_generichash_statebytes()` returns the rounded up structure size, and
+should be prefered to `sizeof()`.
 
 ```c
 state = sodium_malloc(crypto_generichash_statebytes());
