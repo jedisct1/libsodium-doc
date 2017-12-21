@@ -190,6 +190,11 @@ hash function.
 If the message _can_ fit in memory and can be supplied as a single chunk, the
 single-part API should be preferred.
 
+Note: `Ed25519ph(m)` is intentionally not equivalent to `Ed25519(SHA512(m))`.
+
+If, for some reason, you need to prehash the message yourself, use the multi-part
+`crypto_generichash_*()` APIs and sign the 512 bit output.
+
 ```c
 int crypto_sign_init(crypto_sign_state *state);
 ```
