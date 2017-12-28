@@ -55,11 +55,10 @@ that its parameters are properly chosen.
 ## Server relief
 
 If multiple clients can simultaneously log in on a shared server, the memory and
-computation requirements of a memory&CPU hard hash function can exhaust the
-server's resources.
+computation requirements can exhaust the server's resources.
 
-In order to mitigate this, the key derivation can be performed on the client
-(e.g. using libsodium.js in a web application):
+In order to mitigate this, passwords can be pre-hashed on the client (e.g. using
+libsodium.js in a web application):
 
 * On user account creation, the server sends a random seed to the client. The
   client computes `ph = password_hash(password, seed)` and sends `ph` to the
