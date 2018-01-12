@@ -81,7 +81,7 @@ key `client_sk` and the server's public key `server_pk`.
 It returns `0` on success, or `-1` if the server's public key is not acceptable.
 
 These keys can be used by any functions requiring secret keys up to
-`crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secrebox_*()` and
+`crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secretbox_*()` and
 `crypto_aead_*()`.
 
 The shared secret key `rx` should be used by the client to receive data from the
