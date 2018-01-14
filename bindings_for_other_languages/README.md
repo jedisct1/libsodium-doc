@@ -37,6 +37,7 @@
 * Guile: [Guile-NaCl](https://github.com/cryptotronix/guile-nacl)
 * Haskell: [haskell-libsodium](https://github.com/dmp1ce/haskell-libsodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
+* Haskell: [Lithium](https://github.com/eth-r/lithium)
 * HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * HaXe (bindings for the Neko VM):
   [neko-libsodium](https://github.com/laserbat/neko-libsodium)
