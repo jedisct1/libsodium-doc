@@ -51,9 +51,9 @@ is supplied via the `hex_len` parameter.
 
 `ignore` is a string of characters to skip. For example, the string `": "`
 allows columns and spaces to be present at any locations in the hexadecimal
-string. These characters will just be ignored. As a result, `"69:FC"`, `"69
-FC"`, `"69 : FC"` and `"69FC"` will be valid inputs, and will produce the same
-output.
+string. These characters will just be ignored.
+As a result, `"69:FC"`, `"69 FC"`, `"69 : FC"` and `"69FC"` will be valid inputs,
+and will produce the same output.
 
 `ignore` can be set to `NULL` in order to disallow any non-hexadecimal
 character.
@@ -63,9 +63,13 @@ character.
 The parser stops when a non-hexadecimal, non-ignored character is found or when
 `bin_maxlen` bytes have been written.
 
-The function returns `-1` if more than `bin_maxlen` bytes would be required to
-store the parsed string. It returns `0` on success and sets `hex_end`, if it is
-not `NULL`, to a pointer to the character following the last parsed character.
+If `hex_end` is not `NULL`, it will be set to the address of the first byte after
+the last valid parsed character.
+
+The function returns `0` on success.
+
+It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string,
+or if the string couldn't be fully parsed, but a valid pointer for `hex_end` was not provided.
 
 It evaluates in constant time for a given length and format.
 
@@ -111,6 +115,14 @@ int sodium_base642bin(unsigned char * const bin, const size_t bin_maxlen,
 The `sodium_base642bin()` function decodes a Base64 string using the given
 variant, and an optional set of characters to ignore (typically: whitespaces and
 newlines).
+
+If `b64_end` is not `NULL`, it will be set to the address of the first byte after
+the last valid parsed character.
+
+The function returns `0` on success.
+
+It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string,
+or if the string couldn't be fully parsed, but a valid pointer for `b64_end` was not provided.
 
 ## Incrementing large numbers
 
