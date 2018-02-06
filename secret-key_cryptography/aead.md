@@ -7,7 +7,7 @@ This operation:
   message, as well as optional, non-confidential \(non-encrypted\) data, haven't
   been tampered with.
 
-A typical use case for additional data is to store protocol-specific metadata
+A typical use case for additional data is to authenticate protocol-specific metadata
 about the message, such as its length and encoding.
 
 ## Supported constructions
