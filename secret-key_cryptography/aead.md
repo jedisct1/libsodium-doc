@@ -7,7 +7,7 @@ This operation:
   message, as well as optional, non-confidential \(non-encrypted\) data, haven't
   been tampered with.
 
-A typical use case for additional data is to store protocol-specific metadata
+A typical use case for additional data is to authenticate protocol-specific metadata
 about the message, such as its length and encoding.
 
 ## Supported constructions
@@ -15,6 +15,10 @@ about the message, such as its length and encoding.
 libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305
 \(original version and IETF version\), as well as a variant of the later with an
 extended nonce: XChaCha20-Poly1305.
+
+The "combined mode" API of each construction appends the
+authentication tag to the ciphertext. The "detached mode" API stores
+the authentication tag in a separate location.
 
 ### Availability and interoperability
 
