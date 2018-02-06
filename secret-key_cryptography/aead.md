@@ -16,6 +16,10 @@ libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305
 \(original version and IETF version\), as well as a variant of the later with an
 extended nonce: XChaCha20-Poly1305.
 
+The "combined mode" API of each construction appends the
+authentication tag to the ciphertext. The "detached mode" API stores
+the authentication tag in a separate location.
+
 ### Availability and interoperability
 
 | Construction            | Key size | Nonce size | Block size | MAC size | Availability                                                                                                  |
