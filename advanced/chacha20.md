@@ -78,7 +78,7 @@ int crypto_stream_chacha20_ietf(unsigned char *c, unsigned long long clen,
 ```
 
 The `crypto_stream_chacha20_ietf()` function stores `clen` pseudo random bytes
-into `c` using a nonce `n` (`crypto_stream_chacha20_etf_iNONCEBYTES` bytes) and
+into `c` using a nonce `n` (`crypto_stream_chacha20_ietf_NONCEBYTES` bytes) and
 a secret key `k` (`crypto_stream_chacha20_ietf_KEYBYTES` bytes).
 
 ```c
