@@ -261,7 +261,7 @@ must not be done before calling this function (otherwise zeroes, instead of
 the password, would be hashed).
 
 Libsodium supports the Argon2id variant since version 1.0.13, and it became the
-default in algorithm in version 1.0.15.
+default algorithm in version 1.0.15.
 
 ## Algorithm details
 
