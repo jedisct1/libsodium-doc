@@ -257,7 +257,8 @@ cleartext passwords, and to call `sodium_munlock()` right after
 `crypto_pwhash_str()` and `crypto_pwhash_str_verify()` return.
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it
-doesn't have to be done before calling this function.
+must not be done before calling this function (otherwise zeroes, instead of
+the password, would be hashed).
 
 Libsodium supports the Argon2id variant since version 1.0.13, and it became the
 default in algorithm in version 1.0.15.
