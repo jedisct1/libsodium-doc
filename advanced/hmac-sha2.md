@@ -3,6 +3,9 @@
 The keyed message authentication codes HMAC-SHA-256, HMAC-SHA-512 and
 HMAC-SHA512-256 (truncated HMAC-SHA-512) are provided.
 
+The [`crypto_auth`](../secret-key_cryptography/secret-key_authentication.md)
+API provides a simplified interface for message authentication.
+
 If required, a streaming API is available to process a message as a sequence of
 multiple chunks.
 
