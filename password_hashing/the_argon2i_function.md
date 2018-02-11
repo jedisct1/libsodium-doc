@@ -72,11 +72,11 @@ The computed key is stored into `out`.
 `opslimit` represents a maximum amount of computations to perform. Raising this
 number will make the function require more CPU cycles to compute a key. This
 number must be between `crypto_pwhash_OPSLIMIT_MIN` and
-`crypto_pwhash_OPSLIMIT_MAX`
+`crypto_pwhash_OPSLIMIT_MAX`.
 
 `memlimit` is the maximum amount of RAM that the function will use, in bytes.
 This number must be between `crypto_pwhash_MEMLIMIT_MIN` and
-`crypto_pwhash_MEMLIMIT_MAX`
+`crypto_pwhash_MEMLIMIT_MAX`.
 
 `alg` is an identifier for the algorithm to use, and should be set to one of the
 following values:
