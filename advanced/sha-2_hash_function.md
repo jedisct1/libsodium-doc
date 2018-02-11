@@ -1,19 +1,20 @@
 # The SHA-2 hash functions family
 
-The SHA-256 and SHA-512 functions are provided for interoperability with other
-applications.
+The SHA-256 and SHA-512 functions are provided for interoperability
+with other applications. If you are looking for a generic hash
+function and not specifically SHA-2, using
+[`crypto_generichash()`](../hashing/generic_hashing.md) (BLAKE2b)
+might be a better choice.
+
+These functions are also not suitable for hashing passwords or
+deriving keys from passwords. Use one of the
+[password hashing](../password_hashing/README.md) APIs instead.
 
 These functions are not keyed and are thus deterministic. In addition, the
 untruncated versions are vulnerable to length extension attacks.
 
 A message can be hashed in a single pass, but a streaming API is also available
 to process a message as a sequence of multiple chunks.
-
-If you are looking for a generic hash function and not specifically SHA-2, using
-`crypto_generichash()` (BLAKE2b) might be a better choice.
-
-These functions are also not suitable for hashing passwords. For this purpose,
-use the `crypto_pwhash` API documented in the Password Hashing section.
 
 ## Single-part SHA-256 example
 
