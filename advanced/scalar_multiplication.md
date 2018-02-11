@@ -1,6 +1,6 @@
 # Diffie-Hellman function
 
-Sodium provide an API to perform scalar multiplication of elliptic curve points.
+Sodium provides an API to perform scalar multiplication of elliptic curve points.
 
 This can be used as a building block to construct key exchange mechanisms, or
 more generally to compute a public key from a secret key.
