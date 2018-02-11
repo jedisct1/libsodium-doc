@@ -6,10 +6,11 @@ Secret keys used to encrypt or sign confidential data have to be chosen from a
 very large keyspace. However, passwords are usually short, human-generated
 strings, making dictionary attacks practical.
 
-The `pwhash` operation derives a secret key of any size from a password and a
-salt.
+The [`pwhash`](../password_hashing/the_argon2i_function.md) operation
+derives a secret key of any size from a password and a salt.
 
-See the **Password hashing** section for more information and code examples.
+Refer to the [Password hashing](../password_hashing/README.md) section
+for more information and code examples.
 
 ## Deriving keys from a single high-entropy key
 
