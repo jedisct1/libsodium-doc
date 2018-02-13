@@ -22,7 +22,7 @@ int main(void)
 }
 ```
 
-## Is libsodium cross-platforms?
+## Is libsodium cross-platform?
 
 Yes. A message can be encrypted in Python on a MIPS CPU, decrypted in Javascript
 using Chrome on Windows, and its signature can then be verified by an iPhone app
