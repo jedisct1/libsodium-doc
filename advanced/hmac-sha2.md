@@ -35,16 +35,16 @@ crypto_auth_hmacsha512(hash, MESSAGE, MESSAGE_LEN, key);
 
 unsigned char hash[crypto_auth_hmacsha512_BYTES];
 unsigned char key[crypto_auth_hmacsha512_KEYBYTES];
-crypto_hash_sha512_state state;
+crypto_auth_hmacsha512_state state;
 
-crypto_hash_sha512_keygen(key);
+crypto_auth_hmacsha512_keygen(key);
 
-crypto_hash_sha512_init(&state, key, sizeof key);
+crypto_auth_hmacsha512_init(&state, key, sizeof key);
 
-crypto_hash_sha512_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
-crypto_hash_sha512_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+crypto_auth_hmacsha512_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
+crypto_auth_hmacsha512_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
 
-crypto_hash_sha512_final(&state, hash);
+crypto_auth_hmacsha512_final(&state, hash);
 ```
 
 ## Usage
