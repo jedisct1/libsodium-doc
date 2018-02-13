@@ -72,7 +72,7 @@ int crypto_auth_hmacsha256_verify(const unsigned char *h,
 
 The `crypto_auth_hmacsha256_verify()` function verifies in constant time that
 `h` is a correct authenticator for the message `in` whose length is `inlen`
-under a secret key `k`.
+under a secret key `k` (`crypto_auth_hmacsha256_KEYBYTES` bytes).
 
 It returns `-1` if the verification fails, and `0` on success.
 
