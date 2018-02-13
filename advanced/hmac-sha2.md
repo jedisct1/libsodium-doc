@@ -154,6 +154,8 @@ void crypto_auth_hmacsha512_keygen(unsigned char k[crypto_auth_hmacsha512_KEYBYT
 
 HMAC-SHA-512-256 is implemented as HMAC-SHA-512 with the output truncated to 256
 bits. This is slightly faster than HMAC-SHA-256.
+Note that this construction is not the same as HMAC-SHA-512/256,
+which is HMAC using the SHA-512/256 function.
 
 ```c
 int crypto_auth_hmacsha512256(unsigned char *out,
