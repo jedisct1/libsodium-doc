@@ -22,7 +22,7 @@ int main(void)
 }
 ```
 
-## Is libsodium cross-platforms?
+## Is libsodium cross-platform?
 
 Yes. A message can be encrypted in Python on a MIPS CPU, decrypted in Javascript
 using Chrome on Windows, and its signature can then be verified by an iPhone app
@@ -78,10 +78,10 @@ prefered.
 
 * Create a secret key using `crypto_secretbox_keygen()`
 * Create a nonce using `randombytes_buf(nonce, sizeof nonce)`
-* Use `crypto_secretbox()` to encrypt the message, and send/store the resulting
+* Use `crypto_secretbox_easy()` to encrypt the message, and send/store the resulting
   ciphertext along with the nonce. Unlike the key, the nonce doesn't have to be
   secret.
-* Use `crypto_secretbox_open()` to decrypt the ciphertext using the same key and
+* Use `crypto_secretbox_open_easy()` to decrypt the ciphertext using the same key and
   nonce.
 
 ### If everything doesn't fit in memory, or is not available as a single chunk

@@ -78,4 +78,4 @@ correct.
 
 ## Algorithm details
 
-* HMAC-SHA512256
+* HMAC-SHA512-256

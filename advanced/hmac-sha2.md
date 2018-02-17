@@ -1,7 +1,10 @@
 # HMAC-SHA-2
 
-Keyed message authentication using HMAC-SHA-256, HMAC-SHA-512 and
+The keyed message authentication codes HMAC-SHA-256, HMAC-SHA-512 and
 HMAC-SHA512-256 (truncated HMAC-SHA-512) are provided.
+
+The [`crypto_auth`](../secret-key_cryptography/secret-key_authentication.md)
+API provides a simplified interface for message authentication.
 
 If required, a streaming API is available to process a message as a sequence of
 multiple chunks.
@@ -32,16 +35,16 @@ crypto_auth_hmacsha512(hash, MESSAGE, MESSAGE_LEN, key);
 
 unsigned char hash[crypto_auth_hmacsha512_BYTES];
 unsigned char key[crypto_auth_hmacsha512_KEYBYTES];
-crypto_hash_sha512_state state;
+crypto_auth_hmacsha512_state state;
 
-crypto_hash_sha512_keygen(key);
+crypto_auth_hmacsha512_keygen(key);
 
-crypto_hash_sha512_init(&state, key, sizeof key);
+crypto_auth_hmacsha512_init(&state, key, sizeof key);
 
-crypto_hash_sha512_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
-crypto_hash_sha512_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
+crypto_auth_hmacsha512_update(&state, MESSAGE_PART1, MESSAGE_PART1_LEN);
+crypto_auth_hmacsha512_update(&state, MESSAGE_PART2, MESSAGE_PART2_LEN);
 
-crypto_hash_sha512_final(&state, hash);
+crypto_auth_hmacsha512_final(&state, hash);
 ```
 
 ## Usage
@@ -69,7 +72,7 @@ int crypto_auth_hmacsha256_verify(const unsigned char *h,
 
 The `crypto_auth_hmacsha256_verify()` function verifies in constant time that
 `h` is a correct authenticator for the message `in` whose length is `inlen`
-under a secret key `k`.
+under a secret key `k` (`crypto_auth_hmacsha256_KEYBYTES` bytes).
 
 It returns `-1` if the verification fails, and `0` on success.
 
@@ -151,6 +154,8 @@ void crypto_auth_hmacsha512_keygen(unsigned char k[crypto_auth_hmacsha512_KEYBYT
 
 HMAC-SHA-512-256 is implemented as HMAC-SHA-512 with the output truncated to 256
 bits. This is slightly faster than HMAC-SHA-256.
+Note that this construction is not the same as HMAC-SHA-512/256,
+which is HMAC using the SHA-512/256 function.
 
 ```c
 int crypto_auth_hmacsha512256(unsigned char *out,
@@ -204,10 +209,10 @@ void crypto_auth_hmacsha512256_keygen(unsigned char k[crypto_auth_hmacsha512256_
 
 ## Notes
 
-* The state must be initialized with `crypto_hash_hmacsha*_init()` before
-  updating or finalizing it. After `crypto_hash_hmacsha*_final()` returns, the
+* The state must be initialized with `crypto_auth_hmacsha*_init()` before
+  updating or finalizing it. After `crypto_auth_hmacsha*_final()` returns, the
   state should not be used any more, unless it is reinitialized using
-  `crypto_hash_hmacsha*_init()`.
+  `crypto_auth_hmacsha*_init()`.
 
 * Arbitrary key lengths are supported using the multi-part interface.
 

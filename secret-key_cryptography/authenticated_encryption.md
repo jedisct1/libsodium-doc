@@ -155,7 +155,7 @@ correct.
 
 ## Notes
 
-Internally, `crypto_secretbox` call `crypto_stream_xor()` to encrypt the
+Internally, `crypto_secretbox` calls `crypto_stream_xor()` to encrypt the
 message. As a result, a secret key used with the former should not be reused
 with the later. But as a general rule, a key should not be reused for different
 purposes.
