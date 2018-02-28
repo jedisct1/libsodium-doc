@@ -31,8 +31,8 @@ Projects using CMake can include the
 file in order to detect and link the library.
 
 `sodium_init()` initializes the library and should be called before any other
-function provided by Sodium. The function can be called more than once, and can
-be called simultaneously from multiple threads since version 1.0.11.
+function provided by Sodium. It is safe to call this function more
+than once and from different threads -- subsequent calls won't have any effects.
 
 After this function returns, all of the other functions provided by Sodium will
 be thread-safe.
