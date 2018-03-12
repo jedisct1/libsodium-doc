@@ -123,7 +123,9 @@ Distribution files can be verified with
 
 Or with GnuPG and the following RSA key:
 
-`` -----BEGIN PGP PUBLIC KEY BLOCK----- Version: GnuPG v1 (OpenBSD)
+```
+-----BEGIN PGP PUBLIC KEY BLOCK----- 
+Version: GnuPG v1 (OpenBSD)
 
 mQINBFTZ0A8BEAD2/BeYhJpEJDADNuOz5EO8E0SIj5VeQdb9WLh6tBe37KrJJy7+
 FBFnsd/ahfsqoLmr/IUE3+ZejNJ6QVozUKUAbds1LnKh8ejX/QegMrtgb+F2Zs83
@@ -247,8 +249,9 @@ W6ddPO4Ax7LycK0WOeNVNAT6a3tFJbQrve3ZoDDSNXAa70VKmpdrsrwnX+/4+rly
 Z7lj7rnMWCe9jllfZ2Mi+nIYXCrvhVh0t7OHVGwpSq28B/e2AFsQZxXcT4Y+6po7
 aJADVdb+LlOAuF6xB3sylE1Im0iADCW9UAWub1oiOr9jv0+mHEYc3kaF0kPU5zKO
 I9cg891jcOBV/qRv89ubSHifw9hTZB0dDjXzBjNwNjBHqkYDaLsf1izeYHEG4gEO
-sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu -----END PGP PUBLIC KEY
-BLOCK----- ``
+sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu 
+-----END PGP PUBLIC KEY BLOCK----- 
+```
 
 ## Reporting vulnerabilities
 
