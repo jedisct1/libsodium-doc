@@ -279,6 +279,10 @@ secret key `sk` and copies it into `pk` (`crypto_sign_PUBLICKEYBYTES` bytes).
 * Single-part signature: Ed25519
 * Multi-part signature: Ed25519ph
 
+## References
+
+* [Edwards-Curve Digital Signature Algorithm (EdDSA)](https://tools.ietf.org/html/rfc8032)
+
 ## Notes
 
 `crypto_sign_verify()` and `crypto_sign_verify_detached()` are only designed to
