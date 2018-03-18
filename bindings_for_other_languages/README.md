@@ -22,6 +22,7 @@
 * D: [Chloride](https://github.com/bytecurry/chloride)
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
 * D: [Sodium](https://github.com/carblue/sodium)
+* Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
 * Delphi/FreePascal:
   [Delphi/FreePascal](https://github.com/alexpmorris/libsodium-delphi)
 * Dylan: [libsodium-dylan](https://github.com/dylan-foundry/libsodium-dylan)
