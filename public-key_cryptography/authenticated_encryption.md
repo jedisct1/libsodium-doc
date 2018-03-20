@@ -239,6 +239,9 @@ precalculated shared secret key `k` instead of a key pair.
 Like any secret key, a precalculated shared key should be wiped from memory (for
 example using `sodium_memzero()`) as soon as it is not needed any more.
 
+`c` and `m` can overlap, making in-place encryption possible. However do not
+forget that `crypto_box_MACBYTES` extra bytes are required to prepend the tag.
+
 ## Constants
 
 * `crypto_box_PUBLICKEYBYTES`
