@@ -16,6 +16,8 @@ to add yours to that list.
   chat with voice + video + file transfers.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
+* [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
+  server for Linux/UNIX-like systems, written with security primarily in mind.
 * [EQEmu](http://www.eqemulator.org): An Open Source project committed to
   providing custom Everquest servers.
 * [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
