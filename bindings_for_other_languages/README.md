@@ -48,9 +48,11 @@
 * Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
 * Java (Java Native Access):
   [libsodium-jna](https://github.com/muquit/libsodium-jna)
+* Java (Android): [Lazysodium for Android](https://github.com/terl/lazysodium-android)
 * Java (Android): [Libstodium](https://github.com/ArteMisc/libstodium)
 * Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 * Java (Android): [libsodium-JNI](https://github.com/joshjdevl/libsodium-jni)
+* Java: [Lazysodium for Java](https://github.com/terl/lazysodium-java)
 * Java: [jsodium](https://github.com/naphaso/jsodium)
 * Java: [Kalium](https://github.com/abstractj/kalium)
 * Java: [sodium-jni](https://github.com/JackWink/sodium-jni)
