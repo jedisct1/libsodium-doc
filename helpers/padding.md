@@ -58,7 +58,7 @@ message previously padded using `sodium_pad()`. The original length is put into
 ## Algorithm
 
 These functions use the ISO/IEC 7816-4 padding algorithm. It supports arbitrary
-block sizes, ensures that the padding data are checked for computing the
+block sizes, ensures that the padding data is checked for computing the
 unpadded length, and is more resistant to some classes of attacks than other
 standard padding algorithms.
 

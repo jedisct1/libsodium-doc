@@ -127,7 +127,7 @@ bytes\) and a public nonce `npub` \(`crypto_aead_aes256gcm_NPUBBYTES` bytes\).
 The encrypted message, as well as a tag authenticating both the confidential
 message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
-`ad` can also be a `NULL` pointer if no additional data are required.
+`ad` can also be a `NULL` pointer if no additional data is required.
 
 At most `mlen + crypto_aead_aes256gcm_ABYTES` bytes are put into `c`, and the
 actual number of bytes is stored into `clen` if `clen` is not a `NULL` pointer.
@@ -159,7 +159,7 @@ a secret key `k`, a public nonce `npub`, and additional data `ad` \(`adlen`
 bytes\). `clen` is the ciphertext length in bytes with the authenticator, so it
 has to be at least `aead_aes256gcm_ABYTES`.
 
-`ad` can be a `NULL` pointer if no additional data are required.
+`ad` can be a `NULL` pointer if no additional data is required.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -200,7 +200,7 @@ The encrypted message in put into `c`. A tag authenticating both the
 confidential message `m` and `adlen` bytes of non-confidential data `ad` is put
 into `mac`.
 
-`ad` can also be a `NULL` pointer if no additional data are required.
+`ad` can also be a `NULL` pointer if no additional data is required.
 
 `crypto_aead_aes256gcm_ABYTES` bytes are put into `mac`, and the actual number
 of bytes required for verification is stored into `maclen_p`, unless `maclen_p`
@@ -228,7 +228,7 @@ The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag
 
 `clen` is the ciphertext length in bytes.
 
-`ad` can be a `NULL` pointer if no additional data are required.
+`ad` can be a `NULL` pointer if no additional data is required.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 

@@ -134,7 +134,7 @@ int sodium_mprotect_noaccess(void *ptr);
 
 The `sodium_mprotect_noaccess()` function makes a region allocated using
 `sodium_malloc()` or `sodium_allocarray()` inaccessible. It cannot be read or
-written, but the data are preserved.
+written, but the data is preserved.
 
 This function can be used to make confidential data inaccessible except when
 actually needed for a specific operation.

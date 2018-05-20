@@ -111,7 +111,7 @@ in other libraries yet. This construction also requires at least libsodium
 ## Additional data
 
 These functions accept an optional, arbitrary long "additional data" parameter.
-These data are not present in the ciphertext, but are mixed in the computation
+This data is not present in the ciphertext, but are mixed in the computation
 of the authentication tag.
 
 A typical use for these data is to authenticate version numbers, timestamps or

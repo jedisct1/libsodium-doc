@@ -99,9 +99,9 @@ to include any.
 
 For a given key, nonce and message, the authentication tag will be different if
 the additional data differs. The ciphertext will be the same, though. Additional
-data are usually non-secret data.
+data is usually non-secret data.
 
-How additional data are used is specific to every application and protocol, but
+How additional data is used is specific to every application and protocol, but
 here are two sample use cases for them:
 
 * **version identifiers:** using a version identifier as additional data allows
