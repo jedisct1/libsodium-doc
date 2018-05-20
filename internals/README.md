@@ -82,7 +82,7 @@ speed.
 
 Examples include:
 
-* Sensitive data are wiped from memory when the cost remains
+* Sensitive data is wiped from memory when the cost remains
   reasonable compared to the cost of the actual computations.
 * Signatures use different code paths for verification in order to mitigate
   fault attacks, and check for small order nonces.

@@ -62,7 +62,7 @@ whose length is `mlen` bytes using a secret key `k`
 The encrypted message, as well as a tag authenticating both the confidential
 message `m` and `adlen` bytes of non-confidential data `ad`, are put into `c`.
 
-`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data are
+`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data is
 required.
 
 At most `mlen + crypto_aead_chacha20poly1305_ABYTES` bytes are put into `c`, and
@@ -92,7 +92,7 @@ ciphertext `c` (as produced by `crypto_aead_chacha20poly1305_encrypt()`)
 includes a valid tag using a secret key `k`, a public nonce `npub`, and
 additional data `ad` (`adlen` bytes).
 
-`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data are
+`ad` can be a `NULL` pointer with `adlen` equal to `0` if no additional data is
 required.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
