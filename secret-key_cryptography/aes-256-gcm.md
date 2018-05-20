@@ -223,7 +223,7 @@ int crypto_aead_aes256gcm_decrypt_detached(unsigned char *m,
 ```
 
 The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag
-`mac` is valid for the the ciphertext `c` using a secret key `k`, a public nonce
+`mac` is valid for the ciphertext `c` using a secret key `k`, a public nonce
 `npub`, and additional data `ad` \(`adlen` bytes\).
 
 `clen` is the ciphertext length in bytes.
