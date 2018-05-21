@@ -46,7 +46,7 @@ flagging the pages as swappable again. Calling `sodium_memzero()` prior to
 
 On systems where it is supported, `sodium_mlock()` also wraps `madvise()` and
 advises the kernel not to include the locked memory in core dumps.
-`sodium_unlock()` also undoes this additional protection.
+`sodium_munlock()` also undoes this additional protection.
 
 ## Guarded heap allocations
 
