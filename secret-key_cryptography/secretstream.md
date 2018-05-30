@@ -310,7 +310,7 @@ if i = 0:
 size: `c[0] || c[64..] || mac`
 
 Encrypting a unique message using `secretstream` is equivalent to
-`XChaCha20Poly1305-IETF-XOR(key = k, nonce = 0 || n, T || {0} * 63 || M)`.
+`XChaCha20Poly1305-IETF-XOR(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
 
 Rekeying:
 
