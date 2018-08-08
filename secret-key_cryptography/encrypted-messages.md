@@ -93,7 +93,7 @@ different nonce.
 
 ## Additional data
 
-As described above, the compmutation of an authentication tag can include
+As described above, the computation of an authentication tag can include
 additional data. This is completely optional, and most applications don't need
 to include any.
 
