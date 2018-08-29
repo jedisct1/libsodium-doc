@@ -45,7 +45,7 @@ The `randombytes_buf_deterministic` function stores `size` bytes into `buf`
 indistinguishable from random bytes without knowing `seed`.
 
 For a given `seed`, this function will always output the same sequence. `size`
-can be up to 2^70 (256 GB).
+can be up to 2^38 (256 GB).
 
 `seed` is `randombytes_SEEDBYTES` bytes long.
 
