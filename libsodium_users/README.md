@@ -14,6 +14,8 @@ to add yours to that list.
   Windows.
 * [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral
   chat with voice + video + file transfers.
+* [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for
+  applications of the future.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
@@ -104,8 +106,6 @@ to add yours to that list.
   management tool for dnscrypt-proxy.
 * [Snackis](https://github.com/andreas-gone-wild/snackis): A post-modern
   enigma-device
-* [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
-  NodeJS bindings for libsodium.
 * [SPAKE2+EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator
   Edition implementation for libsodium.
 * [Splonebox](https://splone.com/splonebox/): An open source network assessment
@@ -187,6 +187,8 @@ to add yours to that list.
   streaming encryption for Javascript.
 * [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by
   default encryption for .NET
+* [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
+  NodeJS bindings for libsodium.
 * [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption
   & decryption with libsodium and protobuf for .NET
 * [The Update Framework](https://github.com/theupdateframework/tuf): A
