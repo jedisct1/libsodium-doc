@@ -93,7 +93,7 @@ different nonce.
 
 ## Additional data
 
-As described above, the compmutation of an authentication tag can include
+As described above, the computation of an authentication tag can include
 additional data. This is completely optional, and most applications don't need
 to include any.
 
@@ -217,7 +217,7 @@ crypto_generichash(out, sizeof out, nonce, sizeof nonce, key, sizeof key);
 
 Note that the security of the cipher is reduced to the one of the hash function.
 This operation also implies a small performance hit, that becomes negligible as
-the the message size increases.
+the message size increases.
 
 Unless a cipher such as `AES` is a requirement, using a cipher with a longer
 nonce is easier and safer.

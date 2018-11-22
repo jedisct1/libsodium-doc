@@ -22,7 +22,8 @@ The `sodium_mlock()` function locks at least `len` bytes of memory starting at
 `addr`. This can help avoid swapping sensitive data to disk.
 
 In addition, it is recommended to totally disable swap partitions on machines
-processing senstive data, or, as a second choice, use encrypted swap partitions.
+processing sensitive data, or, as a second choice, use encrypted swap
+partitions.
 
 For similar reasons, on Unix systems, one should also disable core dumps when
 running crypto code outside a development environment. This can be achieved
@@ -46,7 +47,7 @@ flagging the pages as swappable again. Calling `sodium_memzero()` prior to
 
 On systems where it is supported, `sodium_mlock()` also wraps `madvise()` and
 advises the kernel not to include the locked memory in core dumps.
-`sodium_unlock()` also undoes this additional protection.
+`sodium_munlock()` also undoes this additional protection.
 
 ## Guarded heap allocations
 

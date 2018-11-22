@@ -7,8 +7,10 @@ int sodium_memcmp(const void * const b1_, const void * const b2_, size_t len);
 ```
 
 When a comparison involves secret data (e.g. key, authentication tag), is it
-critical to use a constant-time comparison function in order to mitigate
-side-channel attacks.
+critical to use a constant-time comparison function. This property does not
+relate to computational complexity: it expresses the fact that the time needed
+to perform the comparison is the same for all data of the same size. The goal
+is to mitigate side-channel attacks.
 
 The `sodium_memcmp()` function can be used for this purpose.
 
@@ -88,9 +90,6 @@ must be one of:
 * `sodium_base64_VARIANT_ORIGINAL_NO_PADDING`
 * `sodium_base64_VARIANT_URLSAFE`
 * `sodium_base64_VARIANT_URLSAFE_NO_PADDING`
-
-It returns `NULL` if the nul-terminated, encoded string would exceed
-`b64_maxlen` bytes.
 
 None of these Base64 variants provides any form of encryption; just like hex
 encoding, anyone can decode them.

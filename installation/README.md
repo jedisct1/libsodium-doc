@@ -65,7 +65,7 @@ export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
 export LDFLAGS='--specs=nosys.specs'
 export CFLAGS='-Os'
 ./configure --host=arm-none-eabi --prefix=/install/path
-sudo make install
+make install
 ```
 
 `make check` can also build the test apps, but these have to be run on the

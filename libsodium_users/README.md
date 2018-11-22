@@ -14,8 +14,12 @@ to add yours to that list.
   Windows.
 * [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral
   chat with voice + video + file transfers.
+* [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for
+  applications of the future.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
+* [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
+  server for Linux/UNIX-like systems, written with security primarily in mind.
 * [EQEmu](http://www.eqemulator.org): An Open Source project committed to
   providing custom Everquest servers.
 * [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
@@ -26,6 +30,8 @@ to add yours to that list.
   synchronisation tool.
 * [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast
   VPN.
+* [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): a
+  user-friendly, password protected, note taking application for iOS.
 * [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that
   travels with the app.
 * [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic
@@ -102,8 +108,6 @@ to add yours to that list.
   management tool for dnscrypt-proxy.
 * [Snackis](https://github.com/andreas-gone-wild/snackis): A post-modern
   enigma-device
-* [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
-  NodeJS bindings for libsodium.
 * [SPAKE2+EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator
   Edition implementation for libsodium.
 * [Splonebox](https://splone.com/splonebox/): An open source network assessment
@@ -185,6 +189,8 @@ to add yours to that list.
   streaming encryption for Javascript.
 * [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by
   default encryption for .NET
+* [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
+  NodeJS bindings for libsodium.
 * [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption
   & decryption with libsodium and protobuf for .NET
 * [The Update Framework](https://github.com/theupdateframework/tuf): A
@@ -215,6 +221,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a
 to add yours to that list.
 
 * [Arpa Information Technology Solutions](https://arpa.ph/)
+* [Assa Abloy](https://www.assaabloy.com)
 * [Bearch Inc.](http://www.getbearch.com/)
 * [Digital Ocean](https://www.digitalocean.com/)
 * [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
