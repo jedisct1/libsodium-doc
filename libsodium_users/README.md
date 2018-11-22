@@ -30,6 +30,8 @@ to add yours to that list.
   synchronisation tool.
 * [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast
   VPN.
+* [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): a
+  user-friendly, password protected, note taking application for iOS.
 * [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that
   travels with the app.
 * [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic
@@ -219,6 +221,7 @@ Some companies using libsodium, possibly in non-opensource products. Send a
 to add yours to that list.
 
 * [Arpa Information Technology Solutions](https://arpa.ph/)
+* [Assa Abloy](https://www.assaabloy.com)
 * [Bearch Inc.](http://www.getbearch.com/)
 * [Digital Ocean](https://www.digitalocean.com/)
 * [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
