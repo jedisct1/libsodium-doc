@@ -55,12 +55,6 @@ libsodium 1.0.12. Under the hood, it uses the ChaCha20 stream cipher.
 Up to 256 GB can be produced with a single seed.
 
 ```c
-void randombytes_keygen(unsigned char seed[randombytes_SEEDBYTES]);
-```
-
-The `randombytes_keygen()` function initializes a seed `seed` with random data.
-
-```c
 int randombytes_close(void);
 ```
 
