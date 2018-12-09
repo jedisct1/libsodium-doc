@@ -38,6 +38,8 @@ to add yours to that list.
   snapshotting backup system.
 * [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution
   daemon based on a Distributed Hash Table.
+* [Keystone Enclave]()https://github.com/keystone-enclave: An open source
+  secure enclave for RISC-V processors.
 * [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password
   manager.
 * [Kryptonite](https://github.com/kryptco/kr): The new home for your SSH private
