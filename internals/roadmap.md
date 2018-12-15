@@ -71,7 +71,6 @@ solve common problems.
 * chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter
   \[DONE\]
 * IETF-compatible chacha20poly1305 implementation \[DONE\]
-* Ed448-Goldilocks \[on hold\]
 * SSE-optimized BLAKE2b implementation \[DONE\]
 * AES-GCM \[DONE\]
 * AES-GCM detached mode \[DONE\]
@@ -106,7 +105,5 @@ solve common problems.
 * Point addition, substraction \[DONE\]
 * Point validation \[DONE\]
 * Hash-to-point (Elligator) \[DONE\]
-* SPAKE2+ \[work in progress\]
-* XEdDSA
-* VXEdDSA
+* SPAKE2+ \[DONE\]
 * Support server relief in the password hashing API
