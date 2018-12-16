@@ -20,6 +20,9 @@ to add yours to that list.
   that’s free, secure, and works on both your desktop and phone.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
   server for Linux/UNIX-like systems, written with security primarily in mind.
+* [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
+  chat app using progressive web app technologies.  
+  Built with [Ember](http://emberjs.com) using all of the latest experimental features.
 * [EQEmu](http://www.eqemulator.org): An Open Source project committed to
   providing custom Everquest servers.
 * [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
