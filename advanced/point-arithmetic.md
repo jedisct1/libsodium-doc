@@ -51,6 +51,23 @@ The `crypto_scalarmult_ed25519_base(()` function multiplies the base point `(x, 
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
+## Scalar multiplication without clamping
+
+In order to prevent attacks using small subgroups, the `scalarmult` functions above clear lower bits of the scalar. This may be indesirable to build protocols that requires `n` to be invertible.
+
+The `noclamp` variants of these functions do not clear these bits, and do not set the high bit either:
+
+```c
+int crypto_scalarmult_ed25519_noclamp(unsigned char *q, const unsigned char *n,
+                                      const unsigned char *p);
+```
+
+```c
+int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char *n);
+```
+
+These functions verify that `q` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case, or `0` on success.
+
 ## Point addition/substraction
 
 ```c
@@ -71,13 +88,42 @@ The `crypto_core_ed25519_sub()` function substracts the point `p` to the point `
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid points.
 
+## Scalar arithmetic over L
+
+Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the main subgroup (≈2^252).
+
+This can be achieved with the following function:
+
+```c
+void crypto_core_ed25519_scalar_random(unsigned char *r);
+```
+
+`crypto_core_ed25519_scalar_random()` fills `r` with a `crypto_core_ed25519_SCALARBYTES` bytes representation of the scalar in the `]0..L[` interval.
+
+A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
+
+```c
+crypto_core_ed25519_scalar_reduce(unsigned char *r, const unsigned char *s);
+```
+
+The `crypto_core_ed25519_scalar_reduce()` function reduces `s` to `s mod L` and puts the ``crypto_core_ed25519_SCALARBYTES` integer into `r`.
+
+Note that `s` is much larger than `r` (64 bytes vs 32 bytes). Bits of `s` can be left to `0`, but the interval `s` is sampled from should be at least 317 bits to ensure almost uniformity of `r` over `L`.
+
+```c
+int crypto_core_ed25519_scalar_invert(unsigned char *recip, const unsigned char *s);
+```
+
+The `crypto_core_ed25519_scalar_invert()` function computes the multiplicative inverse of `s` over `L`, and puts it into `recip`.
+
 ## Constants
 
 * `crypto_scalarmult_ed25519_BYTES`
 * `crypto_scalarmult_ed25519_SCALARBYTES`
+* `crypto_scalarmult_ed25519_NONREDUCEDSCALARBYTES`
 * `crypto_core_ed25519_BYTES`
 * `crypto_core_ed25519_UNIFORMBYTES`
 
 ## Note
 
-These functions were introduced in libsodium 1.0.16.
+These functions were introduced in libsodium 1.0.16 and 1.0.17.
