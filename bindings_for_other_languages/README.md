@@ -5,6 +5,7 @@
 * PHP >= 7.2
 * HHVM >= 3.20
 * [Citrine](https://citrine-lang.org/)
+* [Factor](https://factorcode.org/) >= 0.98
 * [Zion](https://github.com/zionlang/zion)
 
 ## Bindings programming languages
