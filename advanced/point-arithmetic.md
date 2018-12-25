@@ -92,7 +92,7 @@ The function returns `0` on success, or `-1` if `p` and/or `q` are not valid poi
 
 Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the main subgroup (≈2^252).
 
-This can be achieved with the following function:
+This can be achieved with the following function, introduced in libsodium 1.0.17:
 
 ```c
 void crypto_core_ed25519_scalar_random(unsigned char *r);
