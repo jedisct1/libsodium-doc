@@ -126,7 +126,7 @@ The `crypto_core_ed25519_scalar_negate()` function returns `neg` so that `s + ne
 void crypto_core_ed25519_scalar_complement(unsigned char *comp, const unsigned char *s);
 ```
 
-The `crypto_core_ed25519_scalar_complement()` function returns `comp` so that `s + neg = 1 (mod L)`.
+The `crypto_core_ed25519_scalar_complement()` function returns `comp` so that `s + comp = 1 (mod L)`.
 
 ## Constants
 
