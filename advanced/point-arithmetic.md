@@ -140,20 +140,20 @@ The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
 ## Scalar arithmetic example
 
-Perform a secure two-party computation of `f(x) = hp(x)^k`. `x` is the input sent to the second party by the first party after blinding using a random `r`, and `k` is a secret key only known by the second party.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding using a random `r`, and `k` is a secret key only known by the second party.
 
-`hp(x)` is a hash-to-point function.
+`p(x)` is a hash-to-point function.
 
 ```c
-// --- First party --- Send blinded hp(x)
+// --- First party --- Send blinded p(x)
 unsigned char x[crypto_core_ed25519_SCALARBYTES];
 randombytes_buf(x, sizeof x);
 
-// Compute an EC point representative for x
+// Compute an px = p(x), an EC point representative for x
 unsigned char px[crypto_core_ed25519_BYTES];
 crypto_core_ed25519_from_uniform(px, x);
 
-// Compute a = hp(x) * g^r
+// Compute a = p(x) * g^r
 unsigned char r[crypto_core_ed25519_SCALARBYTES];
 unsigned char gr[crypto_core_ed25519_BYTES];
 unsigned char a[crypto_core_ed25519_BYTES];
@@ -176,15 +176,14 @@ if (crypto_scalarmult_ed25519(b, k, a) != 0) {
 }
 
 // --- First party --- Unblind f(x)
-
 // Compute vir = v^(-r)
 unsigned char ir[crypto_core_ed25519_SCALARBYTES];
 unsigned char vir[crypto_core_ed25519_BYTES];
 crypto_core_ed25519_scalar_complement(ir, r);
 crypto_scalarmult_ed25519_noclamp(vir, ir, v);
 
-// Compute f(x) = b * v^(-r) = ((hp(x) * g^r)^k) * (g^k)^(-r)
-//              = (hp(x) * g)^k * (g^(-k)) = hp(x)^k
+// Compute f(x) = b * v^(-r) = (p(x) * g^r)^k * (g^k)^(-r)
+//              = (p(x) * g)^k * g^(-k) = p(x)^k
 unsigned char fx[crypto_core_ed25519_BYTES];
 crypto_core_ed25519_add(fx, b, vir);
 ```
