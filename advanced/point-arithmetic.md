@@ -140,7 +140,7 @@ The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
 ## Scalar arithmetic example
 
-Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding using a random `r`, and `k` is a secret key only known by the second party.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random `r`, and `k` is a secret key only known by the second party.
 
 `p(x)` is a hash-to-point function.
 
