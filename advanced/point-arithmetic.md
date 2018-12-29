@@ -4,10 +4,6 @@ A set of low-level APIs to perform computations over the edwards25519 curve, onl
 
 Points are represented as their Y coordinate.
 
-## Example
-
-For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
-
 ## Point validation
 
 ```c
@@ -204,3 +200,5 @@ crypto_core_ed25519_add(fx, b, vir);
 ## Note
 
 These functions were introduced in libsodium 1.0.16 and 1.0.17.
+
+For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
