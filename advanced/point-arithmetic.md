@@ -1,4 +1,4 @@
-# Arithmetic over the Ed25519 elliptic curve
+# Finite field arithmetic
 
 A set of low-level APIs to perform computations over the edwards25519 curve, only useful to implement custom constructions.
 
@@ -127,6 +127,20 @@ void crypto_core_ed25519_scalar_complement(unsigned char *comp, const unsigned c
 ```
 
 The `crypto_core_ed25519_scalar_complement()` function returns `comp` so that `s + comp = 1 (mod L)`.
+
+```c
+void crypto_core_ed25519_scalar_add(unsigned char *z,
+                                    const unsigned char *x, const unsigned char *y);
+```
+
+The `crypto_core_ed25519_scalar_add()` function stores `x + y (mod L)` into `z`.
+
+```c
+void crypto_core_ed25519_scalar_sub(unsigned char *z,
+                                    const unsigned char *x, const unsigned char *y);
+```
+
+The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
 ## Constants
 
