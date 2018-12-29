@@ -1,4 +1,4 @@
-# Elliptic curve point aritmhetic
+# Arithmetic over the Ed25519 elliptic curve
 
 A set of low-level APIs to perform computations over the edwards25519 curve, only useful to implement custom constructions.
 
@@ -115,6 +115,18 @@ int crypto_core_ed25519_scalar_invert(unsigned char *recip, const unsigned char 
 ```
 
 The `crypto_core_ed25519_scalar_invert()` function computes the multiplicative inverse of `s` over `L`, and puts it into `recip`.
+
+```c
+void crypto_core_ed25519_scalar_negate(unsigned char *neg, const unsigned char *s);
+```
+
+The `crypto_core_ed25519_scalar_negate()` function returns `neg` so that `s + neg = 0 (mod L)`.
+
+```c
+void crypto_core_ed25519_scalar_complement(unsigned char *comp, const unsigned char *s);
+```
+
+The `crypto_core_ed25519_scalar_complement()` function returns `comp` so that `s + neg = 1 (mod L)`.
 
 ## Constants
 
