@@ -83,8 +83,7 @@ following values:
 
 * `crypto_pwhash_ALG_DEFAULT`: the currently recommended algorithm, which can
   change from one version of libsodium to another.
-* `crypto_pwhash_ALG_ARGON2I13`: version 1.3 of the Argon2i algorithm, available
-  since libsodium 1.0.9.
+* `crypto_pwhash_ALG_ARGON2I13`: version 1.3 of the Argon2i algorithm.
 * `crypto_pwhash_ALG_ARGON2ID13`: version 1.3 of the Argon2id algorithm,
   available since libsodium 1.0.13.
 

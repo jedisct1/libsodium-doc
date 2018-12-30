@@ -137,8 +137,6 @@ encoded in little-endian format.
 
 `sodium_increment()` can be used to increment nonces in constant time.
 
-This function was introduced in libsodium 1.0.4.
-
 ## Adding large numbers
 
 ```c
@@ -150,8 +148,6 @@ little-endian format, `a` and `b`, both of size `len` bytes.
 
 It computes `(a + b) mod 2^(8*len)` in constant time for a given length, and
 overwrites `a` with the result.
-
-This function was introduced in libsodium 1.0.7.
 
 ## Substracting large numbers
 
@@ -184,8 +180,6 @@ The comparison is done in constant time for a given length.
 
 This function can be used with nonces, in order to prevent replay attacks.
 
-It was introduced in libsodium 1.0.6.
-
 ## Testing for all zeros
 
 ```c
@@ -196,8 +190,6 @@ This function returns `1` is the `nlen` bytes vector pointed by `n` contains
 only zeros. It returns `0` if non-zero bits are found.
 
 Its execution time is constant for a given length.
-
-This function was introduced in libsodium 1.0.7.
 
 ## Clearing the stack
 

@@ -175,9 +175,6 @@ correct.
 ## Constants
 
 * `crypto_aead_chacha20poly1305_IETF_ABYTES`
-
-Since Sodium 1.0.9:
-
 * `crypto_aead_chacha20poly1305_IETF_KEYBYTES`
 * `crypto_aead_chacha20poly1305_IETF_NPUBBYTES`
 

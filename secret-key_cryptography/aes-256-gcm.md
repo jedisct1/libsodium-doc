@@ -266,5 +266,3 @@ in the other. The `crypto_kx_*()` API can be used to do so.
 When using AES-GCM, it is also recommended to switch to a new key before
 reaching ~ 350 GB encrypted with the same key. If frequent rekeying is not an
 option, use \(X\)ChaCha20-Poly1305 instead.
-
-The detached API was introduced in libsodium 1.0.9.
