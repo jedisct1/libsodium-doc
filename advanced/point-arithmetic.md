@@ -106,8 +106,7 @@ int crypto_scalarmult_ed25519_noclamp(unsigned char *q, const unsigned char *n,
                                       const unsigned char *p);
 ```
 
-
-The function verifies that `q` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case, or `0` on success.
+The function verifies that `q` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case or `n` is `0`, or `0` on success.
 
 ```c
 int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char *n);
