@@ -102,7 +102,7 @@ A scalar in the `[0..L[` interval can also be obtained by reducing a possibly la
 crypto_core_ed25519_scalar_reduce(unsigned char *r, const unsigned char *s);
 ```
 
-The `crypto_core_ed25519_scalar_reduce()` function reduces `s` to `s mod L` and puts the ``crypto_core_ed25519_SCALARBYTES` integer into `r`.
+The `crypto_core_ed25519_scalar_reduce()` function reduces `s` to `s mod L` and puts the `crypto_core_ed25519_SCALARBYTES` integer into `r`.
 
 Note that `s` is much larger than `r` (64 bytes vs 32 bytes). Bits of `s` can be left to `0`, but the interval `s` is sampled from should be at least 317 bits to ensure almost uniformity of `r` over `L`.
 
