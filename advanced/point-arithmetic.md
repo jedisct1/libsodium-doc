@@ -11,11 +11,11 @@ Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent
 `p(x)` is a hash-to-point function.
 
 ```c
-// --- First party --- Send blinded p(x)
+// -------- First party -------- Send blinded p(x)
 unsigned char x[crypto_core_ed25519_SCALARBYTES];
 randombytes_buf(x, sizeof x);
 
-// Compute an px = p(x), an EC point representative for x
+// Compute px = p(x), an EC point representative for x
 unsigned char px[crypto_core_ed25519_BYTES];
 crypto_core_ed25519_from_uniform(px, x);
 
@@ -27,7 +27,7 @@ crypto_core_ed25519_scalar_random(r);
 crypto_scalarmult_ed25519_base_noclamp(gr, r);
 crypto_core_ed25519_add(a, px, gr);
 
-// --- Second party --- Send g^k and a^k
+// -------- Second party -------- Send g^k and a^k
 unsigned char k[crypto_core_ed25519_SCALARBYTES];
 randombytes_buf(k, sizeof k);
 
@@ -41,7 +41,7 @@ if (crypto_scalarmult_ed25519(b, k, a) != 0) {
     return -1;
 }
 
-// --- First party --- Unblind f(x)
+// -------- First party -------- Unblind f(x)
 // Compute vir = v^(-r)
 unsigned char ir[crypto_core_ed25519_SCALARBYTES];
 unsigned char vir[crypto_core_ed25519_BYTES];
