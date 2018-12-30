@@ -153,6 +153,20 @@ overwrites `a` with the result.
 
 This function was introduced in libsodium 1.0.7.
 
+## Substracting large numbers
+
+```c
+void sodium_sub(unsigned char *a, const unsigned char *b, const size_t len);
+```
+
+The `sodium_sub()` function accepts two pointers to unsigned numbers encoded in
+little-endian format, `a` and `b`, both of size `len` bytes.
+
+It computes `(a - b) mod 2^(8*len)` in constant time for a given length, and
+overwrites `a` with the result.
+
+This function was introduced in libsodium 1.0.17.
+
 ## Comparing large numbers
 
 ```c
