@@ -6,9 +6,7 @@ Points are represented as their Y coordinate.
 
 ## Example
 
-Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random `r`, and `k` is a secret key only known by the second party.
-
-`p(x)` is a hash-to-point function.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-point function.
 
 ```c
 // -------- First party -------- Send blinded p(x)
