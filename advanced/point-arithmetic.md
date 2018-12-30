@@ -179,7 +179,7 @@ if (crypto_scalarmult_ed25519(b, k, a) != 0) {
 // Compute vir = v^(-r)
 unsigned char ir[crypto_core_ed25519_SCALARBYTES];
 unsigned char vir[crypto_core_ed25519_BYTES];
-crypto_core_ed25519_scalar_complement(ir, r);
+crypto_core_ed25519_scalar_negate(ir, r);
 crypto_scalarmult_ed25519_noclamp(vir, ir, v);
 
 // Compute f(x) = b * v^(-r) = (p(x) * g^r)^k * (g^k)^(-r)
