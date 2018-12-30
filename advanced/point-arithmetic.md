@@ -113,6 +113,8 @@ The function verifies that `q` is on the prime-order subgroup before performing 
 int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char *n);
 ```
 
+The function returns `0` on success, or `-1` if `n` is `0`.
+
 ## Point addition/substraction
 
 ```c
