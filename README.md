@@ -38,8 +38,7 @@ In order to join, just send a random mail to `sodium-subscribe` {at}
 
 ## Offline documentation
 
-This documentation can be downloaded as ePUB \(for iPad, iPhone, Mac\), MOBI
-\(for Kindle\) and PDF here:
+This documentation can be downloaded as a PDF file here:
 [https://www.gitbook.com/book/jedisct1/libsodium/details](https://www.gitbook.com/book/jedisct1/libsodium/details)
 
 ## License
