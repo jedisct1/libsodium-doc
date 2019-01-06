@@ -218,6 +218,7 @@ to add yours to that list.
   end-to-end encryption written in C and using libsodium
 * [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper
   around libsodium.
+* [spake2+ee](https://github.com/jedisct1/spake2-ee): A SPAKE2+ implementation.
 
 ## Companies using libsodium
 
@@ -227,6 +228,7 @@ to add yours to that list.
 
 * [Arpa Information Technology Solutions](https://arpa.ph/)
 * [Assa Abloy](https://www.assaabloy.com)
+* [Auth0](https://auth0.com)
 * [Bearch Inc.](http://www.getbearch.com/)
 * [Digital Ocean](https://www.digitalocean.com/)
 * [EAM GmbH](https://eam-gmbh.com/) ([bytejail](https://bytejail.com/))
