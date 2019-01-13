@@ -247,5 +247,6 @@ to add yours to that list.
 * [Q-Leap Networks](http://www.q-leap.com/)
 * [Riseup](https://riseup.net)
 * [Supercell](http://supercell.com)
+* [Valve](https://www.valvesoftware.com)
 * [Wire](https://wire.com)
 * [Yandex](https://www.yandex.com)
