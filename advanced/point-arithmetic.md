@@ -99,7 +99,7 @@ The function returns `-1` if `n` is `0`, and `0` otherwise.
 
 In order to prevent attacks using small subgroups, the `scalarmult` functions above clear lower bits of the scalar. This may be indesirable to build protocols that requires `n` to be invertible.
 
-The `noclamp` variants of these functions do not clear these bits, and do not set the high bit either:
+The `noclamp` variants of these functions do not clear these bits, and do not set the high bit either. These variants expect a scalar in the `]0..L[` range.
 
 ```c
 int crypto_scalarmult_ed25519_noclamp(unsigned char *q, const unsigned char *n,
