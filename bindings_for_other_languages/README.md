@@ -24,6 +24,7 @@
 * Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
 * Crystal: [cox](https://github.com/andrewhamon/cox)
 * D: [Chloride](https://github.com/bytecurry/chloride)
+* D: [LibsodiumD](https://github.com/Geod24/libsodiumd)
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
 * D: [Sodium](https://github.com/carblue/sodium)
 * Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
