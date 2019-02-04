@@ -50,7 +50,7 @@ Alice can reply to Bob using the same system, without having to generate a
 distinct key pair.
 
 The nonce doesn't have to be confidential, but it should be used with just one
-invocation of `crypto_box_open_easy()` for a particular pair of public and
+invocation of `crypto_box_easy()` for a particular pair of public and
 secret keys.
 
 One easy way to generate a nonce is to use `randombytes_buf()`, considering the
