@@ -236,7 +236,7 @@ to add yours to that list.
 * [Facebook](https://facebook.com)
 * [Infoblox](https://www.infoblox.com)
 * [Informatica](https://www.informatica.com/)
-* [INNOVIS SOLUTIONS KG](https://www.innovis-solutions.de/)
+* [Innovis Solutions KG](https://www.innovis-solutions.de/)
 * [Keybase](https://keybase.io/)
 * [Krypt.co](https://krypt.co)
 * [Malwarebytes](https://www.malwarebytes.com/)
