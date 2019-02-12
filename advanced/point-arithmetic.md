@@ -150,7 +150,7 @@ void crypto_core_ed25519_scalar_random(unsigned char *r);
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 
 ```c
-crypto_core_ed25519_scalar_reduce(unsigned char *r, const unsigned char *s);
+void crypto_core_ed25519_scalar_reduce(unsigned char *r, const unsigned char *s);
 ```
 
 The `crypto_core_ed25519_scalar_reduce()` function reduces `s` to `s mod L` and puts the `crypto_core_ed25519_SCALARBYTES` integer into `r`.
