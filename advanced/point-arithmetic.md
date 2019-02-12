@@ -193,9 +193,10 @@ The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
 * `crypto_scalarmult_ed25519_BYTES`
 * `crypto_scalarmult_ed25519_SCALARBYTES`
-* `crypto_scalarmult_ed25519_NONREDUCEDSCALARBYTES`
 * `crypto_core_ed25519_BYTES`
 * `crypto_core_ed25519_UNIFORMBYTES`
+* `crypto_core_ed25519_SCALARBYTES`
+* `crypto_core_ed25519_NONREDUCEDSCALARBYTES`
 
 ## Note
 
