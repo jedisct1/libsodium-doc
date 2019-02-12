@@ -6,7 +6,6 @@
 * HHVM >= 3.20
 * [Citrine](https://citrine-lang.org/)
 * [Factor](https://factorcode.org/) >= 0.98
-* [Zion](https://github.com/zionlang/zion)
 
 ## Bindings programming languages
 
@@ -96,7 +95,6 @@
 * Q/KDB: [Qsalt](https://github.com/geocar/qsalt)
 * R: [Cyphr](https://github.com/richfitz/cyphr)
 * R: [Sodium](https://github.com/jeroenooms/sodium)
-* Racket: [Natrium](https://github.com/KirisurfProject/natrium-crypt)
 * Racket: part of
   [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
 * RealBasic and Xojo: [RB-libsodium](https://github.com/charonn0/RB-libsodium)
