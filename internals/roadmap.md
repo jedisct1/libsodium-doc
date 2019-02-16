@@ -107,4 +107,4 @@ solve common problems.
 * Hash-to-point (Elligator) \[DONE\]
 * SPAKE2+ \[DONE\]
 * Support server relief in the password hashing API
-* Consider Ristretto
+* Consider Ristretto \[started\]
