@@ -138,7 +138,6 @@ to add yours to that list.
   build applications for more efficiently managing energy use among appliances
   and devices, including heating, ventilation and air conditioning (HVAC)
   systems, lighting, electric vehicles and others.
-* [VPNCloud](https://github.com/dswd/vpncloud.rs): A Peer-to-Peer VPN.
 * [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and
   receiver of UDP packets using raw WiFi radio.
 * [Wire](https://wire.com/): Modern, private communications. Crystal clear
