@@ -180,6 +180,10 @@ The `crypto_core_ristretto255_scalar_sub()` function stores `x - y (mod L)` into
 * `crypto_core_ristretto255_SCALARBYTES`
 * `crypto_core_ristretto255_NONREDUCEDSCALARBYTES`
 
+## Algorithms
+
+* `ristretto255`
+
 ## Reference
 
 * [Ristretto](https://ristretto.group)
