@@ -47,6 +47,7 @@
     * [XSalsa20](advanced/xsalsa20.md)
   * [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
   * [Finite field arithmetic](advanced/point-arithmetic.md)
+    * [Ristretto](advanced/ristretto.md)
   * [Custom RNG](advanced/custom_rng.md)
 * [Internals](internals/README.md)
 * [Roadmap](internals/roadmap.md)
