@@ -137,7 +137,7 @@ The function returns `0` on success, or `-1` if `p` and/or `q` are not valid poi
 
 ## Scalar arithmetic over L
 
-Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the main subgroup (≈2^252).
+Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the main subgroup (2^252 + 27742317777372353535851937790883648493).
 
 This can be achieved with the following function, introduced in libsodium 1.0.17:
 
