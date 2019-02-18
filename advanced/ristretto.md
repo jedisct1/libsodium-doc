@@ -66,7 +66,7 @@ This operation is fast: it only checks that `p` is in canonical form.
 
 It returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-point (Elligator)
+## Hash-to-point
 
 ```c
 int crypto_core_ristretto255_from_uniform(unsigned char *p, const unsigned char *r);
