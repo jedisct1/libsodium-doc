@@ -1,6 +1,6 @@
 # Ristretto
 
-Ristretto is a new unified point compression format for curves over large-characteristic fields, which divides the curve’s cofactor by 4 or 8 at very little cost of performance, efficiently implementing a prime-order group.
+[Ristretto](https://ristretto.group) is a new unified point compression format for curves over large-characteristic fields, which divides the curve’s cofactor by 4 or 8 at very little cost of performance, efficiently implementing a prime-order group.
 
 libsodium 1.0.18+ implements Ristretto on top of the Curve25519 curve.
 
@@ -68,7 +68,7 @@ Unlike the ed25519 encoding scheme, there is no need to verify that the point is
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-point
+## Hash-to-point (Elligator)
 
 ```c
 int crypto_core_ristretto255_from_uniform(unsigned char *p, const unsigned char *r);
