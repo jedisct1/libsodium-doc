@@ -62,9 +62,11 @@ int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
 
 The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255 compressed point.
 
-This operation is fast: it only checks that `p` is in canonical form.
+This operation only checks that `p` is in canonical form.
 
-It returns `1` on success, and `0` if the checks didn't pass.
+Unlike the ed25519 encoding scheme, there is no need to verify that the point is on the prime-order group.
+
+The function returns `1` on success, and `0` if the checks didn't pass.
 
 ## Hash-to-point
 
