@@ -2,7 +2,7 @@
 
 Ristretto is a new unified point compression format for curves over large-characteristic fields, which divides the curve’s cofactor by 4 or 8 at very little cost of performance, efficiently implementing a prime-order group.
 
-libsodium 1.0.18+ implements `ristretto255`: Ristretto on top of the Curve25519 curve.
+libsodium 1.0.18+ implements Ristretto on top of the Curve25519 curve.
 
 Compared to Curve25519 points encoded as their coordinates, Ristretto makes it easier to implement protocols originally designed for prime-order groups.
 
