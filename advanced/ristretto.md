@@ -93,7 +93,7 @@ The function returns `0` on success, or `-1` if `p` is the point at infinity.
 int crypto_scalarmult_ristretto255_base(unsigned char *q, const unsigned char *n);
 ```
 
-The `crypto_scalarmult_ristretto255_base(()` function multiplies the base point by a scalar `n` (`[0..L[` range) and puts the resulting compressed point into `q`.
+The `crypto_scalarmult_ristretto255_base()` function multiplies the base point by a scalar `n` (`[0..L[` range) and puts the resulting compressed point into `q`.
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
