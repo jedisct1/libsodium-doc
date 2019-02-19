@@ -84,6 +84,7 @@
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 * Perl: [Crypt-Sodium](https://github.com/mgregoro/Crypt-Sodium)
 * Perl: [Crypt::Nacl::Sodium](https://github.com/ajgb/crypt-nacl-sodium)
+* Perl: [crypt-sodium-nitrate](https://github.com/Hugmeir/p5-crypt-sodium-nitrate)
 * Perl 6: [Natrium](https://github.com/jonathanstowe/Natrium)
 * Pharo/Squeak:
   [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
