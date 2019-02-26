@@ -27,7 +27,7 @@ the authentication tag in a separate location.
 | AES256-GCM              | 256 bits | 96 bits    | 128 bits   | 128 bits | libsodium &gt;= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
 | ChaCha20-Poly1305       | 256 bits | 64 bits    | 512 bits   | 128 bits | libsodium &gt;= 0.6.0. Also implemented in {Libre,Open,Boring}SSL.                                            |
 | ChaCha20-Poly1305-IETF  | 256 bits | 96 bits    | 512 bits   | 128 bits | libsodium &gt;= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries.   |
-| XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium &gt;= 1.0.12.                                                                                       |
+| XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium &gt;= 1.0.12. On the standard track.                                                                |
 
 ## Limitations
 
@@ -105,8 +105,9 @@ The XChaCha20-Poly1305 implementation in libsodium is portable across all
 supported architectures.
 
 The main limitation of XChaCha20-Poly1305 is that it is not widely implemented
-in other libraries yet. This construction also requires at least libsodium
-1.0.12.
+in other libraries yet. However, it will
+[soon](https://tools.ietf.org/html/draft-arciszewski-xchacha-03) become an IETF
+standard.
 
 ## Additional data
 
