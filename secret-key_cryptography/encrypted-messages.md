@@ -168,10 +168,13 @@ embedded systems, this may not be the case, and in such a scenario, having a
 monotically increasing, global counter is rarely a practical solution either.
 
 In that scenario, nonces can be constructed as follows: `Hk(message) +
-message_counter`. This assumes nonces that are 160-bit long or more. `Hk` is a
-keyed hash function, such as the one provided by `crypto_generichash()`,
-preferably used with a secret key that is distinct from the one used for
-encryption. Addition can be performed using the `sodium_add()` function.
+message_counter`. This assumes nonces that are 160-bit long or more.
+
+`Hk` is a keyed hash function safe against length-extension attacks,
+such as the one provided by `crypto_generichash()`, preferably used
+with a secret key that is distinct from the one used for encryption.
+
+Addition can be performed using the `sodium_add()` function.
 
 The security guarantees is weaker than when using a random initialization
 vector. Namely, two sequences of messages sharing the same prefix will produce

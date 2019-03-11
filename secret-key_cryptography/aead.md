@@ -53,6 +53,9 @@ practical limitations on the total number of messages.
 | ChaCha20-Poly1305-IETF  | Counter, permutation                           |
 | XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random ‖ m\) |
 
+`Hk` represents a keyed hash function that is safe against length-extension
+attacks, such as BLAKE2 or the HMAC construction.
+
 ### TL;DR: which one should I use?
 
 `XChaCha20-Poly1305-IETF` is the safest choice.
