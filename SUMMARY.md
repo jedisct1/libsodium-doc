@@ -38,7 +38,7 @@
   * [SHA-2](advanced/sha-2_hash_function.md)
   * [HMAC-SHA-2](advanced/hmac-sha2.md)
   * [The Scrypt function](password_hashing/scrypt.md)
-  * [Diffie-Hellman](advanced/scalar_multiplication.md)
+  * [Point*scalar multiplicaton](advanced/scalar_multiplication.md)
   * [One-time authentication](advanced/poly1305.md)
   * [Stream ciphers](advanced/stream_ciphers.md)
     * [ChaCha20](advanced/chacha20.md)
