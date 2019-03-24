@@ -83,6 +83,7 @@
 * Objective-C: [SodiumObjc](https://github.com/Tabbedout/SodiumObjc)
 * PHP: [PHP-Sodium](https://github.com/alethia7/php-sodium)
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
+* PHP: [dhole-cryptography](https://github.com/soatok/dhole-cryptography)
 * Perl: [Crypt-Sodium](https://github.com/mgregoro/Crypt-Sodium)
 * Perl: [Crypt::Nacl::Sodium](https://github.com/ajgb/crypt-nacl-sodium)
 * Perl: [crypt-sodium-nitrate](https://github.com/Hugmeir/p5-crypt-sodium-nitrate)
