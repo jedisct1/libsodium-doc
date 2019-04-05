@@ -121,6 +121,12 @@ Distribution files can be verified with
 
 `RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3`
 
+The `.minisig` file should be present in the same directory as the main file. The typical command to verify a file is:
+
+```sh
+minisign -P RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3 -m <file>
+```
+
 Or with GnuPG and the following RSA key:
 
 ```text
