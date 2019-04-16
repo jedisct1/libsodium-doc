@@ -13,6 +13,7 @@
 * .NET: [nsec](https://github.com/ektrah/nsec)
 * .NET: [nitralibsodium](https://github.com/nitrachain/NitraLibSodium)
 * .NET: [HQ.Sodium](https://github.com/hq-io/HQ.Sodium)
+* .NET: [Andhell.Crypto](https://github.com/AndHell/Andhell.Crypto)
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)

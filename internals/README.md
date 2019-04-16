@@ -165,7 +165,7 @@ before merging a new change to the `stable` branch.
 * Ubuntu/x86_64 using tcc
 * Ubuntu/x86_64 using CompCert
 * macOS using Xcode 10
-* Windows 10 using Visual Studio 2010, 2012, 2013, 2015 and 2017
+* Windows 10 using Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019
 * msys2 using mingw32 and mingw64
 * ArchLinux/x86_64
 * ArchLinux/armv6
