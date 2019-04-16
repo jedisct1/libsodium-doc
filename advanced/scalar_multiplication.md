@@ -1,9 +1,8 @@
-# Diffie-Hellman function
+# Point\*scalar multiplication (X25519)
 
-Sodium provides an API to perform scalar multiplication of elliptic curve points.
+Sodium provides an API to multiply a point on the Curve25519 curve.
 
-This can be used as a building block to construct key exchange mechanisms, or
-more generally to compute a public key from a secret key.
+This can be used as a building block to construct key exchange mechanisms, or more generally to compute a public key from a secret key.
 
 On current libsodium versions, you generally want to use the
 [`crypto_kx`](../key_exchange/README.md) API for key exchange instead.

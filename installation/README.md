@@ -44,7 +44,7 @@ In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or
 ## Pre-built libraries
 
 [Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019](https://download.libsodium.org/libsodium/releases/)
-are available, as well as pre-built libraries for MinGW32 and MinGW64.
+with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64.
 
 They include header files, as well as static \(`.LIB`\) and shared \(`.DLL`\)
 libraries for all the supported compiler versions.
@@ -121,10 +121,16 @@ Distribution files can be verified with
 
 `RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3`
 
+The `.minisig` file should be present in the same directory as the main file. The typical command to verify a file is:
+
+```sh
+minisign -P RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3 -m <file>
+```
+
 Or with GnuPG and the following RSA key:
 
-```
------BEGIN PGP PUBLIC KEY BLOCK----- 
+```text
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
 
 mQINBFTZ0A8BEAD2/BeYhJpEJDADNuOz5EO8E0SIj5VeQdb9WLh6tBe37KrJJy7+
@@ -249,8 +255,8 @@ W6ddPO4Ax7LycK0WOeNVNAT6a3tFJbQrve3ZoDDSNXAa70VKmpdrsrwnX+/4+rly
 Z7lj7rnMWCe9jllfZ2Mi+nIYXCrvhVh0t7OHVGwpSq28B/e2AFsQZxXcT4Y+6po7
 aJADVdb+LlOAuF6xB3sylE1Im0iADCW9UAWub1oiOr9jv0+mHEYc3kaF0kPU5zKO
 I9cg891jcOBV/qRv89ubSHifw9hTZB0dDjXzBjNwNjBHqkYDaLsf1izeYHEG4gEO
-sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu 
------END PGP PUBLIC KEY BLOCK----- 
+sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu
+-----END PGP PUBLIC KEY BLOCK-----
 ```
 
 ## Reporting vulnerabilities
