@@ -154,7 +154,7 @@ before merging a new change to the `stable` branch.
 
 * asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
   asmjs/ChakraCore
-* webassembly/V8, webassembly/Firefox
+* webassembly/V8, webassembly/Firefox, webassembly/WASI
 * NativeClient/portable, NativeClient/x86_64
 * OpenBSD/x86_64 using `gcc -fstack-protector-strong -fstack-shuffle` and
   `clang`
@@ -164,7 +164,7 @@ before merging a new change to the `stable` branch.
   \(memcheck, helgrind, drd and sgcheck\)
 * Ubuntu/x86_64 using tcc
 * Ubuntu/x86_64 using CompCert
-* macOS using Xcode 10
+* macOS using Xcode 10.2.1
 * Windows 10 using Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019
 * msys2 using mingw32 and mingw64
 * ArchLinux/x86_64
