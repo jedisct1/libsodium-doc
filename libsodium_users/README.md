@@ -59,6 +59,7 @@ to add yours to that list.
   one computer to another, safely.
 * [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of
   existing apps where the security of your data is put above all else.
+* [Metastream](https://github.com/samuelmaddock/metastream): Watch streaming media with friends.
 * [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign
   files and verify signatures.
 * [Molch](https://github.com/FSMaxB/molch): An implementation of the Axolotl
