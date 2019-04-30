@@ -8,6 +8,9 @@ to add yours to that list.
 
 * [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote
   desktop implementation (client and server) for Windows systems.
+* [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
+  other tools to aid development of blockchain and other decentralized
+  software in Java and other JVM languages.
 * [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php
   and MongoDB based single server messaging platform.
 * [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for
