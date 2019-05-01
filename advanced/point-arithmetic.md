@@ -10,7 +10,7 @@ Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent
 
 ```c
 // -------- First party -------- Send blinded p(x)
-unsigned char x[crypto_core_ed25519_SCALARBYTES];
+unsigned char x[crypto_core_ed25519_UNIFORMBYTES];
 randombytes_buf(x, sizeof x);
 
 // Compute px = p(x), an EC point representative for x

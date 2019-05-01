@@ -12,12 +12,12 @@ Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent
 
 ```c
 // -------- First party -------- Send blinded p(x)
-unsigned char x[crypto_core_ristretto255_SCALARBYTES];
+unsigned char x[crypto_core_ristretto255_HASHBYTES];
 randombytes_buf(x, sizeof x);
 
 // Compute px = p(x), an EC point representative for x
 unsigned char px[crypto_core_ristretto255_BYTES];
-crypto_core_ristretto255_from_uniform(px, x);
+crypto_core_ristretto255_from_hash(px, x);
 
 // Compute a = p(x) * g^r
 unsigned char r[crypto_core_ristretto255_SCALARBYTES];
@@ -68,13 +68,13 @@ Unlike the ed25519 encoding scheme, there is no need to verify that the point is
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-point (Elligator)
+## Hash-to-point
 
 ```c
-int crypto_core_ristretto255_from_uniform(unsigned char *p, const unsigned char *r);
+int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_uniform()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its compressed representation into `p`.
+The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its compressed representation into `p`.
 
 ## Scalar multiplication
 
@@ -176,7 +176,7 @@ The `crypto_core_ristretto255_scalar_sub()` function stores `x - y (mod L)` into
 * `crypto_scalarmult_ristretto255_BYTES`
 * `crypto_scalarmult_ristretto255_SCALARBYTES`
 * `crypto_core_ristretto255_BYTES`
-* `crypto_core_ristretto255_UNIFORMBYTES`
+* `crypto_core_ristretto255_HASHBYTES`
 * `crypto_core_ristretto255_SCALARBYTES`
 * `crypto_core_ristretto255_NONREDUCEDSCALARBYTES`
 
