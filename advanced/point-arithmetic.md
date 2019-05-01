@@ -189,6 +189,13 @@ void crypto_core_ed25519_scalar_sub(unsigned char *z,
 
 The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
+```c
+void crypto_core_ed25519_scalar_mul(unsigned char *z,
+                                    const unsigned char *x, const unsigned char *y);
+```
+
+The `crypto_core_ed25519_scalar_mul()` function stores `x * y (mod L)` into `z`.
+
 ## Constants
 
 * `crypto_scalarmult_ed25519_BYTES`
@@ -200,6 +207,6 @@ The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
 ## Note
 
-These functions were introduced in libsodium 1.0.16 and 1.0.17.
+These functions were introduced in libsodium 1.0.16, 1.0.17 and 1.0.18.
 
 For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.

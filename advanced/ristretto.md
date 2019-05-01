@@ -171,6 +171,13 @@ void crypto_core_ristretto255_scalar_sub(unsigned char *z,
 
 The `crypto_core_ristretto255_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
+```c
+void crypto_core_ristretto255_scalar_mul(unsigned char *z,
+                                         const unsigned char *x, const unsigned char *y);
+```
+
+The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into `z`.
+
 ## Constants
 
 * `crypto_scalarmult_ristretto255_BYTES`
