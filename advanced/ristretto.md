@@ -8,7 +8,7 @@ Compared to Curve25519 points encoded as their coordinates, Ristretto makes it e
 
 ## Example
 
-Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-point function.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-curve function.
 
 ```c
 // -------- First party -------- Send blinded p(x)
@@ -68,7 +68,7 @@ Unlike the ed25519 encoding scheme, there is no need to verify that the point is
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-point
+## Hash-to-curve
 
 ```c
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);

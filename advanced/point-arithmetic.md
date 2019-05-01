@@ -6,7 +6,7 @@ Points are represented as their Y coordinate.
 
 ## Example
 
-Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-point function.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-curve function.
 
 ```c
 // -------- First party -------- Send blinded p(x)
@@ -62,13 +62,13 @@ The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a
 
 It returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-point (Elligator)
+## Map-to-curve (Elligator2)
 
 ```c
 int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` (usually the output of a hash function) to a point, and stores its compressed representation into `p`.
+The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` to a point, and stores its compressed representation into `p`.
 
 The point is guaranteed to be on the main subgroup.
 
