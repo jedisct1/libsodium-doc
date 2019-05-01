@@ -172,6 +172,7 @@ to add yours to that list.
   using Ed25519.
 * [Halite](https://github.com/paragonie/halite): High-level cryptography
   interface for PHP.
+* [Hyperledger Indy](https://github.com/hyperledger/indy-sdk): Everything needed to build applications that interact with an Indy distributed identity ledger.
 * [Innovault](https://innovault.io): A toolkit to store sensitive data from web
   forms in an encrypted database.
 * [LibSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
