@@ -71,7 +71,7 @@ The function returns `1` on success, and `0` if the checks didn't pass.
 ## Random group element
 
 ```c
-int crypto_core_ristretto255_random(unsigned char *p);
+void crypto_core_ristretto255_random(unsigned char *p);
 ```
 
 Fills `p` with the representation of a random group element.
