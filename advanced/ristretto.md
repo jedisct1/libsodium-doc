@@ -74,7 +74,7 @@ The function returns `1` on success, and `0` if the checks didn't pass.
 void crypto_core_ristretto255_random(unsigned char *p);
 ```
 
-Fills `p` with the representative of a random group element.
+Fills `p` with the representation of a random group element.
 
 ## Hash-to-group
 
@@ -82,7 +82,7 @@ Fills `p` with the representative of a random group element.
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representative into `p`.
+The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representation into `p`.
 
 ## Scalar multiplication
 
@@ -135,7 +135,7 @@ This can be achieved with the following function:
 void crypto_core_ristretto255_scalar_random(unsigned char *r);
 ```
 
-`crypto_core_ristretto255_scalar_random()` fills `r` with a `crypto_core_ristretto255_SCALARBYTES` bytes representative of the scalar in the `]0..L[` interval.
+`crypto_core_ristretto255_scalar_random()` fills `r` with a `crypto_core_ristretto255_SCALARBYTES` bytes representation of the scalar in the `]0..L[` interval.
 
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 
