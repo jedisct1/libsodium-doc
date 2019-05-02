@@ -54,13 +54,13 @@ unsigned char fx[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_add(fx, b, vir);
 ```
 
-## Encoded point validation
+## Encoding validation
 
 ```c
-int crypto_core_ristretto255_is_valid_element(const unsigned char *p);
+int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
 ```
 
-The `crypto_core_ristretto255_is_valid_element()` function checks that `p` is a valid ristretto255 representation of a point.
+The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255 representative.
 
 This operation only checks that `p` is in canonical form.
 
