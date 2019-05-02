@@ -54,17 +54,17 @@ unsigned char fx[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_add(fx, b, vir);
 ```
 
-## Point validation
+## Element validation
 
 ```c
-int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
+int crypto_core_ristretto255_is_valid_element(const unsigned char *p);
 ```
 
-The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255 compressed point.
+The `crypto_core_ristretto255_is_valid_element()` function checks that `p` is a valid ristretto255 element.
 
 This operation only checks that `p` is in canonical form.
 
-Unlike the ed25519 encoding scheme, there is no need to verify that the point is on the prime-order group.
+Unlike the ed25519 encoding scheme, there is no need to verify that the element is on the prime-order group.
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
@@ -83,7 +83,7 @@ int crypto_scalarmult_ristretto255(unsigned char *q, const unsigned char *n,
                                    const unsigned char *p);
 ```
 
-The `crypto_scalarmult_ristretto255()` function multiplies a compressed point `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting compressed point into `q`.
+The `crypto_scalarmult_ristretto255()` function multiplies a point represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting compressed point into `q`.
 
 `q` should not be used as a shared key prior to hashing.
 
@@ -104,7 +104,7 @@ int crypto_core_ristretto255_add(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_add()` function adds the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_add()` function adds the point represented by `p` to the point `q` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
 
@@ -113,7 +113,7 @@ int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_sub()` function substracts the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_sub()` function substracts the point represented by `p` to the point `q` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
 
