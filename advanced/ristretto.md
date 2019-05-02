@@ -54,21 +54,21 @@ unsigned char fx[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_add(fx, b, vir);
 ```
 
-## Element validation
+## Encoded point validation
 
 ```c
 int crypto_core_ristretto255_is_valid_element(const unsigned char *p);
 ```
 
-The `crypto_core_ristretto255_is_valid_element()` function checks that `p` is a valid ristretto255 element.
+The `crypto_core_ristretto255_is_valid_element()` function checks that `p` is a valid ristretto255 representation of a point.
 
 This operation only checks that `p` is in canonical form.
 
-Unlike the ed25519 encoding scheme, there is no need to verify that the element is on the prime-order group.
+Unlike the ed25519 encoding scheme, there is no need to verify that the point is on the prime-order group.
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
-## Random element
+## Random group element
 
 ```c
 int crypto_core_ristretto255_random(unsigned char *p);
