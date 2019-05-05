@@ -62,6 +62,14 @@ The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a
 
 It returns `1` on success, and `0` if the checks didn't pass.
 
+## Random group element
+
+```c
+void crypto_core_ed25519_random(unsigned char *p);
+```
+
+Fills `p` with the representation of a random group element.
+
 ## Map-to-curve (Elligator2)
 
 ```c

@@ -8,7 +8,7 @@ Compared to Curve25519 points encoded as their coordinates, Ristretto makes it e
 
 ## Example
 
-Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-curve function.
+Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-group function.
 
 ```c
 // -------- First party -------- Send blinded p(x)
@@ -54,13 +54,13 @@ unsigned char fx[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_add(fx, b, vir);
 ```
 
-## Point validation
+## Encoded point validation
 
 ```c
 int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
 ```
 
-The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255 compressed point.
+The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255-encoded point.
 
 This operation only checks that `p` is in canonical form.
 
@@ -68,13 +68,21 @@ Unlike the ed25519 encoding scheme, there is no need to verify that the point is
 
 The function returns `1` on success, and `0` if the checks didn't pass.
 
-## Hash-to-curve
+## Random group element
+
+```c
+void crypto_core_ristretto255_random(unsigned char *p);
+```
+
+Fills `p` with the representation of a random group element.
+
+## Hash-to-group
 
 ```c
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its compressed representation into `p`.
+The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representation into `p`.
 
 ## Scalar multiplication
 
@@ -83,7 +91,7 @@ int crypto_scalarmult_ristretto255(unsigned char *q, const unsigned char *n,
                                    const unsigned char *p);
 ```
 
-The `crypto_scalarmult_ristretto255()` function multiplies a compressed point `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting compressed point into `q`.
+The `crypto_scalarmult_ristretto255()` function multiplies a point represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting compressed point into `q`.
 
 `q` should not be used as a shared key prior to hashing.
 
@@ -104,7 +112,7 @@ int crypto_core_ristretto255_add(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_add()` function adds the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_add()` function adds the point represented by `p` to the point `q` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
 
@@ -113,7 +121,7 @@ int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_sub()` function substracts the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_sub()` function substracts the point represented by `p` to the point `q` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
 
