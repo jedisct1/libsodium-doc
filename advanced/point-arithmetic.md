@@ -210,3 +210,33 @@ The `crypto_core_ed25519_scalar_mul()` function stores `x * y (mod L)` into `z`.
 These functions were introduced in libsodium 1.0.16, 1.0.17 and 1.0.18.
 
 For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
+
+`crypto_core_ed25519_from_uniform()` exposes the Elligator2 inverse map, using the high bit for the sign of the X coordinate.
+
+Since version 1.0.18, `crypto_core_ed25519_from_hash()` implements the `hash2curve` method from the `irtf-cfrg-hash-to-curve` draft, which is similar to the algorithm used by `crypto_core_ed25519_from_uniform()`, but uses a 64-bit hash as an input to further reduce the output bias.
+
+For protocols mandating a hash function that behaves as a random oracle, the `H2C-0005` suite can be trivially implemented as follows:
+
+```c
+void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
+                const unsigned char h[crypto_hash_sha512_BYTES])
+{
+    struct {
+        unsigned char d[34];
+        unsigned char h[crypto_hash_sha512_BYTES];
+        unsigned char i;
+    } in;
+    unsigned char h0[crypto_hash_sha512_BYTES],  h1[crypto_hash_sha512_BYTES];
+    unsigned char p0[crypto_core_ed25519_BYTES], p1[crypto_core_ed25519_BYTES];
+
+    memcpy(in.d, "h2b" "H2C-Curve25519-SHA512-ELL2-" "\0\0\0\x41", sizeof in.d);
+    memcpy(in.h, h, sizeof in.h);
+    in.i = 0x02;
+    crypto_hash_sha512(h0, (const unsigned char *) &in, sizeof in);
+    in.i = 0x03;
+    crypto_hash_sha512(h1, (const unsigned char *) &in, sizeof in);
+    crypto_core_ed25519_from_hash(p0, h0);
+    crypto_core_ed25519_from_hash(p1, h1);
+    crypto_core_ed25519_add(p, p0, p1);
+}
+```
