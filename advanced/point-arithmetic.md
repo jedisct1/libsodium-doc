@@ -70,7 +70,7 @@ void crypto_core_ed25519_random(unsigned char *p);
 
 Fills `p` with the representation of a random group element.
 
-## Map-to-curve (Elligator2)
+## Elligator2 map
 
 ```c
 int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
@@ -79,6 +79,20 @@ int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
 The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` to a point, and stores its compressed representation into `p`.
 
 The point is guaranteed to be on the main subgroup.
+
+This function directly exposes the inverse Elligator2 map, and uses the high bit to set the sign of the X coordinate.
+
+## Hash-to-group
+
+```c
+int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
+```
+
+The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representation into `p`.
+
+The point is guaranteed to be on the main subgroup.
+
+This function is similar to `crypto_core_ed25519_from_uniform()` but uses a larger input size to further reduce the (negligible) bias.
 
 ## Scalar multiplication
 
@@ -209,6 +223,7 @@ The `crypto_core_ed25519_scalar_mul()` function stores `x * y (mod L)` into `z`.
 * `crypto_scalarmult_ed25519_BYTES`
 * `crypto_scalarmult_ed25519_SCALARBYTES`
 * `crypto_core_ed25519_BYTES`
+* `crypto_core_ed25519_HASHBYTES`
 * `crypto_core_ed25519_UNIFORMBYTES`
 * `crypto_core_ed25519_SCALARBYTES`
 * `crypto_core_ed25519_NONREDUCEDSCALARBYTES`
@@ -227,11 +242,11 @@ For protocols mandating a hash function that behaves as a random oracle, the `H2
 
 ```c
 void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
-                const unsigned char h[crypto_hash_sha512_BYTES])
+                const unsigned char h[64])
 {
     struct {
         unsigned char d[34];
-        unsigned char h[crypto_hash_sha512_BYTES];
+        unsigned char h[64];
         unsigned char i;
     } in;
     unsigned char h0[crypto_hash_sha512_BYTES],  h1[crypto_hash_sha512_BYTES];

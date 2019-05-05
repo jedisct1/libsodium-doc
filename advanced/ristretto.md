@@ -64,8 +64,6 @@ The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a va
 
 This operation only checks that `p` is in canonical form.
 
-Unlike the ed25519 encoding scheme, there is no need to verify that the point is on the prime-order group.
-
 The function returns `1` on success, and `0` if the checks didn't pass.
 
 ## Random group element
@@ -82,7 +80,7 @@ Fills `p` with the representation of a random group element.
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representation into `p`.
+The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a group element, and stores its representation into `p`.
 
 ## Scalar multiplication
 
@@ -91,7 +89,7 @@ int crypto_scalarmult_ristretto255(unsigned char *q, const unsigned char *n,
                                    const unsigned char *p);
 ```
 
-The `crypto_scalarmult_ristretto255()` function multiplies a point represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting compressed point into `q`.
+The `crypto_scalarmult_ristretto255()` function multiplies a point represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting point into `q`.
 
 `q` should not be used as a shared key prior to hashing.
 
@@ -101,7 +99,7 @@ The function returns `0` on success, or `-1` if `p` is the point at infinity.
 int crypto_scalarmult_ristretto255_base(unsigned char *q, const unsigned char *n);
 ```
 
-The `crypto_scalarmult_ristretto255_base()` function multiplies the base point by a scalar `n` (`[0..L[` range) and puts the resulting compressed point into `q`.
+The `crypto_scalarmult_ristretto255_base()` function multiplies the base point by a scalar `n` (`[0..L[` range) and puts the resulting point into `q`.
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
