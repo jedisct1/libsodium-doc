@@ -85,10 +85,12 @@ This function directly exposes the inverse Elligator2 map, and uses the high bit
 ## Hash-to-group
 
 ```c
-int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
+int crypto_core_ed25519_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a point, and stores its representation into `p`.
+The `crypto_core_ed25519_from_hash()` function maps a 64 bytes vector `r` to a point, and stores its representation into `p`.
+
+The vector `r` represents a value, usually the output of a hash function, encoded in big-endian order. The high bit (which, in big-endian order, is in the first element of the vector) sets the sign of the X coordinate.
 
 The point is guaranteed to be on the main subgroup.
 
