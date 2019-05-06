@@ -94,7 +94,7 @@ The vector `r` represents a value, usually the output of a hash function, encode
 
 The point is guaranteed to be on the main subgroup.
 
-This function is similar to `crypto_core_ed25519_from_uniform()` but uses a larger input size to further reduce the (negligible) bias.
+This function is similar to `crypto_core_ed25519_from_uniform()` but uses a larger input size, that some algorithms require.
 
 ## Scalar multiplication
 
@@ -238,7 +238,7 @@ For a complete example using these functions, see the [SPAKE2+EE implementation]
 
 `crypto_core_ed25519_from_uniform()` exposes the Elligator2 inverse map, using the high bit for the sign of the X coordinate.
 
-Since version 1.0.18, `crypto_core_ed25519_from_hash()` implements the `hash2curve` method from the `irtf-cfrg-hash-to-curve` draft, which is similar to the algorithm used by `crypto_core_ed25519_from_uniform()`, but uses a 64-bit hash as an input to further reduce the output bias.
+Since version 1.0.18, `crypto_core_ed25519_from_hash()` implements the `hash2curve` method from the `irtf-cfrg-hash-to-curve` draft, which is similar to the algorithm used by `crypto_core_ed25519_from_uniform()`, but uses a 512-bit hash as an input to further reduce the output bias.
 
 For protocols mandating a hash function that behaves as a random oracle, the `H2C-0005` suite can be trivially implemented as follows:
 
