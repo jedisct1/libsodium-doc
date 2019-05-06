@@ -88,6 +88,8 @@ to add yours to that list.
 * [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
 * [Petmail](https://github.com/warner/petmail): A secure communication and
   file-sharing system.
+* [Pichi](https://github.com/pichi-router/pichi): An Application Layer
+  Proxy controlled via RESTful APIs.
 * [PipeSocks](https://github.com/pipesocks/pipesocks): A pipe-like SOCKS5 tunnel
   system.
 * [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve
