@@ -108,3 +108,4 @@ solve common problems.
 * SPAKE2+ \[DONE\]
 * Support server relief in the password hashing API
 * Ristretto \[DONE\]
+* Consider a streaming interface for `crypto_shorthash_*()`
