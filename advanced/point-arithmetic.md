@@ -254,7 +254,7 @@ void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
     unsigned char h0[crypto_hash_sha512_BYTES],  h1[crypto_hash_sha512_BYTES];
     unsigned char p0[crypto_core_ed25519_BYTES], p1[crypto_core_ed25519_BYTES];
 
-    memcpy(in.d, "h2b" "H2C-Curve25519-SHA512-Elligator2-FFSTV" "\0\0\0\x41", sizeof in.d);
+    memcpy(in.d, "h2c" "H2C-Curve25519-SHA512-Elligator2-FFSTV" "\0\0\0\x41", sizeof in.d);
     memcpy(in.h, h, sizeof in.h);
     in.i = 0x02;
     crypto_hash_sha512(h0, (const unsigned char *) &in, sizeof in);
