@@ -70,7 +70,7 @@ void crypto_core_ed25519_random(unsigned char *p);
 
 Fills `p` with the representation of a random group element.
 
-## Elligator2 map
+## Elligator 2 map
 
 ```c
 int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
@@ -80,7 +80,7 @@ The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` to 
 
 The point is guaranteed to be on the main subgroup.
 
-This function directly exposes the inverse Elligator2 map, and uses the high bit to set the sign of the X coordinate.
+This function directly exposes the inverse Elligator 2 map, and uses the high bit to set the sign of the X coordinate.
 
 ## Hash-to-group
 
@@ -236,7 +236,7 @@ These functions were introduced in libsodium 1.0.16, 1.0.17 and 1.0.18.
 
 For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
 
-`crypto_core_ed25519_from_uniform()` exposes the Elligator2 inverse map, using the high bit for the sign of the X coordinate.
+`crypto_core_ed25519_from_uniform()` exposes the Elligator 2 inverse map, using the high bit for the sign of the X coordinate.
 
 Since version 1.0.18, `crypto_core_ed25519_from_hash()` implements the `hash2curve` method from the `irtf-cfrg-hash-to-curve` draft, which is similar to the algorithm used by `crypto_core_ed25519_from_uniform()`, but uses a 512-bit hash as an input to further reduce the output bias.
 
