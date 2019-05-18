@@ -15,7 +15,7 @@ Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent
 unsigned char x[crypto_core_ristretto255_HASHBYTES];
 randombytes_buf(x, sizeof x);
 
-// Compute px = p(x), an EC point representative for x
+// Compute px = p(x), a group element derived from x
 unsigned char px[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_from_hash(px, x);
 
@@ -54,13 +54,13 @@ unsigned char fx[crypto_core_ristretto255_BYTES];
 crypto_core_ristretto255_add(fx, b, vir);
 ```
 
-## Encoded point validation
+## Encoded element validation
 
 ```c
 int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
 ```
 
-The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255-encoded point.
+The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a valid ristretto255-encoded element.
 
 This operation only checks that `p` is in canonical form.
 
@@ -89,39 +89,39 @@ int crypto_scalarmult_ristretto255(unsigned char *q, const unsigned char *n,
                                    const unsigned char *p);
 ```
 
-The `crypto_scalarmult_ristretto255()` function multiplies a point represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting point into `q`.
+The `crypto_scalarmult_ristretto255()` function multiplies an element represented by `p` by a scalar `n` (in the `[0..L[` range) and puts the resulting element into `q`.
 
 `q` should not be used as a shared key prior to hashing.
 
-The function returns `0` on success, or `-1` if `p` is the point at infinity.
+The function returns `0` on success, or `-1` if `p` is the zero element.
 
 ```c
 int crypto_scalarmult_ristretto255_base(unsigned char *q, const unsigned char *n);
 ```
 
-The `crypto_scalarmult_ristretto255_base()` function multiplies the base point by a scalar `n` (`[0..L[` range) and puts the resulting point into `q`.
+The `crypto_scalarmult_ristretto255_base()` function multiplies the generator by a scalar `n` (`[0..L[` range) and puts the resulting element into `q`.
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
-## Point addition/substraction
+## Element addition/substraction
 
 ```c
 int crypto_core_ristretto255_add(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_add()` function adds the point represented by `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_add()` function adds the element represented by `p` to the element `q` and stores the resulting element into `r`.
 
-The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
+The function returns `0` on success, or `-1` if `p` and/or `q` are not valid encoded elements.
 
 ```c
 int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_sub()` function substracts the point represented by `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ristretto255_sub()` function substracts the element represented by `p` to the element `q` and stores the resulting element into `r`.
 
-The function returns `0` on success, or `-1` if `p` and/or `q` are not valid compressed points.
+The function returns `0` on success, or `-1` if `p` and/or `q` are not valid encoded elements.
 
 ## Scalar arithmetic over L
 
