@@ -204,4 +204,4 @@ The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into
 
 ## Note
 
-These functions are not available yet. They might be introduced in libsodium 1.0.18 or later.
+These functions are not available yet. They may be introduced in libsodium 1.0.18 or later.
