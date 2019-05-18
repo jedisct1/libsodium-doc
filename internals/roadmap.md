@@ -52,7 +52,7 @@ solve common problems.
 * Visual Studio port
 * 100% code coverage, static and dynamic analysis
 * `arc4random*()` compatible API
-* ed25519 to curve25519 keys conversion
+* Ed25519 to X25519 keys conversion
 * iOS/Android compatibility
 
 ## 1.0.x roadmap
