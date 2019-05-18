@@ -27,6 +27,14 @@ For compatibility with NaCl, sizes of messages and ciphertexts are given as
 `unsigned long long` values. Other values representing the size of an object in
 memory use the standard `size_t` type.
 
+## Avoiding type confusion
+
+An object type has only one public representation.
+
+In particular, points and scalars are always accepted and returned as a fixed-size, compressed, portable and serializable bit string.
+
+This simplifies usage and mitigates type confusion in languages that don't enforce strict type safety.
+
 ## Thread safety
 
 Initializing the random number generator is the only operation that requires an
@@ -158,9 +166,9 @@ before merging a new change to the `stable` branch.
 * NativeClient/portable, NativeClient/x86_64
 * OpenBSD/x86_64 using `gcc -fstack-protector-strong -fstack-shuffle` and
   `clang`
-* Ubuntu/x86_64 using gcc 7, `-fsanitize=address,undefined` and Valgrind
+* Ubuntu/x86_64 using gcc 8, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
-* Ubuntu/x86_64 using clang, `-fsanitize=address,undefined` and Valgrind
+* Ubuntu/x86_64 using clang 8, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
 * Ubuntu/x86_64 using tcc
 * Ubuntu/x86_64 using CompCert
