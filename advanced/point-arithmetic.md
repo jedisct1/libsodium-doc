@@ -249,18 +249,23 @@ void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
     struct {
         unsigned char d[3 + 38 + 4];
         unsigned char h[64];
+    } m;
+    struct {
+        unsigned char m_[crypto_hash_sha512_BYTES];
         unsigned char i;
-    } in;
-    unsigned char h0[crypto_hash_sha512_BYTES],  h1[crypto_hash_sha512_BYTES];
+    } m_i;
+    unsigned char h0[crypto_hash_sha512_BYTES], h1[crypto_hash_sha512_BYTES];
     unsigned char p0[crypto_core_ed25519_BYTES], p1[crypto_core_ed25519_BYTES];
 
-    memcpy(in.d, "h2c" "H2C-Curve25519-SHA512-Elligator2-FFSTV" "\0\0\0\x41", sizeof in.d);
-    memcpy(in.h, h, sizeof in.h);
-    in.i = 0x02;
-    crypto_hash_sha512(h0, (const unsigned char *) &in, sizeof in);
-    in.i = 0x03;
-    crypto_hash_sha512(h1, (const unsigned char *) &in, sizeof in);
+    memcpy(m.d, "h2c" "H2C-Curve25519-SHA512-Elligator2-FFSTV"
+                "\0\0\0\x40", sizeof m.d);
+    memcpy(m.h, h, sizeof m.h);
+    crypto_hash_sha512(m_i.m_, (const unsigned char*)&m, sizeof m);
+    m_i.i = 0x01;
     crypto_core_ed25519_from_hash(p0, h0);
+    crypto_hash_sha512(h0, (const unsigned char*)&m_i, sizeof m_i);
+    m_i.i = 0x02;
+    crypto_hash_sha512(h1, (const unsigned char*)&m_i, sizeof m_i);
     crypto_core_ed25519_from_hash(p1, h1);
     crypto_core_ed25519_add(p, p0, p1);
 }
