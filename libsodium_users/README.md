@@ -157,6 +157,7 @@ to add yours to that list.
   a C++ Windows Runtime Component for UWP applications.
 * [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin):
   Dovecot plugin to support Scrypt and Argon2 for password hashing.
+* [Wordpress](https://wordpress.com) uses libsodium for verified updates.
 
 ## Libraries using libsodium
 
@@ -204,6 +205,7 @@ to add yours to that list.
   NodeJS bindings for libsodium.
 * [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption
   & decryption with libsodium and protobuf for .NET
+* [Tanker](https://github.com/TankerHQ/sdk-js): an encryption SDK for JavaScript.
 * [The Update Framework](https://github.com/theupdateframework/tuf): A
   plug-and-play library for securing a software updater.
 * [Yojimbo](https://libyojimbo.com): A network library for client/server games
@@ -254,6 +256,7 @@ to add yours to that list.
 * [Q-Leap Networks](http://www.q-leap.com/)
 * [Riseup](https://riseup.net)
 * [Supercell](http://supercell.com)
+* [Tanker](https://tanker.io)
 * [Valve](https://www.valvesoftware.com)
 * [Wire](https://wire.com)
 * [Yandex](https://www.yandex.com)
