@@ -133,8 +133,8 @@ to add yours to that list.
   mobile, web, and devices.
 * [Tezos](https://www.tezos.com): a new decentralized blockchain that governs
   itself by establishing a true digital commonwealth.
-* [Tinfoil Chat NaCl](https://github.com/maqp/tfc): TFC-NaCl is a high
-  assurance encryption plugin for the Pidgin IM client.
+* [Tinfoil Chat](https://github.com/maqp/tfc): an nion-routed, endpoint secure
+  messaging system.
 * [Tox](https://tox.chat/): A new kind of instant messenging.
 * [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator
   for the famous game Clash of Clans
