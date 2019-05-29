@@ -163,7 +163,7 @@ has to be at least `aead_aes256gcm_ABYTES`.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
-The function returns `-1` is the verification fails.
+The function returns `-1` if the verification fails.
 
 If the verification succeeds, the function returns `0`, puts the decrypted
 message into `m` and stores its actual number of bytes into `mlen` if `mlen` is
@@ -232,7 +232,7 @@ The function `crypto_aead_aes256gcm_decrypt_detached()` verifies that the tag
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
-The function returns `-1` is the verification fails.
+The function returns `-1` if the verification fails.
 
 If the verification succeeds, the function returns `0`, and puts the decrypted
 message into `m`, whose length is equal to the length of the ciphertext.
