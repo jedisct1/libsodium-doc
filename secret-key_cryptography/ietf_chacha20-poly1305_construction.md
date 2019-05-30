@@ -44,7 +44,7 @@ encrypted message. This is usually what you want.
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_encrypt(unsigned char *c,
-                                              unsigned long long *clen,
+                                              unsigned long long *clen_p,
                                               const unsigned char *m,
                                               unsigned long long mlen,
                                               const unsigned char *ad,
@@ -77,7 +77,7 @@ message, and increment it for each subsequent message using the same key.
 
 ```c
 int crypto_aead_chacha20poly1305_ietf_decrypt(unsigned char *m,
-                                              unsigned long long *mlen,
+                                              unsigned long long *mlen_p,
                                               unsigned char *nsec,
                                               const unsigned char *c,
                                               unsigned long long clen,

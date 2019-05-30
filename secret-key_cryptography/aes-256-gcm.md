@@ -110,7 +110,7 @@ encrypted message. This is usually what you want.
 
 ```c
 int crypto_aead_aes256gcm_encrypt(unsigned char *c,
-                                  unsigned long long *clen,
+                                  unsigned long long *clen_p,
                                   const unsigned char *m,
                                   unsigned long long mlen,
                                   const unsigned char *ad,
