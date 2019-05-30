@@ -184,7 +184,6 @@ before merging a new change to the `stable` branch.
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
 - Debian/mips64 - Courtesy of the GCC compile farm project
-- Solaris 10/sun4u - Courtesy of the GCC compile farm project
 
 ### Cross-implementation testing
 
