@@ -183,6 +183,7 @@ before merging a new change to the `stable` branch.
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
 - Debian/mips64 - Courtesy of the GCC compile farm project
+- iOS/A12 (iSH)
 
 ### Cross-implementation testing
 
