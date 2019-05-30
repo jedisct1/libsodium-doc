@@ -179,11 +179,12 @@ before merging a new change to the `stable` branch.
 - Debian/sparc
 - Debian/ppc
 - Raspbian/Cortex-A53
+- iOS/A12 (iSH)
 - Ubuntu/aarch64 - Courtesy of the GCC compile farm project
 - Fedora/ppc64 - Courtesy of the GCC compile farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC compile farm project
 - Debian/mips64 - Courtesy of the GCC compile farm project
-- iOS/A12 (iSH)
+- Solaris 10/SPARC64 - Courtesy of the GCC compile farm project
 
 ### Cross-implementation testing
 
