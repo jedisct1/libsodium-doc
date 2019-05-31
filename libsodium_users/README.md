@@ -19,6 +19,8 @@ to add yours to that list.
   chat with voice + video + file transfers.
 * [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for
   applications of the future.
+* [Detsign](https://github.com/simonfxr/detsign): Use passphrases to
+  generate deterministic ED25519 signing keys.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
 * [Dircifrar](https://github.com/ctchou/dircifrar): A directory
