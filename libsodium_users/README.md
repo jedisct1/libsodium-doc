@@ -21,6 +21,8 @@ to add yours to that list.
   applications of the future.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
+* [Dircifrar](https://github.com/ctchou/dircifrar): A directory
+  synchronization and encryption tool.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
   server for Linux/UNIX-like systems, written with security primarily in mind.
 * [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
@@ -189,6 +191,8 @@ to add yours to that list.
   implementation that can use libsodium as a crypto provider.
 * [Minimal-TLS](https://github.com/cmalekpour/minimal-tls): A minimal
   implementation of TLS 1.3 in Rust.
+* [MySQL-Sodium](https://github.com/mashthekeys/mysql-sodium): MySQL
+  UDF bindings for libsodium.
 * [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate
   libsodium-net compatible KeyPair`s.
 * [Netcode.io](http://netcode.io): A simple protocol for creating secure
