@@ -201,7 +201,3 @@ The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into
 
 * [Ristretto](https://ristretto.group)
 * [Decaf: Eliminating cofactors through point compression](https://eprint.iacr.org/2015/673.pdf)
-
-## Note
-
-These functions are not available yet. They may be introduced in libsodium 1.0.18 or later.

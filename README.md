@@ -20,8 +20,8 @@ The design choices emphasize security and ease of use. But despite the emphasis
 on high security, primitives are faster across-the-board than most
 implementations.
 
-[Version 1.0.17](https://github.com/jedisct1/libsodium/releases) was released on
-January 7, 2019.
+[Version 1.0.18](https://github.com/jedisct1/libsodium/releases) was released on
+May 31, 2019.
 
 ## Downloading libsodium
 
