@@ -262,8 +262,8 @@ void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
     memcpy(m.h, h, sizeof m.h);
     crypto_hash_sha512(m_i.m_, (const unsigned char*)&m, sizeof m);
     m_i.i = 0x01;
+    crypto_hash_sha512(h0, (const unsigned char*)&m_i, sizeof m_i);    
     crypto_core_ed25519_from_hash(p0, h0);
-    crypto_hash_sha512(h0, (const unsigned char*)&m_i, sizeof m_i);
     m_i.i = 0x02;
     crypto_hash_sha512(h1, (const unsigned char*)&m_i, sizeof m_i);
     crypto_core_ed25519_from_hash(p1, h1);
