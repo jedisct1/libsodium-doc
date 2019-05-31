@@ -77,6 +77,7 @@
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
 * MRuby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
+* MySQL: [MySQL-Sodium](https://github.com/mashthekeys/mysql-sodium)
 * Nim: [libsodium.nim](https://github.com/zielmicha/libsodium.nim)
 * Nim: [Sodium.nim](https://github.com/judofyr/sodium.nim)
 * OCaml: [ocaml-sodium](https://github.com/dsheets/ocaml-sodium)
