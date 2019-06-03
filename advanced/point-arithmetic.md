@@ -270,3 +270,5 @@ void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
     crypto_core_ed25519_add(p, p0, p1);
 }
 ```
+
+`crypto_core_ed25519_from_hash()` clears the cofactor, so this operation is not required after the addition.
