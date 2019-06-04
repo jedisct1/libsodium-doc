@@ -48,8 +48,11 @@ to add yours to that list.
   snapshotting backup system.
 * [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution
   daemon based on a Distributed Hash Table.
-* [Keystone Enclave]()https://github.com/keystone-enclave: An open source
+* [Keystone Enclave](https://github.com/keystone-enclave): An open source
   secure enclave for RISC-V processors.
+* [KeepassXC](https://keepassxc.org/): KeePass Cross-Platform Community Edition.
+  KeePassXC stores your passwords safely and auto-types them into your everyday
+  websites and applications.
 * [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password
   manager.
 * [Kryptonite](https://github.com/kryptco/kr): The new home for your SSH private
@@ -119,6 +122,9 @@ to add yours to that list.
   personal and private clouds.
 * [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
   designed to protect your Internet traffic.
+* [Secrets](https://outercorner.com/secrets): Easily and securely store passwords,
+  credit card numbers, bank details, and confidential information.
+  Available for Mac and iOS.
 * [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple
   management tool for dnscrypt-proxy.
 * [Snackis](https://github.com/andreas-gone-wild/snackis): A post-modern
@@ -199,6 +205,8 @@ to add yours to that list.
   libsodium-net compatible KeyPair`s.
 * [Netcode.io](http://netcode.io): A simple protocol for creating secure
   client/server connections over UDP.
+* [Noise-C](http://rweather.github.io/noise-c/): Noise-C is a plain C
+  implementation of the Noise Protocol, intended as a reference implementation.
 * [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2
   framework in Swift for iOS.
 * [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell
