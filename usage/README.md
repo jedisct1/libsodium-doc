@@ -50,6 +50,8 @@ had already been initialized.
 Before returning, the function ensures that the system's random number generator
 has been properly seeded.
 
+## sodium_init() stalling on Linux
+
 On some Linux systems, this may take some time, especially when called right
 after a reboot of the system. That issue has been reported on Digital Ocean
 virtual machines as well as on Scaleway ARM instances.
