@@ -61,6 +61,9 @@ to add yours to that list.
   Agent.
 * [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted,
   multi-purpose document store.
+* [libagentcrypt](https://github.com/ndilieto/libagentcrypt): Library for
+  symmetric encryption using SSH Agent. It includes a command line utility
+  able to encrypt/decrypt files and/or passwords securely with your ssh keys
 * [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2
   KDF, data encrypted with ChaCha20Poly1305, and Yubikey support.
 * [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN
