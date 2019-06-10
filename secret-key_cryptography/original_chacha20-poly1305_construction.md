@@ -192,11 +192,6 @@ To prevent nonce reuse in a client-server protocol, either use different keys
 for each direction, or make sure that a bit is masked in one direction, and set
 in the other.
 
-The API conforms to the proposed API for the CAESAR competition.
-
-A high-level `crypto_aead_*()` API is intentionally not defined until the
-[CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
-
 ## See also
 
 * [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04) -

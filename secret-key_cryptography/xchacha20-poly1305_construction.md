@@ -198,8 +198,3 @@ XChaCha20-Poly1305 was introduced in libsodium 1.0.12.
 Unlike other variants directly using the ChaCha20 cipher, generating a random
 nonce for each message is acceptable with this XChaCha20-based construction,
 provided that the output of the PRNG is indistinguishable from random data.
-
-The API conforms to the proposed API for the CAESAR competition.
-
-A high-level `crypto_aead_*()` API is intentionally not defined until the
-[CAESAR](http://competitions.cr.yp.to/caesar.html) competition is over.
