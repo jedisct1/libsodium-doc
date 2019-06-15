@@ -11,6 +11,8 @@ to add yours to that list.
 * [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
   other tools to aid development of blockchain and other decentralized
   software in Java and other JVM languages.
+* [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform
+  file encryption.
 * [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php
   and MongoDB based single server messaging platform.
 * [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for
