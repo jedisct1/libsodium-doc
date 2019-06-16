@@ -85,6 +85,7 @@ to add yours to that list.
   of Network Time Protocol Version 4.
 * [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and
   discoverable chat application on top of nanomsg library.
+* [Network Next](https://networknext.com): A real-time CDN for game traffic. *You* control the network!
 * [Open Reputation](https://openreputation.net/): An open source decentralized
   platform that maps identity and reputation onto the Internet-of-things.
 * [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no
