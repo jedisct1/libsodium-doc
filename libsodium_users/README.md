@@ -267,6 +267,7 @@ to add yours to that list.
 * [Innovis Solutions KG](https://www.innovis-solutions.de/)
 * [Keybase](https://keybase.io/)
 * [Krypt.co](https://krypt.co)
+* [Magento (Adobe)](https://magento.com/)
 * [Malwarebytes](https://www.malwarebytes.com/)
 * [OVH](https://www.ovh.com)
 * [Paragon Initiative Enterprises](https://paragonie.com)
