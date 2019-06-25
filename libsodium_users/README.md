@@ -114,6 +114,7 @@ to add yours to that list.
   application that encrypts files and directories using a symmetric-key
   algorithm.
 * [RavenDB](https://ravendb.net/): A linq enabled document database for .NET.
+* [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
 * [Remembear](https://www.remembear.com/): a full-featured, multi-platform
   password manager, by TunnelBear.
 * [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of
