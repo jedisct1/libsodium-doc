@@ -57,7 +57,7 @@
 * Java (Android): [Libstodium](https://github.com/ArteMisc/libstodium)
 * Java (Android): [Robosodium](https://github.com/GerardSoleCa/Robosodium)
 * Java (Android): [libsodium-JNI](https://github.com/joshjdevl/libsodium-jni)
-* Java: [ConsenSys Cava](https://github.com/ConsenSys/cava) ([crypto module](https://consensys.github.io/cava/docs/java/latest/net/consensys/cava/crypto/sodium/package-summary.html))
+* Java: [Apache Tuweni](https://github.com/apache/incubator-tuweni) ([crypto module](https://github.com/apache/incubator-tuweni/tree/master/crypto/src))
 * Java: [Lazysodium for Java](https://github.com/terl/lazysodium-java)
 * Java: [jsodium](https://github.com/naphaso/jsodium)
 * Java: [Kalium](https://github.com/abstractj/kalium)
