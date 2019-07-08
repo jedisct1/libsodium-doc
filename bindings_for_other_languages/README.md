@@ -61,7 +61,6 @@
 * Java: [Lazysodium for Java](https://github.com/terl/lazysodium-java)
 * Java: [jsodium](https://github.com/naphaso/jsodium)
 * Java: [Kalium](https://github.com/abstractj/kalium)
-* Java: [sodium-jni](https://github.com/JackWink/sodium-jni)
 * JavaScript (compiled to pure JavaScript):
   [libsodium.js](https://github.com/jedisct1/libsodium.js)
 * JavaScript (compiled to pure JavaScript):
