@@ -10,18 +10,18 @@ Password hashing functions derive a secret key of any size from a password and a
 salt.
 
 * The generated key has the size defined by the application, no matter what the
-  password length is.
+password length is.
 * The same password hashed with same parameters will always produce the same
-  output.
+output.
 * The same password hashed with different salts will produce different outputs.
 * The function deriving a key from a password and a salt is CPU intensive and
-  intentionally requires a fair amount of memory. Therefore, it mitigates
-  brute-force attacks by requiring a significant effort to verify each password.
+intentionally requires a fair amount of memory. Therefore, it mitigates
+brute-force attacks by requiring a significant effort to verify each password.
 
 Common use cases:
 
 * Password storage, or rather: storing what it takes to verify a password
-  without having to store the actual password.
+without having to store the actual password.
 * Deriving a secret key from a password, for example for disk encryption.
 
 Sodium's high-level `crypto_pwhash_*` API leverages the Argon2 function.
@@ -61,15 +61,15 @@ In order to mitigate this, passwords can be pre-hashed on the client (e.g. using
 libsodium.js in a web application):
 
 * On user account creation, the server sends a random seed to the client. The
-  client computes `ph = password_hash(password, seed)` and sends `ph` to the
-  server. `password_hash` is a password hashing function tuned for the maximum
-  memory and CPU usage the client can handle. The server stores the seed and
-  `password_hash'(ph, seed)` for this user account. `password_hash'` is a
-  password hashing function, whose parameters can be tuned for low memory and
-  CPU usage.
+client computes `ph = password_hash(password, seed)` and sends `ph` to the
+server. `password_hash` is a password hashing function tuned for the maximum
+memory and CPU usage the client can handle. The server stores the seed and
+`password_hash'(ph, seed)` for this user account. `password_hash'` is a
+password hashing function, whose parameters can be tuned for low memory and
+CPU usage.
 * On a login attempt, the server sends the seed, or, for a nonexistent user, a
-  pseudorandom seed that has to always be the same for a given user name (for
-  example using `crypto_generichash()`, with a key, and the user name as the
-  message). The client computes `ph = password_hash(password, seed)` and sends
-  it to the server. The server computes `password_hash'(ph, seed)` and compares
-  it against what was stored in the database.
+pseudorandom seed that has to always be the same for a given user name (for
+example using `crypto_generichash()`, with a key, and the user name as the
+message). The client computes `ph = password_hash(password, seed)` and sends
+it to the server. The server computes `password_hash'(ph, seed)` and compares
+it against what was stored in the database.
