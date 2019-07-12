@@ -10,6 +10,7 @@
 ## Bindings programming languages
 
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
+* .NET: [libsodium-core](https://github.com/tabrath/libsodium-core)
 * .NET: [nsec](https://github.com/ektrah/nsec)
 * .NET: [nitralibsodium](https://github.com/nitrachain/NitraLibSodium)
 * .NET: [HQ.Sodium](https://github.com/hq-io/HQ.Sodium)
