@@ -165,6 +165,8 @@ to add yours to that list.
   receiver of UDP packets using raw WiFi radio.
 * [Wire](https://wire.com/): Modern, private communications. Crystal clear
   voice, video and group chats. No advertising. Your data, always encrypted.
+* [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of
+Wireguard.
 * [Zbox](https://github.com/zboxfs/zbox): zero-details, privacy-focused
   embeddable file system.
 * [Zcash](https://z.cash/): Zcash is a decentralized and open source
