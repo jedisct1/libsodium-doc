@@ -193,6 +193,7 @@ to add yours to that list.
   minimal sodium plugin for Cordova - for iOS and Android.
 * [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content
   using Ed25519.
+* [Folly](https://github.com/facebook/folly): An open-source C++ library developed and used at Facebook.
 * [Halite](https://github.com/paragonie/halite): High-level cryptography
   interface for PHP.
 * [Hyperledger Indy](https://github.com/hyperledger/indy-sdk): Everything needed to build applications that interact with an Indy distributed identity ledger.
