@@ -23,7 +23,6 @@
 * Clojure: [caesium](https://github.com/lvh/caesium)
 * Clojure: [naclj](https://github.com/franks42/naclj)
 * Common LISP: [cl-sodium](https://github.com/orthecreedence/cl-sodium)
-* Crystal: [cox](https://github.com/andrewhamon/cox) (unmaintained)
 * Crystal: [Sodium](https://github.com/didactic-drunk/sodium.cr)
 * D: [Chloride](https://github.com/bytecurry/chloride)
 * D: [LibsodiumD](https://github.com/Geod24/libsodiumd)
