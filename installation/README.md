@@ -21,11 +21,14 @@ sudo make install
 ```
 
 Since different files are compiled for different CPU classes, and to prevent
-unwanted optimizations, avoiding link-time optimization (LTO) is recommended.
+unwanted optimizations, link-time optimization (LTO) should not be used.
 
 On Linux, if the process hangs at the `make check` step, your system PRG may not
 have been properly seeded. Please refer to the notes in the "Usage" section for
 ways to address this.
+
+Also on Linux, like any manually installed library, running the `ldconfig`
+command is required in order to make the dynamic linker aware of the new library.
 
 ## Compilation on Windows
 
