@@ -60,7 +60,7 @@ Projects willing to statically link Sodium must define a macro named
 
 ## Cross-compiling
 
-Cross-compilation is fully supported. This is an example of cross-compiling to
+The library can be cross-compiled. This is an example of cross-compiling to
 ARM using the GNU tools for ARM embedded processors:
 
 ```sh
