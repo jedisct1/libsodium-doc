@@ -109,4 +109,4 @@ solve common problems.
 * Support server relief in the password hashing API
 * Ristretto \[DONE\]
 * Consider a streaming interface for `crypto_shorthash_*()`
-* Consider AEGIS-128, -128L or -256.
+* AEGIS-256 \[IN PROGRESS\]
