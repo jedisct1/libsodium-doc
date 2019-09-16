@@ -25,7 +25,6 @@ the authentication tag in a separate location.
 | Construction            | Key size | Nonce size | Block size | MAC size | Availability                                                                                                  |
 | :---------------------- | :------- | :--------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------ |
 | AES256-GCM              | 256 bits | 96 bits    | 128 bits   | 128 bits | libsodium &gt;= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
-| AEGIS-256               | 256 bits | 256 bits   | 128 bits   | 128 bits | libsodium &gt;= 1.0.19. Requires a recent Intel CPU.                                                          |
 | ChaCha20-Poly1305       | 256 bits | 64 bits    | 512 bits   | 128 bits | libsodium &gt;= 0.6.0. Also implemented in {Libre,Open,Boring}SSL.                                            |
 | ChaCha20-Poly1305-IETF  | 256 bits | 96 bits    | 512 bits   | 128 bits | libsodium &gt;= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries.   |
 | XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium &gt;= 1.0.12. On the standard track.                                                                |
@@ -35,7 +34,6 @@ the authentication tag in a separate location.
 | Construction            | Max bytes for a single \(key,nonce\) | Max bytes for a single key                                       |
 | :---------------------- | :----------------------------------- | :--------------------------------------------------------------- |
 | AES256-GCM              | ~ 64 GB                              | ~ 350 GB (for ~16 KB long messages)                              |
-| AEGIS-256               | No practical limits \(~ 2^61 bytes\) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | ChaCha20-Poly1305       | No practical limits \(~ 2^64 bytes\) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | ChaCha20-Poly1305-IETF  | 256 GB                               | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | XChaCha20-Poly1305-IETF | No practical limits \(~ 2^64 bytes\) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
@@ -51,7 +49,6 @@ practical limitations on the total number of messages.
 | Construction            | Safe options to choose a nonce                 |
 | :---------------------- | :--------------------------------------------- |
 | AES256-GCM              | Counter, permutation                           |
-| AEGIS-256               | Counter, permutation, random, Hk\(random ‖ m\) |
 | ChaCha20-Poly1305       | Counter, permutation                           |
 | ChaCha20-Poly1305-IETF  | Counter, permutation                           |
 | XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random ‖ m\) |
@@ -112,12 +109,8 @@ supported architectures.
 
 The main limitation of XChaCha20-Poly1305 is that it is not widely implemented
 in other libraries yet. However, it will
-[soon](https://tools.ietf.org/html/draft-irtf-cfrg-xchacha-01) become an IETF
+[soon](https://tools.ietf.org/html/draft-arciszewski-xchacha-03) become an IETF
 standard.
-
-### AEGIS-256
-
-TBA.
 
 ## Additional data
 
