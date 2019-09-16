@@ -1,4 +1,4 @@
-# Secret-key authenticated encryption
+# Nacl secretbox construction
 
 ## Example
 
