@@ -60,6 +60,8 @@ attacks, such as BLAKE2 or the HMAC construction.
 
 `XChaCha20-Poly1305-IETF` is the safest choice.
 
+Other choices are only present for interoperability with other libraries that don't implement `XChaCha20-Poly1305-IETF` yet.
+
 ### AES256-GCM
 
 The current implementation of this construction is hardware-accelerated and
