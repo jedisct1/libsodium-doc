@@ -177,6 +177,8 @@ Wireguard.
 * [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin):
   Dovecot plugin to support Scrypt and Argon2 for password hashing.
 * [Wordpress](https://wordpress.com) uses libsodium for verified updates.
+* [C-lightning](https://github.com/ElementsProject/lightning/), a [Lightning Network](https://github.com/lightningnetwork/lightning-rfc)
+  implementation in C, uses libsodium.
 
 ## Libraries using libsodium
 
