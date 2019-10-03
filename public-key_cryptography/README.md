@@ -27,8 +27,8 @@ exchange their keys: Alice sends her **public** key to Bob, and Bob sends his
 Now, Alice wants to send a message to Bob.
 
 She encrypts it using Bob's public key, and adds an authentication tag using her
-own private key. When Bob receives it, he will check the message's integrity,
-then he will decrypt it using his own private key.
+own private key. When Bob receives it, he will check the message's integrity and 
+that it was signed by her key, then he will decrypt it using his own private key.
 
 An adversary has to get hold of Alice or Bob's private keys in order to decrypt
 this message, or construct a different, valid message.
