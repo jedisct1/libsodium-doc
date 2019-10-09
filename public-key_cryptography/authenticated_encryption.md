@@ -57,7 +57,7 @@ One easy way to generate a nonce is to use `randombytes_buf()`, considering the
 size of the nonces the risk of any random collisions is negligible. For some
 applications, if you wish to use nonces to detect missing messages or to ignore
 replayed messages, it is also acceptable to use a simple incrementing counter as
-a nonce. An better alternative is to use the `crypto_secretstream()` API.
+a nonce. A better alternative is to use the `crypto_secretstream()` API.
 
 When doing so you must ensure that the same value can never be re-used (for
 example you may have multiple threads or even hosts generating messages using
