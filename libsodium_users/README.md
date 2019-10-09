@@ -11,6 +11,9 @@ to add yours to that list.
 * [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
   other tools to aid development of blockchain and other decentralized
   software in Java and other JVM languages.
+* [Babble Browser Extension](https://github.com/XCF-Babble/babble): a
+  platform agnostic browser extension that allows for easy encryption
+  and decryption of text data across the web.
 * [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform
   file encryption.
 * [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php
