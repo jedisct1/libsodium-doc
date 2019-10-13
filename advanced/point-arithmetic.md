@@ -84,18 +84,6 @@ This function directly exposes the inverse Elligator 2 map, uses the high bit to
 
 ## Hash-to-group
 
-```c
-int crypto_core_ed25519_from_hash(unsigned char *p, const unsigned char *r);
-```
-
-The `crypto_core_ed25519_from_hash()` function maps a 64 bytes vector `r` to a point, and stores its representation into `p`.
-
-The vector `r` represents a value, usually the output of a hash function, encoded in big-endian order. The high bit (which, in big-endian order, is in the first element of the vector) sets the sign of the X coordinate, and the resulting point is multiplied by the cofactor.
-
-The point is guaranteed to be on the main subgroup.
-
-This function is similar to `crypto_core_ed25519_from_uniform()` but uses a larger input size, that some algorithms require.
-
 ## Scalar multiplication
 
 ```c
@@ -225,7 +213,6 @@ The `crypto_core_ed25519_scalar_mul()` function stores `x * y (mod L)` into `z`.
 * `crypto_scalarmult_ed25519_BYTES`
 * `crypto_scalarmult_ed25519_SCALARBYTES`
 * `crypto_core_ed25519_BYTES`
-* `crypto_core_ed25519_HASHBYTES`
 * `crypto_core_ed25519_UNIFORMBYTES`
 * `crypto_core_ed25519_SCALARBYTES`
 * `crypto_core_ed25519_NONREDUCEDSCALARBYTES`
@@ -237,38 +224,3 @@ These functions were introduced in libsodium 1.0.16, 1.0.17 and 1.0.18.
 For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
 
 `crypto_core_ed25519_from_uniform()` exposes the Elligator 2 inverse map, using the high bit for the sign of the X coordinate.
-
-Since version 1.0.18, `crypto_core_ed25519_from_hash()` implements the `hash2curve` method from the `irtf-cfrg-hash-to-curve` draft, which is similar to the algorithm used by `crypto_core_ed25519_from_uniform()`, but uses a 512-bit hash as an input to further reduce the output bias.
-
-For protocols mandating a hash function that behaves as a random oracle, the `H2C-0005` suite can be trivially implemented as follows:
-
-```c
-void h2c_005_ro(unsigned char p[crypto_core_ed25519_BYTES],
-                const unsigned char h[64])
-{
-    struct {
-        unsigned char d[3 + 38 + 4];
-        unsigned char h[64];
-    } m;
-    struct {
-        unsigned char m_[crypto_hash_sha512_BYTES];
-        unsigned char i;
-    } m_i;
-    unsigned char h0[crypto_hash_sha512_BYTES], h1[crypto_hash_sha512_BYTES];
-    unsigned char p0[crypto_core_ed25519_BYTES], p1[crypto_core_ed25519_BYTES];
-
-    memcpy(m.d, "h2c" "H2C-Curve25519-SHA512-Elligator2-FFSTV"
-                "\0\0\0\x40", sizeof m.d);
-    memcpy(m.h, h, sizeof m.h);
-    crypto_hash_sha512(m_i.m_, (const unsigned char*)&m, sizeof m);
-    m_i.i = 0x01;
-    crypto_hash_sha512(h0, (const unsigned char*)&m_i, sizeof m_i);    
-    crypto_core_ed25519_from_hash(p0, h0);
-    m_i.i = 0x02;
-    crypto_hash_sha512(h1, (const unsigned char*)&m_i, sizeof m_i);
-    crypto_core_ed25519_from_hash(p1, h1);
-    crypto_core_ed25519_add(p, p0, p1);
-}
-```
-
-`crypto_core_ed25519_from_hash()` clears the cofactor, so this operation is not required after the addition.
