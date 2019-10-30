@@ -253,7 +253,7 @@ Rekeying happens automatically and transparently, before the internal counter of
 the underlying cipher wraps. Therefore, streams can be arbitrary large.
 
 Optionally, applications for which forward secrecy is critical can attach the
-``crypto_secretstream_xchacha20poly1305_TAG_REKEY` tag to a message in order to
+`crypto_secretstream_xchacha20poly1305_TAG_REKEY` tag to a message in order to
 trigger an explicit rekeying. The decryption API will automatically update the
 key if this tag is found attached to a message.
 
