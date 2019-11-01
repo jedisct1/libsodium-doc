@@ -33,7 +33,7 @@ to add yours to that list.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
   server for Linux/UNIX-like systems, written with security primarily in mind.
 * [Duniter](https://duniter.org): Duniter is an open source Relative Money Theory ditributed
-  forged blockchain and clients ( silkaj, duniterpy, cesium, ...) uses libsodium
+  forged blockchain and clients (silkaj, duniterpy, cesium, ...) uses libsodium
 * [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
   chat app using progressive web app technologies.  
   Built with [Ember](http://emberjs.com) using all of the latest experimental features.
