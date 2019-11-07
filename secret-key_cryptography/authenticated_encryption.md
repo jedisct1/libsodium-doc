@@ -29,8 +29,8 @@ This operation:
 * Computes an authentication tag. This tag is used to make sure that the message
   hasn't been tampered with before decrypting it.
 
-A single key is used both to encrypt/sign and verify/decrypt messages. For this
-reason, it is critical to keep the key confidential.
+A single key is used both to encrypt/authenticate and verify/decrypt messages.
+For this reason, it is critical to keep the key confidential.
 
 The nonce doesn't have to be confidential, but it should never ever be reused
 with the same key. The easiest way to generate a nonce is to use
