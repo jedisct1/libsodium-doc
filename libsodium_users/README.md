@@ -11,6 +11,9 @@ to add yours to that list.
 * [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
   other tools to aid development of blockchain and other decentralized
   software in Java and other JVM languages.
+* [Babble Browser Extension](https://github.com/XCF-Babble/babble): a
+  platform agnostic browser extension that allows for easy encryption
+  and decryption of text data across the web.
 * [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform
   file encryption.
 * [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php
@@ -29,6 +32,8 @@ to add yours to that list.
   synchronization and encryption tool.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
   server for Linux/UNIX-like systems, written with security primarily in mind.
+* [Duniter](https://duniter.org): Duniter is an open source Relative Money Theory ditributed
+  forged blockchain and clients (silkaj, duniterpy, cesium, ...) uses libsodium
 * [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
   chat app using progressive web app technologies.  
   Built with [Ember](http://emberjs.com) using all of the latest experimental features.
@@ -165,6 +170,8 @@ to add yours to that list.
   receiver of UDP packets using raw WiFi radio.
 * [Wire](https://wire.com/): Modern, private communications. Crystal clear
   voice, video and group chats. No advertising. Your data, always encrypted.
+* [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of
+Wireguard.
 * [Zbox](https://github.com/zboxfs/zbox): zero-details, privacy-focused
   embeddable file system.
 * [Zcash](https://z.cash/): Zcash is a decentralized and open source
@@ -175,6 +182,8 @@ to add yours to that list.
 * [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin):
   Dovecot plugin to support Scrypt and Argon2 for password hashing.
 * [Wordpress](https://wordpress.com) uses libsodium for verified updates.
+* [C-lightning](https://github.com/ElementsProject/lightning/), a [Lightning Network](https://github.com/lightningnetwork/lightning-rfc)
+  implementation in C, uses libsodium.
 
 ## Libraries using libsodium
 

@@ -101,7 +101,7 @@ solve common problems.
 * Security audit by a 3rd party \[DONE\]
 * Formally-verified implementations \[on hold\]
 * Padding API \[DONE\]
-* `secretstream_inject()` for nonce misuse-resistance
+* `secretstream_inject()` for nonce misuse-resistance \[on hold\]
 * Point addition, substraction \[DONE\]
 * Point validation \[DONE\]
 * Hash-to-point (Elligator) \[DONE\]
@@ -109,3 +109,4 @@ solve common problems.
 * Support server relief in the password hashing API
 * Ristretto \[DONE\]
 * Consider a streaming interface for `crypto_shorthash_*()`
+* AEGIS-256 \[IN PROGRESS\]

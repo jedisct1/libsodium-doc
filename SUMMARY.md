@@ -12,7 +12,7 @@
 * [Secure memory](helpers/memory_management.md)
 * [Generating random data](generating_random_data/README.md)
 * [Secret-key cryptography](secret-key_cryptography/README.md)
-  * [Authenticated encryption](secret-key_cryptography/authenticated_encryption.md)
+  * [Authenticated encryption](secret-key_cryptography/secretbox.md)
   * [Encrypted streams and file encryption](secret-key_cryptography/secretstream.md)
   * [Encrypting a set of related messages](secret-key_cryptography/encrypted-messages.md)
   * [Authentication](secret-key_cryptography/secret-key_authentication.md)

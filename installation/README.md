@@ -21,11 +21,14 @@ sudo make install
 ```
 
 Since different files are compiled for different CPU classes, and to prevent
-unwanted optimizations, avoiding link-time optimization (LTO) is recommended.
+unwanted optimizations, link-time optimization (LTO) should not be used.
 
 On Linux, if the process hangs at the `make check` step, your system PRG may not
 have been properly seeded. Please refer to the notes in the "Usage" section for
 ways to address this.
+
+Also on Linux, like any manually installed library, running the `ldconfig`
+command is required in order to make the dynamic linker aware of the new library.
 
 ## Compilation on Windows
 
@@ -57,7 +60,7 @@ Projects willing to statically link Sodium must define a macro named
 
 ## Cross-compiling
 
-Cross-compilation is fully supported. This is an example of cross-compiling to
+The library can be cross-compiled. This is an example of cross-compiling to
 ARM using the GNU tools for ARM embedded processors:
 
 ```sh
@@ -72,6 +75,8 @@ make install
 native platform.
 
 Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
+
+Please note that using libsodium on ARM Cortex M0, M3 and M4 CPUs is not recommended if side-channels are a concern.
 
 ## Compiling with CompCert
 
