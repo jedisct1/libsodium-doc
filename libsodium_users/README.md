@@ -16,8 +16,6 @@ to add yours to that list.
   and decryption of text data across the web.
 * [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform
   file encryption.
-* [CRUD Messenger](https://github.com/zyisrad/crudMessenger): A libsodium-php
-  and MongoDB based single server messaging platform.
 * [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for
   Windows.
 * [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral
