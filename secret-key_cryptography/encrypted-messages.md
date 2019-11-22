@@ -179,9 +179,7 @@ Addition can be performed using the `sodium_add()` function.
 The security guarantees is weaker than when using a random initialization
 vector. Namely, two sequences of messages sharing the same prefix will produce
 the same encrypted stream prefix. Therefore, this scheme must only be used on
-platforms that cannot produce secure random numbers. A sound alternative is to
-use a library specifically designed for these platforms, such as
-[libhydrogen](https://libhydrogen.org).
+platforms that cannot produce secure random numbers.
 
 ## Short nonces
 
