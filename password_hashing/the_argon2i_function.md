@@ -1,8 +1,6 @@
-# The Argon2 memory-hard function
+# The default password-hashing function
 
-Since version 1.0.9, Sodium provides a password hashing scheme called Argon2.
-
-Argon2 summarizes the state of the art in the design of memory-hard functions.
+Since version 1.0.9, Sodium uses a password hashing scheme called Argon2.
 
 It aims at the highest memory filling rate and effective use of multiple computing units, while still providing defense against tradeoff attacks.
 
