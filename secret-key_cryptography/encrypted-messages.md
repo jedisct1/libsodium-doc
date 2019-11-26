@@ -7,12 +7,12 @@ However, applications may wish to encrypt a set of messages with the following
 constraints:
 
 * If a sequence of messages is encrypted, the decryption system must ensure that
-  the complete, unmodified sequence has been properly received. In particular,
-  it must guarantee that messages haven't been added, removed, duplicated,
-  truncated or reordered.
+the complete, unmodified sequence has been properly received. In particular,
+it must guarantee that messages haven't been added, removed, duplicated,
+truncated or reordered.
 * If an unordered set of encrypted messages is transmitted (for example when
-  using a protocol such as UDP), the decryption system must be able to reorder
-  the messages.
+using a protocol such as UDP), the decryption system must be able to reorder
+the messages.
 
 Simply encrypting individual messages with a random nonce doesn't respect these
 constraints.
