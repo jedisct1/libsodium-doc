@@ -1,10 +1,6 @@
 # The default password-hashing function
 
-Since version 1.0.9, Sodium uses a password hashing scheme called Argon2.
-
-It aims at the highest memory filling rate and effective use of multiple computing units, while still providing defense against tradeoff attacks.
-
-It prevents ASICs from having a significant advantage over software implementations.
+Sodium provides an API that can be used both for key derivation using a low-entropy input, and for password storage.
 
 ## Example 1: key derivation
 
@@ -69,13 +65,13 @@ The computed key is stored into `out`.
 
 `alg` is an identifier for the algorithm to use, and should be set to one of the following values:
 
-* `crypto_pwhash_ALG_DEFAULT`: the currently recommended algorithm, which can   change from one version of libsodium to another.
+* `crypto_pwhash_ALG_DEFAULT`: the currently recommended algorithm, which can change from one version of libsodium to another.
 * `crypto_pwhash_ALG_ARGON2I13`: version 1.3 of the Argon2i algorithm.
-* `crypto_pwhash_ALG_ARGON2ID13`: version 1.3 of the Argon2id algorithm,   available since libsodium 1.0.13.
+* `crypto_pwhash_ALG_ARGON2ID13`: version 1.3 of the Argon2id algorithm, available since libsodium 1.0.13.
 
 For interactive, online operations, `crypto_pwhash_OPSLIMIT_INTERACTIVE` and
 `crypto_pwhash_MEMLIMIT_INTERACTIVE` provide base line for these two parameters.
-This requires 64 MiB of dedicated RAM. Higher values may improve security (see below).
+This currently requires 64 MiB of dedicated RAM. Higher values may improve security (see below).
 
 Alternatively, `crypto_pwhash_OPSLIMIT_MODERATE` and
 `crypto_pwhash_MEMLIMIT_MODERATE` can be used. This requires 256 MiB of
@@ -191,7 +187,7 @@ Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_*` 
 
 Do not use constants (including `crypto_pwhash_OPSLIMIT_*` and
 `crypto_pwhash_MEMLIMIT_*`) in order to verify a password or produce a
-deterministic output. Save the parameters along with the hash instead.
+deterministic output. Save the parameters (including the algorithm identifier) along with the hash instead.
 
 For password verification, the recommended interface is `crypto_pwhash_str()` and `crypto_pwhash_str_verify()`. The string produced by `crypto_pwhash_str()` already includes an algorithm identifier, as well as all the parameters (including the automatically generated salt) that have been used to hash the password. Subsequently, `crypto_pwhash_str_verify()` automatically decodes these
 parameters.
@@ -204,7 +200,7 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 `sodium_munlock()` overwrites the region with zeros before unlocking it, so it must not be done before calling this function (otherwise zeroes, instead of the password, would be hashed).
 
-Libsodium supports the Argon2id variant since version 1.0.13, and it became the default algorithm in version 1.0.15.
+Since version 1.0.15, libsodium's default algorithm is Argon2id.
 
 ## Algorithm details
 
