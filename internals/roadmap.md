@@ -83,6 +83,7 @@ solve common problems.
 * Nonce-misuse resistant scheme
 * BLAKE2 AVX2 implementations \[DONE\]
 * Keyed \(hash-then-encrypt\) crypto_pwhash
+* Consider Yescrypt
 * Consider BLAKE2X \[on hold\]
 * Argon2id \[DONE\]
 * Port libhydrogen's key exchange API
@@ -109,4 +110,4 @@ solve common problems.
 * Support server relief in the password hashing API
 * Ristretto \[DONE\]
 * Consider a streaming interface for `crypto_shorthash_*()`
-* AEGIS-256 \[IN PROGRESS\]
+* AEGIS-256 \[PARTIALLY DONE\]
