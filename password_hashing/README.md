@@ -17,18 +17,15 @@ Common use cases:
 without having to store the actual password.
 * Deriving a secret key from a password, for example for disk encryption.
 
-Sodium's high-level `crypto_pwhash_*` API currently leverages the Argon2 function on all platforms. This can change at any point in time, but it is guaranteed that a given version of libsodium can verify all hashes produced by all previous versions, from any platform.
+Sodium's high-level `crypto_pwhash_*` API currently leverages the Argon2id function on all platforms. This can change at any point in time, but it is guaranteed that a given version of libsodium can verify all hashes produced by all previous versions, from any platform. Applications don't have to worry about backward compatibility.
 
 The more specific `crypto_pwhash_scryptsalsa208sha256_*` API uses the more conservative and widely deployed Scrypt function.
 
 ## Argon2
 
-Argon2 is optimized for the x86 architecture and exploits the cache and memory organization of the recent Intel and AMD processors. But its implementation remains portable and fast on other architectures.
+Argon2 is optimized for the x86 architecture and exploits the cache and memory organization of the recent Intel and AMD processors. But its implementation remains portable and fast on other architectures, with the exception of JavaScript.
 
-Argon2 has three variants: Argon2d, Argon2i and Argon2id. Argon2i uses data-independent memory access, which is preferred for password hashing and password-based key derivation. Argon2i also makes multiple passes over the
-memory to protect from tradeoff attacks. Argon2id combines both.
-
-Argon2 is recommended over Scrypt if requiring libsodium >= 1.0.9 is not a concern.
+Argon2 has three variants: Argon2d, Argon2i and Argon2id. Libsodium supports Argon2i and Argon2id.
 
 ## Scrypt
 

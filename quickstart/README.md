@@ -95,12 +95,12 @@ prefered.
 
 * Use the `crypto_pwhash_str()` and `crypto_pwhash_str_verify()` functions,
   described in the
-  [`password hashing guide`](../password_hashing/the_argon2i_function.md).
+  [`password hashing guide`](../password_hashing/README.md).
 
 ## How do I encrypt a file using a password?
 
 * Derive an encryption key from the password using
-  [`crypto_pwhash()`](../password_hashing/the_argon2i_function.md).
+  [`crypto_pwhash()`](../password_hashing/default_phf.md).
 * Use that key with the
   [`crypto_secretstream` API](../secret-key_cryptography/secretstream.md).
 * File metadata should probably be part of the encrypted data, or, if it is not

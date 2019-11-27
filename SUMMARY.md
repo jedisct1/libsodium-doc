@@ -31,7 +31,7 @@
   * [Generic hashing](hashing/generic_hashing.md)
   * [Short-input hashing](hashing/short-input_hashing.md)
 * [Password hashing](password_hashing/README.md)
-  * [The Argon2 function](password_hashing/the_argon2i_function.md)
+  * [The pwhash* API](password_hashing/default_phf.md)
 * [Key derivation](key_derivation/README.md)
 * [Key exchange](key_exchange/README.md)
 * [Advanced](advanced/README.md)
