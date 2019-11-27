@@ -43,6 +43,8 @@ directly as a shared key is not recommended.
 A better way to compute a shared key is `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2`
 being the public keys.
 
+By doing so, each party can prove what exact public key they intended to perform a key exchange with (for a given public key, 11 other public keys producing the same shared secret can be trivially computed).
+
 This can be achieved with the following code snippet:
 
 ```c
