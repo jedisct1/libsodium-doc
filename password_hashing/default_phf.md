@@ -52,7 +52,7 @@ int crypto_pwhash(unsigned char * const out,
                   size_t memlimit, int alg);
 ```
 
-The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `passwdlen` should be at least `crypto_pwhash_PASSWD_MIN` and  crypto_pwhash_PASSWD_MAX`. `outlen` should be at
+The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `passwdlen` should be at least `crypto_pwhash_PASSWD_MIN` and  `crypto_pwhash_PASSWD_MAX`. `outlen` should be at
 least `crypto_pwhash_BYTES_MIN` = `16` (128 bits) and at most `crypto_pwhash_BYTES_MAX`.
 
 The computed key is stored into `out`.
