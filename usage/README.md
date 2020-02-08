@@ -27,8 +27,8 @@ For static linking, Visual Studio users should define `SODIUM_STATIC=1` and
 `SODIUM_EXPORT=`. This is not required on other platforms.
 
 Projects using CMake can include the
-[Findsodium.cmake](https://github.com/jedisct1/libsodium/blob/master/contrib/Findsodium.cmake)
-file in order to detect and link the library.
+[Fidsodium.cmake](https://github.com/facebookincubator/fizz/blob/master/fizz/cmake/FindSodium.cmake)
+file from the Facebook Fizz project in order to detect and link the library.
 
 `sodium_init()` initializes the library and should be called before any other
 function provided by Sodium. It is safe to call this function more
