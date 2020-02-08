@@ -182,6 +182,7 @@ Wireguard.
 * [Wordpress](https://wordpress.com) uses libsodium for verified updates.
 * [C-lightning](https://github.com/ElementsProject/lightning/), a [Lightning Network](https://github.com/lightningnetwork/lightning-rfc)
   implementation in C, uses libsodium.
+* [SilentDragon](https://github.com/MyHush/SilentDragon) + [SilentDragonLite](https://github.com/MyHush/SilentDragonLite) : GUI full node + lite wallets for the [Hush](https://myhush.org) cryptocoin, which is focused on secure communications.
 
 ## Libraries using libsodium
 

@@ -111,3 +111,4 @@ solve common problems.
 * Ristretto \[DONE\]
 * Consider a streaming interface for `crypto_shorthash_*()`
 * AEGIS-256 \[PARTIALLY DONE\]
+* BLAKE3

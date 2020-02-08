@@ -22,7 +22,7 @@ libsodium implements three versions of the ChaCha20-Poly1305 construction:
 * The original construction can safely encrypt up to 2^64 messages with the same
   key (even more with most protocols), without any practical limit to the size
   of a message (up to 2^64 bytes for a 128-bit tag).
-* The IETF variant. It can safely encrypt a pratically unlimited number of
+* The IETF variant. It can safely encrypt a practically unlimited number of
   messages, but individual messages cannot exceed 64\*(2^32)-64 bytes
   (approximatively 256 GB).
 * The XChaCha20 variant, introduced in libsodium 1.0.12. It can safely encrypt a

@@ -67,7 +67,7 @@ running an obsolete kernel, this is very likely to be the case.
 
 In a virtualized environment, make sure that the `virtio-rng` interface is
 available. If this is a cloud service and the hypervisor settings are out of
-your reach, consider switching to a difference service.
+your reach, consider switching to a different service.
 
 On a bare-metal host such as Scaleway instances, a possible workaround is to
 install the `rng-tools` package:
