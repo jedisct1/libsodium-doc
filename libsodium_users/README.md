@@ -6,6 +6,7 @@ Some applications using libsodium. Send a
 [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md)
 to add yours to that list.
 
+* [Abot](https://abot.app): Anonymous messaging for Slack.
 * [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote
   desktop implementation (client and server) for Windows systems.
 * [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
