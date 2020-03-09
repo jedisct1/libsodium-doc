@@ -47,7 +47,7 @@ crypto_aead_aes256gcm_encrypt(ciphertext, &ciphertext_len,
                               ADDITIONAL_DATA, ADDITIONAL_DATA_LEN,
                               NULL, nonce, key);
 
-unsigned char decrypted[MESSAGE_LEN];
+unsigned char decrypted[MESSAGE_LEN + 1];
 unsigned long long decrypted_len;
 if (ciphertext_len < crypto_aead_aes256gcm_ABYTES ||
     crypto_aead_aes256gcm_decrypt(decrypted, &decrypted_len,
