@@ -44,6 +44,19 @@ Visual Studio solutions can be then found in the `builds/msvc` directory.
 In order to compile with MingW, run either `./dist-build/msys2-win32.sh` or
 `./dist-build/msys2-win64.sh` for Win32 or x64 targets.
 
+Alternatively, you can build and install libsodium using [vcpkg](https://github.com/microsoft/vcpkg/) dependency manager:
+
+```batch
+git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.bat
+./vcpkg integrate install
+./vcpkg install libsodium
+```
+
+The libsodium port in vcpkg is kept up to date by microsoft team members and community contributors.
+If the version is out of date, please [create an issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg repository.
+
 ## Pre-built libraries
 
 [Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019](https://download.libsodium.org/libsodium/releases/)
