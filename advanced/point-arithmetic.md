@@ -80,7 +80,7 @@ The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` to 
 
 The point is guaranteed to be on the main subgroup.
 
-This function directly exposes the inverse Elligator 2 map, uses the high bit to set the sign of the X coordinate, and the resulting point is multiplied by the cofactor.
+This function directly exposes the Elligator 2 map, uses the high bit to set the sign of the X coordinate, and the resulting point is multiplied by the cofactor.
 
 ## Hash-to-group
 
@@ -223,4 +223,4 @@ These functions were introduced in libsodium 1.0.16, 1.0.17 and 1.0.18.
 
 For a complete example using these functions, see the [SPAKE2+EE implementation](https://github.com/jedisct1/spake2-ee) for libsodium.
 
-`crypto_core_ed25519_from_uniform()` exposes the Elligator 2 inverse map, using the high bit for the sign of the X coordinate.
+`crypto_core_ed25519_from_uniform()` exposes the Elligator 2 map, using the high bit for the sign of the X coordinate.
