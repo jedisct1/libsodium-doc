@@ -112,3 +112,4 @@ solve common problems.
 * Consider a streaming interface for `crypto_shorthash_*()`
 * AEGIS-256 \[PARTIALLY DONE\]
 * BLAKE3
+* HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
