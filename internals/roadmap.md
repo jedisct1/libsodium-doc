@@ -113,3 +113,4 @@ solve common problems.
 * AEGIS-256 \[PARTIALLY DONE\]
 * BLAKE3
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
+* Standard hash-to-curve \[DONE\]
