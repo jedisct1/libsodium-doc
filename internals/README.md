@@ -151,10 +151,10 @@ Releases are never shipped until all these tools report zero defects.
 ### Dynamic analysis
 
 Continuous Integration is provided by
-[Travis](https://travis-ci.org/jedisct1/libsodium?branch=master) for
-Linux/x86_64, and by
-[AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium) for the Visual
-Studio builds.
+[Azure Pipelines](https://jedisct1.visualstudio.com/Libsodium),
+[Travis](https://travis-ci.com/jedisct1/libsodium?branch=stable),
+[GitHub Actions](https://github.com/jedisct1/libsodium/actions) and
+[AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium).
 
 In addition, the test suite has to always pass on the following environments.
 libsodium is manually validated on all of these before every release, as well as
@@ -170,8 +170,8 @@ before merging a new change to the `stable` branch.
   \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86_64 using tcc
 - Ubuntu/x86_64 using CompCert
-- macOS using Xcode 11.2.1
-- Windows 10 using Visual Studio 2010 (x86_64 only), 2012, 2013, 2015, 2017 and 2019 (x86 and x86_64)
+- macOS using Xcode 11.4
+- Windows 10 using Visual Studio 2017 and 2019 (x86 and x86_64)
 - msys2 using mingw32 and mingw64
 - ArchLinux/x86_64
 - ArchLinux/armv6

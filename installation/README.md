@@ -59,7 +59,7 @@ If the version is out of date, please [create an issue or pull request](https://
 
 ## Pre-built libraries
 
-[Pre-built x86 and x86_64 libraries for Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019](https://download.libsodium.org/libsodium/releases/)
+[Pre-built x86 and x86_64 libraries for Visual Studio 2017 and 2019](https://download.libsodium.org/libsodium/releases/)
 with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64.
 
 They include header files, as well as static \(`.LIB`\) and shared \(`.DLL`\)
