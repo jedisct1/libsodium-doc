@@ -114,3 +114,7 @@ solve common problems.
 * BLAKE3
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
 * Standard hash-to-curve \[DONE\]
+
+## 2.0.x roadmap
+
+* Switch to the libhydrogen API
