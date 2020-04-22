@@ -115,6 +115,8 @@ solve common problems.
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
 * Standard hash-to-curve \[DONE\]
 
-## 2.0.x roadmap
+## 2.0.0 roadmap
 
 * Switch to the libhydrogen API
+* Session support
+* PQC
