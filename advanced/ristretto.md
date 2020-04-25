@@ -195,7 +195,7 @@ The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into
 
 ## Notes
 
-As Ristretto encodes a field element that is always smaller than 2^255, and doesn't need to encode a sign, the top bit is not used.
+As Ristretto encodes a field element that is always smaller than 2^255, the top bit is not used.
 
 It can be thus used by applications to encode additional data.
 
