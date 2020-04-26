@@ -113,7 +113,11 @@ crypto_generichash_final(&h, session_keypair_by_client, sizeof session_keypair_b
 * `crypto_scalarmult_BYTES`
 * `crypto_scalarmult_SCALARBYTES`
 
-## Algorithm details
+## Notes
+
+As X25519 encodes a field element that is always smaller than 2^255, the top bit is not used.
+
+## Algorithm
 
 * X25519 \(ECDH over Curve25519\) -
   [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
