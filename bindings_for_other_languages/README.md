@@ -41,6 +41,7 @@
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
 * Go: [Sodium](https://github.com/jamesruan/sodium)
 * Guile: [Guile-NaCl](https://github.com/cryptotronix/guile-nacl)
+* Haskell: [libsodium](https://hackage.haskell.org/package/libsodium) 
 * Haskell: [haskell-libsodium](https://github.com/dmp1ce/haskell-libsodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * Haskell: [Lithium](https://github.com/eth-r/lithium)
