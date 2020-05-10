@@ -40,7 +40,7 @@ This simplifies usage and mitigates type confusion in languages that don't enfor
 Initializing the random number generator is the only operation that requires an
 internal lock.
 
-`sodium_init()` should be called before any other functions. It picks the best
+`sodium_init()` must be called before any other functions. It picks the best
 implementations for the current platform, initializes the random number
 generator and generates the canary for guarded heap allocations.
 

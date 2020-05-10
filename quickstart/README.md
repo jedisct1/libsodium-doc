@@ -5,7 +5,7 @@
 A project using libsodium should include the `sodium.h` header. Including
 individual headers is neither required nor recommended.
 
-The `sodium_init()` function should then be called before any other function. It
+The `sodium_init()` function must then be called before any other function. It
 is safe to call `sodium_init()` multiple times, or from different threads; it
 will immediately return `1` without doing anything if the library had already
 been initialized.
