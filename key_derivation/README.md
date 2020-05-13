@@ -80,6 +80,8 @@ Contexts don't have to be secret and can have a low entropy.
 
 Examples of contexts include `UserName`, `__auth__`, `pictures` and `userdata`.
 
+They must be `crypto_kdf_CONTEXTBYTES` bytes long.
+
 If more convenient, it is also fine to use a single global context for a whole
 application. This will still prevent the same keys from being mistakenly used by
 another application.

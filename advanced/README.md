@@ -9,6 +9,9 @@ or for interoperability with other libraries and applications.
 As a result, using these functions directly may not be secure if not done
 correctly.
 
+The behavior and/or interface of these functions can change at any point in
+time.
+
 Low-level functions that are not required by high-level APIs are also not
 present in libsodium when compiled in minimal mode.
 

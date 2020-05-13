@@ -112,3 +112,11 @@ solve common problems.
 * Consider a streaming interface for `crypto_shorthash_*()`
 * AEGIS-256 \[PARTIALLY DONE\]
 * BLAKE3
+* HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
+* Standard hash-to-curve \[DONE\]
+
+## 2.0.0 roadmap
+
+* Switch to the libhydrogen API
+* Session support
+* PQC

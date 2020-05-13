@@ -193,11 +193,31 @@ The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into
 * `crypto_core_ristretto255_SCALARBYTES`
 * `crypto_core_ristretto255_NONREDUCEDSCALARBYTES`
 
+## Notes
+
+As Ristretto encodes a field element that is always smaller than 2^255, the top bit is not used.
+
+It can be thus used by applications to encode additional data.
+
+Forcing the top bit to zero in order to ignore it:
+
+```c
+s[31] &= 0x7f;
+```
+
+Rejecting a key that has the top bit set:
+
+```c
+if ((s[31] & 0x80) != 0) {
+    return;
+}
+```
+
 ## Algorithms
 
 * `ristretto255`
 
-## Reference
+## Referencea
 
 * [Ristretto](https://ristretto.group)
 * [Decaf: Eliminating cofactors through point compression](https://eprint.iacr.org/2015/673.pdf)
