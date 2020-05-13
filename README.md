@@ -20,13 +20,13 @@ The design choices emphasize security and ease of use. But despite the emphasis
 on high security, primitives are faster across-the-board than most
 implementations.
 
-[Version 1.0.18-stable](https://download.libsodium.org/libsodium/releases/) is the
-current version.
-
 ## Downloading libsodium
 
-* [Github repository](https://github.com/jedisct1/libsodium)
+[libsodium 1.0.18-stable](https://download.libsodium.org/libsodium/releases/) is
+the latest version.
+
 * [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
+* [Github repository](https://github.com/jedisct1/libsodium)
 * [Documentation](https://doc.libsodium.org)
 
 ## Mailing list
@@ -35,11 +35,6 @@ A mailing-list is available to discuss libsodium.
 
 In order to join, just send a random mail to `sodium-subscribe` {at}
 `pureftpd`{dot}`org`.
-
-## Offline documentation
-
-This documentation can be downloaded as a PDF file here:
-[https://www.gitbook.com/book/jedisct1/libsodium/details](https://www.gitbook.com/book/jedisct1/libsodium/details)
 
 ## License
 
