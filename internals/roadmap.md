@@ -110,13 +110,17 @@ solve common problems.
 * Support server relief in the password hashing API
 * Ristretto \[DONE\]
 * Consider a streaming interface for `crypto_shorthash_*()`
-* AEGIS-256 \[PARTIALLY DONE\]
+* AEGIS-256 \[DONE\]
+* AEGIS-128L \[DONE\]
+* AEGIS-based `secretstream` API
 * BLAKE3
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
 * Standard hash-to-curve \[DONE\]
+* Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
+* High-level AEAD and `secretstream` APIs
 
 ## 2.0.0 roadmap
 
-* Switch to the libhydrogen API
+* Switch to a new API (libhydrogen/WASI-crypto)
 * Session support
 * PQC
