@@ -288,6 +288,7 @@ to add yours to that list.
 * [Private Internet Access](https://www.privateinternetaccess.com)
 * [Q-Leap Networks](http://www.q-leap.com/)
 * [Riseup](https://riseup.net)
+* [Splunk](https://splunk.com)
 * [Supercell](http://supercell.com)
 * [Tanker](https://tanker.io)
 * [Valve](https://www.valvesoftware.com)
