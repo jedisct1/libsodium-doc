@@ -76,6 +76,8 @@ prefered.
 
 If the other library doesn't have any initialization function, it can use a [`DllMain()`](https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain) function (Windows), or `__attribute__((constructor))` (gcc, clang, icc on MacOS and ELF-based systems) to call `sodium_init()` on load.
 
+However, explicitly calling initialization functions are recommended; automatic initialization makes it difficult to safely recover from errors.
+
 ## How do I encrypt data?
 
 ### One-shot encryption, where everything fits in memory
