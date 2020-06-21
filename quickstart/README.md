@@ -72,7 +72,7 @@ down brute-force attacks).
 But native secret keys using the `*_keygen()` function should always be
 prefered.
 
-## How to initialize the library from another library?
+## How do I initialize the library from another library?
 
 If the other library doesn't have any initialization function, it can use a [`DllMain()`](https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain) function (Windows), or `__attribute__((constructor))` (gcc, clang, icc on MacOS and ELF-based systems) to call `sodium_init()` on load.
 
