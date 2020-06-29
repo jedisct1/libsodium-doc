@@ -89,7 +89,7 @@ native platform.
 
 Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
 
-Please note that using libsodium on ARM Cortex M0, M3 and M4 CPUs is not recommended if side-channels are a concern.
+Please note that using libsodium on ARM Cortex M0, M3 and M4 CPUs is untested and not recommended if side-channels are a concern.
 
 ## Compiling with CompCert
 
