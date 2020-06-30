@@ -233,7 +233,7 @@ This updates the state, but doesn't add any information about the key change to 
 Initialization (`secretstream_init`): a subkey `k` and a 64-bit nonce `n` are derived from a key `K` and a 192-bit random nonce `N`, using the same algorithm as XChaCha20. `i` is a 32-bit counter.
 
 ```text
-k <- HChaCha20(K, n[0..16])
+k <- HChaCha20(K, N[0..16])
 n <- N[16..24]
 i <- 1
 ```
