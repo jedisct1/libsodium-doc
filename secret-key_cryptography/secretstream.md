@@ -255,7 +255,7 @@ if i = 0:
 `secretstream_push()` outputs `c` with the first block truncated to the tag size: `c[0] || c[64..] || mac`
 
 Encrypting a unique message using `secretstream` is equivalent to
-`XChaCha20Poly1305-IETF-XOR(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
+`ChaCha20Poly1305-IETF-XOR(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
 
 Rekeying:
 
