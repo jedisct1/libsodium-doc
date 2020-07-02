@@ -246,7 +246,7 @@ For every message `M` with a tag `T`:
 
 ```text
 c, mac <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = T || {0} * 63 || M)
-n <- n ^ mac
+n <- n ^ mac[0..8]
 i <- (i + 1) & 0xffffffff
 if i = 0:
   rekey()
