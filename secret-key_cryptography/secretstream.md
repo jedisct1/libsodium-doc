@@ -245,7 +245,7 @@ Encryption:
 For every message `M` with a tag `T`:
 
 ```text
-c, mac <- ChaCha20Poly1305-IETF-XOR(key = k, nonce = i || n, msg = T || {0} * 63 || M)
+c, mac <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = T || {0} * 63 || M)
 n <- n ^ mac
 i <- (i + 1) & 0xffffffff
 if i = 0:
@@ -255,12 +255,12 @@ if i = 0:
 `secretstream_push()` outputs `c` with the first block truncated to the tag size: `c[0] || c[64..] || mac`
 
 Encrypting a unique message using `secretstream` is equivalent to
-`ChaCha20Poly1305-IETF-XOR(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
+`ChaCha20Poly1305-IETF(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
 
 Rekeying:
 
 ```text
-k || n <- ChaCha20-IETF-XOR(key = k, nonce = i || n, msg = k || n)
+k || n <- ChaCha20-IETF(key = k, nonce = i || n, msg = k || n)
 i <- 1
 ```
 
