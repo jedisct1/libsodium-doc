@@ -217,7 +217,7 @@ if ((s[31] & 0x80) != 0) {
 
 * `ristretto255`
 
-## Referencea
+## References
 
 * [Ristretto](https://ristretto.group)
 * [Decaf: Eliminating cofactors through point compression](https://eprint.iacr.org/2015/673.pdf)
