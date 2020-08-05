@@ -93,6 +93,7 @@
 * Perl 6: [Natrium](https://github.com/jonathanstowe/Natrium)
 * Pharo/Squeak:
   [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
+* Pharo 7/8: [Crypto-Nacl](https://github.com/objectguild/Crypto-Nacl)
 * Pony: [Pony-Sodium](https://github.com/jemc/pony-sodium)
 * Python: [Csodium](https://github.com/ereOn/csodium)
 * Python: [LibNaCl](https://github.com/saltstack/libnacl)
