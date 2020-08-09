@@ -131,11 +131,12 @@ to add yours to that list.
   and ongoing management of any modern infrastructure.
 * [Sandstorm](https://sandstorm.io/): An open source operating system for
   personal and private clouds.
-* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
-  designed to protect your Internet traffic.
 * [Secrets](https://outercorner.com/secrets): Easily and securely store passwords,
   credit card numbers, bank details, and confidential information.
   Available for Mac and iOS.
+* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
+  designed to protect your Internet traffic.
+* [Sharekey](https://sharekey.com/): Encrypted data storage.
 * [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple
   management tool for dnscrypt-proxy.
 * [Snackis](https://github.com/andreas-gone-wild/snackis): A post-modern
@@ -288,6 +289,7 @@ to add yours to that list.
 * [Private Internet Access](https://www.privateinternetaccess.com)
 * [Q-Leap Networks](http://www.q-leap.com/)
 * [Riseup](https://riseup.net)
+* [Splunk](https://splunk.com)
 * [Supercell](http://supercell.com)
 * [Tanker](https://tanker.io)
 * [Valve](https://www.valvesoftware.com)

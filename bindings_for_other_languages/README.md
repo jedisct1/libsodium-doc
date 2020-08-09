@@ -41,10 +41,13 @@
 * Go: [libsodium-go](https://github.com/GoKillers/libsodium-go)
 * Go: [Sodium](https://github.com/jamesruan/sodium)
 * Guile: [Guile-NaCl](https://github.com/cryptotronix/guile-nacl)
-* Haskell: [libsodium](https://hackage.haskell.org/package/libsodium) 
+* Hack: [Nuxed Crypto](https://github.com/nuxed/crypto)
+* Haskell: [libsodium](https://hackage.haskell.org/package/libsodium)
 * Haskell: [haskell-libsodium](https://github.com/dmp1ce/haskell-libsodium)
 * Haskell: [Saltine](https://github.com/tel/saltine)
 * Haskell: [Lithium](https://github.com/eth-r/lithium)
+* Haskell: [hs-sodium](https://github.com/k0001/hs-libsodium)
+* Haskell: [haskell-crypto](https://github.com/serokell/haskell-crypto)
 * HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * HaXe (bindings for the Neko VM):
   [neko-libsodium](https://github.com/laserbat/neko-libsodium)
@@ -91,6 +94,7 @@
 * Perl 6: [Natrium](https://github.com/jonathanstowe/Natrium)
 * Pharo/Squeak:
   [Crypto-NaCl](http://www.eighty-twenty.org/index.cgi/tech/smalltalk/nacl-for-squeak-and-pharo-20130601.html)
+* Pharo 7/8: [Crypto-Nacl](https://github.com/objectguild/Crypto-Nacl)
 * Pony: [Pony-Sodium](https://github.com/jemc/pony-sodium)
 * Python: [Csodium](https://github.com/ereOn/csodium)
 * Python: [LibNaCl](https://github.com/saltstack/libnacl)

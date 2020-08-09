@@ -5,7 +5,7 @@
 A project using libsodium should include the `sodium.h` header. Including
 individual headers is neither required nor recommended.
 
-The `sodium_init()` function should then be called before any other function. It
+The `sodium_init()` function must then be called before any other function. It
 is safe to call `sodium_init()` multiple times, or from different threads; it
 will immediately return `1` without doing anything if the library had already
 been initialized.
@@ -71,6 +71,12 @@ down brute-force attacks).
 
 But native secret keys using the `*_keygen()` function should always be
 prefered.
+
+## How do I initialize the library from another library?
+
+If the other library doesn't have any initialization function, it can use a [`DllMain()`](https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain) function (Windows), or `__attribute__((constructor))` (gcc, clang, icc on MacOS and ELF-based systems) to call `sodium_init()` on load.
+
+However, explicitly calling initialization functions are recommended; automatic initialization makes it difficult to safely recover from errors.
 
 ## How do I encrypt data?
 
