@@ -170,7 +170,7 @@ before merging a new change to the `stable` branch.
   \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86_64 using tcc
 - Ubuntu/x86_64 using CompCert
-- macOS using Xcode 11.5
+- macOS using Xcode 12
 - Windows 10 using Visual Studio 2017 and 2019 (x86 and x86_64)
 - msys2 using mingw32 and mingw64
 - ArchLinux/x86_64
