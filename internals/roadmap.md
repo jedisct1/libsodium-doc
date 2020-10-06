@@ -118,6 +118,7 @@ solve common problems.
 * Standard hash-to-curve \[DONE\]
 * Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
 * Consider HPKE
+* Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
 
 ## 2.0.0 roadmap
