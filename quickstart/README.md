@@ -160,9 +160,9 @@ a valid tag for a message can only be created by the sender.
 
 First, read the previous section. In most cases, signing a message in addition to encrypting it is not required.
 
-If you really need to sign and encrypt, possibly for signatures to be publicly verified, consider using [signcryption](https://github.com/jedisct1/libsodium-signcryption).
+If you really need to sign and encrypt a message, possibly for signatures to be publicly verified, consider using [signcryption](https://github.com/jedisct1/libsodium-signcryption).
 
-Alternatively, signing key pairs can be [converted to X25519 key exchange key pairs](../advanced/ed25519-curve25519.md).
+Alternatively, signing key pairs can be [converted to X25519 key exchange key pairs](../advanced/ed25519-curve25519.md). This can be used to encrypt and sign independently.
 
 However, this is not recommended and usually not necessary. Prefer using distinct key pairs instead.
 
@@ -172,7 +172,7 @@ On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` 
 
 If you really want to use a unique key pair, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplicaton over edwards25519.
 
-If, for some reason, you want to implement your own signcryption scheme:
+Finally, if, for some reason, you want to implement your own signcryption scheme:
 
 * If public verifiability is not required, sign `(encryption_key || message)` first, then encrypt `(recipient_id || signature || message)`.
 * If public verifiability is required, encrypt `(sender_id || message)`, then sign the ciphertext.
