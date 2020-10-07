@@ -176,7 +176,7 @@ If, for some reason, you want to implement your own signcryption scheme:
 
 * If public verifiability is not required, sign `(encryption_key || message)` first, then encrypt `(recipient_id || signature || message)`.
 * If public verifiability is required, encrypt `(sender_id || message)`, then sign the ciphertext.
-* If public verifiability is required, and the same message can be decrypted by multiple recipients, encrypt `(sender_id || recipient_id || message)`, then sign the ciphertext.
+* If public verifiability is required, and the same message can be decrypted by multiple recipients using the same key, encrypt `(sender_id || H(message) || message`, then sign the ciphertext.
 
 where `sender_id` and `recipient_id` is public data that uniquely identifies a party.
 
