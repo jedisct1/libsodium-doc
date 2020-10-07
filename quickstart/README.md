@@ -162,7 +162,7 @@ First, read the previous section. In most cases, signing a message in addition t
 
 If you really need to sign and encrypt, possibly for signatures to be publicly verified, consider using [signcryption](https://github.com/jedisct1/libsodium-signcryption).
 
-Alternatively, signing key pairs can be [converted to key exchange key pairs](../advanced/ed25519-curve25519.md).
+Alternatively, signing key pairs can be [converted to X25519 key exchange key pairs](../advanced/ed25519-curve25519.md).
 
 However, this is not recommended and usually not necessary. Prefer using distinct key pairs instead.
 
