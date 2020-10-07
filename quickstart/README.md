@@ -153,6 +153,30 @@ been modified, the tag will not be valid, and decryption functions will return
 an error code. Knowing the secret key is required in order to create a valid
 tag, therefore only `A` and `B` can create such a tag.
 
+And if shared keys are computed using the key exchange API (`crypto_kx`),
+a valid tag for a message can only be created by the sender.
+
+## How can I sign and encrypt using the same key pair?
+
+First, read the previous section. In most cases, signing a message in addition to encrypting it is not required.
+
+If you really need to sign and encrypt, possibly for signatures to be publicly verified, consider using [signcryption](https://github.com/jedisct1/libsodium-signcryption).
+
+Alternatively, signing key pairs can be [converted to key exchange key pairs](../advanced/ed25519-curve25519.md).
+
+However, this is not recommended and usually not necessary. Prefer using distinct key pairs instead.
+Remember that public keys for both operations are very small: 32 bytes. Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and it makes implementations simpler and faster.
+
+If, for some reason, you want to invent your own signcryption scheme:
+
+* If public verifiability is not required, sign `(encryption_key || message)` first, then encrypt `(recipient_id || signature || message)`.
+* If public verifiability is required, encrypt `(sender_id || message)`, then sign the ciphertext.
+* If public verifiability is required, and the same message can be decrypted by multiple users, encrypt `(sender_id || recipient_id || message)`, then sign the ciphertext.
+
+where `sender_id` and `recipient_id` is public data that uniquely identifies a party.
+
+Verify the metadata when opening a signed+encrypted message.
+
 ## How do I hide the length of a message?
 
 Use [padding](../helpers/padding.md).
