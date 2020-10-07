@@ -165,7 +165,12 @@ If you really need to sign and encrypt, possibly for signatures to be publicly v
 Alternatively, signing key pairs can be [converted to key exchange key pairs](../advanced/ed25519-curve25519.md).
 
 However, this is not recommended and usually not necessary. Prefer using distinct key pairs instead.
-Remember that public keys for both operations are very small: 32 bytes. Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and it makes implementations simpler and faster.
+
+Remember that public keys for both operations are very small: 32 bytes. Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and conversions are not required any longer.
+
+On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` can derive specialized key pairs from the same 32 byte seed.
+
+If you really want to use a unique key pair, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplicaton over edwards25519.
 
 If, for some reason, you want to invent your own signcryption scheme:
 
