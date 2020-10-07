@@ -170,7 +170,7 @@ Remember that public keys for both operations are very small: 32 bytes. Concaten
 
 On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` can derive specialized key pairs from the same 32 byte seed.
 
-If you really want to use a unique key pair, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplicaton over edwards25519.
+If you really want to use a unique key pair for both operations, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplicaton over edwards25519.
 
 Finally, if, for some reason, you want to implement your own signcryption scheme:
 
