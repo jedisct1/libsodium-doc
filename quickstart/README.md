@@ -224,6 +224,18 @@ or tampered with.
 `crypto_stream()` is only useful as a building block to design custom
 constructions. As-is, it is completely insecure.
 
+## Is encryption without nonces possible?
+
+The encryption schemes implemented in libsodium are fast, but require a unique `(key, nonce)` tuple for every message.
+
+Nonces don't have to be secret, but they must not be reused. Reusing a nonce would destroy the confidentiality of messages sharing the same nonce, and allow an attacker to craft additional valid ciphertexts.
+
+On a platform where counters cannot be maintained, and where no trusted source of randomness exist, deterministic encryption can be used as a last resort.
+
+[XChaCha20-SIV](https://github.com/jedisct1/libsodium-xchacha20-siv) is such a construction, that can also be used for key wrapping.
+
+On such systems, [libhydrogen](https://libhydrogen.org) may also be a better option.
+
 ## I want to write bindings for my favorite language, where should I start?
 
 Start with the `crypto_generichash` and with the `crypto_secretstream` APIs.
