@@ -172,7 +172,7 @@ On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` 
 
 If you really want to use a unique key pair, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplicaton over edwards25519.
 
-If, for some reason, you want to invent your own signcryption scheme:
+If, for some reason, you want to implement your own signcryption scheme:
 
 * If public verifiability is not required, sign `(encryption_key || message)` first, then encrypt `(recipient_id || signature || message)`.
 * If public verifiability is required, encrypt `(sender_id || message)`, then sign the ciphertext.
