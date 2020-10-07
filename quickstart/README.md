@@ -156,7 +156,7 @@ tag, therefore only `A` and `B` can create such a tag.
 And if shared keys are computed using the key exchange API (`crypto_kx`),
 a valid tag for a message can only be created by the sender.
 
-## How can I sign and encrypt using the same key pair?
+## How can I sign and/or encrypt using the same key pair?
 
 First, read the previous section. In most cases, signing a message in addition to encrypting it is not required.
 
