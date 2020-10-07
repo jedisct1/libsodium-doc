@@ -166,7 +166,7 @@ Alternatively, signing key pairs can be [converted to X25519 key exchange key pa
 
 However, this is not recommended and usually not necessary. Prefer using distinct key pairs instead.
 
-Remember that public keys for both operations are very small: 32 bytes. Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and conversions are not required any longer.
+Remember that public keys for both operations are very small: 32 bytes only. Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and conversions are not required any longer.
 
 On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` can derive specialized key pairs from the same 32 byte seed.
 
