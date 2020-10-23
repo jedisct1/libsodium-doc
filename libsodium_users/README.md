@@ -201,6 +201,7 @@ to add yours to that list.
   minimal sodium plugin for Cordova - for iOS and Android.
 * [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content
   using Ed25519.
+* [Etebase](https://www.etebase.com/): An Open Source SDK and backend to build end-to-end encrypted applications.
 * [Folly](https://github.com/facebook/folly): An open-source C++ library developed and used at Facebook.
 * [Halite](https://github.com/paragonie/halite): High-level cryptography
   interface for PHP.
