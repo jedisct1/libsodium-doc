@@ -167,11 +167,15 @@ Libsodium assumes a platform that can produce strong random numbers. On some
 embedded systems, this may not be the case, and in such a scenario, having a
 monotically increasing, global counter is rarely a practical solution either.
 
-In that scenario, nonces can be constructed as follows: `Hk(message_counter||message)`,
-with `message_counter` having a fixed length.
+In that scenario, nonces can be constructed as follows:
+`Hk(message_counter||len(ad)||ad||message)`, with `message_counter` having a
+fixed length.
 
-`Hk` is a keyed hash function safe against length-extension attacks,
-such as the one provided by `crypto_generichash()`.
+`Hk` is a secure PRF or a keyed hash function safe against length-extension
+attacks, such as the one provided by `crypto_generichash()`.
+
+`ad` is optional, additional data, and `len(ad)` represents its name encoded as a
+fixed-length byte sequence.
 
 This assumes nonces that are 160-bit long or more, such as XChaCha20 and XSalsa20.
 
