@@ -63,6 +63,7 @@ to add yours to that list.
   manager.
 * [Kryptonite](https://github.com/kryptco/kr): The new home for your SSH private
   key on your iPhone or Android.
+* [Kryptor](https://kryptor.co.uk/): Free and open source file encryption software.
 * [Lageant](https://github.com/bitbeans/lageant): libsodium Authentication
   Agent.
 * [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted,
