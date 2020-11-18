@@ -243,7 +243,7 @@ to add yours to that list.
 * [Tanker](https://github.com/TankerHQ/sdk-js): an encryption SDK for JavaScript.
 * [The Update Framework](https://github.com/theupdateframework/tuf): A
   plug-and-play library for securing a software updater.
-* [Yojimbo](https://libyojimbo.com): A network library for client/server games
+* [Yojimbo](https://github.com/networkprotocol/yojimbo): A network library for client/server games
   with dedicated servers.
 * [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any
   platform.
