@@ -124,6 +124,21 @@ A typical use for these data is to authenticate version numbers, timestamps or
 monotonically increasing counters in order to discard previous messages and
 prevent replay attacks.
 
+## Robustness
+
+Ciphertexts are expected to be decrypted and verified using the same key as the key initially used for encryption.
+
+Trying to decrypt a ciphertext with a different key may still allow an authentication tag verification to pass.
+Doing so would produce a different message, and would not compromise the security of the original message.
+
+But this may be an issue if an attacker has the ability to force a recipient to use a different key.
+
+If that turns out to be a concern, this can be solved in different ways:
+
+- By incorporating a key identifier in the nonce
+- By including a key identifier in the additional data
+- By including a 128-bit fixed string in the message and verifying it during the decryption process
+
 ## References
 
 * [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf)
