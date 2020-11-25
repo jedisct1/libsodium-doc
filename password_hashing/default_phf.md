@@ -55,7 +55,7 @@ int crypto_pwhash(unsigned char * const out,
 The `crypto_pwhash()` function derives an `outlen` bytes long key from a password `passwd` whose length is `passwdlen` and a salt `salt` whose fixed length is `crypto_pwhash_SALTBYTES` bytes. `passwdlen` should be at least `crypto_pwhash_PASSWD_MIN` and  `crypto_pwhash_PASSWD_MAX`. `outlen` should be at
 least `crypto_pwhash_BYTES_MIN` = `16` (128 bits) and at most `crypto_pwhash_BYTES_MAX`.
 
-The computed key is stored into `out`.
+The computed key is stored into `out`, representing the address of a dedicated storage area of `outlen` bytes.
 
 `opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key. This number must be between `crypto_pwhash_OPSLIMIT_MIN` and
 `crypto_pwhash_OPSLIMIT_MAX`.
@@ -103,7 +103,7 @@ The `crypto_pwhash_str()` function puts an ASCII encoded string into `out`, whic
 * the automatically generated salt used for the previous computation
 * the other parameters required to verify the password, including the algorithm identifier, its version, `opslimit` and `memlimit`.
 
-`out` must be large enough to hold `crypto_pwhash_STRBYTES` bytes, but the actual output string may be shorter.
+`out` must be a dedicated storage aread, large enough to hold `crypto_pwhash_STRBYTES` bytes, but the actual output string may be shorter.
 
 The output string is zero-terminated, includes only ASCII characters and can be safely stored into SQL databases and other data stores. No extra information has to be stored in order to verify the password.
 
