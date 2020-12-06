@@ -6,7 +6,7 @@
 int sodium_memcmp(const void * const b1_, const void * const b2_, size_t len);
 ```
 
-When a comparison involves secret data (e.g. key, authentication tag), is it
+When a comparison involves secret data (e.g. key, authentication tag), it is
 critical to use a constant-time comparison function. This property does not
 relate to computational complexity: it expresses the fact that the time needed
 to perform the comparison is the same for all data of the same size. The goal
@@ -186,7 +186,7 @@ This function can be used with nonces, in order to prevent replay attacks.
 int sodium_is_zero(const unsigned char *n, const size_t nlen);
 ```
 
-This function returns `1` is the `nlen` bytes vector pointed by `n` contains
+This function returns `1` if the `nlen` bytes vector pointed by `n` contains
 only zeros. It returns `0` if non-zero bits are found.
 
 Its execution time is constant for a given length.
