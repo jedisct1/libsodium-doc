@@ -117,7 +117,6 @@ solve common problems.
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
 * Standard hash-to-curve \[DONE\]
 * Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
-* Consider HPKE
 * Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
 
