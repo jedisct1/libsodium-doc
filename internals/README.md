@@ -166,7 +166,7 @@ before merging a new change to the `stable` branch.
 - OpenBSD-current/x86_64 using `clang`
 - Ubuntu/x86_64 using gcc 9, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
-- Ubuntu/x86_64 using clang 10, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using clang 12, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86_64 using tcc
 - Ubuntu/x86_64 using CompCert
