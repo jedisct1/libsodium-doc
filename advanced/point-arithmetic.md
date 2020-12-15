@@ -103,7 +103,7 @@ Note that `n` is "clamped" (the 3 low bits are cleared to make it a multiple of 
 int crypto_scalarmult_ed25519_base(unsigned char *q, const unsigned char *n);
 ```
 
-The `crypto_scalarmult_ed25519_base(()` function multiplies the base point `(x, 4/5)` by a scalar `n` (clamped) and puts the Y coordinate of the resulting point into `q`.
+The `crypto_scalarmult_ed25519_base()` function multiplies the base point `(x, 4/5)` by a scalar `n` (clamped) and puts the Y coordinate of the resulting point into `q`.
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
