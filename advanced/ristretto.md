@@ -93,7 +93,7 @@ The `crypto_scalarmult_ristretto255()` function multiplies an element represente
 
 `q` should not be used as a shared key prior to hashing.
 
-The function returns `0` on success, or `-1` if `p` is the zero element.
+The function returns `0` on success, or `-1` if `q` is the identity element.
 
 ```c
 int crypto_scalarmult_ristretto255_base(unsigned char *q, const unsigned char *n);
