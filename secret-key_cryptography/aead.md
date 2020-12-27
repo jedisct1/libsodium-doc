@@ -149,9 +149,7 @@ facilitates the construction of misuse-resistant schemes.
 The XChaCha20-Poly1305 implementation in libsodium is portable across all
 supported architectures.
 
-The main limitation of XChaCha20-Poly1305 is that it is not widely implemented
-in other libraries yet. However, it will
-[soon](https://tools.ietf.org/html/draft-arciszewski-xchacha-03) become an IETF
+It will [soon](https://tools.ietf.org/html/draft-irtf-cfrg-xchacha) become an IETF
 standard.
 
 ## Additional data
