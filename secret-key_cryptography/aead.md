@@ -54,7 +54,7 @@ Applications are also encouraged to limit the number of attempts an adversary ca
 
 Assuming a 2^-32 attack success probability, the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
 
-Note that the latter is not a practical concern due application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
+Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
 
 * For 16 KB long messages:
 
