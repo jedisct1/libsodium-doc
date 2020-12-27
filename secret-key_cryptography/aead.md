@@ -44,6 +44,46 @@ These figures assume an untruncated (128-bit) authentication tag.
 protocols leveraging additional data to discard old messages don't have
 practical limitations on the total number of messages.
 
+In spite of these limits, applications must enforce a limit on the maximum size of a ciphertext to decrypt. Very large messages should be split in multiple chunks instead of being encrypted as a single ciphertext:
+
+- This keeps memory usage in control,
+- A corrupted chunk can be immediately detected before the whole ciphertext is received,
+- Large messages provide more wiggle room for attacks.
+
+Applications are also encouraged to limit the number of attempts an adversary can make, for example by closing a session after a large number of decryption failures.
+
+Assuming a 2^-32 attack success probability, the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
+
+Note that the latter is not a practical concern due application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
+
+* For 16 KB long messages:
+
+| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| :----------------------------- | :------------------------ | :----------------------------------------------------- |
+| AES256-GCM                     | 2^38                      | 2^85                                                   |
+| All ChaCha20-Poly1305 variants | 2^63                      | 2^63 (forgery with 2^-32 success requires ~2^77 bytes) |
+
+* For 1 MB long messages:
+
+| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| :----------------------------- | :------------------------ | :----------------------------------------------------- |
+| AES256-GCM                     | 2^32                      | 2^78                                                   |
+| All ChaCha20-Poly1305 variants | 2^57                      | 2^57 (forgery with 2^-32 success requires ~2^77 bytes) |
+
+* For 1 GB long messages:
+
+| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| :----------------------------- | :------------------------ | :----------------------------------------------------- |
+| AES256-GCM                     | 2^22                      | 2^69                                                   |
+| All ChaCha20-Poly1305 variants | 2^47                      | 2^47 (forgery with 2^-32 success requires ~2^77 bytes) |
+
+* For 64 GB long messages:
+
+| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| :----------------------------- | :------------------------ | :----------------------------------------------------- |
+| AES256-GCM                     | 2^16                      | 2^63                                                   |
+| All ChaCha20-Poly1305 variants | 2^41                      | 2^41 (forgery with 2^-32 success requires ~2^77 bytes) |
+
 ### Nonces
 
 | Construction            | Safe options to choose a nonce                 |
