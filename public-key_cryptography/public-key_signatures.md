@@ -230,7 +230,7 @@ It is safe to ignore `siglen` and always consider a signature as
 with zeros if necessary.
 
 ```c
-int crypto_sign_final_verify(crypto_sign_state *state, unsigned char *sig,
+int crypto_sign_final_verify(crypto_sign_state *state, const unsigned char *sig,
                              const unsigned char *pk);
 ```
 
