@@ -76,7 +76,7 @@
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Kotlin/Native: [Sodium](https://github.com/datkt/sodium)
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
-* Lua: [lua-sodium](https://github.com/morfoh/lua-sodium)
+* Lua: [luasodium](https://github.com/jprjr/luasodium)
 * MRuby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
 * MySQL: [MySQL-Sodium](https://github.com/mashthekeys/mysql-sodium)
 * Nim: [libsodium.nim](https://github.com/zielmicha/libsodium.nim)
