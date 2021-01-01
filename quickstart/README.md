@@ -95,7 +95,7 @@ However, explicitly calling initialization functions are recommended; automatic 
 * With libsodium 1.0.14 and beyond, use the
   [`crypto_secretstream` API](../secret-key_cryptography/secretstream.md).
 * Otherwise, read the guide to
-  [encrypting a set of messages](../secret-key_cryptography/secret-key_authentication.md)
+  [encrypting a set of messages](../secret-key_cryptography/encrypted-messages.md)
 
 ## How do I safely store and later verify a password?
 
