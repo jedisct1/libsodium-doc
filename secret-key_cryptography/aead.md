@@ -177,6 +177,8 @@ If that turns out to be a concern, this can be solved in different ways:
 - By including a key identifier in the additional data
 - By including a 128-bit fixed string in the message and verifying it during the decryption process
 
+Libsodium's `secretstream` construction always authenticates an extra all-zero (minus 8 bits for the tag) block to ensure robustness.
+
 ## References
 
 * [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf)
