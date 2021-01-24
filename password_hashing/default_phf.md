@@ -103,7 +103,7 @@ The `crypto_pwhash_str()` function puts an ASCII encoded string into `out`, whic
 * the automatically generated salt used for the previous computation
 * the other parameters required to verify the password, including the algorithm identifier, its version, `opslimit` and `memlimit`.
 
-`out` must be a dedicated storage aread, large enough to hold `crypto_pwhash_STRBYTES` bytes, but the actual output string may be shorter.
+`out` must be a dedicated storage area, large enough to hold `crypto_pwhash_STRBYTES` bytes, but the actual output string may be shorter.
 
 The output string is zero-terminated, includes only ASCII characters and can be safely stored into SQL databases and other data stores. No extra information has to be stored in order to verify the password.
 
