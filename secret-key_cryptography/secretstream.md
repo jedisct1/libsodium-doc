@@ -111,7 +111,7 @@ secretstream API.
 The `crypto_secretstream_*_push()` functions set creates an encrypted stream.
 The `crypto_secretstream_*_pull()` functions set is the decryption counterpart.
 
-An encrypted stream starts with a short header, whose size is `crypto_secretstream_xchacha20poly1305_HEADERBYTES` bytes. That header must be sent/stored before the sequence of encrypted messages, as it is required to decrypt the stream.
+An encrypted stream starts with a short header, whose size is `crypto_secretstream_xchacha20poly1305_HEADERBYTES` bytes. That header must be sent/stored before the sequence of encrypted messages, as it is required to decrypt the stream. The header content doesn't have to be secret and decryption with a different header would fail.
 
 A tag is attached to each message. That tag can be any of:
 
