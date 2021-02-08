@@ -183,3 +183,5 @@ Libsodium's `secretstream` construction always authenticates an extra all-zero (
 
 * [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf)
   \(Atul Luykx, Kenneth G. Paterson\).
+* [Partitioning Oracle Attacks](https://eprint.iacr.org/2020/1491.pdf)
+  \(Julia Len, Paul Grubbs, Thomas Ristenpart)
