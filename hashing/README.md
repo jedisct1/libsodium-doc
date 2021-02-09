@@ -1,8 +1,8 @@
 # Hashing
 
-*Hashing* refers to using a function that takes an input of any size and produces a fixed size output. Hashing the same input always produces the same output. This output is commonly known as a hash or digest.
+*Hashing* refers to using a function that takes an input of any size and produces a fixed size output. Hashing the same input with the same function and output length always produces the same output. This output is commonly known as a hash or digest.
 
-Hashes are often used to authenticate data. For example, to detect whether a file has been modified or corrupted.
+Hashes are often used to check the integrity of data. For example, to detect whether a file has been modified or corrupted.
 
 Not all hash functions are suitable for cryptography. Cryptographic hash functions have specific properties that make them secure. For instance, the output cannot be reversed to recover the input. Given an input, no one should be able to find a different input that hashes to the same output. Furthermore, no one should be able to produce two different inputs that hash to the same output.
 
