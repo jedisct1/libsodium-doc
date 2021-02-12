@@ -103,7 +103,7 @@ The `crypto_scalarmult_ristretto255_base()` function multiplies the generator by
 
 The function returns `-1` if `n` is `0`, and `0` otherwise.
 
-## Element addition/substraction
+## Element addition/subtraction
 
 ```c
 int crypto_core_ristretto255_add(unsigned char *r,
@@ -119,7 +119,7 @@ int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_sub()` function substracts the element represented by `p` to the element `q` and stores the resulting element into `r`.
+The `crypto_core_ristretto255_sub()` function subtracts the element represented by `p` to the element `q` and stores the resulting element into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid encoded elements.
 

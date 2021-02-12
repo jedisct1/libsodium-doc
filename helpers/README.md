@@ -149,7 +149,7 @@ little-endian format, `a` and `b`, both of size `len` bytes.
 It computes `(a + b) mod 2^(8*len)` in constant time for a given length, and
 overwrites `a` with the result.
 
-## Substracting large numbers
+## Subtracting large numbers
 
 ```c
 void sodium_sub(unsigned char *a, const unsigned char *b, const size_t len);

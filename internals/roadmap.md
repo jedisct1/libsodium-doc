@@ -103,7 +103,7 @@ solve common problems.
 * Formally-verified implementations \[on hold\]
 * Padding API \[DONE\]
 * `secretstream_inject()` for nonce misuse-resistance \[on hold\]
-* Point addition, substraction \[DONE\]
+* Point addition, subtraction \[DONE\]
 * Point validation \[DONE\]
 * Hash-to-point (Elligator) \[DONE\]
 * SPAKE2+ \[DONE\]

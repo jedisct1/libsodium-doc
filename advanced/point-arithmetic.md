@@ -127,7 +127,7 @@ int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char
 
 The function returns `0` on success, or `-1` if `n` is `0`.
 
-## Point addition/substraction
+## Point addition/subtraction
 
 ```c
 int crypto_core_ed25519_add(unsigned char *r,
@@ -143,7 +143,7 @@ int crypto_core_ed25519_sub(unsigned char *r,
                             const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ed25519_sub()` function substracts the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ed25519_sub()` function subtracts the point `p` to the point `q` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid points.
 
