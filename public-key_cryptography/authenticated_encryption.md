@@ -32,21 +32,21 @@ if (crypto_box_open_easy(decrypted, ciphertext, CIPHERTEXT_LEN, nonce,
 
 ## Purpose
 
-Using public-key authenticated encryption, Bob can encrypt a confidential
-message specifically for Alice, using Alice's public key.
+Using public-key authenticated encryption, Alice can encrypt a confidential
+message specifically for Bob, using Bob's public key.
 
-Using Bob's public key, Alice can compute a shared secret key. Using Alice's
+Based on Bob's public key, Alice can compute a shared secret key. Using Alice's
 public key and his secret key, Bob can compute the exact same shared secret key.
 That shared secret key can be used to verify that the encrypted message was not
 tampered with, before eventually decrypting it.
 
-Alice only needs Bob's public key, the nonce and the ciphertext. Bob should
-never ever share his secret key, even with Alice.
+In order to send messages to Bob, Alice only needs Bob's public key. Bob
+should never ever share his secret key (not even with Alice).
 
-And in order to send messages to Alice, Bob only needs Alice's public key. Alice
-should never ever share her secret key either, even with Bob.
+For verification and decryption, Bob only needs Alice's public key, the nonce and the ciphertext. Alice should
+never ever share her secret key either, even with Bob.
 
-Alice can reply to Bob using the same system, without having to generate a
+Bob can reply to Alice using the same system, without having to generate a
 distinct key pair.
 
 The nonce doesn't have to be confidential, but it should be used with just one
