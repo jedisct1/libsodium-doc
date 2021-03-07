@@ -173,12 +173,21 @@ But this may be an issue if an attacker has the ability to force a recipient to 
 
 If that turns out to be a concern, this can be solved in different ways:
 
+* In an interactive protocol, if the set of valid keys is known by the party decrypting the ciphertext:
+
 - By incorporating an application-defined key identifier in the nonce
 - By including an application-defined key identifier in the additional data
 
 A key identifier can be anything allowing the application to map that
 identifier to an actual secret key. It can be a user id. Using a hash of the
-secret key is not recommended, especially with small key spaces.
+secret key is not recommended.
+
+* In an offline protocol, or if the set of valid keys is not known in
+advance (ex: password-based encryption):
+
+- By prepending `H(k, nonce || ciphertext_tag)` to the ciphertext, and
+verifying this prior to decryption. This can be done with `crypto_auth()`
+and `crypto_auth_verify()`.
 
 ## References
 

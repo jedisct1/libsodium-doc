@@ -202,6 +202,8 @@ It is highly recommended to use `sodium_mlock()` to lock memory regions storing 
 
 Since version 1.0.15, libsodium's default algorithm is Argon2id.
 
+Passwords should generally not be used for encryption. If that must be done, read the section on AEADs first.
+
 ## Algorithm details
 
 * [Argon2 v1.3](https://github.com/P-H-C/phc-winner-argon2/raw/master/argon2-specs.pdf)
