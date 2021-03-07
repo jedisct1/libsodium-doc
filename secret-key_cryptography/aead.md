@@ -157,10 +157,10 @@ If that turns out to be a concern, this can be solved in different ways:
   - By incorporating an application-defined key identifier in the nonce
   - By including an application-defined key identifier in the additional data
 
-A key identifier can be anything allowing the application to map that identifier to an actual secret key. It can be a user id. Using a hash of the secret key is not recommended.
+A key identifier can be anything allowing the application to map that identifier to an actual secret key. It doesn't have to be secret. It can be a user id. But using a hash of the secret key is not recommended.
 
-* In an offline protocol, or if the set of valid keys is not known in advance (ex: password-based encryption):
-  - By prepending `H(k, nonce || ciphertext_tag)` to the ciphertext, and verifying this prior to decryption. This can be done with `crypto_generichash()` or `crypto_auth()` and `crypto_auth_verify()`.
+* In non-interactive protocol, or if the set of valid keys is not known in advance (ex: password-based encryption):
+  - By prepending `H(key || nonce || ciphertext_tag)` to the ciphertext, and verifying this prior to decryption. This can be done with `crypto_generichash()` or `crypto_auth()` and `crypto_auth_verify()`.
 
 ## References
 
