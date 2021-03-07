@@ -173,11 +173,12 @@ But this may be an issue if an attacker has the ability to force a recipient to 
 
 If that turns out to be a concern, this can be solved in different ways:
 
-- By incorporating an application-defined key identifier in the nonce (a 128-bit length is recommended)
-- By including an application-defined key identifier in the additional data (a 128-bit length is recommended)
-- By including a 128-bit fixed string in the message and verifying it during the decryption process
+- By incorporating an application-defined key identifier in the nonce
+- By including an application-defined key identifier in the additional data
 
-Libsodium's `secretstream` construction always authenticates an extra all-zero (minus 8 bits for the tag) block to ensure robustness.
+A key identifier can be anything allowing the application to map that
+identifier to an actual secret key. It can be a user id. Using a hash of the
+secret key is not recommended, especially with small key spaces.
 
 ## References
 
