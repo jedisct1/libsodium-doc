@@ -54,7 +54,7 @@ has been properly seeded.
 
 On some Linux systems, this may take some time, especially when called right
 after a reboot of the system. That issue has been reported on Digital Ocean
-virtual machines as well as on Scaleway ARM instances, AWS Nitro Enclaves.
+virtual machines as well as on Scaleway ARM instances and AWS Nitro Enclaves.
 
 This can be confirmed with the following command:
 
@@ -91,11 +91,11 @@ especially on virtualized environments.
 alternative, but most Linux distributions don't offer it as an installable
 package yet.
 
-For AWS Nitro Enclave there are a few possible solutions:
+On AWS Nitro Enclaves, workarounds include:
 
-* Call `aws_nitro_enclaves_library_seed_entropy()` explicitly during application start, and on a timer afterwards.
-* Use `RDSEED` CPU instruction to seed entropy, rngd or similar can help with this.
-* Set `random.trust_cpu=on` in the kernel commandline (only works on Linux kernels > 4.19).
+* Calling the `aws_nitro_enclaves_library_seed_entropy()` function before `sodium_init()`, and occasionally afterwards.
+* Using the `RDSEED` CPU instruction to seed the kernel RNG (not recommended as a unique entropy source).
+* Setting `random.trust_cpu=on` in the kernel commandline (requires Linux kernel > 4.19).
 
 Applications can warn users about the Linux RNG not being seeded before calling
 `sodium_init()` using code similar to the following:
