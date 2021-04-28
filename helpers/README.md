@@ -118,6 +118,8 @@ newlines).
 If `b64_end` is not `NULL`, it will be set to the address of the first byte after
 the last valid parsed character.
 
+Base64 encodes 3 bytes as 4 characters, so the result of decoding a `b64_len` string will always be at most `b64_len / 4 * 3` bytes long.
+
 The function returns `0` on success.
 
 It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string,
