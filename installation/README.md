@@ -23,6 +23,9 @@ sudo make install
 Since different files are compiled for different CPU classes, and to prevent
 unwanted optimizations, link-time optimization (LTO) should not be used.
 
+Also do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`).
+These can introduce side channels.
+
 On Linux, if the process hangs at the `make check` step, your system PRG may not
 have been properly seeded. Please refer to the notes in the "Usage" section for
 ways to address this.
