@@ -160,11 +160,10 @@ In addition, the test suite has to always pass on the following environments.
 libsodium is manually validated on all of these before every release, as well as
 before merging a new change to the `stable` branch.
 
-- asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore,
-  asmjs/ChakraCore
+- asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore
 - webassembly/V8, webassembly/Firefox, webassembly/WASI
-- OpenBSD-current/x86_64 using `clang`
-- Ubuntu/x86_64 using gcc 9, `-fsanitize=address,undefined` and Valgrind
+- OpenBSD-current/x86_64
+- Ubuntu/x86_64 using gcc 10, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
 - Ubuntu/x86_64 using clang 12, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
