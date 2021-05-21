@@ -1,5 +1,20 @@
 # Installation
 
+## Linux
+
+Many Linux distributions include packages which provide Sodium, allowing its
+installation and updating to be handled by the package manager. For example, the
+`libsodium-dev` package provides the library on Debian, and can be installed in
+the standard way:
+
+```sh
+sudo apt install libsodium-dev
+```
+
+If your distribution does not provide a sufficiently recent version of Sodium,
+or you would prefer to compile the library yourself, you can follow the
+instructions for compilation on Unix-like systems.
+
 ## Compilation on Unix-like systems
 
 Sodium is a shared library with a machine-independent set of headers, so that it
