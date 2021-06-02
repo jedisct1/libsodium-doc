@@ -119,6 +119,7 @@ solve common problems.
 * Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
 * Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
+* Consider using [Timecop](https://www.post-apocalyptic-crypto.org/timecop)
 
 ## 2.0.0 roadmap
 
