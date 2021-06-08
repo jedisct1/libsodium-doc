@@ -263,6 +263,7 @@ to add yours to that list.
 * [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper
   around libsodium.
 * [spake2+ee](https://github.com/jedisct1/spake2-ee): A SPAKE2+ implementation.
+* [iota.c](https://github.com/iotaledger/iota.c): An IOTA Client library in C.
 
 ## Companies using libsodium
 
