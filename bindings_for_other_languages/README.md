@@ -11,6 +11,7 @@
 
 * .NET: [libsodium-net](https://github.com/adamcaudill/libsodium-net)
 * .NET: [libsodium-core](https://github.com/tabrath/libsodium-core)
+* .NET: [ASodium](https://github.com/Chewhern/ASodium)
 * .NET: [nsec](https://github.com/ektrah/nsec)
 * .NET: [nitralibsodium](https://github.com/nitrachain/NitraLibSodium)
 * .NET: [Andhell.Crypto](https://github.com/AndHell/Andhell.Crypto)
