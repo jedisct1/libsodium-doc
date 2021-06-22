@@ -162,6 +162,8 @@ to add yours to that list.
 * [Tox](https://tox.chat/): A new kind of instant messenging.
 * [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator
   for the famous game Clash of Clans
+* [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good
+  old UNIX editor Vi. Libsodium is used for reading and writing of encrypted files.
 * [VOLTTRON](http://gridoptics.pnnl.gov/VOLTTRON/): VOLTTRON is an innovative
   distributed control and sensing software platform. Its source code has been
   released, making it possible for researchers and others to use this tool to
