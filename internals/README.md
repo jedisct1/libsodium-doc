@@ -161,7 +161,7 @@ libsodium is manually validated on all of these before every release, as well as
 before merging a new change to the `stable` branch.
 
 - asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore
-- webassembly/V8, webassembly/Firefox, webassembly/WASI
+- webassembly/V8, webassembly/Firefox, webassembly/WASI using zig cc
 - OpenBSD-current/x86_64
 - Ubuntu/x86_64 using gcc 10, `-fsanitize=address,undefined` and Valgrind
   \(memcheck, helgrind, drd and sgcheck\)
@@ -170,6 +170,7 @@ before merging a new change to the `stable` branch.
 - Ubuntu/x86_64 using tcc
 - Ubuntu/x86_64 using CompCert
 - macOS using Xcode 12
+- macOS using zig cc
 - Windows 10 using Visual Studio 2017 and 2019 (x86 and x86_64)
 - msys2 using mingw32 and mingw64
 - ArchLinux/x86_64
