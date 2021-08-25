@@ -16,6 +16,7 @@
 * .NET: [nitralibsodium](https://github.com/nitrachain/NitraLibSodium)
 * .NET: [Andhell.Crypto](https://github.com/AndHell/Andhell.Crypto)
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
+* Ada: [sodiumada](https://gitlab.com/ada23/sodiumada)
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
 * C++: [tears](https://github.com/truenull/tears)
 * C++11: [sodium-wrapper](https://github.com/fhajji/sodium-wrapper)
