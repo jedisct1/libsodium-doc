@@ -18,7 +18,6 @@
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
 * Ada: [sodiumada](https://gitlab.com/ada23/sodiumada)
 * C++: [sodiumpp](https://github.com/rubendv/sodiumpp)
-* C++: [tears](https://github.com/truenull/tears)
 * C++11: [sodium-wrapper](https://github.com/fhajji/sodium-wrapper)
 * Chicken: [chicken-sodium](https://github.com/caolan/chicken-sodium)
 * Clojure: [caesium](https://github.com/lvh/caesium)
