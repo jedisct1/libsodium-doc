@@ -50,7 +50,7 @@ contribution:
 
 * [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware.
   Thanks!
-* [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/2017/08/libsodium-audit-results).
+* [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/libsodium-audit-results/).
   This is amazing, thanks!
 * [Maximilian Blochberger](https://github.com/blochberger) and Joshua Small, who both generously donated $100. This will help a lot to cover the infrastructure costs. Thanks again, Max and Joshua!
 
