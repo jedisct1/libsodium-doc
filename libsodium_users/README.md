@@ -87,6 +87,8 @@ to add yours to that list.
   ratchet.
 * [Muon](https://github.com/puxxustc/muon): A fast stateless VPN with
   obfuscation to escape traffic monitoring.
+* [Nahoft](https://nahoftapp.com): An offline encryption tool for mobile
+  phones, designed to let people communicate during Internet shutdowns in Iran.
 * [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation
   of Network Time Protocol Version 4.
 * [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and
