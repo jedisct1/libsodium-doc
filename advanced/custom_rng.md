@@ -39,7 +39,7 @@ required by the `randombytes_*` interface.
 ## Example
 
 Sodium ships with a sample alternative `randombytes` implementation based on the
-Salsa20 stream cipher in `randombytes_salsa20_random.c` file.
+ChaCha20 stream cipher in `randombytes_internal_random.c` file.
 
 This implementation only requires access to `/dev/urandom` or `/dev/random` (or
 to `RtlGenRandom()` on Windows) once, during `sodium_init()`.
@@ -53,7 +53,7 @@ safe, but blocking would only be acceptable at initialization time.
 It can be enabled with:
 
 ```c
-randombytes_set_implementation(&randombytes_salsa20_implementation);
+randombytes_set_implementation(&randombytes_internal_implementation);
 ```
 
 Before calling `sodium_init()`.
