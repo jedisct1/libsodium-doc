@@ -112,6 +112,7 @@
 * Rust: [rust_sodium](https://github.com/maidsafe/rust_sodium)
 * Rust: [libsodium-sys-stable](https://github.com/jedisct1/libsodium-sys-stable)
 * Rust: [monosodium](https://github.com/peterhj/monosodium)
+* Rust: [sodoken](https://github.com/holochain/sodoken)
 * Scala: [Francium](https://github.com/errorhandler/Francium)
 * Swift: [NaOH](https://github.com/drewcrawford/NaOH)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
