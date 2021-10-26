@@ -85,8 +85,8 @@ authentication tag + encrypted message combination. Put differently, `clen` is
 the number of bytes written by `crypto_secretbox_easy()`, which is
 `crypto_secretbox_MACBYTES` + the length of the message.
 
-The nonce `n` and the key `k` have to match the used to encrypt and authenticate
-the message.
+The nonce `n` and the key `k` have to match those used to encrypt and
+authenticate the message.
 
 The function returns `-1` if the verification fails, and `0` on success. On
 success, the decrypted message is stored into `m`.
