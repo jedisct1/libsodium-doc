@@ -161,42 +161,6 @@ using `kBA`.
 The key exchange API (`crypto_kx()` functions) creates two different keys for
 that purpose.
 
-## Nonce-misuse resistance
-
-Libsodium assumes a platform that can produce strong random numbers. On some
-embedded systems, this may not be the case, and in such a scenario, having a
-monotically increasing, global counter is rarely a practical solution either.
-
-In that scenario, nonces can be constructed as follows:
-`Hk(message_counter||len(ad)||ad||message)`, with `message_counter` having a
-fixed length.
-
-`Hk` must be non-deterministic. It can be a *keyed* hash function safe against
-length-extension attacks, such as the one provided by `crypto_generichash()`
-with a non-null key.
-
-`ad` is optional, additional data, and `len(ad)` represents its name encoded as a
-fixed-length byte sequence.
-
-This assumes nonces that are 160-bit long or more, such as XChaCha20 and XSalsa20.
-
-With ciphers featuring a shorter nonce size such as AES, the construction above
-must be used to derive a subkey in addition to a nonce.
-
-If a subkey is not computed, it is recommended to use a different key for hashing
-and for encryption.
-
-Using a key with the hash function is critical: an unkeyed hash function would
-leak the hash of the message.
-
-If the application has to be completely stateless and `message_counter` cannot
-be set, the security of the scheme becomes weaker than when using a random
-initialization vector. Namely, two sequences of messages sharing the same prefix will
-produce the same encrypted stream prefix. Therefore, this scheme must only be used on
-platforms that cannot produce secure random numbers. A sound alternative is to
-use a library specifically designed for these platforms, such as
-[libhydrogen](https://libhydrogen.org).
-
 ## Short nonces
 
 Ciphers such as `AES` do not feature nonces large enough to be randomly chosen
