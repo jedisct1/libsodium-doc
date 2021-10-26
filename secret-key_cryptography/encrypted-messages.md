@@ -171,8 +171,9 @@ In that scenario, nonces can be constructed as follows:
 `Hk(message_counter||len(ad)||ad||message)`, with `message_counter` having a
 fixed length.
 
-`Hk` is a secure PRF or a keyed hash function safe against length-extension
-attacks, such as the one provided by `crypto_generichash()`.
+`Hk` must be non-deterministic. It can a secure PRF or a *keyed* hash function
+safe against length-extension attacks, such as the one provided by
+`crypto_generichash()` with a non-null key.
 
 `ad` is optional, additional data, and `len(ad)` represents its name encoded as a
 fixed-length byte sequence.
