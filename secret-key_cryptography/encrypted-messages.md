@@ -189,7 +189,7 @@ and for encryption.
 Using a key with the hash function is critical: an unkeyed hash function would
 leak the hash of the message.
 
-If the application have to be completely stateless and `message_counter` cannot
+If the application has to be completely stateless and `message_counter` cannot
 be set, the security of the scheme becomes weaker than when using a random
 initialization vector. Namely, two sequences of messages sharing the same prefix will
 produce the same encrypted stream prefix. Therefore, this scheme must only be used on
