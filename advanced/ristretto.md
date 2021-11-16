@@ -125,9 +125,11 @@ The function returns `0` on success, or `-1` if `p` and/or `q` are not valid enc
 
 ## Scalar arithmetic over L
 
-Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the group (2^252 + 27742317777372353535851937790883648493).
+The `crypto_core_ristretto255_scalar_*()` function set operates over scalars in the `[0..L[` interval, `L` being the order of the ristretto255 group: (2^252 + 27742317777372353535851937790883648493).
 
-This can be achieved with the following function:
+Non-reduced inputs are expected to be within that interval.
+
+A random scalar can be obtained using the `crypto_core_ristretto255_scalar_random()` function:
 
 ```c
 void crypto_core_ristretto255_scalar_random(unsigned char *r);

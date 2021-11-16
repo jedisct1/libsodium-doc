@@ -149,9 +149,11 @@ The function returns `0` on success, or `-1` if `p` and/or `q` are not valid poi
 
 ## Scalar arithmetic over L
 
-Scalars should ideally be randomly chosen in the `[0..L[` interval, `L` being the order of the main subgroup (2^252 + 27742317777372353535851937790883648493).
+The `crypto_core_ed25519_scalar_*()` function set operates over scalars in the `[0..L[` interval, `L` being the order of the main subgroup (2^252 + 27742317777372353535851937790883648493).
 
-This can be achieved with the following function, introduced in libsodium 1.0.17:
+Non-reduced inputs are expected to be within that interval.
+
+A random scalar can be obtained using the `crypto_core_ed25519_scalar_random()` function introduced in libsodium 1.0.17:
 
 ```c
 void crypto_core_ed25519_scalar_random(unsigned char *r);
