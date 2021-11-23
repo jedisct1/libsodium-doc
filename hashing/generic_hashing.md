@@ -96,8 +96,9 @@ generate different fingerprints even if they process the same data.
 
 The recommended key size is `crypto_generichash_KEYBYTES` bytes.
 
-However, the key size can by any value between `crypto_generichash_KEYBYTES_MIN`
-(included) and `crypto_generichash_KEYBYTES_MAX` (included).
+However, the key size can by any value between `0` (included) and
+`crypto_generichash_KEYBYTES_MAX` (included). If the key is meant to be
+secret, the recommended minimum length is `crypto_generichash_KEYBYTES_MIN`.
 
 ```c
 int crypto_generichash_init(crypto_generichash_state *state,
