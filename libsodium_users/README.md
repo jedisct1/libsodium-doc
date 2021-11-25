@@ -290,6 +290,7 @@ to add yours to that list.
 * [Krypt.co](https://krypt.co)
 * [Magento (Adobe)](https://magento.com/)
 * [Malwarebytes](https://www.malwarebytes.com/)
+* [MongoDB](https://www.mongodb.com)
 * [Mullvad VPN](https://mullvad.net)
 * [OVH](https://www.ovh.com)
 * [Paragon Initiative Enterprises](https://paragonie.com)
