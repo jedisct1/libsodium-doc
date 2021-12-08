@@ -183,6 +183,7 @@ Wireguard.
 * [Zcash](https://z.cash/): Zcash is a decentralized and open source
   cryptocurrency that aims to set a new standard for privacy through the use of
   groundbreaking cryptography.
+* [Ziti](https://ziti.dev): Ziti is an open-source SDK and platform for agentless, embedded zero trust networking (mTLS+E2EE everywhere)
 * [libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp):
   a C++ Windows Runtime Component for UWP applications.
 * [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin):
@@ -252,6 +253,7 @@ to add yours to that list.
   with dedicated servers.
 * [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any
   platform.
+* [Ziti SDK](https://github.com/openziti/ziti-tunnel-sdk-c): The C-SDK for [the Ziti project](https://ziti.dev)
 * [libotrv4](https://github.com/otrv4/libotrv4): An OTR version 4
   implementation.
 * [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation
@@ -292,6 +294,7 @@ to add yours to that list.
 * [Malwarebytes](https://www.malwarebytes.com/)
 * [MongoDB](https://www.mongodb.com)
 * [Mullvad VPN](https://mullvad.net)
+* [NetFoundry](https://netfoundry.io) (maintainers of [the Ziti project](https://ziti.dev))
 * [OVH](https://www.ovh.com)
 * [Paragon Initiative Enterprises](https://paragonie.com)
 * [Peerio](https://www.peerio.com/)
