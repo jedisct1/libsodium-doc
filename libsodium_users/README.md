@@ -253,7 +253,7 @@ to add yours to that list.
   with dedicated servers.
 * [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any
   platform.
-* [Ziti SDK](https://github.com/openziti/ziti-tunnel-sdk-c): The C-SDK for [the Ziti project](https://ziti.dev)
+* [Ziti SDK](https://github.com/openziti/ziti-sdk-c): The C-SDK for [the Ziti project](https://ziti.dev)
 * [libotrv4](https://github.com/otrv4/libotrv4): An OTR version 4
   implementation.
 * [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation
