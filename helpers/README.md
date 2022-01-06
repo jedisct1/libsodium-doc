@@ -52,7 +52,7 @@ it to a byte sequence.
 is supplied via the `hex_len` parameter.
 
 `ignore` is a string of characters to skip. For example, the string `": "`
-allows columns and spaces to be present at any locations in the hexadecimal
+allows colons and spaces to be present at any locations in the hexadecimal
 string. These characters will just be ignored.
 As a result, `"69:FC"`, `"69 FC"`, `"69 : FC"` and `"69FC"` will be valid inputs,
 and will produce the same output.
