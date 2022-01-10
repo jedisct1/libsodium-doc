@@ -48,6 +48,7 @@
 * Haskell: [Lithium](https://github.com/eth-r/lithium)
 * Haskell: [hs-sodium](https://github.com/k0001/hs-libsodium)
 * Haskell: [haskell-crypto](https://github.com/serokell/haskell-crypto)
+* Haskell: [cryptography-libsodium](https://github.com/haskell-cryptography/cryptography-libsodium)
 * HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * HaXe (bindings for the Neko VM):
   [neko-libsodium](https://github.com/laserbat/neko-libsodium)
