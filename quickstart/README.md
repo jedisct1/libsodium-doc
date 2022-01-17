@@ -88,6 +88,8 @@ Some operations include variants with slightly different algorithms. For example
 
 In the above example, AES-GCM can fail due to message size limits, but XChaCha20 cannot; its limits are only theoretical, so checking the return value for that particular variant would not be strictly necessary. We still recommend doing it unconditionally in applications: it is cheap, is good hygiene, and functions can easily be replaced later if necessary.
 
+Some returned values are critical to be checked. For example, the outcome of the verification of an authentication token. These functions are tagged with the `warn_unused_result` attribute, and will cause a compiler warning if ignored. Such warnings should not be ignored.
+
 ## How do I encrypt data?
 
 ### One-shot encryption, where everything fits in memory
