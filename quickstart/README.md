@@ -78,6 +78,16 @@ If the other library doesn't have any initialization function, it can use a [`Dl
 
 However, explicitly calling initialization functions are recommended; automatic initialization makes it difficult to safely recover from errors.
 
+## How to check if a function call succeeded?
+
+Functions returning an `int` return `0` on success and `-1` to indicate an error.
+
+Functions returning a pointer return a valid address on success and `NULL` on error.
+
+Some operations include variants with slightly different algorithms. For example, authenticated encryption can be done with XChaCha20-Poly1305 or AES-GCM. For consistency and to make high-level wrappers using dynamic dispatch easier to implement, all the variants of a function share the same prototype.
+
+In the above example, AES-GCM can fail due to message size limits, but XChaCha20 cannot; its limits are only theoretical, so checking the return value for that particular variant would not be strictly necessary. We still recommend doing it unconditionally in applications: it is cheap, is good hygiene, and functions can easily be replaced later if necessary.
+
 ## How do I encrypt data?
 
 ### One-shot encryption, where everything fits in memory
