@@ -29,8 +29,8 @@
 * D: [Shaker](https://github.com/b1naryth1ef/shaker)
 * D: [Sodium](https://github.com/carblue/sodium)
 * Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
-* Delphi/FreePascal:
-  [Delphi/FreePascal](https://github.com/alexpmorris/libsodium-delphi)
+* Delphi/Free Pascal:
+  [Delphi/Free Pascal](https://github.com/alexpmorris/libsodium-delphi)
 * Dylan: [libsodium-dylan](https://github.com/dylan-foundry/libsodium-dylan)
 * Elixir: [Salty](https://github.com/ArteMisc/libsalty)
 * Elixir: [Savory](https://github.com/electricFeel/savory)
@@ -49,10 +49,7 @@
 * Haskell: [hs-sodium](https://github.com/k0001/hs-libsodium)
 * Haskell: [haskell-crypto](https://github.com/serokell/haskell-crypto)
 * Haskell: [cryptography-libsodium](https://github.com/haskell-cryptography/cryptography-libsodium)
-* HaXe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
-* HaXe (bindings for the Neko VM):
-  [neko-libsodium](https://github.com/laserbat/neko-libsodium)
-* Idris: [Idris-Sodium](https://github.com/jfdm/idris-sodium)
+* Haxe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
 * Java (Java Native Access):
   [libsodium-jna](https://github.com/muquit/libsodium-jna)
@@ -75,13 +72,12 @@
 * JavaScript (NodeJS): [node-sodium](https://github.com/paixaop/node-sodium)
 * JavaScript (NodeJS):
   [sodium-native](https://github.com/mafintosh/sodium-native)
-* JavaScript (React Native): [react-native-libsodium](https://github.com/synonymdev/react-native-libsodium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Kotlin/Native: [Sodium](https://github.com/datkt/sodium)
 * Kotlin Multiplatform: [kotlin-multiplatform-libsodium](https://github.com/ionspin/kotlin-multiplatform-libsodium)
 * Lisp (CFFI): [foreign-sodium](https://github.com/Harleqin/foreign-sodium)
 * Lua: [luasodium](https://github.com/jprjr/luasodium)
-* MRuby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
+* mruby: [mruby-libsodium](https://github.com/Asmod4n/mruby-libsodium)
 * MySQL: [MySQL-Sodium](https://github.com/mashthekeys/mysql-sodium)
 * Nim: [libsodium.nim](https://github.com/zielmicha/libsodium.nim)
 * Nim: [Sodium.nim](https://github.com/judofyr/sodium.nim)
@@ -108,14 +104,13 @@
 * R: [Sodium](https://github.com/jeroenooms/sodium)
 * Racket: part of
   [CRESTaceans](https://github.com/mgorlick/CRESTaceans/tree/master/bindings/libsodium)
-* RealBasic and Xojo: [RB-libsodium](https://github.com/charonn0/RB-libsodium)
+* REALbasic and Xojo: [RB-libsodium](https://github.com/charonn0/RB-libsodium)
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Ruby: [Sodium](https://github.com/stouset/sodium)
 * Rust: [rust_sodium](https://github.com/maidsafe/rust_sodium)
 * Rust: [libsodium-sys-stable](https://github.com/jedisct1/libsodium-sys-stable)
 * Rust: [monosodium](https://github.com/peterhj/monosodium)
 * Rust: [sodoken](https://github.com/holochain/sodoken)
-* Scala: [Francium](https://github.com/errorhandler/Francium)
 * Swift: [NaOH](https://github.com/drewcrawford/NaOH)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
 * Swift: [Tafelsalz](https://github.com/blochberger/Tafelsalz)

@@ -31,14 +31,14 @@ to add yours to that list.
   synchronization and encryption tool.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
   server for Linux/UNIX-like systems, written with security primarily in mind.
-* [Duniter](https://duniter.org): Duniter is an open source Relative Money Theory ditributed
+* [Duniter](https://duniter.org): Duniter is an open source Relative Money Theory distributed
   forged blockchain and clients (silkaj, duniterpy, cesium, ...) uses libsodium
 * [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
   chat app using progressive web app technologies.  
   Built with [Ember](http://emberjs.com) using all of the latest experimental features.
 * [ente](https://ente.io): A simple, end-to-end encrypted backup solution for photos and videos
-* [EQEmu](http://www.eqemulator.org): An Open Source project committed to
-  providing custom Everquest servers.
+* [EQEmu](http://www.eqemulator.org): An open source project committed to
+  providing custom EverQuest servers.
 * [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
 * [Fastd](http://fastd.readthedocs.org): A fast and secure tunnelling daemon.
 * [FeCl](https://github.com/jhwgh1968/FeCl): A secure message-passing server
@@ -48,7 +48,7 @@ to add yours to that list.
 * [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast
   VPN.
 * [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): a
-  user-friendly, password protected, note taking application for iOS.
+  user-friendly, password protected note taking application for iOS.
 * [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that
   travels with the app.
 * [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic
@@ -71,14 +71,14 @@ to add yours to that list.
   multi-purpose document store.
 * [libagentcrypt](https://github.com/ndilieto/libagentcrypt): Library for
   symmetric encryption using SSH Agent. It includes a command line utility
-  able to encrypt/decrypt files and/or passwords securely with your ssh keys
+  able to encrypt/decrypt files and/or passwords securely with your SSH keys
 * [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2
-  KDF, data encrypted with ChaCha20Poly1305, and Yubikey support.
+  KDF, data encrypted with ChaCha20Poly1305, and YubiKey support.
 * [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN
   (ADSL/SDSL/xDSL/Network aggregator)
 * [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from
   one computer to another, safely.
-* [MaidSafe](http://maidsafe.net/): A new Secure way to access a world of
+* [MaidSafe](http://maidsafe.net/): A new secure way to access a world of
   existing apps where the security of your data is put above all else.
 * [Metastream](https://github.com/samuelmaddock/metastream): Watch streaming media with friends.
 * [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign
@@ -88,7 +88,7 @@ to add yours to that list.
 * [Muon](https://github.com/puxxustc/muon): A fast stateless VPN with
   obfuscation to escape traffic monitoring.
 * [Nahoft](https://nahoftapp.com): An offline encryption tool for mobile
-  phones, designed to let people communicate during Internet shutdowns in Iran.
+  phones designed to let people communicate during Internet shutdowns in Iran.
 * [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation
   of Network Time Protocol Version 4.
 * [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and
@@ -106,7 +106,7 @@ to add yours to that list.
 * [PAVE](https://pave.software/): The Password Manager. Easy password sharing
   for teams. No cloud.
 * [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a
-  commandline utility which can be used to encrypt files.
+  command line utility which can be used to encrypt files.
 * [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
 * [Petmail](https://github.com/warner/petmail): A secure communication and
   file-sharing system.
@@ -121,10 +121,10 @@ to add yours to that list.
 * [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable
   application that encrypts files and directories using a symmetric-key
   algorithm.
-* [RavenDB](https://ravendb.net/): A linq enabled document database for .NET.
+* [RavenDB](https://ravendb.net/): A LINQ enabled document database for .NET.
 * [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
 * [Remembear](https://www.remembear.com/): a full-featured, multi-platform
-  password manager, by TunnelBear.
+  password manager by TunnelBear.
 * [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of
   privacy.
 * [Rubinius](http://rubinius.com/): Rubinius is a platform for building
@@ -161,7 +161,7 @@ to add yours to that list.
   itself by establishing a true digital commonwealth.
 * [Tinfoil Chat](https://github.com/maqp/tfc): an onion-routed, endpoint secure
   messaging system.
-* [Tox](https://tox.chat/): A new kind of instant messenging.
+* [Tox](https://tox.chat/): A new kind of instant messaging.
 * [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator
   for the famous game Clash of Clans
 * [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good
@@ -173,11 +173,11 @@ to add yours to that list.
   and devices, including heating, ventilation and air conditioning (HVAC)
   systems, lighting, electric vehicles and others.
 * [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and
-  receiver of UDP packets using raw WiFi radio.
+  receiver of UDP packets using raw Wi-Fi radio.
 * [Wire](https://wire.com/): Modern, private communications. Crystal clear
   voice, video and group chats. No advertising. Your data, always encrypted.
 * [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of
-Wireguard.
+WireGuard.
 * [Zbox](https://github.com/zboxfs/zbox): zero-details, privacy-focused
   embeddable file system.
 * [Zcash](https://z.cash/): Zcash is a decentralized and open source
@@ -229,7 +229,7 @@ to add yours to that list.
 * [MySQL-Sodium](https://github.com/mashthekeys/mysql-sodium): MySQL
   UDF bindings for libsodium.
 * [NaclKeys](https://github.com/bitbeans/NaclKeys): Library to generate
-  libsodium-net compatible KeyPair`s.
+  libsodium-net compatible KeyPairs.
 * [Netcode.io](http://netcode.io): A simple protocol for creating secure
   client/server connections over UDP.
 * [Noise-C](http://rweather.github.io/noise-c/): Noise-C is a plain C
@@ -238,8 +238,8 @@ to add yours to that list.
   framework in Swift for iOS.
 * [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell
   module.
-* [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One way
-  streaming encryption for Javascript.
+* [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One-way
+  streaming encryption for JavaScript.
 * [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by
   default encryption for .NET
 * [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
@@ -273,7 +273,7 @@ to add yours to that list.
 
 ## Companies using libsodium
 
-Some companies using libsodium, possibly in non-opensource products. Send a
+Some companies using libsodium, possibly in closed source products. Send a
 [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md)
 to add yours to that list.
 
