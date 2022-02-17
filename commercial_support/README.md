@@ -22,8 +22,8 @@ Libsodium-specific services include:
 Libsodium-specific services include:
 
 * Library integration, with a focus on web applications \(PHP, .NET, Python\).
-* Bespoke or standard high-level protocol design and implementation, e.g. Noise.
-* Security audits, for in-house library integrations and/or high-level
+* Bespoke or standard high-level protocol design and implementation (e.g. Noise).
+* Security audits for in-house library integrations and/or high-level
   protocols.
 * Custom application development that requires cryptography.
 * Consulting and mentoring services.
