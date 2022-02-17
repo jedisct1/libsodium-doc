@@ -12,7 +12,7 @@ cryptographic tools.
 
 Sodium is cross-platforms and cross-languages. It runs on a variety of compilers
 and operating systems, including Windows \(with MinGW or Visual Studio, x86 and
-x86_64\), iOS and Android. Javascript and WebAssembly versions are also
+x86_64\), iOS and Android. JavaScript and WebAssembly versions are also
 available and are fully supported. Bindings for all common programming languages
 are available and well-supported.
 
@@ -59,7 +59,7 @@ based on can be found in the
 [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS)
 file. This project wouldn't exist without them.
 
-Also a huge "thank you" to people and companies who contributed bindings for
+Also, a huge "thank you" to people and companies who contributed bindings for
 their favorite programming languages. A list can be found in the
 [THANKS](https://raw.githubusercontent.com/jedisct1/libsodium/master/THANKS)
 file.
