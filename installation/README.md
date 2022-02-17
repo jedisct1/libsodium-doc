@@ -98,7 +98,7 @@ Please note that using libsodium on ARM Cortex M0, M3 and M4 CPUs is untested an
 
 Releases can be compiled using the CompCert compiler.
 
-A typical command-line to compile Sodium on a little endian system with CompCert
+A typical command-line to compile Sodium on a little-endian system with CompCert
 is:
 
 ```sh
@@ -127,7 +127,7 @@ To check out the stable branch, use:
 git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
-Tarballs of the `stable` code are also available for download, and are
+Tarballs of the `stable` code are also available for download and are
 recommended if you are compiling libsodium from source.
 
 ## Getting started
@@ -285,5 +285,5 @@ sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu
 We encourage users and researchers to use PGP-encrypted emails to transmit
 confidential details regarding possible vulnerabilities in the Sodium library.
 
-Details should be sent to: j \[at\] pureftpd \[dot\] org using the PGP key
+Details should be sent to j \[at\] pureftpd \[dot\] org using the PGP key
 above.
