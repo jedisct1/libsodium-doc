@@ -244,7 +244,7 @@ Nonces don't have to be secret, but they must not be reused. Reusing a nonce wou
 
 On a platform where counters cannot be maintained, and where no trusted source of randomness exist, deterministic encryption can be used as a last resort.
 
-[XChaCha20-SIV](https://github.com/jedisct1/libsodium-xchacha20-siv) is such a construction, that can also be used for key wrapping.
+[XChaCha20-SIV](https://github.com/jedisct1/libsodium-xchacha20-siv) is such a construction, which can also be used for key wrapping.
 
 On such systems, [libhydrogen](https://libhydrogen.org) may also be a better option.
 
