@@ -50,9 +50,6 @@
 * Haskell: [haskell-crypto](https://github.com/serokell/haskell-crypto)
 * Haskell: [cryptography-libsodium](https://github.com/haskell-cryptography/cryptography-libsodium)
 * Haxe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
-* Haxe (bindings for the Neko VM):
-  [neko-libsodium](https://github.com/laserbat/neko-libsodium)
-* Idris: [Idris-Sodium](https://github.com/jfdm/idris-sodium)
 * Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
 * Java (Java Native Access):
   [libsodium-jna](https://github.com/muquit/libsodium-jna)
@@ -75,7 +72,6 @@
 * JavaScript (NodeJS): [node-sodium](https://github.com/paixaop/node-sodium)
 * JavaScript (NodeJS):
   [sodium-native](https://github.com/mafintosh/sodium-native)
-* JavaScript (React Native): [react-native-libsodium](https://github.com/synonymdev/react-native-libsodium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Kotlin/Native: [Sodium](https://github.com/datkt/sodium)
 * Kotlin Multiplatform: [kotlin-multiplatform-libsodium](https://github.com/ionspin/kotlin-multiplatform-libsodium)
@@ -115,7 +111,6 @@
 * Rust: [libsodium-sys-stable](https://github.com/jedisct1/libsodium-sys-stable)
 * Rust: [monosodium](https://github.com/peterhj/monosodium)
 * Rust: [sodoken](https://github.com/holochain/sodoken)
-* Scala: [Francium](https://github.com/errorhandler/Francium)
 * Swift: [NaOH](https://github.com/drewcrawford/NaOH)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
 * Swift: [Tafelsalz](https://github.com/blochberger/Tafelsalz)
