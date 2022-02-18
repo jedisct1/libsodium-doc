@@ -54,10 +54,10 @@ is supplied via the `hex_len` parameter.
 `ignore` is a string of characters to skip. For example, the string `": "`
 allows colons and spaces to be present at any locations in the hexadecimal
 string. These characters will just be ignored.
-As a result, `"69:FC"`, `"69 FC"`, `"69 : FC"` and `"69FC"` will be valid inputs,
-and will produce the same output.
+As a result, `"69:FC"`, `"69 FC"`, `"69 : FC"` and `"69FC"` will be valid inputs
+and produce the same output.
 
-`ignore` can be set to `NULL` in order to disallow any non-hexadecimal
+`ignore` can be set to `NULL` to disallow any non-hexadecimal
 character.
 
 `bin_maxlen` is the maximum number of bytes to put into `bin`.
@@ -132,9 +132,9 @@ void sodium_increment(unsigned char *n, const size_t nlen);
 ```
 
 The `sodium_increment()` function takes a pointer to an arbitrary-long unsigned
-number, and increments it.
+number and increments it.
 
-It runs in constant-time for a given length, and considers the number to be
+It runs in constant-time for a given length and considers the number to be
 encoded in little-endian format.
 
 `sodium_increment()` can be used to increment nonces in constant time.
@@ -148,7 +148,7 @@ void sodium_add(unsigned char *a, const unsigned char *b, const size_t len);
 The `sodium_add()` function accepts two pointers to unsigned numbers encoded in
 little-endian format, `a` and `b`, both of size `len` bytes.
 
-It computes `(a + b) mod 2^(8*len)` in constant time for a given length, and
+It computes `(a + b) mod 2^(8*len)` in constant time for a given length and
 overwrites `a` with the result.
 
 ## Subtracting large numbers
@@ -160,7 +160,7 @@ void sodium_sub(unsigned char *a, const unsigned char *b, const size_t len);
 The `sodium_sub()` function accepts two pointers to unsigned numbers encoded in
 little-endian format, `a` and `b`, both of size `len` bytes.
 
-It computes `(a - b) mod 2^(8*len)` in constant time for a given length, and
+It computes `(a - b) mod 2^(8*len)` in constant time for a given length and
 overwrites `a` with the result.
 
 This function was introduced in libsodium 1.0.17.
@@ -180,7 +180,7 @@ this function returns:
 
 The comparison is done in constant time for a given length.
 
-This function can be used with nonces, in order to prevent replay attacks.
+This function can be used with nonces to prevent replay attacks.
 
 ## Testing for all zeros
 
