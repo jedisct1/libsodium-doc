@@ -27,13 +27,13 @@ partitions.
 
 For similar reasons, on Unix systems, one should also disable core dumps when
 running crypto code outside a development environment. This can be achieved
-using a shell built-in such as `ulimit` or programatically using
+using a shell built-in such as `ulimit` or programmatically using
 `setrlimit(RLIMIT_CORE, &(struct rlimit) {0, 0})`. On operating systems where
 this feature is implemented, kernel crash dumps should also be disabled.
 
 `sodium_mlock()` wraps `mlock()` and `VirtualLock()`. **Note:** Many systems
 place limits on the amount of memory that may be locked by a process. Care
-should be taken to raise those limits (e.g. Unix ulimits) where neccessary.
+should be taken to raise those limits (e.g. Unix ulimits) where necessary.
 `sodium_mlock()` will return `-1` when any limit is reached.
 
 ```c
@@ -41,8 +41,8 @@ int sodium_munlock(void * const addr, const size_t len);
 ```
 
 The `sodium_munlock()` function should be called after locked memory is not
-being used any more. It will zero `len` bytes starting at `addr` before actually
-flagging the pages as swappable again. Calling `sodium_memzero()` prior to
+being used any more. It will zero `len` bytes starting at `addr` before flagging
+the pages as swappable again. Calling `sodium_memzero()` prior to
 `sodium_munlock()` is thus not required.
 
 On systems where it is supported, `sodium_mlock()` also wraps `madvise()` and
@@ -54,10 +54,10 @@ advises the kernel not to include the locked memory in core dumps.
 Sodium provides heap allocation functions for storing sensitive data.
 
 These are not general-purpose allocation functions. In particular, they are
-slower than `malloc()` and friends, and they require 3 or 4 extra pages of
+slower than `malloc()` and friends and require 3 or 4 extra pages of
 virtual memory.
 
-`sodium_init()` has to be called before using any of the guarded heap allocation
+`sodium_init()` must be called before using any of the guarded heap allocation
 functions.
 
 ```c
@@ -75,13 +75,13 @@ region will immediately terminate the application.
 
 A canary is also placed right before the returned pointer. Modifications of this
 canary are detected when trying to free the allocated region with
-`sodium_free()`, and also cause the application to immediately terminate.
+`sodium_free()` and also cause the application to immediately terminate.
 
 An additional guard page is placed before this canary to make it less likely for
 sensitive data to be accessible when reading past the end of an unrelated
 region.
 
-The allocated region is filled with `0xdb` bytes in order to help catch bugs due
+The allocated region is filled with `0xdb` bytes to help catch bugs due
 to uninitialized data.
 
 In addition, `sodium_mlock()` is called on the region to help avoid it being
@@ -93,7 +93,7 @@ multiple of the required alignment.
 
 For this reason, `sodium_malloc()` should not be used with packed or
 variable-length structures, unless the size given to `sodium_malloc()` is
-rounded up in order to ensure proper alignment.
+rounded up to ensure proper alignment.
 
 All the structures used by libsodium can safely be allocated using
 `sodium_malloc()`.
@@ -118,7 +118,7 @@ void sodium_free(void *ptr);
 The `sodium_free()` function unlocks and deallocates memory allocated using
 `sodium_malloc()` or `sodium_allocarray()`.
 
-Prior to this, the canary is checked in order to detect possible buffer
+Prior to this, the canary is checked to detect possible buffer
 underflows and terminate the process if required.
 
 `sodium_free()` also fills the memory region with zeros before the deallocation.
@@ -154,6 +154,6 @@ int sodium_mprotect_readwrite(void *ptr);
 ```
 
 The `sodium_mprotect_readwrite()` function marks a region allocated using
-`sodium_malloc()` or `sodium_allocarray()` as readable and writable, after
+`sodium_malloc()` or `sodium_allocarray()` as readable and writable after
 having been protected using `sodium_mprotect_readonly()` or
 `sodium_mprotect_noaccess()`.
