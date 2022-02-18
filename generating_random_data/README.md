@@ -49,7 +49,7 @@ can be up to 2^38 (256 GB).
 
 `seed` is `randombytes_SEEDBYTES` bytes long.
 
-This function is mainly useful for writing tests, and was introduced in
+This function is mainly useful for writing tests and was introduced in
 libsodium 1.0.12. Under the hood, it uses the ChaCha20 stream cipher.
 
 Up to 256 GB can be produced with a single seed.
@@ -66,7 +66,7 @@ the descriptor. Explicitly calling this function is almost never required.
 void randombytes_stir(void);
 ```
 
-The `randombytes_stir()` function reseeds the pseudo-random number generator, if
+The `randombytes_stir()` function reseeds the pseudo-random number generator if
 it supports this operation. Calling this function is not required with the
 default generator, even after a `fork()` call, unless the descriptor for
 `/dev/urandom` was closed using `randombytes_close()`.
