@@ -95,7 +95,7 @@ On AWS Nitro Enclaves, workarounds include:
 
 * Calling the `aws_nitro_enclaves_library_seed_entropy()` function before `sodium_init()`, and occasionally afterwards.
 * Using the `RDSEED` CPU instruction to seed the kernel RNG (not recommended as a unique entropy source).
-* Setting `random.trust_cpu=on` in the kernel commandline (requires Linux kernel > 4.19).
+* Setting `random.trust_cpu=on` in the kernel command line (requires Linux kernel > 4.19).
 
 Applications can warn users about the Linux RNG not being seeded before calling
 `sodium_init()` using code similar to the following:
