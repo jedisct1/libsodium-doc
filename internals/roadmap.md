@@ -3,12 +3,12 @@
 libsodium's roadmap is driven by its user community and new ideas are always
 welcome.
 
-New features will be gladly implemented provided that they are not redundant and
+New features will be gladly implemented if they are not redundant and
 solve common problems.
 
 ## pre-1.0.0 roadmap
 
-* AEAD construction \(ChaCha20Poly1305\)
+* AEAD construction \(ChaCha20-Poly1305\)
 * API to set initial counter value in ChaCha20/Salsa20
 * Big-endian compatibility
 * BLAKE2
@@ -22,8 +22,8 @@ solve common problems.
 * Documentation
 * Ed25519 signatures
 * Emscripten support
-* FP rounding mode independent poly1305 implementation
-* Faster portable curve25519 implementation
+* FP rounding mode independent Poly1305 implementation
+* Faster portable Curve25519 implementation
 * Fix undefined behaviors for C99
 * Guarded memory
 * HMAC-SHA512, HMAC-SHA256
@@ -33,17 +33,17 @@ solve common problems.
 * Higher-level API for crypto_secretbox
 * Lift `ZEROBYTES` requirements
 * Make all constants accessible via public functions
-* MingW port
+* MinGW port
 * Minimal build mode
 * NuGet packages
 * Password hashing
 * Pluggable random number generator
 * Portable memory locking
 * Position-independent code
-* Replace the build system with autotools/libtool
+* Replace the build system with Autotools/Libtool
 * Runtime CPU features detection
 * Secure memory zeroing
-* Seed and public key extraction from an ed25519 secret key
+* Seed and public key extraction from an Ed25519 secret key
 * SipHash
 * Streaming support for hashing and authentication
 * Streaming support for one-time authentication
@@ -67,10 +67,10 @@ solve common problems.
 * Optimized implementations for ARM w/NEON
 * AVX optimized Curve25119 \[DONE\]
 * Precomputed interface for crypto_box_easy\(\) \[DONE\]
-* First-class support for Javascript \[DONE\]
-* chacha20 and chacha20poly1305 with a 96 bit nonce and a 32 bit counter
+* First-class support for JavaScript \[DONE\]
+* ChaCha20 and ChaCha20-Poly1305 with a 96-bit nonce and a 32-bit counter
   \[DONE\]
-* IETF-compatible chacha20poly1305 implementation \[DONE\]
+* IETF-compatible ChaCha20-Poly1305 implementation \[DONE\]
 * SSE-optimized BLAKE2b implementation \[DONE\]
 * AES-GCM \[DONE\]
 * AES-GCM detached mode \[DONE\]
@@ -80,10 +80,10 @@ solve common problems.
 * Argon2id as crypto_pwhash \[DONE\]
 * Multithreaded crypto_pwhash \[on hold\]
 * Generic subkey derivation API \[DONE\]
-* Nonce-misuse resistant scheme
+* Nonce misuse-resistant scheme
 * BLAKE2 AVX2 implementations \[DONE\]
-* Keyed \(hash-then-encrypt\) crypto_pwhash
-* Consider Yescrypt
+* Keyed \(Hash-then-Encrypt\) crypto_pwhash
+* Consider yescrypt
 * Consider BLAKE2X \[on hold\]
 * Argon2id \[DONE\]
 * Port libhydrogen's key exchange API
@@ -93,11 +93,11 @@ solve common problems.
 * AVX2 Salsa20 implementation \[DONE\]
 * AVX2 ChaCha20 implementation \[DONE\]
 * AVX2 Poly1305 implementation
-* AVX512 implementations \[done for Argon2, withold for other operations due to
+* AVX512 implementations \[done for Argon2, withhold for other operations due to
   throttling concerns\]
-* key generation API \[DONE\]
+* Key generation API \[DONE\]
 * Nonce/subkey generation API
-* Webassembly support \[DONE\]
+* WebAssembly support \[DONE\]
 * Stream encryption using a CHAIN-like construction \[DONE\]
 * Security audit by a 3rd party \[DONE\]
 * Formally-verified implementations \[on hold\]
@@ -120,7 +120,7 @@ solve common problems.
 * Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
 * Consider ECVRF
-* Consider using [Timecop](https://www.post-apocalyptic-crypto.org/timecop)
+* Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
 
 ## 2.0.0 roadmap
 
