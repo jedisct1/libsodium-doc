@@ -1,8 +1,8 @@
 # Padding
 
 Most modern cryptographic constructions disclose message lengths. The ciphertext
-for a given message will always have the same length, or add a constant number
-of bytes to it.
+for a given message will always have the same length or a constant number
+of bytes added to it.
 
 For most applications, this is not an issue. But in some specific situations,
 such as interactive remote shells, hiding the length may be desirable. Padding
@@ -64,13 +64,13 @@ standard padding algorithms.
 
 ## Notes
 
-Padding should be applied prior to encryption, and removed after decryption.
+Padding should be applied prior to encryption and removed after decryption.
 
-Usage of padding in order to hide the length of a password is not recommended. A
-client willing to send a password to a server should hash it instead (even with
-a single iteration of the hash function).
+Usage of padding to hide the length of a password is not recommended. A
+client willing to send a password to a server should hash it instead, even with
+a single iteration of the hash function.
 
-This ensures that the length of the transmitted data is constant, and that the
+This ensures that the length of the transmitted data is constant and that the
 server doesn't effortlessly get a copy of the password.
 
 Applications may eventually leak the unpadded length via side channels, but the
