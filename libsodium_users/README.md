@@ -12,7 +12,7 @@ to add yours to that list.
 * [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and
   other tools to aid development of blockchain and other decentralized
   software in Java and other JVM languages.
-* [Babble Browser Extension](https://github.com/XCF-Babble/babble): a
+* [Babble Browser Extension](https://github.com/XCF-Babble/babble): A
   platform agnostic browser extension that allows for easy encryption
   and decryption of text data across the web.
 * [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform
@@ -20,23 +20,22 @@ to add yours to that list.
 * [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for
   Windows.
 * [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral
-  chat with voice + video + file transfers.
+  chat with voice, video, and file transfers.
 * [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for
   applications of the future.
 * [Detsign](https://github.com/simonfxr/detsign): Use passphrases to
-  generate deterministic ED25519 signing keys.
+  generate deterministic Ed25519 signing keys.
 * [Discord](https://discordapp.com): All-in-one voice and text chat for gamers
   that’s free, secure, and works on both your desktop and phone.
 * [Dircifrar](https://github.com/ctchou/dircifrar): A directory
   synchronization and encryption tool.
 * [Dovecot](https://dovecot.org): Dovecot is an open source IMAP and POP3 email
-  server for Linux/UNIX-like systems, written with security primarily in mind.
+  server for Linux/Unix-like systems, written with security primarily in mind.
 * [Duniter](https://duniter.org): Duniter is an open source Relative Money Theory distributed
-  forged blockchain and clients (silkaj, duniterpy, cesium, ...) uses libsodium
-* [emberclear](https://emberclear.io): An Open Source, privacy-first, encrypted
-  chat app using progressive web app technologies.  
-  Built with [Ember](http://emberjs.com) using all of the latest experimental features.
-* [ente](https://ente.io): A simple, end-to-end encrypted backup solution for photos and videos
+  forged blockchain, and the clients (silkaj, duniterpy, cesium, ...) use libsodium.
+* [emberclear](https://emberclear.io): An open source, privacy-first, encrypted
+  chat app using progressive web app technologies. Built with [Ember](http://emberjs.com) using all of the latest experimental features.
+* [ente](https://ente.io): A simple, end-to-end encrypted backup solution for photos and videos.
 * [EQEmu](http://www.eqemulator.org): An open source project committed to
   providing custom EverQuest servers.
 * [Evernym Plenum](http://evernym.com/): A byzantine fault tolerant protocol.
@@ -47,7 +46,7 @@ to add yours to that list.
   synchronisation tool.
 * [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast
   VPN.
-* [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): a
+* [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): A
   user-friendly, password protected note taking application for iOS.
 * [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that
   travels with the app.
@@ -65,15 +64,15 @@ to add yours to that list.
 * [Kryptonite](https://github.com/kryptco/kr): The new home for your SSH private
   key on your iPhone or Android.
 * [Kryptor](https://kryptor.co.uk/): Free and open source file encryption software.
-* [Lageant](https://github.com/bitbeans/lageant): libsodium Authentication
+* [Lageant](https://github.com/bitbeans/lageant): Libsodium Authentication
   Agent.
 * [Lawncipher](https://github.com/LockateMe/Lawncipher): An embedded, encrypted,
   multi-purpose document store.
 * [libagentcrypt](https://github.com/ndilieto/libagentcrypt): Library for
   symmetric encryption using SSH Agent. It includes a command line utility
-  able to encrypt/decrypt files and/or passwords securely with your SSH keys
+  able to encrypt/decrypt files and/or passwords securely with your SSH keys.
 * [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2
-  KDF, data encrypted with ChaCha20Poly1305, and YubiKey support.
+  KDF, data encrypted with ChaCha20-Poly1305, and YubiKey support.
 * [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN
   (ADSL/SDSL/xDSL/Network aggregator)
 * [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from
@@ -103,7 +102,7 @@ to add yours to that list.
   notifications to parents upon a student's entrance and exit in school.
 * [OpenR](https://github.com/facebook/openr): Facebook's internally designed and
   developed routing protocol/platform.
-* [PAVE](https://pave.software/): The Password Manager. Easy password sharing
+* [PAVE](https://pave.software/): The password manager. Easy password sharing
   for teams. No cloud.
 * [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a
   command line utility which can be used to encrypt files.
@@ -123,7 +122,7 @@ to add yours to that list.
   algorithm.
 * [RavenDB](https://ravendb.net/): A LINQ enabled document database for .NET.
 * [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
-* [Remembear](https://www.remembear.com/): a full-featured, multi-platform
+* [Remembear](https://www.remembear.com/): A full-featured, multi-platform
   password manager by TunnelBear.
 * [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of
   privacy.
@@ -136,9 +135,8 @@ to add yours to that list.
 * [Sandstorm](https://sandstorm.io/): An open source operating system for
   personal and private clouds.
 * [Secrets](https://outercorner.com/secrets): Easily and securely store passwords,
-  credit card numbers, bank details, and confidential information.
-  Available for Mac and iOS.
-* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure socks5 proxy,
+  credit card numbers, bank details, and confidential information. Available for Mac and iOS.
+* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure SOCKS5 proxy,
   designed to protect your Internet traffic.
 * [Sharekey](https://sharekey.com/): Encrypted data storage.
 * [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple
@@ -157,13 +155,13 @@ to add yours to that list.
   backups.
 * [Telehash](http://telehash.org/): An embeddable private network stack for
   mobile, web, and devices.
-* [Tezos](https://www.tezos.com): a new decentralized blockchain that governs
+* [Tezos](https://www.tezos.com): A new decentralized blockchain that governs
   itself by establishing a true digital commonwealth.
-* [Tinfoil Chat](https://github.com/maqp/tfc): an onion-routed, endpoint secure
+* [Tinfoil Chat](https://github.com/maqp/tfc): An onion-routed, endpoint secure
   messaging system.
 * [Tox](https://tox.chat/): A new kind of instant messaging.
 * [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator
-  for the famous game Clash of Clans
+  for the famous game Clash of Clans.
 * [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good
   old UNIX editor Vi. Libsodium is used for reading and writing of encrypted files.
 * [VOLTTRON](http://gridoptics.pnnl.gov/VOLTTRON/): VOLTTRON is an innovative
@@ -176,22 +174,21 @@ to add yours to that list.
   receiver of UDP packets using raw Wi-Fi radio.
 * [Wire](https://wire.com/): Modern, private communications. Crystal clear
   voice, video and group chats. No advertising. Your data, always encrypted.
-* [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of
-WireGuard.
-* [Zbox](https://github.com/zboxfs/zbox): zero-details, privacy-focused
+* [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of WireGuard.
+* [Zbox](https://github.com/zboxfs/zbox): Zero-details, privacy-focused
   embeddable file system.
 * [Zcash](https://z.cash/): Zcash is a decentralized and open source
   cryptocurrency that aims to set a new standard for privacy through the use of
   groundbreaking cryptography.
-* [OpenZiti](https://ziti.dev): Ziti is an open-source SDK and platform for agentless, embedded zero trust networking (mTLS+E2EE everywhere)
+* [OpenZiti](https://ziti.dev): Ziti is an open-source SDK and platform for agentless, embedded zero trust networking (mTLS+E2EE everywhere).
 * [libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp):
   a C++ Windows Runtime Component for UWP applications.
 * [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin):
-  Dovecot plugin to support Scrypt and Argon2 for password hashing.
-* [Wordpress](https://wordpress.com) uses libsodium for verified updates.
-* [C-lightning](https://github.com/ElementsProject/lightning/), a [Lightning Network](https://github.com/lightningnetwork/lightning-rfc)
-  implementation in C, uses libsodium.
-* [SilentDragon](https://github.com/MyHush/SilentDragon) + [SilentDragonLite](https://github.com/MyHush/SilentDragonLite) : GUI full node + lite wallets for the [Hush](https://myhush.org) cryptocoin, which is focused on secure communications.
+  Dovecot plugin to support scrypt and Argon2 for password hashing.
+* [Wordpress](https://wordpress.com): Uses libsodium for verified updates.
+* [C-lightning](https://github.com/ElementsProject/lightning/): A [Lightning Network](https://github.com/lightningnetwork/lightning-rfc)
+  implementation in C that uses libsodium.
+* [SilentDragon](https://github.com/MyHush/SilentDragon) + [SilentDragonLite](https://github.com/MyHush/SilentDragonLite): GUI full node and lite wallets for the [Hush](https://myhush.org) cryptocoin, which is focused on secure communications.
 
 ## Libraries using libsodium
 
@@ -208,14 +205,14 @@ to add yours to that list.
   minimal sodium plugin for Cordova - for iOS and Android.
 * [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content
   using Ed25519.
-* [Etebase](https://www.etebase.com/): An Open Source SDK and backend to build end-to-end encrypted applications.
+* [Etebase](https://www.etebase.com/): An open source SDK and backend to build end-to-end encrypted applications.
 * [Folly](https://github.com/facebook/folly): An open-source C++ library developed and used at Facebook.
 * [Halite](https://github.com/paragonie/halite): High-level cryptography
   interface for PHP.
 * [Hyperledger Indy](https://github.com/hyperledger/indy-sdk): Everything needed to build applications that interact with an Indy distributed identity ledger.
 * [Innovault](https://innovault.io): A toolkit to store sensitive data from web
   forms in an encrypted database.
-* [libopaque](https://github.com/stef/libopaque): an implementation of the OPAQUE protocol.
+* [libopaque](https://github.com/stef/libopaque): An implementation of the OPAQUE protocol.
 * [libSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
 * [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud
   storage provider that protects your data, thanks to end-to-end encryption.
@@ -241,19 +238,19 @@ to add yours to that list.
 * [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One-way
   streaming encryption for JavaScript.
 * [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by
-  default encryption for .NET
-* [Sodium native](https://github.com/sodium-friends/sodium-native): Low level
+  default encryption for .NET.
+* [Sodium native](https://github.com/sodium-friends/sodium-native): Low-level
   NodeJS bindings for libsodium.
 * [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption
-  & decryption with libsodium and protobuf for .NET
-* [Tanker](https://github.com/TankerHQ/sdk-js): an encryption SDK for JavaScript.
+  and decryption with libsodium and protobuf for .NET.
+* [Tanker](https://github.com/TankerHQ/sdk-js): An encryption SDK for JavaScript.
 * [The Update Framework](https://github.com/theupdateframework/tuf): A
   plug-and-play library for securing a software updater.
 * [Yojimbo](https://github.com/networkprotocol/yojimbo): A network library for client/server games
   with dedicated servers.
 * [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any
   platform.
-* [OpenZiti SDK](https://github.com/openziti/ziti-sdk-c): The C-SDK for [the OpenZiti project](https://ziti.dev)
+* [OpenZiti SDK](https://github.com/openziti/ziti-sdk-c): The C-SDK for [the OpenZiti project](https://ziti.dev).
 * [libotrv4](https://github.com/otrv4/libotrv4): An OTR version 4
   implementation.
 * [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation
@@ -265,7 +262,7 @@ to add yours to that list.
 * [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to
   handle and create minisign signatures.
 * [neuropil](https://www.neuropil.org/): An IoT secure messaging library with
-  end-to-end encryption written in C and using libsodium
+  end-to-end encryption written in C and using libsodium.
 * [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper
   around libsodium.
 * [spake2+ee](https://github.com/jedisct1/spake2-ee): A SPAKE2+ implementation.
