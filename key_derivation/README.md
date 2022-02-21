@@ -7,7 +7,7 @@ very large keyspace. However, passwords are usually short, human-generated
 strings, making dictionary attacks practical.
 
 The [`pwhash`](../password_hashing/README.md) operation
-derives a secret key of any size from a password and a salt.
+derives a secret key of any size from a password and salt.
 
 Refer to the [Password hashing](../password_hashing/README.md) section
 for more information and code examples.
@@ -66,10 +66,10 @@ The `crypto_kdf_derive_from_key()` function derives a `subkey_id`-th subkey
 
 `subkey_id` can be any value up to `(2^64)-1`.
 
-`subkey_len` has to be between `crypto_kdf_BYTES_MIN` \(inclusive\) and
+`subkey_len` must be between `crypto_kdf_BYTES_MIN` \(inclusive\) and
 `crypto_kdf_BYTES_MAX` \(inclusive\).
 
-Similar to a type, the context `ctx` is a 8 characters string describing what
+Similar to a type, the context `ctx` is an 8 character string describing what
 the key is going to be used for.
 
 Its purpose is to mitigate accidental bugs by separating domains. The same
@@ -78,7 +78,7 @@ generate two different outputs.
 
 Contexts don't have to be secret and can have a low entropy.
 
-Examples of contexts include `UserName`, `__auth__`, `pictures` and `userdata`.
+Examples of contexts include `UserName`, `__auth__`, `pictures`, and `userdata`.
 
 They must be `crypto_kdf_CONTEXTBYTES` bytes long.
 
@@ -130,39 +130,38 @@ crypto_generichash_blake2b_salt_personal(subkey2, sizeof subkey2,
 ```
 
 The `crypto_generichash_blake2b_salt_personal()` function can be used to derive
-a subkey of any size from a key of any size, as long as these key sizes are in
-the 128 to 512 bits interval.
+a subkey between 128 and 512 bits long from a 128- to 512-bit key.
 
 In this example, two subkeys are derived from a single key. These subkeys have
-different sizes \(128 and 256 bits\), and are derived from a master key of yet
+different sizes \(128 and 256 bits\) and are derived from a master key of yet
 another size \(512 bits\).
 
-The personalization parameter \(`appid`\) is a 16-bytes value that doesn't have
+The personalization parameter \(`appid`\) is a 16-byte value that doesn't have
 to be secret. It can be used so that the same `(masterkey, keyid)` tuple will
-produce different output in different applications. It is not required, however:
-a `NULL` pointer can be passed instead in order to use the default constant.
+produce a different output in different applications. It is not required, however:
+a `NULL` pointer can be passed instead to use the default constant.
 
 The salt \(`keyid`\) doesn't have to be secret either. This is a 16-bytes
-identifier, that can be a simple counter, and is used to derive more than one
+identifier that can be a simple counter and is used to derive more than one
 key out of a single master key.
 
 ## Nonce extension
 
 Unlike XSalsa20 \(used by `crypto_box_*` and `crypto_secretbox_*`\) and
 XChaCha20, ciphers such as AES-GCM and ChaCha20 require a nonce too short to be
-chosen randomly \(64 or 96 bits\). With 96 bits random nonces, 2^32 encryptions
+chosen randomly \(64 or 96 bits\). With 96-bit random nonces, 2^32 encryptions
 is the limit before the probability of duplicate nonces becomes too high.
 
 Using a counter instead of random nonces prevents this. However, keeping a state
 is not always an option, especially with offline protocols.
 
-As an alternative, the nonce can be extended: a key and a part of a long nonce
+As an alternative, the nonce can be extended: a key and part of a long nonce
 are used as inputs to a pseudorandom function to compute a new key. This subkey
 and the remaining bits of the long nonce can then be used as parameters for the
 cipher.
 
-For example, this allows using a 192-bits nonce with a cipher requiring a
-64-bits nonce:
+For example, this allows using a 192-bit nonce with a cipher requiring a
+64-bit nonce:
 
 ```text
 k = <key>
@@ -179,17 +178,17 @@ int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
                           const unsigned char *k, const unsigned char *c);
 ```
 
-This function accepts a 32 bytes \(`crypto_core_hchacha20_KEYBYTES`\) secret key
-`k` as well as a 16 bytes \(`crypto_core_hchacha20_INPUTBYTES`\) input `in`, and
-outputs a 32 bytes \(`crypto_core_hchacha20_OUTPUTBYTES`\) value
+This function accepts a 32-byte \(`crypto_core_hchacha20_KEYBYTES`\) secret key
+`k` as well as a 16-byte \(`crypto_core_hchacha20_INPUTBYTES`\) input `in` and
+outputs a 32-byte \(`crypto_core_hchacha20_OUTPUTBYTES`\) value
 indistinguishable from random data without knowing `k`.
 
-Optionally, a 16-bytes \(`crypto_core_hchacha20_CONSTBYTES`\) constant `c` can
+Optionally, a 16-byte \(`crypto_core_hchacha20_CONSTBYTES`\) constant `c` can
 be specified to personalize the function to an application. `c` can be left to
-`NULL` in order to use the default constant.
+`NULL` to use the default constant.
 
-The following code snippet case thus be used to construct a ChaCha20-Poly1305
-variant with a 192-bits nonce \(XChaCha20\) on libsodium &lt; 1.0.12 \(versions
+The following code snippet can be used to construct a ChaCha20-Poly1305
+variant with a 192-bit nonce \(XChaCha20\) on libsodium &lt; 1.0.12 \(versions
 &gt;= 1.0.12 already include this construction\).
 
 ```c

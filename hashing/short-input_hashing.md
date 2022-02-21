@@ -16,10 +16,10 @@ crypto_shorthash(hash, SHORT_DATA, SHORT_DATA_LEN, key);
 ## Purpose
 
 Many applications and programming language implementations were recently found
-to be vulnerable to denial-of-service attacks when a hash function with weak
-security guarantees, such as Murmurhash 3, was used to construct a hash table.
+to be vulnerable to denial-of-service (DoS) attacks when a hash function with weak
+security guarantees, such as MurmurHash3, was used to construct a hash table.
 
-In order to address this, Sodium provides the `crypto_shorthash()` function,
+To address this, Sodium provides the `crypto_shorthash()` function,
 which outputs short but unpredictable (without knowing the secret key) values
 suitable for picking a list in a hash table for a given key.
 
@@ -31,7 +31,7 @@ considered collision-resistant.
 Use cases:
 
 * Hash tables
-* Probabilistic data structures such as Bloom filters
+* Probabilistic data structures, such as Bloom filters
 * Integrity checking in interactive protocols
 
 ## Usage
@@ -60,7 +60,7 @@ SipHash-2-4
 
 ## Notes
 
-* The key has to remain secret. This function will not provide any mitigations
+* The key must remain secret. This function will not provide any mitigations
   against DoS attacks if the key is known from attackers.
 * When building hash tables, it is recommended to use a prime number for the
   table size. This ensures that all bits from the output of the hash function

@@ -13,7 +13,7 @@ crypto_kx_keypair(client_pk, client_sk);
 
 /* Compute two shared keys using the server's public key and the client's secret key.
    client_rx will be used by the client to receive data from the server,
-   client_tx will by used by the client to send data to the server. */
+   client_tx will be used by the client to send data to the server. */
 if (crypto_kx_client_session_keys(client_rx, client_tx,
                                   client_pk, client_sk, server_pk) != 0) {
     /* Suspicious server public key, bail out */
@@ -33,7 +33,7 @@ crypto_kx_keypair(server_pk, server_sk);
 
 /* Compute two shared keys using the client's public key and the server's secret key.
    server_rx will be used by the server to receive data from the client,
-   server_tx will by used by the server to send data to the client. */
+   server_tx will be used by the server to send data to the client. */
 if (crypto_kx_server_session_keys(server_rx, server_tx,
                                   server_pk, server_sk, client_pk) != 0) {
     /* Suspicious client public key, bail out */
@@ -76,9 +76,9 @@ int crypto_kx_client_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
 
 The `crypto_kx_client_session_keys()` function computes a pair of shared keys
 \(`rx` and `tx`\) using the client's public key `client_pk`, the client's secret
-key `client_sk` and the server's public key `server_pk`.
+key `client_sk`, and the server's public key `server_pk`.
 
-It returns `0` on success, or `-1` if the server's public key is not acceptable.
+It returns `0` on success and `-1` if the server's public key is not acceptable.
 
 These keys can be used by any functions requiring secret keys up to
 `crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secretbox_*()` and
@@ -100,9 +100,9 @@ int crypto_kx_server_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
 
 The `crypto_kx_server_session_keys()` function computes a pair of shared keys
 \(`rx` and `tx`\) using the server's public key `server_pk`, the server's secret
-key `server_sk` and the client's public key `client_pk`.
+key `server_sk`, and the client's public key `client_pk`.
 
-It returns `0` on success, or `-1` if the client's public key is not acceptable.
+It returns `0` on success and `-1` if the client's public key is not acceptable.
 
 The shared secret key `rx` should be used by the server to receive data from the
 client, whereas `tx` should be used for data flowing in the opposite direction.
@@ -128,4 +128,4 @@ For earlier versions of the library that didn't implement this API, the X25519
 function is accessible directly using the `crypto_scalarmult_*()` API.
 
 Having different keys for each direction allows counters to be safely used as
-nonces without having to wait for an acknowledgement after every message.
+nonces without having to wait for an acknowledgment after every message.
