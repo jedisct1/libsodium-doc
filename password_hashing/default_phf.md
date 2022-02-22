@@ -57,7 +57,7 @@ least `crypto_pwhash_BYTES_MIN` = `16` (128 bits) and at most `crypto_pwhash_BYT
 
 The computed key is stored into `out`, representing the address of a dedicated storage area of `outlen` bytes.
 
-`opslimit` represents a maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key. This number must be between `crypto_pwhash_OPSLIMIT_MIN` and
+`opslimit` represents the maximum amount of computations to perform. Raising this number will make the function require more CPU cycles to compute a key. This number must be between `crypto_pwhash_OPSLIMIT_MIN` and
 `crypto_pwhash_OPSLIMIT_MAX`.
 
 `memlimit` is the maximum amount of RAM in bytes that the function will use. This number must be between `crypto_pwhash_MEMLIMIT_MIN` and
