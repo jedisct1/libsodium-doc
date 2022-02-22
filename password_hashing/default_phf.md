@@ -191,7 +191,7 @@ deterministic output. Save the parameters, including the algorithm identifier, a
 
 By doing so, passwords can be rehashed using different parameters if required later on.
 
-For password verification, the recommended interface is `crypto_pwhash_str()` and `crypto_pwhash_str_verify()`. The string produced by `crypto_pwhash_str()` already includes an algorithm identifier, as well as all the parameters, including the automatically generated salt, that have been used to hash the password. Subsequently, `crypto_pwhash_str_verify()` automatically decodes these parameters
+For password verification, the recommended interface is `crypto_pwhash_str()` and `crypto_pwhash_str_verify()`. The string produced by `crypto_pwhash_str()` already includes an algorithm identifier and all the parameters, including the automatically generated salt, that were used to hash the password. Subsequently, `crypto_pwhash_str_verify()` automatically decodes these parameters
 
 Plaintext passwords should not stay in memory longer than needed.
 
