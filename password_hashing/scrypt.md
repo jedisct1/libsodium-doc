@@ -225,8 +225,8 @@ For password verification, the recommended interface is
 `crypto_pwhash_cryptsalsa208sha256_str()` and
 `crypto_pwhash_cryptsalsa208sha256_str_verify()`. The string produced by
 `crypto_pwhash_cryptsalsa208sha256_str()` already includes an algorithm
-identifier as well as all the parameters, including the automatically generated
-salt, that have been used to hash the password. Subsequently,
+identifier and all the parameters, including the automatically generated
+salt, that were used to hash the password. Subsequently,
 `crypto_pwhash_cryptsalsa208sha256_str_verify()` automatically decodes these
 parameters.
 
