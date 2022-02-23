@@ -1,8 +1,8 @@
 # The Scrypt memory-hard function
 
-As a conservative option, Sodium provides an implementation of the scrypt password hashing function.
+Sodium provides an implementation of the scrypt password hashing function.
 
-Unless you have specific reasons to use scrypt, you should instead consider the
+However, unless you have specific reasons to use scrypt, you should instead consider the
 default function, [Argon2](../password_hashing/the_argon2i_function.md).
 
 ## Example 1: key derivation
