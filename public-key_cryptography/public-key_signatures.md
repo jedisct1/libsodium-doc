@@ -20,7 +20,7 @@ unsigned char unsigned_message[MESSAGE_LEN];
 unsigned long long unsigned_message_len;
 if (crypto_sign_open(unsigned_message, &unsigned_message_len,
                      signed_message, signed_message_len, pk) != 0) {
-    /* Incorrect signature! */
+    /* incorrect signature! */
 }
 ```
 
@@ -39,7 +39,7 @@ unsigned char sig[crypto_sign_BYTES];
 crypto_sign_detached(sig, NULL, MESSAGE, MESSAGE_LEN, sk);
 
 if (crypto_sign_verify_detached(sig, MESSAGE, MESSAGE_LEN, pk) != 0) {
-    /* Incorrect signature! */
+    /* incorrect signature! */
 }
 ```
 
@@ -80,12 +80,12 @@ if (crypto_sign_final_verify(&state, sig, pk) != 0) {
 
 ## Purpose
 
-In this system, a signer generates a key pair:
+In this system, a signer generates a key pair consisting of:
 
-* a secret key, that will be used to append a signature to any number of
-  messages
-* a public key, that anybody can use to verify that the signature appended to a
-  message was actually issued by the creator of the public key.
+* A secret key, which you can use to append a signature to any number of
+  messages.
+* A public key, which anybody can use to verify that the signature appended to a
+  message was issued by the creator of the public key.
 
 Verifiers need to already know and ultimately trust a public key before messages
 signed using it can be verified.
@@ -120,14 +120,14 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen_p,
                 const unsigned char *sk);
 ```
 
-The `crypto_sign()` function prepends a signature to a message `m` whose length
+The `crypto_sign()` function prepends a signature to a message `m`, whose length
 is `mlen` bytes, using the secret key `sk`.
 
-The signed message, which includes the signature + a plain copy of the message,
-is put into `sm`, and is `crypto_sign_BYTES + mlen` bytes long.
+The signed message, which includes the signature plus an unaltered copy of the message,
+is put into `sm` and is `crypto_sign_BYTES + mlen` bytes long.
 
-If `smlen` is not a `NULL` pointer, the actual length of the signed message is
-stored into `smlen`.
+If `smlen` is not a `NULL` pointer, then the actual length of the signed message is
+stored in `smlen`.
 
 ```c
 int crypto_sign_open(unsigned char *m, unsigned long long *mlen_p,
@@ -135,13 +135,13 @@ int crypto_sign_open(unsigned char *m, unsigned long long *mlen_p,
                      const unsigned char *pk);
 ```
 
-The `crypto_sign_open()` function checks that the signed message `sm` whose
-length is `smlen` bytes has a valid signature for the public key `pk`.
+The `crypto_sign_open()` function checks that the signed message `sm`, whose
+length is `smlen` bytes, has a valid signature for the public key `pk`.
 
-If the signature is doesn't appear to be valid, the function returns `-1`.
+If the signature isn't valid, then the function returns `-1`.
 
-On success, it puts the message with the signature removed into `m`, stores its
-length into `mlen` if `mlen` is not a `NULL` pointer, and returns `0`.
+On success, it puts the message without the signature into `m`, stores its
+length in `mlen` if `mlen` is not a `NULL` pointer, and returns `0`.
 
 ## Detached mode
 
@@ -154,15 +154,15 @@ int crypto_sign_detached(unsigned char *sig, unsigned long long *siglen_p,
                          const unsigned char *sk);
 ```
 
-The `crypto_sign_detached()` function signs the message `m` whose length is
-`mlen` bytes, using the secret key `sk`, and puts the signature into `sig`,
+The `crypto_sign_detached()` function signs the message `m`, whose length is
+`mlen` bytes, using the secret key `sk` and puts the signature into `sig`,
 which can be up to `crypto_sign_BYTES` bytes long.
 
 The actual length of the signature is put into `siglen` if `siglen` is not
 `NULL`.
 
 It is safe to ignore `siglen` and always consider a signature as
-`crypto_sign_BYTES` bytes long: shorter signatures will be transparently padded
+`crypto_sign_BYTES` bytes long; shorter signatures will be transparently padded
 with zeros if necessary.
 
 ```c
@@ -173,27 +173,27 @@ int crypto_sign_verify_detached(const unsigned char *sig,
 ```
 
 The `crypto_sign_verify_detached()` function verifies that `sig` is a valid
-signature for the message `m` whose length is `mlen` bytes, using the signer's
+signature for the message `m`, whose length is `mlen` bytes, using the signer's
 public key `pk`.
 
-It returns `-1` if the signature fails verification, or `0` on success.
+It returns `-1` if signature verification fails and `0` on success.
 
 ## Multi-part messages
 
-If the message doesn't fit in memory, it can be provided as a sequence of
+If the message doesn't fit in memory, then it can be provided as a sequence of
 arbitrarily-sized chunks.
 
-This will use the Ed25519ph signature system, that pre-hashes the message. In
-other words, what gets signed is not the message itself, but its image through a
+This uses the Ed25519ph signature system, which pre-hashes the message. In
+other words, what gets signed is not the message itself but its image through a
 hash function.
 
-If the message _can_ fit in memory and can be supplied as a single chunk, the
+If the message _can_ fit in memory and be supplied as a single chunk, then the
 single-part API should be preferred.
 
 Note: `Ed25519ph(m)` is intentionally not equivalent to `Ed25519(SHA512(m))`.
 
-If, for some reason, you need to prehash the message yourself, use the multi-part
-`crypto_generichash_*()` APIs and sign the 512 bit output.
+If, for some reason, you need to pre-hash the message yourself, then use the multi-part
+`crypto_generichash_*()` APIs and sign the 512-bit output.
 
 ```c
 int crypto_sign_init(crypto_sign_state *state);
@@ -220,13 +220,13 @@ int crypto_sign_final_create(crypto_sign_state *state, unsigned char *sig,
 ```
 
 The `crypto_sign_final_create()` function computes a signature for the
-previously supplied message, using the secret key `sk` and puts it into `sig`.
+previously supplied message using the secret key `sk` and puts it into `sig`.
 
-If `siglen_p` is not `NULL`, the length of the signature is stored at this
+If `siglen_p` is not `NULL`, then the length of the signature is stored at this
 address.
 
 It is safe to ignore `siglen` and always consider a signature as
-`crypto_sign_BYTES` bytes long: shorter signatures will be transparently padded
+`crypto_sign_BYTES` bytes long; shorter signatures will be transparently padded
 with zeros if necessary.
 
 ```c
@@ -235,18 +235,18 @@ int crypto_sign_final_verify(crypto_sign_state *state, const unsigned char *sig,
 ```
 
 The `crypto_sign_final_verify()` function verifies that `sig` is a valid
-signature for the message whose content has been previously supplied using
-`crypto_update()`, using the public key `pk`.
+signature using the public key `pk` for the message whose content has been previously supplied using
+`crypto_update()`.
 
 ## Extracting the seed and the public key from the secret key
 
-The secret key actually includes the seed (either a random seed or the one given
-to `crypto_sign_seed_keypair()`) as well as the public key.
+The secret key includes the seed (either a random seed or the one given
+to `crypto_sign_seed_keypair()`) and public key.
 
 While the public key can always be derived from the seed, the precomputation
 saves a significant amount of CPU cycles when signing.
 
-If required, Sodium provides two functions to extract the seed and the public
+If required, Sodium provides two functions to extract the seed and public
 key from the secret key:
 
 ```c
@@ -291,7 +291,7 @@ secret key `sk` and copies it into `pk` (`crypto_sign_PUBLICKEYBYTES` bytes).
 verify signatures computed using `crypto_sign()` and `crypto_sign_detached()`.
 
 The original NaCl `crypto_sign_open()` implementation overwrote 64 bytes after
-the message. The libsodium implementation doesn't write past the end of the
+the message, whereas the libsodium implementation doesn't write past the end of the
 message.
 
 Ed25519ph (used by the multi-part API) was implemented in libsodium 1.0.12.
