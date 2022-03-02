@@ -4,7 +4,7 @@ A **cryptographic hash function** is a one-way function that scrambles a message
 you always get the same output, but you can't recover the original message from that output.
 
 Whether the input to a hash function is a single digit or a huge document, the output has a fixed
-length. And regardless of the length of the input the output **varies chaotically**, so that the
+length. And regardless of the length of the input the output varies chaotically, so that the
 hashes of similar inputs are wildly different.
 
 Sodium uses two general-purpose hash algorithms:
