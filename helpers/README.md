@@ -6,9 +6,9 @@
 int sodium_memcmp(const void * const b1_, const void * const b2_, size_t len);
 ```
 
-When a comparison involves secret data (e.g. key, authentication tag), it is
+When a comparison involves secret data (e.g. a key, an authentication tag, etc), it is
 critical to use a constant-time comparison function. This property does not
-relate to computational complexity: it expresses the fact that the time needed
+relate to computational complexity: it means the time needed
 to perform the comparison is the same for all data of the same size. The goal
 is to mitigate side-channel attacks.
 
@@ -70,8 +70,8 @@ the last valid parsed character.
 
 The function returns `0` on success.
 
-It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string,
-or if the string couldn't be fully parsed, but a valid pointer for `hex_end` was not provided.
+It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string
+or the string couldn't be fully parsed, but a valid pointer for `hex_end` was not provided.
 
 It evaluates in constant time for a given length and format.
 
@@ -112,7 +112,7 @@ int sodium_base642bin(unsigned char * const bin, const size_t bin_maxlen,
 ```
 
 The `sodium_base642bin()` function decodes a Base64 string using the given
-variant, and an optional set of characters to ignore (typically: whitespaces and
+variant and an optional set of characters to ignore (typically: whitespaces and
 newlines).
 
 If `b64_end` is not `NULL`, it will be set to the address of the first byte after
@@ -122,8 +122,8 @@ Base64 encodes 3 bytes as 4 characters, so the result of decoding a `b64_len` st
 
 The function returns `0` on success.
 
-It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string,
-or if the string couldn't be fully parsed, but a valid pointer for `b64_end` was not provided.
+It returns `-1` if more than `bin_maxlen` bytes would be required to store the parsed string
+or the string couldn't be fully parsed, but a valid pointer for `b64_end` was not provided.
 
 ## Incrementing large numbers
 
