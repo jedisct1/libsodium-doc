@@ -28,7 +28,7 @@ For static linking, Visual Studio users should define `SODIUM_STATIC=1` and
 
 Projects using CMake can include the
 [Findsodium.cmake](https://github.com/facebookincubator/fizz/blob/master/build/fbcode_builder/CMake/FindSodium.cmake)
-file from the Facebook Fizz project in order to detect and link the library.
+file from the Facebook Fizz project to detect and link the library.
 
 `sodium_init()` initializes the library and should be called before any other
 function provided by Sodium. It is safe to call this function more
@@ -38,7 +38,7 @@ After this function returns, all of the other functions provided by Sodium will
 be thread-safe.
 
 `sodium_init()` doesn't perform any memory allocations. However, on Unix
-systems, it may open `/dev/urandom` and keep the descriptor open, so that the
+systems, it may open `/dev/urandom` and keep the descriptor open so that the
 device remains accessible after a `chroot()` call.
 
 Multiple calls to `sodium_init()` do not cause additional descriptors to be
@@ -53,8 +53,8 @@ has been properly seeded.
 ## sodium_init() stalling on Linux
 
 On some Linux systems, this may take some time, especially when called right
-after a reboot of the system. That issue has been reported on Digital Ocean
-virtual machines as well as on Scaleway ARM instances and AWS Nitro Enclaves.
+after a reboot of the system. This issue has been reported on Digital Ocean
+virtual machines, Scaleway ARM instances, and AWS Nitro Enclaves.
 
 This can be confirmed with the following command:
 
@@ -84,7 +84,7 @@ apt-get install haveged
 ```
 
 Haveged should only be used as a very last resort. It hasn't received any
-updates for 10+ years, and shouldn't be trusted as a single entropy source,
+updates for 10+ years and shouldn't be trusted as a single entropy source,
 especially on virtualized environments.
 
 [Jitterentropy](https://github.com/smuellerDD/jitterentropy-rngd) is a better
