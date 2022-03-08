@@ -7,7 +7,7 @@ void sodium_memzero(void * const pnt, const size_t len);
 ```
 
 After use, sensitive data should be overwritten, but `memset()` and hand-written
-code can be silently stripped out by an optimizing compiler or by the linker.
+code can be silently stripped out by an optimizing compiler or the linker.
 
 The `sodium_memzero()` function tries to effectively zero `len` bytes starting
 at `pnt`, even if optimizations are being applied to the code.
@@ -21,8 +21,8 @@ int sodium_mlock(void * const addr, const size_t len);
 The `sodium_mlock()` function locks at least `len` bytes of memory starting at
 `addr`. This can help avoid swapping sensitive data to disk.
 
-In addition, it is recommended to totally disable swap partitions on machines
-processing sensitive data, or, as a second choice, use encrypted swap
+In addition, it is recommended to disable swap partitions on machines
+processing sensitive data or, as a second choice, use encrypted swap
 partitions.
 
 For similar reasons, on Unix systems, one should also disable core dumps when
@@ -41,7 +41,7 @@ int sodium_munlock(void * const addr, const size_t len);
 ```
 
 The `sodium_munlock()` function should be called after locked memory is not
-being used any more. It will zero `len` bytes starting at `addr` before flagging
+being used anymore. It will zero `len` bytes starting at `addr` before flagging
 the pages as swappable again. Calling `sodium_memzero()` prior to
 `sodium_munlock()` is thus not required.
 
@@ -75,7 +75,7 @@ region will immediately terminate the application.
 
 A canary is also placed right before the returned pointer. Modifications of this
 canary are detected when trying to free the allocated region with
-`sodium_free()` and also cause the application to immediately terminate.
+`sodium_free()` and cause the application to immediately terminate.
 
 An additional guard page is placed before this canary to make it less likely for
 sensitive data to be accessible when reading past the end of an unrelated
@@ -92,7 +92,7 @@ The returned address will not be aligned if the allocation size is not a
 multiple of the required alignment.
 
 For this reason, `sodium_malloc()` should not be used with packed or
-variable-length structures, unless the size given to `sodium_malloc()` is
+variable-length structures unless the size given to `sodium_malloc()` is
 rounded up to ensure proper alignment.
 
 All the structures used by libsodium can safely be allocated using
@@ -118,7 +118,7 @@ void sodium_free(void *ptr);
 The `sodium_free()` function unlocks and deallocates memory allocated using
 `sodium_malloc()` or `sodium_allocarray()`.
 
-Prior to this, the canary is checked to detect possible buffer
+Before this, the canary is checked to detect possible buffer
 underflows and terminate the process if required.
 
 `sodium_free()` also fills the memory region with zeros before the deallocation.
@@ -138,7 +138,7 @@ The `sodium_mprotect_noaccess()` function makes a region allocated using
 written, but the data are preserved.
 
 This function can be used to make confidential data inaccessible except when
-actually needed for a specific operation.
+needed for a specific operation.
 
 ```c
 int sodium_mprotect_readonly(void *ptr);

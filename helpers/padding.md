@@ -64,7 +64,7 @@ standard padding algorithms.
 
 ## Notes
 
-Padding should be applied prior to encryption and removed after decryption.
+Padding should be applied before encryption and removed after decryption.
 
 Usage of padding to hide the length of a password is not recommended. A
 client willing to send a password to a server should hash it instead, even with

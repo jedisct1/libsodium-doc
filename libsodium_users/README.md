@@ -2,9 +2,9 @@
 
 ## Applications using libsodium
 
-Some applications using libsodium. Send a
+Here are some applications using libsodium. Send a
 [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md)
-to add yours to that list.
+to add yours to the list.
 
 * [Abot](https://abot.app): Anonymous messaging for Slack.
 * [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote
@@ -94,7 +94,7 @@ to add yours to that list.
   discoverable chat application on top of nanomsg library.
 * [Network Next](https://networknext.com): A real-time CDN for game traffic. *You* control the network!
 * [Open Reputation](https://openreputation.net/): An open source decentralized
-  platform that maps identity and reputation onto the Internet-of-things.
+  platform that maps identity and reputation onto the Internet of Things.
 * [OpenBazaar](https://www.openbazaar.org/): A free market for all. No fees, no
   restrictions.
 * [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that
@@ -105,7 +105,7 @@ to add yours to that list.
 * [PAVE](https://pave.software/): The password manager. Easy password sharing
   for teams. No cloud.
 * [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a
-  command line utility which can be used to encrypt files.
+  command line utility that can be used to encrypt files.
 * [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
 * [Petmail](https://github.com/warner/petmail): A secure communication and
   file-sharing system.
@@ -114,13 +114,13 @@ to add yours to that list.
 * [PipeSocks](https://github.com/pipesocks/pipesocks): A pipe-like SOCKS5 tunnel
   system.
 * [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve
-  both the needs of small installations by being easy to setup, as well as for
+  both the needs of small installations by being easy to set up as well as for
   serving very large query volumes on large numbers of domains. Additionally,
   PowerDNS offers very high domain resolution performance.
 * [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable
   application that encrypts files and directories using a symmetric-key
   algorithm.
-* [RavenDB](https://ravendb.net/): A LINQ enabled document database for .NET.
+* [RavenDB](https://ravendb.net/): A LINQ-enabled document database for .NET.
 * [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
 * [Remembear](https://www.remembear.com/): A full-featured, multi-platform
   password manager by TunnelBear.
@@ -136,7 +136,7 @@ to add yours to that list.
   personal and private clouds.
 * [Secrets](https://outercorner.com/secrets): Easily and securely store passwords,
   credit card numbers, bank details, and confidential information. Available for Mac and iOS.
-* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure SOCKS5 proxy,
+* [ShadowSocks](https://shadowsocks.org/en/index.html): A secure SOCKS5 proxy
   designed to protect your Internet traffic.
 * [Sharekey](https://sharekey.com/): Encrypted data storage.
 * [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple
@@ -146,7 +146,7 @@ to add yours to that list.
 * [SPAKE2+EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator
   Edition implementation for libsodium.
 * [Splonebox](https://splone.com/splonebox/): An open source network assessment
-  tool with focus on modularity.
+  tool with a focus on modularity.
 * [Stellar](https://www.stellar.org/): An open platform for building financial
   products that connect people everywhere.
 * [TREES](https://0xacab.org/riseuplabs/trees): A Dovecot email storage
@@ -163,7 +163,7 @@ to add yours to that list.
 * [Ultrapowa Clash Server](http://ultrapowa.com/ucs/): UCS is a server emulator
   for the famous game Clash of Clans.
 * [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good
-  old UNIX editor Vi. Libsodium is used for reading and writing of encrypted files.
+  old UNIX editor Vi. Libsodium is used for reading and writing encrypted files.
 * [VOLTTRON](http://gridoptics.pnnl.gov/VOLTTRON/): VOLTTRON is an innovative
   distributed control and sensing software platform. Its source code has been
   released, making it possible for researchers and others to use this tool to
@@ -192,7 +192,7 @@ to add yours to that list.
 
 ## Libraries using libsodium
 
-Some libraries and frameworks using libsodium. Send a
+Here are some libraries and frameworks using libsodium. Send a
 [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md)
 to add yours to that list.
 
@@ -233,7 +233,7 @@ to add yours to that list.
   implementation of the Noise Protocol, intended as a reference implementation.
 * [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2
   framework in Swift for iOS.
-* [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A powershell
+* [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A PowerShell
   module.
 * [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One-way
   streaming encryption for JavaScript.
@@ -260,7 +260,7 @@ to add yours to that list.
 * [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use
   cryptography plugin for Unreal Engine 4 based on libsodium.
 * [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to
-  handle and create minisign signatures.
+  handle and create Minisign signatures.
 * [neuropil](https://www.neuropil.org/): An IoT secure messaging library with
   end-to-end encryption written in C and using libsodium.
 * [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper
@@ -270,7 +270,7 @@ to add yours to that list.
 
 ## Companies using libsodium
 
-Some companies using libsodium, possibly in closed source products. Send a
+Here are some companies using libsodium, possibly in closed source products. Send a
 [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md)
 to add yours to that list.
 

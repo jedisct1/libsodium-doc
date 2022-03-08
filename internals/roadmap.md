@@ -1,9 +1,9 @@
 # Roadmap
 
-libsodium's roadmap is driven by its user community and new ideas are always
+libsodium's roadmap is driven by its user community, and new ideas are always
 welcome.
 
-New features will be gladly implemented if they are not redundant and
+New features will gladly be implemented if they are not redundant and
 solve common problems.
 
 ## pre-1.0.0 roadmap
