@@ -48,7 +48,7 @@
 * Haskell: [Lithium](https://github.com/eth-r/lithium)
 * Haskell: [hs-sodium](https://github.com/k0001/hs-libsodium)
 * Haskell: [haskell-crypto](https://github.com/serokell/haskell-crypto)
-* Haskell: [cryptography-libsodium](https://github.com/haskell-cryptography/cryptography-libsodium)
+* Haskell: [cryptography-libsodium](https://github.com/haskell-cryptography/cryptography-libsodium-bindings)
 * Haxe: [haxe_libsodium](https://github.com/RudolfVonKrugstein/haxe_libsodium)
 * Idris: [Sodium-Idris](https://github.com/edwinb/sodium-idris)
 * Java (Java Native Access):
