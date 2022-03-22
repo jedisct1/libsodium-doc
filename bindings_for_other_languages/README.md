@@ -12,6 +12,7 @@
 * .NET: [NSec](https://github.com/ektrah/nsec)
 * .NET: [libsodium-core](https://github.com/tabrath/libsodium-core) (maintenance mode)
 * .NET: [ASodium](https://github.com/Chewhern/ASodium)
+* Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
 * Ada: [sodiumada](https://gitlab.com/ada23/sodiumada)
 * Clojure: [caesium](https://github.com/lvh/caesium)
 * Crystal: [Sodium](https://github.com/didactic-drunk/sodium.cr)
