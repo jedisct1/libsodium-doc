@@ -72,6 +72,7 @@
 * JavaScript (NodeJS): [node-sodium](https://github.com/paixaop/node-sodium)
 * JavaScript (NodeJS):
   [sodium-native](https://github.com/mafintosh/sodium-native)
+* JavaScript (NodeJS): [sodium](https://github.com/devtomio/sodium)
 * Julia: [Sodium.jl](https://github.com/amitmurthy/Sodium.jl)
 * Kotlin/Native: [Sodium](https://github.com/datkt/sodium)
 * Kotlin Multiplatform: [kotlin-multiplatform-libsodium](https://github.com/ionspin/kotlin-multiplatform-libsodium)
