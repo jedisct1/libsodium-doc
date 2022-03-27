@@ -146,21 +146,16 @@ A typical use for these data is to authenticate version numbers, timestamps or m
 
 Ciphertexts are expected to be decrypted and verified using the same key as the key initially used for encryption.
 
-Trying to decrypt a ciphertext with a different key may still allow an authentication tag verification to pass.
-Doing so would produce a different message, and would not compromise the security of the original message.
+However, when using AES-GCM and ChaCha20-Poly1305, multiple keys that would cause a (ciphertext, tag) pair to verify can be efficiently computed.
 
-But this may be an issue if an attacker has the ability to force a recipient to use a different key.
+Decryption using a key that differs from the one used for encryption would produce a different message, and would not compromise the security of the original message.
 
-If that turns out to be a concern, this can be solved in different ways:
+Still, it may be an issue if an attacker has the ability to force a recipient to use a different key than the one used for encryption.
 
-* In an interactive protocol, if the set of valid keys is known by the party decrypting the ciphertext:
-  - By incorporating an application-defined key identifier in the nonce
-  - By including an application-defined key identifier in the additional data
+If that turns out to be a concern, the following can be done:
 
-A key identifier can be anything allowing the application to map that identifier to an actual secret key. It doesn't have to be secret. It can be a user id. But using a hash of the secret key is not recommended.
-
-* In a non-interactive protocol, or if the set of valid keys is not known in advance (ex: password-based encryption):
-  - By prepending `H(key || nonce || ciphertext_tag)` to the ciphertext, and verifying this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
+- Prepend `H(key || nonce || ciphertext_tag)` to the ciphertext
+- Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
 
 ## References
 

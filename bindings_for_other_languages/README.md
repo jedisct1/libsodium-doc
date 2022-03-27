@@ -37,8 +37,8 @@
   [js-nacl](https://github.com/tonyg/js-nacl)
 * JavaScript (libsodium.js wrapper for browsers):
   [Natrium Browser](https://github.com/wilhelmmatilainen/natrium-browser)
-* JavaScript (NodeJS):
-  [sodium-native](https://github.com/mafintosh/sodium-native)
+* JavaScript (NodeJS): [sodium-native](https://github.com/mafintosh/sodium-native)
+* JavaScript (NodeJS): [sodium](https://github.com/devtomio/sodium)
 * Kotlin Multiplatform: [kotlin-multiplatform-libsodium](https://github.com/ionspin/kotlin-multiplatform-libsodium)
 * Lua: [luasodium](https://github.com/jprjr/luasodium)
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
