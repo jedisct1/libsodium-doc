@@ -213,6 +213,7 @@ to add yours to that list.
 * [Innovault](https://innovault.io): A toolkit to store sensitive data from web
   forms in an encrypted database.
 * [libopaque](https://github.com/stef/libopaque): An implementation of the OPAQUE protocol.
+* [liboprf](https://github.com/stef/liboprf): A library providing OPRF and Threshold OPRF based on libsodium.
 * [libSQRL](https://sqrlid.com/libsqrl/): SQRL authentication library.
 * [MEGA SDK](https://github.com/meganz/sdk): SDK by mega.nz, a secure cloud
   storage provider that protects your data, thanks to end-to-end encryption.
