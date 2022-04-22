@@ -158,13 +158,13 @@ before merging a new change to the `stable` branch.
 - asmjs/V8 \(node + in-browser\), asmjs/SpiderMonkey, asmjs/JavaScriptCore
 - WebAssembly/V8, WebAssembly/Firefox, WebAssembly/WASI using zig cc
 - OpenBSD-current/x86_64
-- Ubuntu/x86_64 using GCC 10, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using GCC 12, `-fsanitize=address,undefined` and Valgrind
   \(Memcheck, Helgrind, DRD, and SGCheck\)
-- Ubuntu/x86_64 using Clang 12, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using Clang 14, `-fsanitize=address,undefined` and Valgrind
   \(Memcheck, Helgrind, DRD, and SGCheck\)
 - Ubuntu/x86_64 using TCC
 - Ubuntu/x86_64 using CompCert
-- macOS using Xcode 12
+- macOS using Xcode 13
 - macOS using zig cc
 - Windows 10 using Visual Studio 2017, 2019, and 2022 (x86 and x86_64)
 - MSYS2 using MinGW32 and MinGW64
