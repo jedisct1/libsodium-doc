@@ -106,6 +106,30 @@ $ env CC=ccomp CFLAGS="-O2 -fstruct-passing -Usize_t" ./configure && \
 make check && sudo make install
 ```
 
+## Compiling with Zig
+
+[Zig](https://ziglang.org) can be used to compile or cross-compile to any supported target:
+
+Compilation for the current target:
+
+```sh
+$ zig build -Drelease-fast
+```
+
+Size-optimized builds:
+
+```sh
+$ zig build -Drelease-small
+```
+
+Cross-compilation:
+
+```sh
+$ zig build -Drelease-fast -Dtarget=aarch64-windows
+$ zig build -Drelease-fast -Dtarget=riscv64-linux
+$ zig build -Drelease-fast -Dtarget=wasm32-wasi
+```
+
 ## Stable branch
 
 We recommend using distribution tarballs over cloning the
