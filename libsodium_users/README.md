@@ -102,6 +102,8 @@ to add yours to the list.
   notifications to parents upon a student's entrance and exit in school.
 * [OpenR](https://github.com/facebook/openr): Facebook's internally designed and
   developed routing protocol/platform.
+* [OpenZiti](https://openziti.github.io): An open source first, fully-featured, zero trust overlay network supported by
+  NetFoundry. 
 * [PAVE](https://pave.software/): The password manager. Easy password sharing
   for teams. No cloud.
 * [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a
