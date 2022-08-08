@@ -10,6 +10,7 @@
 ## Bindings programming languages
 
 * .NET: [NSec](https://github.com/ektrah/nsec)
+* .NET: [Geralt](https://github.com/samuel-lucas6/Geralt)
 * .NET: [libsodium-core](https://github.com/tabrath/libsodium-core) (maintenance mode)
 * .NET: [ASodium](https://github.com/Chewhern/ASodium)
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
