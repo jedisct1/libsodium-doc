@@ -9,6 +9,7 @@
 
 ## Bindings programming languages
 
+* .NET: [BetterCallSodium](https://github.com/BetterCallSodium/BetterCallSodium)
 * .NET: [NSec](https://github.com/ektrah/nsec)
 * .NET: [Geralt](https://github.com/samuel-lucas6/Geralt)
 * .NET: [libsodium-core](https://github.com/tabrath/libsodium-core) (maintenance mode)
