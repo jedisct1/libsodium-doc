@@ -26,7 +26,7 @@ implementations.
 the latest version.
 
 * [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
-* [Github repository](https://github.com/jedisct1/libsodium)
+* [GitHub repository](https://github.com/jedisct1/libsodium)
 * [Documentation](https://doc.libsodium.org)
 
 ## Mailing list
