@@ -284,6 +284,7 @@ secret key `sk` and copies it into `pk` (`crypto_sign_PUBLICKEYBYTES` bytes).
 * [Edwards-Curve Digital Signature Algorithm (EdDSA)](https://tools.ietf.org/html/rfc8032)
 * [The Provable Security of Ed25519: Theory and Practice](https://eprint.iacr.org/2020/823.pdf)
 * [Seems Legit: Automated Analysis of Subtle Attacks on Protocols that Use Signatures](https://eprint.iacr.org/2019/779.pdf)
+* [Taming the many EdDSAs](https://eprint.iacr.org/2020/1244.pdf)
 
 ## Notes
 
