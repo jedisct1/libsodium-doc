@@ -20,10 +20,6 @@ Given the master key and a key identifier, a subkey can be deterministically
 computed. However, given a subkey, an attacker cannot compute the master key nor
 any other subkeys.
 
-### Key derivation with libsodium &gt;= 1.0.12
-
-Recent versions of the library have a dedicated API for key derivation.
-
 The `crypto_kdf` API can derive up to 2^64 keys from a single master key and
 context, and individual subkeys can have an arbitrary length between 128 \(16
 bytes\) and 512 bits \(64 bytes\).
@@ -98,52 +94,6 @@ Algorithm details:
 
 `BLAKE2B-subkeylen(key=key, message={}, salt=subkey_id || {0}, personal=ctx ||
 {0})`
-
-### Key derivation with libsodium &lt; 1.0.12
-
-On older versions of the library, the BLAKE2 function can be used directly:
-
-```c
-const unsigned char appid[crypto_generichash_blake2b_PERSONALBYTES] = {
-    'A', ' ', 'S', 'i', 'm', 'p', 'l', 'e', ' ', 'E', 'x', 'a', 'm', 'p', 'l', 'e'
-};
-unsigned char keyid[crypto_generichash_blake2b_SALTBYTES] = {0};
-unsigned char masterkey[64];
-unsigned char subkey1[16];
-unsigned char subkey2[32];
-
-/* Generate a master key */
-randombytes_buf(masterkey, sizeof masterkey);
-
-/* Derive a first subkey (id=0) */
-crypto_generichash_blake2b_salt_personal(subkey1, sizeof subkey1,
-                                         NULL, 0,
-                                         masterkey, sizeof masterkey,
-                                         keyid, appid);
-
-/* Derive a second subkey (id=1) */
-sodium_increment(keyid, sizeof keyid);
-crypto_generichash_blake2b_salt_personal(subkey2, sizeof subkey2,
-                                         NULL, 0,
-                                         masterkey, sizeof masterkey,
-                                         keyid, appid);
-```
-
-The `crypto_generichash_blake2b_salt_personal()` function can be used to derive
-a subkey between 128 and 512 bits long from a 128- to 512-bit key.
-
-In this example, two subkeys are derived from a single key. These subkeys have
-different sizes \(128 and 256 bits\) and are derived from a master key of yet
-another size \(512 bits\).
-
-The personalization parameter \(`appid`\) is a 16-byte value that doesn't have
-to be secret. It can be used so that the same `(masterkey, keyid)` tuple will
-produce a different output in different applications. It is not required, however:
-a `NULL` pointer can be passed instead to use the default constant.
-
-The salt \(`keyid`\) doesn't have to be secret either. This is a 16-bytes
-identifier that can be a simple counter and is used to derive more than one
-key out of a single master key.
 
 ## Nonce extension
 
