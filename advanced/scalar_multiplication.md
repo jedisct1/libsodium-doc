@@ -7,7 +7,7 @@ This can be used as a building block to construct key exchange mechanisms, or mo
 On current libsodium versions, you generally want to use the
 [`crypto_kx`](../key_exchange/README.md) API for key exchange instead.
 
-## Usage
+## Scalar multiplication
 
 ```c
 int crypto_scalarmult_base(unsigned char *q, const unsigned char *n);
@@ -26,7 +26,25 @@ This function can be used to compute a shared secret `q` given a user's secret k
 
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
-`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), which is smaller than the key space.
+## Scalar multiplication without clamping
+
+The `scalarmult` functions above clear the lower 3 bits of n to make the output always lie in the largest prime-order subgroup, for any base point p.
+This avoids small subgroup attacks.
+However, there are some protocols that require using the whole elliptic curve, not its prime-order subgroup.
+They can be implemented using the `noclamp` variants of these functions, which use the provided n, neither clearing the low 3 bits nor setting the high bit.
+
+```c
+int crypto_scalarmult_base_noclamp(unsigned char *q, const unsigned char *n);
+
+int crypto_scalarmult_noclamp(unsigned char *q, const unsigned char *n,
+                              const unsigned char *p);
+```
+
+Note that `crypto_scalarmult_base_noclamp` uses the same base point as `crypto_scalarmult_base`, so its output is still in the prime-order subgroup rather than the whole curve.
+
+## Hashing the output
+
+The output from scalar multiplication, `q`, represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), which is smaller than the key space.
 
 For this reason, and to mitigate subtle attacks due to the fact many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
 
