@@ -23,6 +23,7 @@
 * Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Erlang: [Erlang-libsodium](https://github.com/potatosalad/erlang-libsodium)
+* Fortran: [Sodium](https://github.com/freevryheid/sodium)
 * Go: [Sodium](https://github.com/jamesruan/sodium)
 * Hack: [Nuxed Crypto](https://github.com/nuxed/crypto)
 * Haskell: [Saltine](https://github.com/tel/saltine)
