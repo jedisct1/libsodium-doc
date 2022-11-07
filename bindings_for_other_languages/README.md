@@ -14,6 +14,7 @@
 * .NET: [Geralt](https://github.com/samuel-lucas6/Geralt)
 * .NET: [libsodium-core](https://github.com/tabrath/libsodium-core) (maintenance mode)
 * .NET: [ASodium](https://github.com/Chewhern/ASodium)
+* .NET: [SpaceWizards.Sodium](https://github.com/space-wizards/SpaceWizards.Sodium)
 * .NET (Blazor): [BlazorSodium](https://github.com/Jack-Edwards/BlazorSodium)
 * Ada: [libsodium-ada](https://github.com/jrmarino/libsodium-ada)
 * Ada: [sodiumada](https://gitlab.com/ada23/sodiumada)
