@@ -166,7 +166,7 @@ before merging a new change to the `stable` branch.
 - Ubuntu/x86_64 using CompCert
 - macOS using Xcode 14
 - macOS using zig cc
-- Windows 10 using Visual Studio 2017, 2019, and 2022 (x86 and x86_64)
+- Windows 10 using Visual Studio 2019 and 2022 (x86 and x86_64)
 - MSYS2 using MinGW32 and MinGW64
 - Arch Linux/x86_64
 - Arch Linux/ARMv6
