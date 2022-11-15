@@ -193,7 +193,9 @@ single-part API should be preferred.
 Note: `Ed25519ph(m)` is intentionally not equivalent to `Ed25519(SHA512(m))`.
 
 If, for some reason, you need to pre-hash the message yourself, then use the multi-part
-`crypto_generichash_*()` APIs and sign the 512-bit output.
+`crypto_generichash_*()` APIs and sign the 512-bit output, preferably
+prefixed by your protocol name (or anything that will make the hash
+unique for a given use case).
 
 ```c
 int crypto_sign_init(crypto_sign_state *state);
