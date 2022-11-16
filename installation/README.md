@@ -102,8 +102,8 @@ A typical command to compile Sodium on a little-endian system with CompCert
 is:
 
 ```sh
-$ env CC=ccomp CFLAGS="-O2 -fstruct-passing -Usize_t" ./configure && \
-make check && sudo make install
+$ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure --disable-shared && \
+make && sudo make install
 ```
 
 ## Compiling with Zig
