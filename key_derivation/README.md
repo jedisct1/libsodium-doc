@@ -120,8 +120,8 @@ k' = PRF(k, n[0..127])
 c = E(k', n[128..191], m)
 ```
 
-Since version 1.0.9, Sodium provides the `crypto_core_hchacha20()` function,
-which can be used as a PRF for that purpose:
+Sodium also provides the `crypto_core_hchacha20()` function, which can be
+used as a PRF for that purpose:
 
 ```c
 int crypto_core_hchacha20(unsigned char *out, const unsigned char *in,
