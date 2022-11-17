@@ -59,5 +59,6 @@
 * Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
 * Rust: [libsodium-sys-stable](https://github.com/jedisct1/libsodium-sys-stable)
 * Rust: [sodoken](https://github.com/holochain/sodoken)
+* Rust: [alkali](https://github.com/tom25519/alkali)
 * Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
 * V: [vlang/libsodium](https://github.com/vlang/libsodium)
