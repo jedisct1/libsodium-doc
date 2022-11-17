@@ -147,7 +147,6 @@ Releases are never shipped until all these tools report zero defects.
 
 Continuous Integration is provided by
 [Azure Pipelines](https://jedisct1.visualstudio.com/Libsodium),
-[Travis](https://travis-ci.com/jedisct1/libsodium?branch=stable),
 [GitHub Actions](https://github.com/jedisct1/libsodium/actions), and
 [AppVeyor](https://ci.appveyor.com/project/jedisct1/libsodium).
 
