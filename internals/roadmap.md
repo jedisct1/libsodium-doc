@@ -120,7 +120,9 @@ solve common problems.
 * Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
 * Consider ECVRF
+* Consider FROST
 * Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
+* Keep an eye on jq255
 
 ## 2.0.0 roadmap
 
