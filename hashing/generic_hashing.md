@@ -166,6 +166,8 @@ hash function that is as strong as SHA-3 but faster than MD5 and SHA-1.
 Unlike MD5, SHA-1, and SHA-256, this function is safe against hash length
 extension attacks.
 
+With a key, the function can be used as a PRF.
+
 BLAKE2b's salt and personalization parameters are accessible through the
 lower-level functions whose prototypes are defined in
 `crypto_generichash_blake2b.h`.
