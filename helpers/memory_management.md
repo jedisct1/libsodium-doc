@@ -70,16 +70,17 @@ may be returned and `errno` set if it is not possible to allocate enough
 memory.
 
 The allocated region is placed at the end of a page boundary, immediately
-followed by a guard page. As a result, accessing memory past the end of the
-region will immediately terminate the application.
+followed by a guard page (or an emulation, if unsupported by the platform).
+As a result, accessing memory past the end of the region will immediately
+terminate the application.
 
 A canary is also placed right before the returned pointer. Modifications of this
 canary are detected when trying to free the allocated region with
 `sodium_free()` and cause the application to immediately terminate.
 
-An additional guard page is placed before this canary to make it less likely for
-sensitive data to be accessible when reading past the end of an unrelated
-region.
+If supported by the platform, an additional guard page is placed before this
+canary to make it less likely for sensitive data to be accessible when reading
+past the end of an unrelated region.
 
 The allocated region is filled with `0xdb` bytes to help catch bugs due
 to uninitialized data.
