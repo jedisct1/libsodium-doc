@@ -84,9 +84,8 @@ region.
 The allocated region is filled with `0xdb` bytes to help catch bugs due
 to uninitialized data.
 
-In addition, `sodium_mlock()` is called on the region to help avoid it being
-swapped to disk. On operating systems supporting `MAP_NOCORE` or
-`MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
+On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated
+this way will also not be part of core dumps.
 
 The returned address will not be aligned if the allocation size is not a
 multiple of the required alignment.
