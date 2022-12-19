@@ -85,6 +85,12 @@ past the end of an unrelated region.
 The allocated region is filled with `0xdb` bytes to help catch bugs due
 to uninitialized data.
 
+In addition, `mlock()` is called on the region to help avoid it being swapped to disk.
+Note however that `mlock()` may not be supported, may fail or may be a no-op, in
+which case `sodium_malloc()` will return the memory regardless, but it will not be locked.
+If you specifically need to rely on memory locking, consider calling `sodium_mlock()`,
+and checking its return value.
+
 On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated
 this way will also not be part of core dumps.
 
