@@ -123,6 +123,7 @@ solve common problems.
 * Consider FROST
 * Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
 * Keep an eye on jq255
+* Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
 
 ## 2.0.0 roadmap
 
