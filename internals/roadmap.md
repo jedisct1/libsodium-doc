@@ -124,6 +124,7 @@ solve common problems.
 * Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
 * Keep an eye on jq255
 * Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
+* Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
 
 ## 2.0.0 roadmap
 
