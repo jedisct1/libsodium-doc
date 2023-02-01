@@ -205,6 +205,7 @@ to add yours to that list.
   minimal sodium plugin for Cordova - for iOS and Android.
 * [@deliberative/crypto](https://github.com/deliberative/crypto): Typescript/WebAssembly library for public key cryptography, 
   secret boxes, Shamir secret sharing and random shuffling. Runs on Nodejs, ESM, CommonJS and the browser.
+* [drasyl](https://drasyl.org/): drasyl is a high-performance framework for rapid development of distributed applications.
 * [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content
   using Ed25519.
 * [Etebase](https://www.etebase.com/): An open source SDK and backend to build end-to-end encrypted applications.
