@@ -58,28 +58,28 @@ Note that the latter is not a practical concern due to application limits, noisi
 
 * For 16 KB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts         |
 | :----------------------------- | :------------------------ | :----------------------------------------------------- |
 | AES256-GCM                     | 2^38                      | 2^85                                                   |
 | All ChaCha20-Poly1305 variants | 2^63                      | 2^63 (forgery with 2^-32 success requires ~2^77 bytes) |
 
 * For 1 MB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts         |
 | :----------------------------- | :------------------------ | :----------------------------------------------------- |
 | AES256-GCM                     | 2^32                      | 2^78                                                   |
 | All ChaCha20-Poly1305 variants | 2^57                      | 2^57 (forgery with 2^-32 success requires ~2^77 bytes) |
 
 * For 1 GB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts         |
 | :----------------------------- | :------------------------ | :----------------------------------------------------- |
 | AES256-GCM                     | 2^22                      | 2^69                                                   |
 | All ChaCha20-Poly1305 variants | 2^47                      | 2^47 (forgery with 2^-32 success requires ~2^77 bytes) |
 
 * For 64 GB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsucessful decryption attempts          |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts         |
 | :----------------------------- | :------------------------ | :----------------------------------------------------- |
 | AES256-GCM                     | 2^16                      | 2^63                                                   |
 | All ChaCha20-Poly1305 variants | 2^41                      | 2^41 (forgery with 2^-32 success requires ~2^77 bytes) |
