@@ -22,6 +22,7 @@
 * Crystal: [Sodium](https://github.com/didactic-drunk/sodium.cr)
 * D: [LibsodiumD](https://github.com/Geod24/libsodiumd)
 * Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
+* Dart: [libsodium_dart_bindings](https://github.com/Skycoder42/libsodium_dart_bindings)
 * Erlang: [ENaCl](https://github.com/jlouis/enacl)
 * Erlang: [Erlang-libsodium](https://github.com/potatosalad/erlang-libsodium)
 * Fortran: [Sodium](https://github.com/freevryheid/sodium)
