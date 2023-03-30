@@ -151,8 +151,11 @@ Still, it may be an issue if an attacker has the ability to force a recipient to
 
 If that turns out to be a concern, the following can be done:
 
-- Prepend `H(key, nonce || ciphertext_tag || ad)` to the ciphertext
+- Prepend `H(key, nonce || ciphertext_tag)` to the ciphertext
 - Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
+
+This assumes that attackers don't have control over associated data.
+If they do, associated data `ad` must be included in the input of the hash function as well: `H(key, nonce || ciphertext_tag || ad)`.
 
 ## References
 
