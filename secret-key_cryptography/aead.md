@@ -132,9 +132,6 @@ This extended nonce size allows random nonces to be safely used, and also facili
 
 The XChaCha20-Poly1305 implementation in libsodium is portable across all supported architectures.
 
-It will [soon](https://tools.ietf.org/html/draft-irtf-cfrg-xchacha) become an IETF
-standard.
-
 ## Additional data
 
 These functions accept an optional, arbitrary long "additional data" parameter.
