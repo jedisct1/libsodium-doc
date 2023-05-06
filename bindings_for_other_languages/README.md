@@ -47,6 +47,7 @@
 * JavaScript (NodeJS): [sodium](https://github.com/devtomio/sodium)
 * Kotlin Multiplatform: [kotlin-multiplatform-libsodium](https://github.com/ionspin/kotlin-multiplatform-libsodium)
 * Lua: [luasodium](https://github.com/jprjr/luasodium)
+* Nim: [nim-libsodium](https://github.com/BundleFeed/nim-libsodium)
 * PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 * PHP: [dhole-cryptography](https://github.com/soatok/dhole-cryptography)
 * Pharo 7/8: [Crypto-Nacl](https://github.com/objectguild/Crypto-Nacl)
