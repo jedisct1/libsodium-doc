@@ -263,6 +263,7 @@ to add yours to that list.
   integration.
 * [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use
   cryptography plugin for Unreal Engine 4 based on libsodium.
+* [UnrealSodium](https://github.com/Helium-Labs/UnrealSodium): A user-friendly & portable Unreal Engine 5 cryptography plugin based on libsodium.
 * [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to
   handle and create Minisign signatures.
 * [neuropil](https://www.neuropil.org/): An IoT secure messaging library with
