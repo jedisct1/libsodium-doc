@@ -53,8 +53,8 @@ Alternatively, you can build and install libsodium using [vcpkg](https://github.
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.bat
-./vcpkg integrate install
 ./vcpkg install libsodium
+./vcpkg integrate install
 ```
 
 The libsodium port in vcpkg is kept up to date by Microsoft team members and community contributors.
