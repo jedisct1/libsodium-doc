@@ -69,27 +69,29 @@ In a virtualized environment, make sure that the `virtio-rng` interface is
 available. If this is a cloud service and the hypervisor settings are out of
 your reach, consider switching to a different service.
 
-On a bare-metal host such as Scaleway instances, a possible workaround is to
-install the `rng-tools` package:
+Current Linux kernels (>= 5.4) include the `haveged` algorithm in order to mitigate that problem. So, before trying the last-resort solutions below, try using a recent kernel.
 
-```sh
-apt-get install rng-tools
-```
-
-And check the value of `/proc/sys/kernel/random/entropy_avail` again. If the
-value didn't go any higher, install `haveged`:
+If you have to use a kernel before version 5.4, a possible workaround is to install `haveged`:
 
 ```sh
 apt-get install haveged
 ```
 
-Haveged should only be used as a very last resort. It hasn't received any
-updates for 10+ years and shouldn't be trusted as a single entropy source,
-especially on virtualized environments.
+An alternative is `rng-tools`:
+
+
+```sh
+apt-get install rng-tools
+```
+
+In some environments, setting the `-O jitter:timeout` option to `20` [might be necessary](https://github.com/nhorman/rng-tools/issues/195#issuecomment-1519222464).
 
 [Jitterentropy](https://github.com/smuellerDD/jitterentropy-rngd) is a better
 alternative, but most Linux distributions don't offer it as an installable
 package yet.
+
+
+After installating these tools, check the value of `/proc/sys/kernel/random/entropy_avail` again.
 
 On AWS Nitro Enclaves, workarounds include:
 
@@ -115,7 +117,7 @@ int c;
 if ((fd = open("/dev/random", O_RDONLY)) != -1) {
     if (ioctl(fd, RNDGETENTCNT, &c) == 0 && c < 160) {
         fputs("This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
-              "Installing the rng-utils/rng-tools, jitterentropy or haveged packages may help.\n"
+              "Upgrading the kernel, installing the rng-utils/rng-tools, jitterentropy-rngd or haveged packages may help.\n"
               "On virtualized Linux environments, also consider using virtio-rng.\n"
               "The service will not start until enough entropy has been collected.\n", stderr);
     }
@@ -126,5 +128,4 @@ if ((fd = open("/dev/random", O_RDONLY)) != -1) {
 
 Congrats, you're all set up!
 
-A good documentation page to read next might be
-[Quickstart and FAQ](../quickstart/README.md).
+A good documentation page to read next might be [Quickstart and FAQ](../quickstart/README.md).
