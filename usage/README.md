@@ -67,16 +67,14 @@ running an obsolete kernel, this is very likely to be the case.
 
 In a virtualized environment, make sure that the `virtio-rng` interface is
 available. If this is a cloud service and the hypervisor settings are out of
-your reach, consider switching to a different service.
-
-On a bare-metal host such as Scaleway instances, a possible workaround is to
-install the `rng-tools` package:
+your reach, a workaround is to install the `rng-tools` package:
 
 ```sh
 apt-get install rng-tools
+systemctl start rngd
 ```
 
-And check the value of `/proc/sys/kernel/random/entropy_avail` again. If the
+And check the value of `/proc/sys/kernel/random/entropy_avail` again. It incorporates the [Jitterentropy library](https://github.com/smuellerDD/jitterentropy-library), but may need [configuration](https://access.redhat.com/solutions/6984027) to properly initialise the Jitter source. If the
 value didn't go any higher, install `haveged`:
 
 ```sh
