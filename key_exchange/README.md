@@ -120,6 +120,10 @@ session key is required, either `rx` or `tx` can be set to `NULL`.
 
 ## Algorithm details
 
+Let `p.n` be the `crypto_scalarmult_curve25519_BYTES` byte output of the X25519
+key exchange operation. The 512-bit output of `BLAKE2B-512` is split into two
+256-bit keys `rx` and `tx`.
+
 `rx || tx = BLAKE2B-512(p.n || client_pk || server_pk)`
 
 ## Notes
