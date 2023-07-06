@@ -333,8 +333,17 @@ decrypt(const char *target_file, const char *source_file,
                                                        buf_in, rlen, NULL, 0) != 0) {
             goto ret; /* corrupted chunk */
         }
+
+        /* Check that the stream didn't end before the end of the file. An
+         * attacker might maliciously append data to the file. */
         if (tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL && ! eof) {
-            goto ret; /* premature end (end of file reached before the end of the stream) */
+            goto ret; /* End of stream reached before the end of the file */
+        }
+
+        /* Verify that the end of the file is actually tagged as the final chunk.
+         * An attacker might maliciously remove chunks from the end of the file. */
+        if (eof && tag != crypto_secretstream_xchacha20poly1305_TAG_FINAL) {
+            goto ret; /* File ended before end of stream. The stream is missing chunks. */
         }
         fwrite(buf_out, 1, (size_t) out_len, fp_t);
     } while (! eof);
