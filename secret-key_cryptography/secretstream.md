@@ -333,8 +333,14 @@ decrypt(const char *target_file, const char *source_file,
                                                        buf_in, rlen, NULL, 0) != 0) {
             goto ret; /* corrupted chunk */
         }
-        if (tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL && ! eof) {
-            goto ret; /* premature end (end of file reached before the end of the stream) */
+        if (tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL) {
+            if (! eof) {
+                goto ret; /* end of stream reached before the end of the file */
+            }
+        } else { /* not the final chunk yet */
+            if (eof) {
+                goto ret; /* end of file reached before the end of the stream */
+            }
         }
         fwrite(buf_out, 1, (size_t) out_len, fp_t);
     } while (! eof);
