@@ -113,21 +113,21 @@ make && sudo make install
 Compilation for the current target:
 
 ```sh
-$ zig build -Drelease-fast
+$ zig build -Doptimize=ReleaseFast
 ```
 
 Size-optimized builds:
 
 ```sh
-$ zig build -Drelease-small
+$ zig build -Doptimize=ReleaseSmall
 ```
 
 Cross-compilation:
 
 ```sh
-$ zig build -Drelease-fast -Dtarget=aarch64-windows
-$ zig build -Drelease-fast -Dtarget=riscv64-linux
-$ zig build -Drelease-fast -Dtarget=wasm32-wasi
+$ zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows
+$ zig build -Doptimize=ReleaseFast -Dtarget=riscv64-linux
+$ zig build -Doptimize=ReleaseFast -Dtarget=wasm32-wasi
 ```
 
 ## Stable branch
