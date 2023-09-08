@@ -81,15 +81,11 @@ library.
 
 ## Limitations
 
-The current implementation of this construction is hardware-accelerated and
-requires the Intel SSSE3 extensions, as well as the `aesni` and `pclmul`
-instructions.
+The current implementation of this construction is hardware-accelerated and requires the Intel AES-NI extensions, or the ARM Crypto extensions.
 
-Intel Westmere processors \(introduced in 2010\) and newer meet the
-requirements.
+Intel Westmere processors \(introduced in 2010\) and newer, as well as the vast majority of 64-bit ARM processors meet the requirements.
 
-There are no plans to support non hardware-accelerated implementations of
-AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
+There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
 
 Before using the functions below, hardware support for AES can be checked with:
 
