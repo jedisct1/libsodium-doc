@@ -159,13 +159,13 @@ before merging a new change to the `stable` branch.
 - OpenBSD-current/x86_64
 - Ubuntu/x86_64 using GCC 12, `-fsanitize=address,undefined` and Valgrind
   \(Memcheck, Helgrind, DRD, and SGCheck\)
-- Ubuntu/x86_64 using Clang 14, `-fsanitize=address,undefined` and Valgrind
+- Ubuntu/x86_64 using Clang 16, `-fsanitize=address,undefined` and Valgrind
   \(Memcheck, Helgrind, DRD, and SGCheck\)
 - Ubuntu/x86_64 using TCC
 - Ubuntu/x86_64 using CompCert
-- macOS using Xcode 14
+- macOS using Xcode 15
 - macOS using zig cc
-- Windows 10 using Visual Studio 2019 and 2022 (x86 and x86_64)
+- Windows 11 using Visual Studio 2019 and 2022 (x86 and x86_64)
 - MSYS2 using MinGW32 and MinGW64
 - Arch Linux/x86_64
 - Arch Linux/ARMv6
@@ -173,7 +173,6 @@ before merging a new change to the `stable` branch.
 - Debian/SPARC
 - Debian/ppc
 - Raspbian/Cortex-A53
-- iOS/A12 (iSH)
 - Ubuntu/AArch64 - Courtesy of the GCC Compile Farm project
 - Fedora/ppc64 - Courtesy of the GCC Compile Farm project
 - AIX 7.1/ppc64 - Courtesy of the GCC Compile Farm project
