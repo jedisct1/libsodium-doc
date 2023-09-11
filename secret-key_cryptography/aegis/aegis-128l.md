@@ -193,6 +193,7 @@ correct.
 * The key size is 128 bits (16 bytes), unlike all other ciphers in this library.
 * Unique nonces are required for each messsages.
 * AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.
+* AEGIS was added in libsodium version 1.0.19.
 
 ## See also
 

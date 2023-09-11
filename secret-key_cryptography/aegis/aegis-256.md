@@ -198,6 +198,8 @@ It is also safe to only use a subset of the nonce space, for example by filling 
 
 AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.
 
+AEGIS was added in libsodium version 1.0.19.
+
 ## See also
 
 * [The AEGIS Family Of Authenticated Encryption Algorithms](https://datatracker.ietf.org/doc/draft-irtf-cfrg-aegis-aead) -
