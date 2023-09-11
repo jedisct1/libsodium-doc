@@ -97,7 +97,7 @@ Note that the latter is not a practical concern due to application limits, noisi
 | ChaCha20-Poly1305-IETF  | Counter, permutation                      |
 | XChaCha20-Poly1305-IETF | Counter, permutation, random              |
 
-<sup>\*</sup>: safe up to 2^48 messages.
+<sup>\*</sup>: random nonces are safe up to 2^48 messages.
 
 ### TL;DR: which one should I use?
 
