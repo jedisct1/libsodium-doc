@@ -38,9 +38,10 @@ crypto_kdf_hkdf_sha256_expand(subkey1, sizeof subkey1,
 Usage:
 
 ```c
-int crypto_kdf_hkdf_sha256_expand(unsigned char *out, size_t out_len,
-                                  const char *ctx, size_t ctx_len,
-                                  const unsigned char prk[crypto_kdf_hkdf_sha256_KEYBYTES]);
+int crypto_kdf_hkdf_sha256_expand(
+    unsigned char *out, size_t out_len,
+    const char *ctx, size_t ctx_len,
+    const unsigned char prk[crypto_kdf_hkdf_sha256_KEYBYTES]);
 ```
 
 The `crypto_kdf_hkdf_sha256_expand()` function derives a subkey from a context/description `ctx` of length `ctx_len` bytes and a master key `prk` of length `crypto_kdf_hkdf_sha256_KEYBYTES` bytes.
