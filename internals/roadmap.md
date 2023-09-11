@@ -126,6 +126,9 @@ solve common problems.
 * Add more ARM optimized implementations
 * Add AEGIS-based `crypto_auth` APIs
 * Consider AES-GCM-SIV
+* Parallel Argon2
+* Consider a streaming interface to Ed25519 signatures
+* Batch signatures
 
 ## 2.0.0 roadmap
 
