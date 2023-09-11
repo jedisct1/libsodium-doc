@@ -24,6 +24,8 @@ the authentication tag in a separate location.
 
 | Construction            | Key size | Nonce size | Block size | MAC size | Availability                                                                                                  |
 | :---------------------- | :------- | :--------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------ |
+| AEGIS-128L              | 128 bits | 128 bits   | 256 bits   | 256 bits | libsodium &gt;= 1.0.19. On the standard track.                                                                |
+| AEGIS-256               | 256 bits | 256 bits   | 128 bits   | 256 bits | libsodium &gt;= 1.0.19. On the standard track.                                                                |
 | AES256-GCM              | 256 bits | 96 bits    | 128 bits   | 128 bits | libsodium &gt;= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
 | ChaCha20-Poly1305       | 256 bits | 64 bits    | 512 bits   | 128 bits | libsodium &gt;= 0.6.0. Also implemented in {Libre,Open,Boring}SSL.                                            |
 | ChaCha20-Poly1305-IETF  | 256 bits | 96 bits    | 512 bits   | 128 bits | libsodium &gt;= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries.   |
@@ -33,16 +35,16 @@ the authentication tag in a separate location.
 
 | Construction            | Max bytes for a single \(key,nonce\) | Max bytes for a single key                                       |
 | :---------------------- | :----------------------------------- | :--------------------------------------------------------------- |
+| AEGIS-128L              | No practical limits                  | No practical limits                                              |
+| AEGIS-256               | No practical limits                  | No practical limits                                              |
 | AES256-GCM              | ~ 64 GB                              | ~ 350 GB (for ~16 KB long messages)                              |
 | ChaCha20-Poly1305       | No practical limits \(~ 2^64 bytes\) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | ChaCha20-Poly1305-IETF  | 256 GB                               | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | XChaCha20-Poly1305-IETF | No practical limits \(~ 2^64 bytes\) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 
-These figures assume an untruncated (128-bit) authentication tag.
+These figures assume an untruncated (128-bit or 256-bit) authentication tag.
 
-<sup>\*</sup> Although periodic rekeying remains highly recommended, online
-protocols leveraging additional data to discard old messages don't have
-practical limitations on the total number of messages.
+<sup>\*</sup> Although periodic rekeying remains highly recommended, online protocols leveraging additional data to discard old messages don't have practical limitations on the total number of messages.
 
 In spite of these limits, applications must enforce a limit on the maximum size of a ciphertext to decrypt. Very large messages should be split in multiple chunks instead of being encrypted as a single ciphertext:
 
@@ -86,20 +88,24 @@ Note that the latter is not a practical concern due to application limits, noisi
 
 ### Nonces
 
-| Construction            | Safe options to choose a nonce                 |
-| :---------------------- | :--------------------------------------------- |
-| AES256-GCM              | Counter, permutation                           |
-| ChaCha20-Poly1305       | Counter, permutation                           |
-| ChaCha20-Poly1305-IETF  | Counter, permutation                           |
-| XChaCha20-Poly1305-IETF | Counter, permutation, random, Hk\(random ‖ m\) |
+| Construction            | Safe options to choose a nonce            |
+| :---------------------- | :---------------------------------------- |
+| AEGIS-128L              | Counter, permutation, random<sup>\*</sup> |
+| AEGIS-256               | Counter, permutation, random              |
+| AES256-GCM              | Counter, permutation                      |
+| ChaCha20-Poly1305       | Counter, permutation                      |
+| ChaCha20-Poly1305-IETF  | Counter, permutation                      |
+| XChaCha20-Poly1305-IETF | Counter, permutation, random              |
 
-`Hk` represents a keyed hash function that is safe against length-extension attacks, such as BLAKE2 or the HMAC construction.
+<sup>\*</sup>: safe up to 2^48 messages.
 
 ### TL;DR: which one should I use?
 
-`XChaCha20-Poly1305-IETF` is the safest choice.
+If the target CPU has hardware AES acceleration (modern Intel or ARM CPU), `AEGIS-256` is the safest choice.
 
-Other choices are only present for interoperability with other libraries that don't implement `XChaCha20-Poly1305-IETF` yet.
+If not, use `XChaCha20-Poly1305-IETF`.
+
+Other choices are only present for interoperability with other libraries that don't implement these ciphers yet.
 
 ### AES256-GCM
 
@@ -149,6 +155,10 @@ Decryption using a key that differs from the one used for encryption would produ
 Still, it may be an issue if an attacker has the ability to force a recipient to use a different key than the one used for encryption.
 
 If that turns out to be a concern, the following can be done:
+
+* Use the AEGIS ciphers, that are assumed to be safe against these attacks.
+
+or with other ciphers:
 
 * Prepend `H(key, nonce || ciphertext_tag)` to the ciphertext
 * Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
