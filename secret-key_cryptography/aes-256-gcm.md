@@ -12,8 +12,7 @@ In addition, nonces are short and repeated nonces would totally destroy the
 security of this scheme. Nonces should thus come from atomic counters, which can
 be difficult to set up in a distributed environment.
 
-Unless you absolutely need AES-GCM, use XChaCha20-Poly1305
-(`crypto_aead_xchacha20poly1305_ietf_*()`) instead. It doesn't have any of these
+Unless you absolutely need AES-GCM, use AEGIS-256 (`crypto_aead_aegis256_*()`) instead. It doesn't have any of these
 limitations.
 
 Or, if you don't need to authenticate additional data, just stick to
