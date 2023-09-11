@@ -84,7 +84,6 @@ solve common problems.
 * BLAKE2 AVX2 implementations \[DONE\]
 * Keyed \(Hash-then-Encrypt\) crypto_pwhash
 * Consider yescrypt
-* Consider BLAKE2X \[on hold\]
 * Argon2id \[DONE\]
 * Port libhydrogen's key exchange API
 * SSSE3 ChaCha20 implementation \[DONE\]
@@ -113,18 +112,20 @@ solve common problems.
 * AEGIS-256 \[DONE\]
 * AEGIS-128L \[DONE\]
 * AEGIS-based `secretstream` API
-* BLAKE3
 * HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
 * Standard hash-to-curve \[DONE\]
 * Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
-* Consider Pufferfish
 * High-level AEAD and `secretstream` APIs
-* Consider ECVRF
+* Consider ECVRF \[in progress\]
 * Consider FROST
 * Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
 * Keep an eye on jq255
 * Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
 * Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
+* Consider SHAKE/TurboSHAKE/KangarooTwelve
+* Add more ARM optimized implementations
+* Add AEGIS-based `crypto_auth` APIs
+* Consider AES-GCM-SIV
 
 ## 2.0.0 roadmap
 
