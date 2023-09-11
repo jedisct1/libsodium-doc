@@ -3,7 +3,7 @@
 AEGIS-256 is a modern AES-based cipher with unique properties making it easier and safer to use than common alternatives:
 
 - 256 bit confidentiality level
-- 256-bit authentication tags, ensuring collision resistance; a tag can thus be used as a unique identifier for a message.
+- 256-bit authentication tags, ensuring collision resistance within a given key; a tag can thus be used as a unique identifier for a message.
 - It can safely encrypt a practically unlimited number of messages, without any practical limits on their lengths.
 - It has a very large nonce size (256 bits), allowing random nonces to be used without any practical limits either.
 - It has a better security margin than AES-GCM

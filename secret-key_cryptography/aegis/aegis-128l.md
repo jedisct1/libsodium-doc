@@ -2,12 +2,12 @@
 
 AEGIS-128L is a modern AES-based cipher with unique properties making it easier and safer to use than common alternatives:
 
-- 256-bit authentication tags, ensuring collision resistance; a tag can thus be used as a unique identifier for a message.
+- 256-bit authentication tags, ensuring collision resistance within a given key; a tag can thus be used as a unique identifier for a message.
 - It can safely encrypt a practically unlimited number of messages, without any practical limits on their lengths.
 - It has a 128 bit nonce size, allowing random nonces to be safely used up to 2^48 messages for a single key.
 - It has a better security margin than AES-GCM
 - Leaking the state doesn't leak the key
-- It is assumed to be key-committing, preventing attacks affecting other ciphers when used with low-entropy keys.
+- It is assumed to be key-committing:, preventing attacks affecting other ciphers when used with low-entropy keys. 
 
 AEGIS-128L is also extremely fast on recent CPUs with AES pipelines, with lower memory usage than AES-GCM.
 
