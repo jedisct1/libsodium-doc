@@ -7,7 +7,7 @@ AEGIS-128L is a modern AES-based cipher with unique properties making it easier 
 - It has a 128 bit nonce size, allowing random nonces to be safely used up to 2^48 messages for a single key.
 - It has a better security margin than AES-GCM
 - Leaking the state doesn't leak the key
-- It is assumed to be key-committing:, preventing attacks affecting other ciphers when used with low-entropy keys. 
+- It is assumed to be key-committing:, preventing attacks affecting other ciphers when used with low-entropy keys such as passwords. 
 
 AEGIS-128L is also extremely fast on recent CPUs with AES pipelines, with lower memory usage than AES-GCM.
 
