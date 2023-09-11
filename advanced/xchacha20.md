@@ -27,6 +27,8 @@ The `crypto_stream_xchacha20()` function stores `clen` pseudo random bytes into
 `c` using a nonce `n` (`crypto_stream_xchacha20_NONCEBYTES` bytes) and a secret
 key `k` (`crypto_stream_xchacha20_KEYBYTES` bytes).
 
+The function always returns `0`.
+
 ```c
 int crypto_stream_xchacha20_xor(unsigned char *c, const unsigned char *m,
                                 unsigned long long mlen, const unsigned char *n,
@@ -44,6 +46,8 @@ authentication tag.
 `m` and `c` can point to the same address (in-place encryption/decryption). If
 they don't, the regions should not overlap.
 
+The function always returns `0`.
+
 ```c
 int crypto_stream_xchacha20_xor_ic(unsigned char *c, const unsigned char *m,
                                    unsigned long long mlen,
@@ -60,6 +64,8 @@ ones.
 
 `m` and `c` can point to the same address (in-place encryption/decryption). If
 they don't, the regions should not overlap.
+
+The function always returns `0`.
 
 ```c
 void crypto_stream_xchacha20_keygen(unsigned char k[crypto_stream_xchacha20_KEYBYTES]);
