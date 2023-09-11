@@ -119,14 +119,17 @@ crypto_kdf_hkdf_sha256_extract_final(&st, prk);
 Usage:
 
 ```c
-int crypto_kdf_hkdf_sha256_extract_init(crypto_kdf_hkdf_sha256_state *state,
-                                        const unsigned char *salt, size_t salt_len);
+int crypto_kdf_hkdf_sha256_extract_init(
+    crypto_kdf_hkdf_sha256_state *state,
+    const unsigned char *salt, size_t salt_len);
 
-int crypto_kdf_hkdf_sha256_extract_update(crypto_kdf_hkdf_sha256_state *state,
-                                          const unsigned char *ikm, size_t ikm_len);
+int crypto_kdf_hkdf_sha256_extract_update(
+    crypto_kdf_hkdf_sha256_state *state,
+    const unsigned char *ikm, size_t ikm_len);
 
-int crypto_kdf_hkdf_sha256_extract_final(crypto_kdf_hkdf_sha256_state *state,
-                                         unsigned char prk[crypto_kdf_hkdf_sha256_KEYBYTES]);
+int crypto_kdf_hkdf_sha256_extract_final(
+    crypto_kdf_hkdf_sha256_state *state,
+    unsigned char prk[crypto_kdf_hkdf_sha256_KEYBYTES]);
 ```
 
 Instead of a one-shot call to `crypto_kdf_hkdf_sha256_extract()`, it is possible to feed the input keying material incrementally.
