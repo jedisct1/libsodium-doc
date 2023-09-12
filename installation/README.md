@@ -2,41 +2,54 @@
 
 ## Compilation on Unix-like systems
 
-Sodium is a shared library with a machine-independent set of headers, so it can easily be used by 3rd party projects.
+Sodium is a shared library with a machine-independent set of headers, so it
+can easily be used by 3rd party projects.
 
 The library is built using Autotools, making it easy to package.
 
-Installation is trivial, and both compilation and testing can take advantage of multiple CPU cores.
+Installation is trivial, and both compilation and testing can take advantage of
+multiple CPU cores.
 
-Download a [tarball of libsodium](https://download.libsodium.org/libsodium/releases/), preferably the latest `stable` version, then follow the ritual:
+Download a
+[tarball of libsodium](https://download.libsodium.org/libsodium/releases/),
+preferably the latest `stable` version, then follow the ritual:
 
-``` sh
+```sh
 ./configure
 make && make check
 sudo make install
 ```
 
-Since different files are compiled for different CPU classes, and to prevent unwanted optimizations, link-time optimization (LTO) should not be used.
+Since different files are compiled for different CPU classes, and to prevent
+unwanted optimizations, link-time optimization (LTO) should not be used.
 
-Also, do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`). These can introduce side channels.
+Also, do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`).
+These can introduce side channels.
 
-On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the “Usage” section for ways to address this.
+On Linux, if the process hangs at the `make check` step, your system PRG may not
+have been properly seeded. Please refer to the notes in the "Usage" section for
+ways to address this.
 
-Also, on Linux, like any manually installed library, running the `ldconfig` command is required to make the dynamic linker aware of the new library.
+Also, on Linux, like any manually installed library, running the `ldconfig`
+command is required to make the dynamic linker aware of the new library.
 
 ## Compilation on Windows
 
-Compilation on Windows is usually not required, as pre-built libraries for MinGW and Visual Studio are available (see below).
+Compilation on Windows is usually not required, as pre-built libraries for MinGW
+and Visual Studio are available \(see below\).
 
-However, if you want to compile it yourself, start by cloning the [stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from the Git repository.
+However, if you want to compile it yourself, start by cloning the
+[stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from
+the Git repository.
 
 Visual Studio solutions can be then found in the `builds/msvc` directory.
 
-In order to compile with MinGW, run either `./dist-build/msys2-win32.sh` or `./dist-build/msys2-win64.sh` for Win32 or x64 targets.
+In order to compile with MinGW, run either `./dist-build/msys2-win32.sh` or
+`./dist-build/msys2-win64.sh` for Win32 or x64 targets.
 
 Alternatively, you can build and install libsodium using [vcpkg](https://github.com/microsoft/vcpkg/) dependency manager:
 
-``` batch
+```batch
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.bat
@@ -44,23 +57,29 @@ cd vcpkg
 ./vcpkg integrate install
 ```
 
-The libsodium port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please [create an issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg repository.
+The libsodium port in vcpkg is kept up to date by Microsoft team members and community contributors.
+If the version is out of date, please [create an issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg repository.
 
 ## Pre-built libraries
 
-[Pre-built x86 and x86\_64 libraries for Visual Studio 2017, 2019, and 2022](https://download.libsodium.org/libsodium/releases/) with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64. Note that pre-built libraries are built with the run-time Multi-threaded (/MT) and not with Multi-threaded DLL (/MD).
+[Pre-built x86 and x86_64 libraries for Visual Studio 2017, 2019, and 2022](https://download.libsodium.org/libsodium/releases/)
+with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64. Note that pre-built libraries are built with the run-time Multi-threaded (/MT) and not with Multi-threaded DLL (/MD).
 
-They include header files as well as static (`.LIB`) and shared (`.DLL`) libraries for all the supported compiler versions.
+They include header files as well as static \(`.LIB`\) and shared \(`.DLL`\)
+libraries for all the supported compiler versions.
 
 ### Note for Visual Studio
 
-Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__dllexport`.
+Projects willing to statically link Sodium must define a macro named
+`SODIUM_STATIC`. This will prevent symbol definitions from being referenced with
+`__dllexport`.
 
 ## Cross-compiling
 
-The library can be cross-compiled. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
+The library can be cross-compiled. This is an example of cross-compiling to
+ARM using the GNU tools for ARM embedded processors:
 
-``` sh
+```sh
 export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
 export LDFLAGS='--specs=nosys.specs'
 export CFLAGS='-Os'
@@ -68,7 +87,8 @@ export CFLAGS='-Os'
 make install
 ```
 
-`make check` can also build the test apps, but these have to be run on the native platform.
+`make check` can also build the test apps, but these have to be run on the
+native platform.
 
 Note: `--specs=nosys.specs` is only required for the ARM compilation toolchain.
 
@@ -78,9 +98,10 @@ Please note that using libsodium on ARM Cortex M0, M3, and M4 CPUs is untested a
 
 Releases can be compiled using the CompCert compiler.
 
-A typical command to compile Sodium on a little-endian system with CompCert is:
+A typical command to compile Sodium on a little-endian system with CompCert
+is:
 
-``` sh
+```sh
 $ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure --disable-shared && \
 make && sudo make install
 ```
@@ -91,19 +112,19 @@ make && sudo make install
 
 Compilation for the current target:
 
-``` sh
+```sh
 $ zig build -Doptimize=ReleaseFast
 ```
 
 Size-optimized builds:
 
-``` sh
+```sh
 $ zig build -Doptimize=ReleaseSmall
 ```
 
 Cross-compilation:
 
-``` sh
+```sh
 $ zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows
 $ zig build -Doptimize=ReleaseFast -Dtarget=riscv64-linux
 $ zig build -Doptimize=ReleaseFast -Dtarget=wasm32-wasi
@@ -111,39 +132,49 @@ $ zig build -Doptimize=ReleaseFast -Dtarget=wasm32-wasi
 
 ## Stable branch
 
-We recommend using distribution tarballs over cloning the [libsodium Git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies, such as Libtool and Autotools.
+We recommend using distribution tarballs over cloning the
+[libsodium Git repository](https://github.com/jedisct1/libsodium), especially
+since tarballs do not require dependencies, such as Libtool and Autotools.
 
-However, if cloning a Git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version and critical security fixes while new packages including them are being prepared.
+However, if cloning a Git repository happens to be more convenient, the
+[stable](https://github.com/jedisct1/libsodium/tree/stable) branch always
+contains the latest stable release of libsodium, plus minor patches that will be
+part of the next version and critical security fixes while new packages
+including them are being prepared.
 
-Code in the `stable` branch also includes generated files, and does not require the autotools (Libtool, Autoconf, and Automake) to be present.
+Code in the `stable` branch also includes generated files, and does not require
+the autotools (Libtool, Autoconf, and Automake) to be present.
 
 To check out the stable branch, use:
 
-``` sh
+```sh
 git clone https://github.com/jedisct1/libsodium --branch stable
 ```
 
-Tarballs of the `stable` code are also available for download and recommended if you are compiling libsodium from source.
+Tarballs of the `stable` code are also available for download and recommended
+if you are compiling libsodium from source.
 
 ## Getting started
 
-See the [quickstart](../quickstart/README.md) and [usage](../usage/README.md) sections to get started\!
+See the [quickstart](../quickstart/README.md) and [usage](../usage/README.md)
+sections to get started!
 
 ## Integrity checking
 
-Distribution files can be verified with [Minisign](https://jedisct1.github.io/minisign/) using the following Ed25519 key:
+Distribution files can be verified with
+[Minisign](https://jedisct1.github.io/minisign/) using the following Ed25519 key:
 
 `RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3`
 
 The `.minisig` file should be present in the same directory as the main file. The typical command to verify a file is:
 
-``` sh
+```sh
 minisign -VP RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3 -m <file>
 ```
 
 Or with GnuPG and the following RSA key:
 
-``` text
+```text
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1 (OpenBSD)
 
@@ -275,6 +306,8 @@ sjoMDQMqgw6KyZ++6FgAUGX5I1dBOYLJoonhOH/lNmxjQvc= =Hkmu
 
 ## Reporting vulnerabilities
 
-We encourage users and researchers to use PGP encrypted emails to transmit confidential details regarding possible vulnerabilities in the Sodium library.
+We encourage users and researchers to use PGP encrypted emails to transmit
+confidential details regarding possible vulnerabilities in the Sodium library.
 
-Details should be sent to j \[at\] pureftpd \[dot\] org using the PGP key above.
+Details should be sent to j \[at\] pureftpd \[dot\] org using the PGP key
+above.

@@ -2,7 +2,7 @@
 
 ## Single-part example without a key
 
-``` c
+```c
 #define MESSAGE ((const unsigned char *) "Arbitrary data to hash")
 #define MESSAGE_LEN 22
 
@@ -15,7 +15,7 @@ crypto_generichash(hash, sizeof hash,
 
 ## Single-part example with a key
 
-``` c
+```c
 #define MESSAGE ((const unsigned char *) "Arbitrary data to hash")
 #define MESSAGE_LEN 22
 
@@ -31,7 +31,7 @@ crypto_generichash(hash, sizeof hash,
 
 ## Multi-part example with a key
 
-``` c
+```c
 #define MESSAGE_PART1 \
     ((const unsigned char *) "Arbitrary data to hash")
 #define MESSAGE_PART1_LEN 22
@@ -60,34 +60,47 @@ This API computes a fixed-length fingerprint for an arbitrarily long message.
 
 Sample use cases:
 
-  - File integrity checking
-  - Creating unique identifiers to index arbitrarily long data
+* File integrity checking
+* Creating unique identifiers to index arbitrarily long data
 
 ## Usage
 
-``` c
+```c
 int crypto_generichash(unsigned char *out, size_t outlen,
                        const unsigned char *in, unsigned long long inlen,
                        const unsigned char *key, size_t keylen);
 ```
 
-The `crypto_generichash()` function puts a fingerprint of the message `in` whose length is `inlen` bytes into `out`. The output size can be chosen by the application.
+The `crypto_generichash()` function puts a fingerprint of the message `in` whose
+length is `inlen` bytes into `out`. The output size can be chosen by the
+application.
 
-The minimum recommended output size is `crypto_generichash_BYTES`. This size makes it practically impossible for two messages to produce the same fingerprint.
+The minimum recommended output size is `crypto_generichash_BYTES`. This size
+makes it practically impossible for two messages to produce the same
+fingerprint.
 
-However, for specific use cases, the size can be any value between `crypto_generichash_BYTES_MIN` (included) and `crypto_generichash_BYTES_MAX` (included).
+However, for specific use cases, the size can be any value between
+`crypto_generichash_BYTES_MIN` (included) and `crypto_generichash_BYTES_MAX`
+(included).
 
-`key` can be `NULL` and `keylen` can be `0`. In this case, a message will always have the same fingerprint, like the `MD5` or `SHA-1` functions for which `crypto_generichash()` is a faster and more secure alternative.
+`key` can be `NULL` and `keylen` can be `0`. In this case, a message will always
+have the same fingerprint, like the `MD5` or `SHA-1` functions for which
+`crypto_generichash()` is a faster and more secure alternative.
 
-But a key can also be specified. A message will always have the same fingerprint for a given key, but different keys used to hash the same message are very likely to produce distinct fingerprints.
+But a key can also be specified. A message will always have the same fingerprint
+for a given key, but different keys used to hash the same message are very
+likely to produce distinct fingerprints.
 
-In particular, the key can be used to make sure that different applications generate different fingerprints even if they process the same data.
+In particular, the key can be used to make sure that different applications
+generate different fingerprints even if they process the same data.
 
 The recommended key size is `crypto_generichash_KEYBYTES` bytes.
 
-However, the key size can be any value between `0` (included) and `crypto_generichash_KEYBYTES_MAX` (included). If the key is meant to be secret, the recommended minimum length is `crypto_generichash_KEYBYTES_MIN`.
+However, the key size can be any value between `0` (included) and
+`crypto_generichash_KEYBYTES_MAX` (included). If the key is meant to be
+secret, the recommended minimum length is `crypto_generichash_KEYBYTES_MIN`.
 
-``` c
+```c
 int crypto_generichash_init(crypto_generichash_state *state,
                             const unsigned char *key,
                             const size_t keylen, const size_t outlen);
@@ -100,36 +113,45 @@ int crypto_generichash_final(crypto_generichash_state *state,
                              unsigned char *out, const size_t outlen);
 ```
 
-The message doesn’t have to be provided as a single chunk. The `generichash` operation also supports a streaming API.
+The message doesn't have to be provided as a single chunk. The `generichash`
+operation also supports a streaming API.
 
-The `crypto_generichash_init()` function initializes a state `state` with a key `key` (that can be `NULL`) of length `keylen` bytes to eventually produce `outlen` bytes of output.
+The `crypto_generichash_init()` function initializes a state `state` with a key
+`key` (that can be `NULL`) of length `keylen` bytes to eventually
+produce `outlen` bytes of output.
 
-Each chunk of the complete message can then be sequentially processed by calling `crypto_generichash_update()`, providing the previously initialized state `state`, a pointer to the chunk `in`, and the length of the chunk in bytes, `inlen`.
+Each chunk of the complete message can then be sequentially processed by calling
+`crypto_generichash_update()`, providing the previously initialized state
+`state`, a pointer to the chunk `in`, and the length of the chunk in bytes,
+`inlen`.
 
-The `crypto_generichash_final()` function completes the operation and puts the final fingerprint into `out` as `outlen` bytes.
+The `crypto_generichash_final()` function completes the operation and puts the
+final fingerprint into `out` as `outlen` bytes.
 
 After `crypto_generichash_final()` returns, the state should not be used any more, unless it is reinitialized using `crypto_generichash_init()`.
 
-This alternative API is especially useful to process very large files and data streams.
+This alternative API is especially useful to process very large files and data
+streams.
 
-``` c
+```c
 void crypto_generichash_keygen(unsigned char k[crypto_generichash_KEYBYTES]);
 ```
 
-The `crypto_generichash_keygen()` function creates a key `k` of the recommended length `crypto_generichash_KEYBYTES`.
+The `crypto_generichash_keygen()` function creates a key `k` of the recommended
+length `crypto_generichash_KEYBYTES`.
 
 ## Constants
 
-  - `crypto_generichash_BYTES`
-  - `crypto_generichash_BYTES_MIN`
-  - `crypto_generichash_BYTES_MAX`
-  - `crypto_generichash_KEYBYTES`
-  - `crypto_generichash_KEYBYTES_MIN`
-  - `crypto_generichash_KEYBYTES_MAX`
+* `crypto_generichash_BYTES`
+* `crypto_generichash_BYTES_MIN`
+* `crypto_generichash_BYTES_MAX`
+* `crypto_generichash_KEYBYTES`
+* `crypto_generichash_KEYBYTES_MIN`
+* `crypto_generichash_KEYBYTES_MAX`
 
 ## Data types
 
-  - `crypto_generichash_state`
+* `crypto_generichash_state`
 
 ## Algorithm details
 
@@ -137,12 +159,18 @@ BLAKE2b
 
 ## Notes
 
-The `crypto_generichash_*` function set is implemented using BLAKE2b, a simple, standardized ([RFC 7693](https://www.rfc-editor.org/rfc/rfc7693.txt)), and secure hash function that is as strong as SHA-3 but faster than MD5 and SHA-1.
+The `crypto_generichash_*` function set is implemented using BLAKE2b, a simple,
+standardized ([RFC 7693](https://www.rfc-editor.org/rfc/rfc7693.txt)), and secure
+hash function that is as strong as SHA-3 but faster than MD5 and SHA-1.
 
-Unlike MD5, SHA-1, and SHA-256, this function is safe against hash length extension attacks.
+Unlike MD5, SHA-1, and SHA-256, this function is safe against hash length
+extension attacks.
 
 With a key, the function can be used as a PRF.
 
-BLAKE2b’s salt and personalization parameters are accessible through the lower-level functions whose prototypes are defined in `crypto_generichash_blake2b.h`.
+BLAKE2b's salt and personalization parameters are accessible through the
+lower-level functions whose prototypes are defined in
+`crypto_generichash_blake2b.h`.
 
-BLAKE2b is not suitable for hashing passwords. For this purpose, use the `crypto_pwhash` API documented in the Password Hashing section.
+BLAKE2b is not suitable for hashing passwords. For this purpose, use the
+`crypto_pwhash` API documented in the Password Hashing section.

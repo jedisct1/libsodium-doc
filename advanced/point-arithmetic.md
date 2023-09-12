@@ -8,7 +8,7 @@ Points are represented as their Y coordinate.
 
 Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-curve function.
 
-``` c
+```c
 // -------- First party -------- Send blinded p(x)
 unsigned char x[crypto_core_ed25519_UNIFORMBYTES];
 randombytes_buf(x, sizeof x);
@@ -54,17 +54,17 @@ crypto_core_ed25519_add(fx, b, vir);
 
 ## Point validation
 
-``` c
+```c
 int crypto_core_ed25519_is_valid_point(const unsigned char *p);
 ```
 
-The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a point on the edwards25519 curve, in canonical form, on the main subgroup, and that the point doesn’t have a small order.
+The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a point on the edwards25519 curve, in canonical form, on the main subgroup, and that the point doesn't have a small order.
 
-It returns `1` on success, and `0` if the checks didn’t pass.
+It returns `1` on success, and `0` if the checks didn't pass.
 
 ## Random group element
 
-``` c
+```c
 void crypto_core_ed25519_random(unsigned char *p);
 ```
 
@@ -72,7 +72,7 @@ Fills `p` with the representation of a random group element.
 
 ## Elligator 2 map
 
-``` c
+```c
 int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
 ```
 
@@ -86,7 +86,7 @@ This function directly exposes the Elligator 2 map, uses the high bit to set the
 
 ## Scalar multiplication
 
-``` c
+```c
 int crypto_scalarmult_ed25519(unsigned char *q, const unsigned char *n,
                               const unsigned char *p);
 ```
@@ -97,9 +97,9 @@ The `crypto_scalarmult_ed25519()` function multiplies a point `p` by a scalar `n
 
 The function returns `0` on success, or `-1` if `n` is `0` or if `p` is not on the curve, not on the main subgroup, is a point of small order, or is not provided in canonical form.
 
-Note that `n` is “clamped” (the 3 low bits are cleared to make it a multiple of the cofactor, bit 254 is set and bit 255 is cleared to respect the original design).
+Note that `n` is "clamped" (the 3 low bits are cleared to make it a multiple of the cofactor, bit 254 is set and bit 255 is cleared to respect the original design).
 
-``` c
+```c
 int crypto_scalarmult_ed25519_base(unsigned char *q, const unsigned char *n);
 ```
 
@@ -113,14 +113,15 @@ In order to prevent attacks using small subgroups, the `scalarmult` functions ab
 
 The `noclamp` variants of these functions do not clear these bits, and do not set the high bit either. These variants expect a scalar in the `]0..L[` range.
 
-``` c
+```c
 int crypto_scalarmult_ed25519_noclamp(unsigned char *q, const unsigned char *n,
                                       const unsigned char *p);
 ```
 
-The function verifies that `p` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case or `n` is `0`. It returns `0` on success.
+The function verifies that `p` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case or `n` is `0`.
+It returns `0` on success.
 
-``` c
+```c
 int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char *n);
 ```
 
@@ -128,7 +129,7 @@ The function returns `0` on success, or `-1` if `n` is `0`.
 
 ## Point addition/subtraction
 
-``` c
+```c
 int crypto_core_ed25519_add(unsigned char *r,
                             const unsigned char *p, const unsigned char *q);
 ```
@@ -137,7 +138,7 @@ The `crypto_core_ed25519_add()` function adds the point `p` to the point `q` and
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid points.
 
-``` c
+```c
 int crypto_core_ed25519_sub(unsigned char *r,
                             const unsigned char *p, const unsigned char *q);
 ```
@@ -154,7 +155,7 @@ Non-reduced inputs are expected to be within that interval.
 
 A random scalar can be obtained using the `crypto_core_ed25519_scalar_random()` function introduced in libsodium 1.0.17:
 
-``` c
+```c
 void crypto_core_ed25519_scalar_random(unsigned char *r);
 ```
 
@@ -162,7 +163,7 @@ void crypto_core_ed25519_scalar_random(unsigned char *r);
 
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 
-``` c
+```c
 void crypto_core_ed25519_scalar_reduce(unsigned char *r, const unsigned char *s);
 ```
 
@@ -170,39 +171,39 @@ The `crypto_core_ed25519_scalar_reduce()` function reduces `s` to `s mod L` and 
 
 Note that `s` is much larger than `r` (64 bytes vs 32 bytes). Bits of `s` can be left to `0`, but the interval `s` is sampled from should be at least 317 bits to ensure almost uniformity of `r` over `L`.
 
-``` c
+```c
 int crypto_core_ed25519_scalar_invert(unsigned char *recip, const unsigned char *s);
 ```
 
 The `crypto_core_ed25519_scalar_invert()` function computes the multiplicative inverse of `s` over `L`, and puts it into `recip`.
 
-``` c
+```c
 void crypto_core_ed25519_scalar_negate(unsigned char *neg, const unsigned char *s);
 ```
 
 The `crypto_core_ed25519_scalar_negate()` function returns `neg` so that `s + neg = 0 (mod L)`.
 
-``` c
+```c
 void crypto_core_ed25519_scalar_complement(unsigned char *comp, const unsigned char *s);
 ```
 
 The `crypto_core_ed25519_scalar_complement()` function returns `comp` so that `s + comp = 1 (mod L)`.
 
-``` c
+```c
 void crypto_core_ed25519_scalar_add(unsigned char *z,
                                     const unsigned char *x, const unsigned char *y);
 ```
 
 The `crypto_core_ed25519_scalar_add()` function stores `x + y (mod L)` into `z`.
 
-``` c
+```c
 void crypto_core_ed25519_scalar_sub(unsigned char *z,
                                     const unsigned char *x, const unsigned char *y);
 ```
 
 The `crypto_core_ed25519_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
-``` c
+```c
 void crypto_core_ed25519_scalar_mul(unsigned char *z,
                                     const unsigned char *x, const unsigned char *y);
 ```
@@ -211,12 +212,12 @@ The `crypto_core_ed25519_scalar_mul()` function stores `x * y (mod L)` into `z`.
 
 ## Constants
 
-  - `crypto_scalarmult_ed25519_BYTES`
-  - `crypto_scalarmult_ed25519_SCALARBYTES`
-  - `crypto_core_ed25519_BYTES`
-  - `crypto_core_ed25519_UNIFORMBYTES`
-  - `crypto_core_ed25519_SCALARBYTES`
-  - `crypto_core_ed25519_NONREDUCEDSCALARBYTES`
+* `crypto_scalarmult_ed25519_BYTES`
+* `crypto_scalarmult_ed25519_SCALARBYTES`
+* `crypto_core_ed25519_BYTES`
+* `crypto_core_ed25519_UNIFORMBYTES`
+* `crypto_core_ed25519_SCALARBYTES`
+* `crypto_core_ed25519_NONREDUCEDSCALARBYTES`
 
 ## Note
 

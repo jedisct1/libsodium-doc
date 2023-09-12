@@ -1,16 +1,19 @@
 # Stream encryption/file encryption
 
-This high-level API encrypts a sequence of messages, or a single message split into an arbitrary number of chunks, using a secret key, with the following properties:
+This high-level API encrypts a sequence of messages, or a single message split
+into an arbitrary number of chunks, using a secret key, with the following
+properties:
 
-  - Messages cannot be truncated, removed, reordered, duplicated or modified without this being detected by the decryption functions.
-  - The same sequence encrypted twice will produce different ciphertexts.
-  - An authentication tag is added to each encrypted message: stream corruption will be detected early, without having to read the stream until the end.
-  - Each message can include additional data (ex: timestamp, protocol version) in the computation of the authentication tag.
-  - Messages can have different sizes.
-  - There are no practical limits to the total length of the stream, or to the total number of individual messages.
-  - Ratcheting: at any point in the stream, it is possible to “forget” the key used to encrypt the previous messages, and switch to a new key.
+* Messages cannot be truncated, removed, reordered, duplicated or modified without this being detected by the decryption functions.
+* The same sequence encrypted twice will produce different ciphertexts.
+* An authentication tag is added to each encrypted message: stream corruption will be detected early, without having to read the stream until the end.
+* Each message can include additional data (ex: timestamp, protocol version) in the computation of the authentication tag.
+* Messages can have different sizes.
+* There are no practical limits to the total length of the stream, or to the total number of individual messages.
+* Ratcheting: at any point in the stream, it is possible to "forget" the key used to encrypt the previous messages, and switch to a new key.
 
-This API can be used to securely send an ordered sequence of messages to a peer. Since the length of the stream is not limited, it can also be used to encrypt files regardless of their size.
+This API can be used to securely send an ordered sequence of messages to a peer.
+Since the length of the stream is not limited, it can also be used to encrypt files regardless of their size.
 
 It transparently generates nonces and automatically handles key rotation.
 
@@ -18,7 +21,7 @@ The `crypto_secretstream_*()` API was introduced in libsodium 1.0.14.
 
 ## Example (stream encryption)
 
-``` c
+```c
 #define MESSAGE_PART1 (const unsigned char *) "Arbitrary data to encrypt"
 #define MESSAGE_PART1_LEN    25
 #define CIPHERTEXT_PART1_LEN MESSAGE_PART1_LEN + crypto_secretstream_xchacha20poly1305_ABYTES
@@ -63,7 +66,7 @@ crypto_secretstream_xchacha20poly1305_push
 
 ## Example (stream decryption)
 
-``` c
+```c
 unsigned char tag;
 unsigned char m1[MESSAGE_PART1_LEN],
               m2[MESSAGE_PART2_LEN],
@@ -100,20 +103,22 @@ if (crypto_secretstream_xchacha20poly1305_pull
 assert(tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL);
 ```
 
-See down below for a complete example of file encryption/decryption using the secretstream API.
+See down below for a complete example of file encryption/decryption using the
+secretstream API.
 
 ## Usage
 
-The `crypto_secretstream_*_push()` functions set creates an encrypted stream. The `crypto_secretstream_*_pull()` functions set is the decryption counterpart.
+The `crypto_secretstream_*_push()` functions set creates an encrypted stream.
+The `crypto_secretstream_*_pull()` functions set is the decryption counterpart.
 
-An encrypted stream starts with a short header, whose size is `crypto_secretstream_xchacha20poly1305_HEADERBYTES` bytes. That header must be sent/stored before the sequence of encrypted messages, as it is required to decrypt the stream. The header content doesn’t have to be secret and decryption with a different header would fail.
+An encrypted stream starts with a short header, whose size is `crypto_secretstream_xchacha20poly1305_HEADERBYTES` bytes. That header must be sent/stored before the sequence of encrypted messages, as it is required to decrypt the stream. The header content doesn't have to be secret and decryption with a different header would fail.
 
 A tag is attached to each message. That tag can be any of:
 
-  - `0`, or `crypto_secretstream_xchacha20poly1305_TAG_MESSAGE`: the most common tag, that doesn’t add any information about the nature of the message.
-  - `crypto_secretstream_xchacha20poly1305_TAG_FINAL`: indicates that the message marks the end of the stream, and erases the secret key used to encrypt the previous sequence.
-  - `crypto_secretstream_xchacha20poly1305_TAG_PUSH`: indicates that the message marks the end of a set of messages, but not the end of the stream. For example, a huge JSON string sent as multiple chunks can use this tag to indicate to the application that the string is complete and that it can be decoded. But the stream itself is not closed, and more data may follow.
-  - `crypto_secretstream_xchacha20poly1305_TAG_REKEY`: “forget” the key used to encrypt this message and the previous ones, and derive a new secret key.
+* `0`, or `crypto_secretstream_xchacha20poly1305_TAG_MESSAGE`: the most common tag, that doesn't add any information about the nature of the message.
+* `crypto_secretstream_xchacha20poly1305_TAG_FINAL`: indicates that the message marks the end of the stream, and erases the secret key used to encrypt the previous sequence.
+* `crypto_secretstream_xchacha20poly1305_TAG_PUSH`: indicates that the message marks the end of a set of messages, but not the end of the stream. For example, a huge JSON string sent as multiple chunks can use this tag to indicate to the application that the string is complete and that it can be decoded. But the stream itself is not closed, and more data may follow.
+* `crypto_secretstream_xchacha20poly1305_TAG_REKEY`: "forget" the key used to encrypt this message and the previous ones, and derive a new secret key.
 
 A typical encrypted stream simply attaches `0` as a tag to all messages, except the last one which is tagged as `TAG_FINAL`.
 
@@ -123,7 +128,7 @@ For each message, additional data can be included in the computation of the auth
 
 ### Encryption
 
-``` c
+```c
 void crypto_secretstream_xchacha20poly1305_keygen
    (unsigned char k[crypto_secretstream_xchacha20poly1305_KEYBYTES]);
 ```
@@ -134,7 +139,7 @@ Note that using this function is not required to obtain a suitable key: the `sec
 
 Network protocols can leverage the key exchange API in order to get a shared key that can be used to encrypt streams. Similarly, file encryption applications can use the password hashing API to get a key that can be used with the functions below.
 
-``` c
+```c
 int crypto_secretstream_xchacha20poly1305_init_push
    (crypto_secretstream_xchacha20poly1305_state *state,
     unsigned char header[crypto_secretstream_xchacha20poly1305_HEADERBYTES],
@@ -145,7 +150,7 @@ The `crypto_secretstream_xchacha20poly1305_init_push()` function initializes a s
 
 This is the first function to call in order to create an encrypted stream. The key `k` will not be required any more for subsequent operations.
 
-``` c
+```c
 int crypto_secretstream_xchacha20poly1305_push
    (crypto_secretstream_xchacha20poly1305_state *state,
     unsigned char *c, unsigned long long *clen_p,
@@ -159,13 +164,14 @@ Additional data `ad` of length `adlen` can be included in the computation of the
 
 The ciphertext is put into `c`.
 
-If `clen_p` is not `NULL`, the ciphertext length will be stored at that address. But with this particular construction, the ciphertext length is guaranteed to always be `mlen + crypto_secretstream_xchacha20poly1305_ABYTES`.
+If `clen_p` is not `NULL`, the ciphertext length will be stored at that address.
+But with this particular construction, the ciphertext length is guaranteed to always be `mlen + crypto_secretstream_xchacha20poly1305_ABYTES`.
 
-The maximum length of an individual message is `crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX` bytes (\~ 256 GB).
+The maximum length of an individual message is `crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX` bytes (~ 256 GB).
 
 ### Decryption
 
-``` c
+```c
 int crypto_secretstream_xchacha20poly1305_init_pull
    (crypto_secretstream_xchacha20poly1305_state *state,
     const unsigned char header[crypto_secretstream_xchacha20poly1305_HEADERBYTES],
@@ -176,7 +182,7 @@ The `crypto_secretstream_xchacha20poly1305_init_pull()` function initializes a s
 
 It returns `0` on success, or `-1` if the header is invalid.
 
-``` c
+```c
 int crypto_secretstream_xchacha20poly1305_pull
    (crypto_secretstream_xchacha20poly1305_state *state,
     unsigned char *m, unsigned long long *mlen_p, unsigned char *tag_p,
@@ -204,29 +210,29 @@ Optionally, applications for which forward secrecy is critical can attach the `c
 
 Explicit rekeying can also be performed without adding a tag, by calling the `crypto_secretstream_xchacha20poly1305_rekey()` function:
 
-``` c
+```c
 void crypto_secretstream_xchacha20poly1305_rekey
     (crypto_secretstream_xchacha20poly1305_state *state);
 ```
 
-This updates the state, but doesn’t add any information about the key change to the stream. If this function is used to create an encrypted stream, the decryption process must call that function at the exact same stream location.
+This updates the state, but doesn't add any information about the key change to the stream. If this function is used to create an encrypted stream, the decryption process must call that function at the exact same stream location.
 
 ## Constants
 
-  - `crypto_secretstream_xchacha20poly1305_ABYTES`
-  - `crypto_secretstream_xchacha20poly1305_HEADERBYTES`
-  - `crypto_secretstream_xchacha20poly1305_KEYBYTES`
-  - `crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX`
-  - `crypto_secretstream_xchacha20poly1305_TAG_MESSAGE`
-  - `crypto_secretstream_xchacha20poly1305_TAG_PUSH`
-  - `crypto_secretstream_xchacha20poly1305_TAG_REKEY`
-  - `crypto_secretstream_xchacha20poly1305_TAG_FINAL`
+* `crypto_secretstream_xchacha20poly1305_ABYTES`
+* `crypto_secretstream_xchacha20poly1305_HEADERBYTES`
+* `crypto_secretstream_xchacha20poly1305_KEYBYTES`
+* `crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX`
+* `crypto_secretstream_xchacha20poly1305_TAG_MESSAGE`
+* `crypto_secretstream_xchacha20poly1305_TAG_PUSH`
+* `crypto_secretstream_xchacha20poly1305_TAG_REKEY`
+* `crypto_secretstream_xchacha20poly1305_TAG_FINAL`
 
 ## Algorithm
 
 Initialization (`secretstream_init`): a subkey `k` and a 64-bit nonce `n` are derived from a key `K` and a 192-bit random nonce `N`, using the same algorithm as XChaCha20. `i` is a 32-bit counter.
 
-``` text
+```text
 k <- HChaCha20(K, N[0..16])
 n <- N[16..24]
 i <- 1
@@ -238,7 +244,7 @@ Encryption:
 
 For every message `M` with a tag `T`:
 
-``` text
+```text
 c, mac <- ChaCha20Poly1305-IETF(key = k, nonce = i || n, msg = T || {0} * 63 || M)
 n <- n ^ mac[0..8]
 i <- (i + 1) & 0xffffffff
@@ -248,11 +254,12 @@ if i = 0:
 
 `secretstream_push()` outputs `c` with the first block truncated to the tag size: `c[0] || c[64..] || mac`
 
-Encrypting a unique message using `secretstream` is equivalent to `ChaCha20Poly1305-IETF(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
+Encrypting a unique message using `secretstream` is equivalent to
+`ChaCha20Poly1305-IETF(key = k, nonce = 1 || n, T || {0} * 63 || M)`.
 
 Rekeying:
 
-``` text
+```text
 k || n <- ChaCha20-IETF(key = k, nonce = i || n, msg = k || n)
 i <- 1
 ```
@@ -261,7 +268,7 @@ A `FINAL` tag performs an implicit rekeying.
 
 ## File encryption example code
 
-``` c
+```c
 #include <stdio.h>
 #include <sodium.h>
 

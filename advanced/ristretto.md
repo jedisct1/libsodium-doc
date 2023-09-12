@@ -10,7 +10,7 @@ Compared to Curve25519 points encoded as their coordinates, ristretto makes it e
 
 Perform a secure two-party computation of `f(x) = p(x)^k`. `x` is the input sent to the second party by the first party after blinding it using a random invertible scalar `r`, and `k` is a secret key only known by the second party. `p(x)` is a hash-to-group function.
 
-``` c
+```c
 // -------- First party -------- Send blinded p(x)
 unsigned char x[crypto_core_ristretto255_HASHBYTES];
 randombytes_buf(x, sizeof x);
@@ -56,7 +56,7 @@ crypto_core_ristretto255_add(fx, b, vir);
 
 ## Encoded element validation
 
-``` c
+```c
 int crypto_core_ristretto255_is_valid_point(const unsigned char *p);
 ```
 
@@ -64,11 +64,11 @@ The `crypto_core_ristretto255_is_valid_point()` function checks that `p` is a va
 
 This operation only checks that `p` is in canonical form.
 
-The function returns `1` on success, and `0` if the checks didn’t pass.
+The function returns `1` on success, and `0` if the checks didn't pass.
 
 ## Random group element
 
-``` c
+```c
 void crypto_core_ristretto255_random(unsigned char *p);
 ```
 
@@ -76,7 +76,7 @@ Fills `p` with the representation of a random group element.
 
 ## Hash-to-group
 
-``` c
+```c
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
@@ -84,7 +84,7 @@ The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (
 
 ## Scalar multiplication
 
-``` c
+```c
 int crypto_scalarmult_ristretto255(unsigned char *q, const unsigned char *n,
                                    const unsigned char *p);
 ```
@@ -95,7 +95,7 @@ The `crypto_scalarmult_ristretto255()` function multiplies an element represente
 
 The function returns `0` on success, or `-1` if `q` is the identity element.
 
-``` c
+```c
 int crypto_scalarmult_ristretto255_base(unsigned char *q, const unsigned char *n);
 ```
 
@@ -105,7 +105,7 @@ The function returns `-1` if `n` is `0`, and `0` otherwise.
 
 ## Element addition/subtraction
 
-``` c
+```c
 int crypto_core_ristretto255_add(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
@@ -114,7 +114,7 @@ The `crypto_core_ristretto255_add()` function adds the element represented by `p
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid encoded elements.
 
-``` c
+```c
 int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
@@ -131,7 +131,7 @@ Non-reduced inputs are expected to be within that interval.
 
 A random scalar can be obtained using the `crypto_core_ristretto255_scalar_random()` function:
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_random(unsigned char *r);
 ```
 
@@ -139,7 +139,7 @@ void crypto_core_ristretto255_scalar_random(unsigned char *r);
 
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_reduce(unsigned char *r, const unsigned char *s);
 ```
 
@@ -147,39 +147,39 @@ The `crypto_core_ristretto255_scalar_reduce()` function reduces `s` to `s mod L`
 
 Note that `s` is much larger than `r` (64 bytes vs 32 bytes). Bits of `s` can be left to `0`, but the interval `s` is sampled from should be at least 317 bits to ensure almost uniformity of `r` over `L`.
 
-``` c
+```c
 int crypto_core_ristretto255_scalar_invert(unsigned char *recip, const unsigned char *s);
 ```
 
 The `crypto_core_ristretto255_scalar_invert()` function computes the multiplicative inverse of `s` over `L`, and puts it into `recip`.
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_negate(unsigned char *neg, const unsigned char *s);
 ```
 
 The `crypto_core_ristretto255_scalar_negate()` function returns `neg` so that `s + neg = 0 (mod L)`.
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_complement(unsigned char *comp, const unsigned char *s);
 ```
 
 The `crypto_core_ristretto255_scalar_complement()` function returns `comp` so that `s + comp = 1 (mod L)`.
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_add(unsigned char *z,
                                          const unsigned char *x, const unsigned char *y);
 ```
 
 The `crypto_core_ristretto255_scalar_add()` function stores `x + y (mod L)` into `z`.
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_sub(unsigned char *z,
                                          const unsigned char *x, const unsigned char *y);
 ```
 
 The `crypto_core_ristretto255_scalar_sub()` function stores `x - y (mod L)` into `z`.
 
-``` c
+```c
 void crypto_core_ristretto255_scalar_mul(unsigned char *z,
                                          const unsigned char *x, const unsigned char *y);
 ```
@@ -188,12 +188,12 @@ The `crypto_core_ristretto255_scalar_mul()` function stores `x * y (mod L)` into
 
 ## Constants
 
-  - `crypto_scalarmult_ristretto255_BYTES`
-  - `crypto_scalarmult_ristretto255_SCALARBYTES`
-  - `crypto_core_ristretto255_BYTES`
-  - `crypto_core_ristretto255_HASHBYTES`
-  - `crypto_core_ristretto255_SCALARBYTES`
-  - `crypto_core_ristretto255_NONREDUCEDSCALARBYTES`
+* `crypto_scalarmult_ristretto255_BYTES`
+* `crypto_scalarmult_ristretto255_SCALARBYTES`
+* `crypto_core_ristretto255_BYTES`
+* `crypto_core_ristretto255_HASHBYTES`
+* `crypto_core_ristretto255_SCALARBYTES`
+* `crypto_core_ristretto255_NONREDUCEDSCALARBYTES`
 
 ## Notes
 
@@ -203,13 +203,13 @@ It can be thus used by applications to encode additional data.
 
 Forcing the top bit to zero in order to ignore it:
 
-``` c
+```c
 s[31] &= 0x7f;
 ```
 
 Rejecting a key that has the top bit set:
 
-``` c
+```c
 if ((s[31] & 0x80) != 0) {
     return;
 }
@@ -217,9 +217,9 @@ if ((s[31] & 0x80) != 0) {
 
 ## Algorithms
 
-  - `ristretto255`
+* `ristretto255`
 
 ## References
 
-  - [Ristretto](https://ristretto.group)
-  - [Decaf: Eliminating cofactors through point compression](https://eprint.iacr.org/2015/673.pdf)
+* [Ristretto](https://ristretto.group)
+* [Decaf: Eliminating cofactors through point compression](https://eprint.iacr.org/2015/673.pdf)
