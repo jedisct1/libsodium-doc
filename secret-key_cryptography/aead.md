@@ -15,24 +15,24 @@ The “combined mode” API of each construction appends the authentication tag 
 
 ### Availability and interoperability
 
-| Construction | Key size | Nonce size | Block size | MAC size | Availability |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| AEGIS-128L | 128 bits | 128 bits | 256 bits | 256 bits | libsodium \>= 1.0.19. On the standard track. |
-| AEGIS-256 | 256 bits | 256 bits | 128 bits | 256 bits | libsodium \>= 1.0.19. On the standard track. |
-| AES256-GCM | 256 bits | 96 bits | 128 bits | 128 bits | libsodium \>= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
-| ChaCha20-Poly1305 | 256 bits | 64 bits | 512 bits | 128 bits | libsodium \>= 0.6.0. Also implemented in {Libre,Open,Boring}SSL. |
-| ChaCha20-Poly1305-IETF | 256 bits | 96 bits | 512 bits | 128 bits | libsodium \>= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries. |
-| XChaCha20-Poly1305-IETF | 256 bits | 192 bits | 512 bits | 128 bits | libsodium \>= 1.0.12. On the standard track. |
+| Construction            | Key size | Nonce size | Block size | MAC size | Availability                                                                                                |
+| :---------------------- | :------- | :--------- | :--------- | :------- | :---------------------------------------------------------------------------------------------------------- |
+| AEGIS-128L              | 128 bits | 128 bits   | 256 bits   | 256 bits | libsodium \>= 1.0.19. On the standard track.                                                                |
+| AEGIS-256               | 256 bits | 256 bits   | 128 bits   | 256 bits | libsodium \>= 1.0.19. On the standard track.                                                                |
+| AES256-GCM              | 256 bits | 96 bits    | 128 bits   | 128 bits | libsodium \>= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
+| ChaCha20-Poly1305       | 256 bits | 64 bits    | 512 bits   | 128 bits | libsodium \>= 0.6.0. Also implemented in {Libre,Open,Boring}SSL.                                            |
+| ChaCha20-Poly1305-IETF  | 256 bits | 96 bits    | 512 bits   | 128 bits | libsodium \>= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries.   |
+| XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium \>= 1.0.12. On the standard track.                                                                |
 
 ## Limitations
 
-| Construction | Max bytes for a single (key,nonce) | Max bytes for a single key |
-| :-- | :-- | :-- |
-| AEGIS-128L | No practical limits | No practical limits |
-| AEGIS-256 | No practical limits | No practical limits |
-| AES256-GCM | \~ 64 GB | \~ 350 GB (for \~16 KB long messages) |
-| ChaCha20-Poly1305 | No practical limits (\~ 2^64 bytes) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
-| ChaCha20-Poly1305-IETF | 256 GB | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
+| Construction            | Max bytes for a single (key,nonce)  | Max bytes for a single key                                       |
+| :---------------------- | :---------------------------------- | :--------------------------------------------------------------- |
+| AEGIS-128L              | No practical limits                 | No practical limits                                              |
+| AEGIS-256               | No practical limits                 | No practical limits                                              |
+| AES256-GCM              | \~ 64 GB                            | \~ 350 GB (for \~16 KB long messages)                            |
+| ChaCha20-Poly1305       | No practical limits (\~ 2^64 bytes) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
+| ChaCha20-Poly1305-IETF  | 256 GB                              | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 | XChaCha20-Poly1305-IETF | No practical limits (\~ 2^64 bytes) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
 
 These figures assume an untruncated (128-bit or 256-bit) authentication tag.
@@ -53,42 +53,42 @@ Note that the latter is not a practical concern due to application limits, noisi
 
   - For 16 KB long messages:
 
-| Construction | Max number of encryptions | Max number of unsuccessful decryption attempts |
-| :-- | :-- | :-- |
-| AES256-GCM | 2^38 | 2^85 |
-| All ChaCha20-Poly1305 variants | 2^63 | 2^63 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
+| :----------------------------- | :------------------------ | :------------------------------------------------------ |
+| AES256-GCM                     | 2^38                      | 2^85                                                    |
+| All ChaCha20-Poly1305 variants | 2^63                      | 2^63 (forgery with 2^-32 success requires \~2^77 bytes) |
 
   - For 1 MB long messages:
 
-| Construction | Max number of encryptions | Max number of unsuccessful decryption attempts |
-| :-- | :-- | :-- |
-| AES256-GCM | 2^32 | 2^78 |
-| All ChaCha20-Poly1305 variants | 2^57 | 2^57 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
+| :----------------------------- | :------------------------ | :------------------------------------------------------ |
+| AES256-GCM                     | 2^32                      | 2^78                                                    |
+| All ChaCha20-Poly1305 variants | 2^57                      | 2^57 (forgery with 2^-32 success requires \~2^77 bytes) |
 
   - For 1 GB long messages:
 
-| Construction | Max number of encryptions | Max number of unsuccessful decryption attempts |
-| :-- | :-- | :-- |
-| AES256-GCM | 2^22 | 2^69 |
-| All ChaCha20-Poly1305 variants | 2^47 | 2^47 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
+| :----------------------------- | :------------------------ | :------------------------------------------------------ |
+| AES256-GCM                     | 2^22                      | 2^69                                                    |
+| All ChaCha20-Poly1305 variants | 2^47                      | 2^47 (forgery with 2^-32 success requires \~2^77 bytes) |
 
   - For 64 GB long messages:
 
-| Construction | Max number of encryptions | Max number of unsuccessful decryption attempts |
-| :-- | :-- | :-- |
-| AES256-GCM | 2^16 | 2^63 |
-| All ChaCha20-Poly1305 variants | 2^41 | 2^41 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
+| :----------------------------- | :------------------------ | :------------------------------------------------------ |
+| AES256-GCM                     | 2^16                      | 2^63                                                    |
+| All ChaCha20-Poly1305 variants | 2^41                      | 2^41 (forgery with 2^-32 success requires \~2^77 bytes) |
 
 ### Nonces
 
-| Construction | Safe options to choose a nonce |
-| :-- | :-- |
-| AEGIS-128L | Counter, permutation, random<sup>\*</sup> |
-| AEGIS-256 | Counter, permutation, random |
-| AES256-GCM | Counter, permutation |
-| ChaCha20-Poly1305 | Counter, permutation |
-| ChaCha20-Poly1305-IETF | Counter, permutation |
-| XChaCha20-Poly1305-IETF | Counter, permutation, random |
+| Construction            | Safe options to choose a nonce            |
+| :---------------------- | :---------------------------------------- |
+| AEGIS-128L              | Counter, permutation, random<sup>\*</sup> |
+| AEGIS-256               | Counter, permutation, random              |
+| AES256-GCM              | Counter, permutation                      |
+| ChaCha20-Poly1305       | Counter, permutation                      |
+| ChaCha20-Poly1305-IETF  | Counter, permutation                      |
+| XChaCha20-Poly1305-IETF | Counter, permutation, random              |
 
 <sup>\*</sup>: random nonces are safe up to 2^48 messages.
 
