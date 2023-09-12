@@ -123,15 +123,17 @@ solve common problems.
 * Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
 * Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
 * Consider SHAKE/TurboSHAKE/KangarooTwelve
+* AEGIS-128X and 256X
 * Add more ARM optimized implementations
 * Add AEGIS-based `crypto_auth` APIs
 * Consider AES-GCM-SIV
 * Parallel Argon2
 * Consider a streaming interface to Ed25519 signatures
 * Batch signatures
+* HPKE
+* Kyber
 
 ## 2.0.0 roadmap
 
 * Switch to a new API (libhydrogen/WASI-crypto)
 * Session support
-* PQC
