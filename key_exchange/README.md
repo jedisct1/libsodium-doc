@@ -1,8 +1,8 @@
 # Key exchange
 
-## Example \(client-side\)
+## Example (client-side)
 
-```c
+``` c
 unsigned char client_pk[crypto_kx_PUBLICKEYBYTES], client_sk[crypto_kx_SECRETKEYBYTES];
 unsigned char client_rx[crypto_kx_SESSIONKEYBYTES], client_tx[crypto_kx_SESSIONKEYBYTES];
 
@@ -20,9 +20,9 @@ if (crypto_kx_client_session_keys(client_rx, client_tx,
 }
 ```
 
-## Example \(server-side\)
+## Example (server-side)
 
-```c
+``` c
 unsigned char server_pk[crypto_kx_PUBLICKEYBYTES], server_sk[crypto_kx_SECRETKEYBYTES];
 unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
 
@@ -42,31 +42,28 @@ if (crypto_kx_server_session_keys(server_rx, server_tx,
 
 ## Purpose
 
-Using the key exchange API, two parties can securely compute a set of shared
-keys using their peer's public key and their own secret key.
+Using the key exchange API, two parties can securely compute a set of shared keys using their peer’s public key and their own secret key.
 
 This API was introduced in libsodium 1.0.12.
 
 ## Usage
 
-```c
+``` c
 int crypto_kx_keypair(unsigned char pk[crypto_kx_PUBLICKEYBYTES],
                       unsigned char sk[crypto_kx_SECRETKEYBYTES]);
 ```
 
-The `crypto_kx_keypair()` function creates a new key pair. It puts the public
-key into `pk` and the secret key into `sk`.
+The `crypto_kx_keypair()` function creates a new key pair. It puts the public key into `pk` and the secret key into `sk`.
 
-```c
+``` c
 int crypto_kx_seed_keypair(unsigned char pk[crypto_kx_PUBLICKEYBYTES],
                            unsigned char sk[crypto_kx_SECRETKEYBYTES],
                            const unsigned char seed[crypto_kx_SEEDBYTES]);
 ```
 
-The `crypto_kx_seed_keypair()` function computes a deterministic key pair from
-the seed `seed` \(`crypto_kx_SEEDBYTES` bytes\).
+The `crypto_kx_seed_keypair()` function computes a deterministic key pair from the seed `seed` (`crypto_kx_SEEDBYTES` bytes).
 
-```c
+``` c
 int crypto_kx_client_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
                                   unsigned char tx[crypto_kx_SESSIONKEYBYTES],
                                   const unsigned char client_pk[crypto_kx_PUBLICKEYBYTES],
@@ -74,23 +71,17 @@ int crypto_kx_client_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
                                   const unsigned char server_pk[crypto_kx_PUBLICKEYBYTES]);
 ```
 
-The `crypto_kx_client_session_keys()` function computes a pair of shared keys
-\(`rx` and `tx`\) using the client's public key `client_pk`, the client's secret
-key `client_sk`, and the server's public key `server_pk`.
+The `crypto_kx_client_session_keys()` function computes a pair of shared keys (`rx` and `tx`) using the client’s public key `client_pk`, the client’s secret key `client_sk`, and the server’s public key `server_pk`.
 
-It returns `0` on success and `-1` if the server's public key is not acceptable.
+It returns `0` on success and `-1` if the server’s public key is not acceptable.
 
-These keys can be used by any functions requiring secret keys up to
-`crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secretbox_*()` and
-`crypto_aead_*()`.
+These keys can be used by any functions requiring secret keys up to `crypto_kx_SESSIONKEYBYTES` bytes, including `crypto_secretbox_*()` and `crypto_aead_*()`.
 
-The shared secret key `rx` should be used by the client to receive data from the
-server, whereas `tx` should be used for data flowing in the opposite direction.
+The shared secret key `rx` should be used by the client to receive data from the server, whereas `tx` should be used for data flowing in the opposite direction.
 
-`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one
-session key is required, either `rx` or `tx` can be set to `NULL`.
+`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` can be set to `NULL`.
 
-```c
+``` c
 int crypto_kx_server_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
                                   unsigned char tx[crypto_kx_SESSIONKEYBYTES],
                                   const unsigned char server_pk[crypto_kx_PUBLICKEYBYTES],
@@ -98,38 +89,30 @@ int crypto_kx_server_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
                                   const unsigned char client_pk[crypto_kx_PUBLICKEYBYTES]);
 ```
 
-The `crypto_kx_server_session_keys()` function computes a pair of shared keys
-\(`rx` and `tx`\) using the server's public key `server_pk`, the server's secret
-key `server_sk`, and the client's public key `client_pk`.
+The `crypto_kx_server_session_keys()` function computes a pair of shared keys (`rx` and `tx`) using the server’s public key `server_pk`, the server’s secret key `server_sk`, and the client’s public key `client_pk`.
 
-It returns `0` on success and `-1` if the client's public key is not acceptable.
+It returns `0` on success and `-1` if the client’s public key is not acceptable.
 
-The shared secret key `rx` should be used by the server to receive data from the
-client, whereas `tx` should be used for data flowing in the opposite direction.
+The shared secret key `rx` should be used by the server to receive data from the client, whereas `tx` should be used for data flowing in the opposite direction.
 
-`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one
-session key is required, either `rx` or `tx` can be set to `NULL`.
+`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` can be set to `NULL`.
 
 ## Constants
 
-* `crypto_kx_PUBLICKEYBYTES`
-* `crypto_kx_SECRETKEYBYTES`
-* `crypto_kx_SEEDBYTES`
-* `crypto_kx_SESSIONKEYBYTES`
-* `crypto_kx_PRIMITIVE`
+  - `crypto_kx_PUBLICKEYBYTES`
+  - `crypto_kx_SECRETKEYBYTES`
+  - `crypto_kx_SEEDBYTES`
+  - `crypto_kx_SESSIONKEYBYTES`
+  - `crypto_kx_PRIMITIVE`
 
 ## Algorithm details
 
-Let `p.n` be the `crypto_scalarmult_curve25519_BYTES` byte output of the X25519
-key exchange operation. The 512-bit output of `BLAKE2B-512` is split into two
-256-bit keys `rx` and `tx`.
+Let `p.n` be the `crypto_scalarmult_curve25519_BYTES` byte output of the X25519 key exchange operation. The 512-bit output of `BLAKE2B-512` is split into two 256-bit keys `rx` and `tx`.
 
 `rx || tx = BLAKE2B-512(p.n || client_pk || server_pk)`
 
 ## Notes
 
-For earlier versions of the library that didn't implement this API, the X25519
-function is accessible directly using the `crypto_scalarmult_*()` API.
+For earlier versions of the library that didn’t implement this API, the X25519 function is accessible directly using the `crypto_scalarmult_*()` API.
 
-Having different keys for each direction allows counters to be safely used as
-nonces without having to wait for an acknowledgment after every message.
+Having different keys for each direction allows counters to be safely used as nonces without having to wait for an acknowledgment after every message.

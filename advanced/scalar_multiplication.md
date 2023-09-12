@@ -4,29 +4,28 @@ Sodium provides an API to multiply a point on the Curve25519 curve.
 
 This can be used as a building block to construct key exchange mechanisms, or more generally to compute a public key from a secret key.
 
-On current libsodium versions, you generally want to use the
-[`crypto_kx`](../key_exchange/README.md) API for key exchange instead.
+On current libsodium versions, you generally want to use the [`crypto_kx`](../key_exchange/README.md) API for key exchange instead.
 
 ## Usage
 
-```c
+``` c
 int crypto_scalarmult_base(unsigned char *q, const unsigned char *n);
 ```
 
-Given a user's secret key `n` \(`crypto_scalarmult_SCALARBYTES` bytes\), the `crypto_scalarmult_base()` function computes the user's public key and puts it into `q` \(`crypto_scalarmult_BYTES` bytes\).
+Given a user’s secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `crypto_scalarmult_base()` function computes the user’s public key and puts it into `q` (`crypto_scalarmult_BYTES` bytes).
 
 `crypto_scalarmult_BYTES` and `crypto_scalarmult_SCALARBYTES` are provided for consistency, but it is safe to assume that `crypto_scalarmult_BYTES == crypto_scalarmult_SCALARBYTES`.
 
-```c
+``` c
 int crypto_scalarmult(unsigned char *q, const unsigned char *n,
                       const unsigned char *p);
 ```
 
-This function can be used to compute a shared secret `q` given a user's secret key and another user's public key.
+This function can be used to compute a shared secret `q` given a user’s secret key and another user’s public key.
 
 `n` is `crypto_scalarmult_SCALARBYTES` bytes long, `p` and the output are `crypto_scalarmult_BYTES` bytes long.
 
-`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size \(≈2^252\), which is smaller than the key space.
+`q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size (≈2^252), which is smaller than the key space.
 
 For this reason, and to mitigate subtle attacks due to the fact many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
 
@@ -36,7 +35,7 @@ By doing so, each party can prove what exact public key they intended to perform
 
 This can be achieved with the following code snippet:
 
-```c
+``` c
 unsigned char client_publickey[crypto_box_PUBLICKEYBYTES];
 unsigned char client_secretkey[crypto_box_SECRETKEYBYTES];
 unsigned char server_publickey[crypto_box_PUBLICKEYBYTES];
@@ -56,7 +55,7 @@ randombytes_buf(server_secretkey, sizeof server_secretkey);
 crypto_scalarmult_base(server_publickey, server_secretkey);
 ```
 
-```c
+``` c
 /* The client derives a shared key from its secret key and the server's public key */
 /* shared key = h(q ‖ client_publickey ‖ server_publickey) */
 if (crypto_scalarmult(scalarmult_q_by_client, client_secretkey, server_publickey) != 0) {
@@ -69,7 +68,7 @@ crypto_generichash_update(&h, server_publickey, sizeof server_publickey);
 crypto_generichash_final(&h, sharedkey_by_client, sizeof sharedkey_by_client);
 ```
 
-```c
+``` c
 /* The server derives a shared key from its secret key and the client's public key */
 /* shared key = h(q ‖ client_publickey ‖ server_publickey) */
 if (crypto_scalarmult(scalarmult_q_by_server, server_secretkey, client_publickey) != 0) {
@@ -88,7 +87,7 @@ If the intent is to create 256-bit keys (or less) for encryption, the final hash
 
 When using counters as nonces, having distinct keys allows the client and the server to safely send multiple messages without having to wait from an acknowledgment after each message.
 
-```c
+``` c
 typedef struct kx_session_keypair {
     unsigned char rx[32];
     unsigned char tx[32];
@@ -110,8 +109,8 @@ crypto_generichash_final(&h, session_keypair_by_client, sizeof session_keypair_b
 
 ## Constants
 
-* `crypto_scalarmult_BYTES`
-* `crypto_scalarmult_SCALARBYTES`
+  - `crypto_scalarmult_BYTES`
+  - `crypto_scalarmult_SCALARBYTES`
 
 ## Notes
 
@@ -119,5 +118,4 @@ As X25519 encodes a field element that is always smaller than 2^255, the top bit
 
 ## Algorithm
 
-* X25519 \(ECDH over Curve25519\) -
-  [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
+  - X25519 (ECDH over Curve25519) - [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt)
