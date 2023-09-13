@@ -16,6 +16,14 @@ make && make check
 sudo make install
 ```
 
+On `aarch64`, with some compilers, you may currently have to define `-march=armv8-a+crypto+aes`:
+
+```sh
+env CFLAGS="$CFLAGS -march=armv8-a+crypto+aes" ./configure
+make && make check
+sudo make install
+```
+
 Since different files are compiled for different CPU classes, and to prevent unwanted optimizations, link-time optimization (LTO) should not be used.
 
 Also, do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`). These can introduce side channels.
