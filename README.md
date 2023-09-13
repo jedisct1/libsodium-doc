@@ -12,7 +12,7 @@ The design choices emphasize security and ease of use. But despite the emphasis 
 
 ## Downloading libsodium
 
-[libsodium 1.0.18-stable](https://download.libsodium.org/libsodium/releases/) is the latest version.
+[libsodium 1.0.19-stable](https://download.libsodium.org/libsodium/releases/) is the latest version.
 
   - [Tarballs and pre-compiled binaries](https://download.libsodium.org/libsodium/releases/)
   - [GitHub repository](https://github.com/jedisct1/libsodium)
