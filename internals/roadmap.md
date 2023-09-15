@@ -128,6 +128,8 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Batch signatures
   - HPKE
   - Kyber
+  - CHERI support for the allocation functions
+  - See if `wasm32-freestanding` can be supported
 
 ## 2.0.0 roadmap
 
