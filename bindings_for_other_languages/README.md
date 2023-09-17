@@ -56,6 +56,7 @@
   - REALbasic and Xojo: [RB-libsodium](https://github.com/charonn0/RB-libsodium)
   - Ruby: [RbNaCl](https://github.com/cryptosphere/rbnacl)
   - Rust: [libsodium-sys-stable](https://github.com/jedisct1/libsodium-sys-stable)
+  - Rust: [tablesalt](https://github.com/JacoMalan1/tablesalt)
   - Rust: [sodoken](https://github.com/holochain/sodoken)
   - Rust: [alkali](https://github.com/tom25519/alkali)
   - Swift: [Swift-Sodium](https://github.com/jedisct1/swift-sodium)
