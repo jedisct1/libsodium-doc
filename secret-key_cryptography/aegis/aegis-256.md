@@ -8,7 +8,7 @@ AEGIS-256 is a modern AES-based cipher with unique properties making it easier a
   - It has a very large nonce size (256 bits), allowing random nonces to be used without any practical limits either.
   - It has a better security margin than AES-GCM
   - Leaking the state doesn’t leak the key
-  - It is assumed to be key-committing, preventing attacks affecting other ciphers when used with low-entropy keys such as passwords.
+  - It is assumed to be key-committing, preventing partitioning attacks affecting other ciphers when used with low-entropy keys such as passwords. Namely, it is difficult to find distinct keys that successfully verify the same `(nonce, AD, ciphertext, tag)` tuple.
 
 AEGIS-256 is also extremely fast on recent CPUs with AES pipelines, with lower memory usage than AES-GCM.
 
