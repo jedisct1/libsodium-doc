@@ -162,7 +162,7 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
 - However, the nonce space is very large (256 bits). It can thus be randomly chosen with no risks of collision.
 - It is also safe to only use a subset of the nonce space, for example by filling only 160 bits (20 bytes) with random data, and padding the rest with zeros. A 160 bit nonce already provides enough collision resistance for virtually all practical needs.
 - AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.
-- Unlike AES-GCM and Salsa/ChaChaPoly1305, it is believed to be impractical to find multiple AEGIS keys that successfully decrypt a given `(ad, ciphertext, tag)` tuple (_receiver-binding_ game). However, this security property doesn't hold true any more if the associated data inputs can be freely chosen in addition to the keys (_FROB_ security).
+- Unlike AES-GCM and Salsa/ChaChaPoly1305, it is believed to be impractical to find multiple AEGIS keys that successfully decrypt a given `(ad, ciphertext, tag)` tuple (_receiver-binding_ game). However, this security property doesn't hold true any more if the associated data inputs can be freely chosen in addition to the keys (_FROB_ security). If commitment to the associated data is necessary, set the `ad` parameter to the hash of the associated data, using a collision-resistant and preimage-resistant hash function.
 - AEGIS was added in libsodium version 1.0.19.
 
 ## See also
