@@ -64,9 +64,32 @@ They include header files as well as static (`.LIB`) and shared (`.DLL`) librari
 
 Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__dllexport`.
 
-## Cross-compiling
+## Cross-compiling to Android
 
-The library can be cross-compiled. This is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
+After unpacking the source distribution (`stable` is recommended), set `ANDROID_NDK_HOME` to the path to the Android SDK. Note that compilation is only tested on CI with the LTS version of the SDK.
+
+Then, run the `android-aar.sh` script:
+
+```sh
+./dist-build/android-aar.sh
+```
+
+This will compile libsodium (full builds and minimal builds) for every Android architectures. The resulting libraries are in `libsodium-android-<architecture>` folders.
+
+In addition, this creates AAR files, that can be directly included in projects using `gradle` or `cmake`.
+After compilation, the script outputs the instructions to do so.
+
+## Cross-compiling to Apple devices
+
+The `apple-xcframework.sh` scripts crates an `xcframework` package containing `libsodium` for iOS, macOS, Catalyst, watchOS, tvOS, visionOS and their respective emulators:
+
+```sh
+./dist-build-apple-xcframework.sh
+```
+
+## Cross-compiling to ARM microcontrollers
+
+Here is an example of cross-compiling to ARM using the GNU tools for ARM embedded processors:
 
 ``` sh
 export PATH=/path/to/gcc-arm-none-eabi/bin:$PATH
@@ -93,7 +116,7 @@ $ env CC=ccomp CFLAGS="-O2 -fstruct-passing" ./configure --disable-shared && \
 make && sudo make install
 ```
 
-## Compiling with Zig
+## Compiling and cross-compiling with Zig
 
 [Zig](https://ziglang.org) can be used to compile or cross-compile to any supported target:
 
