@@ -25,11 +25,11 @@ crypto_kdf_hkdf_sha256_expand(subkey1, sizeof subkey1,
                               "key for encryption",
                               (sizeof "key for encryption") - 1,
                               prk);
-crypto_kdf_hkdf_sha256_expand(subkey1, sizeof subkey1,
+crypto_kdf_hkdf_sha256_expand(subkey2, sizeof subkey2,
                               "key for signatures",
                               (sizeof "key for signatures") - 1,
                               prk);
-crypto_kdf_hkdf_sha256_expand(subkey1, sizeof subkey1,
+crypto_kdf_hkdf_sha256_expand(subkey3, sizeof subkey3,
                               "key for something else",
                               (sizeof "key for something else") - 1,
                               prk);
