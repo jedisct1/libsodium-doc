@@ -129,7 +129,7 @@ If you need to sign and encrypt a message, possibly for signatures to be publicl
 
 Alternatively, signing key pairs can be [converted to X25519 key exchange key pairs](../advanced/ed25519-curve25519.md). This can be used to encrypt and sign independently.
 
-However, this is not recommended and is usually not necessary. Prefer using distinct key pairs instead as this will always be safest.
+However, this is not recommended and is usually not necessary. Prefer using distinct key pairs instead as this will always be safer.
 
 Remember that public keys for both operations are very small (only 32 bytes). Concatenating both produces an aggregate public key that is only 64 bytes long. For most applications, the overhead is negligible, and conversions are no longer required.
 
