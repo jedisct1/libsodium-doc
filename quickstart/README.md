@@ -196,7 +196,7 @@ However, it can become a concern for group communications, where a single key is
 
 Signatures can prove the identity of a sender. In order to prove the identity of a sender for messages encrypted using shared secrets, signatures can thus be combined with encryption.
 
-See [Multiple Recipients](public-key_cryptography/multiple_recipients.md) for guidance and example code to do so.
+See [Multiple Recipients](../public-key_cryptography/multiple_recipients.md) for guidance and example code to do so.
 
 But group messaging is complex topic. [RFC9420](https://datatracker.ietf.org/doc/rfc9420/) is a proper approach.
 
