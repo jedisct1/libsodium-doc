@@ -135,7 +135,38 @@ Remember that public keys for both operations are very small (only 32 bytes). Co
 
 On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` can derive specialized key pairs from the same 32-byte seed.
 
-If you want to use a unique key pair for both operations, Diffie-Hellman key exchange can be made over edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplication over edwards25519.
+If you want to use a unique key pair for both operations, Diffie-Hellman key exchange can be made over Edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplication over edwards25519.
+
+The following code illustrates how to do it:
+
+```c
+unsigned char ed25519_pk[crypto_sign_PUBLICKEYBYTES];
+unsigned char ed25519_sk[crypto_sign_SECRETKEYBYTES];
+unsigned char seed[crypto_sign_SEEDBYTES];
+unsigned char edwards25519_pk[crypto_scalarmult_ed25519_BYTES];
+unsigned char edwards25519_sk[crypto_scalarmult_ed25519_SCALARBYTES];
+unsigned char h[crypto_hash_sha512_BYTES];
+
+// create an Ed25519 keypair
+crypto_sign_keypair(ed25519_pk, ed25519_sk);
+
+// Extract the seed from the Ed25519 secret key
+crypto_sign_ed25519_sk_to_seed(seed, ed25519_sk);
+
+// Ed25519 internally derives two values from the seed; this is how it does it.
+crypto_hash_sha512(h, seed, sizeof seed);
+
+// The first half of the output correspond to the Edwards25519 scalar.
+memcpy(edwards25519_sk, h, sizeof edwards25519_sk);
+
+// The Ed25519 public key is actually the Edwards25519 base point
+// multiplied by the Edwards25519 scalar.
+crypto_scalarmult_ed25519_base(edwards25519_pk, edwards25519_sk);
+
+// (edwards25519_pk, edwards25519_sk) can be used for Diffie-Hellman
+// using crypto_scalarmult_ed25519() if you like to. Do not forget to
+// hash the result in order to get a key suitable for encryption.
+```
 
 Finally, if, for some reason, you want to implement your own signcryption scheme:
 
