@@ -186,21 +186,6 @@ On a platform where counters cannot be maintained and no trusted source of rando
 
 On such systems, [libhydrogen](https://libhydrogen.org) may also be a better option.
 
-## Group messaging / multiple recipients
-
-A message encrypted using a shared secret doesn’t authenticate the sender: anyone with a key can pretend to be the author of any message encrypted using that key.
-
-This is usually not an issue when only two parties are involved.
-
-However, it can become a concern for group communications, where a single key is shared by multiple recipients:.
-
-Signatures can prove the identity of a sender. In order to prove the identity of a sender for messages encrypted using shared secrets, signatures can thus be combined with encryption.
-
-See [Multiple Recipients](../public-key_cryptography/multiple_recipients.md) for guidance and example code to do so.
-
-But group messaging is complex topic. [RFC9420](https://datatracker.ietf.org/doc/rfc9420/) is a proper approach.
-
 ## I want to write bindings for my favorite language, where should I start?
 
 Start with the `crypto_generichash` and `crypto_secretstream` APIs. These are the trickiest to implement bindings for and will provide good insights about how to design your bindings.
-

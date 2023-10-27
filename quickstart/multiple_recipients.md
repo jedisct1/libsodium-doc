@@ -135,3 +135,5 @@ int main(void)
     return 0;
 }
 ```
+
+But group messaging is complex topic. [RFC9420](https://datatracker.ietf.org/doc/rfc9420/) is a proper approach.
