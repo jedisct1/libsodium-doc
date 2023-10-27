@@ -29,6 +29,7 @@
       - [Authenticated encryption](public-key_cryptography/authenticated_encryption.md)
       - [Public-key signatures](public-key_cryptography/public-key_signatures.md)
       - [Sealed boxes](public-key_cryptography/sealed_boxes.md)
+      - [Multiple Recipients](public-key_cryptography/multiple_recipients.md)
   - [Hashing](hashing/README.md)
       - [Generic hashing](hashing/generic_hashing.md)
       - [Short-input hashing](hashing/short-input_hashing.md)
