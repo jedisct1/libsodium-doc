@@ -156,11 +156,11 @@ crypto_sign_ed25519_sk_to_seed(ed25519_seed, ed25519_sk);
 // Ed25519 internally derives two values from the seed; this is how it does it.
 crypto_hash_sha512(h, ed25519_seed, sizeof ed25519_seed);
 
-// The first half of the output corresponds to the Edwards25519 scalar.
+// The first half of the output corresponds to the scalar.
 memcpy(edwards25519_sk, h, sizeof edwards25519_sk);
 
-// The Ed25519 public key is actually the Edwards25519 base point
-// multiplied by the Edwards25519 scalar.
+// The Ed25519 public key is the Edwards25519 base point multiplied
+// by the scalar. We can copy ed25519_pk, or recompute is as follows:
 crypto_scalarmult_ed25519_base(edwards25519_pk, edwards25519_sk);
 
 // (edwards25519_pk, edwards25519_sk) can be used for Diffie-Hellman
