@@ -136,4 +136,4 @@ int main(void)
 }
 ```
 
-But group messaging is complex topic. [RFC9420](https://datatracker.ietf.org/doc/rfc9420/) is a proper approach.
+But group messaging is a complex topic. [RFC9420](https://datatracker.ietf.org/doc/rfc9420/) is a proper approach.
