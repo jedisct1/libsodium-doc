@@ -189,5 +189,3 @@ On such systems, [libhydrogen](https://libhydrogen.org) may also be a better opt
 ## I want to write bindings for my favorite language, where should I start?
 
 Start with the `crypto_generichash` and `crypto_secretstream` APIs. These are the trickiest to implement bindings for and will provide good insights about how to design your bindings.
-
-[t](multiple_recipients.md)
