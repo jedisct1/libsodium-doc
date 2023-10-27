@@ -191,6 +191,3 @@ On such systems, [libhydrogen](https://libhydrogen.org) may also be a better opt
 Start with the `crypto_generichash` and `crypto_secretstream` APIs. These are the trickiest to implement bindings for and will provide good insights about how to design your bindings.
 
 [t](multiple_recipients.md)
-[u](multiple_recipients)
-[v](../mutiple_recipients.md)
-[w](../multiple_recipients)
