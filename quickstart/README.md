@@ -178,7 +178,7 @@ Finally, if, for some reason, you want to implement your own signcryption scheme
 
 Verify the metadata when opening a signed plus encrypted message.
 
-If this section looks complicated, ignore it, and use distinct keys for encryption and signing. This is easier and more secure.
+If this section looks complicated, ignore it, and use distinct keys for encryption and signing. This is easier and more secure. Furthermore, signing and encryption keys don't necessarily have the same life time. It is common to frequently rotate encryption keys, while signing keys are long-term.
 
 Also keep in mind that with post-quantum schemes, key pairs for signature and encryption systems are completely different and incompatible. So, if only for future-proofing your applications and protocols, do not assume that a single key pair can be used for both operations.
 
