@@ -142,7 +142,7 @@ The following code illustrates how to do it:
 ```c
 unsigned char ed25519_pk[crypto_sign_PUBLICKEYBYTES];
 unsigned char ed25519_sk[crypto_sign_SECRETKEYBYTES];
-unsigned char seed[crypto_sign_SEEDBYTES];
+unsigned char ed25519_seed[crypto_sign_SEEDBYTES];
 unsigned char edwards25519_pk[crypto_scalarmult_ed25519_BYTES];
 unsigned char edwards25519_sk[crypto_scalarmult_ed25519_SCALARBYTES];
 unsigned char h[crypto_hash_sha512_BYTES];
@@ -151,10 +151,10 @@ unsigned char h[crypto_hash_sha512_BYTES];
 crypto_sign_keypair(ed25519_pk, ed25519_sk);
 
 // Extract the seed from the Ed25519 secret key
-crypto_sign_ed25519_sk_to_seed(seed, ed25519_sk);
+crypto_sign_ed25519_sk_to_seed(ed25519_seed, ed25519_sk);
 
 // Ed25519 internally derives two values from the seed; this is how it does it.
-crypto_hash_sha512(h, seed, sizeof seed);
+crypto_hash_sha512(h, ed25519_seed, sizeof ed25519_seed);
 
 // The first half of the output correspond to the Edwards25519 scalar.
 memcpy(edwards25519_sk, h, sizeof edwards25519_sk);
