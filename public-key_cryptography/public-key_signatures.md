@@ -256,3 +256,7 @@ Ed25519ph (used by the multi-part API) was implemented in libsodium 1.0.12.
 The Ed25519 system was designed to compute deterministic signatures.
 
 Non-deterministic (but also non-standard) signatures can be produced by compiling libsodium with the `ED25519_NONDETERMINISTIC` macro defined.
+
+Computing an Ed25519 signature requires two secrets. But applications do not directly supply them: they are both internally derived from the seed.
+
+One of these secrets is the scalar the Edwards25519 base point is multiplied with. That scalar is computed by calling `crypto_hash_sha512(seed)` and truncating the output to the first 32 bytes. There's nothing specific to libsodium here, this is how Ed25519 signatures work and have been standardized.
