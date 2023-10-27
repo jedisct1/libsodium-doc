@@ -178,6 +178,10 @@ Finally, if, for some reason, you want to implement your own signcryption scheme
 
 Verify the metadata when opening a signed plus encrypted message.
 
+If everything in this paragraph looks complicated, ignore it, and use distinct keys for encryption and signing. Easier, simpler, faster, more secure.
+
+Also keep in mind that with post-quantum schemes, key pairs for signature and encryption systems are completely different and incompatible. So, if only for future-proofing your applications and protocols, assuming that a single key pair can be used for both operations is not a good idea.
+
 ## How do I hide the length of a message?
 
 Use [padding](../helpers/padding.md).
