@@ -162,6 +162,7 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
 - The key size is 128 bits (16 bytes), unlike all other ciphers in this library.
 - Unique nonces are required for each messsages.
 - AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.
+- However, it should *NOT* be used as a hash function. If the key is known, state collisions can be crafted.
 - Unlike AES-GCM and Salsa/ChaChaPoly1305, it is believed to be impractical to find multiple AEGIS keys that successfully decrypt a given `(ad, ciphertext, tag)` tuple (_receiver-binding_ game). However, this security property doesn't hold true any more if the associated data inputs can be freely chosen in addition to the keys (_FROB_ security). If commitment to the associated data is necessary, set the `ad` parameter to the hash of the associated data, using a collision-resistant and preimage-resistant hash function.
 - AEGIS was added in libsodium version 1.0.19.
 
