@@ -146,7 +146,7 @@ Still, it may be an issue if an attacker has the ability to force a recipient to
 
 If that turns out to be a concern, the following can be done:
 
-  - Use the AEGIS ciphers, that are assumed to be safe against these attacks.
+  - Use the AEGIS ciphers, that, under common scenarios, are assumed to be safe against these attacks.
 
 or with other ciphers:
 
