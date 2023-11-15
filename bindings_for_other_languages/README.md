@@ -23,6 +23,7 @@
   - D: [LibsodiumD](https://github.com/Geod24/libsodiumd)
   - Dart (Flutter): [Flutter-Sodium](https://github.com/firstfloorsoftware/flutter_sodium)
   - Dart: [libsodium\_dart\_bindings](https://github.com/Skycoder42/libsodium_dart_bindings)
+  - Delphi: [Delphi-NaCl](https://github.com/zedalaye/Delphi-NaCl)
   - Erlang: [ENaCl](https://github.com/jlouis/enacl)
   - Erlang: [Erlang-libsodium](https://github.com/potatosalad/erlang-libsodium)
   - Fortran: [Sodium](https://github.com/freevryheid/sodium)
