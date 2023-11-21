@@ -101,7 +101,7 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 ### HMAC-SHA-512
 
-Similarily to the `crypto_auth_hmacsha256_*()` set of functions, the `crypto_auth_hmacsha512_*()` set of functions implements HMAC-SHA512:
+Similarly to the `crypto_auth_hmacsha256_*()` set of functions, the `crypto_auth_hmacsha512_*()` set of functions implements HMAC-SHA512:
 
 ``` c
 int crypto_auth_hmacsha512(unsigned char *out,
