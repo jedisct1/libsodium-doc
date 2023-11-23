@@ -50,7 +50,7 @@ int crypto_kdf_derive_from_key(unsigned char *subkey, size_t subkey_len,
 
 The `crypto_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `subkey` of length `subkey_len` bytes using the master key `key` and the context `ctx`.
 
-`subkey_id` can be any value up to `(2^64)-1`.
+`subkey_id` can be any value up to `(2^64)-1`. However, with 128-bit subkeys, it is not safe to derive more than `2^48` subkeys from the same key. With subkeys that are at 160 bits or more, `2^64` subkeys can be safely derived.
 
 `subkey_len` must be between `crypto_kdf_BYTES_MIN` (inclusive) and `crypto_kdf_BYTES_MAX` (inclusive).
 
