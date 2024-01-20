@@ -84,7 +84,7 @@ After compilation, the script outputs the instructions to do so.
 The `apple-xcframework.sh` scripts crates an `xcframework` package containing `libsodium` for iOS, macOS, Catalyst, watchOS, tvOS, visionOS and their respective emulators:
 
 ```sh
-./dist-build-apple-xcframework.sh
+./dist-build/apple-xcframework.sh
 ```
 
 ## Cross-compiling to ARM microcontrollers
