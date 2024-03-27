@@ -55,6 +55,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [OpenR](https://github.com/facebook/openr): Facebook’s internally designed and developed routing protocol/platform.
   - [PAVE](https://pave.software/): The password manager. Easy password sharing for teams. No cloud.
   - [PCP](https://github.com/TLINDEN/pcp): Pretty Curved Privacy (pcp1) is a command line utility that can be used to encrypt files.
+  - [Phase](https://github.com/phasehq/console): An all-in-one platform for developers to securely create, manage and deploy application secrets across local development 💻, CI tools 🔨, and cloud ☁️ infrastructure.
   - [Pbox](https://github.com/zyisrad/pbox): A CLI password manager.
   - [Petmail](https://github.com/warner/petmail): A secure communication and file-sharing system.
   - [Pichi](https://github.com/pichi-router/pichi): An Application Layer Proxy controlled via RESTful APIs.
