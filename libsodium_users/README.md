@@ -62,6 +62,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [PipeSocks](https://github.com/pipesocks/pipesocks): A pipe-like SOCKS5 tunnel system.
   - [PowerDNS](https://www.powerdns.com/): PowerDNS has been designed to serve both the needs of small installations by being easy to set up as well as for serving very large query volumes on large numbers of domains. Additionally, PowerDNS offers very high domain resolution performance.
   - [QtCrypt](https://github.com/trashctor/QtCrypt): Lightweight, portable application that encrypts files and directories using a symmetric-key algorithm.
+  - [Quick Crypt](https://quickcrypt.org): A small-batch text-focused online cipher tool designed to be easy to use, trustworthy, and convenient.
   - [RavenDB](https://ravendb.net/): A LINQ-enabled document database for .NET.
   - [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
   - [Remembear](https://www.remembear.com/): A full-featured, multi-platform password manager by TunnelBear.
