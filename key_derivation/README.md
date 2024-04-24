@@ -80,7 +80,7 @@ Algorithm details:
 
 ## Nonce extension
 
-Unlike XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`) and XChaCha20, ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With 96-bit random nonces, 2^32 encryptions is the limit before the probability of duplicate nonces becomes too high.
+Unlike AEGIS-256, XSalsa20 (used by `crypto_box_*` and `crypto_secretbox_*`) and XChaCha20, ciphers such as AES-GCM and ChaCha20 require a nonce too short to be chosen randomly (64 or 96 bits). With 96-bit random nonces, 2^32 encryptions is the limit before the probability of duplicate nonces becomes too high.
 
 Using a counter instead of random nonces prevents this. However, keeping a state is not always an option, especially with offline protocols.
 
@@ -106,7 +106,7 @@ This function accepts a 32-byte (`crypto_core_hchacha20_KEYBYTES`) secret key `k
 
 Optionally, a 16-byte (`crypto_core_hchacha20_CONSTBYTES`) constant `c` can be specified to personalize the function to an application. `c` can be left to `NULL` to use the default constant.
 
-The following code snippet can be used to construct a ChaCha20-Poly1305 variant with a 192-bit nonce (XChaCha20) on libsodium \< 1.0.12 (versions \>= 1.0.12 already include this construction).
+The following code snippet illustrates how XChaCha20, the variant of ChaCha20-Poly1305 with a 192-bit nonce, is built:
 
 ``` c
 #define MESSAGE (const unsigned char *) "message"
