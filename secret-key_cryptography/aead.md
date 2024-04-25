@@ -157,4 +157,4 @@ This assumes that attackers don’t have control over associated data. If they d
 
 ## References
 
-  - [Limits on Authenticated Encryption Use in TLS](http://www.isg.rhul.ac.uk/~kp/TLS-AEbounds.pdf) (Atul Luykx, Kenneth G. Paterson).
+  - [Limits on Authenticated Encryption Use in TLS](https://eprint.iacr.org/2024/051.pdf) (Atul Luykx, Kenneth G. Paterson).
