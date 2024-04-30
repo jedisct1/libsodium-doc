@@ -56,7 +56,7 @@ In spite of these limits, applications must enforce a limit on the maximum size 
 
 Applications are also encouraged to limit the number of attempts an adversary can make, for example by closing a session after a large number of decryption failures.
 
-Assuming a 2^-32 attack success probability, the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
+Assuming a 2^<sup>-32</sup> attack success probability, and nonces safely chosen (cf. the `Nonces` section below) the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
 
 Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
 
