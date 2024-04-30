@@ -39,10 +39,10 @@ The “combined mode” API of each construction appends the authentication tag 
 | :---------------------- | :------------------------------ |
 | AEGIS-256               | No practical limits             |
 | XChaCha20-Poly1305-IETF | No practical limits             |
-| AEGIS-128L              | 2<sup>48</sup>                  |
-| AES256-GCM              | 2<sup>32</sup>                  |
-| ChaCha20-Poly1305-IETF  | 2<sup>32</sup>                  |
-| ChaCha20-Poly1305       | 2<sup>16</sup>                  |
+| AEGIS-128L              | 2^48                            |
+| AES256-GCM              | 2^32                            |
+| ChaCha20-Poly1305-IETF  | 2^32                            |
+| ChaCha20-Poly1305       | 2^16                            |
 
 These figures assume an untruncated (128-bit or 256-bit) authentication tag.
 
@@ -56,7 +56,7 @@ In spite of these limits, applications must enforce a limit on the maximum size 
 
 Applications are also encouraged to limit the number of attempts an adversary can make, for example by closing a session after a large number of decryption failures.
 
-Assuming a 2^<sup>-32</sup> attack success probability, and nonces safely chosen (cf. the `Nonces` section below) the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
+Assuming a 2^-32 attack success probability, and nonces safely chosen (cf. the `Nonces` section below) the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
 
 Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
 
@@ -90,16 +90,16 @@ Note that the latter is not a practical concern due to application limits, noisi
 
 ### Nonces
 
-| Construction            | Safe options to choose a nonce            |
-| :---------------------- | :---------------------------------------- |
-| AEGIS-128L              | Counter, permutation, random<sup>\*</sup> |
-| AEGIS-256               | Counter, permutation, random              |
-| AES256-GCM              | Counter, permutation                      |
-| ChaCha20-Poly1305       | Counter, permutation                      |
-| ChaCha20-Poly1305-IETF  | Counter, permutation                      |
-| XChaCha20-Poly1305-IETF | Counter, permutation, random              |
+| Construction            | Safe options to choose a nonce   |
+| :---------------------- | :------------------------------- |
+| AEGIS-128L              | Counter, permutation, random (*) |
+| AEGIS-256               | Counter, permutation, random     |
+| AES256-GCM              | Counter, permutation             |
+| ChaCha20-Poly1305       | Counter, permutation             |
+| ChaCha20-Poly1305-IETF  | Counter, permutation             |
+| XChaCha20-Poly1305-IETF | Counter, permutation, random     |
 
-<sup>\*</sup>: random nonces are safe up to 2^48 messages.
+*: random nonces are safe up to 2^48 messages.
 
 ### TL;DR: which one should I use?
 
