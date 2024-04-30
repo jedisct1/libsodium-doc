@@ -26,24 +26,24 @@ The “combined mode” API of each construction appends the authentication tag 
 
 ## Limitations
 
-| Construction            | Max bytes for a single (key,nonce)  | Max bytes for a single key                                       |
-| :---------------------- | :---------------------------------- | :--------------------------------------------------------------- |
-| AEGIS-128L              | No practical limits                 | No practical limits                                              |
-| AEGIS-256               | No practical limits                 | No practical limits                                              |
-| AES256-GCM              | \~ 64 GB                            | \~ 350 GB (for \~16 KB long messages)                            |
-| ChaCha20-Poly1305       | No practical limits (\~ 2^64 bytes) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
-| ChaCha20-Poly1305-IETF  | 256 GB                              | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
-| XChaCha20-Poly1305-IETF | No practical limits (\~ 2^64 bytes) | Up to 2^64<sup>\*</sup> messages, no practical total size limits |
+| Construction            | Max bytes for a single (key,nonce)  |
+| :---------------------- | :---------------------------------- |
+| AEGIS-128L              | No practical limits                 |
+| AEGIS-256               | No practical limits                 |
+| AES256-GCM              | \~ 64 GB                            |
+| ChaCha20-Poly1305       | No practical limits (\~ 2^64 bytes) |
+| ChaCha20-Poly1305-IETF  | 256 GB                              |
+| XChaCha20-Poly1305-IETF | No practical limits (\~ 2^64 bytes) |
 
 These figures assume an untruncated (128-bit or 256-bit) authentication tag.
 
-<sup>\*</sup> Although periodic rekeying remains highly recommended, online protocols leveraging additional data to discard old messages don’t have practical limitations on the total number of messages.
+Although periodic rekeying remains highly recommended, online protocols leveraging additional data to discard old messages don’t have practical limitations on the total number of messages.
 
 In spite of these limits, applications must enforce a limit on the maximum size of a ciphertext to decrypt. Very large messages should be split in multiple chunks instead of being encrypted as a single ciphertext:
 
-  - This keeps memory usage in control,
-  - A corrupted chunk can be immediately detected before the whole ciphertext is received,
-  - Large messages provide more wiggle room for attacks.
+- This keeps memory usage in control,
+- A corrupted chunk can be immediately detected before the whole ciphertext is received,
+- Large messages provide more wiggle room for attacks.
 
 Applications are also encouraged to limit the number of attempts an adversary can make, for example by closing a session after a large number of decryption failures.
 
