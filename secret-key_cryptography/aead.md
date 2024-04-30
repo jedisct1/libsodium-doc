@@ -2,8 +2,8 @@
 
 This operation:
 
-  - Encrypts a message with a key and a nonce to keep it confidential
-  - Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential (non-encrypted) data, haven’t been tampered with.
+- Encrypts a message with a key and a nonce to keep it confidential
+- Computes an authentication tag. This tag is used to make sure that the message, as well as optional, non-confidential (non-encrypted) data, haven’t been tampered with.
 
 A typical use case for additional data is to authenticate protocol-specific metadata about the message, such as its length and encoding.
 
@@ -58,21 +58,21 @@ Note that the latter is not a practical concern due to application limits, noisi
 | AES256-GCM                     | 2^38                      | 2^85                                                    |
 | All ChaCha20-Poly1305 variants | 2^63                      | 2^63 (forgery with 2^-32 success requires \~2^77 bytes) |
 
-  - For 1 MB long messages:
+- For 1 MB long messages:
 
 | Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
 | :----------------------------- | :------------------------ | :------------------------------------------------------ |
 | AES256-GCM                     | 2^32                      | 2^78                                                    |
 | All ChaCha20-Poly1305 variants | 2^57                      | 2^57 (forgery with 2^-32 success requires \~2^77 bytes) |
 
-  - For 1 GB long messages:
+- For 1 GB long messages:
 
 | Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
 | :----------------------------- | :------------------------ | :------------------------------------------------------ |
 | AES256-GCM                     | 2^22                      | 2^69                                                    |
 | All ChaCha20-Poly1305 variants | 2^47                      | 2^47 (forgery with 2^-32 success requires \~2^77 bytes) |
 
-  - For 64 GB long messages:
+- For 64 GB long messages:
 
 | Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
 | :----------------------------- | :------------------------ | :------------------------------------------------------ |
@@ -146,15 +146,15 @@ Still, it may be an issue if an attacker has the ability to force a recipient to
 
 If that turns out to be a concern, the following can be done:
 
-  - Use the AEGIS ciphers, that, under common scenarios, are assumed to be safe against these attacks.
+- Use the AEGIS ciphers, that, under common scenarios, are assumed to be safe against these attacks.
 
 or with other ciphers:
 
-  - Prepend `H(key, nonce || ciphertext_tag)` to the ciphertext
-  - Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
+- Prepend `H(key, nonce || ciphertext_tag)` to the ciphertext
+- Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
 
 This assumes that attackers don’t have control over associated data. If they do, associated data `ad` must be included in the input of the hash function as well: `H(key, nonce || ciphertext_tag || ad)`.
 
 ## References
 
-  - [Limits on Authenticated Encryption Use in TLS](https://eprint.iacr.org/2024/051.pdf) (Atul Luykx, Kenneth G. Paterson).
+- [Limits on Authenticated Encryption Use in TLS](https://eprint.iacr.org/2024/051.pdf) (Atul Luykx, Kenneth G. Paterson).
