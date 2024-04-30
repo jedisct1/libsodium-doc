@@ -26,14 +26,14 @@ The “combined mode” API of each construction appends the authentication tag 
 
 ## Limitations
 
-| Construction            | Max bytes for a single (key,nonce)  |
-| :---------------------- | :---------------------------------- |
-| AEGIS-128L              | No practical limits                 |
-| AEGIS-256               | No practical limits                 |
-| AES256-GCM              | \~ 64 GB                            |
-| ChaCha20-Poly1305       | No practical limits (\~ 2^64 bytes) |
-| ChaCha20-Poly1305-IETF  | 256 GB                              |
-| XChaCha20-Poly1305-IETF | No practical limits (\~ 2^64 bytes) |
+| Construction            | Max bytes for a single (key,nonce)  | Max messages with random nonces |
+| :---------------------- | :---------------------------------- | ------------------------------: |
+| AEGIS-128L              | No practical limits                 |                  2<sup>48</sup> |
+| AEGIS-256               | No practical limits                 |             No practical limits |
+| AES256-GCM              | \~ 64 GB                            |                  2<sup>32</sup> |
+| ChaCha20-Poly1305       | No practical limits (\~ 2^64 bytes) |                  2<sup>16</sup> |
+| ChaCha20-Poly1305-IETF  | 256 GB                              |                  2<sup>32</sup> |
+| XChaCha20-Poly1305-IETF | No practical limits (\~ 2^64 bytes) |             No practical limits |
 
 These figures assume an untruncated (128-bit or 256-bit) authentication tag.
 
