@@ -51,7 +51,7 @@ Assuming a 2^-32 attack success probability, the following tables summarize how 
 
 Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
 
-  - For 16 KB long messages:
+- For 16 KB long messages:
 
 | Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
 | :----------------------------- | :------------------------ | :------------------------------------------------------ |
