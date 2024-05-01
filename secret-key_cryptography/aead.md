@@ -62,44 +62,53 @@ Note that the latter is not a practical concern due to application limits, noisi
 
 - For 16 KB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
-| :----------------------------- | :------------------------ | :------------------------------------------------------ |
-| AES256-GCM                     | 2^38                      | 2^85                                                    |
-| All ChaCha20-Poly1305 variants | 2^63                      | 2^63 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of decryption attempts/message |
+| :----------------------------- | :------------------------ | :---------------------------------------- |
+| AEGIS-256                      | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AEGIS-128L                     | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AES256-GCM                     | 2^38                      | 2^85                                      |
+| All ChaCha20-Poly1305 variants | 2^63                      | 2^61 (but requires at least 2^77 bytes)   |
+| AEGIS-128L                     | No practical limits       | 2^                                        |
 
 - For 1 MB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
-| :----------------------------- | :------------------------ | :------------------------------------------------------ |
-| AES256-GCM                     | 2^32                      | 2^78                                                    |
-| All ChaCha20-Poly1305 variants | 2^57                      | 2^57 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of decryption attempts/message |
+| :----------------------------- | :------------------------ | :---------------------------------------- |
+| AEGIS-256                      | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AEGIS-128L                     | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AES256-GCM                     | 2^32                      | 2^79                                      |
+| All ChaCha20-Poly1305 variants | 2^57                      | 2^55 (but requires at least 2^77 bytes)   |
 
 - For 1 GB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
-| :----------------------------- | :------------------------ | :------------------------------------------------------ |
-| AES256-GCM                     | 2^22                      | 2^69                                                    |
-| All ChaCha20-Poly1305 variants | 2^47                      | 2^47 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of decryption attempts/message |
+| :----------------------------- | :------------------------ | :---------------------------------------- |
+| AEGIS-256                      | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AEGIS-128L                     | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AES256-GCM                     | 2^22                      | 2^69                                      |
+| All ChaCha20-Poly1305 variants | 2^47                      | 2^45 (but requires at least 2^77 bytes)   |
 
 - For 64 GB long messages:
 
-| Construction                   | Max number of encryptions | Max number of unsuccessful decryption attempts          |
-| :----------------------------- | :------------------------ | :------------------------------------------------------ |
-| AES256-GCM                     | 2^16                      | 2^63                                                    |
-| All ChaCha20-Poly1305 variants | 2^41                      | 2^41 (forgery with 2^-32 success requires \~2^77 bytes) |
+| Construction                   | Max number of encryptions | Max number of decryption attempts/message |
+| :----------------------------- | :------------------------ | :---------------------------------------- |
+| AEGIS-256                      | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AEGIS-128L                     | No practical limits       | > 2^128 (with 256-bit tags)               |
+| AES256-GCM                     | 2^16                      | 2^63                                      |
+| All ChaCha20-Poly1305 variants | 2^41                      | 2^39 (but requires at least 2^77 bytes)   |
 
 ### Nonces
 
 | Construction            | Safe options to choose a nonce   |
 | :---------------------- | :------------------------------- |
-| AEGIS-128L              | Counter, permutation, random (*) |
+| XChaCha20-Poly1305-IETF | Counter, permutation, random     |
 | AEGIS-256               | Counter, permutation, random     |
+| AEGIS-128L              | Counter, permutation, random (*) |
 | AES256-GCM              | Counter, permutation             |
 | ChaCha20-Poly1305       | Counter, permutation             |
 | ChaCha20-Poly1305-IETF  | Counter, permutation             |
-| XChaCha20-Poly1305-IETF | Counter, permutation, random     |
 
-*: random nonces are safe up to 2^48 messages.
+*: for a collision probability below 2^-32, random nonces are safe up to 2^48 messages.
 
 ### TL;DR: which one should I use?
 
