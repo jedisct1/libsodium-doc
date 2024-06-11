@@ -50,9 +50,9 @@ The key is stored into `out` whose length is `out_len` bytes.
 
 Up to `crypto_kdf_hkdf_sha256_BYTES_MAX` bytes can be produced.
 
-The generated keys satifsy the typical requirements of keys used for symmetric cryptography. In particular, they appear to be sampled from a uniform distribution over the entire range of possible keys.
+The generated keys satisfy the typical requirements of keys used for symmetric cryptography. In particular, they appear to be sampled from a uniform distribution over the entire range of possible keys.
 
-Contexts don’t have to secret. They just need to be distinct in order to produce distinct keys from the same master key.
+Contexts don’t have to be secret. They just need to be distinct in order to produce distinct keys from the same master key.
 
 Any `crypto_kdf_hkdf_sha256_KEYBYTES` bytes key that appears to be sampled from a uniform distribution can be used for the `prk`. For example, the output of a key exchange mechanism (such as `crypto_kx_*`) can be used as a master key.
 
