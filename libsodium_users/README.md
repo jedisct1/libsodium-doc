@@ -28,6 +28,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): A user-friendly, password protected note taking application for iOS.
   - [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that travels with the app.
   - [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
+  - [Husarnet](https://husarnet.com): Open source P2P VPN to connect your laptops, servers and microcontrollers over the Internet with zero configuration.
   - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
   - [Keystone Enclave](https://github.com/keystone-enclave): An open source secure enclave for RISC-V processors.
   - [KeepassXC](https://keepassxc.org/): KeePass Cross-Platform Community Edition. KeePassXC stores your passwords safely and auto-types them into your everyday websites and applications.
@@ -110,6 +111,7 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [@deliberative/crypto](https://github.com/deliberative/crypto): Typescript/WebAssembly library for public key cryptography, secret boxes, Shamir secret sharing and random shuffling. Runs on Nodejs, ESM, CommonJS and the browser.
   - [drasyl](https://drasyl.org/): drasyl is a high-performance framework for rapid development of distributed applications.
   - [EdCert](https://docs.rs/edcert/): A Rust crate to sign and verify content using Ed25519.
+  - [esp_husarnet](https://github.com/husarnet/esp_husarnet): ESP-IDF port of the Husarnet VPN client library.
   - [Etebase](https://www.etebase.com/): An open source SDK and backend to build end-to-end encrypted applications.
   - [Folly](https://github.com/facebook/folly): An open-source C++ library developed and used at Facebook.
   - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
