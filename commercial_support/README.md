@@ -2,6 +2,21 @@
 
 The following companies offer professional support services for libsodium and applications using libsodium:
 
+## Frank Denis
+
+Libsodium's primary maintainer services include:
+
+  - Expert assistance with configuring, installing, integrating, and optimizing libsodium and libhydrogen for your systems and applications.
+  - Porting to new platforms.
+  - Custom packages tailored to your specific needs.
+  - Long-term support, including backporting of security fixes to ensure continued protection.
+  - Developement of bindings for currently unsupported languages.
+  - Security review of constructions, protocols, and applications involving cryptography.
+  - Implementation of new cryptographic primitives in various programming languages.
+  - Consulting and mentoring services.
+
+Email `consulting` `[at]` `libsodium`.`org` for inquiries.
+
 ## Edge Security (<https://www.edgesecurity.com>)
 
 Libsodium-specific services include:
