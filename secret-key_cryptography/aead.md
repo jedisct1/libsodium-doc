@@ -22,7 +22,7 @@ The “combined mode” API of each construction appends the authentication tag 
 | AES256-GCM              | 256 bits | 96 bits    | 128 bits   | 128 bits | libsodium \>= 1.0.4 but requires hardware support. IETF standard; also implemented in many other libraries. |
 | ChaCha20-Poly1305       | 256 bits | 64 bits    | 512 bits   | 128 bits | libsodium \>= 0.6.0. Also implemented in {Libre,Open,Boring}SSL.                                            |
 | ChaCha20-Poly1305-IETF  | 256 bits | 96 bits    | 512 bits   | 128 bits | libsodium \>= 1.0.4. IETF standard; also implemented in Ring, {Libre,Open,Boring}SSL and other libraries.   |
-| XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium \>= 1.0.12. On the standard track.                                                                |
+| XChaCha20-Poly1305-IETF | 256 bits | 192 bits   | 512 bits   | 128 bits | libsodium \>= 1.0.12. Not standardized but widely implemented.                                              |
 
 ## Limitations
 
