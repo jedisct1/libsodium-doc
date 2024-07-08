@@ -74,7 +74,7 @@ The current implementation of this construction is hardware-accelerated and requ
 
 Intel Westmere processors (introduced in 2010) and newer, as well as the vast majority of 64-bit ARM processors meet the requirements.
 
-There are no plans to support non hardware-accelerated implementations of AES-GCM. If portability is a concern, use ChaCha20-Poly1305 instead.
+There are no plans to support non hardware-accelerated implementations of AES-GCM. This includes JavaScript and WebAssembly, where it can't be implemented efficiently and securely. If portability is a concern, use ChaCha20-Poly1305 instead.
 
 Before using the functions below, hardware support for AES can be checked with:
 
