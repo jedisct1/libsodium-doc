@@ -196,8 +196,14 @@ void crypto_auth_hmacsha512256_keygen(unsigned char k[crypto_auth_hmacsha512256_
 
   - The state must be initialized with `crypto_auth_hmacsha*_init()` before updating or finalizing it. After `crypto_auth_hmacsha*_final()` returns, the state should not be used any more, unless it is reinitialized using `crypto_auth_hmacsha*_init()`.
 
-  - Arbitrary key lengths are supported using the multi-part interface.
+  - Arbitrary key lengths are supported using the multi-part interface. However, keys larger than 32 bytes are generally useless, even with SHA-512. It has been proven that HMAC offers PRF security with *any* sufficiently large key length.
 
   - `crypto_auth_hmacsha256_*()` can be used to create AWS HMAC-SHA256 request signatures.
 
+  - `crypto_auth_hmacsha512_*()` is only provided for compatibility with legacy protocols specifically requiring that construction. The 32-byte authenticator offered by other functions is more than enough to guarantee that collisions will never occur.
+
   - Only use these functions for interoperability with 3rd party services. For everything else, you should probably use `crypto_auth()`/`crypto_auth_verify()` or `crypto_generichash_*()` instead.
+
+## References
+
+  - [When Messages are Keys: Is HMAC a dual-PRF?](https://eprint.iacr.org/2023/861.pdf) - M. Backendal, M. Bellare, Fl. Günther, M. Scarlata.
