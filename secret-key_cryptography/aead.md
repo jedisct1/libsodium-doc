@@ -177,3 +177,4 @@ This assumes that attackers don’t have control over associated data. If they d
 
 - [Limits on Authenticated Encryption Use in TLS](https://eprint.iacr.org/2024/051.pdf) (Atul Luykx, Kenneth G. Paterson).
 - [Usage Limits on AEAD Algorithms](https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-limits/)
+- [Collision Attacks on Galois/Counter Mode (GCM)](https://eprint.iacr.org/2024/1111.pdf)
