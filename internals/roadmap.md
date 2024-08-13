@@ -107,14 +107,14 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider a streaming interface for `crypto_shorthash_*()`
   - AEGIS-256 \[DONE\]
   - AEGIS-128L \[DONE\]
-  - AEGIS-based `secretstream` API
+  - AEGIS-based `secretstream` API \[PoC exists\]
   - HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
   - Standard hash-to-curve \[DONE\]
   - Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
   - High-level AEAD and `secretstream` APIs
   - Consider ECVRF \[in progress\]
   - Consider FROST
-  - Consider using [TIMECOP](https://www.post-apocalyptic-crypto.org/timecop)
+  - Consider using TIMECOP2
   - Keep an eye on jq255
   - Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
   - Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
@@ -127,7 +127,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider a streaming interface to Ed25519 signatures
   - Batch signatures
   - HPKE
-  - Kyber
+  - ML-KEM
   - CHERI support for the allocation functions
   - See if `wasm32-freestanding` can be supported
 
