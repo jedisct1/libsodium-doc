@@ -82,8 +82,6 @@ The point is guaranteed to be on the main subgroup.
 
 This function directly exposes the Elligator 2 map, uses the high bit to set the sign of the X coordinate, and the resulting point is multiplied by the cofactor.
 
-## Hash-to-group
-
 ## Scalar multiplication
 
 ``` c
