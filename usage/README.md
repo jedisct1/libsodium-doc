@@ -16,9 +16,9 @@ int main(void)
 
 The library is called `sodium` (use `-lsodium` to link it), and proper compilation/linker flags can be obtained using `pkg-config` on systems where it is available:
 
-``` bash
-CFLAGS=$(pkg-config --cflags libsodium)
-LDFLAGS=$(pkg-config --libs libsodium)
+```sh
+CFLAGS += $(pkg-config --cflags libsodium)
+LDFLAGS += $(pkg-config --libs libsodium)
 ```
 
 For static linking, Visual Studio users should define `SODIUM_STATIC=1` and `SODIUM_EXPORT=`. This is not required on other platforms.
