@@ -18,7 +18,8 @@ The library is called `sodium` (use `-lsodium` to link it), and proper compilati
 
 ```sh
 CFLAGS += $(pkg-config --cflags libsodium)
-LDFLAGS += $(pkg-config --libs libsodium)
+LDFLAGS += $$(pkg-config --libs-only-L libsodium)
+LDLIBS += $$(pkg-config --libs-only-l libsodium)
 ```
 
 For static linking, Visual Studio users should define `SODIUM_STATIC=1` and `SODIUM_EXPORT=`. This is not required on other platforms.
