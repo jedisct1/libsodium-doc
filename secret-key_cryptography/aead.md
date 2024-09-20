@@ -171,7 +171,7 @@ or with other ciphers:
 - Prepend `H(key, nonce || ciphertext_tag)` to the ciphertext
 - Verify this prior to decryption. This can be done with `crypto_auth()` and `crypto_auth_verify()`.
 
-This assumes that attackers don’t have control over associated data. If they do, associated data `ad` must be included in the input of the hash function as well: `H(key, nonce || ciphertext_tag || ad)`.
+This assumes that attackers don’t have control over associated data. If they do, associated data `ad` must be included in the input of the hash function as well: `H(key, nonce || ciphertext_tag || ad)`. In that case, as an optimization, `ad` can be left empty in the encryption and decryption functions.
 
 ## References
 
