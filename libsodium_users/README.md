@@ -131,6 +131,7 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [OAuthSDK](https://github.com/ramki1979/OAuthSDK): OAuth 1 and OAuth 2 framework in Swift for iOS.
   - [Posh-Sodium](https://github.com/jamessantiago/PoSH-Sodium): A PowerShell module.
   - [Pull-box-stream](https://github.com/dominictarr/pull-box-stream): One-way streaming encryption for JavaScript.
+  - [react-native-get-random-values](https://github.com/kore-koi/react-native-get-random-values): A fast implementation of crypto.getRandomValues for React Native. 
   - [Smart Encryption](https://github.com/adamcaudill/SmartEncryption): Secure by default encryption for .NET.
   - [Sodium native](https://github.com/sodium-friends/sodium-native): Low-level NodeJS bindings for libsodium.
   - [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption and decryption with libsodium and protobuf for .NET.
