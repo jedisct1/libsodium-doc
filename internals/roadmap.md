@@ -115,13 +115,12 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider ECVRF \[in progress\]
   - Consider FROST
   - Consider using TIMECOP2
-  - Keep an eye on jq255
   - Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
   - Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
-  - Consider SHAKE/TurboSHAKE/KangarooTwelve
+  - Add SHAKE/TurboSHAKE/KT12
   - AEGIS-128X and 256X
   - Add more ARM optimized implementations
-  - Add AEGIS-based `crypto_auth` APIs
+  - Add AEGISMAC
   - Consider AES-GCM-SIV
   - Parallel Argon2
   - Consider a streaming interface to Ed25519 signatures
@@ -130,6 +129,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - ML-KEM
   - CHERI support for the allocation functions
   - See if `wasm32-freestanding` can be supported
+  - Consider BLS signatures
 
 ## 2.0.0 roadmap
 
