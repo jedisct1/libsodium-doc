@@ -7,6 +7,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Abot](https://abot.app): Anonymous messaging for Slack.
   - [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote desktop implementation (client and server) for Windows systems.
   - [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages.
+  - [Astroport.ONE](https://github.com/papiche/Astroport.ONE): A spherical planetary blockchain built on IPFS run by cooperative hosts swarms based on trust level. Exclusively using libsodium through keygen and duniterpy as seed as generator for PGG, SSH, IPFS, Bitcoin, Duniter Ğ1, and more...
   - [Babble Browser Extension](https://github.com/XCF-Babble/babble): A platform agnostic browser extension that allows for easy encryption and decryption of text data across the web.
   - [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform file encryption.
   - [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
