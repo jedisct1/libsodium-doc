@@ -95,6 +95,8 @@ After `crypto_hash_sha*_final()`, the state should not be used any more, unless 
 
 SHA-512-256 is also available via the higher-level interface `crypto_hash()`.
 
+As an alternative to `crypto_auth_hmac*()` or `crypto_generichash()`, the SHA-256 and SHA-512 hash functions [can be keyed](https://tosc.iacr.org/index.php/ToSC/article/view/12072/11913), but the key must be placed after the message, after having padded the message to the block size (64 bytes for SHA-256, 128 bytes for SHA-512). Using the key as a prefix, rather than a suffix would allow for length extension attacks.
+
 ## Constants
 
   - `crypto_hash_sha256_BYTES`
