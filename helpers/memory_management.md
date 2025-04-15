@@ -2,7 +2,7 @@
 
 ## Zeroing memory
 
-``` c
+```c
 void sodium_memzero(void * const pnt, const size_t len);
 ```
 
@@ -12,7 +12,7 @@ The `sodium_memzero()` function tries to effectively zero `len` bytes starting a
 
 ## Locking memory
 
-``` c
+```c
 int sodium_mlock(void * const addr, const size_t len);
 ```
 
@@ -24,7 +24,7 @@ For similar reasons, on Unix systems, one should also disable core dumps when ru
 
 `sodium_mlock()` wraps `mlock()` and `VirtualLock()`. **Note:** Many systems place limits on the amount of memory that may be locked by a process. Care should be taken to raise those limits (e.g. Unix ulimits) where necessary. `sodium_mlock()` will return `-1` when any limit is reached.
 
-``` c
+```c
 int sodium_munlock(void * const addr, const size_t len);
 ```
 
@@ -40,7 +40,7 @@ These are not general-purpose allocation functions. In particular, they are slow
 
 `sodium_init()` must be called before using any of the guarded heap allocation functions.
 
-``` c
+```c
 void *sodium_malloc(size_t size);
 ```
 
@@ -54,7 +54,7 @@ If supported by the platform, an additional guard page is placed before this can
 
 The allocated region is filled with `0xdb` bytes to help catch bugs due to uninitialized data.
 
-In addition, `mlock()` is called on the region to help avoid it being swapped to disk. Note however that `mlock()` may not be supported, may fail or may be a no-op, in which case `sodium_malloc()` will return the memory regardless, but it will not be locked. If you specifically need to rely on memory locking, consider calling `sodium_mlock()`, and checking its return value.
+In addition, `mlock()` is called on the region to help avoid it being swapped to disk. Note however that `mlock()` may not be supported, may fail or may be a no-op, in which case `sodium_malloc()` will return the memory regardless, but it will not be locked. If you specifically need to rely on memory locking, consider calling `sodium_mlock()` and checking its return value.
 
 On operating systems supporting `MAP_NOCORE` or `MADV_DONTDUMP`, memory allocated this way will also not be part of core dumps.
 
@@ -66,7 +66,7 @@ All the structures used by libsodium can safely be allocated using `sodium_mallo
 
 Allocating `0` bytes is a valid operation. It returns a pointer that can be successfully passed to `sodium_free()`.
 
-``` c
+```c
 void *sodium_allocarray(size_t count, size_t size);
 ```
 
@@ -74,7 +74,7 @@ The `sodium_allocarray()` function returns a pointer from which `count` objects 
 
 It provides the same guarantees as `sodium_malloc()` but also protects against arithmetic overflows when `count * size` exceeds `SIZE_MAX`.
 
-``` c
+```c
 void sodium_free(void *ptr);
 ```
 
@@ -88,7 +88,7 @@ This function can be called even if the region was previously protected using `s
 
 `ptr` can be `NULL`, in which case no operation is performed.
 
-``` c
+```c
 int sodium_mprotect_noaccess(void *ptr);
 ```
 
@@ -96,7 +96,7 @@ The `sodium_mprotect_noaccess()` function makes a region allocated using `sodium
 
 This function can be used to make confidential data inaccessible except when needed for a specific operation.
 
-``` c
+```c
 int sodium_mprotect_readonly(void *ptr);
 ```
 
@@ -104,7 +104,7 @@ The `sodium_mprotect_readonly()` function marks a region allocated using `sodium
 
 Attempting to modify the data will cause the process to terminate.
 
-``` c
+```c
 int sodium_mprotect_readwrite(void *ptr);
 ```
 

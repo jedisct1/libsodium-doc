@@ -1,6 +1,6 @@
 # Usage
 
-``` c
+```c
 #include <sodium.h>
 
 int main(void)
@@ -26,25 +26,25 @@ For static linking, Visual Studio users should define `SODIUM_STATIC=1` and `SOD
 
 Projects using CMake can include the [Findsodium.cmake](https://github.com/facebookincubator/fizz/blob/master/build/fbcode_builder/CMake/FindSodium.cmake) file from the Facebook Fizz project to detect and link the library.
 
-`sodium_init()` initializes the library and should be called before any other function provided by Sodium. It is safe to call this function more than once and from different threads – subsequent calls won’t have any effects.
+`sodium_init()` initializes the library and should be called before any other function provided by Sodium. It is safe to call this function more than once and from different threads – subsequent calls won't have any effects.
 
 After this function returns, all of the other functions provided by Sodium will be thread-safe.
 
-`sodium_init()` doesn’t perform any memory allocations. However, on Unix systems, it may open `/dev/urandom` and keep the descriptor open so that the device remains accessible after a `chroot()` call.
+`sodium_init()` doesn't perform any memory allocations. However, on Unix systems, it may open `/dev/urandom` and keep the descriptor open so that the device remains accessible after a `chroot()` call.
 
 Multiple calls to `sodium_init()` do not cause additional descriptors to be opened.
 
 `sodium_init()` returns `0` on success, `-1` on failure, and `1` if the library had already been initialized.
 
-Before returning, the function ensures that the system’s random number generator has been properly seeded.
+Before returning, the function ensures that the system's random number generator has been properly seeded.
 
-## sodium\_init() stalling on Linux
+## sodium_init() stalling on Linux
 
 On some Linux systems, this may take some time, especially when called right after a reboot of the system. This issue has been reported on Digital Ocean virtual machines, Scaleway ARM instances, and AWS Nitro Enclaves.
 
 This can be confirmed with the following command:
 
-``` sh
+```sh
 cat /proc/sys/kernel/random/entropy_avail
 ```
 
@@ -56,31 +56,31 @@ Current Linux kernels (\>= 5.4) include the `haveged` algorithm in order to miti
 
 If you have to use a kernel before version 5.4, a possible workaround is to install `haveged`:
 
-``` sh
+```sh
 apt-get install haveged
 ```
 
 An alternative is `rng-tools`:
 
-``` sh
+```sh
 apt-get install rng-tools
 ```
 
 In some environments, setting the `-O jitter:timeout` option to `20` [might be necessary](https://github.com/nhorman/rng-tools/issues/195#issuecomment-1519222464).
 
-[Jitterentropy](https://github.com/smuellerDD/jitterentropy-rngd) is a better alternative, but most Linux distributions don’t offer it as an installable package yet.
+[Jitterentropy](https://github.com/smuellerDD/jitterentropy-rngd) is a better alternative, but most Linux distributions don't offer it as an installable package yet.
 
-After installating these tools, check the value of `/proc/sys/kernel/random/entropy_avail` again.
+After installing these tools, check the value of `/proc/sys/kernel/random/entropy_avail` again.
 
 On AWS Nitro Enclaves, workarounds include:
 
-  - Calling the `aws_nitro_enclaves_library_seed_entropy()` function before `sodium_init()`, and occasionally afterwards.
-  - Using the `RDSEED` CPU instruction to seed the kernel RNG (not recommended as a unique entropy source).
-  - Setting `random.trust_cpu=on` in the kernel command line (requires Linux kernel \> 4.19).
+- Calling the `aws_nitro_enclaves_library_seed_entropy()` function before `sodium_init()`, and occasionally afterwards.
+- Using the `RDSEED` CPU instruction to seed the kernel RNG (not recommended as a unique entropy source).
+- Setting `random.trust_cpu=on` in the kernel command line (requires Linux kernel \> 4.19).
 
 Applications can warn users about the Linux RNG not being seeded before calling `sodium_init()` using code similar to the following:
 
-``` c
+```c
 #if defined(__linux__)
 # include <fcntl.h>
 # include <unistd.h>
@@ -104,6 +104,6 @@ if ((fd = open("/dev/random", O_RDONLY)) != -1) {
 #endif
 ```
 
-Congrats, you’re all set up\!
+Congrats, you're all set up!
 
 A good documentation page to read next might be [Quickstart and FAQ](../quickstart/README.md).

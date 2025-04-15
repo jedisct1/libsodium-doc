@@ -1,28 +1,28 @@
 # Multiple recipients
 
-A message encrypted using a shared secret doesn’t authenticate the sender: anyone with a key can pretend to be the author of any message encrypted using that key.
+A message encrypted using a shared secret doesn't authenticate the sender: anyone with a key can pretend to be the author of any message encrypted using that key.
 
 This is usually not an issue when only two parties are involved.
 
-However, it can become a concern for group communications, where a single key is shared by multiple recipients:.
+However, it can become a concern for group communications, where a single key is shared by multiple recipients.
 
 Signatures can prove the identity of a sender. In order to prove the identity of a sender for messages encrypted using shared secrets, signatures can thus be combined with encryption.
 
 The recommended approach is to:
 
-  - Sign the message, as well as the context of the message: the identity of the sender, the identity of the recipient, and a message identifier (ex: uid, timestamp).
-  - Encrypt and authenticate the message and its signature.
+- Sign the message, as well as the context of the message: the identity of the sender, the identity of the recipient, and a message identifier (ex: uid, timestamp).
+- Encrypt and authenticate the message and its signature.
 
-While, under some circumstances, a single key pair could be used both for signing and encryption, this is neither recommended nor usually necessary. In libsodium, signature and encryption public keys are only 32 bytes long, and these two kind of public keys can be encoded as a compound 64 byte key.
+While, under some circumstances, a single key pair could be used both for signing and encryption, this is neither recommended nor usually necessary. In libsodium, signature and encryption public keys are only 32 bytes long, and these two kinds of public keys can be encoded as a compound 64 byte key.
 
-  - `sender_kx.pk`: the sender’s public key used to compute a shared secret
-  - `sender_kx.sk`: the sender’s secret key used to compute a shared secret
-  - `recipient_kx.pk`: the recipient’s public key for signature verification
-  - `recipient_kx.sk`: the recipient’s secret key for signing
+- `sender_kx.pk`: the sender's public key used to compute a shared secret
+- `sender_kx.sk`: the sender's secret key used to compute a shared secret
+- `recipient_kx.pk`: the recipient's public key for signature verification
+- `recipient_kx.sk`: the recipient's secret key for signing
 
 <!-- end list -->
 
-``` c
+```c
 static int crypto_sign_with_id(unsigned char *signed_msg, const unsigned char *msg, size_t msg_len,
                                const unsigned char *sender_info, size_t sender_info_len,
                                const unsigned char *recipient_info, size_t recipient_info_len,
@@ -66,7 +66,7 @@ crypto_sign_verify_with_id(const unsigned char *signed_msg, size_t signed_msg_le
 }
 ```
 
-``` c
+```c
 
 typedef struct KXKeyPair_ {
     unsigned char pk[crypto_kx_PUBLICKEYBYTES], sk[crypto_kx_SECRETKEYBYTES];
