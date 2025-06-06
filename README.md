@@ -6,7 +6,7 @@ It is a portable, cross-compilable, installable, and packageable fork of [NaCl](
 
 Its goal is to provide all of the core operations needed to build higher-level cryptographic tools.
 
-Sodium is cross-platform and cross-language. It runs on many compilers and operating systems, including Windows (with MinGW or Visual Studio, x86 and x86_64), iOS, and Android. JavaScript and WebAssembly versions are also available and fully supported. Furthermore, bindings for all common programming languages are available and well-supported.
+Sodium is cross-platform and cross-language. It runs on many compilers and operating systems, including Windows (with MinGW or Visual Studio, x86, x86_64 and arm64), iOS, and Android. JavaScript and WebAssembly versions are also available and fully supported. Furthermore, bindings for all common programming languages are available and well-supported.
 
 The design choices emphasize security and ease of use. But despite the emphasis on high security, primitives are faster across-the-board than most implementations.
 
