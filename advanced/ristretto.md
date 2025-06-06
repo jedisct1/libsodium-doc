@@ -29,7 +29,7 @@ crypto_core_ristretto255_add(a, px, gr);
 
 // -------- Second party -------- Send g^k and a^k
 unsigned char k[crypto_core_ristretto255_SCALARBYTES];
-randombytes_buf(k, sizeof k);
+crypto_core_ristretto255_scalar_random(k);
 
 // Compute v = g^k
 unsigned char v[crypto_core_ristretto255_BYTES];
