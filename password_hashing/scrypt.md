@@ -2,7 +2,7 @@
 
 Sodium provides an implementation of the scrypt password hashing function.
 
-However, unless you have specific reasons to use scrypt, you should instead consider the default function, [Argon2](../password_hashing/the_argon2i_function.md).
+However, unless you have specific reasons to use scrypt, you should instead consider the default function, [Argon2](../password_hashing/default_phf.md).
 
 ## Example 1: key derivation
 
