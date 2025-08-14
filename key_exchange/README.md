@@ -107,9 +107,11 @@ The shared secret key `rx` should be used by the server to receive data from the
 
 ## Algorithm details
 
-Let `p.n` be the `crypto_scalarmult_curve25519_BYTES` byte output of the X25519 key exchange operation. The 512-bit output of `BLAKE2B-512` is split into two 256-bit keys `rx` and `tx`.
+Let `p.n` be the `crypto_scalarmult_curve25519_BYTES` byte output of the X25519 key exchange operation. The 512-bit output of `BLAKE2B-512` is split into two 256-bit keys `client_rx` and `client_tx`.
 
-`rx || tx = BLAKE2B-512(p.n || client_pk || server_pk)`
+`client_rx = server_tx` and `client_tx = server_rx`.
+
+`client_rx || client_tx = BLAKE2B-512(p.n || client_pk || server_pk)`
 
 ## Notes
 
