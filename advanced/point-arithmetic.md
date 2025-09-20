@@ -140,7 +140,7 @@ int crypto_core_ed25519_sub(unsigned char *r,
                             const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ed25519_sub()` function subtracts the point `p` to the point `q` and stores the resulting point into `r`.
+The `crypto_core_ed25519_sub()` function subtracts the point `q` from the point `p` and stores the resulting point into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid points.
 
