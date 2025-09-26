@@ -69,6 +69,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
 - [Rebel Backup](https://www.svsware.com/rebelbackup): Encrypted backups of important files to Dropbox and Google Drive.
 - [Remembear](https://www.remembear.com/): A full-featured, multi-platform password manager by TunnelBear.
 - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
+- [rtty-soda](https://github.com/theosaveliev/rtty-soda): A CLI tool for Unix-like environments to encrypt a RTTY session using NaCl.
 - [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
 - [SODA](https://github.com/vong-xiv/SODA): The SODA project aims to investigate the relationship between server components and server performance.
 - [SaltStack](http://saltstack.com/): SaltStack software orchestrates the build and ongoing management of any modern infrastructure.
