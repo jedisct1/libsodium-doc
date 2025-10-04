@@ -9,7 +9,7 @@ A typical use case for additional data is to authenticate protocol-specific meta
 
 ## Supported constructions
 
-libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305 (original version and IETF version), as well as a variant of the later with an extended nonce: XChaCha20-Poly1305.
+libsodium supports two popular constructions: AES256-GCM and ChaCha20-Poly1305 (original version and IETF version), as well as a variant of the latter with an extended nonce: XChaCha20-Poly1305.
 
 The “combined mode” API of each construction appends the authentication tag to the ciphertext. The “detached mode” API stores the authentication tag in a separate location.
 
@@ -68,7 +68,6 @@ Note that the latter is not a practical concern due to application limits, noisi
 | AEGIS-128L                     | No practical limits       | > 2^128 (with 256-bit tags)               |
 | AES256-GCM                     | 2^38                      | 2^85                                      |
 | All ChaCha20-Poly1305 variants | 2^63                      | 2^61 (but requires at least 2^77 bytes)   |
-| AEGIS-128L                     | No practical limits       | 2^                                        |
 
 - For 1 MB long messages:
 
