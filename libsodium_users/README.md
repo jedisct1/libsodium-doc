@@ -10,7 +10,6 @@ Here are some applications using libsodium. Send a [pull request](https://github
 - [Astroport.ONE](https://github.com/papiche/Astroport.ONE): A spherical planetary blockchain built on IPFS run by cooperative hosts swarms based on trust level. Exclusively using libsodium through keygen and duniterpy as seed as generator for PGG, SSH, IPFS, Bitcoin, Duniter Ğ1, and more...
 - [Babble Browser Extension](https://github.com/XCF-Babble/babble): A platform agnostic browser extension that allows for easy encryption and decryption of text data across the web.
 - [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform file encryption.
-- [CurveLock](https://github.com/adamcaudill/CurveLock): Message encryption for Windows.
 - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice, video, and file transfers.
 - [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for applications of the future.
 - [Detsign](https://github.com/simonfxr/detsign): Use passphrases to generate deterministic Ed25519 signing keys.
