@@ -25,7 +25,6 @@ Here are some applications using libsodium. Send a [pull request](https://github
 - [FeCl](https://github.com/jhwgh1968/FeCl): A secure message-passing server based on libsodium.
 - [Flocksy](https://github.com/alex-dot/syncbox): An anonymous file synchronisation tool.
 - [Glorytun](https://github.com/angt/glorytun): A small, simple and very fast VPN.
-- [Ghost-Notes](https://itunes.apple.com/us/artist/ghost-notes/582316402): A user-friendly, password protected note taking application for iOS.
 - [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that travels with the app.
 - [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
 - [Husarnet](https://husarnet.com): Open source P2P VPN to connect your laptops, servers and microcontrollers over the Internet with zero configuration.
