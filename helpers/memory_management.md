@@ -120,6 +120,8 @@ The stack cannot be reliably locked with `mlock()` because it only locks existin
 
 Protecting CPU registers from being swapped is fundamentally impossible with current operating system interfaces, as they may be saved to the stack during context switches, interrupt handling, or when the kernel pages out a process.
 
+As a mitigation, `sodium_stackzero()` can be called after a batch of sensitive operations to wipe the stack and remove any sensitive data that may have been temporarily stored there.
+
 Second, memory locking is constrained by the `RLIMIT_MEMLOCK` resource limit, which restricts the amount of memory a process can lock. On some systems, raising this limit requires the `CAP_IPC_LOCK` capability.
 
 If a process exceeds this limit, `mlock()` will fail and return `ENOMEM`. Applications that need to lock substantial amounts of memory must ensure the limit is appropriately configured.
