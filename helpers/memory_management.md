@@ -114,10 +114,22 @@ The `sodium_mprotect_readwrite()` function marks a region allocated using `sodiu
 
 While `mlock()` and `sodium_mlock()` are useful for preventing heap-allocated data from being swapped to disk, they have important limitations that developers should understand.
 
-First, `mlock()` only protects heap-allocated data, not data on the stack or in CPU registers. Even when sensitive data is stored in locked heap pages, it will be copied to registers and potentially the stack when actually used. The stack cannot be reliably locked with `mlock()` because it only locks existing pages at the time of the call—if the stack later grows, new pages will not be locked. Protecting CPU registers from being swapped is fundamentally impossible with current operating system interfaces, as they may be saved to the stack during context switches, interrupt handling, or when the kernel pages out a process.
+First, `mlock()` only protects heap-allocated data, not data on the stack or in CPU registers. Even when sensitive data is stored in locked heap pages, it will be copied to registers and potentially the stack when actually used.
 
-Second, memory locking is constrained by the `RLIMIT_MEMLOCK` resource limit, which restricts the amount of memory a process can lock. On some systems, raising this limit requires the `CAP_IPC_LOCK` capability. If a process exceeds this limit, `mlock()` will fail and return `ENOMEM`. Applications that need to lock substantial amounts of memory must ensure the limit is appropriately configured.
+The stack cannot be reliably locked with `mlock()` because it only locks existing pages at the time of the call—if the stack later grows, new pages will not be locked.
 
-For applications that require comprehensive protection of the stack, one approach is to lock all memory in the process using `mlockall(MCL_CURRENT | MCL_FUTURE)`. The `MCL_CURRENT` flag locks all currently mapped pages, while `MCL_FUTURE` ensures that all pages mapped in the future are also locked. However, this approach increases memory pressure, may require elevated resource limits, and can impact application performance.
+Protecting CPU registers from being swapped is fundamentally impossible with current operating system interfaces, as they may be saved to the stack during context switches, interrupt handling, or when the kernel pages out a process.
 
-Therefore, if cold boot attacks or at-rest data protection are serious concerns for your threat model, the most effective defense is to encrypt the entire disk volume and encrypt the swap partition (or disable swap entirely). Additionally, hibernation should be completely disabled on systems running sensitive applications, as it writes the entire contents of RAM to disk and completely bypasses all memory locking protections. Encryption at rest ensures that even if memory contents are written to disk, they remain protected. Memory locking should be viewed as a defense-in-depth measure, not a complete solution for preventing sensitive data from ever reaching persistent storage.
+Second, memory locking is constrained by the `RLIMIT_MEMLOCK` resource limit, which restricts the amount of memory a process can lock. On some systems, raising this limit requires the `CAP_IPC_LOCK` capability.
+
+If a process exceeds this limit, `mlock()` will fail and return `ENOMEM`. Applications that need to lock substantial amounts of memory must ensure the limit is appropriately configured.
+
+For applications that require comprehensive protection of the stack, one approach is to lock all memory in the process using `mlockall(MCL_CURRENT | MCL_FUTURE)`. The `MCL_CURRENT` flag locks all currently mapped pages, while `MCL_FUTURE` ensures that all pages mapped in the future are also locked.
+
+However, this approach increases memory pressure, may require elevated resource limits, and can impact application performance.
+
+Therefore, if cold boot attacks or at-rest data protection are serious concerns for your threat model, the most effective defense is to encrypt the entire disk volume and encrypt the swap partition (or disable swap entirely).
+
+Additionally, hibernation should be completely disabled on systems running sensitive applications, as it writes the entire contents of RAM to disk and completely bypasses all memory locking protections.
+
+Encryption at rest ensures that even if memory contents are written to disk, they remain protected. Memory locking should be viewed as a defense-in-depth measure, not a complete solution for preventing sensitive data from ever reaching persistent storage.
