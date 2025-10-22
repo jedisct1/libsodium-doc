@@ -109,3 +109,19 @@ int sodium_mprotect_readwrite(void *ptr);
 ```
 
 The `sodium_mprotect_readwrite()` function marks a region allocated using `sodium_malloc()` or `sodium_allocarray()` as readable and writable after having been protected using `sodium_mprotect_readonly()` or `sodium_mprotect_noaccess()`.
+
+## Notes on memory locking
+
+While `mlock()` and `sodium_mlock()` are useful for preventing heap-allocated data from being swapped to disk, they have important limitations that developers should understand.
+
+First, `mlock()` is not adequate for protecting data placed on the stack or in CPU registers. Temporary variables, function parameters, and intermediate values created during computation often reside on the stack or in registers, and this data may be swapped to disk. The stack cannot be reliably locked with `mlock()` because it only locks pages that exist at the time of the call. If the stack later grows into new pages, those new pages will not be locked.
+
+Furthermore, even data stored in locked heap pages will typically be copied to the stack and registers when it is actually used. When sensitive data is read from locked memory for processing, the compiler will generally load it into CPU registers for computation, and may spill intermediate values to the stack. These copies exist outside the locked heap region and are subject to the same limitations described above.
+
+Second, memory locking is constrained by the `RLIMIT_MEMLOCK` resource limit, which restricts the amount of memory a process can lock. On some systems, raising this limit requires the `CAP_IPC_LOCK` capability. If a process exceeds this limit, `mlock()` will fail and return `ENOMEM`. Applications that need to lock substantial amounts of memory must ensure the limit is appropriately configured.
+
+For applications that require comprehensive protection of the stack, one approach is to lock all memory in the process using `mlockall(MCL_CURRENT | MCL_FUTURE)`. The `MCL_CURRENT` flag locks all currently mapped pages, while `MCL_FUTURE` ensures that all pages mapped in the future are also locked. However, this approach has practical implications: it increases memory pressure, may require elevated resource limits, and can impact application performance.
+
+Despite these techniques, protecting CPU registers from being swapped to disk is fundamentally impossible with current operating system interfaces. Registers may be saved to the stack during context switches, interrupt handling, or when the kernel pages out a process.
+
+Therefore, if cold boot attacks or at-rest data protection are serious concerns for your threat model, the most effective defense is to encrypt the entire disk volume and encrypt the swap partition (or disable swap entirely). Encryption at rest ensures that even if memory contents are written to disk, they remain protected. Memory locking should be viewed as a defense-in-depth measure, not a complete solution for preventing sensitive data from ever reaching persistent storage.
