@@ -56,7 +56,7 @@ The libsodium port in vcpkg is kept up to date by Microsoft team members and com
 
 ## Pre-built libraries
 
-[Pre-built x86 and x86\_64 libraries for Visual Studio 2017, 2019, and 2022](https://download.libsodium.org/libsodium/releases/) with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64. Note that pre-built libraries are built with the run-time Multi-threaded (/MT) and not with Multi-threaded DLL (/MD).
+[Pre-built x86 and x86\_64 libraries for Visual Studio 2017, 2019, 2022, and 2026](https://download.libsodium.org/libsodium/releases/) with `stable` additions (see below) are available, as well as pre-built libraries for MinGW32 and MinGW64. Note that pre-built libraries are built with the run-time Multi-threaded (/MT) and not with Multi-threaded DLL (/MD).
 
 They include header files as well as static (`.LIB`) and shared (`.DLL`) libraries for all the supported compiler versions.
 

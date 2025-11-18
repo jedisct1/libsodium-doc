@@ -104,13 +104,14 @@ In addition, the test suite must pass on the following environments. Libsodium i
   - asmjs/V8 (node + in-browser), asmjs/SpiderMonkey, asmjs/JavaScriptCore
   - WebAssembly/V8, WebAssembly/Firefox, WebAssembly/WASI using zig cc
   - OpenBSD-current/x86\_64
-  - Ubuntu/x86\_64 using GCC 12, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
-  - Ubuntu/x86\_64 using Clang 16, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
+  - Ubuntu/x86\_64 using GCC 15, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
+  - Ubuntu/x86\_64 using Clang 20, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
   - Ubuntu/x86\_64 using TCC
   - Ubuntu/x86\_64 using CompCert
-  - macOS using Xcode 16
+  - Ubuntu/x86\_64 using Fil-C
+  - macOS using Xcode 26
   - macOS using zig cc
-  - Windows 11 using Visual Studio 2019 and 2022 (x86 and x86\_64)
+  - Windows 11 using Visual Studio 2019, 2022 and 2026 (x86 and x86\_64)
   - MSYS2 using MinGW32 and MinGW64
   - Arch Linux/x86\_64
   - Arch Linux/ARMv6
