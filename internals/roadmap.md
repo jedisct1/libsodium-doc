@@ -117,7 +117,8 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider using TIMECOP2
   - Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
   - Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
-  - Add SHAKE/TurboSHAKE/KT128/KT256
+  - Add SHAKE/TurboSHAKE \[Done\]
+  - Add KT128/KT256
   - AEGIS-128X and 256X
   - Add more ARM optimized implementations
   - Add AEGISMAC
@@ -126,7 +127,8 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider a streaming interface to Ed25519 signatures
   - Batch signatures
   - HPKE
-  - ML-KEM
+  - ML-KEM \[DONE\]
+  - IPCrypt \[DONE\]
   - CHERI support for the allocation functions
   - See if `wasm32-freestanding` can be supported
   - Consider BLS signatures
