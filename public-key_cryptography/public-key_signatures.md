@@ -240,7 +240,7 @@ The `crypto_sign_ed25519_sk_to_pk()` function extracts the public key from the s
 
 ## References
 
-  - [Edwards-Curve Digital Signature Algorithm (EdDSA)](https://tools.ietf.org/html/rfc8032)
+  - [Edwards-Curve Digital Signature Algorithm (EdDSA)](https://datatracker.ietf.org/doc/html/rfc8032)
   - [The Provable Security of Ed25519: Theory and Practice](https://eprint.iacr.org/2020/823.pdf)
   - [Seems Legit: Automated Analysis of Subtle Attacks on Protocols that Use Signatures](https://eprint.iacr.org/2019/779.pdf)
   - [Taming the many EdDSAs](https://eprint.iacr.org/2020/1244.pdf)

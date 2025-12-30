@@ -161,4 +161,4 @@ To prevent nonce reuse in a client-server protocol, either use different keys fo
 
 ## See also
 
-  - [ChaCha20 and Poly1305 for IETF protocols](https://tools.ietf.org/html/rfc7539) - Specification of the IETF variant
+  - [ChaCha20 and Poly1305 for IETF protocols](https://datatracker.ietf.org/doc/html/rfc7539) - Specification of the IETF variant

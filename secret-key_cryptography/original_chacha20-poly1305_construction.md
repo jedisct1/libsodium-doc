@@ -159,4 +159,4 @@ To prevent nonce reuse in a client-server protocol, either use different keys fo
 
 ## See also
 
-  - [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-04) - Specification of the original construction
+  - [ChaCha20 and Poly1305 based Cipher Suites for TLS](https://datatracker.ietf.org/doc/html/draft-agl-tls-chacha20poly1305-04) - Specification of the original construction
