@@ -65,7 +65,7 @@ At most `mlen + crypto_aead_xchacha20poly1305_ietf_ABYTES` bytes are put into `c
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
-The public nonce `npub` should never ever be reused with the same key. Nonces can be generated using `randombytes_buf()` for every message. XChaCha20 uses 192-bit nonces, so the probability of a collision is negligible. Using a counter is also perfectly fine: nonces have to be unique for a given key, but they don’t have to be unpredicable.
+The public nonce `npub` should never ever be reused with the same key. Nonces can be generated using `randombytes_buf()` for every message. XChaCha20 uses 192-bit nonces, so the probability of a collision is negligible. Using a counter is also perfectly fine: nonces have to be unique for a given key, but they don’t have to be unpredictable.
 
 ``` c
 int crypto_aead_xchacha20poly1305_ietf_decrypt(unsigned char *m,

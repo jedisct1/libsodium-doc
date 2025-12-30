@@ -158,7 +158,7 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
 
 ## Notes
 
-- Unique nonces are required for each messsages.
+- Unique nonces are required for each message.
 - However, the nonce space is very large (256 bits). It can thus be randomly chosen with no risks of collision.
 - It is also safe to only use a subset of the nonce space, for example by filling only 160 bits (20 bytes) with random data, and padding the rest with zeros. A 160 bit nonce already provides enough collision resistance for virtually all practical needs.
 - AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.

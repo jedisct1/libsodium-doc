@@ -1,6 +1,6 @@
 # The IETF ChaCha20-Poly1305 construction
 
-The IETF variant of the ChaCha20-Poly1305 construction can safely encrypt a practically unlimited number of messages, but individual messages cannot exceed 64\*(2^32)-64 bytes (approximatively 256 GiB).
+The IETF variant of the ChaCha20-Poly1305 construction can safely encrypt a practically unlimited number of messages, but individual messages cannot exceed 64\*(2^32)-64 bytes (approximately 256 GiB).
 
 ## Example (combined mode)
 
