@@ -62,7 +62,9 @@ The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a
 
 It returns `1` on success, and `0` if the checks didn't pass.
 
-In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). If you can't upgrade, use this workaround:
+In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). Consider using [Ristretto255](point-arithmetic/ristretto.md) instead, which eliminates cofactor-related issues entirely: if a point decodes, it's safe.
+
+If you can't upgrade or switch to Ristretto255, use this workaround:
 
 ``` c
 int is_on_main_subgroup(const unsigned char p[crypto_core_ed25519_BYTES])
