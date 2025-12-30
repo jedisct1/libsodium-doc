@@ -105,7 +105,7 @@ In addition, the test suite must pass on the following environments. Libsodium i
   - WebAssembly/V8, WebAssembly/Firefox, WebAssembly/WASI using zig cc
   - OpenBSD-current/x86\_64
   - Ubuntu/x86\_64 using GCC 15, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
-  - Ubuntu/x86\_64 using Clang 20, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
+  - Ubuntu/x86\_64 using Clang 21, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
   - Ubuntu/x86\_64 using TCC
   - Ubuntu/x86\_64 using CompCert
   - Ubuntu/x86\_64 using Fil-C
