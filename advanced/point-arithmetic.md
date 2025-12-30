@@ -62,7 +62,7 @@ The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a
 
 It returns `1` on success, and `0` if the checks didn't pass.
 
-In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). Consider using [Ristretto255](point-arithmetic/ristretto.md) instead, which eliminates cofactor-related issues entirely: if a point decodes, it's safe.
+In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). Consider using [Ristretto255](ristretto.md) instead, which eliminates cofactor-related issues entirely: if a point decodes, it's safe.
 
 If you can't upgrade or switch to Ristretto255, use this workaround:
 
@@ -136,7 +136,7 @@ The function returns `-1` if `n` is `0`, and `0` otherwise.
 
 ## Scalar multiplication without clamping
 
-In order to prevent attacks using small subgroups, the `scalarmult` functions above clear lower bits of the scalar. This may be indesirable to build protocols that requires `n` to be invertible.
+In order to prevent attacks using small subgroups, the `scalarmult` functions above clear lower bits of the scalar. This may be undesirable to build protocols that require `n` to be invertible.
 
 The `noclamp` variants of these functions do not clear these bits, and do not set the high bit either. These variants expect a scalar in the `]0..L[` range.
 
