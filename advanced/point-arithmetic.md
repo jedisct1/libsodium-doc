@@ -60,7 +60,34 @@ int crypto_core_ed25519_is_valid_point(const unsigned char *p);
 
 The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a point on the edwards25519 curve, in canonical form, on the main subgroup, and that the point doesn’t have a small order.
 
-It returns `1` on success, and `0` if the checks didn’t pass.
+It returns `1` on success, and `0` if the checks didn't pass.
+
+In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). If you can't upgrade, use this workaround:
+
+``` c
+int is_on_main_subgroup(const unsigned char p[crypto_core_ed25519_BYTES])
+{
+    static const unsigned char L_1[crypto_core_ed25519_SCALARBYTES] = {
+        0xec, 0xd3, 0xf5, 0x5c, 0x1a, 0x63, 0x12, 0x58,
+        0xd6, 0x9c, 0xf7, 0xa2, 0xde, 0xf9, 0xde, 0x14,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10
+    };
+    static const unsigned char ID[crypto_core_ed25519_BYTES] = {
+        0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    };
+    unsigned char t[crypto_core_ed25519_BYTES];
+    unsigned char r[crypto_core_ed25519_BYTES];
+    if (crypto_scalarmult_ed25519_noclamp(t, L_1, p) != 0 ||
+        crypto_core_ed25519_add(r, t, p) != 0) {
+        return 0;
+    }
+    return sodium_memcmp(r, ID, sizeof ID) == 0;
+}
+```
 
 ## Random group element
 
