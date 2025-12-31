@@ -18,6 +18,20 @@ int main(void)
 }
 ```
 
+## What is the difference between point releases and stable releases?
+
+Libsodium uses a two-tier versioning system.
+
+**Point releases** (like 1.0.18, 1.0.19, 1.0.20) are tagged when new features are added or significant changes are made.
+
+**Stable releases** happen more frequently between point releases. They fix compilation issues, improve documentation, and enhance performance while remaining fully compatible with their parent point release. They never introduce new features or breaking changes.
+
+If your application depends on a specific point release, you can safely apply stable updates without worrying about compatibility. This is valuable for enterprises that need continuous support without surprises. Of course, you can also choose to use only point releases if you prefer.
+
+If a security issue is discovered, it gets fixed in the stable branch of all supported versions, and a new point release follows shortly after.
+
+See the [Installation guide](../installation/README.md#versioning) for more details.
+
 ## Is libsodium cross-platform?
 
 Yes, a message can be encrypted in Python on a MIPS CPU, decrypted in JavaScript using Chrome on Windows, and its signature can then be verified by an iPhone app written in Swift.

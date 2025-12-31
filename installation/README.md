@@ -1,5 +1,19 @@
 # Installation
 
+## Versioning
+
+Libsodium uses a two-tier release system:
+
+**Point releases** (e.g., 1.0.18, 1.0.19, 1.0.20) are tagged from time to time, typically when new features are added or significant changes are made.
+
+**Stable releases** are frequent updates to the current point release. They address compilation issues, documentation problems, and performance improvements while remaining fully compatible with their parent point release. No new features, no breaking changes.
+
+If your application depends on a specific point release, stable releases provide continuous updates that are always safe to apply. This is particularly valuable for enterprises that need ongoing support without surprises between point releases.
+
+If a security issue is discovered, it gets fixed in the stable branch of all supported versions, and a new point release follows shortly after.
+
+You can choose to only use point releases if you prefer. But stable releases mean your dependencies stay maintained and secure even when a new point release hasn't been tagged yet.
+
 ## Compilation on Unix-like systems
 
 Sodium is a shared library with a machine-independent set of headers, so it can easily be used by 3rd party projects.
@@ -144,11 +158,11 @@ $ zig build -Doptimize=ReleaseFast -Dtarget=wasm32-wasi
 
 We recommend using distribution tarballs over cloning the [libsodium Git repository](https://github.com/jedisct1/libsodium), especially since tarballs do not require dependencies, such as Libtool and Autotools.
 
-However, if cloning a Git repository happens to be more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release of libsodium, plus minor patches that will be part of the next version and critical security fixes while new packages including them are being prepared.
+If cloning a Git repository is more convenient, the [stable](https://github.com/jedisct1/libsodium/tree/stable) branch always contains the latest stable release. As described in the [Versioning](#versioning) section, stable releases are frequent updates to the current point release, fixing bugs and improving performance without introducing new features or breaking changes. This branch also receives critical security fixes while new packages are being prepared.
 
-Code in the `stable` branch also includes generated files, and does not require the autotools (Libtool, Autoconf, and Automake) to be present.
+Code in the `stable` branch includes generated files and does not require autotools (Libtool, Autoconf, and Automake) to be present.
 
-To check out the stable branch, use:
+To check out the stable branch:
 
 ``` sh
 git clone https://github.com/jedisct1/libsodium --branch stable
