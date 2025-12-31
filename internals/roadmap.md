@@ -60,7 +60,6 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Improve consistency and clarity of function prototypes
   - Improve the documentation
   - Consider `getrandom(2)` \[DONE\]
-  - Consider [Gitian](https://gitian.org/)
   - Complete the sodium-validation project
   - Optimized implementations for ARM w/NEON
   - AVX optimized Curve25119 \[DONE\]
