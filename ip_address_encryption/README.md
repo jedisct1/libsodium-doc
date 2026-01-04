@@ -51,7 +51,7 @@ Returns `0` on success, `-1` on error.
 char *sodium_bin2ip(char *dst, size_t dst_len, const unsigned char *in);
 ```
 
-The `sodium_bin2ip()` function converts the 16-byte binary address `in` to a string and writes it to `dst`. 
+The `sodium_bin2ip()` function converts the 16-byte binary address `in` to a string and writes it to `dst`.
 
 The buffer `dst` must be at least 16 bytes for IPv4 addresses or 46 bytes for IPv6 addresses. IPv4-mapped addresses are automatically converted to dotted-decimal notation.
 
@@ -361,6 +361,10 @@ Tweak generation (ND/NDX modes):
   - `crypto_ipcrypt_NDX_OUTPUTBYTES`
   - `crypto_ipcrypt_PFX_KEYBYTES`
   - `crypto_ipcrypt_PFX_BYTES`
+
+## Notes
+
+This API was introduced in libsodium 1.0.21.
 
 ## See also
 

@@ -238,3 +238,5 @@ XOFs differ from hash functions in an important way: for the same input, request
 The state should not be used after the object has been squeezed unless it is reinitialized using the `init` function.
 
 These functions are deterministic: the same input always produces the same output. They are not suitable for password hashing. For that purpose, use the [password hashing](../password_hashing/README.md) API.
+
+These functions were introduced in libsodium 1.0.21.
