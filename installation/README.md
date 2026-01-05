@@ -4,7 +4,7 @@
 
 Libsodium uses a two-tier release system:
 
-**Point releases** (e.g., 1.0.18, 1.0.19, 1.0.20) are tagged from time to time, typically when new features are added or significant changes are made.
+**Point releases** (e.g., 1.0.19, 1.0.20, 1.0.21) are tagged from time to time, typically when new features are added or significant changes are made.
 
 **Stable releases** are frequent updates to the current point release. They address compilation issues, documentation problems, and performance improvements while remaining fully compatible with their parent point release. No new features, no breaking changes.
 

@@ -22,7 +22,7 @@ int main(void)
 
 Libsodium uses a two-tier versioning system.
 
-**Point releases** (like 1.0.18, 1.0.19, 1.0.20) are tagged when new features are added or significant changes are made.
+**Point releases** (like 1.0.19, 1.0.20, 1.0.21) are tagged when new features are added or significant changes are made.
 
 **Stable releases** happen more frequently between point releases. They fix compilation issues, improve documentation, and enhance performance while remaining fully compatible with their parent point release. They never introduce new features or breaking changes.
 
