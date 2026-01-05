@@ -119,6 +119,7 @@ In addition, the test suite must pass on the following environments. Libsodium i
   - Debian/SPARC
   - Debian/ppc
   - Raspbian/Cortex-A53
+  - Alpine/RiscV64 - Courtesy of the GCC Compile Farm project
   - Ubuntu/AArch64 - Courtesy of the GCC Compile Farm project
   - Fedora/ppc64 - Courtesy of the GCC Compile Farm project
   - AIX 7.1/ppc64 - Courtesy of the GCC Compile Farm project
