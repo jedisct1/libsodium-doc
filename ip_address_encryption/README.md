@@ -6,21 +6,38 @@ Unlike truncation (which irreversibly destroys data) or hashing (which prevents 
 
 ## Use cases
 
-  - Privacy-preserving logs: Encrypt IP addresses in access logs while retaining the ability to decrypt when needed for abuse investigation.
-  - Analytics without exposure: Count unique clients, detect patterns, and perform rate limiting without exposing original addresses to third parties.
-  - Data sharing: Share network data (e.g., attack traffic) with external parties using encrypted addresses.
-  - Compliance: Store IP addresses in encrypted form to meet privacy regulations (GDPR, etc.) while maintaining the ability to respond to lawful requests.
+- Privacy-preserving logs: Encrypt IP addresses in web server access logs, DNS query logs, or application logs. Retain the ability to decrypt when needed for abuse investigation or incident response, while protecting user privacy during normal operations.
+
+- Rate limiting and abuse detection: Count requests per client, detect brute-force attempts, or implement request throttling using encrypted addresses. The deterministic mode ensures the same client maps to the same encrypted value, enabling consistent rate limiting without storing plaintext IPs.
+
+- Analytics without exposure: Count unique visitors, analyze geographic traffic patterns, or build user behavior analytics. Third-party analytics services receive encrypted addresses they cannot reverse.
+
+- Data sharing: Share network data with security researchers, cloud providers, or partner organizations. Share DDoS attack traffic for collaborative defense, submit malware samples with anonymized network indicators, or exchange threat intelligence.
+
+- Regulatory compliance: Store IP addresses in encrypted form to meet GDPR, CCPA, and similar privacy regulations. Maintain the ability to decrypt for lawful interception requests while minimizing exposure in case of data breaches.
+
+- Database storage: Store encrypted IP addresses in databases with indexes on the encrypted values (deterministic mode). Query, group, and sort by client without exposing actual addresses to database administrators or in backups.
 
 ## Variants
 
 ipcrypt provides four variants with different security and format trade-offs:
 
-| Variant                          | Key      | Output   | Properties                                                |
-| :------------------------------- | :------- | :------- | :-------------------------------------------------------- |
-| Deterministic                    | 16 bytes | 16 bytes | Same input always produces same output; format-preserving |
-| ND (non-deterministic)           | 16 bytes | 24 bytes | Different output each time; 8-byte random tweak           |
-| NDX (extended non-deterministic) | 32 bytes | 32 bytes | Different output each time; 16-byte random tweak          |
-| PFX (prefix-preserving)          | 32 bytes | 16 bytes | Preserves network prefix relationships                    |
+| Variant | Key | Output | Properties |
+| :-- | :-- | :-- | :-- |
+| Deterministic | 16 bytes | 16 bytes | Same input always produces same output; format-preserving |
+| ND (non-deterministic) | 16 bytes | 24 bytes | Different output each time; 8-byte random tweak |
+| NDX (extended non-deterministic) | 32 bytes | 32 bytes | Different output each time; 16-byte random tweak |
+| PFX (prefix-preserving) | 32 bytes | 16 bytes | Preserves network prefix relationships |
+
+### Choosing the right variant
+
+Use deterministic mode for rate limiting, deduplication, unique visitor counting, database indexing, or anywhere you need to identify the same address across multiple observations. Fastest option. Trade-off: identical inputs produce identical outputs.
+
+Use ND mode when sharing data externally or when preventing correlation across observations matters. Each encryption produces a different ciphertext, so an observer cannot tell if two records came from the same address. Good for log archival, third-party analytics, or data exports.
+
+Use NDX mode for maximum security when you need the non-deterministic property and will perform very large numbers of encryptions (billions) with the same key. The larger tweak space provides a higher birthday bound.
+
+Use PFX mode for network analysis applications: DDoS research, traffic studies, packet trace anonymization, or any scenario where understanding which addresses belong to the same network matters more than hiding that relationship.
 
 ## IP address representation
 
@@ -305,13 +322,68 @@ printf("10.0.0.100 -> %s\n", ip_str);  /* e.g., "79.55.98.127" - same /24 */
 
 ### When to use PFX mode
 
-Use PFX encryption when:
+Use PFX encryption when you need to preserve network relationships for analysis while protecting individual addresses. Common applications include:
 
-  - Network-level analytics are needed (subnet analysis, routing studies)
-  - You want to analyze traffic patterns while protecting individual addresses
-  - Format preservation is required
+Network research and academic datasets
 
-The trade-off is that network topology is revealed. Addresses in the same subnet will have ciphertexts in a corresponding (encrypted) subnet.
+Share network measurement data (e.g., from CAIDA, RIPE Atlas, or university research) with collaborators while preserving the ability to analyze routing paths, AS relationships, and network topology. Researchers can study BGP behavior, CDN architectures, or internet mapping without exposing actual network identities.
+
+DDoS attack analysis
+
+Analyze attack traffic patterns across different networks and subnets. Security teams can identify whether attacks originate from the same /24 or /16 block, spot botnet clustering patterns, and share attack data with other organizations for collaborative defense - all without revealing actual source networks.
+
+PCAP and NetFlow anonymization
+
+Anonymize packet captures and flow records for archival, sharing, or compliance purposes. Unlike simple truncation, PFX encryption allows the data to be decrypted later if needed for incident response, while still enabling analysis of traffic patterns between subnets.
+
+ISP and CDN traffic analysis
+
+Analyze customer traffic patterns, peering relationships, and routing efficiency without exposing actual customer networks. Useful for capacity planning, traffic engineering studies, and performance optimization across geographic regions.
+
+Firewall and IDS log aggregation
+
+Aggregate security logs from multiple sources while preserving subnet relationships. This enables pattern detection across network boundaries (e.g., scanning activity targeting specific /24 blocks) without exposing internal network topology to log aggregation services.
+
+Multi-organization threat intelligence sharing
+
+Share network-level threat indicators with industry partners or ISACs (Information Sharing and Analysis Centers). Each organization uses the same key to enable correlation of threats across their collective infrastructure, while actual networks remain protected.
+
+### Example: Analyzing attack origins by subnet
+
+``` c
+#include <sodium.h>
+#include <stdio.h>
+
+/* Anonymize attack source IPs while preserving subnet relationships */
+void analyze_attack_sources(const char source_ips, size_t count,
+                             const unsigned char *key)
+{
+    unsigned char addr[crypto_ipcrypt_PFX_BYTES];
+    unsigned char encrypted[crypto_ipcrypt_PFX_BYTES];
+    char enc_str[46];
+
+    printf("Attack sources (encrypted, preserving /24 prefixes):\n");
+    for (size_t i = 0; i < count; i++) {
+        if (sodium_ip2bin(addr, source_ips[i]) != 0) continue;
+
+        crypto_ipcrypt_pfx_encrypt(encrypted, addr, key);
+        sodium_bin2ip(enc_str, sizeof enc_str, encrypted);
+
+        /* Analysts can see which attacks come from the same subnet */
+        printf("  %s\n", enc_str);
+    }
+}
+```
+
+### Trade-offs
+
+PFX mode reveals network topology: addresses in the same subnet produce ciphertexts in a corresponding (encrypted) subnet. This is intentional and useful for the above applications, but means an observer can learn:
+
+  - Which addresses share a common prefix (are in the same network)
+  - The hierarchical relationship between addresses
+  - Approximate network sizes
+
+If hiding network relationships is required, use deterministic or non-deterministic modes instead.
 
 ## Algorithm details
 
@@ -344,8 +416,7 @@ Key management:
 
 Tweak generation (ND/NDX modes):
 
-  - Tweaks must be generated using a cryptographically secure random source
-  - Use `randombytes_buf()` to generate tweaks
+  - Tweaks can be randomly generated using `randombytes_buf`.
 
 ## Constants
 
