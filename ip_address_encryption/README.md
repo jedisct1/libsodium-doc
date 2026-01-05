@@ -6,17 +6,17 @@ Unlike truncation (which irreversibly destroys data) or hashing (which prevents 
 
 ## Use cases
 
-- Privacy-preserving logs: Encrypt IP addresses in web server access logs, DNS query logs, or application logs. Retain the ability to decrypt when needed for abuse investigation or incident response, while protecting user privacy during normal operations.
+  - Privacy-preserving logs: Encrypt IP addresses in web server access logs, DNS query logs, or application logs. Retain the ability to decrypt when needed for abuse investigation or incident response, while protecting user privacy during normal operations.
 
-- Rate limiting and abuse detection: Count requests per client, detect brute-force attempts, or implement request throttling using encrypted addresses. The deterministic mode ensures the same client maps to the same encrypted value, enabling consistent rate limiting without storing plaintext IPs.
+  - Rate limiting and abuse detection: Count requests per client, detect brute-force attempts, or implement request throttling using encrypted addresses. The deterministic mode ensures the same client maps to the same encrypted value, enabling consistent rate limiting without storing plaintext IPs.
 
-- Analytics without exposure: Count unique visitors, analyze geographic traffic patterns, or build user behavior analytics. Third-party analytics services receive encrypted addresses they cannot reverse.
+  - Analytics without exposure: Count unique visitors, analyze geographic traffic patterns, or build user behavior analytics. Third-party analytics services receive encrypted addresses they cannot reverse.
 
-- Data sharing: Share network data with security researchers, cloud providers, or partner organizations. Share DDoS attack traffic for collaborative defense, submit malware samples with anonymized network indicators, or exchange threat intelligence.
+  - Data sharing: Share network data with security researchers, cloud providers, or partner organizations. Share DDoS attack traffic for collaborative defense, submit malware samples with anonymized network indicators, or exchange threat intelligence.
 
-- Regulatory compliance: Store IP addresses in encrypted form to meet GDPR, CCPA, and similar privacy regulations. Maintain the ability to decrypt for lawful interception requests while minimizing exposure in case of data breaches.
+  - Regulatory compliance: Store IP addresses in encrypted form to meet GDPR, CCPA, and similar privacy regulations. Maintain the ability to decrypt for lawful interception requests while minimizing exposure in case of data breaches.
 
-- Database storage: Store encrypted IP addresses in databases with indexes on the encrypted values (deterministic mode). Query, group, and sort by client without exposing actual addresses to database administrators or in backups.
+  - Database storage: Store encrypted IP addresses in databases with indexes on the encrypted values (deterministic mode). Query, group, and sort by client without exposing actual addresses to database administrators or in backups.
 
 ## Variants
 
@@ -55,24 +55,24 @@ For example, `192.0.2.1` is represented as:
 The `sodium_ip2bin()` and `sodium_bin2ip()` functions convert between string and binary representations.
 
 ``` c
-int sodium_ip2bin(unsigned char *out, const char *src);
+int sodium_ip2bin(unsigned char bin[16], const char *ip, size_t ip_len);
 ```
 
-The `sodium_ip2bin()` function parses the IP address string `src` and writes the 16-byte binary representation to `out`.
+The `sodium_ip2bin()` function parses the IP address string `ip` of length `ip_len` and writes the 16-byte binary representation to `bin`.
 
-It accepts both IPv4 (e.g., `"192.0.2.1"`) and IPv6 (e.g., `"2001:db8::1"`) addresses. IPv4 addresses are automatically converted to IPv4-mapped format.
+It accepts both IPv4 (e.g., `"192.0.2.1"`) and IPv6 (e.g., `"2001:db8::1"`) addresses. IPv4 addresses are automatically converted to IPv4-mapped format. IPv6 addresses with zone identifiers (e.g., `"fe80::1%eth0"`) are also supported.
 
 Returns `0` on success, `-1` on error.
 
 ``` c
-char *sodium_bin2ip(char *dst, size_t dst_len, const unsigned char *in);
+char *sodium_bin2ip(char *ip, size_t ip_maxlen, const unsigned char bin[16]);
 ```
 
-The `sodium_bin2ip()` function converts the 16-byte binary address `in` to a string and writes it to `dst`.
+The `sodium_bin2ip()` function converts the 16-byte binary address `bin` to a string and writes it to `ip`.
 
-The buffer `dst` must be at least 16 bytes for IPv4 addresses or 46 bytes for IPv6 addresses. IPv4-mapped addresses are automatically converted to dotted-decimal notation.
+The buffer `ip` must be at least 16 bytes for IPv4 addresses or 46 bytes for IPv6 addresses. IPv4-mapped addresses are automatically converted to dotted-decimal notation.
 
-Returns a pointer to `dst` on success, `NULL` on error.
+Returns a pointer to `ip` on success, `NULL` on error.
 
 ## Deterministic encryption
 
@@ -105,6 +105,7 @@ The `crypto_ipcrypt_keygen()` function generates a random 16-byte key.
 ``` c
 #include <sodium.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -122,7 +123,7 @@ int main(void)
     crypto_ipcrypt_keygen(key);
 
     /* Parse an IP address */
-    if (sodium_ip2bin(addr, "192.0.2.1") != 0) {
+    if (sodium_ip2bin(addr, "192.0.2.1", strlen("192.0.2.1")) != 0) {
         return 1;
     }
 
@@ -188,7 +189,7 @@ char ip_str[46];
 crypto_ipcrypt_keygen(key);
 randombytes_buf(tweak, sizeof tweak);
 
-if (sodium_ip2bin(addr, "192.0.2.1") != 0) {
+if (sodium_ip2bin(addr, "192.0.2.1", strlen("192.0.2.1")) != 0) {
     /* handle error */
 }
 
@@ -246,7 +247,7 @@ char ip_str[46];
 crypto_ipcrypt_ndx_keygen(key);
 randombytes_buf(tweak, sizeof tweak);
 
-if (sodium_ip2bin(addr, "2001:db8::1") != 0) {
+if (sodium_ip2bin(addr, "2001:db8::1", strlen("2001:db8::1")) != 0) {
     /* handle error */
 }
 
@@ -303,10 +304,10 @@ char ip_str[46];
 crypto_ipcrypt_pfx_keygen(key);
 
 /* Encrypt two addresses in the same /24 */
-if (sodium_ip2bin(addr1, "10.0.0.1") != 0) {
+if (sodium_ip2bin(addr1, "10.0.0.1", strlen("10.0.0.1")) != 0) {
     /* handle error */
 }
-if (sodium_ip2bin(addr2, "10.0.0.100") != 0) {
+if (sodium_ip2bin(addr2, "10.0.0.100", strlen("10.0.0.100")) != 0) {
     /* handle error */
 }
 
@@ -364,7 +365,7 @@ void analyze_attack_sources(const char source_ips, size_t count,
 
     printf("Attack sources (encrypted, preserving /24 prefixes):\n");
     for (size_t i = 0; i < count; i++) {
-        if (sodium_ip2bin(addr, source_ips[i]) != 0) continue;
+        if (sodium_ip2bin(addr, source_ips[i], strlen(source_ips[i])) != 0) continue;
 
         crypto_ipcrypt_pfx_encrypt(encrypted, addr, key);
         sodium_bin2ip(enc_str, sizeof enc_str, encrypted);
