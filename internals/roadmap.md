@@ -108,7 +108,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - AEGIS-128L \[DONE\]
   - AEGIS-based `secretstream` API \[PoC exists\]
   - HKDF/SHA-512 and HKDF/SHA-256 \[DONE\]
-  - Standard hash-to-curve \[DONE\]
+  - Standard hash-to-curve \[in progress\]
   - Consider [signcryption](https://github.com/jedisct1/libsodium-signcryption)
   - High-level AEAD and `secretstream` APIs
   - Consider ECVRF \[in progress\]
