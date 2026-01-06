@@ -53,6 +53,7 @@
       - [Ed25519 to Curve25519](advanced/ed25519-curve25519.md)
       - [Finite field arithmetic](advanced/point-arithmetic.md)
           - [Ristretto](advanced/ristretto.md)
+      - [Keccak-f[1600]](advanced/keccak1600.md)
       - [Custom RNG](advanced/custom_rng.md)
   - [Internals](internals/README.md)
   - [Roadmap](internals/roadmap.md)
