@@ -41,6 +41,7 @@
 - Lean 4: [Sodium](https://github.com/rj-calvin/sodium)
 - Lua: [luasodium](https://github.com/jprjr/luasodium)
 - Nim: [nim-libsodium](https://github.com/BundleFeed/nim-libsodium) (experimental)
+- Perl: [Crypt::Sodium::XS](https://metacpan.org/dist/Crypt-Sodium-XS)
 - PHP: [libsodium-php](https://github.com/jedisct1/libsodium-php)
 - PHP: [dhole-cryptography](https://github.com/soatok/dhole-cryptography)
 - Pharo 7/8: [Crypto-Nacl](https://github.com/objectguild/Crypto-Nacl)
