@@ -325,29 +325,23 @@ printf("10.0.0.100 -> %s\n", ip_str);  /* e.g., "79.55.98.127" - same /24 */
 
 Use PFX encryption when you need to preserve network relationships for analysis while protecting individual addresses. Common applications include:
 
-Network research and academic datasets
+Network research and academic datasets:
+share network measurement data (e.g., from CAIDA, RIPE Atlas, or university research) with collaborators while preserving the ability to analyze routing paths, AS relationships, and network topology. Researchers can study BGP behavior, CDN architectures, or internet mapping without exposing actual network identities.
 
-Share network measurement data (e.g., from CAIDA, RIPE Atlas, or university research) with collaborators while preserving the ability to analyze routing paths, AS relationships, and network topology. Researchers can study BGP behavior, CDN architectures, or internet mapping without exposing actual network identities.
+DDoS attack analysis:
+snalyze attack traffic patterns across different networks and subnets. Security teams can identify whether attacks originate from the same /24 or /16 block, spot botnet clustering patterns, and share attack data with other organizations for collaborative defense - all without revealing actual source networks.
 
-DDoS attack analysis
+PCAP and NetFlow anonymization:
+anonymize packet captures and flow records for archival, sharing, or compliance purposes. Unlike simple truncation, PFX encryption allows the data to be decrypted later if needed for incident response, while still enabling analysis of traffic patterns between subnets.
 
-Analyze attack traffic patterns across different networks and subnets. Security teams can identify whether attacks originate from the same /24 or /16 block, spot botnet clustering patterns, and share attack data with other organizations for collaborative defense - all without revealing actual source networks.
+ISP and CDN traffic analysis:
+analyze customer traffic patterns, peering relationships, and routing efficiency without exposing actual customer networks. Useful for capacity planning, traffic engineering studies, and performance optimization across geographic regions.
 
-PCAP and NetFlow anonymization
+Firewall and IDS log aggregation:
+aggregate security logs from multiple sources while preserving subnet relationships. This enables pattern detection across network boundaries (e.g., scanning activity targeting specific /24 blocks) without exposing internal network topology to log aggregation services.
 
-Anonymize packet captures and flow records for archival, sharing, or compliance purposes. Unlike simple truncation, PFX encryption allows the data to be decrypted later if needed for incident response, while still enabling analysis of traffic patterns between subnets.
-
-ISP and CDN traffic analysis
-
-Analyze customer traffic patterns, peering relationships, and routing efficiency without exposing actual customer networks. Useful for capacity planning, traffic engineering studies, and performance optimization across geographic regions.
-
-Firewall and IDS log aggregation
-
-Aggregate security logs from multiple sources while preserving subnet relationships. This enables pattern detection across network boundaries (e.g., scanning activity targeting specific /24 blocks) without exposing internal network topology to log aggregation services.
-
-Multi-organization threat intelligence sharing
-
-Share network-level threat indicators with industry partners or ISACs (Information Sharing and Analysis Centers). Each organization uses the same key to enable correlation of threats across their collective infrastructure, while actual networks remain protected.
+Multi-organization threat intelligence sharing:
+share network-level threat indicators with industry partners or ISACs (Information Sharing and Analysis Centers). Each organization uses the same key to enable correlation of threats across their collective infrastructure, while actual networks remain protected.
 
 ### Example: Analyzing attack origins by subnet
 
