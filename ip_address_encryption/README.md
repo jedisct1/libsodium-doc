@@ -419,6 +419,20 @@ Tweak generation (ND/NDX modes):
 
   - Tweaks can be randomly generated using `randombytes_buf`.
 
+## Why encryption instead of truncation?
+
+Truncating IP addresses (zeroing out the last octet or bits) is a common but flawed approach to anonymization.
+
+Truncation doesn’t provide meaningful anonymity: subnet size doesn’t correlate with user anonymity. A `/24` network might serve only one small company with a handful of employees online at any given time, making individual identification trivial through WHOIS queries and ISP records. Even after truncation, the retained prefix reveals the Internet Service Provider, geographic location (often down to city level), and organization.
+
+IPv6 makes truncation nearly useless: unlike IPv4, IPv6 has no standardized truncation boundaries. A household might receive an entire `/48` allocation, trillions of addresses going to one router. There’s no consistent “last octet” to remove.
+
+Truncated IPs remain personal data: under GDPR and similar regulations, truncated addresses combined with timestamps, user agents, request paths, and other metadata often create unique fingerprints that identify individuals. Courts and regulators have consistently held that such combinations constitute personal data.
+
+Truncation is irreversible: once truncated, legitimate needs like abuse investigation, incident response, or lawful interception requests cannot be satisfied. Encryption preserves the ability to recover the original address when operationally or legally necessary.
+
+Encryption addresses these problems: without the key, an attacker cannot determine the original address regardless of subnet size, and the full address remains recoverable when needed. When irreversibility is desired, simply wipe the key. This provides the same outcome as truncation while allowing you to choose when that transition happens. Keys can also be rotated on a schedule (daily, weekly) so that older data becomes permanently unrecoverable after the retention period, combining the benefits of both approaches.
+
 ## Constants
 
   - `crypto_ipcrypt_BYTES`
