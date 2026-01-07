@@ -6,17 +6,15 @@ Unlike truncation (which irreversibly destroys data) or hashing (which prevents 
 
 ## Use cases
 
-  - Privacy-preserving logs: Encrypt IP addresses in web server access logs, DNS query logs, or application logs. Retain the ability to decrypt when needed for abuse investigation or incident response, while protecting user privacy during normal operations.
+  - Privacy-preserving logs: Encrypt IP addresses in web server access logs, DNS query logs, or application logs while retaining the ability to decrypt when needed.
 
-  - Rate limiting and abuse detection: Count requests per client, detect brute-force attempts, or implement request throttling using encrypted addresses. The deterministic mode ensures the same client maps to the same encrypted value, enabling consistent rate limiting without storing plaintext IPs.
+  - Rate limiting and abuse detection: Count requests per client, detect brute-force attempts, or implement request throttling using deterministic encryption.
 
-  - Analytics without exposure: Count unique visitors, analyze geographic traffic patterns, or build user behavior analytics. Third-party analytics services receive encrypted addresses they cannot reverse.
+  - Analytics without exposure: Count unique visitors, analyze geographic traffic patterns, or build user behavior analytics without revealing actual addresses.
 
-  - Data sharing: Share network data with security researchers, cloud providers, or partner organizations. Share DDoS attack traffic for collaborative defense, submit malware samples with anonymized network indicators, or exchange threat intelligence.
+  - Data sharing: Share network data with security researchers, cloud providers, or partner organizations without exposing actual client addresses.
 
-  - Regulatory compliance: Store IP addresses in encrypted form to meet GDPR, CCPA, and similar privacy regulations. Maintain the ability to decrypt for lawful interception requests while minimizing exposure in case of data breaches.
-
-  - Database storage: Store encrypted IP addresses in databases with indexes on the encrypted values (deterministic mode). Query, group, and sort by client without exposing actual addresses to database administrators or in backups.
+  - Database storage: Store encrypted IP addresses in databases with indexes on the encrypted values (deterministic mode). Query, group, and sort by client without exposing actual addresses.
 
 ## Variants
 
@@ -323,25 +321,17 @@ printf("10.0.0.100 -> %s\n", ip_str);  /* e.g., "79.55.98.127" - same /24 */
 
 ### When to use PFX mode
 
-Use PFX encryption when you need to preserve network relationships for analysis while protecting individual addresses. Common applications include:
+Use PFX encryption when you need to preserve network relationships for analysis while protecting individual addresses:
 
-Network research and academic datasets:
-share network measurement data (e.g., from CAIDA, RIPE Atlas, or university research) with collaborators while preserving the ability to analyze routing paths, AS relationships, and network topology. Researchers can study BGP behavior, CDN architectures, or internet mapping without exposing actual network identities.
+  - Network research: Share measurement data with collaborators while preserving routing paths, AS relationships, and network topology. Researchers can study BGP behavior or CDN architectures without exposing actual network identities.
 
-DDoS attack analysis:
-snalyze attack traffic patterns across different networks and subnets. Security teams can identify whether attacks originate from the same /24 or /16 block, spot botnet clustering patterns, and share attack data with other organizations for collaborative defense - all without revealing actual source networks.
+  - DDoS attack analysis: Identify whether attacks originate from the same /24 or /16 block, spot botnet clustering patterns, and share attack data with other organizations for collaborative defense.
 
-PCAP and NetFlow anonymization:
-anonymize packet captures and flow records for archival, sharing, or compliance purposes. Unlike simple truncation, PFX encryption allows the data to be decrypted later if needed for incident response, while still enabling analysis of traffic patterns between subnets.
+  - PCAP and NetFlow anonymization: Anonymize packet captures and flow records while enabling analysis of traffic patterns between subnets.
 
-ISP and CDN traffic analysis:
-analyze customer traffic patterns, peering relationships, and routing efficiency without exposing actual customer networks. Useful for capacity planning, traffic engineering studies, and performance optimization across geographic regions.
+  - Traffic analysis: Analyze customer traffic patterns, peering relationships, and routing efficiency without exposing actual networks.
 
-Firewall and IDS log aggregation:
-aggregate security logs from multiple sources while preserving subnet relationships. This enables pattern detection across network boundaries (e.g., scanning activity targeting specific /24 blocks) without exposing internal network topology to log aggregation services.
-
-Multi-organization threat intelligence sharing:
-share network-level threat indicators with industry partners or ISACs (Information Sharing and Analysis Centers). Each organization uses the same key to enable correlation of threats across their collective infrastructure, while actual networks remain protected.
+  - Multi-organization threat intelligence: Share network-level threat indicators with industry partners using the same key, enabling correlation across collective infrastructure.
 
 ### Example: Analyzing attack origins by subnet
 
@@ -417,15 +407,13 @@ Tweak generation (ND/NDX modes):
 
 Truncating IP addresses (zeroing out the last octet or bits) is a common but flawed approach to anonymization.
 
-Truncation doesn’t provide meaningful anonymity: subnet size doesn’t correlate with user anonymity. A `/24` network might serve only one small company with a handful of employees online at any given time, making individual identification trivial through WHOIS queries and ISP records. Even after truncation, the retained prefix reveals the Internet Service Provider, geographic location (often down to city level), and organization.
+Truncation doesn’t provide meaningful anonymity: subnet size doesn’t correlate with user anonymity. A `/24` network might serve only one small company with a handful of employees, making individual identification trivial through WHOIS queries. Even after truncation, the retained prefix reveals the Internet Service Provider, geographic location (often down to city level), and organization.
 
 IPv6 makes truncation nearly useless: unlike IPv4, IPv6 has no standardized truncation boundaries. A household might receive an entire `/48` allocation, trillions of addresses going to one router. There’s no consistent “last octet” to remove.
 
-Truncated IPs remain personal data: under GDPR and similar regulations, truncated addresses combined with timestamps, user agents, request paths, and other metadata often create unique fingerprints that identify individuals. Courts and regulators have consistently held that such combinations constitute personal data.
+Truncated IPs remain personal data: under GDPR and similar regulations, truncated addresses combined with timestamps, user agents, and request paths often create unique fingerprints that identify individuals.
 
-Truncation is irreversible: once truncated, legitimate needs like abuse investigation, incident response, or lawful interception requests cannot be satisfied. Encryption preserves the ability to recover the original address when operationally or legally necessary.
-
-Encryption addresses these problems: without the key, an attacker cannot determine the original address regardless of subnet size, and the full address remains recoverable when needed. When irreversibility is desired, simply wipe the key. This provides the same outcome as truncation while allowing you to choose when that transition happens. Keys can also be rotated on a schedule (daily, weekly) so that older data becomes permanently unrecoverable after the retention period, combining the benefits of both approaches.
+Truncation is irreversible: once truncated, legitimate needs cannot be satisfied. Encryption preserves the ability to recover the original address when needed. When irreversibility is desired, simply wipe the key—this provides the same outcome as truncation while allowing you to choose when that transition happens. Keys can also be rotated on a schedule so that older data becomes permanently unrecoverable after the retention period.
 
 ## Constants
 
