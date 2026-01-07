@@ -206,12 +206,16 @@ The `crypto_xof_shake256_init_with_domain()` function initializes the state with
 
 The domain separator must be between `0x01` and `0x7F`.
 
+Calling `crypto_xof_shake256_init()` is equivalent to calling `crypto_xof_shake256_init_with_domain()` with `crypto_xof_shake256_DOMAIN_STANDARD`.
+
 ### Constants
 
   - `crypto_xof_shake256_BLOCKBYTES` (136)
   - `crypto_xof_shake256_STATEBYTES` (256)
+  - `crypto_xof_shake256_DOMAIN_STANDARD` (0x1F): the domain separator used by `crypto_xof_shake256_init()`
   - `crypto_xof_shake128_BLOCKBYTES` (168)
   - `crypto_xof_shake128_STATEBYTES` (256)
+  - `crypto_xof_shake128_DOMAIN_STANDARD` (0x1F): the domain separator used by `crypto_xof_shake128_init()`
 
 ### Data types
 
@@ -281,12 +285,16 @@ crypto_xof_turboshake256_squeeze(&state, commitment, sizeof commitment);
 
 The domain separator must be between `0x01` and `0x7F`.
 
+Calling `crypto_xof_turboshake256_init()` is equivalent to calling `crypto_xof_turboshake256_init_with_domain()` with `crypto_xof_turboshake256_DOMAIN_STANDARD`.
+
 ### Constants
 
   - `crypto_xof_turboshake256_BLOCKBYTES` (136)
   - `crypto_xof_turboshake256_STATEBYTES` (256)
+  - `crypto_xof_turboshake256_DOMAIN_STANDARD` (0x1F): the domain separator used by `crypto_xof_turboshake256_init()`
   - `crypto_xof_turboshake128_BLOCKBYTES` (168)
   - `crypto_xof_turboshake128_STATEBYTES` (256)
+  - `crypto_xof_turboshake128_DOMAIN_STANDARD` (0x1F): the domain separator used by `crypto_xof_turboshake128_init()`
 
 ### Data types
 
