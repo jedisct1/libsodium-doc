@@ -132,6 +132,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - CHERI support for the allocation functions
   - See if `wasm32-freestanding` can be supported
   - Consider BLS signatures
+  - Consider AES-SIV or another determinstic AE
 
 ## 2.0.0 roadmap
 
