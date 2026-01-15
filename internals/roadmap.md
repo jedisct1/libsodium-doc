@@ -117,6 +117,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Consider [bscrypt](https://github.com/Sc00bz/bscrypt)
   - Check/mitigate the implications of the [DIT](https://developer.arm.com/documentation/ddi0601/2020-12/AArch64-Registers/DIT--Data-Independent-Timing) and [DOITM](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/data-operand-independent-timing-isa-guidance.html) flags.
   - Add SHAKE/TurboSHAKE \[Done\]
+  - SHA-3 \[DONE\]
   - Add parallel Keccak/SHAKE/TurboSHAKE
   - Add KT128/KT256
   - AEGIS-128X and 256X
@@ -128,6 +129,7 @@ New features will gladly be implemented if they are not redundant and solve comm
   - Batch signatures
   - HPKE
   - ML-KEM \[DONE\]
+  - X-Wing \[DONE\]
   - IPCrypt \[DONE\]
   - CHERI support for the allocation functions
   - See if `wasm32-freestanding` can be supported
