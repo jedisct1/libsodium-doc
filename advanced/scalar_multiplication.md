@@ -1,8 +1,6 @@
 # Point\*scalar multiplication (X25519)
 
-Sodium provides an API to multiply a point on the Curve25519 curve.
-
-This can be used as a building block to construct key exchange mechanisms, or more generally to compute a public key from a secret key.
+Sodium provides an API for X25519, the Diffie-Hellman function over Curve25519 defined in [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt). It performs clamped scalar multiplication on the u-coordinate of points, and is specifically designed for key exchange. It can be used to compute a shared secret from two parties' keys, or to derive an X25519 public key from a secret key.
 
 On current libsodium versions, you generally want to use the [`crypto_kx`](../key_exchange/README.md) API for key exchange instead.
 
@@ -12,7 +10,7 @@ On current libsodium versions, you generally want to use the [`crypto_kx`](../ke
 int crypto_scalarmult_base(unsigned char *q, const unsigned char *n);
 ```
 
-Given a user’s secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `crypto_scalarmult_base()` function computes the user’s public key and puts it into `q` (`crypto_scalarmult_BYTES` bytes).
+Given a user’s secret key `n` (`crypto_scalarmult_SCALARBYTES` bytes), the `crypto_scalarmult_base()` function computes the corresponding X25519 public key and puts it into `q` (`crypto_scalarmult_BYTES` bytes). Internally, this clamps the scalar and multiplies it by the Curve25519 base point.
 
 `crypto_scalarmult_BYTES` and `crypto_scalarmult_SCALARBYTES` are provided for consistency, but it is safe to assume that `crypto_scalarmult_BYTES == crypto_scalarmult_SCALARBYTES`.
 
@@ -113,6 +111,8 @@ crypto_generichash_final(&h, session_keypair_by_client, sizeof session_keypair_b
   - `crypto_scalarmult_SCALARBYTES`
 
 ## Notes
+
+X25519 is not a generic scalar multiplication over the Curve25519 group. The scalar is clamped (the three lowest bits are cleared, and bit 254 is set), which ensures the result is always in the prime-order subgroup and avoids small-subgroup attacks. As a consequence, not every scalar can be represented, and the function is not suitable for protocols that require unclamped operations.
 
 As X25519 encodes a field element that is always smaller than 2^255, the top bit is not used.
 
