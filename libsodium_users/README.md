@@ -79,6 +79,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
 - [Telehash](https://github.com/telehash): An embeddable private network stack for mobile, web, and devices.
 - [Tezos](https://www.tezos.com): A new decentralized blockchain that governs itself by establishing a true digital commonwealth.
 - [Tinfoil Chat](https://github.com/maqp/tfc): An onion-routed, endpoint secure messaging system.
+- [Toluca Store Desktop](https://go.toluca.app): Multiplatform ERP system with unlimited sales and no fees. E-commerce, APP, Sales Robot, POS, Comanda, Sales Receipts and Artificial Intelligence. The power of UNIX® for robust business management.
 - [Tox](https://tox.chat/): A new kind of instant messaging.
 - [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good old UNIX editor Vi. Libsodium is used for reading and writing encrypted files.
 - [VOLTTRON](https://volttron.org/): VOLTTRON is an innovative distributed control and sensing software platform. Its source code has been released, making it possible for researchers and others to use this tool to build applications for more efficiently managing energy use among appliances and devices, including heating, ventilation and air conditioning (HVAC) systems, lighting, electric vehicles and others.
@@ -153,6 +154,7 @@ Here are some companies using libsodium, possibly in closed source products. Sen
 - [Digital Ocean](https://www.digitalocean.com/)
 - [Espressif Systems](http://espressif.com/)
 - [Facebook](https://facebook.com)
+- [Gamuza Technologies](https://www.gamuza.com.br/)
 - [Infoblox](https://www.infoblox.com)
 - [Informatica](https://www.informatica.com/)
 - [Innovis Solutions KG](https://www.innovis-solutions.de/)
