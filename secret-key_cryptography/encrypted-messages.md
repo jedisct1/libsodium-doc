@@ -78,7 +78,7 @@ If the stream being decrypted doesn’t match the original stream, because messa
 
 When using a transport protocol such as UDP, encrypted messages are not guaranteed to be received in order. Some datagrams may also be missing or duplicated. Applications must reorder them and handle retransmission.
 
-In that situation, a copy of the nonce, or value representing the difference with the initial nonce, can be added to every encrypted message. Since a message is encrypted and authenticated using a unique nonce in addition to the key, the decryption process will immediately detect a an encrypted message whose attached nonce has been tampered with.
+In that situation, a copy of the nonce, or value representing the difference with the initial nonce, can be added to every encrypted message. Since a message is encrypted and authenticated using a unique nonce in addition to the key, the decryption process will immediately detect an encrypted message whose attached nonce has been tampered with.
 
 ## Shared keys and repeated nonces
 

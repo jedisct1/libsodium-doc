@@ -52,7 +52,7 @@ Compilation on Windows is usually not required, as pre-built libraries for MinGW
 
 However, if you want to compile it yourself, start by cloning the [stable branch](https://github.com/jedisct1/libsodium/archive/stable.zip) from the Git repository.
 
-Visual Studio solutions can be then found in the `builds/msvc` directory.
+Visual Studio solutions can then be found in the `builds/msvc` directory.
 
 In order to compile with MinGW, run either `./dist-build/msys2-win32.sh` or `./dist-build/msys2-win64.sh` for Win32 or x64 targets.
 

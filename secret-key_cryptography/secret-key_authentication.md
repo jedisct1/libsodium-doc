@@ -21,13 +21,13 @@ if (crypto_auth_verify(mac, MESSAGE, MESSAGE_LEN, key) != 0) {
 
 This operation computes an authentication tag for a message and a secret key, and provides a way to verify that a given tag is valid for a given message and a key.
 
-The function computing the tag deterministic: the same (message, key) tuple will always produce the same output.
+The function computing the tag is deterministic: the same (message, key) tuple will always produce the same output.
 
 However, even if the message is public, knowing the key is required in order to be able to compute a valid tag. Therefore, the key should remain confidential. The tag, however, can be public.
 
 A typical use case is:
 
-  - `A` prepares a message, add an authentication tag, sends it to `B`
+  - `A` prepares a message, adds an authentication tag, and sends it to `B`
   - `A` doesn’t store the message
   - Later on, `B` sends the message and the authentication tag to `A`
   - `A` uses the authentication tag to verify that it created this message.

@@ -83,7 +83,7 @@ crypto_generichash_final(&h, sharedkey_by_server, sizeof sharedkey_by_server);
 
 If the intent is to create 256-bit keys (or less) for encryption, the final hash can also be set to output 512 bits: the first half can be used as a key to encrypt in one direction (for example from the server to the client), and the other half can be used in the other direction.
 
-When using counters as nonces, having distinct keys allows the client and the server to safely send multiple messages without having to wait from an acknowledgment after each message.
+When using counters as nonces, having distinct keys allows the client and the server to safely send multiple messages without having to wait for an acknowledgment after each message.
 
 ``` c
 typedef struct kx_session_keypair {
