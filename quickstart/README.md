@@ -114,8 +114,8 @@ Secret file metadata should be part of the encrypted data, and non-secret metada
 Use the [key exchange API](../key_exchange/README.md):
 
 1.  `A` and `B` both call `crypto_kx_keypair()` to create their own key pair. Secret keys must remain secret, but `A` can send their public key to `B` or make it available to everyone. The same applies to `B`.
-2.  `A` uses `crypto_kx_client_session_keys()` along with `B's public key and their own key pair to create a set of shared keys to communicate with `B`.
-3.  `B` uses `crypto_kx_server_session_keys()` along with `A's public key and their own key pair to create a set of shared keys to communicate with `A`.
+2.  `A` uses `crypto_kx_client_session_keys()` along with `B`'s public key and their own key pair to create a set of shared keys to communicate with `B`.
+3.  `B` uses `crypto_kx_server_session_keys()` along with `A`'s public key and their own key pair to create a set of shared keys to communicate with `A`.
 
 The shared keys computed by `A` and `B` will be identical. There are two of them, so one can be used to encrypt and decrypt messages in one direction (from `A` to `B`), and the other can be used to encrypt and decrypt messages in the other direction (from `B` to `A`).
 
@@ -174,7 +174,7 @@ crypto_hash_sha512(h, ed25519_seed, sizeof ed25519_seed);
 memcpy(edwards25519_sk, h, sizeof edwards25519_sk);
 
 // The Ed25519 public key is the Edwards25519 base point multiplied
-// by the scalar. We can copy ed25519_pk, or recompute is as follows:
+// by the scalar. We can copy ed25519_pk, or recompute it as follows:
 crypto_scalarmult_ed25519_base(edwards25519_pk, edwards25519_sk);
 
 // (edwards25519_pk, edwards25519_sk) can be used for Diffie-Hellman
@@ -192,7 +192,7 @@ Finally, if, for some reason, you want to implement your own signcryption scheme
 
 Verify the metadata when opening a signed plus encrypted message.
 
-If this section looks complicated, ignore it, and use distinct keys for encryption and signing. This is easier and more secure. Furthermore, signing and encryption keys don't necessarily have the same life time. It is common to frequently rotate encryption keys, while signing keys are long-term.
+If this section looks complicated, ignore it, and use distinct keys for encryption and signing. This is easier and more secure. Furthermore, signing and encryption keys don't necessarily have the same lifetime. It is common to frequently rotate encryption keys, while signing keys are long-term.
 
 Also keep in mind that with post-quantum schemes, key pairs for signature and encryption systems are completely different and incompatible. So, if only for future-proofing your applications and protocols, do not assume that a single key pair can be used for both operations.
 
@@ -214,7 +214,7 @@ Performing the XOR operation once produces content that resembles random data, a
 
 This can be seen as a form of encryption. However,
 
-- If an adversary replaces the ciphertext with nul bytes, the original, complete sequence derived from the seed will be decrypted. This can have catastrophic implications with some (badly designed) protocols.
+- If an adversary replaces the ciphertext with null bytes, the original, complete sequence derived from the seed will be decrypted. This can have catastrophic implications with some (badly designed) protocols.
 - More generally, anyone can modify the ciphertext without this being detected. Since a stream cipher is XOR'd with a message, targeted bits can be flipped. Knowing the secret key is not required.
 
 If a deterministic sequence must be derived from a seed (e.g. for unit testing), libsodium provides the `randombytes_buf_deterministic()` function.

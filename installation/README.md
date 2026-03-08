@@ -42,7 +42,7 @@ Since different files are compiled for different CPU classes, and to prevent unw
 
 Also, do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`). These can introduce side channels.
 
-On Linux, if the process hangs at the `make check` step, your system PRG may not have been properly seeded. Please refer to the notes in the “Usage” section for ways to address this.
+On Linux, if the process hangs at the `make check` step, your system RNG may not have been properly seeded. Please refer to the notes in the `Usage` section for ways to address this.
 
 Also, on Linux, like any manually installed library, running the `ldconfig` command is required to make the dynamic linker aware of the new library.
 
@@ -76,11 +76,11 @@ They include header files as well as static (`.LIB`) and shared (`.DLL`) librari
 
 ### Note for Visual Studio
 
-Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__dllexport`.
+Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__declspec(dllexport)`.
 
 ## Cross-compiling to Android
 
-After unpacking the source distribution (`stable` is recommended), set `ANDROID_NDK_HOME` to the path to the Android SDK. Note that compilation is only tested on CI with the LTS version of the SDK.
+After unpacking the source distribution (`stable` is recommended), set `ANDROID_NDK_HOME` to the path to the Android NDK. Note that compilation is only tested on CI with the LTS version of the NDK.
 
 Then, run the `android-aar.sh` script:
 
@@ -88,14 +88,14 @@ Then, run the `android-aar.sh` script:
 ./dist-build/android-aar.sh
 ```
 
-This will compile libsodium (full builds and minimal builds) for every Android architectures. The resulting libraries are in `libsodium-android-<architecture>` folders.
+This will compile libsodium (full builds and minimal builds) for all Android architectures. The resulting libraries are in `libsodium-android-<architecture>` folders.
 
 In addition, this creates AAR files, that can be directly included in projects using `gradle` or `cmake`.
 After compilation, the script outputs the instructions to do so.
 
 ## Cross-compiling to Apple devices
 
-The `apple-xcframework.sh` scripts crates an `xcframework` package containing `libsodium` for iOS, macOS, Catalyst, watchOS, tvOS, visionOS and their respective emulators:
+The `apple-xcframework.sh` script creates an `xcframework` package containing `libsodium` for iOS, macOS, Catalyst, watchOS, tvOS, visionOS and their respective emulators:
 
 ```sh
 ./dist-build/apple-xcframework.sh
