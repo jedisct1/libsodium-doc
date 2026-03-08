@@ -105,7 +105,7 @@ The actual encryption is done as follows:
   - Using a pseudorandom function, a subkey and a shorter nonce are derived from the key and the large nonce
   - The cipher is used with this subkey and short nonce to encrypt or decrypt a message
 
-The following code snippet derives a 256-bit subkey and a 96-bit subnonce (these parameters can be used with AES-256) from a 256-bit key and an arbitrary long nonce:
+The following code snippet derives a 256-bit subkey and a 96-bit subnonce (these parameters can be used with AES-256) from a 256-bit key and an arbitrarily long nonce:
 
 ``` c
 unsigned char  out[32 + 12];

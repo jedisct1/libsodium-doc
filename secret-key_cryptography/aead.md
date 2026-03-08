@@ -147,7 +147,7 @@ The XChaCha20-Poly1305 implementation in libsodium is portable across all suppor
 
 ## Additional data
 
-These functions accept an optional, arbitrary long “additional data” parameter. These data are not present in the ciphertext, but are mixed in the computation of the authentication tag.
+These functions accept an optional, arbitrarily long “additional data” parameter. These data are not present in the ciphertext, but are mixed in the computation of the authentication tag.
 
 A typical use for these data is to authenticate version numbers, timestamps or monotonically increasing counters in order to discard previous messages and prevent replay attacks.
 
