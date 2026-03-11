@@ -176,4 +176,5 @@ Here are some companies using libsodium, possibly in closed source products. Sen
 - [Supercell](http://supercell.com)
 - [Valve](https://www.valvesoftware.com)
 - [Wire](https://wire.com)
+- [Wordpress](https://wordpress.com)
 - [Yandex](https://www.yandex.com)
