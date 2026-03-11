@@ -155,6 +155,7 @@ Here are some companies using libsodium, possibly in closed source products. Sen
 - [Espressif Systems](http://espressif.com/)
 - [Facebook](https://facebook.com)
 - [Gamuza Technologies](https://www.gamuza.com.br/)
+- [GitHub](https://github.com)
 - [Infoblox](https://www.infoblox.com)
 - [Informatica](https://www.informatica.com/)
 - [Innovis Solutions KG](https://www.innovis-solutions.de/)
