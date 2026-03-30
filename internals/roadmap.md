@@ -138,5 +138,5 @@ New features will gladly be implemented if they are not redundant and solve comm
 
 ## 2.0.0 roadmap
 
-  - Switch to a new API (libhydrogen/WASI-crypto)
+  - Switch to a new API (closer to libhydrogen)
   - Session support
