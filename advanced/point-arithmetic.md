@@ -60,11 +60,11 @@ int crypto_core_ed25519_is_valid_point(const unsigned char *p);
 
 The `crypto_core_ed25519_is_valid_point()` function checks that `p` represents a point on the edwards25519 curve, in canonical form, on the main subgroup, and that the point doesn’t have a small order.
 
-It returns `1` on success, and `0` if the checks didn't pass.
+It returns `1` on success, and `0` if the checks didn’t pass.
 
-In versions <= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). Consider using [Ristretto255](ristretto.md) instead, which eliminates cofactor-related issues entirely: if a point decodes, it's safe.
+In versions \<= 1.0.20, this function incorrectly accepted some points not on the main subgroup (points in mixed-order subgroups like 2L, 4L, 8L). Consider using [Ristretto255](ristretto.md) instead, which eliminates cofactor-related issues entirely: if a point decodes, it’s safe.
 
-If you can't upgrade or switch to Ristretto255, use this workaround:
+If you can’t upgrade or switch to Ristretto255, use this workaround:
 
 ``` c
 int is_on_main_subgroup(const unsigned char p[crypto_core_ed25519_BYTES])

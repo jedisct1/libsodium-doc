@@ -48,7 +48,7 @@ One easy way to generate a nonce is to use `randombytes_buf()`. Considering the 
 
 For some applications, if you wish to use nonces to detect missing messages or to ignore replayed messages, it is also acceptable to use a simple incrementing counter as a nonce. However, you must ensure that the same value is never reused. Be careful as you may have multiple threads or even hosts generating messages using the same key pairs. A better alternative is to use the `crypto_secretstream()` API.
 
-As stated above, senders can decrypt their own messages and compute a valid authentication tag for any messages encrypted with a given shared secret key. This is generally not an issue for online protocols. If this is not acceptable, then check out the Sealed Boxes and Key Exchange sections of the documentation.
+As stated above, senders can decrypt their own messages and compute a valid authentication tag for any messages encrypted with a given shared secret key. This is generally not an issue for online protocols. If this is not acceptable, then check out the Sealed Boxes and [Key encapsulation](key_encapsulation.md) sections of the documentation.
 
 ## Key pair generation
 

@@ -89,6 +89,8 @@ int crypto_auth_hmacsha256_final(crypto_auth_hmacsha256_state *state,
 
 This alternative API supports a key of arbitrary length `keylen`.
 
+If `keylen` is `0`, `key` can be `NULL`.
+
 However, please note that in the HMAC construction, a key larger than the block size gets reduced to `h(key)`.
 
 ``` c
@@ -122,6 +124,8 @@ int crypto_auth_hmacsha512_init(crypto_auth_hmacsha512_state *state,
                                 const unsigned char *key,
                                 size_t keylen);
 ```
+
+If `keylen` is `0`, `key` can be `NULL`.
 
 ``` c
 int crypto_auth_hmacsha512_update(crypto_auth_hmacsha512_state *state,

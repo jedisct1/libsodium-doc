@@ -1,6 +1,6 @@
 # Point\*scalar multiplication (X25519)
 
-Sodium provides an API for X25519, the Diffie-Hellman function over Curve25519 defined in [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt). It performs clamped scalar multiplication on the u-coordinate of points, and is specifically designed for key exchange. It can be used to compute a shared secret from two parties' keys, or to derive an X25519 public key from a secret key.
+Sodium provides an API for X25519, the Diffie-Hellman function over Curve25519 defined in [RFC 7748](https://www.rfc-editor.org/rfc/rfc7748.txt). It performs clamped scalar multiplication on the u-coordinate of points, and is specifically designed for key exchange. It can be used to compute a shared secret from two parties’ keys, or to derive an X25519 public key from a secret key.
 
 On current libsodium versions, you generally want to use the [`crypto_kx`](../key_exchange/README.md) API for key exchange instead.
 

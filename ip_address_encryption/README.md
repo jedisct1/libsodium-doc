@@ -170,9 +170,15 @@ void crypto_ipcrypt_nd_decrypt(unsigned char *out,
                                const unsigned char *k);
 ```
 
+``` c
+void crypto_ipcrypt_nd_keygen(unsigned char *k);
+```
+
 The `crypto_ipcrypt_nd_encrypt()` function encrypts a 16-byte address `in` using the key `k` and tweak `t`, writing the 24-byte result (tweak prepended to ciphertext) to `out`.
 
 The `crypto_ipcrypt_nd_decrypt()` function decrypts a 24-byte ciphertext `in` (which includes the tweak) and writes the 16-byte address to `out`. No separate tweak parameter is needed because the tweak is extracted from the ciphertext.
+
+The `crypto_ipcrypt_nd_keygen()` function generates a random 16-byte key.
 
 ### Example (ND)
 
@@ -184,7 +190,7 @@ unsigned char encrypted[crypto_ipcrypt_ND_OUTPUTBYTES];
 unsigned char decrypted[crypto_ipcrypt_ND_INPUTBYTES];
 char ip_str[46];
 
-crypto_ipcrypt_keygen(key);
+crypto_ipcrypt_nd_keygen(key);
 randombytes_buf(tweak, sizeof tweak);
 
 if (sodium_ip2bin(addr, "192.0.2.1", strlen("192.0.2.1")) != 0) {
@@ -395,7 +401,7 @@ What ipcrypt does not protect against:
 
 Key management:
 
-  - Generate keys using `crypto_ipcrypt_keygen()`, `crypto_ipcrypt_ndx_keygen()`, or `crypto_ipcrypt_pfx_keygen()`
+  - Generate keys using `crypto_ipcrypt_keygen()`, `crypto_ipcrypt_nd_keygen()`, `crypto_ipcrypt_ndx_keygen()`, or `crypto_ipcrypt_pfx_keygen()`
   - Never reuse keys across different variants; use HKDF to derive separate keys if needed
   - Rotate keys based on usage volume and security requirements
 
@@ -413,7 +419,7 @@ IPv6 makes truncation nearly useless: unlike IPv4, IPv6 has no standardized trun
 
 Truncated IPs remain personal data: under GDPR and similar regulations, truncated addresses combined with timestamps, user agents, and request paths often create unique fingerprints that identify individuals.
 
-Truncation is irreversible: once truncated, legitimate needs cannot be satisfied. Encryption preserves the ability to recover the original address when needed. When irreversibility is desired, simply wipe the key—this provides the same outcome as truncation while allowing you to choose when that transition happens. Keys can also be rotated on a schedule so that older data becomes permanently unrecoverable after the retention period.
+Truncation is irreversible: once truncated, legitimate needs cannot be satisfied. Encryption preserves the ability to recover the original address when needed. When irreversibility is desired, simply wipe the key. This provides the same outcome as truncation while allowing you to choose when that transition happens. Keys can also be rotated on a schedule so that older data becomes permanently unrecoverable after the retention period.
 
 ## Constants
 

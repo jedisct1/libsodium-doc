@@ -4,7 +4,7 @@
 
 Libsodium uses a two-tier release system:
 
-**Point releases** (e.g., 1.0.19, 1.0.20, 1.0.21) are tagged from time to time, typically when new features are added or significant changes are made.
+**Point releases** (e.g., 1.0.20, 1.0.21, 1.0.22) are tagged from time to time, typically when new features are added or significant changes are made.
 
 **Stable releases** are frequent updates to the current point release. They address compilation issues, documentation problems, and performance improvements while remaining fully compatible with their parent point release. No new features, no breaking changes.
 
@@ -12,7 +12,7 @@ If your application depends on a specific point release, stable releases provide
 
 If a security issue is discovered, it gets fixed in the stable branch of all supported versions, and a new point release follows shortly after.
 
-You can choose to only use point releases if you prefer. But stable releases mean your dependencies stay maintained and secure even when a new point release hasn't been tagged yet.
+You can choose to only use point releases if you prefer. But stable releases mean your dependencies stay maintained and secure even when a new point release hasn’t been tagged yet.
 
 ## Compilation on Unix-like systems
 
@@ -32,7 +32,7 @@ sudo make install
 
 On `aarch64`, with some compilers, you may currently have to define `-march=armv8-a+crypto+aes`:
 
-```sh
+``` sh
 env CFLAGS="$CFLAGS -march=armv8-a+crypto+aes" ./configure
 make && make check
 sudo make install
@@ -84,20 +84,19 @@ After unpacking the source distribution (`stable` is recommended), set `ANDROID_
 
 Then, run the `android-aar.sh` script:
 
-```sh
+``` sh
 ./dist-build/android-aar.sh
 ```
 
 This will compile libsodium (full builds and minimal builds) for all Android architectures. The resulting libraries are in `libsodium-android-<architecture>` folders.
 
-In addition, this creates AAR files, that can be directly included in projects using `gradle` or `cmake`.
-After compilation, the script outputs the instructions to do so.
+In addition, this creates AAR files, that can be directly included in projects using `gradle` or `cmake`. After compilation, the script outputs the instructions to do so.
 
 ## Cross-compiling to Apple devices
 
 The `apple-xcframework.sh` script creates an `xcframework` package containing `libsodium` for iOS, macOS, Catalyst, watchOS, tvOS, visionOS and their respective emulators:
 
-```sh
+``` sh
 ./dist-build/apple-xcframework.sh
 ```
 
