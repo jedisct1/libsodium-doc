@@ -21,7 +21,7 @@ if (crypto_kem_dec(server_key, ciphertext, sk) != 0) {
 
 ## Purpose
 
-A key encapsulation mechanism creates a shared secret for a recipient using that recipient’s public key.
+A key encapsulation mechanism creates a shared secret for a recipient using the public key of that recipient.
 
 The sender obtains the shared secret directly during encapsulation. The recipient obtains the same shared secret by decapsulating the ciphertext with the secret key.
 
