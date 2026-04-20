@@ -63,7 +63,7 @@ For this reason, none of the documented functions are macros hiding the actual s
 
 When a balance is required, extra safety measures have a higher priority than speed. Examples include:
 
-  - Sensitive data is wiped from memory when the cost remains reasonable compared to the cost of the actual computations.
+  - Sensitive data is wiped from memory when appropriate and when the cost remains reasonable relative to the cost of the actual computation. In many cases, this is unnecessary: short keys are typically kept only in registers, and small stack allocations are likely to be overwritten quickly by the next function call. When the compiler elides stack allocation, zeroing the stack can both degrade performance and increase the risk of leakage. To amortize the cost and because copies of secrets may exist beyond libsodium’s boundaries, applications concerned about data stored on the stack are expected to call `sodium_stackzero()` once the sequence of operations involving a given set of secrets has completed.
   - Signatures use different code paths for verification to mitigate fault attacks and check for small order nonces.
   - X25519 checks for weak public keys.
   - Heap memory allocations ensure that pages are not swapped and cannot be shared with other processes.
@@ -72,6 +72,8 @@ When a balance is required, extra safety measures have a higher priority than sp
   - A complete, safe, and consistent API is favored over compact code. Redundancy of trivial functions is acceptable to improve clarity and prevent potential bugs in applications. For example, every operation gets a dedicated `_keygen()` function.
   - The default PRG doesn’t implement something complicated and potentially insecure in userland to save CPU cycles. It is fast enough for most applications while being guaranteed to be thread-safe and fork-safe in all cases. If thread safety is not required, a faster, simple, and provably secure userland implementation is provided.
   - The code includes many internal consistency checks and will defensively `abort()` if something unusual is detected. This requires a few extra checks but is useful for spotting internal and application-specific bugs that tests don’t catch.
+
+These are only examples, not a strict rule or a guarantee.
 
 ## Testing
 
