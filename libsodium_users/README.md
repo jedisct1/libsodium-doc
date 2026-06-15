@@ -5,11 +5,13 @@
 Here are some applications using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to the list.
 
   - [Abot](https://abot.app): Anonymous messaging for Slack.
+  - [AgniVault](https://github.com/TheM3chaniK/AgniVault): A local encrypted workspace manager that decrypts projects only in memory.
   - [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote desktop implementation (client and server) for Windows systems.
   - [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages.
   - [Astroport.ONE](https://github.com/papiche/Astroport.ONE): A spherical planetary blockchain built on IPFS run by cooperative hosts swarms based on trust level. Exclusively using libsodium through keygen and duniterpy as seed as generator for PGG, SSH, IPFS, Bitcoin, Duniter Ğ1, and more…
   - [Babble Browser Extension](https://github.com/XCF-Babble/babble): A platform agnostic browser extension that allows for easy encryption and decryption of text data across the web.
   - [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform file encryption.
+  - [CTI-PSI](https://github.com/Fabi2708/cti-psi): A privacy-preserving threat intelligence sharing tool using private set intersection.
   - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice, video, and file transfers.
   - [DAT](https://datproject.org): Nonprofit-backed data sharing protocol for applications of the future.
   - [Detsign](https://github.com/simonfxr/detsign): Use passphrases to generate deterministic Ed25519 signing keys.
@@ -28,6 +30,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Habitat](https://www.habitat.sh/): Habitat, by Chef, is automation that travels with the app.
   - [Hat-Backup](https://github.com/google/hat-backup): A backend-agnostic snapshotting backup system.
   - [Husarnet](https://husarnet.com): Open source P2P VPN to connect your laptops, servers and microcontrollers over the Internet with zero configuration.
+  - [IronMesh](https://github.com/WizTheAgent/IronMesh): A local-first, end-to-end encrypted agent-to-agent mesh protocol.
   - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
   - [Keystone Enclave](https://github.com/keystone-enclave): An open source secure enclave for RISC-V processors.
   - [KeepassXC](https://keepassxc.org/): KeePass Cross-Platform Community Edition. KeePassXC stores your passwords safely and auto-types them into your everyday websites and applications.
@@ -51,6 +54,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Network Next](https://networknext.com): A real-time CDN for game traffic. *You* control the network\!
   - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student’s entrance and exit in school.
   - [OpenR](https://github.com/facebook/openr): Facebook’s internally designed and developed routing protocol/platform.
+  - [PassVault](https://github.com/jemile/PassVault): An offline-first password manager with a local encrypted vault.
   - [PAVE](https://pave.software/): The password manager. Easy password sharing for teams. No cloud.
   - [PCP](https://codeberg.org/scip/pcp/): Pretty Curved Privacy (pcp1) is a command line utility that can be used to encrypt files.
   - [Phase](https://github.com/phasehq/console): An all-in-one platform for developers to securely create, manage and deploy application secrets across local development 💻, CI tools 🔨, and cloud ☁️ infrastructure.
@@ -83,6 +87,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Tox](https://tox.chat/): A new kind of instant messaging.
   - [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good old UNIX editor Vi. Libsodium is used for reading and writing encrypted files.
   - [VOLTTRON](https://volttron.org/): VOLTTRON is an innovative distributed control and sensing software platform. Its source code has been released, making it possible for researchers and others to use this tool to build applications for more efficiently managing energy use among appliances and devices, including heating, ventilation and air conditioning (HVAC) systems, lighting, electric vehicles and others.
+  - [wbpdv](https://github.com/CleasbyCode/wbpdv): A steganography tool for hiding encrypted data in WebP images.
   - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw Wi-Fi radio.
   - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
   - [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of WireGuard.
