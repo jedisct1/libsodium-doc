@@ -133,6 +133,7 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [@s77rt/react-native-sodium](https://github.com/s77rt/react-native-sodium): A fast cryptography module for React Native using libsodium.
   - [Sodium native](https://github.com/sodium-friends/sodium-native): Low-level NodeJS bindings for libsodium.
   - [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption and decryption with libsodium and protobuf for .NET.
+  - [stdlibx](https://github.com/mikomikotaishi/stdlibx): A C++ Standard Library enhancement framework with a C++ wrapper over libsodium.
   - [Tanker SDK](https://github.com/TankerHQ/sdk-js): An encryption SDK for JavaScript.
   - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
   - [Yojimbo](https://github.com/networkprotocol/yojimbo): A network library for client/server games with dedicated servers.
