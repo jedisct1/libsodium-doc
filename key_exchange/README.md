@@ -79,7 +79,7 @@ These keys can be used by any functions requiring secret keys up to `crypto_kx_S
 
 The shared secret key `rx` should be used by the client to receive data from the server, whereas `tx` should be used for data flowing in the opposite direction.
 
-`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` can be set to `NULL`.
+`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` (but not both) can be set to `NULL`. The remaining buffer then receives a single key that the client and the server compute identically, no matter which of the two each side left out, so it can be used for both directions. Setting both to `NULL` aborts the program.
 
 ``` c
 int crypto_kx_server_session_keys(unsigned char rx[crypto_kx_SESSIONKEYBYTES],
@@ -95,7 +95,7 @@ It returns `0` on success and `-1` if the client’s public key is not acceptabl
 
 The shared secret key `rx` should be used by the server to receive data from the client, whereas `tx` should be used for data flowing in the opposite direction.
 
-`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` can be set to `NULL`.
+`rx` and `tx` are both `crypto_kx_SESSIONKEYBYTES` bytes long. If only one session key is required, either `rx` or `tx` (but not both) can be set to `NULL`. The remaining buffer then receives a single key that the client and the server compute identically, no matter which of the two each side left out, so it can be used for both directions. Setting both to `NULL` aborts the program.
 
 ## Constants
 
