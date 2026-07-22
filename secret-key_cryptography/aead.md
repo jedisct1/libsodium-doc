@@ -56,45 +56,49 @@ In spite of these limits, applications must enforce a limit on the maximum size 
 
 Applications are also encouraged to limit the number of attempts an adversary can make, for example by closing a session after a large number of decryption failures.
 
-Assuming a 2^-32 attack success probability, and nonces safely chosen (cf. the `Nonces` section below) the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as how many brute force decryption attempts an attacker should be allowed to make to prevent forgery.
+Assuming a 2^-32 attack success probability, nonces safely chosen (cf. the `Nonces` section below), and no collisions between authentication tags generated for distinct messages, the following tables summarize how many messages should be encrypted with a single key before switching to a new key, as well as the total number of forgery attempts that should be allowed with that key. This count consists of the failed decryption invocations plus the invocation that produces a successful forgery.
+
+To keep the tag-collision probability below 2^-32, the maximum number of encryptions is capped at 2^48 for constructions with 128-bit tags. The corresponding limit for 256-bit tags is above 2^80 and is therefore listed as having no practical limit.
+
+These are single-key limits. Deployments using multiple keys, including deployments that rekey or maintain multiple connections, must also account for the aggregate multi-key limits.
 
 Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
 
   - For 16 KB long messages:
 
-| Construction | Max number of encryptions | Max number of decryption attempts/message |
+| Construction | Max number of encryptions | Max total number of forgery attempts |
 | :-- | :-- | :-- |
-| AEGIS-256 | No practical limits | \> 2^128 (with 256-bit tags) |
-| AEGIS-128L | No practical limits | \> 2^128 (with 256-bit tags) |
-| AES256-GCM | 2^38 | 2^85 |
-| All ChaCha20-Poly1305 variants | 2^63 | 2^61 (but requires at least 2^77 bytes) |
+| AEGIS-256 | No practical limits | No practical limits (with 256-bit tags) |
+| AEGIS-128L | No practical limits | No practical limits (with 256-bit tags) |
+| AES256-GCM | \~ 2^38 | 2^64 |
+| All ChaCha20-Poly1305 variants | 2^48 | \~ 2^61 |
 
   - For 1 MB long messages:
 
-| Construction | Max number of encryptions | Max number of decryption attempts/message |
+| Construction | Max number of encryptions | Max total number of forgery attempts |
 | :-- | :-- | :-- |
-| AEGIS-256 | No practical limits | \> 2^128 (with 256-bit tags) |
-| AEGIS-128L | No practical limits | \> 2^128 (with 256-bit tags) |
-| AES256-GCM | 2^32 | 2^79 |
-| All ChaCha20-Poly1305 variants | 2^57 | 2^55 (but requires at least 2^77 bytes) |
+| AEGIS-256 | No practical limits | No practical limits (with 256-bit tags) |
+| AEGIS-128L | No practical limits | No practical limits (with 256-bit tags) |
+| AES256-GCM | \~ 2^32 | 2^64 |
+| All ChaCha20-Poly1305 variants | 2^48 | \~ 2^55 |
 
   - For 1 GB long messages:
 
-| Construction | Max number of encryptions | Max number of decryption attempts/message |
+| Construction | Max number of encryptions | Max total number of forgery attempts |
 | :-- | :-- | :-- |
-| AEGIS-256 | No practical limits | \> 2^128 (with 256-bit tags) |
-| AEGIS-128L | No practical limits | \> 2^128 (with 256-bit tags) |
-| AES256-GCM | 2^22 | 2^69 |
-| All ChaCha20-Poly1305 variants | 2^47 | 2^45 (but requires at least 2^77 bytes) |
+| AEGIS-256 | No practical limits | No practical limits (with 256-bit tags) |
+| AEGIS-128L | No practical limits | No practical limits (with 256-bit tags) |
+| AES256-GCM | \~ 2^22 | 2^64 |
+| All ChaCha20-Poly1305 variants | 2^48 | \~ 2^45 |
 
   - For 64 GB long messages:
 
-| Construction | Max number of encryptions | Max number of decryption attempts/message |
+| Construction | Max number of encryptions | Max total number of forgery attempts |
 | :-- | :-- | :-- |
-| AEGIS-256 | No practical limits | \> 2^128 (with 256-bit tags) |
-| AEGIS-128L | No practical limits | \> 2^128 (with 256-bit tags) |
-| AES256-GCM | 2^16 | 2^63 |
-| All ChaCha20-Poly1305 variants | 2^41 | 2^39 (but requires at least 2^77 bytes) |
+| AEGIS-256 | No practical limits | No practical limits (with 256-bit tags) |
+| AEGIS-128L | No practical limits | No practical limits (with 256-bit tags) |
+| AES256-GCM | \~ 2^16 | \~ 2^63 |
+| All ChaCha20-Poly1305 variants | 2^48 | \~ 2^39 |
 
 ### Nonces
 
