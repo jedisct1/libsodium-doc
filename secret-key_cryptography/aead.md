@@ -100,6 +100,8 @@ Note that the latter is not a practical concern due to application limits, noisi
 | AES256-GCM | \~ 2^16 | \~ 2^63 |
 | All ChaCha20-Poly1305 variants | 2^48 | \~ 2^39 |
 
+An [interactive AEAD limits calculator](https://aead-limits.libsodium.org/) is also available to compute these limits for other message sizes, tag lengths and nonce constructions.
+
 ### Nonces
 
 | Construction | Safe options to choose a nonce |
