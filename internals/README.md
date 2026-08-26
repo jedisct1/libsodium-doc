@@ -104,7 +104,7 @@ Continuous Integration is provided by [Azure Pipelines](https://jedisct1.visuals
 In addition, the test suite must pass on the following environments. Libsodium is manually validated on all of these before every release and before merging a new change to the `stable` branch.
 
   - asmjs/V8 (node + in-browser), asmjs/SpiderMonkey, asmjs/JavaScriptCore
-  - WebAssembly/V8, WebAssembly/Firefox, WebAssembly/WASI using zig cc
+  - WebAssembly/V8, WebAssembly/JavaScriptCore
   - OpenBSD-current/x86\_64
   - Ubuntu/x86\_64 using GCC 15, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
   - Ubuntu/x86\_64 using Clang 21, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)

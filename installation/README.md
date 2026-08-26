@@ -150,7 +150,6 @@ Cross-compilation:
 ``` sh
 $ zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows
 $ zig build -Doptimize=ReleaseFast -Dtarget=riscv64-linux
-$ zig build -Doptimize=ReleaseFast -Dtarget=wasm32-wasi
 ```
 
 ## Stable branch
