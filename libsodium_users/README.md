@@ -53,6 +53,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [NanoChat](https://github.com/hamidreza-s/NanoChat): A P2P, E2E encrypted and discoverable chat application on top of nanomsg library.
   - [Network Next](https://networknext.com): A real-time CDN for game traffic. *You* control the network\!
   - [OpenGKS](https://arpa.ph/opengks/): An RFID gate keeper solution that automatically tracks, records data and sends text messages (SMS) and email notifications to parents upon a student’s entrance and exit in school.
+  - [OpenSSH](https://openssh.org): OpenSSH now uses the libsodium implementaton of EdDSA signatures: [switch from SUPERCOP ed25519 to libsodium](https://marc.info/?l=openbsd-cvs&m=178951924698210&w=2).
   - [OpenR](https://github.com/facebook/openr): Facebook’s internally designed and developed routing protocol/platform.
   - [PassVault](https://github.com/jemile/PassVault): An offline-first password manager with a local encrypted vault.
   - [PAVE](https://pave.software/): The password manager. Easy password sharing for teams. No cloud.
