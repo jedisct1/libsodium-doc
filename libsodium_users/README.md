@@ -6,7 +6,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
 
   - [Abot](https://abot.app): Anonymous messaging for Slack.
   - [AgniVault](https://github.com/TheM3chaniK/AgniVault): A local encrypted workspace manager that decrypts projects only in memory.
-  - [Aspia Remote Desktop](https://github.com/aspia-org/remote-desktop): A remote desktop implementation (client and server) for Windows systems.
+  - [Aspia Remote Desktop](https://github.com/dchapyshev/aspia): A remote desktop implementation (client and server) for Windows systems.
   - [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages.
   - [Astroport.ONE](https://github.com/papiche/Astroport.ONE): A spherical planetary blockchain built on IPFS run by cooperative hosts swarms based on trust level. Exclusively using libsodium through keygen and duniterpy as seed as generator for PGG, SSH, IPFS, Bitcoin, Duniter Ğ1, and more…
   - [Babble Browser Extension](https://github.com/XCF-Babble/babble): A platform agnostic browser extension that allows for easy encryption and decryption of text data across the web.
@@ -34,7 +34,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [KadNode](https://github.com/mwarning/KadNode): A small P2P DNS resolution daemon based on a Distributed Hash Table.
   - [Keystone Enclave](https://github.com/keystone-enclave): An open source secure enclave for RISC-V processors.
   - [KeepassXC](https://keepassxc.org/): KeePass Cross-Platform Community Edition. KeePassXC stores your passwords safely and auto-types them into your everyday websites and applications.
-  - [Kickpass](https://github.com/paulfariello/kickpass): A stupid simple password manager.
+  - [Kickpass](https://github.com/kickpass/kickpass): A stupid simple password manager.
   - [Krypton akr](https://github.com/akamai/akr): FIDO2 SSH agent for iOS and Android (successor to Kryptonite, now part of Akamai MFA).
   - [Kryptor](https://kryptor.co.uk/): Free and open source file encryption software.
   - [Lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
@@ -42,11 +42,11 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [libagentcrypt](https://github.com/ndilieto/libagentcrypt): Library for symmetric encryption using SSH Agent. It includes a command line utility able to encrypt/decrypt files and/or passwords securely with your SSH keys.
   - [Lumimaja](https://github.com/Safari77/lumimaja): PasswordSafe with Argon2 KDF, data encrypted with ChaCha20-Poly1305, and YubiKey support.
   - [MLVPN](http://zehome.github.io/MLVPN/): A multi-link VPN (ADSL/SDSL/xDSL/Network aggregator)
-  - [Magic Wormhole](https://github.com/warner/magic-wormhole): Get things from one computer to another, safely.
+  - [Magic Wormhole](https://github.com/magic-wormhole/magic-wormhole): Get things from one computer to another, safely.
   - [MaidSafe](http://maidsafe.net/): A new secure way to access a world of existing apps where the security of your data is put above all else.
   - [Metastream](https://github.com/samuelmaddock/metastream): Watch streaming media with friends.
   - [Minisign](https://jedisct1.github.io/minisign/): A dead simple tool to sign files and verify signatures.
-  - [Molch](https://github.com/FSMaxB/molch): An implementation of the Axolotl ratchet.
+  - [Molch](https://github.com/1984not-GmbH/molch): An implementation of the Axolotl ratchet.
   - [Muon](https://github.com/puxxustc/muon): A fast stateless VPN with obfuscation to escape traffic monitoring.
   - [Nahoft](https://nahoftapp.com): An offline encryption tool for mobile phones designed to let people communicate during Internet shutdowns in Iran.
   - [NTPsec](https://github.com/ntpsec/ntpsec): A security-hardened implementation of Network Time Protocol Version 4.
@@ -69,13 +69,13 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Reop](http://www.tedunangst.com/flak/post/reop): Reasonable expectation of privacy.
   - [rtty-soda](https://github.com/theosaveliev/rtty-soda): A PyNaCl frontend with custom encodings, compression, and key derivation.
   - [Rubinius](http://rubinius.com/): Rubinius is a platform for building programming language technology.
-  - [SODA](https://github.com/vong-xiv/SODA): The SODA project aims to investigate the relationship between server components and server performance.
+  - [SODA](https://github.com/vong-srey/SODA): The SODA project aims to investigate the relationship between server components and server performance.
   - [SaltStack](http://saltstack.com/): SaltStack software orchestrates the build and ongoing management of any modern infrastructure.
   - [Sandstorm](https://sandstorm.io/): An open source operating system for personal and private clouds.
   - [Secrets](https://outercorner.com/secrets): Easily and securely store passwords, credit card numbers, bank details, and confidential information. Available for Mac and iOS.
   - [ShadowSocks](https://shadowsocks.org/): A secure SOCKS5 proxy designed to protect your Internet traffic.
   - [Sharekey](https://sharekey.com/): Encrypted data storage.
-  - [Simple DnsCrypt](https://github.com/bitbeans/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
+  - [Simple DnsCrypt](https://github.com/DNSCrypt/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
   - [SPAKE2+EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator Edition implementation for libsodium.
   - [Splonebox](https://splone.com/splonebox/): An open source network assessment tool with a focus on modularity.
   - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
@@ -89,7 +89,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Vim](http://github.com/vim/vim): Vim is a greatly improved version of the good old UNIX editor Vi. Libsodium is used for reading and writing encrypted files.
   - [VOLTTRON](https://volttron.org/): VOLTTRON is an innovative distributed control and sensing software platform. Its source code has been released, making it possible for researchers and others to use this tool to build applications for more efficiently managing energy use among appliances and devices, including heating, ventilation and air conditioning (HVAC) systems, lighting, electric vehicles and others.
   - [wbpdv](https://github.com/CleasbyCode/wbpdv): A steganography tool for hiding encrypted data in WebP images.
-  - [Wifibroadcast](https://github.com/svpcom/wifibroadcast): Transmitter and receiver of UDP packets using raw Wi-Fi radio.
+  - [Wifibroadcast](https://github.com/svpcom/wfb-ng): Transmitter and receiver of UDP packets using raw Wi-Fi radio.
   - [Wire](https://wire.com/): Modern, private communications. Crystal clear voice, video and group chats. No advertising. Your data, always encrypted.
   - [Wireguard-rs](https://git.zx2c4.com/wireguard-rs): Rust implementation of WireGuard.
   - [Zbox](https://github.com/zboxfs/zbox): Zero-details, privacy-focused embeddable file system.
@@ -98,7 +98,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [libsodium for Universal Windows Platform](https://github.com/charlesportwoodii/libsodium-uwp): a C++ Windows Runtime Component for UWP applications.
   - [libsodium password hashing schemes for Dovecot](https://github.com/LuckyFellow/dovecot-libsodium-plugin): Dovecot plugin to support scrypt and Argon2 for password hashing.
   - [Wordpress](https://wordpress.com): Uses libsodium for verified updates.
-  - [C-lightning](https://github.com/ElementsProject/lightning/): A [Lightning Network](https://github.com/lightningnetwork/lightning-rfc) implementation in C that uses libsodium.
+  - [C-lightning](https://github.com/ElementsProject/lightning/): A [Lightning Network](https://github.com/lightning/bolts) implementation in C that uses libsodium.
   - [SilentDragon](https://github.com/MyHush/SilentDragon) + [SilentDragonLite](https://github.com/MyHush/SilentDragonLite): GUI full node and lite wallets for the [Hush](https://hush.is/) cryptocoin, which is focused on secure communications.
 
 ## Libraries using libsodium
@@ -115,7 +115,7 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [Etebase](https://www.etebase.com/): An open source SDK and backend to build end-to-end encrypted applications.
   - [Folly](https://github.com/facebook/folly): An open-source C++ library developed and used at Facebook.
   - [Halite](https://github.com/paragonie/halite): High-level cryptography interface for PHP.
-  - [Hyperledger Indy](https://github.com/hyperledger/indy-sdk): Everything needed to build applications that interact with an Indy distributed identity ledger.
+  - [Hyperledger Indy](https://github.com/hyperledger-indy/indy-sdk): Everything needed to build applications that interact with an Indy distributed identity ledger.
   - [Innovault](https://innovault.io): A toolkit to store sensitive data from web forms in an encrypted database.
   - [libopaque](https://github.com/stef/libopaque): An implementation of the OPAQUE protocol.
   - [liboprf](https://github.com/stef/liboprf): A library providing OPRF and Threshold OPRF based on libsodium.
@@ -135,20 +135,20 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [Sodium native](https://github.com/sodium-friends/sodium-native): Low-level NodeJS bindings for libsodium.
   - [Stream Cryptor](https://github.com/bitbeans/StreamCryptor): Stream encryption and decryption with libsodium and protobuf for .NET.
   - [Tanker SDK](https://github.com/TankerHQ/sdk-js): An encryption SDK for JavaScript.
-  - [The Update Framework](https://github.com/theupdateframework/tuf): A plug-and-play library for securing a software updater.
-  - [Yojimbo](https://github.com/networkprotocol/yojimbo): A network library for client/server games with dedicated servers.
+  - [The Update Framework](https://github.com/theupdateframework/python-tuf): A plug-and-play library for securing a software updater.
+  - [Yojimbo](https://github.com/mas-bandwidth/yojimbo): A network library for client/server games with dedicated servers.
   - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
   - [OpenZiti SDK](https://github.com/openziti/ziti-sdk-c): The C-SDK for [the OpenZiti project](https://ziti.dev).
-  - [libotrv4](https://github.com/otrv4/libotrv4): An OTR version 4 implementation.
+  - [libotrv4](https://github.com/otrv4/libotr-ng): An OTR version 4 implementation.
   - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
   - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
-  - [libsodium-UE4](https://github.com/maxenko/libsodium-ue4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
+  - [libsodium-UE4](https://github.com/maxenko/SodiumUE4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
   - [UnrealSodium](https://github.com/Helium-Labs/UnrealSodium): A user-friendly & portable Unreal Engine 5 cryptography plugin based on libsodium.
   - [minisign-net](https://github.com/bitbeans/minisign-net): .NET library to handle and create Minisign signatures.
   - [neuropil](https://www.neuropil.org/): An IoT secure messaging library with end-to-end encryption written in C and using libsodium.
   - [pgsodium](https://github.com/michelp/pgsodium): Postgres extension wrapper around libsodium.
   - [spake2+ee](https://github.com/jedisct1/spake2-ee): A SPAKE2+ implementation.
-  - [iota.c](https://github.com/iotaledger/iota.c): An IOTA Client library in C.
+  - [iota.c](https://github.com/iotaledger-archive/iota.c): An IOTA Client library in C.
 
 ## Companies using libsodium
 

@@ -170,4 +170,4 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
 
   - [RFC 10032: The AEGIS Authenticated Encryption Algorithms](https://www.rfc-editor.org/rfc/rfc10032.html) - AEGIS specification
   - [Reference implementations](https://github.com/cfrg/draft-irtf-cfrg-aegis-aead/tree/main/reference-implementations)
-  - [libaegis](https://github.com/jedisct1/libaegis) - A more extensive C library for AEGIS variants
+  - [libaegis](https://github.com/aegis-aead/libaegis) - A more extensive C library for AEGIS variants
