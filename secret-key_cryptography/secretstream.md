@@ -100,7 +100,7 @@ if (crypto_secretstream_xchacha20poly1305_pull
 assert(tag == crypto_secretstream_xchacha20poly1305_TAG_FINAL);
 ```
 
-See down below for a complete example of file encryption/decryption using the secretstream API.
+See below for a complete example of file encryption/decryption using the secretstream API.
 
 ## Usage
 

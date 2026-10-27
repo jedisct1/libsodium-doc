@@ -161,7 +161,7 @@ int crypto_aead_aes256gcm_encrypt_detached(unsigned char *c,
 
 `crypto_aead_aes256gcm_encrypt_detached()` encrypts a message `m` whose length is `mlen` bytes using a secret key `k` (`crypto_aead_aes256gcm_KEYBYTES` bytes) and a public nonce `npub` (`crypto_aead_aes256gcm_NPUBBYTES` bytes).
 
-The encrypted message in put into `c`. A tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad` is put into `mac`.
+The encrypted message is put into `c`. A tag authenticating both the confidential message `m` and `adlen` bytes of non-confidential data `ad` is put into `mac`.
 
 `ad` can also be a `NULL` pointer if no additional data are required.
 

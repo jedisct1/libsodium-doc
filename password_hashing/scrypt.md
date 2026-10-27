@@ -164,11 +164,11 @@ Please note that `r` is specified in kilobytes, not in bytes as in the Sodium AP
 
 Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_scryptsalsa208sha256_*` will still work without doing so but possibly much slower.
 
-Do not use constants (including `crypto_pwhash_cryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_cryptsalsa208sha256_MEMLIMIT_*`) to verify a password or produce a deterministic output. Save the parameters alongside the hash instead.
+Do not use constants (including `crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_*`) to verify a password or produce a deterministic output. Save the parameters alongside the hash instead.
 
 By doing so, passwords can be rehashed using different parameters if required later on.
 
-For password verification, the recommended interface is `crypto_pwhash_cryptsalsa208sha256_str()` and `crypto_pwhash_cryptsalsa208sha256_str_verify()`. The string produced by `crypto_pwhash_cryptsalsa208sha256_str()` already includes an algorithm identifier and all the parameters, including the automatically generated salt, that were used to hash the password. Subsequently, `crypto_pwhash_cryptsalsa208sha256_str_verify()` automatically decodes these parameters.
+For password verification, the recommended interface is `crypto_pwhash_scryptsalsa208sha256_str()` and `crypto_pwhash_scryptsalsa208sha256_str_verify()`. The string produced by `crypto_pwhash_scryptsalsa208sha256_str()` already includes an algorithm identifier and all the parameters, including the automatically generated salt, that were used to hash the password. Subsequently, `crypto_pwhash_scryptsalsa208sha256_str_verify()` automatically decodes these parameters.
 
 Plaintext passwords should not stay in memory longer than needed.
 
