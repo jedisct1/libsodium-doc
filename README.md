@@ -32,16 +32,16 @@ See the `LICENSE` file for details.
 
 ## Thanks\!
 
-Sodium is developed by volunteers. We would like to especially thank the following companies and organizations for their contribution:
+Sodium is developed by volunteers. We would like to especially thank the following companies and organizations for their contributions:
 
   - [Paragonie Initiative Enterprise](https://paragonie.com/), who donated a Raspberry Pi to ensure that the library works perfectly on this hardware. Thanks\!
   - [Private Internet Access](https://www.privateinternetaccess.com), who sponsored a [complete security audit](https://www.privateinternetaccess.com/blog/libsodium-audit-results/). This is amazing, thanks\!
   - [Maximilian Blochberger](https://github.com/blochberger) and Joshua Small, who both generously donated $100. This will help cover the infrastructure costs a lot. Thanks again, Max and Joshua\!
 
-People who designed the primitives and wrote implementations the library is based on can be found in the [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS) file. This project wouldn’t exist without them.
+People who designed the primitives and wrote the implementations the library is based on can be found in the [AUTHORS](https://raw.githubusercontent.com/jedisct1/libsodium/master/AUTHORS) file. This project wouldn’t exist without them.
 
 Also, a huge “thank you” to people and companies who contributed bindings for their favorite programming languages. A list can be found in the [THANKS](https://raw.githubusercontent.com/jedisct1/libsodium/master/THANKS) file.
 
 Another huge “thank you” to package maintainers who have been doing an amazing job at building packages for many distributions and operating systems.
 
-Finally, thanks to **you** for reading this documentation and for the awesome projects you are going to build with this library\!
+Finally, thank **you** for reading this documentation and for the awesome projects you are going to build with this library\!
