@@ -10,10 +10,10 @@ Signatures can prove the identity of a sender. In order to prove the identity of
 
 The recommended approach is to:
 
-  - Sign the message, as well as the context of the message: the identity of the sender, the identity of the recipient, and a message identifier (ex: uid, timestamp).
+  - Sign the message, as well as the context of the message: the identity of the sender, the identity of the recipient, and a message identifier (e.g., uid, timestamp).
   - Encrypt and authenticate the message and its signature.
 
-While, under some circumstances, a single key pair could be used both for signing and encryption, this is neither recommended nor usually necessary. In libsodium, signature and encryption public keys are only 32 bytes long, and these two kinds of public keys can be encoded as a compound 64 byte key.
+While, under some circumstances, a single key pair could be used both for signing and encryption, this is neither recommended nor usually necessary. In libsodium, signature and encryption public keys are only 32 bytes long, and these two kinds of public keys can be encoded as a compound 64-byte key.
 
   - `sender_kx.pk`: the sender’s public key used to compute a shared secret
   - `sender_kx.sk`: the sender’s secret key used to compute a shared secret

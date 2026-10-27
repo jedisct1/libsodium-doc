@@ -106,7 +106,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
 Here are some libraries and frameworks using libsodium. Send a [pull request](https://github.com/jedisct1/libsodium-doc/blob/master/libsodium_users/README.md) to add yours to that list.
 
   - [Asio Sodium Socket](https://github.com/mikezackles/asio_sodium_socket): A header-only C++14 library implementing custom transport encryption using libsodium and Asio’s stackless coroutines.
-  - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrary large files.
+  - [Blobcrypt](https://github.com/jedisct1/blobcrypt): Authenticated encryption for streams and arbitrarily large files.
   - [Cordova Minisodium](https://npmdaily.com/pkg/cordova-plugin-minisodium): A minimal sodium plugin for Cordova - for iOS and Android.
   - [@deliberative/crypto](https://github.com/deliberative/crypto): Typescript/WebAssembly library for public key cryptography, secret boxes, Shamir secret sharing and random shuffling. Runs on Nodejs, ESM, CommonJS and the browser.
   - [drasyl](https://drasyl.org/): drasyl is a high-performance framework for rapid development of distributed applications.

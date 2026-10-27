@@ -149,7 +149,7 @@ Remember that public keys for both operations are very small (only 32 bytes). Co
 
 On the sender side, `crypto_sign_seed_keypair()` and `crypto_kx_seed_keypair()` can derive specialized key pairs from the same 32-byte seed.
 
-If you really need to use the same key pair for both operations, Diffie-Hellman key exchange can be made over Edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplication over edwards25519.
+If you really need to use the same key pair for both operations, Diffie-Hellman key exchange can be made over Edwards25519, the same group as the one used for signatures. Libsodium provides the `crypto_scalarmult_ed25519()` and `crypto_scalarmult_ed25519_base()` functions for scalar multiplication over Edwards25519.
 
 The following code illustrates how to do it:
 
@@ -188,7 +188,7 @@ Finally, if, for some reason, you want to implement your own signcryption scheme
   - If public verifiability is required, encrypt `(sender_id || message)` then sign the ciphertext.
   - If public verifiability is required, and the same message can be decrypted by multiple recipients, encrypt `(H(sender_id || message) || message)`, then sign the ciphertext.
 
-`sender_id` and `recipient_id` are public data that uniquely identifies a party.
+`sender_id` and `recipient_id` are public data that uniquely identify a party.
 
 Verify the metadata when opening a signed plus encrypted message.
 
@@ -237,4 +237,4 @@ On such systems, [libhydrogen](https://libhydrogen.org) may also be a better opt
 
 ## I want to write bindings for my favorite language, where should I start?
 
-Start with the `crypto_generichash` and `crypto_secretstream` APIs. These are the trickiest to implement bindings for and will provide good insights about how to design your bindings.
+Start with the `crypto_generichash` and `crypto_secretstream` APIs. These are the trickiest to write bindings for and will provide good insights into how to design your bindings.

@@ -1,6 +1,6 @@
 # AES256-GCM with precomputation
 
-Applications that encrypt several messages using the same key can gain a little speed by expanding the AES key only once, via the precalculation interface.
+Applications that encrypt several messages using the same key can gain a little speed by expanding the AES key only once, via the precomputation interface.
 
 ``` c
 int crypto_aead_aes256gcm_beforenm(crypto_aead_aes256gcm_state *ctx_,
@@ -9,9 +9,9 @@ int crypto_aead_aes256gcm_beforenm(crypto_aead_aes256gcm_state *ctx_,
 
 The `crypto_aead_aes256gcm_beforenm()` function initializes a context `ctx` by expanding the key `k` and always returns `0`.
 
-A 16 bytes alignment is required for the address of `ctx`. The size of this value can be obtained using `sizeof(crypto_aead_aes256gcm_state)`, or `crypto_aead_aes256gcm_statebytes()`.
+A 16-byte alignment is required for the address of `ctx`. The size of this value can be obtained using `sizeof(crypto_aead_aes256gcm_state)`, or `crypto_aead_aes256gcm_statebytes()`.
 
-## Combined mode with precalculation
+## Combined mode with precomputation
 
 ``` c
 int crypto_aead_aes256gcm_encrypt_afternm(unsigned char *c,
@@ -39,7 +39,7 @@ int crypto_aead_aes256gcm_decrypt_afternm(unsigned char *m,
 
 The `crypto_aead_aes256gcm_encrypt_afternm()` and `crypto_aead_aes256gcm_decrypt_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt()` and `crypto_aead_aes256gcm_decrypt()`, but accept a previously initialized context `ctx` instead of a key.
 
-## Detached mode with precalculation
+## Detached mode with precomputation
 
 ``` c
 int crypto_aead_aes256gcm_encrypt_detached_afternm(unsigned char *c,

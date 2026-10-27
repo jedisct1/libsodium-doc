@@ -25,7 +25,7 @@ This function can be used to compute a shared secret `q` given a user’s secret
 
 `q` represents the X coordinate of a point on the curve. As a result, the number of possible keys is limited to the group size (≈2^252), which is smaller than the key space.
 
-For this reason, and to mitigate subtle attacks due to the fact many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
+For this reason, and to mitigate subtle attacks due to the fact that many (`p`, `n`) pairs produce the same result, using the output of the multiplication `q` directly as a shared key is not recommended.
 
 A better way to compute a shared key is `h(q ‖ pk1 ‖ pk2)`, with `pk1` and `pk2` being the public keys.
 

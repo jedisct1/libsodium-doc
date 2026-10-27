@@ -32,7 +32,7 @@ A single key is used both to encrypt/authenticate and verify/decrypt messages. F
 
 The nonce doesn’t have to be confidential, but it should never ever be reused with the same key. The easiest way to generate a nonce is to use `randombytes_buf()`.
 
-Messages encrypted are assumed to be independent. If multiple messages are sent using this API and random nonces, there will be no way to detect if a message has been received twice, or if messages have been reordered. If this is a requirement, see the [encrypting a sequence of a set of related messages](encrypted-messages.md) section.
+Messages encrypted are assumed to be independent. If multiple messages are sent using this API and random nonces, there will be no way to detect if a message has been received twice, or if messages have been reordered. If this is a requirement, see the [encrypting a sequence or a set of related messages](encrypted-messages.md) section.
 
 ## Combined mode
 
@@ -107,7 +107,7 @@ void crypto_secretbox_keygen(unsigned char k[crypto_secretbox_KEYBYTES]);
 
 This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
-It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always correct.
 
 ## Constants
 
@@ -122,7 +122,7 @@ It is equivalent to calling `randombytes_buf()` but improves code clarity and ca
 
 ## Notes
 
-Internally, `crypto_secretbox` calls `crypto_stream_xor()` to encrypt the message. As a result, a secret key used with the former should not be reused with the later. But as a general rule, a key should not be reused for different purposes.
+Internally, `crypto_secretbox` calls `crypto_stream_xor()` to encrypt the message. As a result, a secret key used with the former should not be reused with the latter. But as a general rule, a key should not be reused for different purposes.
 
 The original NaCl `crypto_secretbox` API is also supported, albeit not recommended.
 

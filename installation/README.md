@@ -76,7 +76,7 @@ They include header files as well as static (`.LIB`) and shared (`.DLL`) librari
 
 ### Note for Visual Studio
 
-Projects willing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__declspec(dllexport)`.
+Projects wishing to statically link Sodium must define a macro named `SODIUM_STATIC`. This will prevent symbol definitions from being referenced with `__declspec(dllexport)`.
 
 ## Cross-compiling to Android
 

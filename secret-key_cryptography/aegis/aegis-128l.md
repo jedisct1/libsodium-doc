@@ -4,7 +4,7 @@ AEGIS-128L is a modern AES-based cipher with unique properties making it easier 
 
   - 256-bit authentication tags, ensuring collision resistance within a given key; a tag can thus be used as a unique identifier for a message.
   - It can safely encrypt a practically unlimited number of messages, without any practical limits on their lengths.
-  - It has a 128 bit nonce size, allowing random nonces to be safely used up to 2^48 messages for a single key.
+  - It has a 128-bit nonce size, allowing random nonces to be safely used up to 2^48 messages for a single key.
   - It has a better security margin than AES-GCM
   - Leaking the state doesn’t leak the key
   - It is assumed to be key-committing, preventing partitioning attacks affecting other ciphers when used with low-entropy keys such as passwords. Namely, it is difficult to find distinct keys and/or nonces that successfully verify the same `(ad, ciphertext, tag)` tuple.
@@ -13,7 +13,7 @@ AEGIS-128L is also extremely fast on recent CPUs with AES pipelines, with lower 
 
 However, on platforms without hardware AES support, it is slow and not guaranteed to be protected against side channels. In that scenario, XChaCha20-Poly1305 is a better choice.
 
-Unlike all other ciphers in libsodium, AEGIS-128L uses a 128 bit key.
+Unlike all other ciphers in libsodium, AEGIS-128L uses a 128-bit key.
 
 ## Example (combined mode)
 
@@ -149,7 +149,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 void crypto_aead_aegis128l_keygen(unsigned char k[crypto_aead_aegis128l_KEYBYTES]);
 ```
 
-This is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+This is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always correct.
 
 ## Constants
 

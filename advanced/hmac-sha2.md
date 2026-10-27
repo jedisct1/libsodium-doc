@@ -1,6 +1,6 @@
 # HMAC-SHA-2
 
-The keyed message authentication codes HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA512-256 (truncated HMAC-SHA-512) are provided.
+The keyed message authentication codes HMAC-SHA-256, HMAC-SHA-512 and HMAC-SHA-512-256 (truncated HMAC-SHA-512) are provided.
 
 The [`crypto_auth`](../secret-key_cryptography/secret-key_authentication.md) API provides a simplified interface for message authentication.
 
@@ -99,11 +99,11 @@ void crypto_auth_hmacsha256_keygen(unsigned char k[crypto_auth_hmacsha256_KEYBYT
 
 This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
-It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always correct.
 
 ### HMAC-SHA-512
 
-Similarly to the `crypto_auth_hmacsha256_*()` set of functions, the `crypto_auth_hmacsha512_*()` set of functions implements HMAC-SHA512:
+Similarly to the `crypto_auth_hmacsha256_*()` set of functions, the `crypto_auth_hmacsha512_*()` set of functions implements HMAC-SHA-512:
 
 ``` c
 int crypto_auth_hmacsha512(unsigned char *out,

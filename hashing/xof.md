@@ -2,7 +2,7 @@
 
 An extendable output function (XOF) is similar to a hash function, but its output can be extended to any desired length.
 
-Unlike a hash function where the output size is fixed, a XOF can produce output of arbitrary length from the same input, making it useful for key derivation, stream generation, and applications where variable-length output is needed.
+Unlike a hash function where the output size is fixed, an XOF can produce output of arbitrary length from the same input, making it useful for key derivation, stream generation, and applications where variable-length output is needed.
 
 libsodium provides two families of XOFs:
 
@@ -140,7 +140,7 @@ crypto_xof_turboshake128(uniform_bytes, sizeof uniform_bytes,
 
 ### Replacing HKDF-Expand
 
-When you have a uniformly random key and need to derive multiple outputs, a XOF is simpler than HKDF:
+When you have a uniformly random key and need to derive multiple outputs, an XOF is simpler than HKDF:
 
 ``` c
 /* Instead of multiple HKDF-Expand calls with different info strings,
@@ -319,9 +319,9 @@ The “128” and “256” in the names refer to security levels, not output si
 
 Security considerations:
 
-When using a XOF as a hash function (collision resistance matters), the output should be at least twice the security level. TurboSHAKE128 with a 32-byte output provides full 128-bit collision resistance. Shorter outputs reduce collision resistance proportionally: a 16-byte output only provides 64-bit collision resistance.
+When using an XOF as a hash function (collision resistance matters), the output should be at least twice the security level. TurboSHAKE128 with a 32-byte output provides full 128-bit collision resistance. Shorter outputs reduce collision resistance proportionally: a 16-byte output only provides 64-bit collision resistance.
 
-When using a XOF for key derivation or as a PRF (preimage resistance matters), the output length doesn’t affect security as long as you’re using it correctly. TurboSHAKE128 provides 128-bit preimage resistance regardless of output length.
+When using an XOF for key derivation or as a PRF (preimage resistance matters), the output length doesn’t affect security as long as you’re using it correctly. TurboSHAKE128 provides 128-bit preimage resistance regardless of output length.
 
 ``` c
 /* TurboSHAKE128 producing a 256-bit hash - full 128-bit security */

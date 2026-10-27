@@ -31,7 +31,7 @@ The `randombytes_set_implementation()` function defines the set of functions req
 
 ## Example
 
-Sodium ships with a sample alternative `randombytes` implementation based on the ChaCha20 stream cipher in `randombytes_internal_random.c` file.
+Sodium ships with a sample alternative `randombytes` implementation based on the ChaCha20 stream cipher in the `randombytes_internal_random.c` file.
 
 This implementation only requires access to `/dev/urandom` or `/dev/random` (or to `RtlGenRandom()` on Windows) once, during `sodium_init()`.
 

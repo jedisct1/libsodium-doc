@@ -54,11 +54,11 @@ The `crypto_kdf_derive_from_key()` function derives a `subkey_id`-th subkey `sub
 
 `subkey_len` must be between `crypto_kdf_BYTES_MIN` (inclusive) and `crypto_kdf_BYTES_MAX` (inclusive).
 
-Similar to a type, the context `ctx` is an 8 character string describing what the key is going to be used for.
+Similar to a type, the context `ctx` is an 8-character string describing what the key is going to be used for.
 
 Its purpose is to mitigate accidental bugs by separating domains. The same function used with the same key but in two distinct contexts is likely to generate two different outputs.
 
-Contexts don’t have to be secret and can have a low entropy.
+Contexts don’t have to be secret and can have low entropy.
 
 Examples of contexts include `UserName`, `__auth__`, `pictures`, and `userdata`.
 

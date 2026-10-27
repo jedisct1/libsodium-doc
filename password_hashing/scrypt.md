@@ -162,7 +162,7 @@ Please note that `r` is specified in kilobytes, not in bytes as in the Sodium AP
 
 ## Notes
 
-Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_scryptsalsa208sha256_*` will still work without doing so but possibly way slower.
+Do not forget to initialize the library with `sodium_init()`. `crypto_pwhash_scryptsalsa208sha256_*` will still work without doing so but possibly much slower.
 
 Do not use constants (including `crypto_pwhash_cryptsalsa208sha256_OPSLIMIT_*` and `crypto_pwhash_cryptsalsa208sha256_MEMLIMIT_*`) to verify a password or produce a deterministic output. Save the parameters alongside the hash instead.
 

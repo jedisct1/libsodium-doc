@@ -48,7 +48,7 @@ These figures assume an untruncated (128-bit or 256-bit) authentication tag.
 
 Although periodic rekeying remains highly recommended, online protocols leveraging additional data to discard old messages don’t have practical limitations on the total number of messages.
 
-In spite of these limits, applications must enforce a limit on the maximum size of a ciphertext to decrypt. Very large messages should be split in multiple chunks instead of being encrypted as a single ciphertext:
+In spite of these limits, applications must enforce a limit on the maximum size of a ciphertext to decrypt. Very large messages should be split into multiple chunks instead of being encrypted as a single ciphertext:
 
   - This keeps memory usage in control,
   - A corrupted chunk can be immediately detected before the whole ciphertext is received,
@@ -62,7 +62,7 @@ To keep the tag-collision probability below 2^-32, the maximum number of encrypt
 
 These are single-key limits. Deployments using multiple keys, including deployments that rekey or maintain multiple connections, must also account for the aggregate multi-key limits.
 
-Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criteria for selecting a secure primitive.
+Note that the latter is not a practical concern due to application limits, noisiness, storage and bandwidth requirements. The maximum number of encryptions is the most important criterion for selecting a secure primitive.
 
   - For 16 KB long messages:
 

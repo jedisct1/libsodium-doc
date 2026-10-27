@@ -92,4 +92,4 @@ This permits direct access to any block without having to compute the previous o
 
 The nonce is short. In order to prevent nonce reuse, if a key is being reused, it is recommended to increment the previous nonce instead of generating a random nonce every time a new stream is required.
 
-With the IETF variant, up to 256 GB can be produced from the a (`key`, `nonce`) pair. The original design doesn’t have this limitation.
+With the IETF variant, up to 256 GB can be produced from a (`key`, `nonce`) pair. The original design doesn’t have this limitation.

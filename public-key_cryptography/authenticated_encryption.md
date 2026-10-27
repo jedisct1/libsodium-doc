@@ -183,9 +183,9 @@ int crypto_box_open_detached_afternm(unsigned char *m, const unsigned char *c,
                                      const unsigned char *k);
 ```
 
-The `_afternm` variants of the previously described functions accept a precalculated shared secret key `k` instead of a key pair.
+The `_afternm` variants of the previously described functions accept a precomputed shared secret key `k` instead of a key pair.
 
-Like any secret key, a precalculated shared key should be wiped from memory (for example, using `sodium_memzero()`) as soon as it is not needed anymore.
+Like any secret key, a precomputed shared key should be wiped from memory (for example, using `sodium_memzero()`) as soon as it is not needed anymore.
 
 `c` and `m` can overlap, making in-place encryption possible. However, do not forget that `crypto_box_MACBYTES` extra bytes are required to prepend the tag.
 

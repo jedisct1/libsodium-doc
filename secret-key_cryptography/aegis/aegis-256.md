@@ -2,7 +2,7 @@
 
 AEGIS-256 is a modern AES-based cipher with unique properties making it easier and safer to use than common alternatives:
 
-  - targets 256 bit confidentiality
+  - Targets 256-bit confidentiality
   - 256-bit authentication tags, ensuring collision resistance within a given key; a tag can thus be used as a unique identifier for a message.
   - It can safely encrypt a practically unlimited number of messages, without any practical limits on their lengths.
   - It has a very large nonce size (256 bits), allowing random nonces to be used without any practical limits either.
@@ -148,7 +148,7 @@ If the tag is valid, the ciphertext is decrypted and the plaintext is put into `
 void crypto_aead_aegis256_keygen(unsigned char k[crypto_aead_aegis256_KEYBYTES]);
 ```
 
-This is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+This is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always correct.
 
 ## Constants
 
@@ -159,8 +159,8 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
 ## Notes
 
   - Unique nonces are required for each message.
-  - However, the nonce space is very large (256 bits). It can thus be randomly chosen with no risks of collision.
-  - It is also safe to only use a subset of the nonce space, for example by filling only 160 bits (20 bytes) with random data, and padding the rest with zeros. A 160 bit nonce already provides enough collision resistance for virtually all practical needs.
+  - However, the nonce space is very large (256 bits). It can thus be randomly chosen with no risk of collision.
+  - It is also safe to only use a subset of the nonce space, for example by filling only 160 bits (20 bytes) with random data, and padding the rest with zeros. A 160-bit nonce already provides enough collision resistance for virtually all practical needs.
   - AEGIS can also be used as a very fast MAC, by encrypting an empty message, and putting the actual message to be authenticated in the `ad` parameter, which can be up to 2^61 bytes long.
   - However, it should *NOT* be used as a hash function. If the key is known, state collisions can be crafted.
   - Unlike AES-GCM and Salsa/ChaChaPoly1305, it is believed to be impractical to find multiple AEGIS keys that successfully decrypt a given `(ad, ciphertext, tag)` tuple (*receiver-binding* game). However, this security property doesn’t hold true any more if the associated data inputs can be freely chosen in addition to the keys (*FROB* security). If commitment to the associated data is necessary, set the `ad` parameter to the hash of the associated data, using a collision-resistant and preimage-resistant hash function.

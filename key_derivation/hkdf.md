@@ -4,8 +4,8 @@ HKDF (HMAC-based Extract-and-Expand Key Derivation Function) is a key derivation
 
 It actually includes two operations:
 
-  - **extract:** this operation absorbs an arbitrary-long sequence of bytes and outputs a fixed-size master key (also known as `PRK`), suitable for use with the second function (*expand*).
-  - **expand:** this operation generates an variable size subkey given a master key (also known as `PRK`) and a description of a key (or “context”) to derive from it. That operation can be repeated with different descriptions in order to derive as many keys as necessary.
+  - **extract:** this operation absorbs an arbitrarily-long sequence of bytes and outputs a fixed-size master key (also known as `PRK`), suitable for use with the second function (*expand*).
+  - **expand:** this operation generates a variable size subkey given a master key (also known as `PRK`) and a description of a key (or “context”) to derive from it. That operation can be repeated with different descriptions in order to derive as many keys as necessary.
 
 The latter can be used without the former, if a randomly sampled key of the right size is already available.
 
@@ -93,7 +93,7 @@ A UUID is a decent example of a `salt`. There is no minimum length.
 
 If input keying material cannot be accidentally reused, using an empty (`NULL`) salt is perfectly acceptable.
 
-`ikm` (Input Keying Material) is an arbitrary-long byte sequence. The bytes don’t have to be sampled from a uniform distribution. It can be any combination of text and binary data.
+`ikm` (Input Keying Material) is an arbitrarily-long byte sequence. The bytes don’t have to be sampled from a uniform distribution. It can be any combination of text and binary data.
 
 But the overall sequence needs to include some entropy.
 

@@ -138,7 +138,7 @@ void crypto_aead_chacha20poly1305_keygen(unsigned char k[crypto_aead_chacha20pol
 
 This helper function introduced in libsodium 1.0.12 creates a random key `k`.
 
-It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always be correct.
+It is equivalent to calling `randombytes_buf()` but improves code clarity and can prevent misuse by ensuring that the provided key length is always correct.
 
 ## Constants
 

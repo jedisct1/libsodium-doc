@@ -102,7 +102,7 @@ It returns `-1` if more than `bin_maxlen` bytes would be required to store the p
 void sodium_increment(unsigned char *n, const size_t nlen);
 ```
 
-The `sodium_increment()` function takes a pointer to an arbitrary-long unsigned number and increments it.
+The `sodium_increment()` function takes a pointer to an arbitrarily-long unsigned number and increments it.
 
 It runs in constant time for a given length and considers the number to be encoded in a little-endian format.
 

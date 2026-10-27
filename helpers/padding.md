@@ -54,7 +54,7 @@ These functions use the ISO/IEC 7816-4 padding algorithm. It supports arbitrary 
 
 Padding should be applied before encryption and removed after decryption.
 
-Usage of padding to hide the length of a password is not recommended. A client willing to send a password to a server should hash it instead, even with a single iteration of the hash function.
+Usage of padding to hide the length of a password is not recommended. A client wishing to send a password to a server should hash it instead, even with a single iteration of the hash function.
 
 This ensures that the length of the transmitted data is constant and that the server doesn’t effortlessly get a copy of the password.
 

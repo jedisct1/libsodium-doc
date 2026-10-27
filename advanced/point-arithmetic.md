@@ -105,7 +105,7 @@ Fills `p` with the representation of a random group element.
 int crypto_core_ed25519_from_uniform(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ed25519_from_uniform()` function maps a 32 bytes vector `r` to a point, and stores its compressed representation into `p`.
+The `crypto_core_ed25519_from_uniform()` function maps a 32-byte vector `r` to a point, and stores its compressed representation into `p`.
 
 The point is guaranteed to be on the main subgroup.
 
@@ -145,7 +145,7 @@ int crypto_scalarmult_ed25519_noclamp(unsigned char *q, const unsigned char *n,
                                       const unsigned char *p);
 ```
 
-The function verifies that `p` is on the prime-order subgroup before performing the multiplication, and return `-1` if this is not the case or `n` is `0`. It returns `0` on success.
+The function verifies that `p` is on the prime-order subgroup before performing the multiplication, and returns `-1` if this is not the case or `n` is `0`. It returns `0` on success.
 
 ``` c
 int crypto_scalarmult_ed25519_base_noclamp(unsigned char *q, const unsigned char *n);
@@ -185,7 +185,7 @@ A random scalar can be obtained using the `crypto_core_ed25519_scalar_random()` 
 void crypto_core_ed25519_scalar_random(unsigned char *r);
 ```
 
-`crypto_core_ed25519_scalar_random()` fills `r` with a `crypto_core_ed25519_SCALARBYTES` bytes representation of the scalar in the `]0..L[` interval.
+`crypto_core_ed25519_scalar_random()` fills `r` with a `crypto_core_ed25519_SCALARBYTES`-byte representation of the scalar in the `]0..L[` interval.
 
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 

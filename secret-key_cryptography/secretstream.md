@@ -5,7 +5,7 @@ This high-level API encrypts a sequence of messages, or a single message split i
   - Messages cannot be truncated, removed, reordered, duplicated or modified without this being detected by the decryption functions.
   - The same sequence encrypted twice will produce different ciphertexts.
   - An authentication tag is added to each encrypted message: stream corruption will be detected early, without having to read the stream until the end.
-  - Each message can include additional data (ex: timestamp, protocol version) in the computation of the authentication tag.
+  - Each message can include additional data (e.g., timestamp, protocol version) in the computation of the authentication tag.
   - Messages can have different sizes.
   - There are no practical limits to the total length of the stream, or to the total number of individual messages.
   - Ratcheting: at any point in the stream, it is possible to “forget” the key used to encrypt the previous messages, and switch to a new key.
@@ -198,7 +198,7 @@ Applications will typically call this function in a loop, until a message with t
 
 ### Rekeying
 
-Rekeying happens automatically and transparently, before the internal counter of the underlying cipher wraps. Therefore, streams can be arbitrary large.
+Rekeying happens automatically and transparently, before the internal counter of the underlying cipher wraps. Therefore, streams can be arbitrarily large.
 
 Optionally, applications for which forward secrecy is critical can attach the `crypto_secretstream_xchacha20poly1305_TAG_REKEY` tag to a message in order to trigger an explicit rekeying. The decryption API will automatically update the key if this tag is found attached to a message.
 

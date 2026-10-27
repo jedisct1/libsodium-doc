@@ -2,7 +2,7 @@
 
 [Ristretto](https://ristretto.group) is a new unified point compression format for curves over large-characteristic fields, which divides the curve’s cofactor by 4 or 8 at very little cost of performance, efficiently implementing a prime-order group.
 
-libsodium 1.0.18+ implements ristreto255: ristretto on top of the Curve25519 curve.
+libsodium 1.0.18+ implements ristretto255: ristretto on top of the Curve25519 curve.
 
 Compared to Curve25519 points encoded as their coordinates, ristretto makes it easier to safely implement protocols originally designed for prime-order groups.
 
@@ -80,7 +80,7 @@ Fills `p` with the representation of a random group element.
 int crypto_core_ristretto255_from_hash(unsigned char *p, const unsigned char *r);
 ```
 
-The `crypto_core_ristretto255_from_hash()` function maps a 64 bytes vector `r` (usually the output of a hash function) to a group element, and stores its representation into `p`.
+The `crypto_core_ristretto255_from_hash()` function maps a 64-byte vector `r` (usually the output of a hash function) to a group element, and stores its representation into `p`.
 
 ## Scalar multiplication
 
@@ -119,7 +119,7 @@ int crypto_core_ristretto255_sub(unsigned char *r,
                                  const unsigned char *p, const unsigned char *q);
 ```
 
-The `crypto_core_ristretto255_sub()` function subtracts the element represented by `p` to the element `q` and stores the resulting element into `r`.
+The `crypto_core_ristretto255_sub()` function subtracts the element represented by `p` from the element `q` and stores the resulting element into `r`.
 
 The function returns `0` on success, or `-1` if `p` and/or `q` are not valid encoded elements.
 
@@ -135,7 +135,7 @@ A random scalar can be obtained using the `crypto_core_ristretto255_scalar_rando
 void crypto_core_ristretto255_scalar_random(unsigned char *r);
 ```
 
-`crypto_core_ristretto255_scalar_random()` fills `r` with a `crypto_core_ristretto255_SCALARBYTES` bytes representation of the scalar in the `]0..L[` interval.
+`crypto_core_ristretto255_scalar_random()` fills `r` with a `crypto_core_ristretto255_SCALARBYTES`-byte representation of the scalar in the `]0..L[` interval.
 
 A scalar in the `[0..L[` interval can also be obtained by reducing a possibly larger value:
 
