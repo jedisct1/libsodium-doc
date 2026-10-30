@@ -68,6 +68,8 @@ int crypto_aead_aes256gcm_decrypt_detached_afternm(unsigned char *m,
 
 The `crypto_aead_aes256gcm_encrypt_detached_afternm()` and `crypto_aead_aes256gcm_decrypt_detached_afternm()` functions are identical to `crypto_aead_aes256gcm_encrypt_detached()` and `crypto_aead_aes256gcm_decrypt_detached()`, but accept a previously initialized context `ctx` instead of a key.
 
+The actual number of bytes written to `mac` is stored in `*maclen_p`; passing `NULL` for `maclen_p` is safe and recommended.
+
 ## Constants
 
   - `crypto_aead_aes256gcm_KEYBYTES`

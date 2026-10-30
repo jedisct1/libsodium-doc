@@ -108,7 +108,7 @@ int crypto_aead_chacha20poly1305_ietf_encrypt_detached(unsigned char *c,
 
 The `crypto_aead_chacha20poly1305_ietf_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
 
-It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_IETF_ABYTES` bytes.
+It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_chacha20poly1305_IETF_ABYTES` bytes. The actual number of bytes written to `mac` is stored in `*maclen_p`; passing `NULL` for `maclen_p` is safe and recommended.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 

@@ -121,7 +121,7 @@ int crypto_aead_aegis128l_encrypt_detached(unsigned char *c,
 
 The `crypto_aead_aegis128l_encrypt_detached()` function encrypts a message `m` with a key `k` and a nonce `npub`. It puts the resulting ciphertext, whose length is equal to the message, into `c`.
 
-It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_aegis128l_ABYTES` bytes.
+It also computes a tag that authenticates the ciphertext as well as optional, additional data `ad` of length `adlen`. This tag is put into `mac`, and its length is `crypto_aead_aegis128l_ABYTES` bytes. The actual number of bytes written to `mac` is stored in `*maclen_p`; passing `NULL` for `maclen_p` is safe and recommended.
 
 `nsec` is not used by this particular construction and should always be `NULL`.
 
@@ -165,6 +165,7 @@ This is equivalent to calling `randombytes_buf()` but improves code clarity and 
   - However, it should *NOT* be used as a hash function. If the key is known, state collisions can be crafted.
   - Unlike AES-GCM and Salsa/ChaChaPoly1305, it is believed to be impractical to find multiple AEGIS keys that successfully decrypt a given `(ad, ciphertext, tag)` tuple (*receiver-binding* game). However, this security property doesn’t hold true any more if the associated data inputs can be freely chosen in addition to the keys (*FROB* security). If commitment to the associated data is necessary, set the `ad` parameter to the hash of the associated data, using a collision-resistant and preimage-resistant hash function.
   - AEGIS was added in libsodium version 1.0.19.
+  - Libsodium only supports AEGIS with 256-bit authentication tags.
 
 ## See also
 
