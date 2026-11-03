@@ -1,0 +1,12 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+version: 1
+site:
+  title: The Sodium crypto library (libsodium)
+  structure:
+    - type: space
+      key: space-docs
+      title: Documentation
+      path: docs
+      default: true
+      content:
+        directory: ./
