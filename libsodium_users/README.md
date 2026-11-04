@@ -10,6 +10,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Apache Tuweni](https://tuweni.apache.org/): A set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages.
   - [Astroport.ONE](https://github.com/papiche/Astroport.ONE): A spherical planetary blockchain built on IPFS run by cooperative hosts swarms based on trust level. Exclusively using libsodium through keygen and duniterpy as seed as generator for PGG, SSH, IPFS, Bitcoin, Duniter Ğ1, and more…
   - [Babble Browser Extension](https://github.com/XCF-Babble/babble): A platform agnostic browser extension that allows for easy encryption and decryption of text data across the web.
+  - [BackupDrill](https://backupdrill.com): Backs up Supabase Postgres databases into the user's own S3-compatible bucket and runs scheduled restore drills to check that the backups actually restore. Database credentials are sealed with `crypto_box_seal`, so the web console can encrypt them but only the backup worker can open them.
   - [Cloaker](https://github.com/spieglt/Cloaker): Very simple cross-platform file encryption.
   - [CTI-PSI](https://github.com/Fabi2708/cti-psi): A privacy-preserving threat intelligence sharing tool using private set intersection.
   - [Cyph](https://cyph.im/): End-to-end encrypted, authenticated, and ephemeral chat with voice, video, and file transfers.
