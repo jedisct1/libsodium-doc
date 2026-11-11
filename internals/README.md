@@ -107,7 +107,7 @@ In addition, the test suite must pass on the following environments. Libsodium i
   - WebAssembly/V8, WebAssembly/JavaScriptCore
   - OpenBSD-current/x86\_64
   - Ubuntu/x86\_64 using GCC 15, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
-  - Ubuntu/x86\_64 using Clang 21, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
+  - Ubuntu/x86\_64 using Clang 22, `-fsanitize=address,undefined` and Valgrind (Memcheck, Helgrind, DRD, and SGCheck)
   - Ubuntu/x86\_64 using TCC
   - Ubuntu/x86\_64 using CompCert
   - Ubuntu/x86\_64 using Fil-C
@@ -117,10 +117,6 @@ In addition, the test suite must pass on the following environments. Libsodium i
   - MSYS2 using MinGW32 and MinGW64
   - Arch Linux/x86\_64
   - Arch Linux/ARMv6
-  - Debian/x86
-  - Debian/SPARC
-  - Debian/ppc
-  - Raspbian/Cortex-A53
   - Alpine/RiscV64 - Courtesy of the GCC Compile Farm project
   - Ubuntu/AArch64 - Courtesy of the GCC Compile Farm project
   - Fedora/ppc64 - Courtesy of the GCC Compile Farm project
