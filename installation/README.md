@@ -38,6 +38,8 @@ make && make check
 sudo make install
 ```
 
+Compilation with custom compiler flags is untested and unsupported.
+
 Since different files are compiled for different CPU classes, and to prevent unwanted optimizations, link-time optimization (LTO) should not be used.
 
 Also, do not enable sanitizers (such as `-fsanitize=signed-integer-overflow`). These can introduce side channels.
