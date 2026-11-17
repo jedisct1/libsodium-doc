@@ -56,7 +56,9 @@ The `sodium_ip2bin()` and `sodium_bin2ip()` functions convert between string and
 int sodium_ip2bin(unsigned char bin[16], const char *ip, size_t ip_len);
 ```
 
-The `sodium_ip2bin()` function parses the IP address string `ip` of length `ip_len` and writes the 16-byte binary representation to `bin`.
+The `sodium_ip2bin()` function parses the IP address string `ip` and writes the 16-byte binary representation to `bin`.
+
+`ip_len` is the maximum number of characters to read from `ip`. Parsing stops after `ip_len` characters or at the first NUL byte, whichever comes first. So `ip_len` can be either the length of the string or the size of a buffer holding a NUL-terminated string, and anything after the NUL byte is ignored.
 
 It accepts both IPv4 (e.g., `"192.0.2.1"`) and IPv6 (e.g., `"2001:db8::1"`) addresses. IPv4 addresses are automatically converted to IPv4-mapped format. IPv6 addresses with zone identifiers (e.g., `"fe80::1%eth0"`) are also supported.
 
