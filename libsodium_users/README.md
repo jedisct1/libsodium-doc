@@ -35,6 +35,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Keystone Enclave](https://github.com/keystone-enclave): An open source secure enclave for RISC-V processors.
   - [KeepassXC](https://keepassxc.org/): KeePass Cross-Platform Community Edition. KeePassXC stores your passwords safely and auto-types them into your everyday websites and applications.
   - [Kickpass](https://github.com/kickpass/kickpass): A stupid simple password manager.
+  - [Klutshnik](https://klutshnik.info) An updatable threshold key management solution that provides cheap forward secret/post-compromise providing updatable keys in a threshold setup for data-at-rest encryption.
   - [Krypton akr](https://github.com/akamai/akr): FIDO2 SSH agent for iOS and Android (successor to Kryptonite, now part of Akamai MFA).
   - [Kryptor](https://kryptor.co.uk/): Free and open source file encryption software.
   - [Lageant](https://github.com/bitbeans/lageant): Libsodium Authentication Agent.
@@ -77,6 +78,7 @@ Here are some applications using libsodium. Send a [pull request](https://github
   - [Sharekey](https://sharekey.com/): Encrypted data storage.
   - [Simple DnsCrypt](https://github.com/DNSCrypt/SimpleDnsCrypt): A simple management tool for dnscrypt-proxy.
   - [SPAKE2+EE](https://github.com/jedisct1/spake2-ee): A SPAKE2+ Elligator Edition implementation for libsodium.
+  - [SPHINX](https://sphinx.pm) *S*tore that *P*erfectly *H*ides from *I*tself (*N* o *X* aggeration)) is a simple and elegant next-generation threshold password "storage" system that fundamentally reimagines how passwords should be protected.
   - [Splonebox](https://splone.com/splonebox/): An open source network assessment tool with a focus on modularity.
   - [Stellar](https://www.stellar.org/): An open platform for building financial products that connect people everywhere.
   - [TREES](https://0xacab.org/riseuplabs/trees): A Dovecot email storage encryption plugin.
