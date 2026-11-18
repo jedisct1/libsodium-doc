@@ -140,7 +140,7 @@ Here are some libraries and frameworks using libsodium. Send a [pull request](ht
   - [ZeroMQ](http://zeromq.org/): Connect your code in any language, on any platform.
   - [OpenZiti SDK](https://github.com/openziti/ziti-sdk-c): The C-SDK for [the OpenZiti project](https://ziti.dev).
   - [libotrv4](https://github.com/otrv4/libotr-ng): An OTR version 4 implementation.
-  - [libsaxolotl](https://github.com/stef/libsaxolotl): An Axolotol implementation in C using libsodium.
+  - [libseal](https://rad.ctrlc.hu/nodes/rad.ctrlc.hu/rad:z3wp7SxqLnD2XbwYZB8zFxTEvt4Jq): Segmented Encryption and Authentication Layer, a construction that realizes random-access authenticated encryption (raAE)
   - [libsodium-Laravel](https://github.com/scrothers/libsodium-laravel): Laravel integration.
   - [libsodium-UE4](https://github.com/maxenko/SodiumUE4): An easy to use cryptography plugin for Unreal Engine 4 based on libsodium.
   - [UnrealSodium](https://github.com/Helium-Labs/UnrealSodium): A user-friendly & portable Unreal Engine 5 cryptography plugin based on libsodium.
